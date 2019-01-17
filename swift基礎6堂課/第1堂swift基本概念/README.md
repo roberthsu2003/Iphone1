@@ -27,6 +27,5 @@
 * if判斷和強制打開
 * optional binding
 
-
-##錯誤處理
+## 錯誤處理
 
