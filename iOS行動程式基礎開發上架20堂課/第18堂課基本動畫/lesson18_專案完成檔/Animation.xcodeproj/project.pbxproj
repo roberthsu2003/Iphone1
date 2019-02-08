@@ -14,6 +14,7 @@
 		7024FA9621F42948004FA9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7024FA9421F42948004FA9ED /* LaunchScreen.storyboard */; };
 		70D0666A21FD849800AFC999 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D0666921FD849800AFC999 /* citylist.plist */; };
 		E16E0117220D98CF0044CCBB /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E0116220D98CF0044CCBB /* DetailViewCell.swift */; };
+		E16E0119220DB89A0044CCBB /* RatingViewControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E0118220DB89A0044CCBB /* RatingViewControll.swift */; };
 		E19D6A9122086F1F00284B3F /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19D6A9022086F1F00284B3F /* CityCell.swift */; };
 		E1ACC2E5220B0D6F00DD2562 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACC2E4220B0D6F00DD2562 /* CityDetailViewController.swift */; };
 		E1D6101D220B192E00106A2D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D6101C220B192E00106A2D /* City.swift */; };
@@ -29,6 +30,7 @@
 		7024FA9721F42948004FA9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D0666921FD849800AFC999 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		E16E0116220D98CF0044CCBB /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		E16E0118220DB89A0044CCBB /* RatingViewControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewControll.swift; sourceTree = "<group>"; };
 		E19D6A9022086F1F00284B3F /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		E1ACC2E4220B0D6F00DD2562 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		E1D6101C220B192E00106A2D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				E1ACC2E4220B0D6F00DD2562 /* CityDetailViewController.swift */,
 				E1D6101C220B192E00106A2D /* City.swift */,
 				E16E0116220D98CF0044CCBB /* DetailViewCell.swift */,
+				E16E0118220DB89A0044CCBB /* RatingViewControll.swift */,
 			);
 			path = simpleTableView;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				E1ACC2E5220B0D6F00DD2562 /* CityDetailViewController.swift in Sources */,
 				E1D6101D220B192E00106A2D /* City.swift in Sources */,
+				E16E0119220DB89A0044CCBB /* RatingViewControll.swift in Sources */,
 				7024FA8E21F42945004FA9ED /* ViewController.swift in Sources */,
 				E16E0117220D98CF0044CCBB /* DetailViewCell.swift in Sources */,
 				7024FA8C21F42945004FA9ED /* AppDelegate.swift in Sources */,
