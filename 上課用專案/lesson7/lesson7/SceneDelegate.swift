@@ -17,6 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         print("window已經顯示!")
         window!.rootViewController!.view.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+        
+        var myString:String?
+        //optional binding
+        //if let =
+        
+        if let newString = myString {
+            //myString內有值
+            print(newString.count)
+        }else{
+            //myString是nil
+            print("myString是nil")
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
