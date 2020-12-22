@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("window是nil")
         }
          */
+        /*
         //提早離開
         guard let window = window else{
             print("window是nil")
@@ -41,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         viewController.view.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
         
+        */
         
     }
 
