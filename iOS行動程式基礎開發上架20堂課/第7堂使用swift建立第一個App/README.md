@@ -83,7 +83,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 ### 建立自訂的UIView
 - 在ViewController內建立UIView
 
-```
+```swift
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
