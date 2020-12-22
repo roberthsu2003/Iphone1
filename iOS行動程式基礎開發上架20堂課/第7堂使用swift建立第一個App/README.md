@@ -6,7 +6,7 @@
 - CGRect
 
 ### ios的啟動流程
-1. UIApplicationMain 建立UIApplication實體,未來可以使用UIApplication.shared取得實體,然後實體化 AppDelegate類別,讓AppDelegate的實體為UIApplication的代理人
+1. UIApplicationMain() 建立UIApplication實體,未來可以使用UIApplication.shared取得實體,然後實體化 AppDelegate類別,讓AppDelegate的實體為UIApplication的代理人
 
 2. UIApplicationMain呼叫UIApplication代理人的application(_:didFinishLaunchingWithOptions:),實作這個method, 可以取得應用程式啟動時的起點。
 
