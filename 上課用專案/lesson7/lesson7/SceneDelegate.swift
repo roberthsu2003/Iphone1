@@ -16,19 +16,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //UIWindow的實體會被指定給window屬性
         guard let _ = (scene as? UIWindowScene) else { return }
         print("window已經顯示!")
-        window!.rootViewController!.view.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
-        
-        var myString:String?
-        //optional binding
-        //if let =
-        
-        if let newString = myString {
-            //myString內有值
-            print(newString.count)
+        //window!.rootViewController!.view.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+        /*
+        if let window = window{
+            if let viewController = window.rootViewController{
+                viewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+            }else{
+                print("rootViewController是nil")
+            }
         }else{
-            //myString是nil
-            print("myString是nil")
+            print("window是nil")
         }
+         */
+        //提早離開
+        guard let window = window else{
+            print("window是nil")
+            return
+        }
+        
+        guard let viewController = window.rootViewController else{
+            print("rootViewController是nil")
+            return
+        }
+        
+        viewController.view.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        
         
     }
 
