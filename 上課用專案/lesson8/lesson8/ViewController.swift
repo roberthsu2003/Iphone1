@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         centerButton.setTitle("請按中心按鈕", for: UIControl.State.normal)
+        centerButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
 
