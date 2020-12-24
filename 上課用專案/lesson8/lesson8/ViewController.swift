@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        centerButton.setTitle("請按中心按鈕", for: UIControl.State.normal)
     }
 
 
