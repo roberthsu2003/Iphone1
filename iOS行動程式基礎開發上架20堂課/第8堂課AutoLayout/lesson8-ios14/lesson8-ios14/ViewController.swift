@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  lesson7
+//  lesson8-ios14
 //
-//  Created by 徐國堂 on 2020/12/22.
+//  Created by 徐國堂 on 2020/12/24.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = UIColor(red: 0, green: 1.0, blue: 0, alpha: 1)
+        // Do any additional setup after loading the view.
     }
 
 

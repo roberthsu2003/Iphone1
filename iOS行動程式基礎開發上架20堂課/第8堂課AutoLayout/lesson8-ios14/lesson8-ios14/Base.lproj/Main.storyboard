@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson8_ios14" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-s1-ebw">
+                                <rect key="frame" x="30" y="94" width="200" height="45"/>
+                                <color key="backgroundColor" red="0.57446697846124872" green="0.82089296321278993" blue="0.20722791458320153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="N2m-IU-v8j"/>
+                                    <constraint firstAttribute="height" constant="45" id="u6d-eF-WsS"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="固定寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYw-Ep-BLv">
+                                <rect key="frame" x="30" y="189" width="142.66666666666666" height="45"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gFf-ch-ogM"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="相同寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-s2-Lny">
+                                <rect key="frame" x="202.66666666666663" y="189" width="142.33333333333337" height="45"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="KLA-4K-8zI"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="相同寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2S9-Sd-NUR">
+                                <rect key="frame" x="30" y="284" width="137.66666666666666" height="45"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Mnc-1V-zvJ"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="2倍寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7M-dW-2HH">
+                                <rect key="frame" x="187.66666666666666" y="284" width="68.666666666666657" height="45"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="q9d-PV-63z"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="1倍寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBh-Sf-T8e">
+                                <rect key="frame" x="276.33333333333331" y="284" width="68.666666666666686" height="45"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6Wn-Jp-sk9"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="1倍寬"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2L-Mt-75n">
+                                <rect key="frame" x="50" y="379" width="275" height="124"/>
+                                <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="C2L-Mt-75n" secondAttribute="height" multiplier="275:124" id="vGX-9T-m0x"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="等比例寬高"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gwg-s2-Lny" firstAttribute="top" secondItem="TmT-s1-ebw" secondAttribute="bottom" constant="50" id="0Vc-RE-jo8"/>
+                            <constraint firstItem="TmT-s1-ebw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="4AP-KA-Tr4"/>
+                            <constraint firstItem="MYw-Ep-BLv" firstAttribute="top" secondItem="TmT-s1-ebw" secondAttribute="bottom" constant="50" id="4ep-dI-4Ek"/>
+                            <constraint firstItem="Q7M-dW-2HH" firstAttribute="leading" secondItem="2S9-Sd-NUR" secondAttribute="trailing" constant="20" id="76n-WE-DoM"/>
+                            <constraint firstItem="MYw-Ep-BLv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9NM-6W-Rx7"/>
+                            <constraint firstItem="gwg-s2-Lny" firstAttribute="leading" secondItem="MYw-Ep-BLv" secondAttribute="trailing" constant="30" id="9hk-tO-UPD"/>
+                            <constraint firstItem="gwg-s2-Lny" firstAttribute="width" secondItem="MYw-Ep-BLv" secondAttribute="width" id="A3B-v2-r5B"/>
+                            <constraint firstItem="C2L-Mt-75n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="BKw-r5-gUY"/>
+                            <constraint firstItem="Q7M-dW-2HH" firstAttribute="top" secondItem="gwg-s2-Lny" secondAttribute="bottom" constant="50" id="EIl-0f-7Yb"/>
+                            <constraint firstItem="Q7M-dW-2HH" firstAttribute="width" secondItem="2S9-Sd-NUR" secondAttribute="width" multiplier="1:2" id="IoB-3L-LiH"/>
+                            <constraint firstItem="2S9-Sd-NUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="PWg-IF-6pQ"/>
+                            <constraint firstItem="2S9-Sd-NUR" firstAttribute="top" secondItem="MYw-Ep-BLv" secondAttribute="bottom" constant="50" id="QVb-pz-8ub"/>
+                            <constraint firstItem="ZBh-Sf-T8e" firstAttribute="top" secondItem="MYw-Ep-BLv" secondAttribute="bottom" constant="50" id="SY2-vd-8Ob"/>
+                            <constraint firstItem="ZBh-Sf-T8e" firstAttribute="leading" secondItem="Q7M-dW-2HH" secondAttribute="trailing" constant="20" id="WRg-zb-G0a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gwg-s2-Lny" secondAttribute="trailing" constant="30" id="ZqF-9a-91s"/>
+                            <constraint firstItem="C2L-Mt-75n" firstAttribute="top" secondItem="2S9-Sd-NUR" secondAttribute="bottom" constant="50" id="fil-zQ-0Zm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C2L-Mt-75n" secondAttribute="trailing" constant="50" id="jrS-rz-oTh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZBh-Sf-T8e" secondAttribute="trailing" constant="30" id="m0b-aF-W9k"/>
+                            <constraint firstItem="ZBh-Sf-T8e" firstAttribute="width" secondItem="Q7M-dW-2HH" secondAttribute="width" id="qoq-Ui-uwd"/>
+                            <constraint firstItem="TmT-s1-ebw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vtt-Hs-TWm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="118.96551724137932"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
