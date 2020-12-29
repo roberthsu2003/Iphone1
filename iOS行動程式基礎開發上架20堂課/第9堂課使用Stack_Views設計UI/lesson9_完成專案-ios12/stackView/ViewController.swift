@@ -9,18 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var titleLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func leffButtonPress(_ sender:UIButton){
-        print("press Left Button");
+        titleLabel.text = "press Left Button"
     }
     
     @IBAction func rightButtonPress(_ sender:UIButton){
-        print("press Right Button");
+        titleLabel.text = "press Right Button"
     }
 
 

@@ -66,6 +66,9 @@
                             <constraint firstItem="j4I-Kg-LOg" firstAttribute="trailing" secondItem="HIf-9v-RJN" secondAttribute="trailing" constant="30" id="vEH-6H-ohw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="lap-s7-8Fl" id="Dt6-lE-WcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXQ-wU-FmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

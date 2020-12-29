@@ -9,5 +9,27 @@
 
 ![](./images/pic1.png)
 
-## 使用IBOutlet屬性介面
-## 使用IBAction行為介面
+## 使用IBOutlet屬性介面,IBAction行為介面
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet var titleLabel:UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func leffButtonPress(_ sender:UIButton){
+        titleLabel.text = "press Left Button"
+    }
+    
+    @IBAction func rightButtonPress(_ sender:UIButton){
+        titleLabel.text = "press Right Button"
+    }
+
+
+}
+```
