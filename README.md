@@ -6,4 +6,4 @@
 
 3. [Stack Views](./iOS行動程式基礎開發上架20堂課/第9堂課使用Stack_Views設計UI/README.md)
 
-4. [建立以表格為基礎的App](./第10堂課建立以表格為基礎的App/README.md)
+4. [建立以表格為基礎的App](./iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/README.md)
