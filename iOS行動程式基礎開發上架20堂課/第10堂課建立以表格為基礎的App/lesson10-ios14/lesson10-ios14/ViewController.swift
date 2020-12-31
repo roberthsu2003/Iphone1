@@ -33,7 +33,14 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+        let rowIndex = indexPath.row
+        let cityDic = cities[rowIndex]
+        let cityName = cityDic["City"] as? String ?? "NoName";
+        let imageName = cityDic["Image"] as? String ?? "NoImage"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = cityName
+        cell.imageView!.image = UIImage(named: imageName)
+        return cell
     }
 }
 

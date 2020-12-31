@@ -17,15 +17,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oCc-6b-NY7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL" id="wRw-YG-vIJ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wRw-YG-vIJ" id="MjN-c4-UDB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oCc-6b-NY7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JbA-EI-qAS"/>
-                            <constraint firstItem="oCc-6b-NY7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="Lzz-Dh-770"/>
+                            <constraint firstItem="oCc-6b-NY7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lzz-Dh-770"/>
                             <constraint firstAttribute="bottom" secondItem="oCc-6b-NY7" secondAttribute="bottom" id="btz-HG-gEH"/>
                             <constraint firstItem="oCc-6b-NY7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pU9-tb-iQf"/>
                         </constraints>

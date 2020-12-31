@@ -1,5 +1,7 @@
 # 第10堂課建立以表格為基礎的App
 
+![](./images/pic1.png)
+
 ## 解析citylist.plist檔內的資料
 
 1. 將資源檔內的citylist.plist加入至專案中
@@ -72,14 +74,14 @@ class ViewController: UIViewController {
 
 ## 建立UITableView要顯示的資料
 
-6. ViewController 採納UITableViewDataSource protocol
+1. ViewController 採納 UITableViewDataSource protocol
 
 ```swift
 class ViewController: UIViewController,UITableViewDataSource{
 }
 ```
 
-7. 實作UITableViewDataSource Protocol 內必要的2個method
+2. 實作UITableViewDataSource Protocol 內必要的2個method
 	- func tableView(_ tableView: UITableView, 
 numberOfRowsInSection section: Int) -> Int
 
@@ -98,7 +100,8 @@ numberOfRowsInSection section: Int) -> Int
     }
  ``` 
  
- 8. 告知tableView我們需要顯示的Row的數量
+ 
+3. 告知tableView我們需要顯示的Row的數量
 
 ```swift
 func tableView(_ tableView: UITableView,
@@ -107,6 +110,88 @@ func tableView(_ tableView: UITableView,
     }
 ```
 
-9. 
+## 產生UITableViewCell
 
-- 在Cell內加入圖片
+1. 將storyboard內的UITableView新增一個Prototype Cell,並將cell的identifier改為CELL
+2. 取出cities內的資料，並建立UITableViewCell，將資料加入至cell內
+
+```swift
+func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let rowIndex = indexPath.row
+        let cityDic = cities[rowIndex]
+        let cityName = cityDic["City"] as? String ?? "NoName";
+        let imageName = cityDic["Image"] as? String ?? "NoImage"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel!.text = cityName
+        cell.imageView!.image = UIImage(named: imageName)
+        return cell
+    }
+```
+
+## ViewController.swift內容
+
+```swift
+//
+//  ViewController.swift
+//  lesson10-ios14
+//
+//  Created by 徐國堂 on 2020/12/31.
+//
+
+import UIKit
+
+class ViewController: UIViewController,UITableViewDataSource {
+    @IBOutlet var cityTableView:UITableView!
+    var cities:[[String:Any]]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //利用Bundle.main載入Bundle內的citylist.plist
+        let bundle = Bundle.main;
+        guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
+            print("沒有發現些檔案")
+            return
+        }
+        
+        cities = NSArray(contentsOf: pathURL) as? [[String:Any]]
+        
+        cityTableView.dataSource = self;
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        //取出目前要顯示的row索引編號
+        let rowIndex = indexPath.row
+        
+        //取出城市資料
+        let cityDic = cities[rowIndex]
+        
+        //取出城市名稱
+        let cityName = cityDic["City"] as? String ?? "NoName";
+        
+        //取出圖片名稱
+        let imageName = cityDic["Image"] as? String ?? "NoImage"
+        
+        //透過prototype建立UITableViewCell實體
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        
+        //將資料加入至cell內
+        cell.textLabel!.text = cityName
+        cell.imageView!.image = UIImage(named: imageName)
+        return cell
+    }
+}
+
+
+```
+
+
+
+
