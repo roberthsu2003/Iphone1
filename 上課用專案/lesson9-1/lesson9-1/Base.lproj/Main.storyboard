@@ -113,12 +113,18 @@
                                         <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Left"/>
+                                        <connections>
+                                            <action selector="leftClick:" destination="P9G-pG-Qtt" eventType="touchUpInside" id="137-vx-xsC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3y-zJ-fKe">
                                         <rect key="frame" x="145" y="0.0" width="95" height="45"/>
                                         <color key="backgroundColor" red="0.57446697849999995" green="0.82089296320000005" blue="0.20722791460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Right"/>
+                                        <connections>
+                                            <action selector="rightClick:" destination="P9G-pG-Qtt" eventType="touchUpInside" id="fsy-Gs-Gqo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -141,8 +147,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="leftButton" destination="wW0-qp-Fnd" id="kGs-wn-XNA"/>
-                        <outlet property="rightButton" destination="q3y-zJ-fKe" id="Nhh-3N-GrN"/>
                         <outlet property="titleLabel" destination="JoV-ES-dEk" id="SZz-29-2gl"/>
                     </connections>
                 </viewController>
