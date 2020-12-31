@@ -1,6 +1,6 @@
 # 第10堂課建立以表格為基礎的App
 
-## 將array資料從plist檔取出
+## 解析citylist.plist檔內的資料
 
 1. 將資源檔內的citylist.plist加入至專案中
 2. 將資源檔內的cityImage資料夾內的圖片加入至Assets內
@@ -69,6 +69,8 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+## 建立UITableView要顯示的資料
 
 6. ViewController 採納UITableViewDataSource protocol
 
