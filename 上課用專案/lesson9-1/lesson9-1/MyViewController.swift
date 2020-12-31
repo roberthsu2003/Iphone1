@@ -8,7 +8,10 @@
 import UIKit
 
 class MyViewController: UIViewController {
-
+    @IBOutlet var titleLabel:UILabel!
+    @IBOutlet var leftButton:UIButton!
+    @IBOutlet var rightButton:UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //再多做一些自已要做的功能事
