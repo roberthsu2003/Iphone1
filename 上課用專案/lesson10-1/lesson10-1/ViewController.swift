@@ -15,8 +15,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let bundle = Bundle.main
-        let pathUrl = bundle.url(forResource: "citylist", withExtension: "plist")!
-        print(pathUrl.absoluteString)
+        guard let pathUrl = bundle.url(forResource: "citylist", withExtension: "plist") else{
+            print("程式出錯了")
+            return
+        }
+        
+        let tempArray = NSArray(contentsOf: pathUrl)
+        cities = tempArray as? [[String:Any]]
+        print(cities)
+        
+        
+        
+        
         
     }
 
