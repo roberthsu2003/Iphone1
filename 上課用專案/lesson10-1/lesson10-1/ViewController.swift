@@ -47,6 +47,7 @@ class ViewController: UIViewController,UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = cities[row]["City"] as? String
+        content.secondaryText = cities[row]["Country"] as? String
         cell.contentConfiguration = content
         
         return cell
