@@ -23,6 +23,7 @@ class ViewController: UIViewController,UITableViewDataSource {
         
         let tempArray = NSArray(contentsOf: pathUrl)
         cities = tempArray as? [[String:Any]]
+        print(cities[0]["City"] as! String)
     }
         
     override func viewDidLoad() {
@@ -42,7 +43,8 @@ class ViewController: UIViewController,UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath)
-        cell.textLabel!.text = String(indexPath.row + 1)
+        let row = indexPath.row
+        cell.textLabel!.text = cities[row]["City"] as? String
         return cell
         
     }
