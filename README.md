@@ -9,3 +9,5 @@
 4. [建立以表格為基礎的App](./iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/README.md)
 
 5. [使用原型儲存格建立自訂的TableView](./iOS行動程式基礎開發上架20堂課/第11堂課使用原型儲存格建立自訂的TableView/README.md)
+
+6. [第13堂課使用UIAlertController和使用者互動](./iOS行動程式基礎開發上架20堂課/第13堂課使用UIAlertController和使用者互動/README.md)
