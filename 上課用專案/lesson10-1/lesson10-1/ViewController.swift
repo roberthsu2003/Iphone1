@@ -27,36 +27,24 @@ class ViewController: UIViewController,UITableViewDataSource {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         cityTableView.dataSource = self
-       
-        for city in cities{
-            print(city)
-        }
-        
+                       
     }
     
-    override func viewWillAppear(_ animated: Bool){
-        super.viewWillAppear(animated)
-        
-        print("view要出現了")
-    }
     
-    override func viewDidAppear(_ animated: Bool){
-        super.viewDidAppear(animated)
-        print("view已經出現了")
-    }
+    //UITableViewDataSource
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 100;
+        return cities.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "Hello! World!"
-        return cell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath)
+        cell.textLabel!.text = String(indexPath.row + 1)
+        return cell
+        
     }
 
 
