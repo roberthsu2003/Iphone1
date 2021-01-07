@@ -44,7 +44,11 @@ class ViewController: UIViewController,UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath)
         let row = indexPath.row
-        cell.textLabel!.text = cities[row]["City"] as? String
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = cities[row]["City"] as? String
+        cell.contentConfiguration = content
+        
         return cell
         
     }
