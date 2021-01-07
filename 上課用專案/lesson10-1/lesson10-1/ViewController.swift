@@ -13,12 +13,8 @@ class ViewController: UIViewController,UITableViewDataSource {
     //如果使用type!,代表暫時是nil,第一下就有值
     var cities:[[String:Any]]!
     
-
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("viewDidLoad")
-        cityTableView.dataSource = self
+    override func loadView() {
+        super.loadView();
         let bundle = Bundle.main
         guard let pathUrl = bundle.url(forResource: "citylist", withExtension: "plist") else{
             print("程式出錯了")
@@ -27,10 +23,16 @@ class ViewController: UIViewController,UITableViewDataSource {
         
         let tempArray = NSArray(contentsOf: pathUrl)
         cities = tempArray as? [[String:Any]]
+    }
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("viewDidLoad")
+        cityTableView.dataSource = self
+       
         for city in cities{
             print(city)
         }
-        
         
     }
     
