@@ -48,7 +48,12 @@ class ViewController: UIViewController,UITableViewDataSource {
         var content = cell.defaultContentConfiguration()
         content.text = cities[row]["City"] as? String
         content.secondaryText = cities[row]["Country"] as? String
+        /*
+        let imageName = cities[row]["Image"] as! String
+        content.image = UIImage(named: imageName)
+        */
         cell.contentConfiguration = content
+        
         
         return cell
         
