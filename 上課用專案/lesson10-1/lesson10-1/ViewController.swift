@@ -13,8 +13,11 @@ class ViewController: UIViewController,UITableViewDataSource {
     //如果使用type!,代表暫時是nil,第一下就有值
     var cities:[[String:Any]]!
     
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         cityTableView.dataSource = self
         let bundle = Bundle.main
         guard let pathUrl = bundle.url(forResource: "citylist", withExtension: "plist") else{
@@ -29,6 +32,17 @@ class ViewController: UIViewController,UITableViewDataSource {
         }
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        
+        print("view要出現了")
+    }
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        print("view已經出現了")
     }
     
     func tableView(_ tableView: UITableView,
