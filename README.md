@@ -11,3 +11,5 @@
 5. [使用原型儲存格建立自訂的TableView](./iOS行動程式基礎開發上架20堂課/第11堂課使用原型儲存格建立自訂的TableView/README.md)
 
 6. [使用UIAlertController和使用者互動](./iOS行動程式基礎開發上架20堂課/第13堂課使用UIAlertController和使用者互動/README.md)
+
+7. [儲存格的刪除和自訂功能按鈕](./iOS行動程式基礎開發上架20堂課/第14堂課儲存格的刪除和自訂功能按鈕/README.md)
