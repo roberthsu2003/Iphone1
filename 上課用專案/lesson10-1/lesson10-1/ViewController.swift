@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     //如果使用type!,代表暫時是nil,第一下就有值
     var cities:[[String:Any]]!
     
+   
     override func loadView() {
         super.loadView();
         let bundle = Bundle.main
@@ -42,20 +43,18 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath)
-        let row = indexPath.row
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as! CityCell
+        let imageName = city["Image"] as! String
         
-        var content = cell.defaultContentConfiguration()
-        content.text = cities[row]["City"] as? String
-        content.secondaryText = cities[row]["Country"] as? String
-        /*
-        let imageName = cities[row]["Image"] as! String
-        content.image = UIImage(named: imageName)
-        */
-        cell.contentConfiguration = content
+        cell.cityImageView.image = UIImage(named: imageName)
+        
+        return cell;
+       
         
         
-        return cell
+        
         
     }
 
