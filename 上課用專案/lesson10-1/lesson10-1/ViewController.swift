@@ -46,15 +46,16 @@ class ViewController: UIViewController,UITableViewDataSource {
         let rowIndex = indexPath.row
         let city = cities[rowIndex]
         var cell:CityCell!
-        if rowIndex % 2 == 0{
-            cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as? CityCell
-        }else{
-           cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL1", for: indexPath) as? CityCell
-        }
+        cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as? CityCell
+       
         
         let imageName = city["Image"] as! String
         
         cell.cityImageView.image = UIImage(named: imageName)
+        
+        cell.cityLabel.text = nil;
+        cell.countryLabel.text = nil;
+        cell.continentLabel.text = nil;
         
         return cell;
        

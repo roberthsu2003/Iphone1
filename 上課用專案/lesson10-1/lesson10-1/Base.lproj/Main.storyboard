@@ -34,14 +34,44 @@
                                                         <constraint firstAttribute="height" constant="80" id="K2O-YF-HC6"/>
                                                     </constraints>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="6zm-8P-2Qx">
+                                                    <rect key="frame" x="120" y="11" width="214" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-RB-flc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-EK-2YA">
+                                                            <rect key="frame" x="0.0" y="29" width="214" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9l6-uF-sfy">
+                                                            <rect key="frame" x="0.0" y="58" width="214" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="6zm-8P-2Qx" firstAttribute="bottom" secondItem="Brx-zA-Cj1" secondAttribute="bottom" id="DQQ-uA-MhN"/>
+                                                <constraint firstItem="6zm-8P-2Qx" firstAttribute="leading" secondItem="Brx-zA-Cj1" secondAttribute="trailing" constant="24" id="Kmn-HI-fzy"/>
+                                                <constraint firstItem="6zm-8P-2Qx" firstAttribute="top" secondItem="Brx-zA-Cj1" secondAttribute="top" id="MIx-uV-eFT"/>
                                                 <constraint firstItem="Brx-zA-Cj1" firstAttribute="leading" secondItem="T7S-cL-ySp" secondAttribute="leading" constant="16" id="PUT-zI-KZo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6zm-8P-2Qx" secondAttribute="trailing" constant="25" id="UQx-gx-98G"/>
                                                 <constraint firstItem="Brx-zA-Cj1" firstAttribute="top" secondItem="T7S-cL-ySp" secondAttribute="top" constant="11" id="a7a-v4-fGW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityImageView" destination="Brx-zA-Cj1" id="wyY-4X-gwW"/>
+                                            <outlet property="cityLabel" destination="EmO-RB-flc" id="vBt-sq-eTy"/>
+                                            <outlet property="continentLabel" destination="9l6-uF-sfy" id="ToB-zq-b0i"/>
+                                            <outlet property="countryLabel" destination="wyn-EK-2YA" id="Q5y-hx-Bx6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MYCELL1" rowHeight="100" id="son-jd-Efe" customClass="CityCell" customModule="lesson10_1" customModuleProvider="target">

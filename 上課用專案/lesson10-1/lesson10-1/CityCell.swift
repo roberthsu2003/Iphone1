@@ -9,6 +9,9 @@ import UIKit
 
 class CityCell: UITableViewCell {
     @IBOutlet var cityImageView:UIImageView!
+    @IBOutlet var countryLabel:UILabel!
+    @IBOutlet var continentLabel:UILabel!
+    @IBOutlet var cityLabel:UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
