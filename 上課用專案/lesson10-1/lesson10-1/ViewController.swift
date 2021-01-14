@@ -48,14 +48,15 @@ class ViewController: UIViewController,UITableViewDataSource {
         var cell:CityCell!
         cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as? CityCell
        
-        
+        //image
         let imageName = city["Image"] as! String
-        
         cell.cityImageView.image = UIImage(named: imageName)
         
-        cell.cityLabel.text = nil;
-        cell.countryLabel.text = nil;
-        cell.continentLabel.text = nil;
+        //cityname
+        
+        cell.cityLabel.text = city["City"] as? String
+        cell.countryLabel.text = city["Country"] as? String
+        cell.continentLabel.text = city["Continent"] as? String
         
         return cell;
        
