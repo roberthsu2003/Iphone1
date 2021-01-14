@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var cityTableView:UITableView!
     //要依據plist的架構來設定cities的資料類型
     //如果使用type!,代表暫時是nil,第一下就有值
@@ -30,7 +30,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         cityTableView.dataSource = self
-                       
+        cityTableView.delegate = self
     }
     
     
@@ -61,12 +61,16 @@ class ViewController: UIViewController,UITableViewDataSource {
         cell.continentLabel.text = city["Continent"] as? String
         
         return cell;
-       
-        
-        
-        
         
     }
+    
+    //UITableViewDelegate
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        print("您現在按到的row是\(indexPath.row)")
+    }
+    
+    
 
 
 }
