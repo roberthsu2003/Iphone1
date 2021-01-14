@@ -51,6 +51,8 @@ class ViewController: UIViewController,UITableViewDataSource {
         //image
         let imageName = city["Image"] as! String
         cell.cityImageView.image = UIImage(named: imageName)
+        cell.cityImageView.layer.cornerRadius = 40.0
+        //cell.cityImageView.layer.masksToBounds = true;
         
         //cityname
         
