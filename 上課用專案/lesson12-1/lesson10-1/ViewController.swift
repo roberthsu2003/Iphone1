@@ -76,7 +76,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         //在actionSheet內，再加入一個UIAlertAction
         let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){(action:UIAlertAction) -> Void in
-            print("callAction")
+            let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessage, animated: true, completion: nil)
         }
         
         optionMenu.addAction(callAction)
