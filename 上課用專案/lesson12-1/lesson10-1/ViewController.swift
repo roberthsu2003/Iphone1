@@ -88,12 +88,28 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         optionMenu.addAction(callAction)
         
+        //增加標示選項
+        var titleName:String!;
+        if self.cityIsMarked[indexPath.row]{
+            titleName = "取消標示"
+        }else{
+            titleName = "標示"
+        }
         
-        let chekInMark = UIAlertAction(title: "標示", style: .default){
+        let chekInMark = UIAlertAction(title: titleName, style: .default){
             (action:UIAlertAction) -> Void in
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-            self.cityIsMarked[indexPath.row] = true;
+            switch titleName{
+            case "取消標示":
+                cell?.accessoryType = .none
+                self.cityIsMarked[indexPath.row] = false;
+            case "標示":
+                cell?.accessoryType = .checkmark
+                self.cityIsMarked[indexPath.row] = true;
+            default:
+                break
+            }
+            
         }
         
         optionMenu.addAction(chekInMark)
