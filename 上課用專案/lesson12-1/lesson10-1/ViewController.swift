@@ -12,6 +12,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //要依據plist的架構來設定cities的資料類型
     //如果使用type!,代表暫時是nil,第一下就有值
     var cities:[[String:Any]]!
+    var cityIsMarked:[Bool]!
     
    
     override func loadView() {
@@ -24,7 +25,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let tempArray = NSArray(contentsOf: pathUrl)
         cities = tempArray as? [[String:Any]]
-        print(cities[0]["City"] as! String)
+        cityIsMarked = Array(repeating: false, count: cities.count)
     }
         
     override func viewDidLoad() {
@@ -59,7 +60,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.cityLabel.text = city["City"] as? String
         cell.countryLabel.text = city["Country"] as? String
         cell.continentLabel.text = city["Continent"] as? String
-        
+        if cityIsMarked[rowIndex]{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
         return cell;
         
     }
@@ -82,6 +87,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
         
         optionMenu.addAction(callAction)
+        
+        
+        let chekInMark = UIAlertAction(title: "標示", style: .default){
+            (action:UIAlertAction) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+            self.cityIsMarked[indexPath.row] = true;
+        }
+        
+        optionMenu.addAction(chekInMark)
         
         self.present(optionMenu, animated: true, completion: nil)
     }
