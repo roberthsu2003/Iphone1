@@ -72,8 +72,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let cancelAction = UIAlertAction(title: "取消", style: .default, handler: nil)
         
         optionMenu.addAction(cancelAction)
-        self.present(optionMenu, animated: true, completion: nil)
         
+        
+        //在actionSheet內，再加入一個UIAlertAction
+        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){(action:UIAlertAction) -> Void in
+            print("callAction")
+        }
+        
+        optionMenu.addAction(callAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     
