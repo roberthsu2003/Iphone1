@@ -67,7 +67,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //UITableViewDelegate
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle:.actionSheet)
         
         let cancelAction = UIAlertAction(title: "取消", style: .default, handler: nil)
         

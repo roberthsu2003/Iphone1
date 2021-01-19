@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		9316B6C325ADD1B0009874BA /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
-		936960D825A492DC00573BAA /* lesson11-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson11-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		936960D825A492DC00573BAA /* lesson12-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson12-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		936960DB25A492DC00573BAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936960DD25A492DC00573BAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		936960DF25A492DC00573BAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		936960D925A492DC00573BAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				936960D825A492DC00573BAA /* lesson11-1.app */,
+				936960D825A492DC00573BAA /* lesson12-1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		936960D725A492DC00573BAA /* lesson11-1 */ = {
+		936960D725A492DC00573BAA /* lesson12-1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 936960EC25A492DE00573BAA /* Build configuration list for PBXNativeTarget "lesson11-1" */;
+			buildConfigurationList = 936960EC25A492DE00573BAA /* Build configuration list for PBXNativeTarget "lesson12-1" */;
 			buildPhases = (
 				936960D425A492DC00573BAA /* Sources */,
 				936960D525A492DC00573BAA /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = "lesson11-1";
+			name = "lesson12-1";
 			productName = "lesson10-1";
-			productReference = 936960D825A492DC00573BAA /* lesson11-1.app */;
+			productReference = 936960D825A492DC00573BAA /* lesson12-1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 936960D325A492DC00573BAA /* Build configuration list for PBXProject "lesson11-1" */;
+			buildConfigurationList = 936960D325A492DC00573BAA /* Build configuration list for PBXProject "lesson12-1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -120,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				936960D725A492DC00573BAA /* lesson11-1 */,
+				936960D725A492DC00573BAA /* lesson12-1 */,
 			);
 		};
 /* End PBXProject section */
@@ -328,7 +328,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		936960D325A492DC00573BAA /* Build configuration list for PBXProject "lesson11-1" */ = {
+		936960D325A492DC00573BAA /* Build configuration list for PBXProject "lesson12-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				936960EA25A492DE00573BAA /* Debug */,
@@ -337,7 +337,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		936960EC25A492DE00573BAA /* Build configuration list for PBXNativeTarget "lesson11-1" */ = {
+		936960EC25A492DE00573BAA /* Build configuration list for PBXNativeTarget "lesson12-1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				936960ED25A492DE00573BAA /* Debug */,
