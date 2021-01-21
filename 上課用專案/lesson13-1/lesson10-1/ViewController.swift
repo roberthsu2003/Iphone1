@@ -131,9 +131,33 @@ extension ViewController:UITableViewDelegate{
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    @available(iOS 8.0, *)
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
+        let shareAction = UITableViewRowAction(style: .default, title: "分享") { (action:UITableViewRowAction, indexPath:IndexPath) in
+            print("share")
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "刪除") { (action:UITableViewRowAction, indexPath:IndexPath) in
+            
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            print("現在剩下的資料還有\(self.cities.count)")
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255.0, blue: 202.0/255.0, alpha: 1.0)
+        return [shareAction, deleteAction]
+    }
+    
+    @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
         return nil
     }
+    
+    
 }
 
