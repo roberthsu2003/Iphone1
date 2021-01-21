@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         cityTableView.delegate = self
     }
     
+    
+    
 }
 
 extension ViewController:UITableViewDataSource{
@@ -73,8 +75,14 @@ extension ViewController:UITableViewDataSource{
                      commit editingStyle: UITableViewCell.EditingStyle,
                      forRowAt indexPath: IndexPath){
         //刪除tableView的row
-        print(cities[indexPath.row])
+        if editingStyle == .delete {
+            cities.remove(at: indexPath.row)
+            cityIsMarked.remove(at: indexPath.row)
+            print("現在剩下的資料還有\(cities.count)")
+            tableView.deleteRows(at: [indexPath], with: .automatic)           
+        }
     }
+    
 }
 
 extension ViewController:UITableViewDelegate{
