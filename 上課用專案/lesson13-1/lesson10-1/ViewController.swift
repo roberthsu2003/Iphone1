@@ -68,6 +68,13 @@ extension ViewController:UITableViewDataSource{
         return cell;
         
     }
+    
+    func tableView(_ tableView: UITableView,
+                     commit editingStyle: UITableViewCell.EditingStyle,
+                     forRowAt indexPath: IndexPath){
+        //刪除tableView的row
+        print(cities[indexPath.row])
+    }
 }
 
 extension ViewController:UITableViewDelegate{
