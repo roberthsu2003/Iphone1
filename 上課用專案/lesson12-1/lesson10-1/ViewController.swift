@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet var cityTableView:UITableView!
     //要依據plist的架構來設定cities的資料類型
     //如果使用type!,代表暫時是nil,第一下就有值
@@ -34,9 +34,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cityTableView.delegate = self
     }
     
-    
-    //UITableViewDataSource
-    
+}
+
+extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
         return cities.count
@@ -68,8 +68,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell;
         
     }
-    
-    //UITableViewDelegate
+}
+
+extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
         let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle:.actionSheet)
@@ -116,9 +117,5 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         self.present(optionMenu, animated: true, completion: nil)
     }
-    
-    
-
-
 }
 
