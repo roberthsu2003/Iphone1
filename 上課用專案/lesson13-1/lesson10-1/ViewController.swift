@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     @IBOutlet var cityTableView:UITableView!
     //要依據plist的架構來設定cities的資料類型
     //如果使用type!,代表暫時是nil,第一下就有值
@@ -33,8 +33,6 @@ class ViewController: UIViewController {
         cityTableView.dataSource = self
         cityTableView.delegate = self
     }
-    
-    
     
 }
 
@@ -79,7 +77,7 @@ extension ViewController:UITableViewDataSource{
             cities.remove(at: indexPath.row)
             cityIsMarked.remove(at: indexPath.row)
             print("現在剩下的資料還有\(cities.count)")
-            tableView.deleteRows(at: [indexPath], with: .automatic)           
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
@@ -131,6 +129,11 @@ extension ViewController:UITableViewDelegate{
         optionMenu.addAction(chekInMark)
         
         self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        return nil
     }
 }
 
