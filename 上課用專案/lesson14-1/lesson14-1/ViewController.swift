@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     
     @IBAction func redClick(_ sender:UIBarButtonItem){
         let redViewController = RedViewController()
+        redViewController.view.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+        redViewController.modalPresentationStyle = .formSheet
+        redViewController.modalTransitionStyle = .coverVertical
         self.present(redViewController, animated: true, completion: nil)
     }
 
