@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func redClick(_ sender:UIBarButtonItem){
-        print("red")
+        let redViewController = RedViewController()
+        self.present(redViewController, animated: true, completion: nil)
     }
 
 
