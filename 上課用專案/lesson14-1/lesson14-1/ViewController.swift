@@ -15,7 +15,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func yellowClick(_ sender:UIBarButtonItem){
-        print("yellow")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let yellowController = storyboard.instantiateViewController(withIdentifier: "yController") as? YellowViewController
+        
+        yellowController?.modalPresentationStyle = .fullScreen
+        yellowController?.modalTransitionStyle = .coverVertical
+        self.present(yellowController!, animated: true, completion: nil)
+        
     }
     
     @IBAction func redClick(_ sender:UIBarButtonItem){

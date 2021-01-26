@@ -47,22 +47,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-625" y="1"/>
+            <point key="canvasLocation" x="-604" y="-19"/>
         </scene>
         <!--Yellow View Controller-->
         <scene sceneID="7k8-P5-T10">
             <objects>
-                <viewController id="OCd-si-0LX" customClass="YellowViewController" customModule="lesson14_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yController" id="OCd-si-0LX" customClass="YellowViewController" customModule="lesson14_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zib-bl-7Yc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-2R-8qY">
+                                <rect key="frame" x="46" y="125" width="264" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oci-y4-e19"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="fCP-2R-8qY" firstAttribute="top" secondItem="oci-y4-e19" secondAttribute="top" constant="81" id="2oV-4i-DqZ"/>
+                            <constraint firstItem="oci-y4-e19" firstAttribute="trailing" secondItem="fCP-2R-8qY" secondAttribute="trailing" constant="65" id="Jk6-KW-gTe"/>
+                            <constraint firstItem="fCP-2R-8qY" firstAttribute="leading" secondItem="oci-y4-e19" secondAttribute="leading" constant="46" id="vQI-uB-ift"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skL-7N-ckN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="1"/>
+            <point key="canvasLocation" x="250" y="-19"/>
         </scene>
     </scenes>
     <resources>
