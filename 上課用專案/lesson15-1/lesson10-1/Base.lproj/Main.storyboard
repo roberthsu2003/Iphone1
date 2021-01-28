@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-2321" y="-86"/>
         </scene>
-        <!--View Controller-->
+        <!--世界城市-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson15_1" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,13 @@
                             <constraint firstItem="WSI-nv-xQg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dkw-nZ-TgU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RoT-dY-m3i"/>
+                    <navigationItem key="navigationItem" title="世界城市" id="RoT-dY-m3i">
+                        <barButtonItem key="rightBarButtonItem" title="下一頁" id="1SH-sJ-jri">
+                            <connections>
+                                <action selector="nextPage:" destination="BYZ-38-t0r" id="8ch-Gf-XZP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityTableView" destination="WSI-nv-xQg" id="LfN-cu-uBX"/>
                     </connections>

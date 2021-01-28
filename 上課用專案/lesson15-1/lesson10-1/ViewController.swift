@@ -14,7 +14,9 @@ class ViewController: UIViewController{
     var cities:[[String:Any]]!
     var cityIsMarked:[Bool]!
     
-   
+    @IBAction func nextPage(_ button:UIBarButtonItem){
+        print("下一頁")
+    }
     override func loadView() {
         super.loadView();
         let bundle = Bundle.main
@@ -30,13 +32,12 @@ class ViewController: UIViewController{
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "世界城市"
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .reply, target: nil, action: nil),
-            UIBarButtonItem(title: "下一頁", style: .plain, target: nil, action: nil)
-            ]
+        
         cityTableView.dataSource = self
         cityTableView.delegate = self
     }
+    
+    
     
 }
 
