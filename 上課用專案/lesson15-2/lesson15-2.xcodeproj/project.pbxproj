@@ -15,7 +15,7 @@
 		936960E525A492DE00573BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936960E425A492DE00573BAA /* Assets.xcassets */; };
 		936960E825A492DE00573BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936960E625A492DE00573BAA /* LaunchScreen.storyboard */; };
 		936960F225A4993D00573BAA /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 936960F125A4993D00573BAA /* citylist.plist */; };
-		939DEA5825C2E9CF00A489B5 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939DEA5725C2E9CF00A489B5 /* CityViewController.swift */; };
+		939DEA6125C2F7FE00A489B5 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939DEA6025C2F7FE00A489B5 /* CityDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		936960E725A492DE00573BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		936960E925A492DE00573BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936960F125A4993D00573BAA /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
-		939DEA5725C2E9CF00A489B5 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		939DEA6025C2F7FE00A489B5 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,6 @@
 		936960DA25A492DC00573BAA /* lesson10-1 */ = {
 			isa = PBXGroup;
 			children = (
-				939DEA5725C2E9CF00A489B5 /* CityViewController.swift */,
 				936960F125A4993D00573BAA /* citylist.plist */,
 				936960DB25A492DC00573BAA /* AppDelegate.swift */,
 				936960DD25A492DC00573BAA /* SceneDelegate.swift */,
@@ -72,6 +71,7 @@
 				936960E625A492DE00573BAA /* LaunchScreen.storyboard */,
 				936960E925A492DE00573BAA /* Info.plist */,
 				9316B6C325ADD1B0009874BA /* CityCell.swift */,
+				939DEA6025C2F7FE00A489B5 /* CityDetailViewController.swift */,
 			);
 			path = "lesson10-1";
 			sourceTree = "<group>";
@@ -148,10 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				936960E025A492DC00573BAA /* ViewController.swift in Sources */,
-				939DEA5825C2E9CF00A489B5 /* CityViewController.swift in Sources */,
 				936960DC25A492DC00573BAA /* AppDelegate.swift in Sources */,
 				9316B6C425ADD1B0009874BA /* CityCell.swift in Sources */,
 				936960DE25A492DC00573BAA /* SceneDelegate.swift in Sources */,
+				939DEA6125C2F7FE00A489B5 /* CityDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -88,8 +88,11 @@ extension ViewController:UITableViewDataSource{
 }
 
 extension ViewController:UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "goDetail", sender: self)
+        /*
         let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle:.actionSheet)
         
         let cancelAction = UIAlertAction(title: "取消", style: .default, handler: nil)
@@ -133,7 +136,9 @@ extension ViewController:UITableViewDelegate{
         optionMenu.addAction(chekInMark)
         
         self.present(optionMenu, animated: true, completion: nil)
+     */
     }
+ 
     
     @available(iOS 8.0, *)
     func tableView(_ tableView: UITableView,
