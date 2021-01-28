@@ -8,7 +8,7 @@
 import UIKit
 
 class CityViewController: UIViewController {
-
+    @IBOutlet var messageLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -148,13 +148,28 @@
                     <view key="view" contentMode="scaleToFill" id="3On-4j-nE6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgt-8C-oMQ">
+                                <rect key="frame" x="136" y="379.66666666666669" width="103" height="52.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8cv-lg-x1e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cgt-8C-oMQ" firstAttribute="centerX" secondItem="3On-4j-nE6" secondAttribute="centerX" id="tWX-XS-8kh"/>
+                            <constraint firstItem="cgt-8C-oMQ" firstAttribute="centerY" secondItem="3On-4j-nE6" secondAttribute="centerY" id="xzS-9T-jYV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="cgt-8C-oMQ" id="usZ-bC-n2i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4B-vV-ujf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="-86"/>
+            <point key="canvasLocation" x="-814" y="-86"/>
         </scene>
     </scenes>
     <resources>
