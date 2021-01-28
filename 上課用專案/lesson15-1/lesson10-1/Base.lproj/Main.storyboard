@@ -139,7 +139,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1538" y="-86"/>
+            <point key="canvasLocation" x="-1570" y="-86"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="AGP-DV-MMb">
+            <objects>
+                <viewController storyboardIdentifier="cityStoryboard" id="aVl-oZ-3ZC" customClass="CityViewController" customModule="lesson15_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3On-4j-nE6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8cv-lg-x1e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4B-vV-ujf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="-86"/>
         </scene>
     </scenes>
     <resources>

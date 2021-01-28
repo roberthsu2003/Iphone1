@@ -15,8 +15,12 @@ class ViewController: UIViewController{
     var cityIsMarked:[Bool]!
     
     @IBAction func nextPage(_ button:UIBarButtonItem){
-        print("下一頁")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let cityViewController = storyboard.instantiateViewController(identifier: "cityStoryboard") as! CityViewController
+        navigationItem.backButtonTitle = "上一頁"
+        navigationController?.pushViewController(cityViewController, animated: true)
     }
+    
     override func loadView() {
         super.loadView();
         let bundle = Bundle.main
