@@ -30,6 +30,10 @@ class ViewController: UIViewController{
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "世界城市"
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .reply, target: nil, action: nil),
+            UIBarButtonItem(title: "下一頁", style: .plain, target: nil, action: nil)
+            ]
         cityTableView.dataSource = self
         cityTableView.delegate = self
     }
