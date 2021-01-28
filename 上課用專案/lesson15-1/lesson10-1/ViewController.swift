@@ -17,6 +17,7 @@ class ViewController: UIViewController{
     @IBAction func nextPage(_ button:UIBarButtonItem){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let cityViewController = storyboard.instantiateViewController(identifier: "cityStoryboard") as! CityViewController
+        cityViewController.message = "Hello!World!"
         navigationItem.backButtonTitle = "上一頁"
         navigationController?.pushViewController(cityViewController, animated: true)
     }

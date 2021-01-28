@@ -8,11 +8,12 @@
 import UIKit
 
 class CityViewController: UIViewController {
+    var message:String = ""
     @IBOutlet var messageLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        messageLabel.text = message
     }
     
 
