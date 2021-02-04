@@ -36,6 +36,14 @@ class ViewController: UIViewController{
         cityTableView.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("執行prepare for segue")
+        if segue.identifier == "goDetail"{
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.cityName = "Taipei"
+        }
+    }
+    
     
     
 }
