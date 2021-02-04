@@ -13,7 +13,8 @@ class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = city.city
-        
+        let headView = tableView.tableHeaderView as! UIImageView
+        headView.image = UIImage(named: city.image ?? "")
     }
     
 
