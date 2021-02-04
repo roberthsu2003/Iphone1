@@ -9,7 +9,7 @@ class City{
     var longitude:Double!
     var url:String!
     
-    init(city:String, continent:String, country:String, image:String, local:String, lat latitude:Double,lon longitude:Double, url:String){
+    init(city:String!, continent:String!, country:String!, image:String!, local:String!, lat latitude:Double!,lon longitude:Double!, url:String!){
         self.city = city
         self.continent = continent
         self.country = country
