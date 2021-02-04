@@ -49,8 +49,8 @@ class ViewController: UIViewController{
                 print("selected row:\(indexPath.row)")
                 let city = cities[indexPath.row]
                 let detailViewController = segue.destination as! DetailViewController
-                detailViewController.cityName = city["City"] as? String
-                detailViewController.cityImageName = city["Image"] as? String
+                detailViewController.cityName = city.city
+                detailViewController.cityImageName = city.image
             }
             
         }
@@ -74,16 +74,16 @@ extension ViewController:UITableViewDataSource{
         cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as? CityCell
        
         //image
-        let imageName = city["Image"] as! String
-        cell.cityImageView.image = UIImage(named: imageName)
+        let imageName = city.image
+        cell.cityImageView.image = UIImage(named: imageName ?? "")
         cell.cityImageView.layer.cornerRadius = 40.0
         //cell.cityImageView.layer.masksToBounds = true;
         
         //cityname
         
-        cell.cityLabel.text = city["City"] as? String
-        cell.countryLabel.text = city["Country"] as? String
-        cell.continentLabel.text = city["Continent"] as? String
+        cell.cityLabel.text = city.city
+        cell.countryLabel.text = city.country
+        cell.continentLabel.text = city.continent
         if cityIsMarked[rowIndex]{
             cell.accessoryType = .checkmark
         }else{
