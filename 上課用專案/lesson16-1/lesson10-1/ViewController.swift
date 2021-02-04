@@ -49,8 +49,8 @@ class ViewController: UIViewController{
                 print("selected row:\(indexPath.row)")
                 let city = cities[indexPath.row]
                 let detailViewController = segue.destination as! DetailViewController
-                detailViewController.cityName = city.city
-                detailViewController.cityImageName = city.image
+                detailViewController.city = city
+                
             }
             
         }
