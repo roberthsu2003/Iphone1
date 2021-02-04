@@ -8,13 +8,14 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet var cityImageView:UIImageView!
     var cityImageName:String!
     var cityName:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = cityName
+        cityImageView.image = UIImage(named: cityImageName)
     }
     
 

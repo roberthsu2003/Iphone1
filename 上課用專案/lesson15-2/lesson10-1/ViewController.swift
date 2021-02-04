@@ -44,6 +44,7 @@ class ViewController: UIViewController{
                 let city = cities[indexPath.row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.cityName = city["City"] as? String
+                detailViewController.cityImageName = city["Image"] as? String
             }
             
         }
