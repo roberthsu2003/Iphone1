@@ -39,8 +39,13 @@ class ViewController: UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("執行prepare for segue")
         if segue.identifier == "goDetail"{
-            let detailViewController = segue.destination as! DetailViewController
-            detailViewController.cityName = "Taipei"
+            if let indexPath = cityTableView.indexPathForSelectedRow{
+                print("selected row:\(indexPath.row)")
+                let city = cities[indexPath.row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.cityName = city["City"] as? String
+            }
+            
         }
     }
     
