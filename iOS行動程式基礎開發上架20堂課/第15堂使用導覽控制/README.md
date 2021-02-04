@@ -42,114 +42,153 @@ class ViewController: UITableViewController {
             }
         }
     }
-    //MARK: - UITableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return citys.count;
+    extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cities.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let rowIndex = indexPath.row;
-        let cityDic = citys[rowIndex];
-        let cityName = cityDic["City"] as? String;
-        let imageName = cityDic["Image"] as? String;
-        let countryName = cityDic["Country"] as? String;
-        let continentName = cityDic["Continent"] as? String;
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell;
-        cell.cityLabel.text = cityName;
-        cell.countryLabel.text = countryName;
-        cell.continentLabel.text = continentName;
-        cell.cityImageView.image = UIImage(named: imageName!);
-        if cityIsMarded[rowIndex]{
-            cell.accessoryType = .checkmark;
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        var cell:CityCell!
+        cell = tableView.dequeueReusableCell(withIdentifier: "MYCELL", for: indexPath) as? CityCell
+       
+        //image
+        let imageName = city["Image"] as! String
+        cell.cityImageView.image = UIImage(named: imageName)
+        cell.cityImageView.layer.cornerRadius = 40.0
+        //cell.cityImageView.layer.masksToBounds = true;
+        
+        //cityname
+        
+        cell.cityLabel.text = city["City"] as? String
+        cell.countryLabel.text = city["Country"] as? String
+        cell.continentLabel.text = city["Continent"] as? String
+        if cityIsMarked[rowIndex]{
+            cell.accessoryType = .checkmark
         }else{
-            cell.accessoryType = .none;
+            cell.accessoryType = .none
         }
         return cell;
+        
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
-        if editingStyle == .delete{
-            citys.remove(at: indexPath.row);
-            cityIsMarded.remove(at: indexPath.row);
-            print("total item:\(citys.count)");
-            tableView.deleteRows(at: [indexPath], with: .automatic);
+    func tableView(_ tableView: UITableView,
+                     commit editingStyle: UITableViewCell.EditingStyle,
+                     forRowAt indexPath: IndexPath){
+        //刪除tableView的row
+        if editingStyle == .delete {
+            cities.remove(at: indexPath.row)
+            cityIsMarked.remove(at: indexPath.row)
+            print("現在剩下的資料還有\(cities.count)")
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+}
 
-    //MARK: - UITableViewDelegate
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        //建立一個action sheet的選項按鈕
-        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet);
-        //在action sheet內建立一個按鈕
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil);
-        optionMenu.addAction(cancelAction);
+extension ViewController:UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        performSegue(withIdentifier: "goDetail", sender: self)
+        /*
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle:.actionSheet)
         
-        //在actionSheet內建立一個call-action
-        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default, handler: {
-            (action:UIAlertAction!)->Void in
-            let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert);
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil));
-            self.present(alertMessage, animated: true, completion: nil);
-        })
+        let cancelAction = UIAlertAction(title: "取消", style: .default, handler: nil)
         
-        optionMenu.addAction(callAction);
+        optionMenu.addAction(cancelAction)
+        
+        
+        //在actionSheet內，再加入一個UIAlertAction
+        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){(action:UIAlertAction) -> Void in
+            let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessage, animated: true, completion: nil)
+        }
+        
+        optionMenu.addAction(callAction)
         
         //增加標示選項
         var titleName:String!;
-        if self.cityIsMarded[indexPath.row]{
+        if self.cityIsMarked[indexPath.row]{
             titleName = "取消標示"
         }else{
             titleName = "標示"
         }
         
-        let checkInMark = UIAlertAction(title: titleName, style: .default, handler: {
+        let chekInMark = UIAlertAction(title: titleName, style: .default){
             (action:UIAlertAction) -> Void in
-            let cell = tableView.cellForRow(at: indexPath);
+            let cell = tableView.cellForRow(at: indexPath)
             switch titleName{
             case "取消標示":
-                cell?.accessoryType = .none;
-                self.cityIsMarded[indexPath.row] = false;
+                cell?.accessoryType = .none
+                self.cityIsMarked[indexPath.row] = false;
             case "標示":
                 cell?.accessoryType = .checkmark
-                self.cityIsMarded[indexPath.row] = true;
+                self.cityIsMarked[indexPath.row] = true;
             default:
-                break;
+                break
             }
             
-        })
+        }
         
-        optionMenu.addAction(checkInMark);
+        optionMenu.addAction(chekInMark)
         
-        //顯示選項
-        present(optionMenu, animated: true, completion: nil);
-    }
- */
-    
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
-        let shareAction = UITableViewRowAction(style: .default, title: "分享", handler: {
-            (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-            let defaultText = "直接打電話給" + (self.citys[indexPath.row]["City"] as! String);
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil);
-            self.present(activityController, animated: true, completion: nil)
-        })
-        
-        let deleteAction = UITableViewRowAction(style: .default, title: "刪除", handler: {
-            (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-            self.citys.remove(at: indexPath.row);
-            self.cityIsMarded.remove(at: indexPath.row);
-            print("total item:\(self.citys.count)");
-            tableView.deleteRows(at: [indexPath], with: .automatic);
-        })
-        
-        shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0);
-        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 202.0/255.0, alpha: 1.0);
-        
-        return [shareAction, deleteAction];
+        self.present(optionMenu, animated: true, completion: nil)
+     */
     }
  
+    
+    @available(iOS 8.0, *)
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
+        let shareAction = UITableViewRowAction(style: .default, title: "分享") { (action:UITableViewRowAction, indexPath:IndexPath) in
+            print("share")
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "刪除") { (action:UITableViewRowAction, indexPath:IndexPath) in
+            
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            print("現在剩下的資料還有\(self.cities.count)")
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255.0, blue: 202.0/255.0, alpha: 1.0)
+        return [shareAction, deleteAction]
+    }
+    
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let shareAction = UIContextualAction(style: .normal, title: "分享") { (action:UIContextualAction, view:UIView, completionHandler:(Bool) -> Void) in
+            print("分享")
+            completionHandler(true)
+        }
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { (atcion:UIContextualAction, view:UIView, completionHandler:(Bool) -> Void) in
+            
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            print("現在剩下的資料還有\(self.cities.count)")
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+            
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255.0, blue: 202.0/255.0, alpha: 1.0)
+        
+        return UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
+    }
+    
+    
 }
-
 
 ```
 
