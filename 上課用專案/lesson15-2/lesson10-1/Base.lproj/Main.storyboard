@@ -129,41 +129,28 @@
                     <navigationItem key="navigationItem" title="世界城市" id="RoT-dY-m3i"/>
                     <connections>
                         <outlet property="cityTableView" destination="WSI-nv-xQg" id="LfN-cu-uBX"/>
-                        <segue destination="VYh-cS-Z8H" kind="show" identifier="goDetail" id="Xvz-Gd-0fV"/>
+                        <segue destination="CbN-Kt-gXA" kind="show" identifier="goDetail" id="yqw-Jf-xBx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1570" y="-86"/>
+            <point key="canvasLocation" x="-1569" y="-100"/>
         </scene>
-        <!--City Detail View Controller-->
-        <scene sceneID="UgI-OP-P9U">
+        <!--Detail View Controller-->
+        <scene sceneID="AeZ-Cd-nqO">
             <objects>
-                <tableViewController id="VYh-cS-Z8H" customClass="CityDetailViewController" customModule="lesson15_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRJ-p5-6k3">
+                <viewController id="CbN-Kt-gXA" customClass="DetailViewController" customModule="lesson15_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tes-ZX-fHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4we-9O-sWN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AGM-Aj-gmW">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AGM-Aj-gmW" id="8Fc-Wk-GzF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="VYh-cS-Z8H" id="LOu-ZG-QvL"/>
-                            <outlet property="delegate" destination="VYh-cS-Z8H" id="0u8-FC-8yN"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="xOf-7E-Mdn"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="flj-OT-ieS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uKt-FT-5o7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fzd-mP-pvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-737" y="-100"/>
+            <point key="canvasLocation" x="-738" y="-100"/>
         </scene>
     </scenes>
     <resources>
