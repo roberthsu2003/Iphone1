@@ -28,6 +28,8 @@ class DetailViewController: UITableViewController {
     }
     
     @IBAction func userClose(_ segue:UIStoryboardSegue){
+        let rateViewController = segue.source as! RateViewController;
+        print(rateViewController.num)
         
     }
 

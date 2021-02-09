@@ -8,7 +8,7 @@
 import UIKit
 
 class RateViewController: UIViewController {
-
+    var num = 50;
     override func viewDidLoad() {
         super.viewDidLoad()
 

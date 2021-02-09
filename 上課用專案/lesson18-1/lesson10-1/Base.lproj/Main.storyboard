@@ -221,7 +221,7 @@
                         <barButtonItem key="rightBarButtonItem" title="返回" id="uYj-vz-CAH">
                             <connections>
                                 <action selector="backPress:" destination="zS1-e5-Uqj" id="axi-2D-VU1"/>
-                                <segue destination="s0F-9e-daN" kind="unwind" unwindAction="userClose:" id="iqB-CJ-W1f"/>
+                                <segue destination="s0F-9e-daN" kind="unwind" unwindAction="userClose:" id="g6y-B6-Bay"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
