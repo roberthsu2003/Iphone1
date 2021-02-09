@@ -40,6 +40,13 @@ class ViewController: UIViewController{
         
         cityTableView.dataSource = self
         cityTableView.delegate = self
+        //navigationController?.setNavigationBarHidden(true, animated: false)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
