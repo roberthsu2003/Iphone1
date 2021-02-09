@@ -18,6 +18,7 @@
 		936960E525A492DE00573BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936960E425A492DE00573BAA /* Assets.xcassets */; };
 		936960E825A492DE00573BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936960E625A492DE00573BAA /* LaunchScreen.storyboard */; };
 		936960F225A4993D00573BAA /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 936960F125A4993D00573BAA /* citylist.plist */; };
+		93E4404B25D2C5C3005D93A5 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4404A25D2C5C3005D93A5 /* RateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		936960E725A492DE00573BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		936960E925A492DE00573BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936960F125A4993D00573BAA /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		93E4404A25D2C5C3005D93A5 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				93058FCE25CC0CF60057D548 /* DetailViewController.swift */,
 				93058FD525CC1BB10057D548 /* City.swift */,
 				93058FDC25CC36320057D548 /* DetailViewCell.swift */,
+				93E4404A25D2C5C3005D93A5 /* RateViewController.swift */,
 			);
 			path = "lesson10-1";
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				93058FD625CC1BB10057D548 /* City.swift in Sources */,
 				93058FCF25CC0CF60057D548 /* DetailViewController.swift in Sources */,
 				9316B6C425ADD1B0009874BA /* CityCell.swift in Sources */,
+				93E4404B25D2C5C3005D93A5 /* RateViewController.swift in Sources */,
 				936960DE25A492DC00573BAA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

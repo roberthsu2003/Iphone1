@@ -27,7 +27,7 @@
         <!--世界城市-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson16_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson18_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MYCELL" rowHeight="100" id="4dW-A8-LaU" customClass="CityCell" customModule="lesson16_1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MYCELL" rowHeight="100" id="4dW-A8-LaU" customClass="CityCell" customModule="lesson18_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4dW-A8-LaU" id="T7S-cL-ySp">
@@ -90,7 +90,7 @@
                                             <outlet property="countryLabel" destination="wyn-EK-2YA" id="Q5y-hx-Bx6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MYCELL1" rowHeight="100" id="son-jd-Efe" customClass="CityCell" customModule="lesson16_1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MYCELL1" rowHeight="100" id="son-jd-Efe" customClass="CityCell" customModule="lesson18_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="son-jd-Efe" id="d3r-yr-sOj">
@@ -139,7 +139,7 @@
         <!--Detail View Controller-->
         <scene sceneID="c6x-3w-EoS">
             <objects>
-                <tableViewController id="CvO-3V-fqj" customClass="DetailViewController" customModule="lesson16_1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CvO-3V-fqj" customClass="DetailViewController" customModule="lesson18_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S3B-pw-29h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="86" id="ojM-HF-QIc" customClass="DetailViewCell" customModule="lesson16_1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="86" id="ojM-HF-QIc" customClass="DetailViewCell" customModule="lesson18_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="261" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ojM-HF-QIc" id="RbZ-c5-9Vg">
@@ -195,11 +195,57 @@
                             <outlet property="delegate" destination="CvO-3V-fqj" id="9Cs-fr-72R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VSY-4F-LX7"/>
+                    <navigationItem key="navigationItem" id="VSY-4F-LX7">
+                        <barButtonItem key="rightBarButtonItem" title="評等" id="hLB-2j-EIg">
+                            <connections>
+                                <segue destination="8Xd-Pi-IVg" kind="presentation" modalPresentationStyle="fullScreen" id="Puv-68-2tz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hid-z0-cWv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-724" y="-100.49261083743843"/>
+        </scene>
+        <!--Rate View Controller-->
+        <scene sceneID="gTj-1b-YLD">
+            <objects>
+                <viewController id="zS1-e5-Uqj" customClass="RateViewController" customModule="lesson18_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3V6-tB-Xtk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="q0i-3U-ZBj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="400-Ir-XCQ">
+                        <barButtonItem key="rightBarButtonItem" title="返回" id="uYj-vz-CAH">
+                            <connections>
+                                <action selector="backPress:" destination="zS1-e5-Uqj" id="axi-2D-VU1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jpl-qz-ojr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="-100.49261083743843"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ePq-R9-lFC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Xd-Pi-IVg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vMJ-mU-ChY">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zS1-e5-Uqj" kind="relationship" relationship="rootViewController" id="uvh-sr-Pti"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qyt-Pe-UDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277.60000000000002" y="-100.49261083743843"/>
         </scene>
     </scenes>
     <resources>
