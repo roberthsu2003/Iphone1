@@ -34,7 +34,7 @@ extension DetailViewController{
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 4;
+        return 5;
     }
     
     override func tableView(_ tableView: UITableView,
@@ -56,6 +56,9 @@ extension DetailViewController{
         case 3:
             detailViewCell?.fieldLabel.text = "網址:"
             detailViewCell?.valueLabel.text = city.url
+        case 4:
+            detailViewCell?.fieldLabel.text = "簡介:"
+            detailViewCell?.valueLabel.text = city.local
         default:
             detailViewCell?.fieldLabel.text = ""
             detailViewCell?.valueLabel.text = ""
