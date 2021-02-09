@@ -26,6 +26,10 @@ class DetailViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = false;
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    @IBAction func userClose(_ segue:UIStoryboardSegue){
+        
+    }
 
 }
 

@@ -16,8 +16,6 @@ class RateViewController: UIViewController {
     }
     
 
-    @IBAction func backPress(_ sender:UIBarItem){
-        dismiss(animated: true, completion: nil)
-    }
+  
 
 }

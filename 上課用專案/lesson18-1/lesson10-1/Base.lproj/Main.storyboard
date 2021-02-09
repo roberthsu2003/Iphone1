@@ -221,13 +221,15 @@
                         <barButtonItem key="rightBarButtonItem" title="返回" id="uYj-vz-CAH">
                             <connections>
                                 <action selector="backPress:" destination="zS1-e5-Uqj" id="axi-2D-VU1"/>
+                                <segue destination="s0F-9e-daN" kind="unwind" unwindAction="userClose:" id="iqB-CJ-W1f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpl-qz-ojr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="s0F-9e-daN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-100.49261083743843"/>
+            <point key="canvasLocation" x="1164" y="-100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ePq-R9-lFC">
