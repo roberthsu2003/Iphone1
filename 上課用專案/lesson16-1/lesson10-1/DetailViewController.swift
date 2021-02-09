@@ -15,6 +15,7 @@ class DetailViewController: UITableViewController {
         title = city.city
         let headView = tableView.tableHeaderView as! UIImageView
         headView.image = UIImage(named: city.image ?? "")
+                
     }
     
 
@@ -24,4 +25,26 @@ class DetailViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
+}
+
+extension DetailViewController{
+    //UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return 4;
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let detailViewCell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? DetailViewCell
+        
+        return detailViewCell!
+    }
+    
+}
+
+extension DetailViewController{
+    //UITableViewDelegate
+    
 }
