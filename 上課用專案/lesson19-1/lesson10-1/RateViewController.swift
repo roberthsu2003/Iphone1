@@ -10,10 +10,14 @@ import UIKit
 class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
     var num = 50;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect:blurEffect)
+        blurEffectView.frame = backgroundImageView.bounds
+        backgroundImageView.addSubview(blurEffectView)
+        
     }
     
 
