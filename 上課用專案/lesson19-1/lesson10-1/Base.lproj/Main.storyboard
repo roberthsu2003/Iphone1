@@ -242,6 +242,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="科技化城市"/>
+                                                <connections>
+                                                    <segue destination="s0F-9e-daN" kind="unwind" identifier="n1" unwindAction="userClose:" id="fUE-xZ-7BE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAg-40-0BT">
                                                 <rect key="frame" x="0.0" y="56.5" width="250" height="48"/>
@@ -249,6 +252,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="風景不錯"/>
+                                                <connections>
+                                                    <segue destination="s0F-9e-daN" kind="unwind" identifier="n2" unwindAction="userClose:" id="XLT-aL-NYI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGM-Zw-E4W">
                                                 <rect key="frame" x="0.0" y="112.5" width="250" height="48"/>
@@ -256,6 +262,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="很現代的城市"/>
+                                                <connections>
+                                                    <segue destination="s0F-9e-daN" kind="unwind" identifier="n3" unwindAction="userClose:" id="0Y6-LB-vgU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-4t-hDw">
                                                 <rect key="frame" x="0.0" y="168.5" width="250" height="48.5"/>
@@ -263,6 +272,9 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="環保的城市"/>
+                                                <connections>
+                                                    <segue destination="s0F-9e-daN" kind="unwind" identifier="n4" unwindAction="userClose:" id="q6F-TQ-d5U"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -299,7 +311,6 @@
                         <barButtonItem key="rightBarButtonItem" title="返回" id="uYj-vz-CAH">
                             <connections>
                                 <action selector="backPress:" destination="zS1-e5-Uqj" id="axi-2D-VU1"/>
-                                <segue destination="s0F-9e-daN" kind="unwind" unwindAction="userClose:" id="g6y-B6-Bay"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
