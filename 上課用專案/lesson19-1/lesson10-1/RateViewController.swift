@@ -18,12 +18,17 @@ class RateViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect:blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
-        containerView.alpha = 0
+        containerView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        containerView.alpha = 1
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+        
+        
     }
     
     
