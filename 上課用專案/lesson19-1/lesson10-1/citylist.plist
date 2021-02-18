@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-<dict>
+	<dict>
 		<key>City</key>
 		<string>秋葉原</string>
 		<key>Continent</key>
@@ -184,9 +184,7 @@
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/千葉市</string>
 	</dict>
-
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>芝加哥</string>
 		<key>Continent</key>
@@ -366,9 +364,7 @@
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/汉堡</string>
 	</dict>
-
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>香港</string>
 		<key>Continent</key>
@@ -548,8 +544,7 @@
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/利物浦</string>
 	</dict>
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>倫敦</string>
 		<key>Continent</key>
@@ -730,8 +725,7 @@
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/蒙特利尔</string>
 	</dict>
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>倫敦</string>
 		<key>Continent</key>
@@ -960,8 +954,7 @@ City of Montreal（英文）
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/蒙特利尔</string>
 	</dict>
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>里約熱內盧</string>
 		<key>Continent</key>
@@ -1141,8 +1134,7 @@ City of Montreal（英文）
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/沈阳市</string>
 	</dict>
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>澀谷</string>
 		<key>Continent</key>
@@ -1330,8 +1322,7 @@ City of Montreal（英文）
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E5%B8%82</string>
 	</dict>
-
-<dict>
+	<dict>
 		<key>City</key>
 		<string>東京都</string>
 		<key>Continent</key>
@@ -1531,6 +1522,5 @@ City of Montreal（英文）
 		<key>url</key>
 		<string>https://zh.wikipedia.org/wiki/%E6%A8%AA%E6%BB%A8%E5%B8%82</string>
 	</dict>
-
 </array>
 </plist>
