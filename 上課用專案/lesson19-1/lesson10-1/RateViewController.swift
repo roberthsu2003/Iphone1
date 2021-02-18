@@ -20,6 +20,7 @@ class RateViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         containerView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
