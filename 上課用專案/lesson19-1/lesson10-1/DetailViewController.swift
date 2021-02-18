@@ -28,7 +28,20 @@ class DetailViewController: UITableViewController {
     }
     
     @IBAction func userClose(_ segue:UIStoryboardSegue){
-        print(segue.identifier)
+        if let userRating = segue.identifier{
+            switch userRating{
+            case "n1":
+                print("科技化城市")
+            case "n2":
+                print("風景不錯")
+            case "n3":
+                print("很現代的城市")
+            case "n4":
+                print("環保的城市")
+            default:
+                print("沒有東西")
+            }
+        }
         
     }
  
