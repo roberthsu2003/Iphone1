@@ -15,8 +15,18 @@ class RateViewController: UIViewController {
         super.viewDidLoad()
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect:blurEffect)
-        blurEffectView.frame = backgroundImageView.bounds
+        blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
     }
     

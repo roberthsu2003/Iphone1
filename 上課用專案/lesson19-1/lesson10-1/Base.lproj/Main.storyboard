@@ -222,10 +222,10 @@
                         <viewLayoutGuide key="safeArea" id="q0i-3U-ZBj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5ZI-z1-Yib" firstAttribute="trailing" secondItem="q0i-3U-ZBj" secondAttribute="trailing" id="CEL-EY-gyY"/>
+                            <constraint firstItem="5ZI-z1-Yib" firstAttribute="trailing" secondItem="3V6-tB-Xtk" secondAttribute="trailing" id="CEL-EY-gyY"/>
                             <constraint firstItem="5ZI-z1-Yib" firstAttribute="top" secondItem="3V6-tB-Xtk" secondAttribute="top" id="JJw-0e-JLh"/>
                             <constraint firstAttribute="bottom" secondItem="5ZI-z1-Yib" secondAttribute="bottom" id="kLm-cQ-mgX"/>
-                            <constraint firstItem="5ZI-z1-Yib" firstAttribute="leading" secondItem="q0i-3U-ZBj" secondAttribute="leading" id="wX6-UD-sme"/>
+                            <constraint firstItem="5ZI-z1-Yib" firstAttribute="leading" secondItem="3V6-tB-Xtk" secondAttribute="leading" id="wX6-UD-sme"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="400-Ir-XCQ">
