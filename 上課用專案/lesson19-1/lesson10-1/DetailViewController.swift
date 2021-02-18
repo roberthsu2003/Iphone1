@@ -31,15 +31,19 @@ class DetailViewController: UITableViewController {
         if let userRating = segue.identifier{
             switch userRating{
             case "n1":
-                print("科技化城市")
+                city.userRate = "科技化城市"
             case "n2":
-                print("風景不錯")
+                
+                city.userRate = "風景不錯"
             case "n3":
-                print("很現代的城市")
+               
+                city.userRate = "很現代的城市"
             case "n4":
-                print("環保的城市")
+                
+                city.userRate = "環保的城市"
             default:
-                print("沒有東西")
+                
+                city.userRate = ""
             }
         }
         
