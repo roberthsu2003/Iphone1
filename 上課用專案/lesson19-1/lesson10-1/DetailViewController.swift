@@ -45,6 +45,7 @@ class DetailViewController: UITableViewController {
                 
                 city.userRate = ""
             }
+            tableView.reloadData()
         }
         
     }
@@ -57,7 +58,7 @@ extension DetailViewController{
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 5;
+        return 6;
     }
     
     override func tableView(_ tableView: UITableView,
@@ -80,6 +81,14 @@ extension DetailViewController{
             detailViewCell?.fieldLabel.text = "網址:"
             detailViewCell?.valueLabel.text = city.url
         case 4:
+            detailViewCell?.fieldLabel.text = "評比:"
+            if city.userRate == ""{
+                detailViewCell?.valueLabel.text = "目前無資料"
+            }else{
+                detailViewCell?.valueLabel.text = city.userRate
+            }
+            
+        case 5:
             detailViewCell?.fieldLabel.text = "簡介:"
             detailViewCell?.valueLabel.text = city.local
         default:
