@@ -222,24 +222,61 @@
                                 <rect key="frame" x="46" y="189" width="322" height="518"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chiba" translatesAutoresizingMaskIntoConstraints="NO" id="29F-q3-Wxr">
-                                        <rect key="frame" x="0.0" y="0.0" width="322" height="202"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="322" height="200"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="202" id="hiH-q1-tuC"/>
+                                            <constraint firstAttribute="height" constant="200" id="hiH-q1-tuC"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您曾經來過這裏嗎?給它一個打個分數吧?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwS-jI-MrU">
-                                        <rect key="frame" x="36" y="215" width="251" height="48"/>
+                                        <rect key="frame" x="36" y="213" width="251" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-HP-l8w">
+                                        <rect key="frame" x="36" y="281" width="250" height="217"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRm-nI-foe">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="48.5"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="科技化城市"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAg-40-0BT">
+                                                <rect key="frame" x="0.0" y="56.5" width="250" height="48"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="風景不錯"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGM-Zw-E4W">
+                                                <rect key="frame" x="0.0" y="112.5" width="250" height="48"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="很現代的城市"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ww8-4t-hDw">
+                                                <rect key="frame" x="0.0" y="168.5" width="250" height="48.5"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="環保的城市"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TBL-HP-l8w" secondAttribute="trailing" constant="36" id="0De-DB-MGO"/>
                                     <constraint firstAttribute="trailing" secondItem="29F-q3-Wxr" secondAttribute="trailing" id="0i0-ln-7jg"/>
+                                    <constraint firstAttribute="bottom" secondItem="TBL-HP-l8w" secondAttribute="bottom" constant="20" id="2np-5k-bok"/>
                                     <constraint firstAttribute="width" secondItem="nJp-Pv-WxX" secondAttribute="height" multiplier="283:455" id="6oU-RR-91K"/>
                                     <constraint firstItem="UwS-jI-MrU" firstAttribute="leading" secondItem="nJp-Pv-WxX" secondAttribute="leading" constant="36" id="Nla-Ud-c1s"/>
                                     <constraint firstItem="29F-q3-Wxr" firstAttribute="top" secondItem="nJp-Pv-WxX" secondAttribute="top" id="QqQ-yc-Tdz"/>
+                                    <constraint firstItem="TBL-HP-l8w" firstAttribute="top" secondItem="UwS-jI-MrU" secondAttribute="bottom" constant="20" id="RfI-F5-3ny"/>
+                                    <constraint firstItem="TBL-HP-l8w" firstAttribute="leading" secondItem="nJp-Pv-WxX" secondAttribute="leading" constant="36" id="bDm-DH-yhb"/>
                                     <constraint firstItem="UwS-jI-MrU" firstAttribute="top" secondItem="29F-q3-Wxr" secondAttribute="bottom" constant="13" id="cPM-b0-ib2"/>
                                     <constraint firstAttribute="trailing" secondItem="UwS-jI-MrU" secondAttribute="trailing" constant="35" id="eEe-hS-ZxN"/>
                                     <constraint firstItem="29F-q3-Wxr" firstAttribute="leading" secondItem="nJp-Pv-WxX" secondAttribute="leading" id="oDY-As-V5p"/>
