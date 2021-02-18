@@ -9,6 +9,7 @@ import UIKit
 
 class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
+    @IBOutlet var containerView:UIView!
     var num = 50;
     
     override func viewDidLoad() {
@@ -17,20 +18,14 @@ class RateViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect:blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        containerView.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        containerView.alpha = 1
     }
     
-
-  
+    
 
 }
