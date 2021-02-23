@@ -40,6 +40,7 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: 180, height: 120)
+        
     }
 
 
@@ -75,8 +76,8 @@ extension ViewController{
             cityImageView.translatesAutoresizingMaskIntoConstraints = false
             cell.contentView.addSubview(cityImageView)
             NSLayoutConstraint.activate([
-                cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
-                cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 0),
+                cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 10),
+                cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -10),
                 cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
                 cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
             ])
