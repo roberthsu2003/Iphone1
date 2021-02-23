@@ -49,12 +49,14 @@ extension ViewController{
     //UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int{
-        
+        return citys.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
+        cell.backgroundColor = UIColor.lightGray
+        return cell
     }
     
     
