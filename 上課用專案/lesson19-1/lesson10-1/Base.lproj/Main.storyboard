@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" id="VSY-4F-LX7">
                         <barButtonItem key="rightBarButtonItem" title="評等" id="hLB-2j-EIg">
                             <connections>
-                                <segue destination="zS1-e5-Uqj" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="siG-3Y-LM0"/>
+                                <segue destination="zS1-e5-Uqj" kind="presentation" identifier="goRate" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="siG-3Y-LM0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

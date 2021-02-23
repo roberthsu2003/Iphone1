@@ -11,6 +11,7 @@ class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView:UIView!
     @IBOutlet var containerImageView:UIImageView!
+    var city:City!
     var num = 50;
     
     override func viewDidLoad() {
@@ -20,6 +21,8 @@ class RateViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         containerView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        containerImageView.image = UIImage(named: city.image)
         
         
     }
