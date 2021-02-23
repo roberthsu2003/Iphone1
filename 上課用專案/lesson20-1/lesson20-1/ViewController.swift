@@ -70,7 +70,15 @@ extension ViewController{
         let cityImageView = UIImageView(frame: cell.bounds)
         cityImageView.contentMode = .scaleAspectFill
         cityImageView.image = UIImage(named: city.image)
+        cityImageView.translatesAutoresizingMaskIntoConstraints = false
         cell.contentView.addSubview(cityImageView)
+        NSLayoutConstraint.activate([
+            cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
+            cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 0),
+            cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
+            cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
+        ])
+        
         return cell
     }
     
