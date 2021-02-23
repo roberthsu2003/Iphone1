@@ -32,13 +32,13 @@ class ViewController: UICollectionViewController {
             city.longitude = cityDic["long"] as? Double;
             citys.append(city)
         }
-        print(citys)
+        
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     }
 
 
