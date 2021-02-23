@@ -13,6 +13,8 @@
 		93DB280925E51FB800B754FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB280725E51FB800B754FD /* Main.storyboard */; };
 		93DB280B25E51FBA00B754FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DB280A25E51FBA00B754FD /* Assets.xcassets */; };
 		93DB280E25E51FBA00B754FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93DB280C25E51FBA00B754FD /* LaunchScreen.storyboard */; };
+		93DB281725E5213400B754FD /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93DB281625E5213400B754FD /* citylist.plist */; };
+		93DB281A25E5215200B754FD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB281925E5215200B754FD /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		93DB280A25E51FBA00B754FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93DB280D25E51FBA00B754FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93DB280F25E51FBA00B754FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93DB281625E5213400B754FD /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = "../../lesson19-1/lesson10-1/citylist.plist"; sourceTree = "<group>"; };
+		93DB281925E5215200B754FD /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = "../../lesson19-1/lesson10-1/City.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		93DB280025E51FB800B754FD /* lesson20-1 */ = {
 			isa = PBXGroup;
 			children = (
+				93DB281925E5215200B754FD /* City.swift */,
+				93DB281625E5213400B754FD /* citylist.plist */,
 				93DB280125E51FB800B754FD /* AppDelegate.swift */,
 				93DB280325E51FB800B754FD /* SceneDelegate.swift */,
 				93DB280525E51FB800B754FD /* ViewController.swift */,
@@ -125,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DB280E25E51FBA00B754FD /* LaunchScreen.storyboard in Resources */,
+				93DB281725E5213400B754FD /* citylist.plist in Resources */,
 				93DB280B25E51FBA00B754FD /* Assets.xcassets in Resources */,
 				93DB280925E51FB800B754FD /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			files = (
 				93DB280625E51FB800B754FD /* ViewController.swift in Sources */,
 				93DB280225E51FB800B754FD /* AppDelegate.swift in Sources */,
+				93DB281A25E5215200B754FD /* City.swift in Sources */,
 				93DB280425E51FB800B754FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
