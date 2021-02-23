@@ -56,29 +56,35 @@ extension ViewController{
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let city = citys[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
-        cell.backgroundColor = UIColor.lightGray
-        let bv = UIView(frame: cell.bounds)
-        bv.contentMode = .scaleToFill
-        bv.backgroundColor =  UIColor.lightGray
-        cell.backgroundView = bv;
+        if cell.backgroundView == nil{
+            cell.backgroundColor = UIColor.lightGray
+            let bv = UIView(frame: cell.bounds)
+            bv.contentMode = .scaleToFill
+            bv.backgroundColor =  UIColor.lightGray
+            cell.backgroundView = bv;
+            
+            let selectionView = UIView(frame: cell.bounds)
+            selectionView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+            selectionView.contentMode = .scaleToFill
+            cell.selectedBackgroundView = selectionView
+            
+            let cityImageView = UIImageView(frame: cell.bounds)
+            cityImageView.tag = 1
+            cityImageView.contentMode = .scaleAspectFill
+            
+            cityImageView.translatesAutoresizingMaskIntoConstraints = false
+            cell.contentView.addSubview(cityImageView)
+            NSLayoutConstraint.activate([
+                cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
+                cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 0),
+                cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
+                cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
+            ])
+        }
         
-        let selectionView = UIView(frame: cell.bounds)
-        selectionView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
-        selectionView.contentMode = .scaleToFill
-        cell.selectedBackgroundView = selectionView
-        
-        let cityImageView = UIImageView(frame: cell.bounds)
-        cityImageView.contentMode = .scaleAspectFill
+        //cityImageView.image = UIImage(named: city.image)
+        let cityImageView = cell.viewWithTag(1) as! UIImageView
         cityImageView.image = UIImage(named: city.image)
-        cityImageView.translatesAutoresizingMaskIntoConstraints = false
-        cell.contentView.addSubview(cityImageView)
-        NSLayoutConstraint.activate([
-            cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
-            cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 0),
-            cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
-            cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
-        ])
-        
         return cell
     }
     
