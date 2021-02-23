@@ -15,8 +15,13 @@ class ViewController: UICollectionViewController {
         let bundle = Bundle.main
         let pathURL = bundle.url(forResource: "citylist", withExtension: "plist")
         
-        if let dicCitys = NSArray(contentsOf: pathURL!) as? [[String:Any]]{
-            print(dicCitys)
+        guard let dicCitys = NSArray(contentsOf: pathURL!) as? [[String:Any]] else{
+            print("解析錯誤")
+            return
+        }
+        
+        for cityDic in dicCitys{
+            print(cityDic["City"])
         }
         
     }
