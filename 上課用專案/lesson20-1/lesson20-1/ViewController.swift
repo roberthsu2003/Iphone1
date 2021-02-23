@@ -21,8 +21,18 @@ class ViewController: UICollectionViewController {
         }
         
         for cityDic in dicCitys{
-            print(cityDic["City"])
+            let city = City()
+            city.city = cityDic["City"] as? String
+            city.country = cityDic["Country"] as? String;
+            city.continent = cityDic["Continent"] as? String;
+            city.image = cityDic["Image"] as? String;
+            city.local = cityDic["Local"] as? String;
+            city.url = cityDic["url"] as? String;
+            city.latitude = cityDic["lat"] as? Double;
+            city.longitude = cityDic["long"] as? Double;
+            citys.append(city)
         }
+        print(citys)
         
     }
 
