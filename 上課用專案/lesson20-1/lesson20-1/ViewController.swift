@@ -39,8 +39,24 @@ class ViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: 180, height: 120)
     }
 
 
+}
+
+extension ViewController{
+    //UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int{
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        
+    }
+    
+    
 }
 
