@@ -10,6 +10,7 @@ import UIKit
 class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView:UIView!
+    @IBOutlet var containerImageView:UIImageView!
     var num = 50;
     
     override func viewDidLoad() {

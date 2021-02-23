@@ -316,6 +316,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="5ZI-z1-Yib" id="wjP-2w-LR7"/>
+                        <outlet property="containerImageView" destination="29F-q3-Wxr" id="Dbl-iG-Vmy"/>
                         <outlet property="containerView" destination="nJp-Pv-WxX" id="n1r-lc-rAc"/>
                     </connections>
                 </viewController>
