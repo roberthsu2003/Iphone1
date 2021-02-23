@@ -56,6 +56,17 @@ extension ViewController{
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
         cell.backgroundColor = UIColor.lightGray
+        let bv = UIView(frame: cell.bounds)
+        bv.contentMode = .scaleToFill
+        bv.backgroundColor =  UIColor.lightGray
+        cell.backgroundView = bv;
+        
+        let selectionView = UIView(frame: cell.bounds)
+        selectionView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+        selectionView.contentMode = .scaleToFill
+        cell.selectedBackgroundView = selectionView
+        
+        
         return cell
     }
     
