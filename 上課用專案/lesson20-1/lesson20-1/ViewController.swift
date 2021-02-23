@@ -54,6 +54,7 @@ extension ViewController{
     
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let city = citys[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
         cell.backgroundColor = UIColor.lightGray
         let bv = UIView(frame: cell.bounds)
@@ -66,7 +67,10 @@ extension ViewController{
         selectionView.contentMode = .scaleToFill
         cell.selectedBackgroundView = selectionView
         
-        
+        let cityImageView = UIImageView(frame: cell.bounds)
+        cityImageView.contentMode = .scaleAspectFill
+        cityImageView.image = UIImage(named: city.image)
+        cell.contentView.addSubview(cityImageView)
         return cell
     }
     
