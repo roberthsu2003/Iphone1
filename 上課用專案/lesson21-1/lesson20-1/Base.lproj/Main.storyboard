@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,6 +44,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9te-Wu-YwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="502.89855072463774" y="-125.22321428571428"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="hXI-qR-Ol3">
+            <objects>
+                <viewController id="lGk-hY-Cda" customClass="MapViewController" customModule="lesson21_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JhL-yv-lG8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="170-Hl-YQZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDA-hv-0ii"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="170-Hl-YQZ" secondAttribute="bottom" id="Nsy-q7-XTH"/>
+                            <constraint firstItem="170-Hl-YQZ" firstAttribute="leading" secondItem="vDA-hv-0ii" secondAttribute="leading" id="WDK-di-yzq"/>
+                            <constraint firstItem="170-Hl-YQZ" firstAttribute="top" secondItem="JhL-yv-lG8" secondAttribute="top" id="d9U-3z-2N1"/>
+                            <constraint firstItem="170-Hl-YQZ" firstAttribute="trailing" secondItem="vDA-hv-0ii" secondAttribute="trailing" id="ncp-Vp-cGH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5XU-Ux-JKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307.2463768115942" y="-125.22321428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TOc-sQ-tzP">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9388FACA25E7BFDD000CA78C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388FAC925E7BFDD000CA78C /* MapViewController.swift */; };
 		93DB280225E51FB800B754FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB280125E51FB800B754FD /* AppDelegate.swift */; };
 		93DB280425E51FB800B754FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB280325E51FB800B754FD /* SceneDelegate.swift */; };
 		93DB280625E51FB800B754FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB280525E51FB800B754FD /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9388FAC925E7BFDD000CA78C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		93DB27FE25E51FB800B754FD /* lesson21-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson21-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DB280125E51FB800B754FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93DB280325E51FB800B754FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				93DB280A25E51FBA00B754FD /* Assets.xcassets */,
 				93DB280C25E51FBA00B754FD /* LaunchScreen.storyboard */,
 				93DB280F25E51FBA00B754FD /* Info.plist */,
+				9388FAC925E7BFDD000CA78C /* MapViewController.swift */,
 			);
 			path = "lesson20-1";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				93DB280625E51FB800B754FD /* ViewController.swift in Sources */,
 				93DB280225E51FB800B754FD /* AppDelegate.swift in Sources */,
 				93DB281A25E5215200B754FD /* City.swift in Sources */,
+				9388FACA25E7BFDD000CA78C /* MapViewController.swift in Sources */,
 				93DB280425E51FB800B754FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
