@@ -42,6 +42,13 @@ class ViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: 180, height: 120)
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap" {
+            print("執行segue")
+        }
+    }
 
 
 }
