@@ -62,6 +62,11 @@ extension MapViewController:MKMapViewDelegate{
             annotationView?.canShowCallout = true;
         }
         
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+        leftIconView.image = UIImage(named: city.image)
+        
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        
         
         return annotationView;
     }
