@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         title = "地圖:\(city.city!)"
         let geoCoder = CLGeocoder();
+        let defaultCoordinate=CLLocationCoordinate2DMake(city.latitude, city.longitude)
         geoCoder.geocodeAddressString(city!.city ?? "台北") { (placemarks:[CLPlacemark]?, error:Error?) in
             if error == nil,let placemarks = placemarks{
                 let placemark = placemarks[0]
@@ -24,13 +25,13 @@ class MapViewController: UIViewController {
                     let annotation = MKPointAnnotation();
                     annotation.title = self.city.city
                     annotation.subtitle = self.city.country
-                    annotation.coordinate = location.coordinate
+                    annotation.coordinate = defaultCoordinate
                     print("緯度:\(location.coordinate.latitude)")
                     print("經度:\(location.coordinate.longitude)")
                     
                     self.mapView.showAnnotations([annotation], animated: true)
                     self.mapView.selectAnnotation(annotation, animated: true)
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+                    let region = MKCoordinateRegion(center: defaultCoordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
                     self.mapView.setRegion(region, animated: true)
                 }
             }
