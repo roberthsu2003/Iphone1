@@ -97,6 +97,7 @@ extension ViewController{
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath){
         print("rowIndex:\(indexPath.row)")
+        performSegue(withIdentifier: "goMap", sender: nil)
     }
 }
 

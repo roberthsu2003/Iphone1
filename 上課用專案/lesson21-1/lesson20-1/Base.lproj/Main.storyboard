@@ -40,6 +40,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="fYw-1y-1aB"/>
+                    <connections>
+                        <segue destination="lGk-hY-Cda" kind="show" identifier="goMap" id="JxA-bZ-fF5"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9te-Wu-YwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,6 +69,10 @@
                             <constraint firstItem="170-Hl-YQZ" firstAttribute="trailing" secondItem="vDA-hv-0ii" secondAttribute="trailing" id="ncp-Vp-cGH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nig-X9-bjk"/>
+                    <connections>
+                        <outlet property="mapView" destination="170-Hl-YQZ" id="jNI-yw-Ds0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XU-Ux-JKw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
