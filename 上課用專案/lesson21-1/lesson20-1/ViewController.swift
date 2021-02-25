@@ -46,7 +46,12 @@ class ViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goMap" {
-            print("執行segue")
+            let destinationViewController = segue.destination as! MapViewController
+            
+            let indexPath = collectionView.indexPathsForSelectedItems?.first
+            print(indexPath!.row)
+            
+            destinationViewController.city = citys[indexPath!.row]
         }
     }
 

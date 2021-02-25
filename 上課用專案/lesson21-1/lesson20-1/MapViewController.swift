@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
+    var city:City!
     @IBOutlet var mapView:MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
