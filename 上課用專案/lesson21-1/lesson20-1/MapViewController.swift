@@ -20,10 +20,16 @@ class MapViewController: UIViewController {
             if error == nil,let placemarks = placemarks{
                 let placemark = placemarks[0]
                 if let location = placemark.location{
+                    let annotation = MKPointAnnotation();
+                    annotation.title = self.city.city
+                    annotation.subtitle = self.city.country
+                    annotation.coordinate = location.coordinate
                     print("緯度:\(location.coordinate.latitude)")
                     print("經度:\(location.coordinate.longitude)")
                     let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                     self.mapView.setRegion(region, animated: true)
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    self.mapView.selectAnnotation(annotation, animated: true)
                 }
             }
         }
