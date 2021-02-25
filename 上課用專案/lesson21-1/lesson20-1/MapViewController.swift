@@ -22,6 +22,8 @@ class MapViewController: UIViewController {
                 if let location = placemark.location{
                     print("緯度:\(location.coordinate.latitude)")
                     print("經度:\(location.coordinate.longitude)")
+                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    self.mapView.setRegion(region, animated: true)
                 }
             }
         }
