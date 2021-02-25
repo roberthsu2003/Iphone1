@@ -92,3 +92,11 @@ extension ViewController{
     
 }
 
+extension ViewController{
+    //UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath){
+        print("rowIndex:\(indexPath.row)")
+    }
+}
+
