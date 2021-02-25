@@ -52,5 +52,17 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController:MKMapViewDelegate{
-    
+    func mapView(_ mapView: MKMapView,
+                 viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        let identifier = "Pin"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil{
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true;
+        }
+        
+        
+        return annotationView;
+    }
 }
