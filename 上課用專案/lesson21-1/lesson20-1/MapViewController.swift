@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         title = "地圖:\(city.city!)"
         let geoCoder = CLGeocoder();
         geoCoder.geocodeAddressString(city!.city ?? "台北") { (placemarks:[CLPlacemark]?, error:Error?) in
@@ -47,4 +48,8 @@ class MapViewController: UIViewController {
     }
     */
 
+}
+
+extension MapViewController:MKMapViewDelegate{
+    
 }
