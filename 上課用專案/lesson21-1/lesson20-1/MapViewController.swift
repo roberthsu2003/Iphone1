@@ -26,10 +26,11 @@ class MapViewController: UIViewController {
                     annotation.coordinate = location.coordinate
                     print("緯度:\(location.coordinate.latitude)")
                     print("經度:\(location.coordinate.longitude)")
-                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-                    self.mapView.setRegion(region, animated: true)
+                    
                     self.mapView.showAnnotations([annotation], animated: true)
                     self.mapView.selectAnnotation(annotation, animated: true)
+                    let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
+                    self.mapView.setRegion(region, animated: true)
                 }
             }
         }
