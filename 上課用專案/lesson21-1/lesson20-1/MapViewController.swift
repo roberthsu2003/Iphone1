@@ -11,10 +11,16 @@ import MapKit
 class MapViewController: UIViewController {
     var city:City!
     @IBOutlet var mapView:MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "地圖:\(city.city!)"
+        let geoCoder = CLGeocoder();
+        geoCoder.geocodeAddressString(city!.city ?? "台北") { (placemarks:[CLPlacemark]?, error:Error?) in
+            if error == nil,let placemarks = placemarks{
+                print("沒有錯誤,取得緯經度座標")
+            }
+        }
     }
     
 
