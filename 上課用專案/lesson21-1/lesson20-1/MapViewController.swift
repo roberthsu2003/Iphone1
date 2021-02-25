@@ -18,7 +18,11 @@ class MapViewController: UIViewController {
         let geoCoder = CLGeocoder();
         geoCoder.geocodeAddressString(city!.city ?? "台北") { (placemarks:[CLPlacemark]?, error:Error?) in
             if error == nil,let placemarks = placemarks{
-                print("沒有錯誤,取得緯經度座標")
+                let placemark = placemarks[0]
+                if let location = placemark.location{
+                    print("緯度:\(location.coordinate.latitude)")
+                    print("經度:\(location.coordinate.longitude)")
+                }
             }
         }
     }
