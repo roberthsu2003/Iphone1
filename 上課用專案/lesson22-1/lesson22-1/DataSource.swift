@@ -16,4 +16,26 @@ class DataSource{
         print("closure 被執行了")
         return DataSource()
     }()
+    
+    //type method
+    static func copyFilesToDocuments(){
+        //bundle路徑
+        let sourcePath = Bundle.main.path(forResource: "citys", ofType: "db")
+        print(sourcePath!)
+        let targetPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        var targetPath = targetPaths.first ?? ""
+        targetPath += "/citys.db"
+        
+        if !FileManager.default.fileExists(atPath: targetPath){
+            
+            if (try? FileManager.default.copyItem(atPath: sourcePath!, toPath: targetPath)) == nil{
+                print("copy 失敗")
+                return
+            }
+            print("copy成功")
+            
+        }
+    }
+    
+    
 }
