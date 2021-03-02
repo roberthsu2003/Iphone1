@@ -43,6 +43,9 @@ class DataSource{
         print("db路徑:\(dbTagetPath)")
         var cities:[[String:Any]]! = NSArray(contentsOfFile: plistPath) as? [[String:Any]]
         for city in cities{
+            let sqlInsertString = "INSERT INTO city(cityName, continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
+            
+            
             print(city)
             print("===========")
         }
