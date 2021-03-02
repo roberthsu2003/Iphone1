@@ -16,6 +16,7 @@
 		93E387D725EE56EC008921BF /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93E387D625EE56EC008921BF /* citylist.plist */; };
 		93E387DA25EE5BE5008921BF /* citys.db in Resources */ = {isa = PBXBuildFile; fileRef = 93E387D925EE5BE4008921BF /* citys.db */; };
 		93E387DD25EE638D008921BF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E387DC25EE638D008921BF /* DataSource.swift */; };
+		93E387E225EE7AA6008921BF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E387E125EE7AA6008921BF /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		93E387D625EE56EC008921BF /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = "../../../iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/資源檔/citylist.plist"; sourceTree = "<group>"; };
 		93E387D925EE5BE4008921BF /* citys.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = citys.db; sourceTree = "<group>"; };
 		93E387DC25EE638D008921BF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		93E387E125EE7AA6008921BF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E387E225EE7AA6008921BF /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				93E387C025EE5690008921BF /* lesson22-1 */,
 				93E387BF25EE5690008921BF /* Products */,
+				93E387E025EE7AA6008921BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +78,14 @@
 				93E387DC25EE638D008921BF /* DataSource.swift */,
 			);
 			path = "lesson22-1";
+			sourceTree = "<group>";
+		};
+		93E387E025EE7AA6008921BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93E387E125EE7AA6008921BF /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

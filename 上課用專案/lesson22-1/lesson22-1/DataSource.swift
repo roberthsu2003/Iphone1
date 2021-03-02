@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import SQLite3
 
 class DataSource{
     //singleton class
     //建立type store property
     //property要實作closure的執行
+    static var db:OpaquePointer!;
+    
     static let main:DataSource = {
         //這個closure的執行只會被執行一次
         print("closure 被執行了")
@@ -41,6 +44,11 @@ class DataSource{
     static func fillSQLData(plistPath:String, dbTagetPath:String){
         print("plist路徑:\(plistPath)")
         print("db路徑:\(dbTagetPath)")
+        if sqlite3_open(dbTagetPath, &db) == SQLITE_OK{
+            print("db open")
+        }else{
+            print("db open 錯誤")
+        }
         var cities:[[String:Any]]! = NSArray(contentsOfFile: plistPath) as? [[String:Any]]
         for city in cities{
             let sqlInsertString = "INSERT INTO city(cityName, continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
