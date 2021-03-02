@@ -15,6 +15,7 @@
 		93E387CE25EE5692008921BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E387CC25EE5692008921BF /* LaunchScreen.storyboard */; };
 		93E387D725EE56EC008921BF /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93E387D625EE56EC008921BF /* citylist.plist */; };
 		93E387DA25EE5BE5008921BF /* citys.db in Resources */ = {isa = PBXBuildFile; fileRef = 93E387D925EE5BE4008921BF /* citys.db */; };
+		93E387DD25EE638D008921BF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E387DC25EE638D008921BF /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		93E387CF25EE5692008921BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93E387D625EE56EC008921BF /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = "../../../iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/資源檔/citylist.plist"; sourceTree = "<group>"; };
 		93E387D925EE5BE4008921BF /* citys.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = citys.db; sourceTree = "<group>"; };
+		93E387DC25EE638D008921BF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				93E387CA25EE5692008921BF /* Assets.xcassets */,
 				93E387CC25EE5692008921BF /* LaunchScreen.storyboard */,
 				93E387CF25EE5692008921BF /* Info.plist */,
+				93E387DC25EE638D008921BF /* DataSource.swift */,
 			);
 			path = "lesson22-1";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				93E387C625EE5690008921BF /* ViewController.swift in Sources */,
 				93E387C225EE5690008921BF /* AppDelegate.swift in Sources */,
+				93E387DD25EE638D008921BF /* DataSource.swift in Sources */,
 				93E387C425EE5690008921BF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

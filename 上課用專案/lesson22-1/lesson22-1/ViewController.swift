@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         let targetPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         var targetPath = targetPaths.first ?? ""
         targetPath += "/citys.db"
+        DataSource.main;
+        DataSource.main;
+        DataSource.main;
+        
     }
 
 
