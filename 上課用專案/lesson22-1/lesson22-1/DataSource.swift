@@ -21,7 +21,7 @@ class DataSource{
     static func copyFilesToDocuments(){
         //bundle路徑
         let sourcePath = Bundle.main.path(forResource: "citys", ofType: "db")
-        print(sourcePath!)
+        
         let targetPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         var targetPath = targetPaths.first ?? ""
         targetPath += "/citys.db"
@@ -32,9 +32,21 @@ class DataSource{
                 print("copy 失敗")
                 return
             }
-            print("copy成功")
-            
+            //手動將plist內的資料儲存到db檔案內
+            let plistSourcePath = Bundle.main.path(forResource: "citylist", ofType: "plist")
+            fillSQLData(plistPath: plistSourcePath!, dbTagetPath: targetPath)
         }
+    }
+    
+    static func fillSQLData(plistPath:String, dbTagetPath:String){
+        print("plist路徑:\(plistPath)")
+        print("db路徑:\(dbTagetPath)")
+        var cities:[[String:Any]]! = NSArray(contentsOfFile: plistPath) as? [[String:Any]]
+        for city in cities{
+            print(city)
+            print("===========")
+        }
+        
     }
     
     
