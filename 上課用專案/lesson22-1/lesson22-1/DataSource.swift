@@ -56,6 +56,10 @@ class DataSource{
         return citys
     }
     
+    func selectedCity(name:String) -> [City]{
+        print(name)
+        return [City]()
+    }
     
     //type method
     static func copyFilesToDocuments(){

@@ -49,7 +49,7 @@ extension ViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != ""{
-            print(searchString)
+         let citys = DataSource.main.selectedCity(name: searchString)
         }else{
             print("還沒開始搜尋")
         }
