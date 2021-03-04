@@ -28,6 +28,7 @@ class DataSource{
         let targetPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         var targetPath = targetPaths.first ?? ""
         targetPath += "/citys.db"
+        print(targetPath)
         
         if !FileManager.default.fileExists(atPath: targetPath){
             
@@ -51,11 +52,18 @@ class DataSource{
         }
         var cities:[[String:Any]]! = NSArray(contentsOfFile: plistPath) as? [[String:Any]]
         for city in cities{
+            var statement:OpaquePointer!
             let sqlInsertString = "INSERT INTO city(cityName, continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
+            if sqlite3_prepare_v2(db, sqlInsertString, -1, &statement, nil) == SQLITE_OK{
+                print("stament 建立了")
+            }else{
+                print("stament 建立失敗")
+            }
+           
             
             
-            print(city)
-            print("===========")
+            //print(city)
+            //print("===========")
         }
         
     }
