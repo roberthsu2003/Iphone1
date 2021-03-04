@@ -55,12 +55,43 @@ class DataSource{
             var statement:OpaquePointer!
             let sqlInsertString = "INSERT INTO city(cityName, continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
             if sqlite3_prepare_v2(db, sqlInsertString, -1, &statement, nil) == SQLITE_OK{
-                print("stament 建立了")
+                //print("stament 建立了")
             }else{
-                print("stament 建立失敗")
+                //print("stament 建立失敗")
+            }
+            
+            for (key,value) in city{
+                switch key{
+                    case "City":
+                        sqlite3_bind_text(statement, 1, (value as! NSString).utf8String, -1, nil)
+                    case "Continent":
+                        sqlite3_bind_text(statement, 2, (value as! NSString).utf8String, -1, nil)
+                    
+                    case "Country":
+                        sqlite3_bind_text(statement, 3, (value as! NSString).utf8String, -1, nil)
+                    
+                    case "Image":
+                        sqlite3_bind_text(statement, 4, (value as! NSString).utf8String, -1, nil)
+                    
+                    case "Local":
+                        sqlite3_bind_text(statement, 5, (value as! NSString).utf8String, -1, nil)
+                    
+                    case "lat":
+                        sqlite3_bind_double(statement, 6, value as! Double)
+                    
+                    case "long":
+                        sqlite3_bind_double(statement, 7, value as! Double)
+                    
+                    case "url":
+                        sqlite3_bind_text(statement, 8, (value as! NSString).utf8String, -1, nil)
+                    default:
+                        break
+                }
             }
            
-            
+            if sqlite3_step(statement) == SQLITE_DONE{
+                print("插入一筆成功")
+            }
             
             //print(city)
             //print("===========")
