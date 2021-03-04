@@ -48,7 +48,11 @@ extension ViewController{
 extension ViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar
-        print(searchBar.text)
+        if let searchString = searchBar.text, searchString != ""{
+            print(searchString)
+        }else{
+            print("還沒開始搜尋")
+        }
     }
 }
 
