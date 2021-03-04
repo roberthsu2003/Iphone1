@@ -9,10 +9,12 @@ import UIKit
 
 class ViewController: UITableViewController {
     var allCitys = DataSource.main.allCitys
+    let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
         //DataSource.copyFilesToDocuments()
-        
+        searchController.searchResultsUpdater = self
+        tableView.tableHeaderView = searchController.searchBar
     }
 
 
@@ -34,12 +36,19 @@ extension ViewController{
         cell.cityLabel.text = city.city;
         cell.countryLabel.text = city.country
         cell.continentLabel.text = city.continent
-        //cell.cityImageView.image = UIImage(named: city.image)
+        cell.cityImageView.image = UIImage(named: city.image)
         return cell
     }
 }
 
 extension ViewController{
     //UITableViewDelegate
+}
+
+extension ViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        print(searchBar.text)
+    }
 }
 
