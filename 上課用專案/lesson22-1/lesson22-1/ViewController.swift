@@ -12,9 +12,34 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //DataSource.copyFilesToDocuments()
-        print(allCitys)
+        
     }
 
 
+}
+
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return allCitys.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let rowIndex = indexPath.row
+        let city = allCitys[rowIndex]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
+        
+        cell.cityLabel.text = city.city;
+        cell.countryLabel.text = city.country
+        cell.continentLabel.text = city.continent
+        //cell.cityImageView.image = UIImage(named: city.image)
+        return cell
+    }
+}
+
+extension ViewController{
+    //UITableViewDelegate
 }
 
