@@ -13,16 +13,25 @@ class DataSource{
     //建立type store property
     //property要實作closure的執行
     static var db:OpaquePointer!;
+    static var dbTagetPath:String!;
     
     static let main:DataSource = {
         //這個closure的執行只會被執行一次
         print("closure 被執行了")
+        var targetPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        dbTagetPath = targetPaths.first ?? ""
+        dbTagetPath += "/citys.db"
+        if sqlite3_open(dbTagetPath, &db) == SQLITE_OK{
+            print("db open")
+        }else{
+            print("db open 錯誤")
+        }
         return DataSource()
     }()
     
     //computed property
     var allCitys:[City]{
-        
+        print(DataSource.db)
         return [City]()
     }
     
