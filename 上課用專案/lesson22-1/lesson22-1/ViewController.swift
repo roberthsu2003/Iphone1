@@ -11,8 +11,8 @@ class ViewController: UITableViewController {
     var allCitys = DataSource.main.allCitys
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataSource.copyFilesToDocuments()
-        
+        //DataSource.copyFilesToDocuments()
+        print(allCitys)
     }
 
 
