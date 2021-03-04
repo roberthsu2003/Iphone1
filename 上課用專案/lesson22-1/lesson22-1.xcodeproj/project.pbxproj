@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932CF47525F1022C00641889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932CF47325F1022C00641889 /* Main.storyboard */; };
+		932CF47925F1053500641889 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CF47725F1053500641889 /* CityCell.swift */; };
+		932CF47A25F1053500641889 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CF47825F1053500641889 /* City.swift */; };
 		93E387C225EE5690008921BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E387C125EE5690008921BF /* AppDelegate.swift */; };
 		93E387C425EE5690008921BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E387C325EE5690008921BF /* SceneDelegate.swift */; };
 		93E387C625EE5690008921BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E387C525EE5690008921BF /* ViewController.swift */; };
-		93E387C925EE5690008921BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E387C725EE5690008921BF /* Main.storyboard */; };
 		93E387CB25EE5692008921BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E387CA25EE5692008921BF /* Assets.xcassets */; };
 		93E387CE25EE5692008921BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E387CC25EE5692008921BF /* LaunchScreen.storyboard */; };
 		93E387D725EE56EC008921BF /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93E387D625EE56EC008921BF /* citylist.plist */; };
@@ -20,11 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		932CF47425F1022C00641889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../iOS行動程式基礎開發上架20堂課/第24堂課使用sqlite讀取和搜尋資料/使用sqlite_讀取和搜尋資料完成檔/DataSource/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		932CF47725F1053500641889 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityCell.swift; path = "../../../iOS行動程式基礎開發上架20堂課/第18堂課基本動畫/lesson18_專案完成檔/simpleTableView/CityCell.swift"; sourceTree = "<group>"; };
+		932CF47825F1053500641889 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = "../../../iOS行動程式基礎開發上架20堂課/第18堂課基本動畫/lesson18_專案完成檔/simpleTableView/City.swift"; sourceTree = "<group>"; };
 		93E387BE25EE5690008921BF /* lesson22-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson22-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E387C125EE5690008921BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E387C325EE5690008921BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93E387C525EE5690008921BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		93E387C825EE5690008921BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93E387CA25EE5692008921BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93E387CD25EE5692008921BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93E387CF25EE5692008921BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,12 +70,14 @@
 		93E387C025EE5690008921BF /* lesson22-1 */ = {
 			isa = PBXGroup;
 			children = (
+				932CF47825F1053500641889 /* City.swift */,
+				932CF47725F1053500641889 /* CityCell.swift */,
+				932CF47325F1022C00641889 /* Main.storyboard */,
 				93E387D925EE5BE4008921BF /* citys.db */,
 				93E387D625EE56EC008921BF /* citylist.plist */,
 				93E387C125EE5690008921BF /* AppDelegate.swift */,
 				93E387C325EE5690008921BF /* SceneDelegate.swift */,
 				93E387C525EE5690008921BF /* ViewController.swift */,
-				93E387C725EE5690008921BF /* Main.storyboard */,
 				93E387CA25EE5692008921BF /* Assets.xcassets */,
 				93E387CC25EE5692008921BF /* LaunchScreen.storyboard */,
 				93E387CF25EE5692008921BF /* Info.plist */,
@@ -146,10 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E387CE25EE5692008921BF /* LaunchScreen.storyboard in Resources */,
+				932CF47525F1022C00641889 /* Main.storyboard in Resources */,
 				93E387D725EE56EC008921BF /* citylist.plist in Resources */,
 				93E387DA25EE5BE5008921BF /* citys.db in Resources */,
 				93E387CB25EE5692008921BF /* Assets.xcassets in Resources */,
-				93E387C925EE5690008921BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +168,8 @@
 			files = (
 				93E387C625EE5690008921BF /* ViewController.swift in Sources */,
 				93E387C225EE5690008921BF /* AppDelegate.swift in Sources */,
+				932CF47A25F1053500641889 /* City.swift in Sources */,
+				932CF47925F1053500641889 /* CityCell.swift in Sources */,
 				93E387DD25EE638D008921BF /* DataSource.swift in Sources */,
 				93E387C425EE5690008921BF /* SceneDelegate.swift in Sources */,
 			);
@@ -170,10 +178,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		93E387C725EE5690008921BF /* Main.storyboard */ = {
+		932CF47325F1022C00641889 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				93E387C825EE5690008921BF /* Base */,
+				932CF47425F1022C00641889 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

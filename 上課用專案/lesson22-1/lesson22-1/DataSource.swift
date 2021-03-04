@@ -20,6 +20,13 @@ class DataSource{
         return DataSource()
     }()
     
+    //computed property
+    var allCitys:[City]{
+        
+        return [City]()
+    }
+    
+    
     //type method
     static func copyFilesToDocuments(){
         //bundle路徑
@@ -91,6 +98,7 @@ class DataSource{
            
             if sqlite3_step(statement) == SQLITE_DONE{
                 print("插入一筆成功")
+                sqlite3_finalize(statement)
             }
             
             //print(city)
