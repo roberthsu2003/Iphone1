@@ -25,6 +25,7 @@
 		932CF47425F1022C00641889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../iOS行動程式基礎開發上架20堂課/第24堂課使用sqlite讀取和搜尋資料/使用sqlite_讀取和搜尋資料完成檔/DataSource/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		932CF47725F1053500641889 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityCell.swift; path = "../../../iOS行動程式基礎開發上架20堂課/第18堂課基本動畫/lesson18_專案完成檔/simpleTableView/CityCell.swift"; sourceTree = "<group>"; };
 		932CF47825F1053500641889 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = "../../../iOS行動程式基礎開發上架20堂課/第18堂課基本動畫/lesson18_專案完成檔/simpleTableView/City.swift"; sourceTree = "<group>"; };
+		9355D85A25F7A56B003FC260 /* lesson22-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "lesson22-1.entitlements"; sourceTree = "<group>"; };
 		93E387BE25EE5690008921BF /* lesson22-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lesson22-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E387C125EE5690008921BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93E387C325EE5690008921BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		93E387C025EE5690008921BF /* lesson22-1 */ = {
 			isa = PBXGroup;
 			children = (
+				9355D85A25F7A56B003FC260 /* lesson22-1.entitlements */,
 				932CF47825F1053500641889 /* City.swift */,
 				932CF47725F1053500641889 /* CityCell.swift */,
 				932CF47325F1022C00641889 /* Main.storyboard */,
@@ -318,7 +320,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "lesson22-1/lesson22-1.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XGZJX339KV;
 				INFOPLIST_FILE = "lesson22-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,6 +331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.lesson22-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,7 +342,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "lesson22-1/lesson22-1.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XGZJX339KV;
 				INFOPLIST_FILE = "lesson22-1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -344,6 +353,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.lesson22-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

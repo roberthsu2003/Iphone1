@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     var allCitys = DataSource.main.allCitys
     let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //DataSource.copyFilesToDocuments()
