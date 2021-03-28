@@ -18,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         print("應用程式連結")
         guard let _ = (scene as? UIWindowScene) else { return }
+        let myView = window!.rootViewController!.view
+        myView!.backgroundColor = UIColor(red: 153/255, green: 198/255, blue: 228/255, alpha: 1)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
