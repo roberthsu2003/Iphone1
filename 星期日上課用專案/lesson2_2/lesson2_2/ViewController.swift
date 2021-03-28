@@ -32,6 +32,27 @@ struct Cuboid{
     }
 }
 
+struct Student{
+    var name:String
+    //只可以放0~100只間
+    var chinese:Int{
+        willSet{
+            //newValue是關鍵字
+            if newValue > 100 || newValue < 0{
+                print("您輸入的值\(newValue)超出範圍")
+            }
+            
+        }
+        didSet{
+            //oldValue是關鍵字
+            print("didSet的oldValue:\(oldValue)")
+            if chinese > 100 || chinese < 0{
+                chinese = oldValue
+            }
+        }
+    }
+}
+
 
 
 
@@ -47,6 +68,13 @@ class ViewController: UIViewController {
         
         let fourByFiveByTwo = Cuboid(width: 41.5, height: 22.3, depth: 31.2)
         print("值是:\(fourByFiveByTwo.volume)")
+        
+        var student = Student(name: "Alice", chinese: 0)
+        student.chinese = 50
+        print("現在chinese的值是\(student.chinese)")
+        
+        student.chinese = 120
+        print("現在chinese的值是\(student.chinese)")
         
     }
 
