@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.systemGray
         messageLabel.text = "Hello! Iphone"
         newButton.setTitle("press ME", for: .normal)
+        newButton.addTarget(self, action: #selector(userClick(_:)), for: .touchUpInside)
+    }
+    
+    @objc func userClick(_ sender:UIButton){
+        print("使用者按按鈕了")
     }
 
 
