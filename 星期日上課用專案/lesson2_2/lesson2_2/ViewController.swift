@@ -24,6 +24,14 @@ struct Point{
     }
 }
 
+struct Cuboid{
+    var width=0.0, height=0.0, depth=0.0
+    //只可以get的computed property
+    var volume:Double{
+        return width * height * depth
+    }
+}
+
 
 
 
@@ -36,6 +44,10 @@ class ViewController: UIViewController {
         point1.sum = 50
         print("x=\(point1.x)")
         print("y=\(point1.y)")
+        
+        let fourByFiveByTwo = Cuboid(width: 41.5, height: 22.3, depth: 31.2)
+        print("值是:\(fourByFiveByTwo.volume)")
+        
     }
 
 
