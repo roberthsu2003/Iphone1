@@ -31,6 +31,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="請按我"/>
+                                <connections>
+                                    <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gld-RB-BBm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

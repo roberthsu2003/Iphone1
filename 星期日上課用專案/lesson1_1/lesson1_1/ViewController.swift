@@ -16,10 +16,13 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.systemGray
         messageLabel.text = "Hello! Iphone"
         newButton.setTitle("press ME", for: .normal)
+        //使用程式建立target-action
+        /*
         newButton.addTarget(self, action: #selector(userClick(_:)), for: .touchUpInside)
+         */
     }
     
-    @objc func userClick(_ sender:UIButton){
+    @IBAction func userClick(_ sender:UIButton){
         if messageLabel.text == "Hello! Iphone"{
             messageLabel.text = "Hello! iOS"
         }else{
