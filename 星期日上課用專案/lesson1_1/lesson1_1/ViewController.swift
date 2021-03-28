@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     }
     
     @objc func userClick(_ sender:UIButton){
-        print("使用者按按鈕了")
+        if messageLabel.text == "Hello! Iphone"{
+            messageLabel.text = "Hello! iOS"
+        }else{
+            messageLabel.text = "Hello! Iphone"
+        }
     }
 
 
