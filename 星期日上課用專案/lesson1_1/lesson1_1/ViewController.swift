@@ -9,9 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var messageLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemGray
+        messageLabel.text = "Hello! Iphone"
     }
 
 
