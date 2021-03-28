@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var messageLabel:UILabel!
+    @IBOutlet var newButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemGray
         messageLabel.text = "Hello! Iphone"
+        newButton.setTitle("press ME", for: .normal)
     }
 
 
