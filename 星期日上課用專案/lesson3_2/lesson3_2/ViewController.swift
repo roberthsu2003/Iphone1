@@ -9,7 +9,18 @@ import UIKit
 struct Student{
     //store property
     var name:String
-    var chinese:Int
+    //propert observer
+    var chinese:Int=0{
+        willSet{
+            print("傳進來的值是\(newValue)")
+        }
+        didSet{
+            if chinese > 100 || chinese < 0{
+                print("chinese超過範圍，不會有任何改變")
+                chinese = oldValue
+            }
+        }
+    }
     var english:Int
     var math:Int
     
@@ -21,15 +32,19 @@ struct Student{
     var average:Float{
         return Float(sum) / 3.0
     }
+   
 }
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let student = Student(name: "robert", chinese: 78, english: 92, math: 78)
+        var student = Student(name: "robert", chinese: 78, english: 92, math: 78)
         print(student.sum)
         print(student.average)
+        
+        student.chinese = 120
+        print("chinese改變後的值是:\(student.chinese)")
     }
 
 
