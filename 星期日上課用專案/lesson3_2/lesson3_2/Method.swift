@@ -12,3 +12,10 @@ class Counter{
         count = 0
     }
 }
+
+struct Point{
+    var x = 0.0, y = 0.0;
+    func isToTheRightOf(x:Double) -> Bool{
+        return self.x > x
+    }
+}

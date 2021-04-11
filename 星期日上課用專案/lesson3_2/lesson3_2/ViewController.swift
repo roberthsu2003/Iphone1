@@ -57,6 +57,14 @@ class ViewController: UIViewController {
         print(SomeStructure.storedTypeProperty)
         print(SomeStructure.computedTypeProperty)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let somePoint = Point(x: 4.0, y: 5.0)
+        if somePoint.isToTheRightOf(x: 1.0) {
+            print("值是true")
+        }
+    }
 
 
 }
