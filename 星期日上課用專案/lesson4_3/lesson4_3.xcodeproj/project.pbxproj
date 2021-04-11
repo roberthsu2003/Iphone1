@@ -15,6 +15,7 @@
 		93B022F82622E2FB005DAB27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93B022F62622E2FB005DAB27 /* LaunchScreen.storyboard */; };
 		93B023022622E374005DAB27 /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B023012622E374005DAB27 /* Methods.swift */; };
 		93B023052622E8BA005DAB27 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B023042622E8BA005DAB27 /* Enums.swift */; };
+		93B023082622ED75005DAB27 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B023072622ED75005DAB27 /* ViewController1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		93B022F92622E2FB005DAB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B023012622E374005DAB27 /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
 		93B023042622E8BA005DAB27 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		93B023072622ED75005DAB27 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				93B022F92622E2FB005DAB27 /* Info.plist */,
 				93B023012622E374005DAB27 /* Methods.swift */,
 				93B023042622E8BA005DAB27 /* Enums.swift */,
+				93B023072622ED75005DAB27 /* ViewController1.swift */,
 			);
 			path = lesson4_3;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B023082622ED75005DAB27 /* ViewController1.swift in Sources */,
 				93B023022622E374005DAB27 /* Methods.swift in Sources */,
 				93B022F02622E2F9005DAB27 /* ViewController.swift in Sources */,
 				93B023052622E8BA005DAB27 /* Enums.swift in Sources */,
