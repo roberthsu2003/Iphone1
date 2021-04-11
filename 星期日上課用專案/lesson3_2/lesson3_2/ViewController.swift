@@ -36,6 +36,14 @@ struct Student{
 }
 
 class ViewController: UIViewController {
+    override func awakeFromNib() {
+        let counter = Counter() //count=0
+        counter.increment() //count=1
+        counter.increment(by: 5) //count = 6
+        print(counter.count)
+        counter.reset()
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
