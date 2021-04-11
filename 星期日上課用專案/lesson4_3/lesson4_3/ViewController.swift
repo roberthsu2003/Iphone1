@@ -8,10 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var directionToHead:CompassPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SomeClass.someTypeMethod()
+        directionToHead = CompassPoint.north
+        directionToHead = .west
+        
+        switch directionToHead{
+        case .east:
+            print("Ease")
+        case .north:
+            print("North")
+        case .south:
+            print("South")
+        case .west:
+            print("West")
+        default:
+            print("Default")
+        }
     }
 
 
