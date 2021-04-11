@@ -8,11 +8,17 @@
 import UIKit
 
 class ViewController1: UIViewController {
+    var myButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        myButton = UIButton(type: .custom)
+        myButton.setTitle("Hello! Button", for: .normal)
+        myButton.frame = CGRect(x: 100, y: 100, width: 300, height: 45)
+        myButton.backgroundColor = UIColor(white: 0.2, alpha: 1)
+        myButton.tintColor = UIColor(white: 1.0, alpha: 1)
+        view.addSubview(myButton)
+        
     }
     
 
