@@ -27,7 +27,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let student = Student(name: "robert", chinese: 78, english: 92, math: 78)
+        print(student.sum)
+        print(student.average)
     }
 
 
