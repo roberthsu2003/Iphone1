@@ -6,3 +6,9 @@ struct Point {
         y += deltaY
     }
 }
+
+class SomeClass{
+    class func someTypeMethod(){
+        print("type method")
+    }
+}
