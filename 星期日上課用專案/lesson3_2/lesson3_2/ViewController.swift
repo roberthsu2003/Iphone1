@@ -45,6 +45,9 @@ class ViewController: UIViewController {
         
         student.chinese = 120
         print("chinese改變後的值是:\(student.chinese)")
+        
+        print(SomeStructure.storedTypeProperty)
+        print(SomeStructure.computedTypeProperty)
     }
 
 
