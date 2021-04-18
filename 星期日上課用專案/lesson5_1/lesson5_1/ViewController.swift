@@ -50,8 +50,22 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = cities[indexPath.row]["City"] as? String
+        let cityName = city["City"] as? String
+        
+        if #available(iOS 15, *) {
+            //ios15以上使用這個程式區段
+            //使用新的說法
+            
+        }else{
+            //ios14以下的
+            cell.textLabel!.text = cityName
+        }
+        
+        print("傳出UITableViewCell")
+        
         return cell
     }
     
