@@ -26,6 +26,12 @@ class Tandem:Bicycle{
     var currentNumberOfPassengers = 0
 }
 
+class Train:Vehicle{
+    override func makeNoise(){
+        print("Choo Choo")
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -42,6 +48,9 @@ class ViewController: UIViewController {
         tandem.currentNumberOfPassengers = 2
         tandem.currentSpeed = 22.0
         print("Tandem:\(tandem.description)")
+        
+        let train = Train()
+        train.makeNoise()
     }
 
 
