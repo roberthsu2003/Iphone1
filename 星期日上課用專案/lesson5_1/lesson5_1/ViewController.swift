@@ -15,6 +15,14 @@ class ViewController: UIViewController {
         let url = bundle.url(forResource: "citylist", withExtension: "plist")!
         print(url.path)
         
+        let array = NSArray(contentsOf: url)!
+        let swiftArray = array as! [[String:Any]]
+        for item in swiftArray{
+            let cityName = item["City"] as! String
+            print(cityName)
+        }
+        
+        
     }
 
     override func viewDidLoad() {
