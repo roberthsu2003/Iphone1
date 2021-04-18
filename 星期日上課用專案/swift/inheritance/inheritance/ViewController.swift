@@ -18,11 +18,20 @@ class Vehicle{
     
 }
 
+class Bicycle:Vehicle{
+    var hasBasket = false
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let someVehicle = Vehicle()
+        print("Vehicle:\(someVehicle.description)")
+        
+        let bicycle = Bicycle()
+        bicycle.hasBasket = true
+        bicycle.currentSpeed = 15.0
+        print("Bicycle:\(bicycle.description)")
     }
 
 
