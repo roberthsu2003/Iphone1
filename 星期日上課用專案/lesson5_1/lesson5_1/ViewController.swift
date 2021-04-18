@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource {
+    @IBOutlet var tableView:UITableView!
+    
     var cities:[[String:Any]]!
     
     override func awakeFromNib() {
@@ -37,11 +39,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        for city in cities{
-            let cityName = city["City"] as! String
-            print(cityName)
-        }
+        tableView.dataSource = self
     }
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
+    
+    
+    
 
 
 }
