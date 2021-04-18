@@ -6,12 +6,25 @@
 //
 
 import UIKit
+struct TimesTable{
+    let multiplier:Int
+    subscript(index:Int) -> Int{
+       return multiplier * index
+    }
+}
 
 class ViewController: UIViewController {
+    var numberOfLegs = [
+        "spider":8,
+        "ant": 6,
+        "cat": 4
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let threeTimesTable = TimesTable(multiplier: 3)
+        print(threeTimesTable[5])
+        print(numberOfLegs["spide"] ?? "沒有這個key")
     }
 
 
