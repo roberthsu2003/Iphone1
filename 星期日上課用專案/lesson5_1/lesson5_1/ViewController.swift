@@ -64,6 +64,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             content.text = cityName
             content.secondaryText = country
             content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
             cell.contentConfiguration = content
             
         }else{
