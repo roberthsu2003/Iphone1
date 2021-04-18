@@ -8,10 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("awakeFromNib")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("viewDidLoad")
     }
 
 
