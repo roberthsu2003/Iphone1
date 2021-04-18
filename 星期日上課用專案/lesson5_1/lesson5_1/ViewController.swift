@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        /*
         let bundle = Bundle.main
         let url = bundle.url(forResource: "citylist", withExtension: "plist")!
         print(url.path)
@@ -20,6 +21,17 @@ class ViewController: UIViewController {
         for item in swiftArray{
             let cityName = item["City"] as! String
             print(cityName)
+        }
+ */
+        
+        if let url = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
+            if let citys = NSArray(contentsOf: url) as? [[String:Any]]{
+                for city in citys{
+                    let cityName = city["City"] as! String
+                    print(cityName)
+                }
+            }
+            
         }
         
         
