@@ -57,9 +57,14 @@ class ViewController: UIViewController,UITableViewDataSource {
         let country = city["Country"] as? String
         let imageName = city["Image"] as? String ?? ""
         
-        if #available(iOS 15, *) {
+        if #available(iOS 14, *) {
             //ios15以上使用這個程式區段
-            //使用新的說法
+            //使用新的寫法
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            content.secondaryText = country
+            content.image = UIImage(named: imageName)
+            cell.contentConfiguration = content
             
         }else{
             //ios14以下的
