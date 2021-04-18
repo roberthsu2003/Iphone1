@@ -116,15 +116,34 @@ func tableView(_ tableView: UITableView,
 2. 取出cities內的資料，並建立UITableViewCell，將資料加入至cell內
 
 ```swift
-func tableView(_ tableView: UITableView,
+   func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let rowIndex = indexPath.row
-        let cityDic = cities[rowIndex]
-        let cityName = cityDic["City"] as? String ?? "NoName";
-        let imageName = cityDic["Image"] as? String ?? "NoImage"
+        let city = cities[rowIndex]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = cityName
-        cell.imageView!.image = UIImage(named: imageName)
+        let cityName = city["City"] as? String
+        let country = city["Country"] as? String
+        let imageName = city["Image"] as? String ?? ""
+        
+        if #available(iOS 15, *) {
+            //ios15以上使用這個程式區段
+            //使用新的寫法
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            content.secondaryText = country
+            content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            cell.contentConfiguration = content
+            
+        }else{
+            //ios14以下的
+            cell.textLabel!.text = cityName
+            cell.detailTextLabel!.text = country
+            cell.imageView!.image = UIImage(named: imageName)
+        }
+        
+        print("傳出UITableViewCell")
+        
         return cell
     }
 ```
@@ -134,30 +153,46 @@ func tableView(_ tableView: UITableView,
 ```swift
 //
 //  ViewController.swift
-//  lesson10-ios14
+//  lesson5_1
 //
-//  Created by 徐國堂 on 2020/12/31.
+//  Created by 徐國堂 on 2021/4/18.
 //
 
 import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource {
-    @IBOutlet var cityTableView:UITableView!
+    @IBOutlet var tableView:UITableView!
+    
     var cities:[[String:Any]]!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //利用Bundle.main載入Bundle內的citylist.plist
-        let bundle = Bundle.main;
-        guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
-            print("沒有發現些檔案")
-            return
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        /*
+        let bundle = Bundle.main
+        let url = bundle.url(forResource: "citylist", withExtension: "plist")!
+        print(url.path)
+        
+        let array = NSArray(contentsOf: url)!
+        let swiftArray = array as! [[String:Any]]
+        for item in swiftArray{
+            let cityName = item["City"] as! String
+            print(cityName)
+        }
+ */
+        
+        if let url = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
+            if let citys = NSArray(contentsOf: url) as? [[String:Any]]{
+                cities = citys
+            }
+            
         }
         
-        cities = NSArray(contentsOf: pathURL) as? [[String:Any]]
         
-        cityTableView.dataSource = self;
-        
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView,
@@ -165,29 +200,44 @@ class ViewController: UIViewController,UITableViewDataSource {
         return cities.count
     }
     
+    
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        //取出目前要顯示的row索引編號
         let rowIndex = indexPath.row
-        
-        //取出城市資料
-        let cityDic = cities[rowIndex]
-        
-        //取出城市名稱
-        let cityName = cityDic["City"] as? String ?? "NoName";
-        
-        //取出圖片名稱
-        let imageName = cityDic["Image"] as? String ?? "NoImage"
-        
-        //透過prototype建立UITableViewCell實體
+        let city = cities[rowIndex]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let cityName = city["City"] as? String
+        let country = city["Country"] as? String
+        let imageName = city["Image"] as? String ?? ""
         
-        //將資料加入至cell內
-        cell.textLabel!.text = cityName
-        cell.imageView!.image = UIImage(named: imageName)
+        if #available(iOS 15, *) {
+            //ios15以上使用這個程式區段
+            //使用新的寫法
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            content.secondaryText = country
+            content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            cell.contentConfiguration = content
+            
+        }else{
+            //ios14以下的
+            cell.textLabel!.text = cityName
+            cell.detailTextLabel!.text = country
+            cell.imageView!.image = UIImage(named: imageName)
+        }
+        
+        print("傳出UITableViewCell")
+        
         return cell
     }
+    
+    
+    
+
+
 }
+
 
 
 ```
