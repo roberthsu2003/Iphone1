@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var cities:[[String:Any]]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +27,7 @@ class ViewController: UIViewController {
         
         if let url = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
             if let citys = NSArray(contentsOf: url) as? [[String:Any]]{
-                for city in citys{
-                    let cityName = city["City"] as! String
-                    print(cityName)
-                }
+                cities = citys
             }
             
         }
@@ -39,7 +37,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        for city in cities{
+            let cityName = city["City"] as! String
+            print(cityName)
+        }
     }
 
 
