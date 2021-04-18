@@ -22,6 +22,10 @@ class Bicycle:Vehicle{
     var hasBasket = false
 }
 
+class Tandem:Bicycle{
+    var currentNumberOfPassengers = 0
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -32,6 +36,12 @@ class ViewController: UIViewController {
         bicycle.hasBasket = true
         bicycle.currentSpeed = 15.0
         print("Bicycle:\(bicycle.description)")
+        
+        let tandem = Tandem()
+        tandem.hasBasket = true
+        tandem.currentNumberOfPassengers = 2
+        tandem.currentSpeed = 22.0
+        print("Tandem:\(tandem.description)")
     }
 
 
