@@ -55,7 +55,7 @@ class ViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         let cityName = city["City"] as? String
         let country = city["Country"] as? String
-        let imageName = city["Image"] as? String
+        let imageName = city["Image"] as? String ?? ""
         
         if #available(iOS 15, *) {
             //ios15以上使用這個程式區段
@@ -65,6 +65,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             //ios14以下的
             cell.textLabel!.text = cityName
             cell.detailTextLabel!.text = country
+            cell.imageView!.image = UIImage(named: imageName)
         }
         
         print("傳出UITableViewCell")
