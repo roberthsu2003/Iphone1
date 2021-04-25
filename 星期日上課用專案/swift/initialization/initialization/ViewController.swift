@@ -30,6 +30,7 @@ struct Celsius{
 
 struct Color{
     let red, green, blue:Double
+    var response:String?
     
     init(red:Double, green:Double, blue:Double){
         self.red = red
