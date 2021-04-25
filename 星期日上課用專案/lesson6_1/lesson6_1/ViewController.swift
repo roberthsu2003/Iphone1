@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     //awakeFromNib執行的時間點比viewDidLoad
     //這時間點不會使用到storyboard內的View
     
@@ -22,12 +22,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for city in cities{
-            print(city["City"] as! String)
-        }
+        tableView.dataSource = self
         
     }
-
+    
+    //MARK: - UITbaleViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 
 }
 
