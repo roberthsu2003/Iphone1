@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.dataSource = self
+        navigationItem.title = "世界城市介紹"
         
     }
     
