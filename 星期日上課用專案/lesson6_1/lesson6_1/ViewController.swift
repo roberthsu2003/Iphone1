@@ -41,9 +41,14 @@ class ViewController: UITableViewController {
         let city = cities[rowIndex]
         let cityName = city["City"] as? String
         let imageName = city["Image"] as! String
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = cityName
-        cell.imageView!.image = UIImage(named: imageName)
+        let countryName = city["Country"] as! String
+        let continentName = city["Continent"] as! String
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CITYCELL", for: indexPath) as! CityCell
+        cell.cityLabel.text = cityName
+        cell.cityImageView.image = UIImage(named: imageName)
+        cell.countryLabel.text = countryName
+        cell.continentLabel.text = continentName
         return cell
     }
 
