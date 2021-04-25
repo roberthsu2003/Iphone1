@@ -16,12 +16,15 @@ class CityCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cityImageView.layer.cornerRadius = 10
+        let backgroundView = UIView();
+        backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 0.5)
+        selectedBackgroundView = backgroundView
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        print("selected")
     }
 
 }
