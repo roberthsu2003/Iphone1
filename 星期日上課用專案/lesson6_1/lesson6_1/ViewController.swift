@@ -55,11 +55,21 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        /*
         print("使用者點選了\(indexPath.row)")
         let index = indexPath.row
         let city = cities[index]
         let cityName = city["City"] as! String
         print(cityName)
+ */
+        
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "取消", style:.cancel)
+        
+        optionMenu.addAction(cancelAction)
+        
+        present(optionMenu, animated: true, completion: nil)
     }
 
 }
