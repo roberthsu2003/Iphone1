@@ -63,11 +63,21 @@ class ViewController: UITableViewController {
         print(cityName)
  */
         
-        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .alert)
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "取消", style:.cancel)
         
         optionMenu.addAction(cancelAction)
+        
+        
+        
+        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){(action:UIAlertAction) -> Void in
+            let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction.init(title: "OK", style: .default))
+            self.present(alertMessage, animated: true)
+        }
+        
+        optionMenu.addAction(callAction)
         
         present(optionMenu, animated: true, completion: nil)
     }
