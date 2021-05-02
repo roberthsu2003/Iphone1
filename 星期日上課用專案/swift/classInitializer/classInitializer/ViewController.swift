@@ -13,12 +13,22 @@ class Vehicle{
     }
 }
 
+class Bicycle:Vehicle{
+    override init(){
+        super.init()
+        numberOfWheels = 2
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let vehicle = Vehicle()
         print("Vehicle:\(vehicle.description)")
+        
+        let bicycle = Bicycle()
+        print("Bicycle:\(bicycle.description)")
     }
 
 
