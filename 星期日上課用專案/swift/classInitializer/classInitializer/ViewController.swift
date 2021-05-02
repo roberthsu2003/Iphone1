@@ -20,6 +20,19 @@ class Bicycle:Vehicle{
     }
 }
 
+class Hoverboard:Vehicle{
+    var color:String;
+    init(color:String){
+        self.color = color
+        super.init()
+        numberOfWheels = 0
+    }
+    
+    override var description: String{
+        return "\(color)色的\(super.description)"
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -29,6 +42,9 @@ class ViewController: UIViewController {
         
         let bicycle = Bicycle()
         print("Bicycle:\(bicycle.description)")
+        
+        let hoverboard = Hoverboard(color: "silver")
+        print("Hoverboard:\(hoverboard.description)")
     }
 
 
