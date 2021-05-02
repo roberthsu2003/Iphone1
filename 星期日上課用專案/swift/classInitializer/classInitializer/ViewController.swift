@@ -33,6 +33,17 @@ class Hoverboard:Vehicle{
     }
 }
 
+class Food{
+    var name:String
+    init(name:String){
+        self.name = name;
+    }
+    
+    convenience init(){
+        self.init(name:"[unnamed]")
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -45,6 +56,10 @@ class ViewController: UIViewController {
         
         let hoverboard = Hoverboard(color: "silver")
         print("Hoverboard:\(hoverboard.description)")
+        
+        
+        let namedMeat = Food(name: "Bacon")
+        let mysteryMeat = Food()
     }
 
 
