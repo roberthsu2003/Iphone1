@@ -79,6 +79,14 @@ class ViewController: UITableViewController {
         
         optionMenu.addAction(callAction)
         
+        let checkInMark = UIAlertAction(title: "標示", style: .default, handler: { (action:UIAlertAction) -> Void in
+            print("標示")
+            let cell = tableView.cellForRow(at: indexPath)
+            cell!.accessoryType = .checkmark
+        })
+        
+        optionMenu.addAction(checkInMark)
+        
         present(optionMenu, animated: true, completion: nil)
     }
 
