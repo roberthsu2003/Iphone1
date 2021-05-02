@@ -44,6 +44,19 @@ class Food{
     }
 }
 
+class RecipeIngredient:Food{
+    var quantity:Int
+    
+    init(name:String, quantity:Int){
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    
+    convenience override init(name:String){
+        self.init(name:name,quantity:1)
+    }
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -60,6 +73,11 @@ class ViewController: UIViewController {
         
         let namedMeat = Food(name: "Bacon")
         let mysteryMeat = Food()
+        
+        
+        let oneMysteryItem = RecipeIngredient()
+        let oneBacon = RecipeIngredient(name: "Bacon")
+        let sixEggs = RecipeIngredient(name: "Eggs", quantity: 6)
     }
 
 
