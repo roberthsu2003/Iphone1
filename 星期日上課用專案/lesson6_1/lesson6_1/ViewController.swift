@@ -12,12 +12,14 @@ class ViewController: UITableViewController {
     //這時間點不會使用到storyboard內的View
     
     var cities:[[String:Any]]!
+    var cityIsMarked:[Bool]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         let bundle = Bundle.main
         let pathURL = bundle.url(forResource: "citylist", withExtension: "plist")!
         cities = NSArray(contentsOf: pathURL) as? [[String:Any]]
+        cityIsMarked = Array(repeating: false, count: cities.count)
     }
     
     override func viewDidLoad() {
@@ -49,6 +51,13 @@ class ViewController: UITableViewController {
         cell.cityImageView.image = UIImage(named: imageName)
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
+        
+        if cityIsMarked[rowIndex]{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
+        
         return cell
     }
     
@@ -78,11 +87,28 @@ class ViewController: UITableViewController {
         }
         
         optionMenu.addAction(callAction)
+        var titleName:String!;
+        if self.cityIsMarked[indexPath.row]{
+            titleName = "取消標示"
+        }else{
+            titleName = "標示"
+        }
         
-        let checkInMark = UIAlertAction(title: "標示", style: .default, handler: { (action:UIAlertAction) -> Void in
-            print("標示")
+        
+        let checkInMark = UIAlertAction(title: titleName, style: .default, handler: { (action:UIAlertAction) -> Void in
+            
             let cell = tableView.cellForRow(at: indexPath)
-            cell!.accessoryType = .checkmark
+            switch titleName{
+            case "取消標示":
+                cell!.accessoryType = .none
+                self.cityIsMarked[indexPath.row] = false
+            case "標示":
+                cell!.accessoryType = .checkmark
+                self.cityIsMarked[indexPath.row] = true
+            default:
+                break;
+            }
+            
         })
         
         optionMenu.addAction(checkInMark)
