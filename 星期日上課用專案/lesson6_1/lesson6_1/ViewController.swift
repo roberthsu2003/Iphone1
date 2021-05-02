@@ -51,6 +51,16 @@ class ViewController: UITableViewController {
         cell.continentLabel.text = continentName
         return cell
     }
+    
+    //MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        print("使用者點選了\(indexPath.row)")
+        let index = indexPath.row
+        let city = cities[index]
+        let cityName = city["City"] as! String
+        print(cityName)
+    }
 
 }
 
