@@ -126,20 +126,27 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
         let deleteAction = UITableViewRowAction(style: .default, title: "刪除") { (action:UITableViewRowAction, indexPath:IndexPath) in
-            self.cities.remove(at: indexPath.row)
-            self.cityIsMarked.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            if action.title == "刪除" {
+                self.cities.remove(at: indexPath.row)
+                self.cityIsMarked.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
         }
+        
+        deleteAction.backgroundColor = UIColor(red: 171/255, green: 227/255, blue: 255/255, alpha: 1)
         
         return [deleteAction]
     }
     
-    /*
+    @available(iOS 14,*)
     override func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
-        
+        return nil;
     }
- */
+    
+    
+   
 
     
     
