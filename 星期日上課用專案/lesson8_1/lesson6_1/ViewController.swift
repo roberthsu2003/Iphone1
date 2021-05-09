@@ -70,6 +70,7 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        //這是使用手動的方式建立DetailViewController的方式
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(identifier: "DETAIL") as! DetailViewController
         
