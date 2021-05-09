@@ -45,6 +45,10 @@ class ViewController: UITableViewController {
         
     }
     
+    @IBAction func goBack(_ sender:UIStoryboardSegue){
+        print(sender.source)
+    }
+    
     //MARK: - UITbaleViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{

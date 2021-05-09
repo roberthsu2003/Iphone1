@@ -141,17 +141,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bcQ-8l-lif">
-                        <barButtonItem key="leftBarButtonItem" title="回上一頁" id="rIK-U9-FtG">
-                            <connections>
-                                <action selector="backToRoot:" destination="xcS-mf-Yqz" id="N4X-6T-AWw"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="回上一頁" id="rIK-U9-FtG">
+                                <connections>
+                                    <action selector="backToRoot:" destination="xcS-mf-Yqz" id="N4X-6T-AWw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="unwind" id="VIV-pN-inM">
+                                <connections>
+                                    <segue destination="sZz-cX-GcL" kind="unwind" unwindAction="goBack:" id="0QO-25-RZF"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="AAY-Kl-wUm" id="Ai6-Ut-SNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPH-9F-rG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="sZz-cX-GcL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1428" y="-1.3493253373313345"/>
         </scene>
