@@ -29,7 +29,13 @@ class ViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("segue被執行了")
+        if sender == nil{
+            print("sender==nil")
+        }
+        if segue.identifier == "goDetail" {
+            print("segue.identifier=goDetail")
+        }
+        
     }
     
     //MARK: - UITbaleViewDataSource

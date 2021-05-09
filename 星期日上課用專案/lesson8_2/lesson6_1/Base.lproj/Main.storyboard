@@ -86,7 +86,7 @@
                                     <outlet property="cityLabel" destination="wYA-cJ-lY5" id="t9X-le-Kpv"/>
                                     <outlet property="continentLabel" destination="2HR-hW-Ptf" id="dCg-JO-W98"/>
                                     <outlet property="countryLabel" destination="MM3-d5-fLs" id="EHE-EN-Sxz"/>
-                                    <segue destination="xcS-mf-Yqz" kind="show" id="0T0-zn-YnB"/>
+                                    <segue destination="xcS-mf-Yqz" kind="show" identifier="goDetail" id="0T0-zn-YnB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
