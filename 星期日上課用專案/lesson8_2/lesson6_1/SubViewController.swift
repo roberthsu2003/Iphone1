@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import WebKit
 
 class SubViewController: UIViewController {
+    @IBOutlet var webView:WKWebView!;
     var city:[String:Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city)
+        let url = city["url"]!
+        print(url)
     }
     
 

@@ -111,14 +111,33 @@
                     <view key="view" contentMode="scaleToFill" id="XIA-Vi-JeL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wM-W3-mVj">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="k7t-5v-WcS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1wM-W3-mVj" firstAttribute="trailing" secondItem="k7t-5v-WcS" secondAttribute="trailing" id="7l0-Uu-L6Z"/>
+                            <constraint firstItem="1wM-W3-mVj" firstAttribute="leading" secondItem="k7t-5v-WcS" secondAttribute="leading" id="A60-TI-qXJ"/>
+                            <constraint firstItem="1wM-W3-mVj" firstAttribute="bottom" secondItem="k7t-5v-WcS" secondAttribute="bottom" id="KqZ-SZ-RJX"/>
+                            <constraint firstItem="1wM-W3-mVj" firstAttribute="top" secondItem="k7t-5v-WcS" secondAttribute="top" id="eK1-jT-dDD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="M6C-0x-teJ"/>
+                    <connections>
+                        <outlet property="webView" destination="1wM-W3-mVj" id="a9e-vb-LtK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuQ-hM-XSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1457" y="-420"/>
+            <point key="canvasLocation" x="1456.8" y="-420.53973013493254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hRS-Rc-bEd">
