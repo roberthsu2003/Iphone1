@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         let imageName = city["Image"] as! String
         imageView.image = UIImage(named: imageName)
+        let cityName = city["City"] as! String
+        title = cityName
     }
     
 

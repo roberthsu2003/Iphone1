@@ -46,7 +46,8 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func goBack(_ sender:UIStoryboardSegue){
-        print(sender.source)
+        let detailViewController = sender.source as! DetailViewController
+        print("從\(detailViewController.title)回來了")
     }
     
     //MARK: - UITbaleViewDataSource
