@@ -39,7 +39,8 @@ class ViewController: UITableViewController {
             let indexPath = tableView.indexPath(for: cityCell)
             let index = indexPath!.row
             let city = cities[index]
-            print(city)
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.city = city            
         }
         
     }
