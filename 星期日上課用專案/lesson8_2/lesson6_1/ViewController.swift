@@ -41,6 +41,13 @@ class ViewController: UITableViewController {
             let city = cities[index]
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.city = city
+        }else if segue.identifier == "goWeb"{
+            guard let sender = sender else{
+                print("sender是nil")
+                return;
+            }
+            let city = sender as! [String:Any]
+            print(city)
         }
         
     }
@@ -100,7 +107,7 @@ class ViewController: UITableViewController {
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
         let index = indexPath.row
         let city = cities[index];
-        print(city)
+        performSegue(withIdentifier: "goWeb", sender: city)
     }
 
    @available(iOS 8, *)
