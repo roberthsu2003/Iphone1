@@ -40,7 +40,7 @@ class ViewController: UITableViewController {
             let index = indexPath!.row
             let city = cities[index]
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.city = city            
+            detailViewController.city = city
         }
         
     }
