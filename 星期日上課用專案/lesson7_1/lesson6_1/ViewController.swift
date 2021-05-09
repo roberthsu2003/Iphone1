@@ -139,10 +139,19 @@ class ViewController: UITableViewController {
         return [deleteAction]
     }
     
-    @available(iOS 14,*)
+    @available(iOS 11,*)
     override func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
-        return nil;
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { (action:UIContextualAction, view:UIView, command:@escaping (Bool) -> Void )in
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 171/255, green: 227/255, blue: 255/255, alpha: 1)
+        
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     
