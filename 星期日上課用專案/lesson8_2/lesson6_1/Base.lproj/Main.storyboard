@@ -34,11 +34,11 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CITYCELL" rowHeight="80" id="yvi-Hp-omn" customClass="CityCell" customModule="lesson8_2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CITYCELL" rowHeight="80" id="yvi-Hp-omn" customClass="CityCell" customModule="lesson8_2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvi-Hp-omn" id="s54-g3-do9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="321" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qq3-ZO-MYG">
@@ -49,7 +49,7 @@
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="iOt-c2-gb5">
-                                            <rect key="frame" x="161" y="6" width="197" height="65"/>
+                                            <rect key="frame" x="161" y="6" width="143" height="65"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秋葉原" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYA-cJ-lY5">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="27.5"/>
@@ -96,6 +96,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="pe7-iA-nOe"/>
+                    <connections>
+                        <segue destination="WVF-x6-Phc" kind="show" identifier="goWeb" id="p0W-Pq-Px1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4l-GG-W5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,10 +114,11 @@
                         <viewLayoutGuide key="safeArea" id="k7t-5v-WcS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="M6C-0x-teJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuQ-hM-XSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420" y="-412"/>
+            <point key="canvasLocation" x="1457" y="-420"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hRS-Rc-bEd">

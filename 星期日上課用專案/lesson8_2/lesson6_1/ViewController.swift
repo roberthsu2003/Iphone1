@@ -73,12 +73,13 @@ class ViewController: UITableViewController {
         cell.cityImageView.image = UIImage(named: imageName)
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
-        
+        /*
         if cityIsMarked[rowIndex]{
             cell.accessoryType = .checkmark
         }else{
             cell.accessoryType = .none
         }
+ */
         
         return cell
     }
