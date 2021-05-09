@@ -70,7 +70,10 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        //navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(identifier: "DETAIL") as! DetailViewController
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
    @available(iOS 8, *)
