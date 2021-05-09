@@ -29,12 +29,17 @@ class ViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let sender = sender{
-            let cityCell = sender as! CityCell
-            print(cityCell)
-        }
+        
         if segue.identifier == "goDetail" {
-            print("segue.identifier=goDetail")
+            guard let sender = sender else{
+                print("snder沒有值")
+                return
+            }
+            let cityCell = sender as! CityCell
+            let indexPath = tableView.indexPath(for: cityCell)
+            let index = indexPath!.row
+            let city = cities[index]
+            print(city)
         }
         
     }
