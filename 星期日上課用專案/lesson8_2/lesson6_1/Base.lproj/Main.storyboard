@@ -140,7 +140,13 @@
                             <constraint firstItem="AAY-Kl-wUm" firstAttribute="bottom" secondItem="NMd-jh-MaK" secondAttribute="bottom" id="viv-vD-zFi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bcQ-8l-lif"/>
+                    <navigationItem key="navigationItem" id="bcQ-8l-lif">
+                        <barButtonItem key="leftBarButtonItem" title="回上一頁" id="rIK-U9-FtG">
+                            <connections>
+                                <action selector="backToRoot:" destination="xcS-mf-Yqz" id="N4X-6T-AWw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="AAY-Kl-wUm" id="Ai6-Ut-SNt"/>
                     </connections>
