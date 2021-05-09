@@ -14,8 +14,15 @@ class SubViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = city["url"]!
-        print(url)
+        let urlPath = city["url"] as! String
+        let encodePath=urlPath.addingPercentEncoding(withAllowedCharacters:
+                                        .urlQueryAllowed)
+        
+        guard let url = URL(string: encodePath!) else{
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        webView.load(urlRequest)
     }
     
 
