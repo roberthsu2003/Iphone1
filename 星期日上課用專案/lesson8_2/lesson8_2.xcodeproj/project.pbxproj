@@ -16,6 +16,7 @@
 		936A38D026350497005AD781 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 936A38CF26350497005AD781 /* citylist.plist */; };
 		936A38D326354451005AD781 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A38D226354451005AD781 /* CityCell.swift */; };
 		93E72BED264791B100DDA7D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E72BEC264791B100DDA7D6 /* DetailViewController.swift */; };
+		93E72BEF2647C9C400DDA7D6 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E72BEE2647C9C400DDA7D6 /* SubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		936A38CF26350497005AD781 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = "../../../iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/資源檔/citylist.plist"; sourceTree = "<group>"; };
 		936A38D226354451005AD781 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		93E72BEC264791B100DDA7D6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		93E72BEE2647C9C400DDA7D6 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				936A38C726350462005AD781 /* Info.plist */,
 				936A38D226354451005AD781 /* CityCell.swift */,
 				93E72BEC264791B100DDA7D6 /* DetailViewController.swift */,
+				93E72BEE2647C9C400DDA7D6 /* SubViewController.swift */,
 			);
 			path = lesson6_1;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				936A38BE26350461005AD781 /* ViewController.swift in Sources */,
 				936A38BA26350461005AD781 /* AppDelegate.swift in Sources */,
 				93E72BED264791B100DDA7D6 /* DetailViewController.swift in Sources */,
+				93E72BEF2647C9C400DDA7D6 /* SubViewController.swift in Sources */,
 				936A38D326354451005AD781 /* CityCell.swift in Sources */,
 				936A38BC26350461005AD781 /* SceneDelegate.swift in Sources */,
 			);

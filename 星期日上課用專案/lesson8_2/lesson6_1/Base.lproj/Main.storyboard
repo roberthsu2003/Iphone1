@@ -101,6 +101,21 @@
             </objects>
             <point key="canvasLocation" x="650" y="-1"/>
         </scene>
+        <!--Sub View Controller-->
+        <scene sceneID="clP-Vi-mob">
+            <objects>
+                <viewController id="WVF-x6-Phc" customClass="SubViewController" customModule="lesson8_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XIA-Vi-JeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k7t-5v-WcS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RuQ-hM-XSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="-412"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hRS-Rc-bEd">
             <objects>
@@ -161,7 +176,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPH-9F-rG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sZz-cX-GcL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-1.3493253373313345"/>
+            <point key="canvasLocation" x="1457" y="260"/>
         </scene>
     </scenes>
     <resources>
