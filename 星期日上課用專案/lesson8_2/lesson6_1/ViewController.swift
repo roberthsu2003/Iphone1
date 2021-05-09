@@ -29,8 +29,9 @@ class ViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if sender == nil{
-            print("sender==nil")
+        if let sender = sender{
+            let cityCell = sender as! CityCell
+            print(cityCell)
         }
         if segue.identifier == "goDetail" {
             print("segue.identifier=goDetail")
