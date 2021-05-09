@@ -47,7 +47,9 @@ class ViewController: UITableViewController {
                 return;
             }
             let city = sender as! [String:Any]
-            print(city)
+            let subViewController = segue.destination as! SubViewController
+            subViewController.city = city
+           
         }
         
     }

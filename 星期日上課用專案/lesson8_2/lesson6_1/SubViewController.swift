@@ -8,11 +8,11 @@
 import UIKit
 
 class SubViewController: UIViewController {
-
+    var city:[String:Any]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(city)
     }
     
 
