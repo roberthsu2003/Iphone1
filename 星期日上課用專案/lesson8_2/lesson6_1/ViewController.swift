@@ -95,6 +95,13 @@ class ViewController: UITableViewController {
                    didSelectRowAt indexPath: IndexPath){
        
     }
+    
+    override func tableView(_ tableView: UITableView,
+                   accessoryButtonTappedForRowWith indexPath: IndexPath){
+        let index = indexPath.row
+        let city = cities[index];
+        print(city)
+    }
 
    @available(iOS 8, *)
     override func tableView(_ tableView: UITableView,
