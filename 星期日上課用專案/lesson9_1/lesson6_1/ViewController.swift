@@ -20,6 +20,7 @@ class ViewController: UITableViewController {
         let pathURL = bundle.url(forResource: "citylist", withExtension: "plist")!
         cities = NSArray(contentsOf: pathURL) as? [[String:Any]]
         cityIsMarked = Array(repeating: false, count: cities.count)
+        
     }
     
     override func viewDidLoad() {
