@@ -46,9 +46,17 @@ class ViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(salse.list)
+    
+    
+    @IBAction func result(_ sender:UIBarButtonItem){
+        var message = ""
+        for (key,value) in salse.list{
+            message += "\(key) = \(value) \n"
+        }
+        let alertController = UIAlertController(title: "購物車內容", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

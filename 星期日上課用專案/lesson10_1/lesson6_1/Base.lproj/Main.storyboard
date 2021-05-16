@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="txY-jZ-yAN">
             <objects>
-                <tableViewController id="FbU-Bq-fVv" customClass="ViewController" customModule="lesson9_1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FbU-Bq-fVv" customClass="ViewController" customModule="lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qbj-Zn-gVy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CITYCELL" rowHeight="80" id="yvi-Hp-omn" customClass="CityCell" customModule="lesson9_1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CITYCELL" rowHeight="80" id="yvi-Hp-omn" customClass="CityCell" customModule="lesson10_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="68" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvi-Hp-omn" id="s54-g3-do9">
@@ -93,7 +93,13 @@
                             <outlet property="delegate" destination="FbU-Bq-fVv" id="Rcd-yd-0qp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pe7-iA-nOe"/>
+                    <navigationItem key="navigationItem" id="pe7-iA-nOe">
+                        <barButtonItem key="rightBarButtonItem" title="結帳" id="goX-L3-mik">
+                            <connections>
+                                <action selector="result:" destination="FbU-Bq-fVv" id="yTH-e9-mYw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="pLI-te-UEq" kind="show" identifier="goDetail" id="Te9-le-gnH"/>
                     </connections>
@@ -105,7 +111,7 @@
         <!--Detail View Controller-->
         <scene sceneID="u8E-3M-wfI">
             <objects>
-                <tableViewController id="pLI-te-UEq" customClass="DetailViewController" customModule="lesson9_1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pLI-te-UEq" customClass="DetailViewController" customModule="lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3MY-wL-3mo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +121,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL1" rowHeight="93" id="8TZ-L4-Q0p" customClass="DetailViewCell" customModule="lesson9_1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL1" rowHeight="93" id="8TZ-L4-Q0p" customClass="DetailViewCell" customModule="lesson10_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="267.5" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8TZ-L4-Q0p" id="6kf-XF-iVz">
