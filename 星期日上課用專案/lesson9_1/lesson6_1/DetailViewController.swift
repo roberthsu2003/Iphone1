@@ -16,6 +16,16 @@ class DetailViewController: UITableViewController {
         let imageName = city.image
         cityImageView.image = UIImage(named: imageName!)
     }
+    // MARK: - UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 
    
 
