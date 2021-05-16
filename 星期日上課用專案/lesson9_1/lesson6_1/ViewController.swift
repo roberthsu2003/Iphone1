@@ -11,14 +11,26 @@ class ViewController: UITableViewController {
     //awakeFromNib執行的時間點比viewDidLoad
     //這時間點不會使用到storyboard內的View
     
-    var cities:[[String:Any]]!
+    var cities:[City]!
     var cityIsMarked:[Bool]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         let bundle = Bundle.main
         let pathURL = bundle.url(forResource: "citylist", withExtension: "plist")!
-        cities = NSArray(contentsOf: pathURL) as? [[String:Any]]
+        let allCity = NSArray(contentsOf: pathURL) as? [[String:Any]]
+        for oneCity in allCity!{
+            let cityName = oneCity["City"] as! String
+            let continent = oneCity["Continent"] as! String
+            let country = oneCity["Country"] as! String
+            let image = oneCity["Image"] as! String
+            let local = oneCity["Local"] as! String
+            let latitude = oneCity["lat"] as! Double
+            let longitude = oneCity["lon"] as! Double
+            let url = oneCity["url"] as! String
+            let city = City(city: cityName, continent: continent, country: country, image: image, local: local, latitude: latitude, longitude: longitude, url: url)
+            cities.append(city)
+        }
         cityIsMarked = Array(repeating: false, count: cities.count)
         
     }
