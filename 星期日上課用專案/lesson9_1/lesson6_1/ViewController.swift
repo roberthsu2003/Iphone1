@@ -46,7 +46,8 @@ class ViewController: UITableViewController {
         if segue.identifier == "goDetail"{
             //取得city的實體
             let city = sender as! City
-            print(city.city!)
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.city = city
         }
     }
     
