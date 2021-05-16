@@ -19,7 +19,7 @@ class DetailViewController: UITableViewController {
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView,
@@ -39,6 +39,9 @@ class DetailViewController: UITableViewController {
             case 3:
                 cell.fieldLable.text = "網址"
                 cell.valueLable.text = city.url
+            case 4:
+                cell.fieldLable.text = "說明"
+                cell.valueLable.text = city.local
             default:
                 cell.fieldLable.text = ""
                 cell.valueLable.text = ""
