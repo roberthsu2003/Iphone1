@@ -46,6 +46,11 @@ class ViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     
     
     @IBAction func result(_ sender:UIBarButtonItem){
@@ -93,7 +98,7 @@ class ViewController: UITableViewController {
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
         
-        if cityIsMarked[rowIndex]{
+        if let value = salse.list[cityName!] {
             cell.accessoryType = .checkmark
         }else{
             cell.accessoryType = .none
