@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9317CFFC2650B49C006B5EF4 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9317CFFB2650B49C006B5EF4 /* citylist.plist */; };
+		9317CFFE2650B76E006B5EF4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9317CFFD2650B76E006B5EF4 /* City.swift */; };
 		936A38BA26350461005AD781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A38B926350461005AD781 /* AppDelegate.swift */; };
 		936A38BC26350461005AD781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A38BB26350461005AD781 /* SceneDelegate.swift */; };
 		936A38BE26350461005AD781 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936A38BD26350461005AD781 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		9317CFFB2650B49C006B5EF4 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		9317CFFD2650B76E006B5EF4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		936A38B626350461005AD781 /* lesson9_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson9_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936A38B926350461005AD781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936A38BB26350461005AD781 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		936A38B826350461005AD781 /* lesson6_1 */ = {
 			isa = PBXGroup;
 			children = (
+				9317CFFD2650B76E006B5EF4 /* City.swift */,
 				9317CFFB2650B49C006B5EF4 /* citylist.plist */,
 				936A38B926350461005AD781 /* AppDelegate.swift */,
 				936A38BB26350461005AD781 /* SceneDelegate.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936A38BE26350461005AD781 /* ViewController.swift in Sources */,
+				9317CFFE2650B76E006B5EF4 /* City.swift in Sources */,
 				936A38BA26350461005AD781 /* AppDelegate.swift in Sources */,
 				936A38D326354451005AD781 /* CityCell.swift in Sources */,
 				936A38BC26350461005AD781 /* SceneDelegate.swift in Sources */,
