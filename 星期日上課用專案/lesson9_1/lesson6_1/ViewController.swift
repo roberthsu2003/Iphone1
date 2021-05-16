@@ -41,6 +41,15 @@ class ViewController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //取得segue後先檢查segue的identifier
+        if segue.identifier == "goDetail"{
+            //取得city的實體
+            let city = sender as! City
+            print(city.city!)
+        }
+    }
+    
     //MARK: - UITbaleViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
@@ -83,7 +92,10 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-      performSegue(withIdentifier: "goDetail", sender: nil)
+        //取得選取的city
+        let city = cities[indexPath.row]
+        //將city傳出
+        performSegue(withIdentifier: "goDetail", sender: city)
     }
 
    @available(iOS 8, *)
