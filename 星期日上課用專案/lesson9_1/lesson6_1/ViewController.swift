@@ -11,7 +11,7 @@ class ViewController: UITableViewController {
     //awakeFromNib執行的時間點比viewDidLoad
     //這時間點不會使用到storyboard內的View
     
-    var cities:[City]!
+    var cities = [City]()
     var cityIsMarked:[Bool]!
     
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class ViewController: UITableViewController {
             let image = oneCity["Image"] as! String
             let local = oneCity["Local"] as! String
             let latitude = oneCity["lat"] as! Double
-            let longitude = oneCity["lon"] as! Double
+            let longitude = oneCity["long"] as! Double
             let url = oneCity["url"] as! String
             let city = City(city: cityName, continent: continent, country: country, image: image, local: local, latitude: latitude, longitude: longitude, url: url)
             cities.append(city)
@@ -54,14 +54,14 @@ class ViewController: UITableViewController {
         //當畫面要出現的row範圍時,tableView會要求傳出所需要的UITableViewCell
         let rowIndex = indexPath.row
         let city = cities[rowIndex]
-        let cityName = city["City"] as? String
-        let imageName = city["Image"] as! String
-        let countryName = city["Country"] as! String
-        let continentName = city["Continent"] as! String
+        let cityName = city.city
+        let imageName = city.image
+        let countryName = city.country
+        let continentName = city.continent
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CITYCELL", for: indexPath) as! CityCell
         cell.cityLabel.text = cityName
-        cell.cityImageView.image = UIImage(named: imageName)
+        cell.cityImageView.image = UIImage(named: imageName!)
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
         
