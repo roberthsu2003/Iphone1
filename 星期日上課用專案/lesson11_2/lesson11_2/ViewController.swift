@@ -11,7 +11,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //取得sandbox的絕對路徑
+        let fileManager = FileManager.default
+        if let docsurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false){
+            print(docsurl.path)
+        }
     }
 
 
