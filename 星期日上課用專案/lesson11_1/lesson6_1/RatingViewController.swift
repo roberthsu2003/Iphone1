@@ -11,10 +11,12 @@ class RatingViewController: UIViewController {
     var city:City!
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView:UIView!
+    @IBOutlet var cityImageView:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.image = UIImage(named: city.image)
+        cityImageView.image = UIImage(named: city.image)
         let blurEffect = UIBlurEffect(style: .dark);
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
