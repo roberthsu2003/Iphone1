@@ -9,11 +9,11 @@ import UIKit
 
 class RatingViewController: UIViewController {
     var city:City!
-
+    @IBOutlet var backgroundImageView:UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(city.city)
+        backgroundImageView.image = UIImage(named: city.image)
+        
     }
     
 

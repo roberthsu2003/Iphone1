@@ -180,13 +180,27 @@
                     <view key="view" contentMode="scaleToFill" id="uyt-E3-jfC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CFa-GX-AIr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="e0E-29-SWL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CFa-GX-AIr" firstAttribute="top" secondItem="e0E-29-SWL" secondAttribute="top" id="96m-gt-MK7"/>
+                            <constraint firstItem="CFa-GX-AIr" firstAttribute="trailing" secondItem="e0E-29-SWL" secondAttribute="trailing" id="Xv5-wb-mps"/>
+                            <constraint firstItem="CFa-GX-AIr" firstAttribute="bottom" secondItem="e0E-29-SWL" secondAttribute="bottom" id="hfT-QC-upZ"/>
+                            <constraint firstItem="CFa-GX-AIr" firstAttribute="leading" secondItem="e0E-29-SWL" secondAttribute="leading" id="xad-RM-bJb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="CFa-GX-AIr" id="blL-Z5-7Od"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfN-xJ-fpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="-9"/>
+            <point key="canvasLocation" x="2256.8000000000002" y="-9.4452773613193415"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gwT-Qb-vPE">
