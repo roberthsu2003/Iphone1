@@ -13,17 +13,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //取得sandbox的絕對路徑
         let fileManager = FileManager.default
-        /*
-        if let docsurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false){
-            print(docsurl.path)
-        }else{
-            print("沒有這個路徑")
+        
+        guard let docsurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)else{
+            print("出錯了")
+            return
         }
- */
+        let targetFileURL = docsurl.appendingPathComponent("city.plist")
+        
+         if !fileManager.fileExists(atPath: targetFileURL.path){
+            print("沒有這個檔")
+            //copy檔案進來
+            
+         }else{
+            print("有這個檔")
+            //不用copy
+         }
+       
         /*
         let docsurl = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         docsurl.path
  */
+        /*
         
         do{
             let docsurl = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -31,6 +41,7 @@ class ViewController: UIViewController {
         }catch{
             print("錯誤了")
         }
+ */
     }
 
 
