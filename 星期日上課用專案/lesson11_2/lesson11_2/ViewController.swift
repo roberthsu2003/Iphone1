@@ -43,7 +43,11 @@ class ViewController: UIViewController {
             print("有這個檔")
             //不用copy
          }
-       
+        
+        
+        let cities = NSArray(contentsOf: targetFileURL) as! [[String:Any]]
+        print(cities)
+        
         /*
         let docsurl = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         docsurl.path
