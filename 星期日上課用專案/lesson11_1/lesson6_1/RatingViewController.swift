@@ -33,4 +33,19 @@ class RatingViewController: UIViewController {
         
     }
     
+    @IBAction func userClick(_ sender:UIButton){
+        switch sender.tag{
+        case 1:
+            print("科技化城式")
+        case 2:
+            print("風景不錯")
+        case 3:
+            print("很現代化的城市")
+        case 4:
+            print("環保的城市")
+        default:
+            break
+        }
+    }
+    
 }
