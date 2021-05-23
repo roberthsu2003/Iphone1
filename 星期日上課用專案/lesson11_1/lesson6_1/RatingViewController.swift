@@ -36,7 +36,7 @@ class RatingViewController: UIViewController {
     @IBAction func userClick(_ sender:UIButton){
         switch sender.tag{
         case 1:
-            print("科技化城式")
+            print("科技化城市")
         case 2:
             print("風景不錯")
         case 3:
