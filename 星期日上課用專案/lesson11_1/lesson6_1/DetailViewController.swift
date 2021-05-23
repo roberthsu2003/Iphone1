@@ -16,6 +16,13 @@ class DetailViewController: UITableViewController {
         let imageName = city.image
         cityImageView.image = UIImage(named: imageName!)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goRating"{
+            let ratingViewController = segue.destination as! RatingViewController
+            ratingViewController.city = city
+        }
+    }
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
