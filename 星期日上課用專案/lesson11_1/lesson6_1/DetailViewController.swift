@@ -23,6 +23,11 @@ class DetailViewController: UITableViewController {
             ratingViewController.city = city
         }
     }
+    
+    @IBAction func goBack(_ sender:UIStoryboardSegue){
+        tableView.reloadData()
+    }
+    
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{

@@ -209,6 +209,7 @@
                                                 <state key="normal" title="科技化城市"/>
                                                 <connections>
                                                     <action selector="userClick:" destination="ynW-LC-PBs" eventType="touchUpInside" id="h4r-Jv-o7I"/>
+                                                    <segue destination="BSk-bn-gei" kind="unwind" identifier="back" unwindAction="goBack:" id="jLz-Ka-dpJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-Rs-ga6">
@@ -275,6 +276,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfN-xJ-fpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BSk-bn-gei" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2256.8000000000002" y="-9.4452773613193415"/>
         </scene>
