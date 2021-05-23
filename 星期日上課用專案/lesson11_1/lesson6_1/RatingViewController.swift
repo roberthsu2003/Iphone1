@@ -10,6 +10,8 @@ import UIKit
 class RatingViewController: UIViewController {
     var city:City!
     @IBOutlet var backgroundImageView:UIImageView!
+    @IBOutlet var containerView:UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundImageView.image = UIImage(named: city.image)
@@ -17,18 +19,16 @@ class RatingViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        containerView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3) {
+            self.containerView.transform = CGAffineTransform.identity
+        }
+        
     }
-    */
-
+    
 }

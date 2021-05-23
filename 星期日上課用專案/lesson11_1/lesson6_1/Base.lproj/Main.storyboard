@@ -184,11 +184,21 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CFa-GX-AIr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZB-hv-MGG">
+                                <rect key="frame" x="40" y="60" width="295" height="439"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eZB-hv-MGG" secondAttribute="height" multiplier="295:439" id="43Z-Te-mLj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e0E-29-SWL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="eZB-hv-MGG" firstAttribute="leading" secondItem="e0E-29-SWL" secondAttribute="leading" constant="40" id="6Qw-NV-ufj"/>
                             <constraint firstItem="CFa-GX-AIr" firstAttribute="top" secondItem="e0E-29-SWL" secondAttribute="top" id="96m-gt-MK7"/>
+                            <constraint firstItem="e0E-29-SWL" firstAttribute="trailing" secondItem="eZB-hv-MGG" secondAttribute="trailing" constant="40" id="LQf-Jg-XQm"/>
+                            <constraint firstItem="eZB-hv-MGG" firstAttribute="top" secondItem="e0E-29-SWL" secondAttribute="top" constant="60" id="W9u-He-jZr"/>
                             <constraint firstItem="CFa-GX-AIr" firstAttribute="trailing" secondItem="e0E-29-SWL" secondAttribute="trailing" id="Xv5-wb-mps"/>
                             <constraint firstItem="CFa-GX-AIr" firstAttribute="bottom" secondItem="e0E-29-SWL" secondAttribute="bottom" id="hfT-QC-upZ"/>
                             <constraint firstItem="CFa-GX-AIr" firstAttribute="leading" secondItem="e0E-29-SWL" secondAttribute="leading" id="xad-RM-bJb"/>
@@ -196,6 +206,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="CFa-GX-AIr" id="blL-Z5-7Od"/>
+                        <outlet property="containerView" destination="eZB-hv-MGG" id="qfI-IX-hi6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfN-xJ-fpd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -240,6 +251,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
