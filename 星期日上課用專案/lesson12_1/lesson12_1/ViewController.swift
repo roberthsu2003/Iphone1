@@ -38,12 +38,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
         pickerView.dataSource = self;
         pickerView.delegate = self;
-        
-        
-        
-       
-        
-        
     }
     
     // MARK: - UIPickerViewDataSource
@@ -65,6 +59,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                  forComponent component: Int) -> String?{
         let message = countries?[row]
         return message
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                didSelectRow row: Int,
+                inComponent component: Int){
+       let country = countries![row]
+       print(country)
     }
     
     
