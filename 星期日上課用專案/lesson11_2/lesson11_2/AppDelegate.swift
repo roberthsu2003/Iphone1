@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefaults = UserDefaults()
         userDefaults.setValue("xxx", forKey: "name")
         userDefaults.setValue(18,forKey: "age")
+        
+        userDefaults.setPersistentDomain(["item1":["price":15, "number":2]], forName: "buyer")
         return true
     }
 

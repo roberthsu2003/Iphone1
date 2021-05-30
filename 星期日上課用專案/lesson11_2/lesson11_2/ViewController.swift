@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         print("name:\(name)")
         print("age:\(age)")
         
+        var buyer = userDefaults.persistentDomain(forName: "buyer")!
+        buyer["item2"] = ["number":3, "price":17]
+        
+        userDefaults.setPersistentDomain(buyer, forName: "buyer")
+        
+        let  newBuyer = userDefaults.persistentDomain(forName: "buyer")!
+        
+        print(newBuyer)
+        
     }
     
     //copyPlist到Sandbox的Documents
