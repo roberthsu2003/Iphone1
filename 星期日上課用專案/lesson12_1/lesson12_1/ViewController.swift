@@ -33,6 +33,26 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         return country
     }()
     
+    func cities(countryName:String) -> [String]?{
+        let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
+        let db = FMDatabase(url: citysPath)
+        db.open()
+        guard let rs = try? db.executeQuery("SELECT cityName from city  WHERE country = ? ", values: [countryName]) else{
+            print("執行錯誤")
+            return nil;
+        }
+        var cityNames = [String]()
+        while rs.next(){
+            if let cityName = rs["cityName"] as? String{
+                cityNames.append(cityName)
+            }
+          
+        }
+        db.close()
+        
+        return cityNames
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +85,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 didSelectRow row: Int,
                 inComponent component: Int){
        let country = countries![row]
-       print(country)
+       print(cities(countryName: country)!)
     }
     
     
