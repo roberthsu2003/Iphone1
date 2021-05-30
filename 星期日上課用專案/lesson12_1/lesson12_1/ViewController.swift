@@ -15,6 +15,17 @@ class ViewController: UIViewController {
         let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
         let db = FMDatabase(url: citysPath)
         db.open()
+        guard let rs = try? db.executeQuery("SELECT * from city", values: nil) else{
+            print("執行錯誤")
+            return;
+        }
+        while rs.next(){
+            if let name = rs["cityName"] as? String{
+                print(name)
+            }
+          
+        }
+        db.close()
     }
 
 
