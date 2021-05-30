@@ -23,12 +23,12 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         //let query = "select * from movies where \(field_MovieCategory)=? order by \(field_MovieYear) desc"
         //let results = try database.executeQuery(query, values: ["Crime"])
         
-        guard let rs = try? db.executeQuery("SELECT * from city where country = ?", values: ["Taiwan"]) else{
+        guard let rs = try? db.executeQuery("SELECT country from city  GROUP By country ORDER BY country  ASC", values: nil) else{
             print("執行錯誤")
             return;
         }
         while rs.next(){
-            if let name = rs["cityName"] as? String{
+            if let name = rs["country"] as? String{
                 print(name)
             }
           
