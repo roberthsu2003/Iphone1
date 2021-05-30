@@ -15,7 +15,10 @@ class ViewController: UIViewController {
         let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
         let db = FMDatabase(url: citysPath)
         db.open()
-        guard let rs = try? db.executeQuery("SELECT * from city", values: nil) else{
+        //let query = "select * from movies where \(field_MovieCategory)=? order by \(field_MovieYear) desc"
+        //let results = try database.executeQuery(query, values: ["Crime"])
+        
+        guard let rs = try? db.executeQuery("SELECT * from city where country = ?", values: ["Taiwan"]) else{
             print("執行錯誤")
             return;
         }
