@@ -10,6 +10,28 @@ import FMDB
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     @IBOutlet var pickerView:UIPickerView!
+    //closure的執行
+    //closure的執行只會執行一次
+    //要return
+    var countries:[String]? = {
+        let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
+        let db = FMDatabase(url: citysPath)
+        db.open()
+        guard let rs = try? db.executeQuery("SELECT country from city  GROUP By country ORDER BY country  ASC", values: nil) else{
+            print("執行錯誤")
+            return nil;
+        }
+        var country = [String]()
+        while rs.next(){
+            if let countryName = rs["country"] as? String{
+                country.append(countryName)
+            }
+          
+        }
+        db.close()
+        
+        return country
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,23 +39,11 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         pickerView.dataSource = self;
         pickerView.delegate = self;
         
-        let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
-        let db = FMDatabase(url: citysPath)
-        db.open()
-        //let query = "select * from movies where \(field_MovieCategory)=? order by \(field_MovieYear) desc"
-        //let results = try database.executeQuery(query, values: ["Crime"])
         
-        guard let rs = try? db.executeQuery("SELECT country from city  GROUP By country ORDER BY country  ASC", values: nil) else{
-            print("執行錯誤")
-            return;
-        }
-        while rs.next(){
-            if let name = rs["country"] as? String{
-                print(name)
-            }
-          
-        }
-        db.close()
+        
+       
+        
+        
     }
     
     // MARK: - UIPickerViewDataSource
@@ -44,7 +54,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int{
-        return 10;
+        let num = countries?.count ?? 0
+        return num;
     }
     
     // MARK: - UIPickerViewDelegate
@@ -52,7 +63,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView,
                  titleForRow row: Int,
                  forComponent component: Int) -> String?{
-        let message = "row:\(row),component:\(component)"
+        let message = countries?[row]
         return message
     }
     
