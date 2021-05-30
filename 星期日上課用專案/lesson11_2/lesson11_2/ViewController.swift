@@ -13,6 +13,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //取得mainBundle內的絕路徑
         copyFilesToDocuments()
+        let userDefaults = UserDefaults()
+        let name = userDefaults.object(forKey: "name") as! String
+        let age = userDefaults.integer(forKey: "age")
+        if let level = userDefaults.object(forKey: "level") as? Int {
+            print(level)
+        }else{
+            print("沒有level")
+        }
+        
+        print("name:\(name)")
+        print("age:\(age)")
+        
     }
     
     //copyPlist到Sandbox的Documents
@@ -52,7 +64,7 @@ class ViewController: UIViewController {
         
         
         let cities = NSArray(contentsOf: targetFileURL) as! [[String:Any]]
-        print(cities)
+        //print(cities)
         
         /*
         let docsurl = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
