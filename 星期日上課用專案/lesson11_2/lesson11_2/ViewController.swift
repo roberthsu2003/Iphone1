@@ -8,10 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //取得mainBundle內的絕路徑
+        copyFilesToDocuments()
+    }
+    
+    //copyPlist到Sandbox的Documents
+    func copyFilesToDocuments(){
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist")else{
             print("沒有bundle內的plist")
             return
@@ -25,6 +30,7 @@ class ViewController: UIViewController {
             print("出錯了")
             return
         }
+        //為了手動的方式取得檔案的絕對路徑，在finder內查詢
         print(docsurl.path)
         let targetFileURL = docsurl.appendingPathComponent("city.plist")
         
