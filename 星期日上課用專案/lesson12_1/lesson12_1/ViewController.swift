@@ -8,11 +8,15 @@
 import UIKit
 import FMDB
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     @IBOutlet var pickerView:UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.dataSource = self;
+        pickerView.delegate = self;
+        
         let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
         let db = FMDatabase(url: citysPath)
         db.open()
@@ -31,7 +35,28 @@ class ViewController: UIViewController {
         }
         db.close()
     }
-
+    
+    // MARK: - UIPickerViewDataSource
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int{
+        return 10;
+    }
+    
+    // MARK: - UIPickerViewDelegate
+    
+    func pickerView(_ pickerView: UIPickerView,
+                 titleForRow row: Int,
+                 forComponent component: Int) -> String?{
+        let message = "row:\(row),component:\(component)"
+        return message
+    }
+    
+    
 
 }
 
