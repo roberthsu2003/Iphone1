@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         
         let  newBuyer = userDefaults.persistentDomain(forName: "buyer")!
         
+        
+        
         print(newBuyer)
         
     }

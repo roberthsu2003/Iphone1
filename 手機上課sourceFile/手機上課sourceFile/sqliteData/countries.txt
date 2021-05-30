@@ -1,0 +1,4 @@
+1	USA
+2	Taiwan
+3	China
+4	Singapore
