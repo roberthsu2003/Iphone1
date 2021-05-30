@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import FMDB
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
+        let db = FMDatabase(url: citysPath)
+        db.open()
     }
 
 
