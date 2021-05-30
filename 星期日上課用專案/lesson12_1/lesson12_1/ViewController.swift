@@ -9,6 +9,7 @@ import UIKit
 import FMDB
 
 class ViewController: UIViewController {
+    @IBOutlet var pickerView:UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
