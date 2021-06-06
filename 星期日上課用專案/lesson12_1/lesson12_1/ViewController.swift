@@ -54,11 +54,14 @@ class ViewController: UIViewController {
         return cityNames
     }
     
+    var cityOfCountry = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pickerView.dataSource = self;
         pickerView.delegate = self;
+        tableView.dataSource = self;
     }
     
     
@@ -97,7 +100,21 @@ extension ViewController:UIPickerViewDelegate{
                 inComponent component: Int){
        let country = countries![row]
        print(cities(countryName: country)!)
+       cityOfCountry = cities(countryName: country)!
+       tableView.reloadData()
     }
     
+}
+
+extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cityOfCountry.count
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 }
 
