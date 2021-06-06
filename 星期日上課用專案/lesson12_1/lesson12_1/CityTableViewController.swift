@@ -32,22 +32,30 @@ class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(cities)
-       
+        
     }
 
-    // MARK: - Table view data source
+    
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+    
 
    
 
+}
+
+extension CityTableViewController{
+    // MARK: - UITableViewDataSource
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return cities?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let cityName = cities![indexPath.row]
+        cell.textLabel?.text = cityName
+        return cell
+    }
 }
