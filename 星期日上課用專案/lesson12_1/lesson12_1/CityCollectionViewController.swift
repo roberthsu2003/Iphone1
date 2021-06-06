@@ -42,3 +42,19 @@ class CityCollectionViewController: UICollectionViewController {
 
    
 }
+
+extension CityCollectionViewController{
+    //MARK: - UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! MyCell
+        let cityName = cities[indexPath.row]
+        cell.nameLabel.text = cityName
+        return cell
+    }
+}

@@ -181,6 +181,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="customSize" width="128" height="128"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="cee-DY-gFH" id="sgu-DM-BGl"/>
                                 </connections>
