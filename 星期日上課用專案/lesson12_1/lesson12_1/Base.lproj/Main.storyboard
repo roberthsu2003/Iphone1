@@ -146,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="1110" y="643.30985915492954"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--City Collection View Controller-->
         <scene sceneID="LOf-gL-YO5">
             <objects>
-                <collectionViewController id="rcx-SE-t0j" sceneMemberID="viewController">
+                <collectionViewController id="rcx-SE-t0j" customClass="CityCollectionViewController" customModule="lesson12_1" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="X5o-BZ-Nab">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
