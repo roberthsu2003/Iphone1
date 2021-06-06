@@ -10,6 +10,8 @@ import FMDB
 
 class CityTableViewController: UITableViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     var cities:[String]? = {
         let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
         let db = FMDatabase(url: citysPath)
@@ -32,7 +34,8 @@ class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //searchController.searchResultsUpdater = self
+        tableView.tableHeaderView=searchController.searchBar
     }
 
     
