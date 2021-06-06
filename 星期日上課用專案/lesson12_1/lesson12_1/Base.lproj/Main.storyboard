@@ -79,17 +79,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Yei-wd-E6g"/>
-                        <segue destination="mQQ-W2-pKK" kind="relationship" relationship="viewControllers" id="vRY-ZE-5gr"/>
+                        <segue destination="Db7-Xt-GKB" kind="relationship" relationship="viewControllers" id="vRY-ZE-5gr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bri-cu-F67" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="289" y="123"/>
         </scene>
-        <!--City-->
+        <!--City Table View Controller-->
         <scene sceneID="YqO-bu-vs7">
             <objects>
-                <tableViewController id="mQQ-W2-pKK" sceneMemberID="viewController">
+                <tableViewController id="mQQ-W2-pKK" customClass="CityTableViewController" customModule="lesson12_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xJJ-CH-KFh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,11 +109,30 @@
                             <outlet property="delegate" destination="mQQ-W2-pKK" id="RGw-Ua-CBO"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="City" id="4HA-Cp-pkg"/>
+                    <navigationItem key="navigationItem" id="tJJ-X9-4wb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKe-rZ-b3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="644"/>
+            <point key="canvasLocation" x="1901" y="634"/>
+        </scene>
+        <!--City-->
+        <scene sceneID="VdT-tq-eni">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Db7-Xt-GKB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="City" id="4HA-Cp-pkg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TzK-Dc-EvQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mQQ-W2-pKK" kind="relationship" relationship="rootViewController" id="l7U-Ai-MTb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7Z-4L-t6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="643.30985915492954"/>
         </scene>
     </scenes>
     <resources>
