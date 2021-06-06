@@ -154,8 +154,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WN5-NI-qtn">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WN5-NI-qtn">
                             <size key="itemSize" width="128" height="128"/>
+                            <size key="estimatedItemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -164,7 +165,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CELL" id="LsY-gp-u1f" customClass="MyCell" customModule="lesson12_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aIl-t1-yb7">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="enI-nT-jbn">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -176,12 +177,11 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cee-DY-gFH" firstAttribute="centerX" secondItem="aIl-t1-yb7" secondAttribute="centerX" id="dsG-Xn-2vx"/>
-                                        <constraint firstItem="cee-DY-gFH" firstAttribute="centerY" secondItem="aIl-t1-yb7" secondAttribute="centerY" id="elD-hh-Yco"/>
+                                        <constraint firstItem="cee-DY-gFH" firstAttribute="centerX" secondItem="enI-nT-jbn" secondAttribute="centerX" id="dsG-Xn-2vx"/>
+                                        <constraint firstItem="cee-DY-gFH" firstAttribute="centerY" secondItem="enI-nT-jbn" secondAttribute="centerY" id="elD-hh-Yco"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="customSize" width="128" height="128"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="cee-DY-gFH" id="sgu-DM-BGl"/>
                                 </connections>
