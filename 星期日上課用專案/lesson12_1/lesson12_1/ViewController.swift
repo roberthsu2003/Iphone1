@@ -114,7 +114,10 @@ extension ViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let cityName = cityOfCountry[indexPath.row]
+        cell.textLabel?.text = cityName
+        return cell
     }
 }
 
