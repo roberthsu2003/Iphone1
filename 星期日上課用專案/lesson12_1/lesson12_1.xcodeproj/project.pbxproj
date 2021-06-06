@@ -16,6 +16,7 @@
 		936D3A20266347130076E033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936D3A1E266347130076E033 /* LaunchScreen.storyboard */; };
 		936D3A28266347290076E033 /* citys.db in Resources */ = {isa = PBXBuildFile; fileRef = 936D3A27266347290076E033 /* citys.db */; };
 		939A3CC4266C6D1F00458246 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3CC3266C6D1F00458246 /* CityTableViewController.swift */; };
+		939A3CC6266CBC3600458246 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A3CC5266CBC3600458246 /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		936D3A21266347130076E033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		936D3A27266347290076E033 /* citys.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = citys.db; sourceTree = "<group>"; };
 		939A3CC3266C6D1F00458246 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		939A3CC5266CBC3600458246 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		F5A0BEC0752B76CD79C78A1F /* Pods-lesson12_1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson12_1.debug.xcconfig"; path = "Target Support Files/Pods-lesson12_1/Pods-lesson12_1.debug.xcconfig"; sourceTree = "<group>"; };
 		FD88D19FCECD814E2367A816 /* Pods-lesson12_1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lesson12_1.release.xcconfig"; path = "Target Support Files/Pods-lesson12_1/Pods-lesson12_1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				936D3A1C266347130076E033 /* Assets.xcassets */,
 				936D3A1E266347130076E033 /* LaunchScreen.storyboard */,
 				936D3A21266347130076E033 /* Info.plist */,
+				939A3CC5266CBC3600458246 /* MyCell.swift */,
 			);
 			path = lesson12_1;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				939A3CC4266C6D1F00458246 /* CityTableViewController.swift in Sources */,
+				939A3CC6266CBC3600458246 /* MyCell.swift in Sources */,
 				936D3A18266347110076E033 /* ViewController.swift in Sources */,
 				936D3A14266347110076E033 /* AppDelegate.swift in Sources */,
 				936D3A16266347110076E033 /* SceneDelegate.swift in Sources */,
