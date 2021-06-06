@@ -33,6 +33,26 @@ class CityTableViewController: UITableViewController {
         
         return citys
     }
+    
+    func searchResult(string:String) -> [String]?{
+        let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
+        let db = FMDatabase(url: citysPath)
+        db.open()
+        guard let rs = try? db.executeQuery("SELECT cityName FROM city WHERE  cityName like '%\(string)%'", values: nil) else{
+            print("執行錯誤")
+            return nil;
+        }
+        var citys = [String]()
+        while rs.next(){
+            if let countryName = rs["cityName"] as? String{
+                citys.append(countryName)
+            }
+          
+        }
+        db.close()
+        
+        return citys
+    }
         
     
 
@@ -73,7 +93,8 @@ extension CityTableViewController:UISearchResultsUpdating{
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != ""{
             //使用者在搜尋
-            print("開始搜尋\(searchString)")
+            //print("開始搜尋\(searchString)")
+            cities = searchResult(string: searchString)!
         }else{
             //沒有搜尋或搜尋的字串是空的
             cities = getAllCity()!
