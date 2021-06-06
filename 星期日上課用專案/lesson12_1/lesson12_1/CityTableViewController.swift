@@ -12,7 +12,9 @@ class CityTableViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    var cities:[String]? = {
+    var cities = [String]()
+    
+    func getAllCity() -> [String]?{
         let citysPath = Bundle.main.url(forResource: "citys", withExtension: "db")
         let db = FMDatabase(url: citysPath)
         db.open()
@@ -30,10 +32,13 @@ class CityTableViewController: UITableViewController {
         db.close()
         
         return citys
-    }()
+    }
+        
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cities = getAllCity()!
         searchController.searchResultsUpdater = self
         tableView.tableHeaderView=searchController.searchBar
     }
@@ -51,13 +56,13 @@ extension CityTableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cities?.count ?? 0
+        return cities.count
     }
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        let cityName = cities![indexPath.row]
+        let cityName = cities[indexPath.row]
         cell.textLabel?.text = cityName
         return cell
     }
