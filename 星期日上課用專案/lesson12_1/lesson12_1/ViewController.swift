@@ -10,6 +10,7 @@ import FMDB
 
 class ViewController: UIViewController {
     @IBOutlet var pickerView:UIPickerView!
+    @IBOutlet var tableView:UITableView!
     //closure的執行
     //closure的執行只會執行一次
     //要return
