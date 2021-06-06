@@ -34,7 +34,7 @@ class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         tableView.tableHeaderView=searchController.searchBar
     }
 
@@ -60,5 +60,12 @@ extension CityTableViewController{
         let cityName = cities![indexPath.row]
         cell.textLabel?.text = cityName
         return cell
+    }
+}
+
+extension CityTableViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        print(searchBar.text!)
     }
 }
