@@ -8,7 +8,7 @@
 import UIKit
 import FMDB
 
-class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet var pickerView:UIPickerView!
     //closure的執行
     //closure的執行只會執行一次
@@ -60,6 +60,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         pickerView.delegate = self;
     }
     
+    
+    
+    
+    
+
+}
+
+extension ViewController:UIPickerViewDataSource{
     // MARK: - UIPickerViewDataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -71,7 +79,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         let num = countries?.count ?? 0
         return num;
     }
-    
+}
+
+extension ViewController:UIPickerViewDelegate{
     // MARK: - UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView,
@@ -88,7 +98,5 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
        print(cities(countryName: country)!)
     }
     
-    
-
 }
 
