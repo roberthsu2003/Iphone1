@@ -13,6 +13,15 @@ let myBool = true
 let apples = 3 + 0.5
 let oranges = 5 + 3.0
 
+let label = "The width is "
+let width = 94
+
+//手動轉換型別
+let widthLabel = label + String(width)
+print(widthLabel)
+
+
+
 
 
 
