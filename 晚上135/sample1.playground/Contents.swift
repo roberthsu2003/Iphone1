@@ -5,3 +5,4 @@ print(myVariable)
 let myConstant = 42
 print(myConstant)
 //myConstant = 50
+
