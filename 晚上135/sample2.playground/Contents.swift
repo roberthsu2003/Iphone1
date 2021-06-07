@@ -20,6 +20,13 @@ let width = 94
 let widthLabel = label + String(width)
 print(widthLabel)
 
+let apple = 3
+let orange = 5
+let appleSummary = "我有" + String(apple) + "個蘋果"
+
+//字串插補
+let appleSummary1 = "我有\(apple)個蘋果,同時我有\(orange)橘子"
+
 
 
 
