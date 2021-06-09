@@ -42,9 +42,19 @@ serverResponseCode
 
 
 let possibleNumber = "123"
-
+//策略1,保證一定不是nil
 let convertedNumber = Int(possibleNumber)
 print(convertedNumber!)
+
+let possibleDouble = "123.456a"
+let converedDouble = Double(possibleDouble)
+//策略2,不能保證是不是nil
+if converedDouble != nil{
+    print(converedDouble!)
+}else{
+    print("轉換錯誤")
+    
+}
 
 
 
