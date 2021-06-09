@@ -33,11 +33,18 @@ let http200Status = (statusCode:200,description:"Ok")
 http200Status.statusCode
 http200Status.description
 
+//optional type
 var serverResponseCode:Int? = nil
 serverResponseCode
 
 serverResponseCode = 404
 serverResponseCode
+
+
+let possibleNumber = "123"
+
+let convertedNumber = Int(possibleNumber)
+print(convertedNumber!)
 
 
 
