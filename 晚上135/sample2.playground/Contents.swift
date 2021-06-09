@@ -33,3 +33,6 @@ let appleSummary1 = "我有\(apple)個蘋果,同時我有\(orange)橘子"
 
 
 
+
+
+
