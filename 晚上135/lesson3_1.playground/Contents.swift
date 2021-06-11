@@ -35,4 +35,10 @@ let contentHeight = 40
 let hasHeader = false
 let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 
+//nil運算子
+let numberString = "123a"
+let convertNumber = Int(numberString) ?? 0
+convertNumber
+
+
 
