@@ -25,7 +25,14 @@ a1 = a1 + 5
 //複合指定運算子
 a1 += 5
 
+//比較運算子
 3 == 3
 3 > 3
 3 >= 3
+
+//3元運算式
+let contentHeight = 40
+let hasHeader = false
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+
 
