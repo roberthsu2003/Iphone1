@@ -40,5 +40,16 @@ let numberString = "123a"
 let convertNumber = Int(numberString) ?? 0
 convertNumber
 
+//範圍運算子
+
+for index in 1...5{
+    print(index)
+}
+
+
+for index in 101..<105{
+    print(index)
+}
+
 
 
