@@ -11,6 +11,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let families = UIFont.familyNames
+        for name in families{
+            print(name)
+        }
         print("viewDidLoad")
     }
 
