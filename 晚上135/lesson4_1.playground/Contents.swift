@@ -23,6 +23,20 @@ sixDouble
 //可以使用純值的表示法，建立陣列
 //[value1, value2, value3]
 var shoppingList = ["Eggs", "Milk"]
-shoppingList
+shoppingList.count
+shoppingList.isEmpty
+shoppingList.append("Flour")
+
+shoppingList[0]
+shoppingList[1]
+shoppingList[2]
+
+shoppingList[0] = "Egg"
+shoppingList[1...2]
+
+
+
+
+
 
 
