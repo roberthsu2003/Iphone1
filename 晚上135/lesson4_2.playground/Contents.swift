@@ -28,4 +28,9 @@ if place != nil{
     print("錯誤，沒有這個key")
 }
 
+//讀取每一組的key,value
+for (airportCode, airportName) in airports{
+    print("機場代碼是:\(airportCode),機場名是:\(airportName)")
+}
+
 
