@@ -12,10 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let families = UIFont.familyNames
+        var message = ""
         for name in families{
-            print(name)
+            message += "\(name)\n"
         }
-        print("viewDidLoad")
+        print(message)
     }
 
 
