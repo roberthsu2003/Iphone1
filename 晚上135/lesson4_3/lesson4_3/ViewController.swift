@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var messageView:UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +17,8 @@ class ViewController: UIViewController {
         for name in families{
             message += "\(name)\n"
         }
-        print(message)
+        
+        messageView.text = message
     }
 
 
