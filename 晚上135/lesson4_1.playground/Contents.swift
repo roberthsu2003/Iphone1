@@ -48,6 +48,35 @@ for (index,item) in shoppingList.enumerated(){
     print("元素\(index):\(item)")
 }
 
+//Set
+var nums = Set<Int>()
+nums.count
+
+nums.insert(1)
+nums.insert(1)
+nums.insert(1)
+nums.insert(1)
+nums.insert(2)
+nums.insert(2)
+nums.insert(2)
+nums.insert(2)
+nums
+
+var favoriteGenres:Set = ["Rock", "Classical", "Hip hop"]
+var favoriteNum:Set = [1, 2, 3, 4, 5, 5,4, 3, 2,1]
+
+//取出每個Set的內容
+for item in favoriteNum{
+    item
+}
+
+//set 一般最後會轉成Array
+for item in favoriteNum.sorted(){
+    print(item)
+}
+
+
+
 
 
 
