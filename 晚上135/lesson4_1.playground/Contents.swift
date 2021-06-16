@@ -35,6 +35,19 @@ shoppingList[2]
 
 shoppingList[0] = "Egg"
 shoppingList[1...2]
+shoppingList.insert("Syrup", at: 0)
+shoppingList.remove(at: 0)
+shoppingList
+
+//讀取每一個元素
+for item in shoppingList{
+    print(item)
+}
+//讀取每一個元素和索引
+for (index,item) in shoppingList.enumerated(){
+    print("元素\(index):\(item)")
+}
+
 
 
 
