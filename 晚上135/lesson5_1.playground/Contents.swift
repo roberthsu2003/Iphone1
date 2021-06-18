@@ -20,3 +20,9 @@ for tickMark in stride(from: 0, to: 60, by: 5){
 for tickMark in stride(from: 0, through: 60, by: 5){
     print(tickMark)
 }
+
+var index = 0
+while (index < names.count){
+    print(names[index])
+    index += 1
+}
