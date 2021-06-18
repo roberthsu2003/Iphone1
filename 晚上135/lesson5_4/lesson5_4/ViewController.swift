@@ -16,6 +16,10 @@ class ViewController: UIViewController {
         myLabel.text = "Hello! Label"
         myButton.setTitle("請按我", for: .normal)
     }
+    
+    @IBAction func userClick(_ sender:UIButton){
+        print("Hello!World!")
+    }
 
 
 }
