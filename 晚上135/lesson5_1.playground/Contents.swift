@@ -13,3 +13,10 @@ for index in 1...5{
     print(index)
 }
 
+for tickMark in stride(from: 0, to: 60, by: 5){
+    print(tickMark)
+}
+
+for tickMark in stride(from: 0, through: 60, by: 5){
+    print(tickMark)
+}
