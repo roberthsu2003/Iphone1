@@ -9,10 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var myLabel:UILabel!
+    @IBOutlet var myButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myLabel.text = "Hello! Label"
+        myButton.setTitle("請按我", for: .normal)
     }
 
 

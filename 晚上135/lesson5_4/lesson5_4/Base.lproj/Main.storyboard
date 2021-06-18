@@ -26,22 +26,36 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKT-b4-76u">
+                                <rect key="frame" x="124.5" y="143" width="126" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="EpP-qV-ZDn"/>
+                                    <constraint firstAttribute="width" constant="126" id="uIE-g9-WfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uxp-VG-WjW" secondAttribute="trailing" constant="20" id="642-YH-zxE"/>
                             <constraint firstItem="uxp-VG-WjW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="716-VA-e9O"/>
+                            <constraint firstItem="MKT-b4-76u" firstAttribute="top" secondItem="uxp-VG-WjW" secondAttribute="bottom" constant="48" id="Fbb-Gg-OFl"/>
                             <constraint firstItem="uxp-VG-WjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ozn-D9-0om"/>
+                            <constraint firstItem="MKT-b4-76u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fuO-kq-c4q"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="myLabel" destination="uxp-VG-WjW" id="yx7-Vu-FpV"/>
+                        <outlet property="myButton" destination="MKT-b4-76u" id="vI7-Hp-DH9"/>
+                        <outlet property="myLabel" destination="uxp-VG-WjW" id="jge-uW-u79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="23"/>
+            <point key="canvasLocation" x="293.60000000000002" y="22.938530734632685"/>
         </scene>
     </scenes>
     <resources>
