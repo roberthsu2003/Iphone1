@@ -40,3 +40,26 @@ case (-2...2,-2...2):
 default:
     print("超出範圍")
 }
+
+//value binding
+let anotherPoint = (1, 2)
+switch anotherPoint{
+case (let x, 0):
+    print("在x軸上,x是\(x)")
+case (0, let y):
+    print("在y軸上,y是\(y)")
+case let (x,y):
+    print("x是\(x),y是\(y)")
+}
+
+//value binding + where
+let yetAnotherPoint = (3, 1)
+switch yetAnotherPoint{
+case let (x,y) where x==y:
+    print("x=\(x),y=\(y),x==y")
+case let (x,y) where x == -y:
+    print("x=\(x),y=\(y),x==-y")
+case let (x,y):
+    print("x=\(x),y=\(y)")
+}
+
