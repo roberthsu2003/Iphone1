@@ -63,3 +63,9 @@ case let (x,y):
     print("x=\(x),y=\(y)")
 }
 
+if #available(iOS 10, macOS 10.12, *){
+    print("版本10以上(包含10)")
+}else{
+    print("版本10以下")
+}
+
