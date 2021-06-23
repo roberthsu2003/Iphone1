@@ -30,8 +30,13 @@ class ViewController: UIViewController {
         }
         
         inputNum.text = "";
+        
+        let sortedNumbers = numbers.sorted { (s1:Int, s2:Int) -> Bool in
+            return s1 > s2;
+        }
+        
         var messageString = ""
-        for num in numbers{
+        for num in sortedNumbers{
             messageString += "\(num)\n"
         }
         message.text = messageString
