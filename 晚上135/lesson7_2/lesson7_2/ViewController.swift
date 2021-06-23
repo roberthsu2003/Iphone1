@@ -9,11 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var inputNum:UITextField!
+    @IBOutlet var message:UITextView!
+    
     var numbers = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        message.text = ""
     }
     
     @IBAction func userClick(_ sender:UIButton){
