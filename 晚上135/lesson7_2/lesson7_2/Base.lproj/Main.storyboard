@@ -56,12 +56,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RFN-Ri-XqM">
+                                <rect key="frame" x="28" y="257" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RFN-Ri-XqM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="2EZ-1R-bsA"/>
                             <constraint firstItem="ick-MH-FIg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="97n-vI-FKh"/>
                             <constraint firstItem="ick-MH-FIg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="9h5-BO-dhJ"/>
+                            <constraint firstItem="RFN-Ri-XqM" firstAttribute="top" secondItem="BRs-hi-52G" secondAttribute="bottom" constant="20" id="J1k-WI-SdV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BRs-hi-52G" secondAttribute="trailing" constant="20" id="aaj-Qr-XOc"/>
                             <constraint firstItem="BRs-hi-52G" firstAttribute="top" secondItem="ick-MH-FIg" secondAttribute="bottom" constant="25" id="fTc-zs-9Sb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ick-MH-FIg" secondAttribute="trailing" constant="20" id="hzR-Rd-JZI"/>
@@ -71,6 +76,7 @@
                     <connections>
                         <outlet property="inputNum" destination="z7p-us-k57" id="9BP-sj-LX0"/>
                         <outlet property="message" destination="BRs-hi-52G" id="lHo-Ye-v2U"/>
+                        <outlet property="mySwitch" destination="RFN-Ri-XqM" id="pP4-D1-3oB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var inputNum:UITextField!
     @IBOutlet var message:UITextView!
+    @IBOutlet var mySwitch:UISwitch!
     
     var numbers = [Int]()
 
@@ -40,6 +41,12 @@ class ViewController: UIViewController {
             messageString += "\(num)\n"
         }
         message.text = messageString
+        
+        if mySwitch.isOn{
+            print("打開")
+        }else{
+            print("關閉")
+        }
         
     }
 
