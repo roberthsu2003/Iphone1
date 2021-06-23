@@ -29,10 +29,12 @@ class ViewController: UIViewController {
         //optional binding
         if let convertedNum = Int(num){
             print("數值是\(convertedNum)")
+            
         }else{
             print("轉換失敗")
         }
         
+        inputNum.text = "";
         
     }
 
