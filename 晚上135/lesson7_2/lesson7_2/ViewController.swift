@@ -16,6 +16,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
+        let num = inputNum.text!
+        let convertedNum = Int(num)
+        if convertedNum == nil{
+            print("轉換失敗")
+        }else{
+            print("數值是\(convertedNum!)")
+        }
+        
         
     }
 
