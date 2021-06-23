@@ -30,7 +30,11 @@ class ViewController: UIViewController {
         }
         
         inputNum.text = "";
-        print(numbers)
+        var messageString = ""
+        for num in numbers{
+            messageString += "\(num)\n"
+        }
+        message.text = messageString
         
     }
 
