@@ -26,3 +26,14 @@ var ref2 = ref1
 
 ref1(10, 20)
 ref2(10, 20)
+
+//列舉型別
+enum CompassPoint{
+    case north
+    case south
+    case east
+    case west
+}
+
+var directionToHead = CompassPoint.north
+directionToHead = .south
