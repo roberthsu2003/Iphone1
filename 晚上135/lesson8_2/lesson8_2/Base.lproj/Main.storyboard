@@ -30,7 +30,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mySwitch" destination="B61-ug-u0Y" id="aP1-30-qnL"/>
+                        <outlet property="mySwitch" destination="B61-ug-u0Y" id="wkb-AG-IED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

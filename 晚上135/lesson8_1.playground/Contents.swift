@@ -28,7 +28,7 @@ ref1(10, 20)
 ref2(10, 20)
 
 //列舉型別
-enum CompassPoint{
+enum CompassPoint:String{
     case north
     case south
     case east
@@ -49,3 +49,12 @@ case .east:
 case .west:
     print("向西")
 }
+
+print(directionToHead.rawValue)
+
+enum Planet:Int{
+    case mercury = 1, venus, earth, mars ,jupiter, saturn ,uranus, neptune
+}
+
+Planet.venus.rawValue
+
