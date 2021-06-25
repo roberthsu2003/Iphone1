@@ -15,3 +15,14 @@ yArray[0] = 1000
 
 xArray
 yArray
+
+func addTwoInts(_ a:Int,_ b:Int) -> Int{
+    return a + b
+}
+
+var ref1 = addTwoInts
+
+var ref2 = ref1
+
+ref1(10, 20)
+ref2(10, 20)
