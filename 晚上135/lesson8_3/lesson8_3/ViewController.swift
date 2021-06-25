@@ -21,6 +21,7 @@ class ViewController: UIViewController {
  */
         navigationBar.topItem!.title = "BMI Calulator"
         navigationBar.topItem!.prompt = "計算BMI的小程式"
+        navigationBar.topItem!.rightBarButtonItem = UIBarButtonItem(systemItem: .close)
     }
 
 
