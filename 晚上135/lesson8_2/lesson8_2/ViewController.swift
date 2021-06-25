@@ -12,8 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //錯誤只可以取出
-        //mySwitch.style = .sliding
+        //mySwitch.style = .checkbox
+        switch mySwitch.style{
+        case .automatic:
+            print("自動")
+        case .checkbox:
+            print("checkbox")
+        case .sliding:
+            print("滑動")
+        default:
+            print("其它")
+        }
+        
+        //mySwitch.preferredStyle = .checkbox
     }
 
 
