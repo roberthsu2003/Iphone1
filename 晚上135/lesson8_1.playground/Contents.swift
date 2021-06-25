@@ -36,4 +36,16 @@ enum CompassPoint{
 }
 
 var directionToHead = CompassPoint.north
-directionToHead = .south
+directionToHead = .east
+
+//檢查列舉內儲存的值,使用switch case
+switch directionToHead{
+case .north:
+    print("向北")
+case .south:
+    print("向南")
+case .east:
+    print("向東")
+case .west:
+    print("向西")
+}
