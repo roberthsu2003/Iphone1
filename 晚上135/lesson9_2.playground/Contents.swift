@@ -42,3 +42,26 @@ square.sum = 40
 square.side
 
 
+class Student1{
+    var math = 0{
+        willSet{
+            print("現在傳進來的值是\(newValue)")
+        }
+        
+        didSet{
+            if math > 100{
+                math = 100
+            }else if math < 0{
+                math = 0
+            }
+        }
+    }
+}
+
+let stu2 = Student1();
+stu2.math
+stu2.math = 120
+stu2.math
+stu2.math = -10
+stu2.math
+
