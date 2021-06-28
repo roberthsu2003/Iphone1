@@ -15,17 +15,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        messageView.text = ""
      
     }
     
     @IBAction func caculate(_ sender:UIButton){
         //optional binding
-        if let height = Int(heightField.text!),let weight = Int(weightField.text!){
-            print(height)
-            print(weight)
+        if let height = Double(heightField.text!),let weight = Double(weightField.text!){
+            
+            let bmi = weight/((height/100) * (height/100))
+            print(bmi)
+            messageView.text = "BMI是\(bmi)"
         }else{
             print("有錯誤")
+            return
         }
+        
+        
         
        
         
