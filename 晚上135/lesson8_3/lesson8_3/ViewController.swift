@@ -20,18 +20,14 @@ class ViewController: UIViewController {
     
     @IBAction func caculate(_ sender:UIButton){
         //optional binding
-        if let height = Int(heightField.text!){
+        if let height = Int(heightField.text!),let weight = Int(weightField.text!){
             print(height)
-        }else{
-            print("height有錯誤")
-        }
-        
-        //optional binding
-        if let weight = Int(weightField.text!){
             print(weight)
         }else{
-            print("weight有錯誤")
+            print("有錯誤")
         }
+        
+       
         
     }
 
