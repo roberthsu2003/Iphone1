@@ -42,8 +42,22 @@ class ViewController: UIViewController {
         
         let bmi = weight/((height/100) * (height/100))
         let bmiString = String(format: "%.2f", bmi)
-        messageView.text = "BMI是\(bmiString)"
-        
+        messageView.text = "BMI是\(bmiString)\n"
+        switch bmi {
+        case 0..<18.5:
+            messageView.text += "過輕\n"
+        case 18.5..<24:
+            messageView.text += "正常\n"
+        case 24..<27:
+            messageView.text += "過重\n"
+        case 27..<30:
+            messageView.text += "輕度肥胖\n"
+        case 30..<35:
+            messageView.text += "中度肥胖\n"
+            
+        default:
+            messageView.text += "中度肥胖\n"
+        }
        
         
     }
