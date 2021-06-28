@@ -55,8 +55,10 @@ class ViewController: UIViewController {
         case 30..<35:
             messageView.text += "中度肥胖\n"
             
-        default:
+        case let w where w>35:
             messageView.text += "中度肥胖\n"
+        default:
+            messageView.text += "其它\n"
         }
        
         
