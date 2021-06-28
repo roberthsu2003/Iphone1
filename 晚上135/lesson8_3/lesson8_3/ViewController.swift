@@ -9,21 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var navigationBar:UINavigationBar!
+    @IBOutlet var heightField:UITextField!
+    @IBOutlet var weightField:UITextField!
+    @IBOutlet var messageView:UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        if let item = navigationBar.topItem{
-            print(item)
-        }else{
-            print("沒有topItem")
-        }
- */
-        /*
-        navigationBar.topItem!.title = "BMI Calulator"
-        navigationBar.topItem!.prompt = "計算BMI的小程式"
-        navigationBar.topItem!.rightBarButtonItem = UIBarButtonItem(systemItem: .close)
- */
+     
+    }
+    
+    @IBAction func caculate(_ sender:UIButton){
+        
     }
 
 

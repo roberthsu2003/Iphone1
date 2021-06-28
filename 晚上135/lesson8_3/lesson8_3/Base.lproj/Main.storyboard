@@ -84,6 +84,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="計算"/>
+                                <connections>
+                                    <action selector="caculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ie-a8-5Gv"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OS-7O-KSm">
                                 <rect key="frame" x="40" y="280" width="240" height="128"/>
@@ -118,7 +121,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heightField" destination="c6w-Kr-ERx" id="X8w-nB-5Bj"/>
+                        <outlet property="messageView" destination="2OS-7O-KSm" id="u67-ih-SvI"/>
                         <outlet property="navigationBar" destination="eHG-LS-eaw" id="6Ua-Gs-mi1"/>
+                        <outlet property="weightField" destination="k6h-xG-6d1" id="HcC-dY-uyj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
