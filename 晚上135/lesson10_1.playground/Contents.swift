@@ -53,8 +53,16 @@ struct Point{
     func isToTheRightOf(x:Double) -> Bool{
         return self.x > x
     }
+    
+    mutating func moveBy(x deltaX:Double, y deltaY:Double){
+        x += deltaX
+        y += deltaY
+    }
 }
 
 let somePoint = Point(x: 4.0, y: 5.0)
 somePoint.isToTheRightOf(x: 6.0)
+
+var somePoint1 = Point(x: 1.0, y: 1.0)
+somePoint1.moveBy(x: 2.0, y: 3.0)
 
