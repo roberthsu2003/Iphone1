@@ -24,18 +24,27 @@
                                         <color key="backgroundColor" red="0.59999999999999998" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Press"/>
+                                        <connections>
+                                            <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03Z-wM-wxl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-Mr-wij">
                                         <rect key="frame" x="93.5" y="0.0" width="73" height="30"/>
                                         <color key="backgroundColor" red="0.59999999999999998" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Press"/>
+                                        <connections>
+                                            <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CxW-8Z-Nze"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypL-ZL-TXf">
                                         <rect key="frame" x="187.5" y="0.0" width="72.5" height="30"/>
                                         <color key="backgroundColor" red="0.59999999999999998" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Press"/>
+                                        <connections>
+                                            <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPg-eb-ck9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -58,6 +67,9 @@
                             <constraint firstItem="7Lt-Sy-zOX" firstAttribute="top" secondItem="Mg0-n9-ep2" secondAttribute="bottom" constant="19" id="nOD-v3-Q4b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="7Lt-Sy-zOX" id="RXR-Dx-vFw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
