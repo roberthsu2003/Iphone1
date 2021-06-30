@@ -66,3 +66,18 @@ somePoint.isToTheRightOf(x: 6.0)
 var somePoint1 = Point(x: 1.0, y: 1.0)
 somePoint1.moveBy(x: 2.0, y: 3.0)
 
+//Type method
+//要由Type 名稱來執行
+
+class SomeClass1{
+    class func someTypeMethod(){
+        print("type Method")
+    }
+}
+
+SomeClass1.someTypeMethod()
+
+
+
+
+
