@@ -46,3 +46,15 @@ let counter1 = Counter();
 counter1.increment()
 counter1.increment(by: 8)
 
+
+struct Point{
+    var x=0.0, y=0.0
+    
+    func isToTheRightOf(x:Double) -> Bool{
+        return self.x > x
+    }
+}
+
+let somePoint = Point(x: 4.0, y: 5.0)
+somePoint.isToTheRightOf(x: 6.0)
+
