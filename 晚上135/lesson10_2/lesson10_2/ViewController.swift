@@ -16,7 +16,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
-        print("button click")
+        switch sender.tag{
+        case 100:
+            myImageView.image = UIImage(named: "pic1")
+        case 200:
+            myImageView.image = UIImage(named: "pic2")
+        case 300:
+            myImageView.image = UIImage(named: "pic3")
+        default:
+            print("other")
+        }
     }
 
 
