@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     var names:[String]!
     var countryCode:[String:String]!
+    var cities:[[String:AnyObject]]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,13 +26,24 @@ class ViewController: UIViewController {
             }
         }
         
+        if let cityURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
+            
+            if let cities = NSArray(contentsOf: cityURL) as? [[String:AnyObject]]{
+                self.cities = cities
+            }
+            
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(names!)
         print(countryCode!)
-       
+        
+        for item in cities{
+            print(item)
+            print("================")
+        }
     }
 
 
