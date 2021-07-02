@@ -9,6 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var myButton:UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if let myButton = myButton{
+            print("Button有值")
+        }else{
+            print("Button是nil")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
