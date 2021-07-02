@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var myButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //可以存取所有storyboard建立的元件
         //只被執行一次
         print("ViewController內的View全部可以使用了")
+        myButton.setTitle("Hello", for: UIControl.State.normal)
     }
     
     override func viewWillAppear(_ animated: Bool){

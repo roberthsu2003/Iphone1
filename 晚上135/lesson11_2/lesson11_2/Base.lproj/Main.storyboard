@@ -15,13 +15,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1f-Go-up0">
+                                <rect key="frame" x="105" y="46" width="91" height="80"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ELO-Id-eyr"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="press"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A1f-Go-up0" secondAttribute="trailing" constant="124" id="X8c-WK-IBY"/>
+                            <constraint firstItem="A1f-Go-up0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="jsM-Qz-NUN"/>
+                            <constraint firstItem="A1f-Go-up0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="uqv-OS-9nJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myButton" destination="A1f-Go-up0" id="Sek-uz-w9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="-73"/>
+            <point key="canvasLocation" x="849.375" y="35.91549295774648"/>
         </scene>
     </scenes>
     <resources>
