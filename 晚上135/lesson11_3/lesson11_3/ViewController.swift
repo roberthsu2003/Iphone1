@@ -10,8 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
-        let namesURL = Bundle.main.url(forResource: "names", withExtension: "plist")
-        print(namesURL!.path)
+        if let namesURL = Bundle.main.url(forResource: "names", withExtension: "plist"){
+            print(namesURL.path)
+        }
+        
     }
     
     override func viewDidLoad() {
