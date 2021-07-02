@@ -15,6 +15,7 @@
 		933A7B1B268F3B1D00318E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933A7B19268F3B1D00318E00 /* LaunchScreen.storyboard */; };
 		933A7B23268F3BF800318E00 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933A7B22268F3BF800318E00 /* citylist.plist */; };
 		933A7B25268F420C00318E00 /* names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933A7B24268F420C00318E00 /* names.plist */; };
+		933A7B27268F4D1C00318E00 /* countryCode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 933A7B26268F4D1C00318E00 /* countryCode.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		933A7B1C268F3B1D00318E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		933A7B22268F3BF800318E00 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		933A7B24268F420C00318E00 /* names.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = names.plist; sourceTree = "<group>"; };
+		933A7B26268F4D1C00318E00 /* countryCode.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = countryCode.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				933A7B19268F3B1D00318E00 /* LaunchScreen.storyboard */,
 				933A7B1C268F3B1D00318E00 /* Info.plist */,
 				933A7B24268F420C00318E00 /* names.plist */,
+				933A7B26268F4D1C00318E00 /* countryCode.plist */,
 			);
 			path = lesson11_3;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933A7B27268F4D1C00318E00 /* countryCode.plist in Resources */,
 				933A7B25268F420C00318E00 /* names.plist in Resources */,
 				933A7B1B268F3B1D00318E00 /* LaunchScreen.storyboard in Resources */,
 				933A7B23268F3BF800318E00 /* citylist.plist in Resources */,

@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var names:[String]!
+    var countryCode:[String:String]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +19,18 @@ class ViewController: UIViewController {
             }
         }
         
+        if let codeURL = Bundle.main.url(forResource: "countryCode", withExtension: "plist"){
+            if let countryCode = NSDictionary(contentsOf: codeURL) as? [String:String]{
+                self.countryCode = countryCode
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(names!)
+        print(countryCode!)
        
     }
 
