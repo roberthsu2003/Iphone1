@@ -64,7 +64,8 @@ class ViewController:UIViewController,UITableViewDataSource {
             var content = cell.defaultContentConfiguration()
             content.text = cityName
             content.image = UIImage(named: cityImageName)
-            content.imageProperties.maximumSize = CGSize(width: 100, height: 60)
+            content.imageProperties.maximumSize = CGSize(width: 100, height: 100)
+            content.imageProperties.cornerRadius = 50
             cell.contentConfiguration = content
         }else{
             cell.textLabel!.text = cityName
