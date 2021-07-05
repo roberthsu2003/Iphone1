@@ -53,7 +53,16 @@ class ViewController:UIViewController,UITableViewDataSource {
         let cityDic = cities[rowIndex]
         let cityName = cityDic["City"] as? String
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel!.text = cityName
+        
+        
+        if #available(iOS 14.0, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel!.text = cityName
+        }
+        
         return cell
         
     }
