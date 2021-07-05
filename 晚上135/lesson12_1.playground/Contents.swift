@@ -10,3 +10,23 @@ class Vehicle{
 
 let someVehicle = Vehicle()
 someVehicle.description
+
+class Bicycle:Vehicle{
+    var hasBasket = false
+}
+
+let bicycle = Bicycle()
+bicycle.hasBasket = true
+bicycle.currentSpeed = 15.0
+print("目前腳踏車的速度是\(bicycle.description)")
+
+class Tandem:Bicycle{
+    var currentNumberOfPassengers = 0
+}
+
+let tandem = Tandem()
+tandem.hasBasket = true
+tandem.currentNumberOfPassengers = 2
+tandem.currentSpeed = 22.0
+print("協力車的速度\(tandem.description)")
+
