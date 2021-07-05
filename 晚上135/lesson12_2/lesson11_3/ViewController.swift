@@ -52,15 +52,23 @@ class ViewController:UIViewController,UITableViewDataSource {
         let rowIndex = indexPath.row
         let cityDic = cities[rowIndex]
         let cityName = cityDic["City"] as? String
+        guard let cityImageName = cityDic["Image"] as? String else{
+            print("傳出nil")
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         
         
         if #available(iOS 14.0, *){
             var content = cell.defaultContentConfiguration()
             content.text = cityName
+            content.image = UIImage(named: cityImageName)
+            content.imageProperties.maximumSize = CGSize(width: 100, height: 60)
             cell.contentConfiguration = content
         }else{
             cell.textLabel!.text = cityName
+            cell.imageView!.image = UIImage(named: cityImageName)
         }
         
         return cell
