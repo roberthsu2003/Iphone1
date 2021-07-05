@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController:UIViewController {
+    @IBOutlet var tableView:UITableView!
     var names:[String]!
     var countryCode:[String:String]!
     var cities:[[String:Any]]!
