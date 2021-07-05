@@ -41,3 +41,15 @@ class Train:Vehicle{
 let train = Train()
 train.makeNoise()
 
+class Car:Vehicle{
+    var gear = 1
+    override var description:String{
+        return super.description + ",目前是第\(gear)檔"
+    }
+}
+
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+print("Car:\(car.description)")
+
