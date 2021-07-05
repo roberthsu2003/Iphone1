@@ -56,6 +56,7 @@ class ViewController:UIViewController,UITableViewDataSource {
             print("傳出nil")
             return UITableViewCell()
         }
+        let country = cityDic["Country"] as? String
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         
@@ -66,10 +67,12 @@ class ViewController:UIViewController,UITableViewDataSource {
             content.image = UIImage(named: cityImageName)
             content.imageProperties.maximumSize = CGSize(width: 100, height: 100)
             content.imageProperties.cornerRadius = 50
+            content.secondaryText = country
             cell.contentConfiguration = content
         }else{
             cell.textLabel!.text = cityName
             cell.imageView!.image = UIImage(named: cityImageName)
+            cell.detailTextLabel!.text = country
         }
         
         return cell
