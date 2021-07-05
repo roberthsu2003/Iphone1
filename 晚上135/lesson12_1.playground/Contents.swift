@@ -53,3 +53,15 @@ car.currentSpeed = 25.0
 car.gear = 3
 print("Car:\(car.description)")
 
+class AutomaticCar:Car{
+    override var currentSpeed: Double{
+        didSet{
+            gear = Int(currentSpeed / 10.0) + 1
+        }
+    }
+}
+
+let automatic = AutomaticCar()
+automatic.currentSpeed = 35.0
+print("AutomaticCar:\(automatic.description)")
+
