@@ -56,7 +56,13 @@
                             <constraint firstItem="jBj-AT-IfX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="raa-yv-dik"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="世界城市" id="fc7-OM-p2t"/>
+                    <navigationItem key="navigationItem" title="世界城市" id="fc7-OM-p2t">
+                        <barButtonItem key="rightBarButtonItem" title="下一頁" id="fPe-XN-nFG">
+                            <connections>
+                                <segue destination="tCW-FG-xci" kind="show" id="MVL-k2-vVP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jBj-AT-IfX" id="CIl-aq-z9U"/>
                     </connections>
@@ -64,6 +70,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632" y="33"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zCn-Ir-HEW">
+            <objects>
+                <viewController id="tCW-FG-xci" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSO-ZJ-YeN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xj3-zq-Ril"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bnt-Ld-m4m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mD4-2M-aFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iai-Jh-L6b">
