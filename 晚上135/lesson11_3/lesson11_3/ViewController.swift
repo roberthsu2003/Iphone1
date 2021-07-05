@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController:UIViewController {
     var names:[String]!
     var countryCode:[String:String]!
     var cities:[[String:AnyObject]]!
