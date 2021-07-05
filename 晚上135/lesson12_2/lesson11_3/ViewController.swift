@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController:UIViewController {
+class ViewController:UIViewController,UITableViewDataSource {
     @IBOutlet var tableView:UITableView!
     var names:[String]!
     var countryCode:[String:String]!
@@ -38,13 +38,18 @@ class ViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        tableView.dataSource = self
         
-        for item in cities{
-            if let name = item["City"] as? String{
-                print(name)
-            }
-        }
+    }
+    // MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
     }
 
 
