@@ -30,3 +30,14 @@ tandem.currentNumberOfPassengers = 2
 tandem.currentSpeed = 22.0
 print("協力車的速度\(tandem.description)")
 
+//override
+class Train:Vehicle{
+    override func makeNoise(){
+        
+        print("Choo Choo")
+    }
+}
+
+let train = Train()
+train.makeNoise()
+
