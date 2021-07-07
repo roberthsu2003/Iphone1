@@ -8,16 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var cities = [[String:Any]]()
+    var cities:[[String:Any]]={
+        if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
+            if let array = NSArray(contentsOf: plistURL) as? [[String:Any]]{
+                return array
+            }
+        }
+        return [[String:Any]]()
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        Bundle.main.url(forResource: "citylist", withExtension: "plist")
-    }
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(cities)
     }
 
 
