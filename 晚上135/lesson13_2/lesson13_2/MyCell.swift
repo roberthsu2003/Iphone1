@@ -8,6 +8,11 @@
 import UIKit
 
 class MyCell: UITableViewCell {
+    @IBOutlet var cityImageView:UIImageView!
+    @IBOutlet var cityName:UILabel!
+    @IBOutlet var countryName:UILabel!
+    @IBOutlet var continent:UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
