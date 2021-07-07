@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
     var cities:[[String:Any]]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
             if let array = NSArray(contentsOf: plistURL) as? [[String:Any]]{
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(cities)
+       
     }
 
 
