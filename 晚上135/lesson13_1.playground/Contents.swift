@@ -10,4 +10,21 @@ struct Fahrenheit{
 var f = Fahrenheit(temperature: 40)
 print("華氏溫度是\(f.temperature)")
 
+struct Celsius{
+    var temperatureInCelsius:Double
+    init(fromFahrenheit fahrenheit:Double){
+        temperatureInCelsius = (fahrenheit - 32.0) / 1.8
+    }
+    
+    init(fromKelvin kelvin:Double){
+        temperatureInCelsius = kelvin - 273.15
+    }
+    
+}
+
+let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
+let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+
+boilingPointOfWater.temperatureInCelsius
+freezingPointOfWater.temperatureInCelsius
 
