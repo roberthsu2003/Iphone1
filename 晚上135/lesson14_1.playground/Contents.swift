@@ -1,3 +1,5 @@
+import Foundation
+
 protocol SomeProtocol{
     //requirement
     var mustBeSettable:Int {get set}
@@ -22,9 +24,10 @@ struct Person:FullyNamed{
 
 let john = Person(fullName: "John Appleseed")
 
+@objc
 protocol RandomNumberGenerator{
     //method requirement
-    func random() -> Double
+    @objc optional func random() -> Double
 }
 
 class Starship:FullyNamed, RandomNumberGenerator{
@@ -39,8 +42,6 @@ class Starship:FullyNamed, RandomNumberGenerator{
         return (prefix != nil ? prefix! + " " : "") + name
     }
     
-    func random() -> Double {
-        return 1234.3456
-    }
+   
     
 }
