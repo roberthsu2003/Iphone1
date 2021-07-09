@@ -37,6 +37,12 @@ class ViewController: UIViewController,UITableViewDataSource {
         let indexRow = indexPath.row
         let cityDic = cities[indexRow]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
+        /*
+        cell.backgroundColor = UIColor.systemPink
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.systemTeal
+        cell.selectedBackgroundView = backgroundView
+         */
         cell.cityName.text = cityDic["City"] as? String
         cell.countryName.text = cityDic["Country"] as? String
         cell.continent.text = cityDic["Continent"] as? String
