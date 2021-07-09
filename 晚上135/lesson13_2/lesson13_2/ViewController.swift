@@ -63,10 +63,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             print("現在選到的城市是\(cityName)")
             let optionMenu = UIAlertController(title: nil, message: "您選擇\(cityName)想要做什麼?", preferredStyle: .actionSheet)
             
-            let cancelAction = UIAlertAction(title: "取消", style: .default, handler: nil)
-            
+            let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
             optionMenu.addAction(cancelAction)
+            
+            let callAction = UIAlertAction(title: "聯絡旅行社", style: .default, handler: nil)
+            optionMenu.addAction(callAction)
+            
             present(optionMenu, animated: true, completion: nil)
+            
         }
     }
 
