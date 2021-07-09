@@ -22,7 +22,12 @@ struct Person:FullyNamed{
 
 let john = Person(fullName: "John Appleseed")
 
-class Starship:FullyNamed{
+protocol RandomNumberGenerator{
+    //method requirement
+    func random() -> Double
+}
+
+class Starship:FullyNamed, RandomNumberGenerator{
     var prefix:String?
     var name:String
     init(name:String, prefix:String? = nil){
@@ -32,6 +37,10 @@ class Starship:FullyNamed{
     
     var fullName:String{
         return (prefix != nil ? prefix! + " " : "") + name
+    }
+    
+    func random() -> Double {
+        return 1234.3456
     }
     
 }
