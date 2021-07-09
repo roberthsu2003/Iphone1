@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var tableView:UITableView!
     var cities:[[String:Any]]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
@@ -23,6 +23,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     //MARK: - UITableViewDataSource
@@ -51,6 +52,16 @@ class ViewController: UIViewController,UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    //MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let selectedIndex = indexPath.row
+        let city = cities[selectedIndex]
+        if let cityName = city["City"] as? String{
+            print("現在選到的城市是\(cityName)")
+        }
     }
 
 
