@@ -69,7 +69,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let callAction = UIAlertAction(title: "聯絡旅行社", style: .default, handler: nil)
             optionMenu.addAction(callAction)
             
-            present(optionMenu, animated: true, completion: nil)
+            present(optionMenu, animated: true, completion: {
+                print("動畫完成執行的closure內的功能")
+            })
             
         }
     }
