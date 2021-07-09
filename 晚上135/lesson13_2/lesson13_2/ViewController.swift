@@ -34,7 +34,17 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        return UITableViewCell()
+        let indexRow = indexPath.row
+        let cityDic = cities[indexRow]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
+        cell.cityName.text = cityDic["City"] as? String
+        cell.countryName.text = cityDic["Country"] as? String
+        cell.continent.text = cityDic["Continent"] as? String
+        if let imageName = cityDic["Image"] as? String{
+            cell.cityImageView.image = UIImage(named:imageName)
+        }
+        
+        return cell
     }
 
 
