@@ -96,6 +96,31 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
     }
     
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let deletAction = UIContextualAction(style: .normal, title: "刪除") { (action, sourceView, completionHandler) in
+            let deleteRow = indexPath.row
+            self.cities.remove(at: deleteRow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+        }
+        
+        
+        
+        deletAction.backgroundColor = UIColor.systemRed
+        
+        let insertAction = UIContextualAction(style: .normal, title: "新增") { (action:UIContextualAction, sourceView:UIView, completionHandler: (Bool) -> Void) in
+            print("insertAction")
+            completionHandler(true)
+        }
+        
+        insertAction.backgroundColor = UIColor.systemGreen
+        
+        let config = UISwipeActionsConfiguration(actions: [deletAction,insertAction])
+        return config
+        
+    }
+    
     
 
 
