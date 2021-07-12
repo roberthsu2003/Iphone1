@@ -56,6 +56,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView,
+                     commit editingStyle: UITableViewCell.EditingStyle,
+                     forRowAt indexPath: IndexPath){
+        let deleteRow = indexPath.row
+        let cityDic = cities[deleteRow]
+        if let cityName = cityDic["City"] as? String{
+            print(cityName)
+        }
+        
+    }
+    
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
@@ -82,6 +93,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             
         }
     }
+    
+    
 
 
 }
