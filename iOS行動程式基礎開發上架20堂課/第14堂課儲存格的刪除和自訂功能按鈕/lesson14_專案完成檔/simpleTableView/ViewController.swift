@@ -56,6 +56,7 @@ class ViewController: UITableViewController {
     }
 
     //MARK: - UITableViewDelegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         //建立一個action sheet的選項按鈕
         let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet);
@@ -102,7 +103,7 @@ class ViewController: UITableViewController {
         //顯示選項
         present(optionMenu, animated: true, completion: nil);
     }
-    
+    /*
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
         let shareAction = UITableViewRowAction(style: .default, title: "分享", handler: {
             (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
@@ -124,5 +125,33 @@ class ViewController: UITableViewController {
         
         return [shareAction, deleteAction];
     }
+ */
+    
+    override func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let deletAction = UIContextualAction(style: .normal, title: "刪除") { (action, sourceView, completionHandler) in
+            self.citys.remove(at: indexPath.row);
+            self.cityIsMarded.remove(at: indexPath.row);
+            print("total item:\(self.citys.count)");
+            tableView.deleteRows(at: [indexPath], with: .automatic);
+            completionHandler(true)
+        }
+        
+        
+        
+        deletAction.backgroundColor = UIColor.systemRed
+        
+        let insertAction = UIContextualAction(style: .normal, title: "新增") { (action:UIContextualAction, sourceView:UIView, completionHandler: (Bool) -> Void) in
+            print("insertAction")
+            completionHandler(true)
+        }
+        
+        insertAction.backgroundColor = UIColor.systemGreen
+        
+        let config = UISwipeActionsConfiguration(actions: [deletAction,insertAction])
+        return config
+        
+    }
+    
 }
 
