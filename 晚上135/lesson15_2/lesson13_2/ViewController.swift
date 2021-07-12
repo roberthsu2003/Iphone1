@@ -59,11 +59,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView,
                      commit editingStyle: UITableViewCell.EditingStyle,
                      forRowAt indexPath: IndexPath){
-        let deleteRow = indexPath.row
-        let cityDic = cities[deleteRow]
-        if let cityName = cityDic["City"] as? String{
-            print(cityName)
+        if editingStyle == .delete{
+            let deleteRow = indexPath.row
+            cities.remove(at: deleteRow)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+       
+        
         
     }
     
