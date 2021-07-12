@@ -9,3 +9,13 @@ class Vehicle{
 let vehicle = Vehicle()
 vehicle.description
 
+class Bicycle:Vehicle{
+    override init(){
+        super.init()
+        numberOfWheels = 2
+    }
+}
+
+let bicycle = Bicycle()
+print("腳踏車:\(bicycle.description)")
+
