@@ -68,7 +68,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
             optionMenu.addAction(cancelAction)
             
-            let callAction = UIAlertAction(title: "聯絡旅行社", style: .default, handler: nil)
+            let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){
+                (action:UIAlertAction) -> Void in
+                print("聯絡旅行社")                
+            }
             optionMenu.addAction(callAction)
             
             present(optionMenu, animated: true, completion: {
