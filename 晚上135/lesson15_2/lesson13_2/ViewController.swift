@@ -53,7 +53,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let indexRow = indexPath.row
-        let cityDic = cities[indexRow]
+        let city = cities[indexRow]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
         /*
         cell.backgroundColor = UIColor.systemPink
@@ -61,10 +61,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         backgroundView.backgroundColor = UIColor.systemTeal
         cell.selectedBackgroundView = backgroundView
          */
-        cell.cityName.text = cityDic["City"] as? String
-        cell.countryName.text = cityDic["Country"] as? String
-        cell.continent.text = cityDic["Continent"] as? String
-        if let imageName = cityDic["Image"] as? String{
+        cell.cityName.text = city.city
+        cell.countryName.text = city.country
+        cell.continent.text = city.continent
+        if let imageName = city.image{
             cell.cityImageView.image = UIImage(named:imageName)
         }
         
@@ -89,7 +89,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                    didSelectRowAt indexPath: IndexPath){
         let selectedIndex = indexPath.row
         let city = cities[selectedIndex]
-        if let cityName = city["City"] as? String{
+        if let cityName = city.city{
             print("現在選到的城市是\(cityName)")
             let optionMenu = UIAlertController(title: nil, message: "您選擇\(cityName)想要做什麼?", preferredStyle: .actionSheet)
             
