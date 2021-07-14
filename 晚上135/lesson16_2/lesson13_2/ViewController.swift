@@ -35,9 +35,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let city = sender as! City
         if segue.identifier == "goDetail"{
             print("執行goDetail的Segue")
-            print("傳的值是\(sender!)")
+            print("傳的值是\(city.city)")
         }
     }
    
@@ -92,7 +93,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        performSegue(withIdentifier: "goDetail", sender: 50)
+        let selectedIndex = indexPath.row
+        let city = cities[selectedIndex]
+        performSegue(withIdentifier: "goDetail", sender: city)
     }
     
     func tableView(_ tableView: UITableView,
