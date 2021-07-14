@@ -87,28 +87,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     //MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        let selectedIndex = indexPath.row
-        let city = cities[selectedIndex]
-        if let cityName = city.city{
-            print("現在選到的城市是\(cityName)")
-            let optionMenu = UIAlertController(title: nil, message: "您選擇\(cityName)想要做什麼?", preferredStyle: .actionSheet)
-            
-            let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
-            optionMenu.addAction(cancelAction)
-            
-            let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){
-                (action:UIAlertAction) -> Void in
-                let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
-                alertMessage.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
-                self.present(alertMessage, animated: true, completion: nil)
-            }
-            optionMenu.addAction(callAction)
-            
-            present(optionMenu, animated: true, completion: {
-                print("動畫完成執行的closure內的功能")
-            })
-            
-        }
+        performSegue(withIdentifier: "goDetail", sender: nil)
     }
     
     func tableView(_ tableView: UITableView,

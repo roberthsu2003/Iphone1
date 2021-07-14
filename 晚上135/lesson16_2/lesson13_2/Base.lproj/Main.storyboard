@@ -86,16 +86,44 @@
                             <constraint firstItem="O5f-9O-m1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pom-d9-aLa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="世界城市" id="8lT-WB-k6s">
-                        <barButtonItem key="rightBarButtonItem" title="下一頁" id="Vks-EJ-fG1"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="世界城市" id="8lT-WB-k6s"/>
                     <connections>
                         <outlet property="tableView" destination="O5f-9O-m1V" id="7l2-yw-3le"/>
+                        <segue destination="cxP-f3-3pC" kind="show" identifier="goDetail" id="VAc-6Y-6hJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1504" y="-77"/>
+            <point key="canvasLocation" x="1847" y="-110"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="aov-eB-OZf">
+            <objects>
+                <tableViewController id="cxP-f3-3pC" customClass="DetailViewController" customModule="lesson16_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="U7Z-dc-3fc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TaE-rk-lx3">
+                                <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TaE-rk-lx3" id="LkA-tG-GsK">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cxP-f3-3pC" id="ANv-t5-GYe"/>
+                            <outlet property="delegate" destination="cxP-f3-3pC" id="Zhm-mi-jQX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="peM-cg-d82"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTv-TG-6r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="-111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6H5-F6-QaE">
@@ -113,7 +141,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="727.5" y="-77.112676056338032"/>
+            <point key="canvasLocation" x="1076" y="-117"/>
         </scene>
     </scenes>
     <resources>
