@@ -6,4 +6,14 @@ enum VendingMachineError:Error{
     case outOfStock
 }
 
-throw VendingMachineError.insufficientFunds(coinsNeeds: 5)
+
+/*
+func canThrowError() throws -> String{
+    let a = 10
+    if a == 10{
+        throw VendingMachineError.insufficientFunds(coinsNeeds: 5)
+    }
+    
+    return "abc"
+}
+ */
