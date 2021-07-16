@@ -7,13 +7,12 @@ enum VendingMachineError:Error{
 }
 
 
-/*
-func canThrowError() throws -> String{
-    let a = 10
-    if a == 10{
+
+func canThrowError(num:Int) throws -> String{
+    if num == 10{
         throw VendingMachineError.insufficientFunds(coinsNeeds: 5)
     }
     
-    return "abc"
+    return "有傳出字串"
 }
- */
+
