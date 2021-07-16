@@ -74,3 +74,30 @@ let library = [
     Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
 ]
 
+var movieCount = 0
+var songCount = 0
+
+for item in library{
+    if item is Movie{
+        movieCount += 1
+    }else if item is Song{
+        songCount += 1
+    }
+}
+movieCount
+songCount
+
+movieCount=0
+songCount=0
+
+for item in library{
+    if let _ = item as? Movie{
+        movieCount += 1
+    }else if let _ = item as? Song{
+        songCount += 1
+    }
+}
+
+movieCount
+songCount
+
