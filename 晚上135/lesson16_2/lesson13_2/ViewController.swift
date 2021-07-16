@@ -37,8 +37,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let city = sender as! City
         if segue.identifier == "goDetail"{
-            print("執行goDetail的Segue")
-            print("傳的值是\(city.city)")
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.city = city
+            
         }
     }
    
