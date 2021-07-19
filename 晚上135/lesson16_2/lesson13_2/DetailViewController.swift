@@ -39,8 +39,24 @@ extension DetailViewController{
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath) as! DetailCell
-        cell.fieldLabel.text = "城市"
-        cell.valueLabel.text = city.city
+        switch indexPath.row{
+        case 0:
+            cell.fieldLabel.text = "城市:"
+            cell.valueLabel.text = city.city
+        case 1:
+            cell.fieldLabel.text = "國家:"
+            cell.valueLabel.text = city.country
+        case 2:
+            cell.fieldLabel.text = "洲:"
+            cell.valueLabel.text = city.continent
+        case 3:
+            cell.fieldLabel.text = "網址:"
+            cell.valueLabel.text = city.url
+        default:
+            cell.fieldLabel.text = "網址:"
+            cell.valueLabel.text = city.url
+        }
+        
         return cell
     }
 }
