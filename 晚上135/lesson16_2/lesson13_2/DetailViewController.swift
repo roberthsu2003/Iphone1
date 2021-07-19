@@ -12,6 +12,8 @@ class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableHeaderView = UIImageView(image: UIImage.init(named: city.image))
+        (tableView.tableHeaderView as! UIImageView).contentMode = UIView.ContentMode.scaleAspectFill
        
     }
     
