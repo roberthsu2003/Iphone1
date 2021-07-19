@@ -9,15 +9,12 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var city:City!
+    @IBOutlet var cityImageView:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView(image: UIImage.init(named: city.image))
-        imageView.contentMode = .scaleAspectFill
-        tableView.tableHeaderView = imageView
         
-        //tableView.tableHeaderView = UIImageView(image: UIImage.init(named: city.image))
-        //(tableView.tableHeaderView as! UIImageView).contentMode = .scaleAspectFill
+        cityImageView.image = UIImage(named: city.image)      
        
     }
     

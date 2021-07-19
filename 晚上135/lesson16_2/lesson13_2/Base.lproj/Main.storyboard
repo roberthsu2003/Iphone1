@@ -104,9 +104,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="wca-sa-PbW">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TaE-rk-lx3">
-                                <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                <rect key="frame" x="0.0" y="258.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TaE-rk-lx3" id="LkA-tG-GsK">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -120,10 +124,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="peM-cg-d82"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="wca-sa-PbW" id="m7i-7T-FaG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTv-TG-6r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="-111"/>
+            <point key="canvasLocation" x="2647.5" y="-111.97183098591549"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6H5-F6-QaE">
