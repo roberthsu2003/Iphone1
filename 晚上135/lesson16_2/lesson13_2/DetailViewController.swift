@@ -13,9 +13,12 @@ class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       
     }
     
+
+}
+
+extension DetailViewController{
     //MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView,
@@ -27,5 +30,9 @@ class DetailViewController: UITableViewController {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         return UITableViewCell()
     }
+}
 
+extension DetailViewController{
+    //MARK - UITableViewDelegate
+    
 }
