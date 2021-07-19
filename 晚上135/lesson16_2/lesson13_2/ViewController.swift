@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
     var cities:[City]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
@@ -50,8 +50,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         tableView.delegate = self
     }
     
-    //MARK: - UITableViewDataSource
-    
+       
+
+
+}
+
+extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
         return cities.count
@@ -90,8 +94,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         
     }
-    
-    //MARK: - UITableViewDelegate
+}
+
+extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
         let selectedIndex = indexPath.row
@@ -124,8 +129,5 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     
-    
-
-
 }
 
