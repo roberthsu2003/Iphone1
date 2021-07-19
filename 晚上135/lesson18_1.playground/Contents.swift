@@ -40,3 +40,9 @@ let theAceOfSpades = BlackjackCard(rank: .ace, suit: .spades)
 print("theAceOfSpades:\(theAceOfSpades.description)")
 BlackjackCard.Suit.hearts.rawValue
 
+extension Double{
+    var km:Double { return self * 1_000.0}
+}
+let oneKm = 25.4.km
+oneKm
+
