@@ -50,6 +50,11 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
        
 
 
