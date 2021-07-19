@@ -13,6 +13,7 @@ class DetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = city.city
         cityImageView.image = UIImage(named: city.image)
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1)
         /*
@@ -21,7 +22,7 @@ class DetailViewController: UITableViewController {
 
         tableView.tableFooterView = footerView
          */
-        tableView.separatorColor = UIColor(red: 100.0/255.0, green: 100.0/255.0, blue: 100.0/255.0, alpha: 1)
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 1)
     }
     
 
