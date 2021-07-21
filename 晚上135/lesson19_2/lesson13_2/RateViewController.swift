@@ -13,6 +13,10 @@ class RateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        backgroundImageView.addSubview(blurEffectView)
+        blurEffectView.frame = view.bounds
         backgroundImageView.image = UIImage(named: city.image!)
     }
     

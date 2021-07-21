@@ -185,7 +185,7 @@
                         <constraints>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="trailing" secondItem="KjU-PJ-PFx" secondAttribute="trailing" id="0rg-6V-3Iu"/>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="top" secondItem="KjU-PJ-PFx" secondAttribute="top" id="dLa-1o-0WY"/>
-                            <constraint firstItem="mMn-RY-PUe" firstAttribute="bottom" secondItem="KjU-PJ-PFx" secondAttribute="bottom" id="my3-BX-Jac"/>
+                            <constraint firstItem="mMn-RY-PUe" firstAttribute="bottom" secondItem="pG3-zg-rxF" secondAttribute="bottom" id="my3-BX-Jac"/>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="leading" secondItem="KjU-PJ-PFx" secondAttribute="leading" id="zRr-lZ-5KE"/>
                         </constraints>
                     </view>
