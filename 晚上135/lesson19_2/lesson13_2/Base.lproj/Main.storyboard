@@ -153,7 +153,13 @@
                             <outlet property="delegate" destination="cxP-f3-3pC" id="Zhm-mi-jQX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="peM-cg-d82"/>
+                    <navigationItem key="navigationItem" id="peM-cg-d82">
+                        <barButtonItem key="rightBarButtonItem" title="評分" id="rVa-rC-SOH">
+                            <connections>
+                                <segue destination="4ao-B1-E9F" kind="presentation" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="Ljq-3J-VqK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityImageView" destination="wca-sa-PbW" id="m7i-7T-FaG"/>
                     </connections>
@@ -161,6 +167,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTv-TG-6r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2647.5" y="-111.97183098591549"/>
+        </scene>
+        <!--Rate View Controller-->
+        <scene sceneID="YQG-li-txG">
+            <objects>
+                <viewController id="4ao-B1-E9F" customClass="RateViewController" customModule="lesson19_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pG3-zg-rxF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KjU-PJ-PFx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVg-Js-rus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3473" y="-112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6H5-F6-QaE">
