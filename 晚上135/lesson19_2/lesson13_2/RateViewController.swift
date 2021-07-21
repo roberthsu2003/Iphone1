@@ -8,13 +8,12 @@
 import UIKit
 
 class RateViewController: UIViewController {
-    
+    @IBOutlet var backgroundImageView:UIImageView!
     var city:City!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(city.city)
+        backgroundImageView.image = UIImage(named: city.image!)
     }
     
 
