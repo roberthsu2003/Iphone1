@@ -8,11 +8,13 @@
 import UIKit
 
 class RateViewController: UIViewController {
+    
+    var city:City!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(city.city)
     }
     
 

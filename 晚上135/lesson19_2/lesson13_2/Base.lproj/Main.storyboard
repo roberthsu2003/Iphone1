@@ -156,7 +156,7 @@
                     <navigationItem key="navigationItem" id="peM-cg-d82">
                         <barButtonItem key="rightBarButtonItem" title="評分" id="rVa-rC-SOH">
                             <connections>
-                                <segue destination="4ao-B1-E9F" kind="presentation" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="Ljq-3J-VqK"/>
+                                <segue destination="4ao-B1-E9F" kind="presentation" identifier="goRate" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="Ljq-3J-VqK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,7 +166,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTv-TG-6r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2647.5" y="-111.97183098591549"/>
+            <point key="canvasLocation" x="2711" y="-111"/>
         </scene>
         <!--Rate View Controller-->
         <scene sceneID="YQG-li-txG">
@@ -181,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVg-Js-rus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3473" y="-112"/>
+            <point key="canvasLocation" x="3508" y="-112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6H5-F6-QaE">

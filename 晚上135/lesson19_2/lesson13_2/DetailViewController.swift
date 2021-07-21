@@ -32,6 +32,13 @@ class DetailViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goRate"{
+            let rateViewController = segue.destination as! RateViewController
+            rateViewController.city = city
+        }
+    }
+    
 
 }
 
