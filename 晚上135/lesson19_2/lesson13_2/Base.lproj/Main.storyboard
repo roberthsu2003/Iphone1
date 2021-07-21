@@ -179,12 +179,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mMn-RY-PUe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-YK-jiS">
+                                <rect key="frame" x="40" y="40" width="240" height="369"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cHj-YK-jiS" secondAttribute="height" multiplier="80:123" id="FYA-KU-QpD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KjU-PJ-PFx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="trailing" secondItem="KjU-PJ-PFx" secondAttribute="trailing" id="0rg-6V-3Iu"/>
+                            <constraint firstItem="cHj-YK-jiS" firstAttribute="leading" secondItem="KjU-PJ-PFx" secondAttribute="leading" constant="40" id="c6s-JA-rgV"/>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="top" secondItem="KjU-PJ-PFx" secondAttribute="top" id="dLa-1o-0WY"/>
+                            <constraint firstItem="cHj-YK-jiS" firstAttribute="top" secondItem="KjU-PJ-PFx" secondAttribute="top" constant="40" id="e9H-rh-lCq"/>
+                            <constraint firstItem="KjU-PJ-PFx" firstAttribute="trailing" secondItem="cHj-YK-jiS" secondAttribute="trailing" constant="40" id="gZY-YS-s8z"/>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="bottom" secondItem="pG3-zg-rxF" secondAttribute="bottom" id="my3-BX-Jac"/>
                             <constraint firstItem="mMn-RY-PUe" firstAttribute="leading" secondItem="KjU-PJ-PFx" secondAttribute="leading" id="zRr-lZ-5KE"/>
                         </constraints>
