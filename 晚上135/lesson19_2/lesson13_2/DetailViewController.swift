@@ -38,9 +38,13 @@ class DetailViewController: UITableViewController {
             rateViewController.city = city
             rateViewController.callBackMethod = {
                 (passbackString:String)->Void in
-                print("傳回來的字串是\(passbackString)")                
+                print("傳回來的字串是\(passbackString)")
             }
         }
+    }
+    
+    @IBAction func userDismiss(_ sender:UIStoryboardSegue){
+        print("透過離開傳回")
     }
     
 

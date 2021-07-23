@@ -202,24 +202,36 @@
                                                 <color key="backgroundColor" red="0.55296553362362955" green="0.62466528546714717" blue="0.36797563347075518" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="科技化城市"/>
+                                                <connections>
+                                                    <segue destination="0xd-09-l6h" kind="unwind" identifier="n1" unwindAction="userDismiss:" id="KBC-bc-0WM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-c0-X2g">
                                                 <rect key="frame" x="0.0" y="39" width="180" height="30"/>
                                                 <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="風景不錯"/>
+                                                <connections>
+                                                    <segue destination="0xd-09-l6h" kind="unwind" identifier="n2" unwindAction="userDismiss:" id="qxS-kp-499"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-3I-oFa">
                                                 <rect key="frame" x="0.0" y="78" width="180" height="30"/>
                                                 <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="很現代的城市"/>
+                                                <connections>
+                                                    <segue destination="0xd-09-l6h" kind="unwind" identifier="n3" unwindAction="userDismiss:" id="la8-Fc-yAu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJo-KU-fFz">
                                                 <rect key="frame" x="0.0" y="117" width="180" height="30"/>
                                                 <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="環保的城市"/>
+                                                <connections>
+                                                    <segue destination="0xd-09-l6h" kind="unwind" identifier="n4" unwindAction="userDismiss:" id="Pbd-u0-lyT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -270,6 +282,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVg-Js-rus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="0xd-09-l6h" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3506.25" y="-113.02816901408451"/>
         </scene>
