@@ -44,7 +44,18 @@ class DetailViewController: UITableViewController {
     }
     
     @IBAction func userDismiss(_ sender:UIStoryboardSegue){
-        print("透過離開傳回")
+        switch sender.identifier{
+        case "n1":
+            print("按n1")
+        case "n2":
+            print("按n2")
+        case "n3":
+            print("按n3")
+        case "n4":
+            print("按n4")
+        default:
+            print("default")
+        }
     }
     
 
