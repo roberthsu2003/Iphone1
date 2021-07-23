@@ -182,7 +182,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-YK-jiS">
                                 <rect key="frame" x="40" y="40" width="240" height="390"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-6N-6Bt">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-6N-6Bt">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4cg-6N-6Bt" secondAttribute="height" multiplier="15:8" id="gQ2-Tb-MCM"/>
@@ -279,6 +279,8 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="mMn-RY-PUe" id="RfB-CX-orr"/>
+                        <outlet property="containerView" destination="cHj-YK-jiS" id="6dV-ok-yxz"/>
+                        <outlet property="topImageView" destination="4cg-6N-6Bt" id="k73-sx-TPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVg-Js-rus" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

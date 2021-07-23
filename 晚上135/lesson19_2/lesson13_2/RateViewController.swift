@@ -9,6 +9,9 @@ import UIKit
 
 class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
+    @IBOutlet var topImageView:UIImageView!
+    @IBOutlet var containerView:UIView!
+    
     var city:City!
     var callBackMethod:((String) -> Void)!
 
@@ -19,6 +22,7 @@ class RateViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         blurEffectView.frame = view.bounds
         backgroundImageView.image = UIImage(named: city.image!)
+        topImageView.image = UIImage(named: city.image!)
     }
     
 
