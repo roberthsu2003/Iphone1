@@ -180,10 +180,76 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-YK-jiS">
-                                <rect key="frame" x="40" y="40" width="240" height="369"/>
+                                <rect key="frame" x="40" y="40" width="240" height="390"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-6N-6Bt">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4cg-6N-6Bt" secondAttribute="height" multiplier="15:8" id="gQ2-Tb-MCM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您曾經來過這裏嗎?給它打一個分數吧?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ql7-oR-9cU">
+                                        <rect key="frame" x="30" y="136" width="180" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="aIF-Xd-ajz">
+                                        <rect key="frame" x="30" y="200" width="180" height="147"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fq5-96-Iga">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.55296553362362955" green="0.62466528546714717" blue="0.36797563347075518" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="科技化城市"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY0-c0-X2g">
+                                                <rect key="frame" x="0.0" y="39" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="風景不錯"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-3I-oFa">
+                                                <rect key="frame" x="0.0" y="78" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="很現代的城市"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJo-KU-fFz">
+                                                <rect key="frame" x="0.0" y="117" width="180" height="30"/>
+                                                <color key="backgroundColor" red="0.5529655336" green="0.6246652855" blue="0.36797563350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="環保的城市"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92W-oa-Orn">
+                                        <rect key="frame" x="186" y="17" width="40" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0Mp-s2-Ftp"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="取消"/>
+                                        <connections>
+                                            <action selector="cancer:" destination="4ao-B1-E9F" eventType="touchUpInside" id="lp3-eP-Ro5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="cHj-YK-jiS" secondAttribute="height" multiplier="80:123" id="FYA-KU-QpD"/>
+                                    <constraint firstItem="Ql7-oR-9cU" firstAttribute="leading" secondItem="cHj-YK-jiS" secondAttribute="leading" constant="30" id="0SK-tm-anW"/>
+                                    <constraint firstItem="4cg-6N-6Bt" firstAttribute="top" secondItem="cHj-YK-jiS" secondAttribute="top" id="24o-wm-bZB"/>
+                                    <constraint firstAttribute="trailing" secondItem="aIF-Xd-ajz" secondAttribute="trailing" constant="30" id="3Mx-Nv-zOk"/>
+                                    <constraint firstItem="aIF-Xd-ajz" firstAttribute="top" secondItem="Ql7-oR-9cU" secondAttribute="bottom" constant="23" id="7RI-eA-THG"/>
+                                    <constraint firstItem="aIF-Xd-ajz" firstAttribute="leading" secondItem="cHj-YK-jiS" secondAttribute="leading" constant="30" id="8fr-g0-6Lh"/>
+                                    <constraint firstAttribute="trailing" secondItem="92W-oa-Orn" secondAttribute="trailing" constant="14" id="Dbx-VI-UA4"/>
+                                    <constraint firstAttribute="width" secondItem="cHj-YK-jiS" secondAttribute="height" multiplier="80:130" id="FYA-KU-QpD"/>
+                                    <constraint firstItem="92W-oa-Orn" firstAttribute="top" secondItem="cHj-YK-jiS" secondAttribute="top" constant="17" id="GIl-8V-788"/>
+                                    <constraint firstItem="4cg-6N-6Bt" firstAttribute="leading" secondItem="cHj-YK-jiS" secondAttribute="leading" id="TFH-IF-hfE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ql7-oR-9cU" secondAttribute="trailing" constant="30" id="aQb-To-1ZM"/>
+                                    <constraint firstAttribute="trailing" secondItem="4cg-6N-6Bt" secondAttribute="trailing" id="eu4-Me-Ogu"/>
+                                    <constraint firstItem="Ql7-oR-9cU" firstAttribute="top" secondItem="4cg-6N-6Bt" secondAttribute="bottom" constant="8" symbolic="YES" id="mSS-Q8-RLm"/>
                                 </constraints>
                             </view>
                         </subviews>
