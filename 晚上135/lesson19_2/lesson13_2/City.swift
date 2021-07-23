@@ -15,4 +15,5 @@ class City{
     var latitude:Double!
     var longitude:Double!
     var url:String!
+    var userRate:String?
 }

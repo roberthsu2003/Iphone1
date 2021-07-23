@@ -46,16 +46,17 @@ class DetailViewController: UITableViewController {
     @IBAction func userDismiss(_ sender:UIStoryboardSegue){
         switch sender.identifier{
         case "n1":
-            print("按n1")
+            city.userRate = "科技化城市"
         case "n2":
-            print("按n2")
+            city.userRate = "風景城市"
         case "n3":
-            print("按n3")
+            city.userRate = "現代化城市"
         case "n4":
-            print("按n4")
+            city.userRate = "環保城市"
         default:
             print("default")
         }
+        tableView.reloadData()
     }
     
 
@@ -66,7 +67,7 @@ extension DetailViewController{
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return 6
     }
     
     override func tableView(_ tableView: UITableView,
@@ -86,6 +87,14 @@ extension DetailViewController{
             cell.fieldLabel.text = "網址:"
             cell.valueLabel.text = city.url
         case 4:
+            cell.fieldLabel.text = "描繪:"
+            if let userRate = city.userRate{
+                cell.valueLabel.text = userRate
+            }else{
+                cell.valueLabel.text = "目前無資料"
+            }
+            
+        case 5:
             cell.fieldLabel.text = "簡介:"
             cell.valueLabel.text = city.local
         default:
