@@ -10,6 +10,7 @@ import UIKit
 class RateViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
     var city:City!
+    var callBackMethod:((String) -> Void)!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class RateViewController: UIViewController {
 
     @IBAction func cancer(_ sender:UIButton){
         dismiss(animated: true)
+        callBackMethod("這是RateViewController的字串")
     }
 
 }

@@ -36,6 +36,10 @@ class DetailViewController: UITableViewController {
         if segue.identifier == "goRate"{
             let rateViewController = segue.destination as! RateViewController
             rateViewController.city = city
+            rateViewController.callBackMethod = {
+                (passbackString:String)->Void in
+                print("傳回來的字串是\(passbackString)")                
+            }
         }
     }
     
