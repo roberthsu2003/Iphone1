@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var collectionView:UICollectionView!
    
     var cities:[City]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
