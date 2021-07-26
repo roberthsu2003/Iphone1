@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="tableView" destination="O5f-9O-m1V" id="7l2-yw-3le"/>
                         <segue destination="cxP-f3-3pC" kind="show" identifier="goDetail" id="VAc-6Y-6hJ"/>
+                        <segue destination="FPP-LZ-Cm5" kind="presentation" identifier="goRegister" modalPresentationStyle="fullScreen" id="yxn-aS-Qvo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
