@@ -11,31 +11,78 @@
         <!--註冊-->
         <scene sceneID="nME-ek-0lF">
             <objects>
-                <tableViewController id="ksU-n9-Yos" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0YP-Mm-kZh">
+                <tableViewController id="ksU-n9-Yos" customClass="RegisteViewController" customModule="lesson21" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0YP-Mm-kZh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lO3-rR-eyN">
-                                <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lO3-rR-eyN" id="WfY-M0-BXY">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection headerTitle="姓名" id="dhX-hB-3rB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lO3-rR-eyN">
+                                        <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lO3-rR-eyN" id="WfY-M0-BXY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oT2-DW-o0Z">
+                                                    <rect key="frame" x="56" y="5" width="241" height="34.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oT2-DW-o0Z" firstAttribute="top" secondItem="WfY-M0-BXY" secondAttribute="top" constant="5" id="2HV-3A-bLC"/>
+                                                <constraint firstItem="oT2-DW-o0Z" firstAttribute="leading" secondItem="WfY-M0-BXY" secondAttribute="leading" constant="56" id="6nP-IA-fZW"/>
+                                                <constraint firstAttribute="trailing" secondItem="oT2-DW-o0Z" secondAttribute="trailing" constant="23" id="REA-Mi-cKX"/>
+                                                <constraint firstAttribute="bottom" secondItem="oT2-DW-o0Z" secondAttribute="bottom" constant="4.5" id="jLh-hX-p8W"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="AGE" id="NDl-y5-Axi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="g3f-L4-BsY">
+                                        <rect key="frame" x="0.0" y="117.00000034679067" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3f-L4-BsY" id="edr-Ba-tFY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IqR-3H-DEb">
+                                                    <rect key="frame" x="60" y="4" width="235" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="ksU-n9-Yos" id="OdY-Ue-Mns"/>
                             <outlet property="delegate" destination="ksU-n9-Yos" id="Oag-DF-tL7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="註冊" id="q5A-Kh-pwA"/>
+                    <navigationItem key="navigationItem" title="註冊" id="q5A-Kh-pwA">
+                        <barButtonItem key="rightBarButtonItem" title="註冊" id="6La-Ep-6nG">
+                            <connections>
+                                <action selector="userRegister:" destination="ksU-n9-Yos" id="tL9-KN-o6b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ageTextField" destination="IqR-3H-DEb" id="fyD-4z-lLf"/>
+                        <outlet property="nameTextField" destination="oT2-DW-o0Z" id="iZG-Ew-HBV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVY-5u-laK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="-951"/>
+            <point key="canvasLocation" x="3234.375" y="-951.76056338028172"/>
         </scene>
         <!--世界城市-->
         <scene sceneID="tne-QT-ifu">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930E349226AEE84200A122E0 /* RegisteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930E349126AEE84200A122E0 /* RegisteViewController.swift */; };
 		9343BD762695D43000570BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343BD752695D43000570BDE /* AppDelegate.swift */; };
 		9343BD782695D43000570BDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343BD772695D43000570BDE /* SceneDelegate.swift */; };
 		9343BD7A2695D43000570BDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343BD792695D43000570BDE /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930E349126AEE84200A122E0 /* RegisteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteViewController.swift; sourceTree = "<group>"; };
 		9343BD722695D43000570BDE /* lesson21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9343BD752695D43000570BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9343BD772695D43000570BDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				93FFBCDC269F0AFC00C24880 /* City.swift */,
 				93FCF89026A5B55F0038C0E1 /* DetailCell.swift */,
 				93E0807E26A8510700162A69 /* RateViewController.swift */,
+				930E349126AEE84200A122E0 /* RegisteViewController.swift */,
 			);
 			path = lesson13_2;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9343BD7A2695D43000570BDE /* ViewController.swift in Sources */,
+				930E349226AEE84200A122E0 /* RegisteViewController.swift in Sources */,
 				93FFBCDD269F0AFC00C24880 /* City.swift in Sources */,
 				9343BD8C2695E3E800570BDE /* MyCell.swift in Sources */,
 				93FFBCDF269F1D8900C24880 /* DetailViewController.swift in Sources */,
