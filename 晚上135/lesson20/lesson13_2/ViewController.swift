@@ -33,7 +33,33 @@ class ViewController: UIViewController {
         return [City]()
         
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.dataSource = self;
+        collectionView.delegate = self;
+    }
 
+}
+
+extension ViewController:UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+        let city = cities[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CollectionViewCell
+        cell.cityLabel.text = city.city
+        cell.imageView.image = UIImage(named: city.image)
+        return cell
+    }
+}
+
+extension ViewController:UICollectionViewDelegate{
+    
 }
 
 
