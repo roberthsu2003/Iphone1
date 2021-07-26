@@ -49,6 +49,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        //檢查使用者是否註冊
+        let userDefaults = UserDefaults.standard
+        let name = userDefaults.object(forKey: "name")
+        if name == nil {
+            //建立UIBarButtonItem
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "註冊", style: .plain, target: self, action: #selector(userClickRegister(_:)))
+        }
+        
         let fileManager = FileManager.default
         guard let docurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else{
             print("資料取得錯誤")
@@ -61,6 +69,11 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    
+    @objc func userClickRegister(_ sender:UIBarButtonItem){
+        print("註冊")
     }
     
        

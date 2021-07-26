@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="ksU-n9-Yos" customClass="RegisteViewController" customModule="lesson21" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0YP-Mm-kZh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -162,13 +162,7 @@
                             <constraint firstItem="O5f-9O-m1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pom-d9-aLa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="世界城市" id="8lT-WB-k6s">
-                        <barButtonItem key="rightBarButtonItem" title="註冊" id="YPO-hV-gg9">
-                            <connections>
-                                <segue destination="FPP-LZ-Cm5" kind="presentation" id="iFZ-BN-leL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="世界城市" id="8lT-WB-k6s"/>
                     <connections>
                         <outlet property="tableView" destination="O5f-9O-m1V" id="7l2-yw-3le"/>
                         <segue destination="cxP-f3-3pC" kind="show" identifier="goDetail" id="VAc-6Y-6hJ"/>
@@ -394,7 +388,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FPP-LZ-Cm5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9qc-Ty-Slb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
