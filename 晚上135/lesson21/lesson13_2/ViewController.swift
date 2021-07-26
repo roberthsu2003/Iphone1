@@ -48,6 +48,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        let fileManager = FileManager.default
+        guard let docurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else{
+            print("資料取得錯誤")
+            return
+        }
+        
+        print(docurl.absoluteString)
     }
     
     override func viewWillAppear(_ animated: Bool) {
