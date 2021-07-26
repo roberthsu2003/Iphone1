@@ -17,7 +17,14 @@ class RegisteViewController: UITableViewController {
     }
     
     @IBAction func userRegister(_ sender:UIBarButtonItem){
-        
+        if nameTextField.text != "" && ageTextField.text != ""{
+            let userDefault = UserDefaults.standard
+            userDefault.setValue(nameTextField.text, forKey: "name")
+            userDefault.setValue(Int(ageTextField.text!), forKey: "age")
+            dismiss(animated: true, completion: nil)
+        }else{
+            //UIAlertViewController
+        }
     }
 
   
