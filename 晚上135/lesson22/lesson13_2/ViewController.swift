@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
-    /*
+    
     var cities:[City]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
             if let array = NSArray(contentsOf: plistURL) as? [[String:Any]]{
@@ -33,7 +33,21 @@ class ViewController: UIViewController {
         return [City]()
         
     }()
- */
+ 
+    
+    
+    lazy var citys:[[String:Any]] = {
+        let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")
+        //let targetString = NSHomeDirectory()
+        guard  let targetURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+            print("targetURL路徑取得錯誤")
+            return [[String:Any]]()
+        }
+        
+        print(targetURL.path)
+        
+        return [[String:Any]]()
+    }()
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,17 +63,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let _ = citys
         tableView.dataSource = self
         tableView.delegate = self
-       
-        
-        let fileManager = FileManager.default
-        guard let docurl = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else{
-            print("資料取得錯誤")
-            return
-        }
-        
-        print(docurl.absoluteString)
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
