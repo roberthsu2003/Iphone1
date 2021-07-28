@@ -9,47 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
-    /*
-    var cities:[City]={
-        if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
-            if let array = NSArray(contentsOf: plistURL) as? [[String:Any]]{
-                var citys = [City]()
-                for cityDic in array{
-                    let city = City()
-                    city.city = cityDic["City"] as? String
-                    city.country = cityDic["Country"] as? String
-                    city.continent = cityDic["Continent"] as? String
-                    city.image = cityDic["Image"] as? String
-                    city.local = cityDic["Local"] as? String
-                    city.url = cityDic["url"] as? String
-                    city.latitude = cityDic["lat"] as? Double
-                    city.longitude = cityDic["long"] as? Double
-                    citys.append(city)
-                }
-                return citys
-            }
+    
+    var targetURL:URL = {
+        let fileManager = FileManager.default
+        guard  var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+            print("targetURL路徑取得錯誤")
+            return URL(string: "hello")!
         }
         
-        return [City]()
-        
+        targetURL.appendPathComponent("citylist.plist")
+        print(targetURL.path)
+        return targetURL
     }()
-    */
-    
     
     lazy var cities:[[String:Any]] = {
         let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
         //let targetString = NSHomeDirectory()
         let fileManager = FileManager.default
-        guard  var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
-            print("targetURL路徑取得錯誤")
-            return [[String:Any]]()
-        }
-        
-        targetURL.appendPathComponent("citylist.plist")
-        print(targetURL.path)
         //檢查Documents有沒有這個檔案
-        if !fileManager.fileExists(atPath: targetURL.path){
-            if let _ = try? fileManager.copyItem(at: sourceURL, to: targetURL){
+        if !fileManager.fileExists(atPath: self.targetURL.path){
+            if let _ = try? fileManager.copyItem(at: sourceURL, to: self.targetURL){
                 print("copy 成功")
             }
         }
@@ -136,6 +115,7 @@ extension ViewController:UITableViewDataSource{
             let deleteRow = indexPath.row
             cities.remove(at: deleteRow)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            
         }
        
         
@@ -146,9 +126,11 @@ extension ViewController:UITableViewDataSource{
 extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        /*
         let selectedIndex = indexPath.row
         let city = cities[selectedIndex]
         performSegue(withIdentifier: "goDetail", sender: city)
+ */
     }
     
     func tableView(_ tableView: UITableView,
@@ -157,6 +139,10 @@ extension ViewController:UITableViewDelegate{
             let deleteRow = indexPath.row
             self.cities.remove(at: deleteRow)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            //更新Documents內的citylist.plist
+            let citiesArray = self.cities as NSArray
+            citiesArray.write(to: self.targetURL, atomically: true)
+            print("delete")
             completionHandler(true)
         }
         
