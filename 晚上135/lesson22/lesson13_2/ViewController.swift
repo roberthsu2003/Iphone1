@@ -39,11 +39,13 @@ class ViewController: UIViewController {
     lazy var citys:[[String:Any]] = {
         let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")
         //let targetString = NSHomeDirectory()
-        guard  let targetURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+        let fileManager = FileManager.default
+        guard  var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
             print("targetURL路徑取得錯誤")
             return [[String:Any]]()
         }
         
+        targetURL.appendPathComponent("citylist.plist")
         print(targetURL.path)
         
         return [[String:Any]]()
