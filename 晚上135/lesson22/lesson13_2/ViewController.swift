@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     
     lazy var citys:[[String:Any]] = {
-        let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")
+        let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
         //let targetString = NSHomeDirectory()
         let fileManager = FileManager.default
         guard  var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
@@ -46,8 +46,15 @@ class ViewController: UIViewController {
         }
         
         targetURL.appendPathComponent("citylist.plist")
-        print(targetURL.path)
         
+        //檢查Documents有沒有這個檔案
+        
+        if !fileManager.fileExists(atPath: targetURL.path){
+            if let _ = try? fileManager.copyItem(at: sourceURL, to: targetURL){
+                print("copy 成功")
+            }
+        }
+        print("已經有這個檔案了")
         return [[String:Any]]()
     }()
     
