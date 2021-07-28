@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         }
         
         targetURL.appendPathComponent("citylist.plist")
-        
+        print(targetURL.path)
         //檢查Documents有沒有這個檔案
         if !fileManager.fileExists(atPath: targetURL.path){
             if let _ = try? fileManager.copyItem(at: sourceURL, to: targetURL){
