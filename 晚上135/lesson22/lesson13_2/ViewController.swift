@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
-    
+    /*
     var cities:[City]={
         if let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist"){
             if let array = NSArray(contentsOf: plistURL) as? [[String:Any]]{
@@ -33,10 +33,10 @@ class ViewController: UIViewController {
         return [City]()
         
     }()
- 
+    */
     
     
-    lazy var citys:[[String:Any]] = {
+    lazy var cities:[[String:Any]] = {
         let sourceURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")!
         //let targetString = NSHomeDirectory()
         let fileManager = FileManager.default
@@ -73,8 +73,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(citys)
         tableView.dataSource = self
         tableView.delegate = self
     
@@ -121,10 +119,10 @@ extension ViewController:UITableViewDataSource{
         backgroundView.backgroundColor = UIColor.systemTeal
         cell.selectedBackgroundView = backgroundView
          */
-        cell.cityName.text = city.city
-        cell.countryName.text = city.country
-        cell.continent.text = city.continent
-        if let imageName = city.image{
+        cell.cityName.text = city["City"] as? String
+        cell.countryName.text = city["Country"] as? String
+        cell.continent.text = city["Continent"] as? String
+        if let imageName = city["Image"] as? String{
             cell.cityImageView.image = UIImage(named:imageName)
         }
         
