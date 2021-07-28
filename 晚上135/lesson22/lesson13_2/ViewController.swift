@@ -48,14 +48,15 @@ class ViewController: UIViewController {
         targetURL.appendPathComponent("citylist.plist")
         
         //檢查Documents有沒有這個檔案
-        
         if !fileManager.fileExists(atPath: targetURL.path){
             if let _ = try? fileManager.copyItem(at: sourceURL, to: targetURL){
                 print("copy 成功")
             }
         }
-        print("已經有這個檔案了")
-        return [[String:Any]]()
+        let tempArray = NSArray(contentsOf: targetURL) as? [[String:Any]]
+        
+        
+        return tempArray ?? [[String:Any]]()
     }()
     
     
@@ -73,7 +74,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = citys
+        print(citys)
         tableView.dataSource = self
         tableView.delegate = self
     
