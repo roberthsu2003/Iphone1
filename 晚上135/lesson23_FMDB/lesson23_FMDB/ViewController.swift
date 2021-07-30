@@ -34,17 +34,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         copySQLiteToDocuments()
         database = FMDatabase(url: self.targetURL)
-        database.open()
-        guard let rs = try? database.executeQuery("SELECT cityName from city", values: nil) else{
-            print("sql出錯了")
-            return
+        if let cityNames = cityesOFCountry(countryName: "Japan"){
+            print(cityNames)
         }
+    }
+    
+    func cityesOFCountry(countryName:String) -> [String]?{
+        database.open()
+        guard let rs = try? database.executeQuery("SELECT cityName from city WHERE country=?", values: [countryName]) else{
+            print("sql出錯了")
+            return nil
+        }
+        var cityNames = [String]()
         while rs.next(){
             if let cityName = rs["cityName"] as? String{
-                print(cityName)
+                cityNames.append(cityName)
             }
         }
         database.close()
+        return cityNames
     }
     
     
