@@ -9,8 +9,11 @@ import UIKit
 import FMDB
 
 class ViewController: UIViewController {
-    var database: FMDatabase!
-    var targetURL:URL? = {
+    //var database: FMDatabase!
+    lazy var database:FMDatabase = {
+        FMDatabase(url: self.targetURL)
+    }()
+    lazy var targetURL:URL? = {
         let fileManager = FileManager.default
         guard var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
             print("targetURL路徑取得錯誤")
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        database = FMDatabase(url: self.targetURL)
+        
         print(self.countries)
         if let cityNames = cityesOFCountry(countryName: "Japan"){
             print(cityNames)
