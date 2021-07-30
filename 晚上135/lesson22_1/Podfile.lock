@@ -1,0 +1,18 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+
+DEPENDENCIES:
+  - FMDB
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+
+PODFILE CHECKSUM: a80e01b0ca87e229e4a0434f94d6353fa6760454
+
+COCOAPODS: 1.10.2

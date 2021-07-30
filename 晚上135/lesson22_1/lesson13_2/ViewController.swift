@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SQLite3
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         copySQLiteToDocuments()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
