@@ -6,22 +6,25 @@
 //
 
 import UIKit
+import FMDB
 
 class ViewController: UIViewController {
+    var database: FMDatabase!
+    var targetURL:URL!
     
     func copySQLiteToDocuments(){
         let sourceURL = Bundle.main.url(forResource: "citys", withExtension: "db")!
         let fileManager = FileManager.default
-        guard var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
+        guard let targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
             print("targetURL路徑取得錯誤")
             return
         }
+        self.targetURL = targetURL
+        print(self.targetURL.path)
+        self.targetURL.appendPathComponent("citys.db")
         
-        print(targetURL.path)
-        targetURL.appendPathComponent("citys.db")
-        
-        if !fileManager.fileExists(atPath: targetURL.path){
-            if let _ = try? fileManager.copyItem(at: sourceURL, to:targetURL){
+        if !fileManager.fileExists(atPath: self.targetURL.path){
+            if let _ = try? fileManager.copyItem(at: sourceURL, to:self.targetURL){
                 print("copy 成功")
             }
         }
@@ -30,6 +33,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         copySQLiteToDocuments()
+        database = FMDatabase(url: self.targetURL)
     }
 
 
