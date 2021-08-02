@@ -88,7 +88,6 @@ extension ViewController:UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int{
-        print(countrys)
         return countrys.count;
     }
 }
@@ -98,6 +97,13 @@ extension ViewController:UIPickerViewDelegate{
                  titleForRow row: Int,
                  forComponent component: Int) -> String?{
         return countrys[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,
+                didSelectRow row: Int,
+                inComponent component: Int){
+        let selectedCountry = countrys[row]
+        print(cityesOFCountry(countryName: selectedCountry)!)
     }
 }
 
