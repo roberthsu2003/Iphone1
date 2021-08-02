@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     lazy var database:FMDatabase = {
         FMDatabase(url: self.targetURL)
     }()
+    
     lazy var targetURL:URL? = {
         let fileManager = FileManager.default
         guard var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
