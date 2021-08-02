@@ -15,9 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPX-px-EmP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="Bw9-W2-Fcz"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bPX-px-EmP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IiA-2M-qxn"/>
+                            <constraint firstItem="bPX-px-EmP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nn8-xN-osR"/>
+                            <constraint firstItem="bPX-px-EmP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aPc-7w-1R8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="bPX-px-EmP" id="tnQ-Tu-xf6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

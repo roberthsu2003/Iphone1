@@ -9,7 +9,8 @@ import UIKit
 import FMDB
 
 class ViewController: UIViewController {
-    //var database: FMDatabase!
+    @IBOutlet var pickerView:UIPickerView!
+    
     lazy var database:FMDatabase = {
         FMDatabase(url: self.targetURL)
     }()
@@ -25,10 +26,8 @@ class ViewController: UIViewController {
         targetURL.appendPathComponent("citys.db")
         return targetURL
     }()
-    lazy var countries:[String] = {
-        self.copySQLiteToDocuments()
-        return ["a","b","c"]
-    }()
+    
+    
     
     func copySQLiteToDocuments(){
         let sourceURL = Bundle.main.url(forResource: "citys", withExtension: "db")!
@@ -44,8 +43,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        print(self.countries)
         if let cityNames = cityesOFCountry(countryName: "Japan"){
             print(cityNames)
         }
