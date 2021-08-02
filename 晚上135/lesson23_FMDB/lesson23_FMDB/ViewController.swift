@@ -10,6 +10,7 @@ import FMDB
 
 class ViewController: UIViewController {
     @IBOutlet var pickerView:UIPickerView!
+    @IBOutlet var tableView:UITableView!
     
     lazy var database:FMDatabase = {
         FMDatabase(url: self.targetURL)
@@ -105,5 +106,21 @@ extension ViewController:UIPickerViewDelegate{
         let selectedCountry = countrys[row]
         print(cityesOFCountry(countryName: selectedCountry)!)
     }
+}
+
+extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    
 }
 
