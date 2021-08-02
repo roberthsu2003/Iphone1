@@ -27,6 +27,21 @@ class ViewController: UIViewController {
         return targetURL
     }()
     
+    lazy var countrys:[String] = {
+        database.open()
+        guard let rs = try? database.executeQuery("SELECT country from city  GROUP BY country", values: nil)else{
+            return [String]()
+        }
+        var countries = [String]()
+        while rs.next(){
+            if let country = rs["country"] as? String{
+                countries.append(country)
+            }
+        }
+        database.close()
+        return countries
+    }()
+    
     
     
     func copySQLiteToDocuments(){
@@ -43,9 +58,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let cityNames = cityesOFCountry(countryName: "Japan"){
-            print(cityNames)
-        }
     }
     
     func cityesOFCountry(countryName:String) -> [String]?{
@@ -76,7 +88,8 @@ extension ViewController:UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int{
-        return 5;
+        print(countrys)
+        return countrys.count;
     }
 }
 
