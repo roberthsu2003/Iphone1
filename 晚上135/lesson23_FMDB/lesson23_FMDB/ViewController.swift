@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         return countries
     }()
     
+    var cities = [String]()
+    
     
     
     func copySQLiteToDocuments(){
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cities = cityesOFCountry(countryName: "Argentina")!
         
     }
     
@@ -104,19 +107,23 @@ extension ViewController:UIPickerViewDelegate{
                 didSelectRow row: Int,
                 inComponent component: Int){
         let selectedCountry = countrys[row]
-        print(cityesOFCountry(countryName: selectedCountry)!)
+        cities = cityesOFCountry(countryName: selectedCountry)!
+        tableView.reloadData()
     }
 }
 
 extension ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        
+        return cities.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+        let city = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = city
+        return cell
     }
 }
 
