@@ -31,10 +31,22 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cities = getAllCities()
+        print(cities)
     }
     
-    func getAllCities() -> [String]{        
-        return [String]()
+    func getAllCities() -> [String]{
+        database.open()
+        guard let rs = try? database.executeQuery("SELECT cityName from city ", values: nil)else{
+            return [String]()
+        }
+        var cityNames = [String]()
+        while rs.next(){
+            if let cityName = rs["cityName"] as? String{
+                cityNames.append(cityName)
+            }
+        }
+        database.close()
+        return cityNames
     }
 
     
