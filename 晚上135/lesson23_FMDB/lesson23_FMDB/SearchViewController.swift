@@ -53,3 +53,23 @@ class SearchViewController: UITableViewController {
 
     
 }
+
+extension SearchViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let city = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = city.cityName
+        return cell
+    }
+}
+
+extension SearchViewController{
+    //UITableViewDelegate
+}

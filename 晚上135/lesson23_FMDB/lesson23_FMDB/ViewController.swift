@@ -60,6 +60,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        copySQLiteToDocuments()
         cities = cityesOFCountry(countryName: "Argentina")!
         
     }
