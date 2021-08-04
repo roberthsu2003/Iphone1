@@ -10,6 +10,8 @@ import FMDB
 
 class SearchViewController: UITableViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     lazy var targetURL:URL? = {
         let fileManager = FileManager.default
         guard var targetURL = try? fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) else {
@@ -32,6 +34,7 @@ class SearchViewController: UITableViewController {
         super.viewDidLoad()
         cities = getAllCities()
         print(cities)
+        tableView.tableHeaderView = searchController.searchBar
     }
     
     func getAllCities() -> [City]{
