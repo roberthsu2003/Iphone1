@@ -171,6 +171,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n3h-fW-mG8"/>
+                    <connections>
+                        <outlet property="webView" destination="U9M-U6-ocK" id="zr5-9T-afN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8F-8p-9H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
