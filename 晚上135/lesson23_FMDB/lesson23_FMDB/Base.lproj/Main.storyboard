@@ -136,6 +136,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="搜尋" id="fD5-SK-Rha"/>
+                    <connections>
+                        <segue destination="7o2-Sj-tE5" kind="show" identifier="goWeb" id="a6q-uG-hxo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2i-Ha-ezh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9M-U6-ocK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -167,6 +170,7 @@
                             <constraint firstItem="U9M-U6-ocK" firstAttribute="leading" secondItem="G1E-SI-Sul" secondAttribute="leading" id="h1O-GA-veJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="n3h-fW-mG8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8F-8p-9H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
