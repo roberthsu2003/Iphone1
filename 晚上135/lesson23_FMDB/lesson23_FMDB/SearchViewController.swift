@@ -54,6 +54,23 @@ class SearchViewController: UITableViewController {
         return cities
     }
     
+    func searchResult(string:String) -> [City]{
+        database.open()
+        guard let rs = try? database.executeQuery("SELECT cityName,country,url from city where cityName like '%\(string)%'", values: nil)else{
+            return [City]()
+        }
+        var cities = [City]()
+         while rs.next(){
+             if let cityName = rs["cityName"] as? String,let country = rs["country"] as? String,let url = rs["url"] as? String {
+                 let city = City(cityName: cityName, url: url, country: country)
+                 cities.append(city)
+             }
+           
+         }
+        database.close()
+        return cities
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goWeb"{
             let url = sender as! String
@@ -99,7 +116,7 @@ extension SearchViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != ""{
-            print("開始搜尋:\(searchString)")
+            cities = searchResult(string: searchString)
         }else{
             cities = getAllCities()
         }
