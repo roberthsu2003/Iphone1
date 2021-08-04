@@ -16,6 +16,7 @@
 		9381020D26B423A100DBC426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9381020B26B423A100DBC426 /* LaunchScreen.storyboard */; };
 		9381021526B4264D00DBC426 /* citys.db in Resources */ = {isa = PBXBuildFile; fileRef = 9381021426B4264D00DBC426 /* citys.db */; };
 		93D39F2226BAAD1B006CE575 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D39F2126BAAD1B006CE575 /* City.swift */; };
+		93D39F2426BABFC5006CE575 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D39F2326BABFC5006CE575 /* WebViewController.swift */; };
 		93ECFE9426B82C5E001679F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ECFE9326B82C5E001679F4 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		9381020E26B423A100DBC426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9381021426B4264D00DBC426 /* citys.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = citys.db; sourceTree = "<group>"; };
 		93D39F2126BAAD1B006CE575 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		93D39F2326BABFC5006CE575 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		93ECFE9326B82C5E001679F4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EF71242F41620DB52FBF8837 /* Pods_lesson23_FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lesson23_FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				9381020E26B423A100DBC426 /* Info.plist */,
 				93ECFE9326B82C5E001679F4 /* SearchViewController.swift */,
 				93D39F2126BAAD1B006CE575 /* City.swift */,
+				93D39F2326BABFC5006CE575 /* WebViewController.swift */,
 			);
 			path = lesson23_FMDB;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9381020526B4239F00DBC426 /* ViewController.swift in Sources */,
+				93D39F2426BABFC5006CE575 /* WebViewController.swift in Sources */,
 				93D39F2226BAAD1B006CE575 /* City.swift in Sources */,
 				9381020126B4239F00DBC426 /* AppDelegate.swift in Sources */,
 				93ECFE9426B82C5E001679F4 /* SearchViewController.swift in Sources */,

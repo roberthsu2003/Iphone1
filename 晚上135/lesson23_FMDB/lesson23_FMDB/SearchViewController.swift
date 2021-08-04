@@ -75,4 +75,9 @@ extension SearchViewController{
 
 extension SearchViewController{
     //UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let city = cities[indexPath.row]
+        print(city.url)
+    }
 }

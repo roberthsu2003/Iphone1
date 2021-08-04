@@ -141,6 +141,37 @@
             </objects>
             <point key="canvasLocation" x="1935" y="652"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="WDr-5d-lB5">
+            <objects>
+                <viewController id="7o2-Sj-tE5" customClass="WebViewController" customModule="lesson23_FMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2X1-Pj-06F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9M-U6-ocK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G1E-SI-Sul"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U9M-U6-ocK" firstAttribute="top" secondItem="G1E-SI-Sul" secondAttribute="top" id="GTg-Ij-m5e"/>
+                            <constraint firstItem="U9M-U6-ocK" firstAttribute="trailing" secondItem="G1E-SI-Sul" secondAttribute="trailing" id="JXG-6l-1gc"/>
+                            <constraint firstItem="U9M-U6-ocK" firstAttribute="bottom" secondItem="G1E-SI-Sul" secondAttribute="bottom" id="bkc-AI-PVC"/>
+                            <constraint firstItem="U9M-U6-ocK" firstAttribute="leading" secondItem="G1E-SI-Sul" secondAttribute="leading" id="h1O-GA-veJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8F-8p-9H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2770" y="652"/>
+        </scene>
         <!--搜尋-->
         <scene sceneID="LdY-86-ils">
             <objects>
