@@ -26,7 +26,7 @@ class SearchViewController: UITableViewController {
         FMDatabase(url: self.targetURL)
     }()
     
-    var cities = [String]()
+    var cities = [City]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,19 +34,21 @@ class SearchViewController: UITableViewController {
         print(cities)
     }
     
-    func getAllCities() -> [String]{
+    func getAllCities() -> [City]{
         database.open()
-        guard let rs = try? database.executeQuery("SELECT cityName from city ", values: nil)else{
-            return [String]()
+        guard let rs = try? database.executeQuery("SELECT cityName,country,url from city ", values: nil)else{
+            return [City]()
         }
-        var cityNames = [String]()
+       var cities = [City]()
         while rs.next(){
-            if let cityName = rs["cityName"] as? String{
-                cityNames.append(cityName)
+            if let cityName = rs["cityName"] as? String,let country = rs["country"] as? String,let url = rs["url"] as? String {
+                let city = City(cityName: cityName, url: url, country: country)
+                cities.append(city)
             }
+          
         }
         database.close()
-        return cityNames
+        return cities
     }
 
     
