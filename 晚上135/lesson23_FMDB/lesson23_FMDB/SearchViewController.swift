@@ -33,7 +33,7 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cities = getAllCities()
-        print(cities)
+        searchController.searchResultsUpdater = self
         tableView.tableHeaderView = searchController.searchBar
     }
     
@@ -92,5 +92,12 @@ extension SearchViewController{
                    didSelectRowAt indexPath: IndexPath){
         let city = cities[indexPath.row]
         performSegue(withIdentifier: "goWeb", sender: city.url)
+    }
+}
+
+extension SearchViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        print(searchBar.text)
     }
 }
