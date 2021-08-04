@@ -65,7 +65,10 @@ extension SearchViewController{
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let city = cities[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = city.cityName
+        var contentConfiguration = cell.defaultContentConfiguration()
+        contentConfiguration.text = city.cityName
+        contentConfiguration.secondaryText = city.country
+        cell.contentConfiguration = contentConfiguration
         return cell
     }
 }
