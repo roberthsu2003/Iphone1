@@ -34,6 +34,7 @@ class SearchViewController: UITableViewController {
         super.viewDidLoad()
         cities = getAllCities()
         searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
     }
     
