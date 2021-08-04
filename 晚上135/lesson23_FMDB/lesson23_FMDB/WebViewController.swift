@@ -14,10 +14,14 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let webUrl = URL(string: url){
-            let request = URLRequest(url: webUrl)
-            webView.load(request)
+        if let encodingUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed){
+            if let webUrl = URL(string: encodingUrl){
+                let request = URLRequest(url: webUrl)
+                webView.load(request)
+            }
         }
+        
+        
         
         
         
