@@ -50,6 +50,16 @@ class SearchViewController: UITableViewController {
         database.close()
         return cities
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goWeb"{
+            let url = sender as! String
+            let webViewController = segue.destination as! WebViewController
+            webViewController.url = url
+        }
+        
+        
+    }
 
     
 }
