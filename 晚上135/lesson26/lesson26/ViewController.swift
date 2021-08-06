@@ -6,6 +6,9 @@
 //
 
 import UIKit
+struct Region:Codable{
+    let areas:[String]
+}
 
 class ViewController: UIViewController {
     let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
@@ -31,9 +34,16 @@ class ViewController: UIViewController {
                 print("下載資料無法轉成Data")
                 return
             }
-            
+            /*
             let str = String(decoding: data, as: UTF8.self)
             print(str)
+             */
+            let jsonDecoder = JSONDecoder()
+            guard let region = try? jsonDecoder.decode(Region.self, from: data)else{
+                print("jsonDecoder無法轉換資料")
+                return
+            }
+            print(region.areas)
             
             
             
