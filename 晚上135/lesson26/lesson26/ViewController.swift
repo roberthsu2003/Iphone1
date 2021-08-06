@@ -12,6 +12,7 @@ struct Region:Codable{
 
 class ViewController: UIViewController {
     let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
+    var areas = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +39,28 @@ class ViewController: UIViewController {
             let str = String(decoding: data, as: UTF8.self)
             print(str)
              */
-            let jsonDecoder = JSONDecoder()
-            guard let region = try? jsonDecoder.decode(Region.self, from: data)else{
-                print("jsonDecoder無法轉換資料")
-                return
+            
+            
+            DispatchQueue.main.async {
+                let jsonDecoder = JSONDecoder()
+                guard let region = try? jsonDecoder.decode(Region.self, from: data)else{
+                    print("jsonDecoder無法轉換資料")
+                    return
+                }
+                self.areas = region.areas
+                print(self.areas)
             }
-            print(region.areas)
             
             
             
         }
         
         downloadTask.resume()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("tableView顯示了")
     }
 
 
