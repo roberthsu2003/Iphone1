@@ -12,6 +12,7 @@ struct Region:Codable{
 
 class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
+    @IBOutlet var indicator:UIActivityIndicatorView!
     let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
     var areas = [String]()
 
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
                 }
                 self.areas = region.areas
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
             }
             
             
