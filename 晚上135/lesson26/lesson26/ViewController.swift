@@ -11,6 +11,7 @@ struct Region:Codable{
 }
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
     let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
     var areas = [String]()
 
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
                     return
                 }
                 self.areas = region.areas
-                print(self.areas)
+                self.tableView.reloadData()
             }
             
             
@@ -64,5 +65,24 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return areas.count
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let areaName = areas[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = areaName
+        return cell
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    
 }
 
