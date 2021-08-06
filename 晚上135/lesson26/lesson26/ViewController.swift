@@ -17,7 +17,26 @@ class ViewController: UIViewController {
             return
         }
         let downloadTask = URLSession.shared.downloadTask(with: URLRequest(url: url)) { (saveURL:URL?, response:URLResponse?, error:Error?) in
-            print("下載完成")
+            guard let saveURL = saveURL, let response = response, error == nil else{
+               print("下載錯誤")
+               return;
+            }
+            
+            guard (response as! HTTPURLResponse).statusCode == 200 else{
+                print("狀態不是200")
+                return
+            }
+            
+            guard let data = try? Data(contentsOf: saveURL)else{
+                print("下載資料無法轉成Data")
+                return
+            }
+            
+            let str = String(decoding: data, as: UTF8.self)
+            print(str)
+            
+            
+            
         }
         
         downloadTask.resume()
