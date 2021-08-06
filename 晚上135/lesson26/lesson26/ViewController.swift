@@ -61,6 +61,16 @@ class ViewController: UIViewController {
         downloadTask.resume()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail"{
+            let areaName = sender as! String
+            let detailViewController = segue.destination as! DetailTableViewController
+            detailViewController.areaName = areaName
+        }
+        
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("tableView顯示了")
@@ -85,6 +95,10 @@ extension ViewController:UITableViewDataSource{
 }
 
 extension ViewController:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let areaName = areas[indexPath.row]
+        performSegue(withIdentifier: "goDetail", sender: areaName)
+    }
 }
 
