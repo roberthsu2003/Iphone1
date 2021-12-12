@@ -19,4 +19,19 @@ y
 point.0
 point.1
 
+//optional type
+/*
+var myValue = 50
+myValue = nil
+ */
+
+//明確建立optional type,宣告資料類型
+var myValue:Int? = 50;
+myValue = nil
+
+
+
+
+
+
 
