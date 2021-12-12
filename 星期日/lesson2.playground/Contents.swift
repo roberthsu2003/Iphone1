@@ -29,6 +29,33 @@ myValue = nil
 var myValue:Int? = 50;
 myValue = nil
 
+let possibleNumber = "123"
+let convertedNumer = Int(possibleNumber)
+convertedNumer! //強制取出變數內的值
+
+
+//一般的變數
+
+var a1 = 567
+var d1 = a1
+d1
+
+
+
+//optional 變數
+var b1:Int? = 567
+
+var c1 = b1;
+//c1是optional type
+c1
+
+//c2是一般type
+var c2 = b1!;
+c2
+
+
+
+
 
 
 
