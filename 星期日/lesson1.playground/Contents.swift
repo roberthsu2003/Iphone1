@@ -13,4 +13,13 @@ welcomeMessage = "Hello!Swift5.0"
 print(welcomeMessage)
 print("ios")
 
+//建立常數
+let pi = 3.14159
+//pi = 3.0  //常數內容不可以改變
+
+//使用明確宣告資料類型
+let pi1:Float = 3.14159
+
+pi1
+
 
