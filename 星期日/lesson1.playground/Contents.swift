@@ -18,8 +18,12 @@ let pi = 3.14159
 //pi = 3.0  //常數內容不可以改變
 
 //使用明確宣告資料類型
-let pi1:Float = 3.14159
+let pi1:Float = 4.14159
+print(pi)
+print("pi是" + String(pi) + ",pi1是" + String(pi1))
 
-pi1
+//字串插補
+print("pi是\(pi),pi1是\(pi1)")
+
 
 
