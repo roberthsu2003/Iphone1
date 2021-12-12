@@ -29,9 +29,7 @@ myValue = nil
 var myValue:Int? = 50;
 myValue = nil
 
-let possibleNumber = "123"
-let convertedNumer = Int(possibleNumber)
-convertedNumer! //強制取出變數內的值
+
 
 
 //一般的變數
@@ -54,6 +52,29 @@ var c2 = b1!;
 c2
 
 
+/*
+let possibleNumber = "123"
+
+let convertedNumer = Int(possibleNumber)
+//我不確定裏面的值是不是nil
+
+if convertedNumer != nil {
+    //值不是nil
+    print("convertedNumer內的值是\(convertedNumer!)")
+}else{
+    print("無法轉換")
+}
+ */
+
+
+let possibleNumber = "123a"
+
+//optional binding
+if let converted = Int(possibleNumber){
+    print("convertedNumer內的值是\(converted)")
+}else{
+    print("無法轉換")
+}
 
 
 
