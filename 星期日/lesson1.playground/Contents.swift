@@ -26,4 +26,30 @@ print("pi是" + String(pi) + ",pi1是" + String(pi1))
 print("pi是\(pi),pi1是\(pi1)")
 
 
+//變數要相同資料類型才可以運算
+
+let meaningOfLife = 42
+let pi2 = 3.14159
+
+Double(meaningOfLife) + pi2
+
+Double(meaningOfLife) + 3.14159
+
+let myFloat:Float = 3.23
+let myDouble:Double = 4.56
+
+Double(myFloat) + myDouble
+
+//純值不需相同資料類型
+3 + 0.14159
+
+//Bool
+let isMan = false
+
+//tuple
+
+
+
+
+
 
