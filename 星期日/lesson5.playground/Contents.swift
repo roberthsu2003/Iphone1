@@ -57,5 +57,31 @@ for (index, item) in shoppingList.enumerated(){
     print("\(index)-\(item)")
 }
 
+//使用Set<Chracter>()
+var letters = Set<Character>()
+letters
+
+//cout,元素數量
+letters.count
+
+//做用insert新增元素
+letters.insert("a")
+letters
+
+letters.insert("a")
+letters
+
+letters = []
+
+//使用[]建立set
+var favoriteGenres:Set = ["Rock", "Classical", "Hip hop"]
+favoriteGenres
+
+for item in favoriteGenres{
+    print(item)
+}
+
+favoriteGenres.contains("Rock1") ?"有" : "沒有"
+
 
 
