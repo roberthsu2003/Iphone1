@@ -22,6 +22,12 @@ class ViewController: UIViewController {
             print("text內容是nil")
         }
     }
+    
+    
+    @IBAction func userClick(_:UIButton){ //方法(method)
+        //程式碼
+        print("執行")
+    }
 
 
 }
