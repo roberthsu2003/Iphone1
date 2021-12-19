@@ -83,5 +83,46 @@ for item in favoriteGenres{
 
 favoriteGenres.contains("Rock1") ?"有" : "沒有"
 
+//使用Dictionary資料類型建立[Int:String]()
+
+var namesOfIntegers = [Int:String]()
+namesOfIntegers[16] = "sixteen"
+namesOfIntegers
+
+//使用純值建立Dictionary
+var airports = ["YYZ":"Toronto Pearson", "DUB":"Dublin"]
+airports
+
+//count
+airports.count
+
+airports["LHR"] = "London"
+airports
+
+airports["LHR"] = "London Heathrow"
+airports
+
+//Dictionary透過key,取出的值是optional type
+var value = airports["LHR"]
+
+//透過updateValue()更新值
+//optional binding來檢查是否更新成功
+if let oldValue = airports.updateValue("Dublic Airport", forKey: "DUB"){
+    print("更新成功,原本的值是\(oldValue)")
+}else{
+    print("更新值失敗")
+}
+
+
+if let value1 = airports["LHR"]{
+    print("取出成功\(value1)")
+}else{
+    print("沒有LHR")
+}
+
+print(airports["LHR1"] ?? "沒有LHR1 Key")
+
+
+
 
 
