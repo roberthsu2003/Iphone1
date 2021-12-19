@@ -78,3 +78,29 @@ let names = ["Anna", "Alex", "Brian", "Jack"] //array
 for name in names{
     print(name)
 }
+
+
+let someString = "some string literal value"
+
+let quotation = """
+美國NBC新聞報導，美國華盛頓大學和瑞士藥商Humabs BiomedSA在18日發表一項尚待同行評
+
+議研究指出，僅完整接種疫苗不追加施打加強針
+
+的狀況下，嬌生（Johnson & Johnson）、中國國藥疫苗和和俄國史普尼克V（Sputnik V）疫苗幾乎無效。
+
+
+"""
+
+print(quotation)
+
+let numberString1 = "1234"
+let numberString2 = "5678"
+numberString1 + numberString2
+
+print("2個數值字串的內容:" + numberString1 + numberString2)
+print("2個數值字串的內容:\(numberString1)\(numberString2)")
+
+for num in numberString1{
+    print(num)
+}
