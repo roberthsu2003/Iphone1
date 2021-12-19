@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var myLabel:UILabel!
+    @IBOutlet var myTextField:UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
         //程式碼
         myLabel.text = nil
         myLabel.text = "按鈕已經被按下"
+    }
+    
+    @IBAction func userInput(_:UIButton){
+        print(myTextField.text!)
     }
 
 
