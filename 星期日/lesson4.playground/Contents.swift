@@ -21,3 +21,29 @@ a = a + 20
 
 var b = 10
 b += 20
+
+//比較運算子
+// ==, >=, <=, !=, >, <
+//比較運算子會傳出Bool
+
+1 == 1
+1 != 1
+2 > 1
+
+//3元運算子,簡單的判斷
+let contentHeight = 40
+let hasHeader = false
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+rowHeight
+
+
+
+//nil運算子
+
+let defaultColorName = "red"
+
+var userDefinedColorName:String?
+
+let colorNameToUse = userDefinedColorName ?? defaultColorName
+
+colorNameToUse
