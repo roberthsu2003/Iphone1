@@ -122,6 +122,10 @@ if let value1 = airports["LHR"]{
 
 print(airports["LHR1"] ?? "沒有LHR1 Key")
 
+for (key,value) in airports{
+    print("\(key)-\(value)")
+}
+
 
 
 
