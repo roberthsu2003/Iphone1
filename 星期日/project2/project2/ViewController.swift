@@ -26,7 +26,8 @@ class ViewController: UIViewController {
     
     @IBAction func userClick(_:UIButton){ //方法(method)
         //程式碼
-        print("執行")
+        myLabel.text = nil
+        myLabel.text = "按鈕已經被按下"
     }
 
 
