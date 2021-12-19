@@ -44,6 +44,37 @@ let defaultColorName = "red"
 
 var userDefinedColorName:String?
 
-let colorNameToUse = userDefinedColorName ?? defaultColorName
+let colorNameToUse = userDefinedColorName ?? defaultColorName //取出裏面的值
 
 colorNameToUse
+
+//optional binding
+var colorNameToUse2:String
+
+if let colorNameToUse1 = userDefinedColorName{
+    //保證userDefinedColorName不是nil
+    colorNameToUse2 = colorNameToUse1
+}else{
+    //保證userDefinedColorName是nil
+   colorNameToUse2 = defaultColorName
+}
+
+//範圍運算子
+//...
+//..<
+1...5
+1..<5
+
+for i in 1...5{
+    print(i)
+}
+
+for j in 1..<5{
+    print(j)
+}
+
+let names = ["Anna", "Alex", "Brian", "Jack"] //array
+
+for name in names{
+    print(name)
+}
