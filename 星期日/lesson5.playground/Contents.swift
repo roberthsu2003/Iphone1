@@ -39,3 +39,23 @@ shoppingList[0]
 
 //更改元素內容
 shoppingList[0] = "Six eggs"
+
+//元素insert(),插入
+shoppingList.insert("Maple Syrup" , at: 0)
+
+//移除元素,remove()
+shoppingList.remove(at: 0)
+shoppingList
+
+for item in shoppingList{
+    print(item)
+}
+
+//使用enumerated()
+//傳出tuple
+for (index, item) in shoppingList.enumerated(){
+    print("\(index)-\(item)")
+}
+
+
+
