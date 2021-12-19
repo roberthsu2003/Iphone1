@@ -20,3 +20,22 @@ threeDoubles + anotherThreeDouble
 var shoppingList = ["Eggs", "Milk"]
 shoppingList
 
+//Array陣列的屬性count
+print("shoppingList內的陣列元素有\(shoppingList.count)個")
+
+//Array陣列的屬性isEmpty
+print(shoppingList.isEmpty ? "空的" : "不是空的")
+
+//做用append()方法,增加元素
+shoppingList.append("Flour")
+shoppingList
+
+//使用+運算子增加元素
+shoppingList += ["Baking Powder"]
+shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
+
+//取出元素內容
+shoppingList[0]
+
+//更改元素內容
+shoppingList[0] = "Six eggs"
