@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="確定"/>
                                 <connections>
-                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="add-b4-gEg"/>
+                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQi-eC-s02"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,7 +62,7 @@
                     </view>
                     <connections>
                         <outlet property="myLabel" destination="G0E-j7-f0i" id="rN9-CJ-MXa"/>
-                        <outlet property="myTextField" destination="sua-qe-8nL" id="ZcQ-oH-I2j"/>
+                        <outlet property="myTextField" destination="sua-qe-8nL" id="7WA-Cu-yM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
