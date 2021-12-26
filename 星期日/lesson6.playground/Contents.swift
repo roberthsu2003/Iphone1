@@ -62,3 +62,15 @@ if(money >= 100000){
 print("你消費了\(money),打折後的價格是\(paymoney)")
 
 
+let someCharacter:Character = "a"
+
+switch someCharacter{
+case "a":
+    print("是a")
+case "b":
+    print("是b")
+default:
+    print("不是a和b")
+}
+
+
