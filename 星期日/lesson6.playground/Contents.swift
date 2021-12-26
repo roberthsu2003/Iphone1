@@ -29,3 +29,18 @@ while(times<5){
     times += 1
 }
 
+var temperatureInFahrenheit = 50
+
+//單向選擇
+if temperatureInFahrenheit <= 32 {
+    print("現在非常冷")
+}
+
+//雙向選擇
+if temperatureInFahrenheit <= 32{
+    print("現在非常冷")
+}else{
+    print("現在不是非常冷")
+}
+
+
