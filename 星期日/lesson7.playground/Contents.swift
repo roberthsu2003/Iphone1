@@ -24,3 +24,47 @@ case (0, let y):
 case let (x,y):
     print("x是:\(x),y是\(y)")
 }
+
+//optional binding
+
+func greet(person:[String:String]){
+    if let name = person["name"]{
+        if let nickName = person["nickname"]{
+            print("\(name),\(nickName)")
+        }
+    }else{
+        print("沒有這個key")
+        return
+    }
+    
+}
+
+//optional binding串接
+
+func greet2(person:[String:String]){
+    if let name = person["name"],let nickName = person["nickname"]{
+        print("\(name),\(nickName)")
+    }else{
+        print("沒有這個key")
+        return
+    }
+    
+}
+
+//提早離開
+func greet1(person:[String:String]){
+    guard let name = person["name"] else{
+        print("沒有name這個key")
+        return
+    }
+    
+    guard let nickName = person["nickName"] else{
+        print("沒有nickName這個key")
+        return
+    }
+    
+    print("\(name),\(nickName)")
+    
+    
+    
+}
