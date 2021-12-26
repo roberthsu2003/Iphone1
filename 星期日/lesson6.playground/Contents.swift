@@ -22,3 +22,10 @@ for _ in 1...power{
 }
 print("\(base)的\(power)次方是\(answer)")
 
+//while,不知道要執行幾次
+var times = 0;
+while(times<5){
+    print(times)
+    times += 1
+}
+
