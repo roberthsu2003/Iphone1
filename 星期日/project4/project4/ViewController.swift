@@ -27,6 +27,13 @@ class ViewController: UIViewController {
             return
         }
         
+        switch (heightValue, weightValue){
+        case (50...250, 30...200):
+            print("範圍正常")
+        default:
+            print("超出範圍")
+        }
+        
         print("身高:\(heightValue)")
         print("體重:\(weightValue)")
     }
