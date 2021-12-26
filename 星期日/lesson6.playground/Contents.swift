@@ -43,4 +43,22 @@ if temperatureInFahrenheit <= 32{
     print("現在不是非常冷")
 }
 
+let money = 82_450.0
+
+var paymoney = 0;
+
+if(money >= 100000){
+    paymoney = Int(money * 0.8)
+}else if(money >= 50000){
+    paymoney = Int(money * 0.85)
+}else if(money >= 30000){
+    paymoney = Int(money * 0.9)
+}else if(money >= 10000){
+    paymoney = Int(money * 0.95)
+}else{
+    paymoney = Int(money)
+}
+
+print("你消費了\(money),打折後的價格是\(paymoney)")
+
 
