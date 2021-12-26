@@ -65,6 +65,14 @@ func greet1(person:[String:String]){
     
     print("\(name),\(nickName)")
     
-    
+}
+
+//版本控制
+if #available(iOS 10, macOS 10.12, *){
+    //ios10,macOS10.12
+}else{
+    //ios10,macOS10.12
     
 }
+
+
