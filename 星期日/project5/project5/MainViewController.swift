@@ -32,8 +32,13 @@ class MainViewController: UIViewController {
     @IBAction func userClear(_ sender:UIBarButtonItem){
         print("clear")
         heightTextField.text=""
+        heightTextField.resignFirstResponder()
+        
         weightTextField.text = ""
+        weightTextField.resignFirstResponder()
+        
         BMITextField.text = ""
+        BMITextField.resignFirstResponder()
     }
     
 
