@@ -43,27 +43,29 @@ class MainViewController: UIViewController {
             return
         }
         
+        var suggest = ""
+        
         switch(bmi){
         case 0...18.5:
-            print("體重過輕")
+            suggest = "體重過輕"
         case 18.5 ..< 24:
-            print("標準")
+            suggest = "標準"
         
         case 24..<27:
-            print("過重")
+            suggest = "過重"
             
         case 27..<30:
-            print("輕度肥胖")
+            suggest = "輕度肥胖"
         
         case 30..<35:
-            print("中度肥胖")
+            suggest = "中度肥胖"
             
         default:
-            print("重度肥胖")
+            suggest = "重度肥胖"
             
         }
         
-        BMITextField.text = String(format: "%.2f", bmi)
+        BMITextField.text = String(format: "%.2f", bmi) + "-\(suggest)"
         
     }
     
