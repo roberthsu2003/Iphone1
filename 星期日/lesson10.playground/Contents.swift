@@ -23,3 +23,9 @@ names.sorted(){
     return s1 < s2
 }
 
+let numbers = [50, 97, 35, 21, 93]
+
+numbers.filter(){
+(n1:Int) -> Bool in
+    return n1 >= 50
+}
