@@ -15,7 +15,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        BMITextField.isEnabled = false
+        
         
     }
     
@@ -65,7 +66,11 @@ class MainViewController: UIViewController {
             
         }
         
-        BMITextField.text = String(format: "%.2f", bmi) + "-\(suggest)"
+        suggest = String(format: "%.2f", bmi) + "-\(suggest)"
+        BMITextField.attributedPlaceholder = NSAttributedString(string: suggest, attributes: [
+            .foregroundColor : UIColor.white,
+            .backgroundColor : UIColor.darkGray
+        ])
         
     }
     
