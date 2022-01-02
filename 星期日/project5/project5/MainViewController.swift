@@ -31,8 +31,18 @@ class MainViewController: UIViewController {
             return
         }
         
-        print(heightValue)
-        print(weightValue)
+        //數值範圍
+        switch (heightValue,weightValue){
+            
+        case (50...250,20...300):
+            print("正常範圍")
+            let bmi = Double(weightValue) / pow(Double(heightValue) / 100.0, 2.0)
+            print(bmi)
+        default:
+            print("不正常範圍")
+            
+        }
+        
         
     }
     
