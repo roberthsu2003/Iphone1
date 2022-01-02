@@ -121,10 +121,15 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="BMITextField" destination="qod-3k-DGB" id="tyO-q2-Vqt"/>
+                        <outlet property="heightTextField" destination="h8S-wf-9Ym" id="yok-OG-ZeQ"/>
+                        <outlet property="weightTextField" destination="4ug-sD-Hur" id="RDP-mZ-qbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4RS-sm-t84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644.92753623188412" y="-208.25892857142856"/>
+            <point key="canvasLocation" x="575" y="-244"/>
         </scene>
     </scenes>
     <resources>

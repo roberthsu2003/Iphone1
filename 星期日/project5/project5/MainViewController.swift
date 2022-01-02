@@ -8,7 +8,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    @IBOutlet var heightTextField:UITextField!
+    @IBOutlet var weightTextField:UITextField!
+    @IBOutlet var BMITextField:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,9 @@ class MainViewController: UIViewController {
     
     @IBAction func userClear(_ sender:UIBarButtonItem){
         print("clear")
+        heightTextField.text=""
+        weightTextField.text = ""
+        BMITextField.text = ""
     }
     
 
