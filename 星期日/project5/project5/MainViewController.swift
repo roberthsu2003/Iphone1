@@ -24,9 +24,16 @@ class MainViewController: UIViewController {
         let weightStirng = weightTextField.text!
         let bmiStirng = BMITextField.text!
         
-        print(heightStirng)
-        print(weightStirng)
-        print(bmiStirng)
+        
+        //檢查使用者可以轉為整數
+        guard let heightValue = Int(heightStirng),let weightValue = Int(weightStirng) else{
+            print("有錯誤")
+            return
+        }
+        
+        print(heightValue)
+        print(weightValue)
+        
     }
     
     @IBAction func userClear(_ sender:UIBarButtonItem){
