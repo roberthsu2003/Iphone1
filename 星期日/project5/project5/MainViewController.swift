@@ -32,14 +32,34 @@ class MainViewController: UIViewController {
         }
         
         //數值範圍
+        var bmi = 0.0
         switch (heightValue,weightValue){
-            
         case (50...250,20...300):
-            print("正常範圍")
-            let bmi = Double(weightValue) / pow(Double(heightValue) / 100.0, 2.0)
-            print(bmi)
+            //print("正常範圍")
+            bmi = Double(weightValue) / pow(Double(heightValue) / 100.0, 2.0)
+            
         default:
-            print("不正常範圍")
+            print("輸入的值不在正常範圍")
+            return
+        }
+        
+        switch(bmi){
+        case 0...18.5:
+            print("體重過輕")
+        case 18.5 ..< 24:
+            print("標準")
+        
+        case 24..<27:
+            print("過重")
+            
+        case 27..<30:
+            print("輕度肥胖")
+        
+        case 30..<35:
+            print("中度肥胖")
+            
+        default:
+            print("重度肥胖")
             
         }
         
