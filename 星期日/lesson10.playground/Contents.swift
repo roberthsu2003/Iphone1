@@ -17,3 +17,9 @@ names.sorted(by: {
     s1,s2 in return s1 < s2
 })
 
+//trailing closure
+names.sorted(){
+   s1,s2 in
+    return s1 < s2
+}
+
