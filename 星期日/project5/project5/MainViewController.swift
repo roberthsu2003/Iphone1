@@ -63,6 +63,7 @@ class MainViewController: UIViewController {
             
         }
         
+        BMITextField.text = String(format: "%.2f", bmi)
         
     }
     
