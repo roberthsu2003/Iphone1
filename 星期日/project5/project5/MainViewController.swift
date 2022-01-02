@@ -11,14 +11,22 @@ class MainViewController: UIViewController {
     @IBOutlet var heightTextField:UITextField!
     @IBOutlet var weightTextField:UITextField!
     @IBOutlet var BMITextField:UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func userOk(_ sender:UIBarButtonItem){
-        print("ok")
+        let heightStirng = heightTextField.text!
+        let weightStirng = weightTextField.text!
+        let bmiStirng = BMITextField.text!
+        
+        print(heightStirng)
+        print(weightStirng)
+        print(bmiStirng)
     }
     
     @IBAction func userClear(_ sender:UIBarButtonItem){
