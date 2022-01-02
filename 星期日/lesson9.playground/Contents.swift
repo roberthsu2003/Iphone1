@@ -29,3 +29,18 @@ func greet(person:String, alreadyGreeted:Bool) -> String{
 
 greet(person: "Time", alreadyGreeted: true)
 
+//沒有return的function
+func greet(p:String){
+    print("Hello, \(p)")
+}
+
+greet(p: "Anna")
+
+//function 可以傳出多個值(利用tuple)
+func minMax() -> (min:Int,max:Int){
+    return (3,50)
+}
+
+let bounds = minMax()
+bounds.min
+bounds.max
