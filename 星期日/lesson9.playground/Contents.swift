@@ -87,3 +87,22 @@ func simpleFun(){
 
 simpleFun()
 
+//不同的引數和參數名稱
+func someFunction(argumentLabel parameterName:Int){
+    print(parameterName)
+}
+
+someFunction(argumentLabel: 5)
+
+func greet(person:String, from hometown:String) -> String{
+    return "\(person)來自於\(hometown)"
+}
+
+greet(person: "Robert", from: "台北")
+
+func someFunction(_ firstParameterName:Int, secondParameterName:Int){
+    
+}
+
+someFunction(5,secondParameterName: 8)
+
