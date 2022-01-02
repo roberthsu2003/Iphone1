@@ -7,15 +7,20 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var heightTextField:UITextField!
     @IBOutlet var weightTextField:UITextField!
     @IBOutlet var BMITextField:UITextField!
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        return false
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //BMITextField.isEnabled = false
+        
+        BMITextField.delegate = self
         
         
     }
