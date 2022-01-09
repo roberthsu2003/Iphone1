@@ -64,12 +64,17 @@ class ViewController: UIViewController,UITableViewDataSource {
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             var content = cell.defaultContentConfiguration()
             content.text = item["City"] as? String
+            let imageName = item["Image"] as! String
+            content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
             cell.contentConfiguration = content
             print("ios14以上")
             return cell
         }else{
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             cell.textLabel!.text = item["City"] as? String
+            let imageName = item["Image"] as! String
+            cell.imageView!.image = UIImage(named: imageName)
             return cell
         }
         
