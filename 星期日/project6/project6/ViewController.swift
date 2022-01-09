@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             print("出錯了!沒有這個檔")
             return
         }
-        
+        /*
         guard let city = NSArray(contentsOf: pathURL) as? [String] else{
             print("轉換錯誤")
             return
@@ -33,6 +33,16 @@ class ViewController: UIViewController {
         for item in city{
             print(item)
         }
+         */
+        
+        guard let city = try! NSArray(contentsOf: pathURL, error: ()) as? [String] else{
+            print("轉換錯誤")
+            return
+        }
+        for item in city{
+            print(item)
+        }
+        
         
         
         
