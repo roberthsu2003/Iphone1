@@ -52,15 +52,16 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 20
+        return cities.count
     }
     
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let indexRow =  indexPath.row
+        let item = cities[indexRow]
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel!.text = "title\(indexRow)"
+        cell.textLabel!.text = item["City"] as? String
         return cell
     }
 
