@@ -8,61 +8,38 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var cities:[[String:Any]]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let bundle = Bundle.main
-        /*
-        //optional binding
-        if let pathURL = bundle.url(forResource: "city", withExtension: "plist"){
-            print("有這個檔")
-        }else{
-            print("沒有這個檔")
-        }
-         */
-        guard let pathURL = bundle.url(forResource: "city", withExtension: "plist") else{
+        guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
             //false程式區塊
             print("出錯了!沒有這個檔")
             return
         }
-        /*
-        guard let city = NSArray(contentsOf: pathURL) as? [String] else{
-            print("轉換錯誤")
-            return
-        }
-        for item in city{
-            print(item)
-        }
-         */
-        
-        
-        
+       
         if #available(iOS 11.0, *){
-            guard let city = try! NSArray(contentsOf: pathURL, error: ()) as? [String] else{
+            guard let city = try! NSArray(contentsOf: pathURL, error: ()) as? [[String:Any]] else{
                 print("轉換錯誤")
                 return
             }
-            for item in city{
-                print(item)
-            }
-            print("ios11以上")
+            self.cities = city
+            
         }else{
-            guard let city = NSArray(contentsOf: pathURL) as? [String] else{
+            guard let city = NSArray(contentsOf: pathURL) as? [[String:Any]] else{
                 print("轉換錯誤")
                 return
             }
-            for item in city{
-                print(item)
-            }
+            self.cities = city
             print("ios2~11以上")
         }
         
-        
-        
-        
-        
-        
-        
+        for item in cities{
+            print(item)
+            print("===============")
+        }
     }
 
 
