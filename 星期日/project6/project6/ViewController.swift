@@ -8,11 +8,13 @@
 import UIKit
 
 class MyTableView:UITableView{
-    
+    var a1 = 10
+    var b1 = 20
+    var c1 = 50
 }
 
 class ViewController: UIViewController {
-    
+    @IBOutlet var tableView:MyTableView!
     var cities:[[String:Any]]!
 
     override func viewDidLoad() {
@@ -46,6 +48,10 @@ class ViewController: UIViewController {
             }            
             print("===============")
         }
+        
+        print("a1=\(tableView.a1)")
+        print("b1=\(tableView.b1)")
+        print("c1=\(tableView.c1)")
     }
 
 
