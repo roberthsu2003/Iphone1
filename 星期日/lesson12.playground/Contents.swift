@@ -42,4 +42,19 @@ var cinema = hd
 cinema.width = 2400
 cinema.height = 1800
 cinema.width
-hd.width
+
+
+//class 是reference Type
+//搖控器的想法
+
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate=25.0
+
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+tenEighty.frameRate
+
