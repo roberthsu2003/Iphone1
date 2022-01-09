@@ -1,3 +1,4 @@
+/*
 //定義自訂的列舉
 enum CompassPoint{
     case north
@@ -34,6 +35,7 @@ case .earth:
 default:
     print("地球以外的")
 }
+ */
 
 //建立可以被一個一個讀取的值的列舉
 enum Beverage:CaseIterable{
@@ -46,7 +48,7 @@ for beverage in Beverage.allCases{
     print(beverage)
 }
 
-//case 元素有關聯的值
+//case 元素有關聯的值(變動的)
 enum Barcode{
     case upc(Int, Int, Int, Int)
     case qrCode(String)
@@ -61,5 +63,19 @@ case let .upc( numberSystem,manufacturer,product,check):
 case let .qrCode(productCode):
     print(productCode)
 }
+
+//case 元素,對應原生值(固定的)rawValue
+enum Planet:Int{
+    case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+
+Planet.jupiter.rawValue
+
+enum CompassPoint:String{
+    case north, south, east, west
+}
+CompassPoint.north.rawValue
+
+let possiblePlanet = Planet(rawValue: 7)
 
 
