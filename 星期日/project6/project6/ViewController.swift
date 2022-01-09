@@ -7,6 +7,10 @@
 
 import UIKit
 
+class MyTableView:UITableView{
+    
+}
+
 class ViewController: UIViewController {
     
     var cities:[[String:Any]]!
