@@ -37,7 +37,9 @@ class ViewController: UIViewController {
         }
         
         for item in cities{
-            print(item)
+            if let cityName = item["City"] as? String{
+                print(cityName)
+            }            
             print("===============")
         }
     }
