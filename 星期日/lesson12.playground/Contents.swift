@@ -58,3 +58,7 @@ let alsoTenEighty = tenEighty
 alsoTenEighty.frameRate = 30.0
 tenEighty.frameRate
 
+alsoTenEighty === tenEighty //識別運算子
+
+
+
