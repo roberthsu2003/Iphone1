@@ -60,9 +60,19 @@ class ViewController: UIViewController,UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let indexRow =  indexPath.row
         let item = cities[indexRow]
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel!.text = item["City"] as? String
-        return cell
+        if #available(iOS 14.0, *){
+            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            var content = cell.defaultContentConfiguration()
+            content.text = item["City"] as? String
+            cell.contentConfiguration = content
+            print("ios14以上")
+            return cell
+        }else{
+            let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+            cell.textLabel!.text = item["City"] as? String
+            return cell
+        }
+        
     }
 
 
