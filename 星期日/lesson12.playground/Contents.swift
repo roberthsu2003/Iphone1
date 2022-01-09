@@ -33,3 +33,13 @@ let vga = Resolution(width: 640, height: 480)
 vga.width
 vga.height
 
+//value type
+//使用指定運算子時,copy一份實體
+//let代表常數，不可以修改屬性
+
+let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
+cinema.width = 2400
+cinema.height = 1800
+cinema.width
+hd.width
