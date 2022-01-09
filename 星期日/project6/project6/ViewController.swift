@@ -26,7 +26,15 @@ class ViewController: UIViewController {
             return
         }
         
-        print(pathURL.absoluteString)
+        guard let city = NSArray(contentsOf: pathURL) as? [String] else{
+            print("轉換錯誤")
+            return
+        }
+        for item in city{
+            print(item)
+        }
+        
+        
         
         
         
