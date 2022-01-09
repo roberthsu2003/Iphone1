@@ -45,3 +45,21 @@ let numberOfChoices = Beverage.allCases.count
 for beverage in Beverage.allCases{
     print(beverage)
 }
+
+//case 元素有關聯的值
+enum Barcode{
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+
+var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+//productBarcode = .qrCode("ABCDEFGHIJK")
+
+switch productBarcode{
+case let .upc( numberSystem,manufacturer,product,check):
+    print("\(numberSystem)-\(manufacturer)-\(product)-\(check)")
+case let .qrCode(productCode):
+    print(productCode)
+}
+
+
