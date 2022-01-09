@@ -35,3 +35,13 @@ default:
     print("地球以外的")
 }
 
+//建立可以被一個一個讀取的值的列舉
+enum Beverage:CaseIterable{
+    case coffee, tea, juice
+}
+
+let numberOfChoices = Beverage.allCases.count
+
+for beverage in Beverage.allCases{
+    print(beverage)
+}
