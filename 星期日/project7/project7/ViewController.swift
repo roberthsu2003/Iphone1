@@ -45,8 +45,12 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let city = cities[indexPath.row]
-        let cityCell = CityCell()
-        
+        let cityCell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
+        cityCell.cityLabel.text = city["City"] as? String
+        cityCell.countryLabel.text = city["Country"] as? String
+        cityCell.continentLabel.text = city["Continent"] as? String
+        cityCell.cityImageView.image = UIImage(named: city["Image"] as! String)
+        return cityCell
     }
 
 }
