@@ -34,14 +34,18 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
-        
-        print(cities)
-        
-        
-        
+        tableView.dataSource = self
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
         
     }
-
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 
 }
 
