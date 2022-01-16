@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var cities:[[String:Any]]!{
+    var myNumber = 1;
+    var cities:[[String:Any]]! = {
         let bundle = Bundle.main
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
             return nil
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
             
         }
         
-    }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
