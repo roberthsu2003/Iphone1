@@ -35,15 +35,21 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
         //tableView.dataSource = self //storyboard 已經預設好了
-    
-        func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int{
-            return cities.count
     }
     
-        func tableView(_ tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-            let city = cities[indexPath.row]
+        let city = cities[indexPath.row]
+        let cityCell = CityCell()
+        cityCell.cityLabel = UILabel()
+        cityCell.countryLabel = UILabel()
+        cityCell.continentLabel = UILabel()
+        cityCell.cityImageView = UIImageView()
     }
 
 }
