@@ -46,10 +46,7 @@ class ViewController: UITableViewController {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let city = cities[indexPath.row]
         let cityCell = CityCell()
-        cityCell.cityLabel = UILabel()
-        cityCell.countryLabel = UILabel()
-        cityCell.continentLabel = UILabel()
-        cityCell.cityImageView = UIImageView()
+        
     }
 
 }

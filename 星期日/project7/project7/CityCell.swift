@@ -8,8 +8,10 @@
 import UIKit
 
 class CityCell: UITableViewCell {
-    var cityLabel:UILabel!
-    var countryLabel:UILabel!
-    var continentLabel:UILabel!
-    var cityImageView:UIImageView! 
+    @IBOutlet var cityLabel:UILabel!
+    @IBOutlet var countryLabel:UILabel!
+    @IBOutlet var continentLabel:UILabel!
+    @IBOutlet var cityImageView:UIImageView!
+    
+   
 }
