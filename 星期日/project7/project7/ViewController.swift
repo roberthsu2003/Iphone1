@@ -34,17 +34,16 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
-        tableView.dataSource = self
-    }
+        //tableView.dataSource = self //storyboard 已經預設好了
     
-    override func tableView(_ tableView: UITableView,
+        func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        
+            return cities.count
     }
     
-    override func tableView(_ tableView: UITableView,
+        func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+            let city = cities[indexPath.row]
     }
 
 }

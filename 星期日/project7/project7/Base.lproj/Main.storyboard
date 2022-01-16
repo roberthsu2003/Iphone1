@@ -26,7 +26,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="T09-bA-LMY" id="2jJ-Kf-2wf"/>
+                            <outlet property="dataSource" destination="T09-bA-LMY" id="4Z8-yo-T6C"/>
                             <outlet property="delegate" destination="T09-bA-LMY" id="7Ti-JS-ifp"/>
                         </connections>
                     </tableView>
