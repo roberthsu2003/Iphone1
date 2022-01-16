@@ -40,4 +40,31 @@ somePoint.moveBy(x: 2.0, y: 3.0)
 somePoint.x
 somePoint.y
 
+struct Point1{
+    var x=0.0, y=0.0;
+    mutating func moveBy(x deltaX:Double, y deltaY:Double){
+       self = Point1(x:x + deltaY, y: y + deltaY)
+    }
+}
+
+enum TriStateSwitch{
+    case off, low, high
+    mutating func next(){
+        switch self{
+        case .off:
+            self = .low
+        case .low:
+            self = .high
+        case .high:
+            self = .off
+        }
+    }
+}
+
+var ovenLight = TriStateSwitch.off
+ovenLight.next()
+ovenLight.next()
+ovenLight.next()
+
+
 
