@@ -64,6 +64,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             var content = cell.defaultContentConfiguration()
             content.text = item["City"] as? String
+            content.secondaryText = "xxxxx"
             let imageName = item["Image"] as! String
             content.image = UIImage(named: imageName)
             content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
