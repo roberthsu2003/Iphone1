@@ -66,5 +66,16 @@ ovenLight.next()
 ovenLight.next()
 ovenLight.next()
 
+//Type Method
+class SomeClass{
+    static var count = 0
+    class func someTypeMethod(){
+        //type的method,只可以存取Type Property,不可以實體的property
+        count += 1
+    }
+}
+
+SomeClass.someTypeMethod()
+
 
 
