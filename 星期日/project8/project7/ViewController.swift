@@ -53,6 +53,9 @@ class ViewController: UITableViewController {
         cityCell.countryLabel.text = city["Country"] as? String
         cityCell.continentLabel.text = city["Continent"] as? String
         cityCell.cityImageView.image = UIImage(named: city["Image"] as! String)
+        
+        //加入accessoryView
+        
         return cityCell
     }
     
@@ -72,6 +75,12 @@ class ViewController: UITableViewController {
         })
         
         optionMenu.addAction(callAction)
+        
+        let checkInMark = UIAlertAction(title: "標示", style: .default) { (alert:UIAlertAction) -> Void in
+            print("標示此cell")
+        }
+        
+        optionMenu.addAction(checkInMark)
         
         present(optionMenu, animated: true, completion: nil)
     }
