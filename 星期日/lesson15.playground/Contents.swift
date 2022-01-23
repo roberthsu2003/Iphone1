@@ -1,3 +1,4 @@
+//instance Subscirpt
 struct TimerTable{
     let multiplier:Int
     subscript(index:Int) -> Int{
@@ -13,5 +14,19 @@ numberOfLegs["spider"]
 numberOfLegs["bird"] = 2
 
 numberOfLegs
+
+//type Subscript
+
+enum Planet:Int{
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, netune
+    
+    static subscript(n:Int) -> Planet{
+        return Planet(rawValue: n)!
+    }
+}
+
+Planet[4]
+
+
 
 
