@@ -30,12 +30,13 @@ class ViewController: UITableViewController {
         }
         
     }()
+    var cityIsMarked:[Bool]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
         //tableView.dataSource = self //storyboard 已經預設好了
-        
+        cityIsMarked = Array(repeating: false, count: cities.count)
         
     }
     
@@ -47,6 +48,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        print("建立cell")
         let city = cities[indexPath.row]
         let cityCell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
         cityCell.cityLabel.text = city["City"] as? String
@@ -55,7 +57,11 @@ class ViewController: UITableViewController {
         cityCell.cityImageView.image = UIImage(named: city["Image"] as! String)
         
         //加入accessoryView
-        
+        if cityIsMarked[indexPath.row] {
+            cityCell.accessoryType = .checkmark
+        }else{
+            cityCell.accessoryType = .none
+        }
         return cityCell
     }
     
@@ -81,6 +87,7 @@ class ViewController: UITableViewController {
         { (action:UIAlertAction)in
             let cell = tableView.cellForRow(at: indexPath)
             cell!.accessoryType = .checkmark
+            self.cityIsMarked[indexPath.row] = true
         }
         
         optionMenu.addAction(checkInMark)
