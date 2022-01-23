@@ -32,6 +32,7 @@ tandem.currentSpeed = 22.0
 tandem.description
 
 //Overridine覆寫
+//覆寫method
 class Train:Vehicle{
     override func makeNoise(){
         print("Choo Choo")
@@ -41,7 +42,19 @@ class Train:Vehicle{
 let train = Train()
 train.makeNoise()
 
+//覆寫屬性
 
+class Car:Vehicle{
+    var gear = 1
+    override var description: String{
+        return super.description + "檔位是\(gear)"
+    }
+}
+
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+print("Car:\(car.description)")
 
 
 
