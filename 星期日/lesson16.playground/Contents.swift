@@ -42,7 +42,7 @@ class Train:Vehicle{
 let train = Train()
 train.makeNoise()
 
-//覆寫屬性
+//覆寫computed屬性
 
 class Car:Vehicle{
     var gear = 1
@@ -55,6 +55,22 @@ let car = Car()
 car.currentSpeed = 25.0
 car.gear = 3
 print("Car:\(car.description)")
+
+//覆寫store property(增加一個property observer)
+
+class AutomaticCar:Car{
+    override var currentSpeed: Double{
+        didSet{
+            gear = Int(currentSpeed / 10.0) + 1
+        }
+    }
+}
+
+let automatic = AutomaticCar()
+automatic.currentSpeed = 35.0
+print("AutomaticCar:\(automatic.description)")
+
+
 
 
 
