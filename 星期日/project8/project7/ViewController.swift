@@ -68,16 +68,18 @@ class ViewController: UITableViewController {
         
         optionMenu.addAction(cancelAction)
         
-        let callAction = UIAlertAction(title: "聯絡旅行示", style:.default, handler: {(action:UIAlertAction) -> Void in  //closure,呼叫ViewController 的 property 和 method必需使用self
+        let callAction = UIAlertAction(title: "聯絡旅行示", style:.default)
+        {(action:UIAlertAction) in  //closure,呼叫ViewController 的 property 和 method必需使用self
             let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
-        })
+        }
         
         optionMenu.addAction(callAction)
         
-        let checkInMark = UIAlertAction(title: "標示", style: .default) { (alert:UIAlertAction) -> Void in
-            print("標示此cell")
+        let checkInMark = UIAlertAction(title: "標示", style: .default)
+        { (action:UIAlertAction)in
+            print("標示")
         }
         
         optionMenu.addAction(checkInMark)
