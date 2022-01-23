@@ -55,6 +55,14 @@ class ViewController: UITableViewController {
     }
     
     //MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        print("被點選的section是\(indexPath.section)")
+        print("被點選的row是\(indexPath.row)")
+        let rowIndex = indexPath.row;
+        print(cities[rowIndex]["City"]!)
+    }
+    
 
 }
 
