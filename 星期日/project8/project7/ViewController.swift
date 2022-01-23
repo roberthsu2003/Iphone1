@@ -48,13 +48,14 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        print("建立cell")
+        
         let city = cities[indexPath.row]
         let cityCell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
         cityCell.cityLabel.text = city["City"] as? String
         cityCell.countryLabel.text = city["Country"] as? String
         cityCell.continentLabel.text = city["Continent"] as? String
         cityCell.cityImageView.image = UIImage(named: city["Image"] as! String)
+        cityCell.cityImageView.layer.cornerRadius = 40.0;
         
         //加入accessoryView
         if cityIsMarked[indexPath.row] {
