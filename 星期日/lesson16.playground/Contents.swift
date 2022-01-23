@@ -21,4 +21,13 @@ bicycle.hasBasket = true
 bicycle.currentSpeed = 15.0
 bicycle.description
 
+class Tandem:Bicycle{
+    var currentNumberOfPassengers = 0
+}
+
+let tandem = Tandem()
+tandem.hasBasket = true
+tandem.currentNumberOfPassengers = 2
+tandem.currentSpeed = 22.0
+tandem.description
 
