@@ -80,3 +80,21 @@ class SurveyQuestion{
 
 let cheeseQuestion = SurveyQuestion(text: "Do you like cheese?")
 cheeseQuestion.response = "Yes, I do like cheese."
+
+//defualt initializer
+class ShoppingListItem{
+    var name:String?
+    var quantity = 1
+    var purchased = false
+}
+
+var item = ShoppingListItem()
+
+//defualt initializer
+//memberwise Initializer
+
+struct Size{
+    var width = 0.0, heigth = 0.0
+}
+
+let twoByTwo = Size(width: 2.0, heigth: 2.0)
