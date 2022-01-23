@@ -35,6 +35,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
         //tableView.dataSource = self //storyboard 已經預設好了
+        
+        
     }
     
     //MARK: - UITableViewDataSource
@@ -62,6 +64,14 @@ class ViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
         optionMenu.addAction(cancelAction)
+        
+        let callAction = UIAlertAction(title: "聯絡旅行示", style:.default, handler: {(action:UIAlertAction) -> Void in  //closure,呼叫ViewController 的 property 和 method必需使用self
+            let alertMessage = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessage, animated: true, completion: nil)
+        })
+        
+        optionMenu.addAction(callAction)
         
         present(optionMenu, animated: true, completion: nil)
     }
