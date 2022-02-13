@@ -43,13 +43,7 @@ class ViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue,
                  sender: Any?){
-        /*
-        print("執行prepare for segue")
-        print("目標:\(segue.destination)")
-        print("來源:\(segue.source)")
-        print("識別:\(segue.identifier ?? "沒有識別")")
-        */
-        
+               
         if segue.identifier == "goDetail"{
             let detailViewController = segue.destination as! CityDetailViewController
             detailViewController.imageName = "abc.jpg"
@@ -83,10 +77,13 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        /*
-        let detailViewController = CityDetailViewController(nibName: nil, bundle: nil)
-        self.navigationController!.pushViewController(detailViewController, animated: true)
-        */
+        let selectedIndex = indexPath.row
+        let selectedCity = cities[selectedIndex]
+        if let cityName = selectedCity["Image"] as? String{
+            print(cityName)
+        }
+        
+        
     }
     
     @available(iOS 11.0, *)
