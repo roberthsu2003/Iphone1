@@ -8,11 +8,11 @@
 import UIKit
 
 class CityDetailViewController: UIViewController {
-
+    var imageName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("CityDetailViewController被建立")
-        view.backgroundColor = UIColor(white: 1, alpha: 1)
+        print("imageName=\(imageName!)")
         
         
     }
