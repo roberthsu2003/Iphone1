@@ -127,6 +127,10 @@ class ViewController: UITableViewController {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { (action:UIContextualAction, view:UIView,  completionHandler:(Bool) -> Void) in
             print("移除")
+            //先刪資料，再刪row
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
         return UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
