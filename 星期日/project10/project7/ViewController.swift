@@ -67,9 +67,10 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        /*
         let detailViewController = CityDetailViewController(nibName: nil, bundle: nil)
         self.navigationController!.pushViewController(detailViewController, animated: true)
-        
+        */
     }
     
     @available(iOS 11.0, *)

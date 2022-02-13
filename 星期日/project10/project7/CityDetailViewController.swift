@@ -11,19 +11,15 @@ class CityDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
+        print("CityDetailViewController被建立")
+        view.backgroundColor = UIColor(white: 1, alpha: 1)
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit{
+        print("CityDetailViewController被消滅")
     }
-    */
+    
 
 }
