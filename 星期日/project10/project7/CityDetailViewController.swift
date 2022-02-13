@@ -9,11 +9,12 @@ import UIKit
 
 class CityDetailViewController: UIViewController {
     var imageName:String!
+    @IBOutlet var cityImageView:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("imageName=\(imageName!)")
-        
+        //print("imageName=\(imageName!)")
+        cityImageView.image = UIImage(named: imageName)
         
     }
     

@@ -79,7 +79,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="VIz-FP-Epo"/>
                     <connections>
-                        <segue destination="DCN-7J-1iB" kind="show" identifier="goDetail" id="ueE-uP-Xf0"/>
+                        <segue destination="DCN-7J-1iB" kind="show" identifier="goDetail" id="Ahc-bp-hAr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1X5-WV-XHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,14 +93,30 @@
                     <view key="view" contentMode="scaleToFill" id="RrE-wu-fzE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mpl-nP-z4V">
+                                <rect key="frame" x="0.0" y="124" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="9wQ-Hl-F7F"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ql7-OK-YGJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mpl-nP-z4V" firstAttribute="top" secondItem="Ql7-OK-YGJ" secondAttribute="top" constant="36" id="7lJ-4Q-D0v"/>
+                            <constraint firstItem="Mpl-nP-z4V" firstAttribute="leading" secondItem="Ql7-OK-YGJ" secondAttribute="leading" id="KGw-EU-U7y"/>
+                            <constraint firstItem="Ql7-OK-YGJ" firstAttribute="trailing" secondItem="Mpl-nP-z4V" secondAttribute="trailing" id="Yln-bW-tim"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MP1-ns-eJN"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="Mpl-nP-z4V" id="nti-av-Oeb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3P-Sb-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="78"/>
+            <point key="canvasLocation" x="1189.8550724637682" y="70.982142857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kof-13-3tt">
