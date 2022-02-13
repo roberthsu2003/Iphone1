@@ -30,6 +30,7 @@ class ViewController: UITableViewController {
         }
         
     }()
+   
     
     
         
@@ -81,6 +82,7 @@ class ViewController: UITableViewController {
         let selectedCity = cities[selectedIndex]
         if let cityName = selectedCity["Image"] as? String{
             print(cityName)
+            
         }
         
         

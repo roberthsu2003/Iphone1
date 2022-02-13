@@ -69,7 +69,6 @@
                                     <outlet property="cityLabel" destination="89p-1M-d30" id="xzL-Sx-6do"/>
                                     <outlet property="continentLabel" destination="k8f-Eb-SkN" id="1hP-Pr-PIv"/>
                                     <outlet property="countryLabel" destination="dqQ-ee-hMt" id="YHe-Vh-I9l"/>
-                                    <segue destination="DCN-7J-1iB" kind="show" identifier="goDetail" id="rsq-c6-Qcc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -79,6 +78,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="VIz-FP-Epo"/>
+                    <connections>
+                        <segue destination="DCN-7J-1iB" kind="show" identifier="goDetail" id="ueE-uP-Xf0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1X5-WV-XHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
