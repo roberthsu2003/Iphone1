@@ -32,8 +32,7 @@ class ViewController: UITableViewController {
     }()
     var cityIsMarked:[Bool]!
     
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
