@@ -39,7 +39,14 @@ class ViewController: UITableViewController {
         //tableView.dataSource = self //storyboard 已經預設好了
         
         
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue,
+                 sender: Any?){
+        print("執行prepare for segue")
+        print("目標:\(segue.destination)")
+        print("來源:\(segue.source)")
+        print("識別:\(segue.identifier ?? "沒有識別")")
     }
     
     //MARK: - UITableViewDataSource
