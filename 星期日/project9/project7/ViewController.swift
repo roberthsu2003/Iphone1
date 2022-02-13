@@ -133,13 +133,25 @@ class ViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
+        
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
         return UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
     }
     
     @available(iOS 8.0, *)
     override func tableView(_ tableView: UITableView,
                    editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
-        return nil
+        let shareAction = UITableViewRowAction(style: .normal, title: "分享") { (action:UITableViewRowAction, index:IndexPath) in
+            print("分享")
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "刪除") { (action:UITableViewRowAction, index:IndexPath) in
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        return [shareAction,deleteAction]
         
     }
     
