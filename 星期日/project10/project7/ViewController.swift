@@ -46,8 +46,9 @@ class ViewController: UITableViewController {
                  sender: Any?){
                
         if segue.identifier == "goDetail"{
+            let cityName = sender as? String
             let detailViewController = segue.destination as! CityDetailViewController
-            detailViewController.imageName = "abc.jpg"
+            detailViewController.imageName = cityName
         }
         
         
@@ -81,7 +82,7 @@ class ViewController: UITableViewController {
         let selectedIndex = indexPath.row
         let selectedCity = cities[selectedIndex]
         if let cityName = selectedCity["Image"] as? String{
-            print(cityName)
+            performSegue(withIdentifier: "goDetail", sender: cityName)
             
         }
         
