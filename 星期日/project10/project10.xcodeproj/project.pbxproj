@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45EE2E527B8E3CB009E6131 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EE2E427B8E3CB009E6131 /* CityDetailViewController.swift */; };
 		A4DD46DC2793C7D100F210D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DB2793C7D100F210D6 /* AppDelegate.swift */; };
 		A4DD46DE2793C7D100F210D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DD2793C7D100F210D6 /* SceneDelegate.swift */; };
 		A4DD46E02793C7D100F210D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DF2793C7D100F210D6 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A45EE2E427B8E3CB009E6131 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		A4DD46D82793C7D100F210D6 /* project10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD46DB2793C7D100F210D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD46DD2793C7D100F210D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				A4DD46DB2793C7D100F210D6 /* AppDelegate.swift */,
 				A4DD46DD2793C7D100F210D6 /* SceneDelegate.swift */,
 				A4DD46DF2793C7D100F210D6 /* ViewController.swift */,
+				A45EE2E427B8E3CB009E6131 /* CityDetailViewController.swift */,
 				A4DD46E12793C7D100F210D6 /* Main.storyboard */,
 				A4DD46E42793C7D300F210D6 /* Assets.xcassets */,
 				A4DD46E62793C7D300F210D6 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				A4DD46DC2793C7D100F210D6 /* AppDelegate.swift in Sources */,
 				A4DD46F22794063100F210D6 /* CityCell.swift in Sources */,
 				A4DD46DE2793C7D100F210D6 /* SceneDelegate.swift in Sources */,
+				A45EE2E527B8E3CB009E6131 /* CityDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
