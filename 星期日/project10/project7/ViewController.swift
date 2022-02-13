@@ -48,10 +48,14 @@ class ViewController: UITableViewController {
         print("目標:\(segue.destination)")
         print("來源:\(segue.source)")
         print("識別:\(segue.identifier ?? "沒有識別")")
-         */
+        */
         
-        let detailViewController = segue.destination as! CityDetailViewController
-        detailViewController.imageName = "abc.jpg"
+        if segue.identifier == "goDetail"{
+            let detailViewController = segue.destination as! CityDetailViewController
+            detailViewController.imageName = "abc.jpg"
+        }
+        
+        
     }
     
     //MARK: - UITableViewDataSource

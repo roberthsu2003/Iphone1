@@ -69,7 +69,7 @@
                                     <outlet property="cityLabel" destination="89p-1M-d30" id="xzL-Sx-6do"/>
                                     <outlet property="continentLabel" destination="k8f-Eb-SkN" id="1hP-Pr-PIv"/>
                                     <outlet property="countryLabel" destination="dqQ-ee-hMt" id="YHe-Vh-I9l"/>
-                                    <segue destination="DCN-7J-1iB" kind="show" id="rsq-c6-Qcc"/>
+                                    <segue destination="DCN-7J-1iB" kind="show" identifier="goDetail" id="rsq-c6-Qcc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
