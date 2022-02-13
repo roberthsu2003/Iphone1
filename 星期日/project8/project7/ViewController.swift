@@ -32,10 +32,13 @@ class ViewController: UITableViewController {
     }()
     var cityIsMarked:[Bool]!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //只執行一次,可以利用這個特性,在這裏做,所有storeProperty初始化
         //tableView.dataSource = self //storyboard 已經預設好了
+        
         cityIsMarked = Array(repeating: false, count: cities.count)
         
     }
