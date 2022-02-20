@@ -8,7 +8,7 @@
 import UIKit
 
 class CityDetailViewController: UIViewController {
-    var imageName:String!
+    var city:City!
     @IBOutlet var cityImageView:UIImageView!
     
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class CityDetailViewController: UIViewController {
             cityImageView.image = UIImage(named: imageName)
         }
         */
-        cityImageView.image = UIImage(named: imageName)
+        cityImageView.image = UIImage(named: city.image)
         
     }
     
