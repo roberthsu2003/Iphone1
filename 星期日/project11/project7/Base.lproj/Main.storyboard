@@ -94,29 +94,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mpl-nP-z4V">
-                                <rect key="frame" x="0.0" y="124" width="414" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="9wQ-Hl-F7F"/>
-                                </constraints>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-XV-JCR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ql7-OK-YGJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Mpl-nP-z4V" firstAttribute="top" secondItem="Ql7-OK-YGJ" secondAttribute="top" constant="36" id="7lJ-4Q-D0v"/>
-                            <constraint firstItem="Mpl-nP-z4V" firstAttribute="leading" secondItem="Ql7-OK-YGJ" secondAttribute="leading" id="KGw-EU-U7y"/>
-                            <constraint firstItem="Ql7-OK-YGJ" firstAttribute="trailing" secondItem="Mpl-nP-z4V" secondAttribute="trailing" id="Yln-bW-tim"/>
+                            <constraint firstItem="4zL-XV-JCR" firstAttribute="trailing" secondItem="Ql7-OK-YGJ" secondAttribute="trailing" id="8kl-gA-7dN"/>
+                            <constraint firstItem="4zL-XV-JCR" firstAttribute="leading" secondItem="Ql7-OK-YGJ" secondAttribute="leading" id="Bqe-f8-LKB"/>
+                            <constraint firstItem="4zL-XV-JCR" firstAttribute="top" secondItem="Ql7-OK-YGJ" secondAttribute="top" id="RqQ-M2-bPX"/>
+                            <constraint firstItem="Ql7-OK-YGJ" firstAttribute="bottom" secondItem="4zL-XV-JCR" secondAttribute="bottom" id="r2F-JN-Neh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MP1-ns-eJN"/>
-                    <connections>
-                        <outlet property="cityImageView" destination="Mpl-nP-z4V" id="VjW-Q4-Fe9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3P-Sb-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="70.982142857142847"/>
+            <point key="canvasLocation" x="1298.5507246376812" y="61.607142857142854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kof-13-3tt">

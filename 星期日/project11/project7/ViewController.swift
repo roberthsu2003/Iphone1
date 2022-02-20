@@ -85,6 +85,7 @@ class ViewController: UITableViewController {
     //MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
+        
         return cities.count
     }
     

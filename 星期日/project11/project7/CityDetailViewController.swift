@@ -19,7 +19,7 @@ class CityDetailViewController: UIViewController {
             cityImageView.image = UIImage(named: imageName)
         }
         */
-        cityImageView.image = UIImage(named: city.image)
+        //cityImageView.image = UIImage(named: city.image)
         
     }
     
