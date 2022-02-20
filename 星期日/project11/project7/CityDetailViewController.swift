@@ -11,9 +11,11 @@ class CityDetailViewController: UIViewController {
     @IBOutlet var cityImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
     var city:City!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.backgroundColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1)
+        tableView.separatorColor = UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1)
         cityImageView.image = UIImage(named: city.image)
         
     }
@@ -29,7 +31,7 @@ extension CityDetailViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! DetailViewCell
-        
+        cell.backgroundColor = UIColor.clear
         switch indexPath.row{
         case 0:
             cell.fieldLabel.text = "城市"
