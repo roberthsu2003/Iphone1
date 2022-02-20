@@ -139,6 +139,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DCN-7J-1iB" id="nTs-yR-bJe"/>
+                                    <outlet property="delegate" destination="DCN-7J-1iB" id="uJZ-KH-JcY"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ql7-OK-YGJ"/>

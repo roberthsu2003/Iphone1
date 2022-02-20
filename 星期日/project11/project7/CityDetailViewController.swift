@@ -17,8 +17,23 @@ class CityDetailViewController: UIViewController {
         cityImageView.image = UIImage(named: city.image)
         
     }
-    
 
-    
+}
 
+extension CityDetailViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
+    
+    
+}
+
+extension CityDetailViewController:UITableViewDelegate{
+    
 }
