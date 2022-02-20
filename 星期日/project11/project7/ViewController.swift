@@ -70,6 +70,11 @@ class ViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true;
+    }
+    
     override func prepare(for segue: UIStoryboardSegue,
                  sender: Any?){
                
