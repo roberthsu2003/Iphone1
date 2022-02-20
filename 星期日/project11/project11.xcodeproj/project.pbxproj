@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A45EE2E527B8E3CB009E6131 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EE2E427B8E3CB009E6131 /* CityDetailViewController.swift */; };
+		A468501227C1E7810089AFD4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A468501127C1E7810089AFD4 /* City.swift */; };
 		A4DD46DC2793C7D100F210D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DB2793C7D100F210D6 /* AppDelegate.swift */; };
 		A4DD46DE2793C7D100F210D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DD2793C7D100F210D6 /* SceneDelegate.swift */; };
 		A4DD46E02793C7D100F210D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DD46DF2793C7D100F210D6 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		A45EE2E427B8E3CB009E6131 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		A468501127C1E7810089AFD4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A4DD46D82793C7D100F210D6 /* project11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD46DB2793C7D100F210D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DD46DD2793C7D100F210D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				A4DD46E62793C7D300F210D6 /* LaunchScreen.storyboard */,
 				A4DD46E92793C7D300F210D6 /* Info.plist */,
 				A4DD46F12794063100F210D6 /* CityCell.swift */,
+				A468501127C1E7810089AFD4 /* City.swift */,
 			);
 			path = project7;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				A4DD46E02793C7D100F210D6 /* ViewController.swift in Sources */,
 				A4DD46DC2793C7D100F210D6 /* AppDelegate.swift in Sources */,
+				A468501227C1E7810089AFD4 /* City.swift in Sources */,
 				A4DD46F22794063100F210D6 /* CityCell.swift in Sources */,
 				A4DD46DE2793C7D100F210D6 /* SceneDelegate.swift in Sources */,
 				A45EE2E527B8E3CB009E6131 /* CityDetailViewController.swift in Sources */,

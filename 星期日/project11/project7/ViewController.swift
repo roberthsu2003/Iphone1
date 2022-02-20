@@ -7,7 +7,9 @@
 
 import UIKit
 
+
 class ViewController: UITableViewController {
+    
     var cities:[[String:Any]]! = {
         let bundle = Bundle.main
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
