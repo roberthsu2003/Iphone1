@@ -13,12 +13,7 @@ class CityDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("imageName=\(imageName!)")
-        /*
-        if let imageName = imageName {
-            cityImageView.image = UIImage(named: imageName)
-        }
-        */
+        
         cityImageView.image = UIImage(named: city.image)
         
     }
