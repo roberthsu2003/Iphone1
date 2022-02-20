@@ -97,6 +97,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-XV-JCR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zYJ-mq-gpd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="266"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ql7-OK-YGJ"/>
@@ -109,6 +113,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MP1-ns-eJN"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="zYJ-mq-gpd" id="5lB-se-uCK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3P-Sb-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
