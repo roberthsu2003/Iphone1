@@ -93,10 +93,10 @@ class ViewController: UITableViewController {
         
         let city = cities[indexPath.row]
         let cityCell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
-        cityCell.cityLabel.text = city["City"] as? String
-        cityCell.countryLabel.text = city["Country"] as? String
-        cityCell.continentLabel.text = city["Continent"] as? String
-        cityCell.cityImageView.image = UIImage(named: city["Image"] as! String)
+        cityCell.cityLabel.text = city.city
+        cityCell.countryLabel.text = city.country
+        cityCell.continentLabel.text = city.continent
+        cityCell.cityImageView.image = UIImage(named: city.image)
         cityCell.cityImageView.layer.cornerRadius = 40.0;
         
        
@@ -109,11 +109,7 @@ class ViewController: UITableViewController {
                    didSelectRowAt indexPath: IndexPath){
         let selectedIndex = indexPath.row
         let selectedCity = cities[selectedIndex]
-        if let cityName = selectedCity["Image"] as? String{
-            performSegue(withIdentifier: "goDetail", sender: cityName)
-            
-        }
-        
+        performSegue(withIdentifier: "goDetail", sender: selectedCity.image)
         
     }
     
