@@ -8,9 +8,9 @@
 import UIKit
 
 class CityDetailViewController: UIViewController {
-    var city:City!
     @IBOutlet var cityImageView:UIImageView!
-    
+    @IBOutlet var tableView:UITableView!
+    var city:City!
     override func viewDidLoad() {
         super.viewDidLoad()
         

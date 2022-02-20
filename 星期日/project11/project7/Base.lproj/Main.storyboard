@@ -102,7 +102,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="LlY-mv-cOJ" customClass="DetailViewCell" customModule="project11" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL" rowHeight="100" id="LlY-mv-cOJ" customClass="DetailViewCell" customModule="project11" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="310.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LlY-mv-cOJ" id="F37-WF-fjm">
@@ -153,11 +153,12 @@
                     <navigationItem key="navigationItem" id="MP1-ns-eJN"/>
                     <connections>
                         <outlet property="cityImageView" destination="zYJ-mq-gpd" id="5lB-se-uCK"/>
+                        <outlet property="tableView" destination="4zL-XV-JCR" id="Jxm-FV-DKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3P-Sb-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="61.607142857142854"/>
+            <point key="canvasLocation" x="1484" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kof-13-3tt">
