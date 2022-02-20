@@ -10,24 +10,50 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var cities:[[String:Any]]! = {
+    var cities:[City] = {
+        var cities = [City]()
         let bundle = Bundle.main
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
-            return nil
+            return  cities
         }
         
         if #available(iOS 11.0, *){
-            guard let city = try! NSArray(contentsOf: pathURL, error: ()) as? [[String:Any]] else{
-                return nil
+            guard let arrayCity = try! NSArray(contentsOf: pathURL, error: ()) as? [[String:Any]] else{
+                return [City]()
             }
-            return city
+            for dictCity in arrayCity{
+                let city = dictCity["City"] as! String
+                let country = dictCity["Country"] as! String
+                let continent = dictCity["Continent"] as! String
+                let image = dictCity["Image"] as! String
+                let local = dictCity["Local"] as! String
+                let url = dictCity["url"] as! String
+                let latitute = dictCity["lat"] as! Double
+                let longitude = dictCity["long"] as! Double
+                let oneCity = City(city: city, continent: continent, country: country, image: image, local: local, lat: latitute, lon: longitude, url: url)
+                cities.append(oneCity)
+            }
+            return cities
             
         }else{
             
-            guard let city = NSArray(contentsOf: pathURL) as? [[String:Any]] else{
-                return nil
+            guard let arrayCity = NSArray(contentsOf: pathURL) as? [[String:Any]] else{
+                return cities
             }
-            return city
+            
+            for dictCity in arrayCity{
+                let city = dictCity["City"] as! String
+                let country = dictCity["Country"] as! String
+                let continent = dictCity["Continent"] as! String
+                let image = dictCity["Image"] as! String
+                let local = dictCity["Local"] as! String
+                let url = dictCity["url"] as! String
+                let latitute = dictCity["lat"] as! Double
+                let longitude = dictCity["long"] as! Double
+                let oneCity = City(city: city, continent: continent, country: country, image: image, local: local, lat: latitute, lon: longitude, url: url)
+                cities.append(oneCity)
+            }
+            return cities
             
         }
         
