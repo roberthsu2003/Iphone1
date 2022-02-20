@@ -102,7 +102,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="LlY-mv-cOJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="LlY-mv-cOJ" customClass="DetailViewCell" customModule="project11" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="310.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LlY-mv-cOJ" id="F37-WF-fjm">
@@ -110,29 +110,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-7m-SZA">
-                                                    <rect key="frame" x="52" y="39" width="76" height="24"/>
+                                                    <rect key="frame" x="50" y="39" width="73.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="秋葉原" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-aK-JXr">
-                                                    <rect key="frame" x="146" y="39" width="228" height="24"/>
+                                                    <rect key="frame" x="143.5" y="39" width="220.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ddX-aK-JXr" secondAttribute="trailing" constant="20" id="1dw-oz-YO5"/>
-                                                <constraint firstItem="JWS-7m-SZA" firstAttribute="top" secondItem="F37-WF-fjm" secondAttribute="topMargin" constant="28" id="2Cd-gB-biA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="JWS-7m-SZA" secondAttribute="bottom" constant="26" id="JuF-Nn-CIo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ddX-aK-JXr" secondAttribute="bottom" constant="26" id="N1U-YU-XD5"/>
-                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="leading" secondItem="JWS-7m-SZA" secondAttribute="trailing" constant="18" id="OCA-TG-LuC"/>
-                                                <constraint firstItem="JWS-7m-SZA" firstAttribute="leading" secondItem="F37-WF-fjm" secondAttribute="leadingMargin" constant="32" id="UuZ-nG-C86"/>
-                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="width" secondItem="JWS-7m-SZA" secondAttribute="width" multiplier="3:1" id="evl-Yz-1nv"/>
-                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="top" secondItem="F37-WF-fjm" secondAttribute="topMargin" constant="28" id="sZy-KR-jym"/>
+                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="top" secondItem="F37-WF-fjm" secondAttribute="topMargin" constant="28" id="35K-Mi-ejS"/>
+                                                <constraint firstItem="JWS-7m-SZA" firstAttribute="leading" secondItem="F37-WF-fjm" secondAttribute="leadingMargin" constant="30" id="3Ip-Ew-oOb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ddX-aK-JXr" secondAttribute="bottom" constant="26" id="G85-Nr-Ymc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JWS-7m-SZA" secondAttribute="bottom" constant="26" id="NBt-ra-m5g"/>
+                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="leading" secondItem="JWS-7m-SZA" secondAttribute="trailing" constant="20" id="Pd4-DH-JbU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ddX-aK-JXr" secondAttribute="trailing" constant="30" id="T5w-Bb-eyj"/>
+                                                <constraint firstItem="ddX-aK-JXr" firstAttribute="width" secondItem="JWS-7m-SZA" secondAttribute="width" multiplier="3:1" id="lOp-Ve-hLU"/>
+                                                <constraint firstItem="JWS-7m-SZA" firstAttribute="top" secondItem="F37-WF-fjm" secondAttribute="topMargin" constant="28" id="y9a-ZI-ct1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldLabel" destination="JWS-7m-SZA" id="gdu-pz-Jzm"/>
+                                            <outlet property="valueLabel" destination="ddX-aK-JXr" id="pFp-DB-2oj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
