@@ -208,6 +208,9 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="科技化城市"/>
+                                        <connections>
+                                            <segue destination="GxZ-QP-3eu" kind="unwind" identifier="科技化城市" unwindAction="userClose:" id="bUV-uO-2Aa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6Q-lS-4Cp">
                                         <rect key="frame" x="39" y="314" width="237" height="45"/>
@@ -219,6 +222,9 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="風景不錯"/>
+                                        <connections>
+                                            <segue destination="GxZ-QP-3eu" kind="unwind" identifier="風景不錯" unwindAction="userClose:" id="dfp-G7-LwL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9q-0W-BVN">
                                         <rect key="frame" x="39" y="379" width="237" height="45"/>
@@ -230,6 +236,9 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="現代化城市"/>
+                                        <connections>
+                                            <segue destination="GxZ-QP-3eu" kind="unwind" identifier="現代化城市" unwindAction="userClose:" id="m86-uE-OAs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX7-DE-GXt">
                                         <rect key="frame" x="39" y="443" width="237" height="45"/>
@@ -241,6 +250,9 @@
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="環保城市"/>
+                                        <connections>
+                                            <segue destination="GxZ-QP-3eu" kind="unwind" identifier="環保城市" unwindAction="userClose:" id="JhX-Vi-BjI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,6 +299,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCy-eJ-vKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GxZ-QP-3eu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3060" y="76.847290640394093"/>
         </scene>

@@ -28,6 +28,10 @@ class CityDetailViewController: UIViewController {
         navigationController?.hidesBarsOnSwipe = false
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    @IBAction func userClose(_ segue:UIStoryboardSegue){
+        print("colse")
+    }
 
 }
 
