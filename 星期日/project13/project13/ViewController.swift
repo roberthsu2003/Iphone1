@@ -53,6 +53,7 @@ extension ViewController{
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
+        let city = citys[indexPath.row]
         if cell.backgroundView == nil{
             let bv = UIView(frame: cell.bounds)
             bv.contentMode = .scaleToFill
@@ -64,6 +65,7 @@ extension ViewController{
             cell.selectedBackgroundView = sv;
             
             let cityImageView = UIImageView(frame: cell.bounds)
+            cityImageView.tag = 1
             cityImageView.contentMode = .scaleAspectFill
             cityImageView.translatesAutoresizingMaskIntoConstraints = false
             cell.contentView.addSubview(cityImageView)
@@ -73,8 +75,11 @@ extension ViewController{
                 cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
                 cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0),
             ])
+            
         }
         
+        let cityImageView = cell.viewWithTag(1) as! UIImageView
+        cityImageView.image = UIImage(named: city.image)
         
         return cell;
     }
