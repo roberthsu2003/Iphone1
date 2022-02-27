@@ -33,13 +33,13 @@ class CityDetailViewController: UIViewController {
         if let userRating = segue.identifier{
             switch userRating{
             case "科技化城市":
-                print("科技化城市")
+                city.userRate = "科技化城市"
             case "風景不錯":
-                print("風景不錯")
+                city.userRate = "風景不錯"
             case "現代化城市":
-                print("現代化城市")
+                city.userRate = "現代化城市"
             case "環保城市":
-                print("環保城市")
+                city.userRate = "環保城市"
             default:
                 break;
             }
