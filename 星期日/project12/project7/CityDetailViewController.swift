@@ -29,6 +29,14 @@ class CityDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //1.檢查identifier
+        if segue.identifier == "goRate"{
+            let ratingViewController = segue.destination as! RatingViewController
+            ratingViewController.city = city
+        }
+    }
+    
     @IBAction func userClose(_ segue:UIStoryboardSegue){
         if let userRating = segue.identifier{
             switch userRating{

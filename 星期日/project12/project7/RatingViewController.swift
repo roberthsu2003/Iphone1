@@ -15,6 +15,7 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(city.city)
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
