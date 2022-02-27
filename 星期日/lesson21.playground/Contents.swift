@@ -45,3 +45,12 @@ for item in library{
 }
 
 print("Media library 包含\(movieCount)影片,\(songCount)唱片")
+
+for item in library{
+    //向下轉型
+    if let movie = item as? Movie{
+        print("影片名:\(movie.name),導演:\(movie.director)")
+    }else if let song = item as? Song{
+        print("唱片名:\(song.name),唱者:\(song.artist)")
+    }
+}
