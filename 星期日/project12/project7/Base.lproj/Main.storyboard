@@ -187,7 +187,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqA-Uc-IC4">
                                 <rect key="frame" x="30" y="30" width="315" height="512.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Akihabara" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-Qc-hD4">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-Qc-hD4">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="174.33333333333334"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xv2-Qc-hD4" secondAttribute="height" multiplier="65:36" id="2d8-ZW-LWb"/>
@@ -324,7 +324,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Akihabara" width="640" height="360"/>
         <image name="Chiba" width="640" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

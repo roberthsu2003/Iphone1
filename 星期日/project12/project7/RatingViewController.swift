@@ -21,8 +21,8 @@ class RatingViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
-        
-        cityImageView.image = UIImage(named: city.city)
+        print(city.city)
+        cityImageView.image = UIImage(named: city.image)
         
         askLabel.text = "您曾經來過這裏嗎?\n給這個城市一個描素吧!"
         self.containerView.transform = CGAffineTransform(scaleX: 0, y: 0)
