@@ -296,6 +296,7 @@
                     <connections>
                         <outlet property="askLabel" destination="A7q-xu-aAQ" id="Gqy-Dk-jpm"/>
                         <outlet property="backgroundImageView" destination="ini-Rk-QJ1" id="fGJ-1Q-P6a"/>
+                        <outlet property="cityImageView" destination="xv2-Qc-hD4" id="AwA-Hf-81u"/>
                         <outlet property="containerView" destination="NqA-Uc-IC4" id="FsS-V4-hcb"/>
                     </connections>
                 </viewController>
