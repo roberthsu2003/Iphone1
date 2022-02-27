@@ -11,6 +11,7 @@ class RatingViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!;
     @IBOutlet var askLabel:UILabel!
     @IBOutlet var containerView:UIView!
+    var city:City!
 
     override func viewDidLoad() {
         super.viewDidLoad()
