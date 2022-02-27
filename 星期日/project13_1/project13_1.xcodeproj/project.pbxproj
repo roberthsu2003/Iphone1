@@ -15,6 +15,7 @@
 		A4E78DD027CB574D00E55B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E78DCE27CB574D00E55B29 /* LaunchScreen.storyboard */; };
 		A4E78DD927CB580700E55B29 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E78DD727CB580700E55B29 /* City.swift */; };
 		A4E78DDA27CB580700E55B29 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E78DD827CB580700E55B29 /* citylist.plist */; };
+		A4E78DDC27CB72A900E55B29 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E78DDB27CB72A900E55B29 /* CityCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A4E78DD127CB574D00E55B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4E78DD727CB580700E55B29 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A4E78DD827CB580700E55B29 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		A4E78DDB27CB72A900E55B29 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A4E78DCC27CB574D00E55B29 /* Assets.xcassets */,
 				A4E78DCE27CB574D00E55B29 /* LaunchScreen.storyboard */,
 				A4E78DD127CB574D00E55B29 /* Info.plist */,
+				A4E78DDB27CB72A900E55B29 /* CityCell.swift */,
 			);
 			path = project13;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				A4E78DC827CB574B00E55B29 /* ViewController.swift in Sources */,
 				A4E78DC427CB574B00E55B29 /* AppDelegate.swift in Sources */,
+				A4E78DDC27CB72A900E55B29 /* CityCell.swift in Sources */,
 				A4E78DD927CB580700E55B29 /* City.swift in Sources */,
 				A4E78DC627CB574B00E55B29 /* SceneDelegate.swift in Sources */,
 			);

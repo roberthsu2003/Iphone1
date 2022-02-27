@@ -53,10 +53,10 @@ extension ViewController{
     
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as! CityCell
         let city = citys[indexPath.row]
         
-        
+        cell.cityImageView.image = UIImage(named: city.image)
         return cell;
     }
     
