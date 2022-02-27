@@ -53,7 +53,16 @@ extension ViewController{
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath)
-        cell.backgroundColor = UIColor.lightGray
+        if cell.backgroundView == nil{
+            let bv = UIView(frame: cell.bounds)
+            bv.contentMode = .scaleToFill
+            bv.backgroundColor = UIColor.lightGray
+            cell.backgroundView = bv
+            
+            let sv = UIView(frame: cell.bounds)
+            sv.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+            cell.selectedBackgroundView = sv;
+        }
         return cell;
     }
     
