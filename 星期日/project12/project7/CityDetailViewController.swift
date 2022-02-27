@@ -30,7 +30,20 @@ class CityDetailViewController: UIViewController {
     }
     
     @IBAction func userClose(_ segue:UIStoryboardSegue){
-        print("colse")
+        if let userRating = segue.identifier{
+            switch userRating{
+            case "科技化城市":
+                print("科技化城市")
+            case "風景不錯":
+                print("風景不錯")
+            case "現代化城市":
+                print("現代化城市")
+            case "環保城市":
+                print("環保城市")
+            default:
+                break;
+            }
+        }
     }
 
 }
