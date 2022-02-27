@@ -159,7 +159,7 @@
                     <navigationItem key="navigationItem" id="MP1-ns-eJN">
                         <barButtonItem key="rightBarButtonItem" title="評分" id="gK8-DL-Rlb">
                             <connections>
-                                <segue destination="lWz-rY-dLl" kind="presentation" id="sca-xZ-7CO"/>
+                                <segue destination="lWz-rY-dLl" kind="presentation" identifier="goRate" id="sca-xZ-7CO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
