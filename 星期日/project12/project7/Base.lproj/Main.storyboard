@@ -198,15 +198,71 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvI-Sa-mfG">
+                                        <rect key="frame" x="39" y="251" width="237" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="OvI-Sa-mfG" secondAttribute="height" multiplier="79:15" id="ryt-Qe-xf4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="科技化城市"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6Q-lS-4Cp">
+                                        <rect key="frame" x="39" y="314" width="237" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="B6Q-lS-4Cp" secondAttribute="height" multiplier="79:15" id="u8l-g0-UH3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="風景不錯"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9q-0W-BVN">
+                                        <rect key="frame" x="39" y="379" width="237" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="m9q-0W-BVN" secondAttribute="height" multiplier="79:15" id="Mxz-mQ-u2h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="現代化城市"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX7-DE-GXt">
+                                        <rect key="frame" x="39" y="443" width="237" height="45"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eX7-DE-GXt" secondAttribute="height" multiplier="79:15" id="zSg-MZ-Rhd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="環保城市"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="m9q-0W-BVN" firstAttribute="top" secondItem="B6Q-lS-4Cp" secondAttribute="bottom" constant="20" id="3gx-8o-pb1"/>
                                     <constraint firstItem="A7q-xu-aAQ" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" constant="20" id="4Vz-Bh-hU4"/>
                                     <constraint firstItem="xv2-Qc-hD4" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" id="74P-1y-CbJ"/>
+                                    <constraint firstItem="OvI-Sa-mfG" firstAttribute="top" secondItem="A7q-xu-aAQ" secondAttribute="bottom" constant="15.33" id="8Hp-gl-1s2"/>
+                                    <constraint firstAttribute="trailing" secondItem="m9q-0W-BVN" secondAttribute="trailing" constant="39" id="8ff-Gh-vG2"/>
                                     <constraint firstItem="A7q-xu-aAQ" firstAttribute="top" secondItem="xv2-Qc-hD4" secondAttribute="bottom" constant="20.670000000000002" id="CWP-Ne-XGb"/>
                                     <constraint firstAttribute="width" secondItem="NqA-Uc-IC4" secondAttribute="height" multiplier="126:205" id="F3f-Ou-vll"/>
+                                    <constraint firstAttribute="trailing" secondItem="eX7-DE-GXt" secondAttribute="trailing" constant="39" id="Hpt-2V-5E2"/>
+                                    <constraint firstItem="eX7-DE-GXt" firstAttribute="top" secondItem="m9q-0W-BVN" secondAttribute="bottom" constant="19" id="Irz-QP-9Z2"/>
+                                    <constraint firstItem="eX7-DE-GXt" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" constant="39" id="JyT-Ik-igJ"/>
+                                    <constraint firstItem="B6Q-lS-4Cp" firstAttribute="top" secondItem="OvI-Sa-mfG" secondAttribute="bottom" constant="18" id="ODh-0z-gwH"/>
+                                    <constraint firstItem="B6Q-lS-4Cp" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" constant="39" id="Qff-Y4-FRq"/>
+                                    <constraint firstItem="OvI-Sa-mfG" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" constant="39" id="WfK-cc-YeE"/>
                                     <constraint firstAttribute="trailing" secondItem="xv2-Qc-hD4" secondAttribute="trailing" id="ccR-5Y-j2H"/>
+                                    <constraint firstAttribute="trailing" secondItem="B6Q-lS-4Cp" secondAttribute="trailing" constant="39" id="fCr-oP-5gw"/>
+                                    <constraint firstItem="m9q-0W-BVN" firstAttribute="leading" secondItem="NqA-Uc-IC4" secondAttribute="leading" constant="39" id="l1k-sb-ek5"/>
                                     <constraint firstAttribute="trailing" secondItem="A7q-xu-aAQ" secondAttribute="trailing" constant="20" id="ldE-Jy-C6v"/>
+                                    <constraint firstAttribute="trailing" secondItem="OvI-Sa-mfG" secondAttribute="trailing" constant="39" id="mB2-8r-O7U"/>
                                     <constraint firstItem="xv2-Qc-hD4" firstAttribute="top" secondItem="NqA-Uc-IC4" secondAttribute="top" id="uhc-HV-jIU"/>
                                 </constraints>
                             </view>
@@ -227,6 +283,7 @@
                     <connections>
                         <outlet property="askLabel" destination="A7q-xu-aAQ" id="Gqy-Dk-jpm"/>
                         <outlet property="backgroundImageView" destination="ini-Rk-QJ1" id="fGJ-1Q-P6a"/>
+                        <outlet property="containerView" destination="NqA-Uc-IC4" id="FsS-V4-hcb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCy-eJ-vKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
