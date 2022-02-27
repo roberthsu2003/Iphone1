@@ -179,14 +179,28 @@
                     <view key="view" contentMode="scaleToFill" id="F71-5j-TPO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chiba" translatesAutoresizingMaskIntoConstraints="NO" id="ini-Rk-QJ1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TYf-aq-4QU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ini-Rk-QJ1" firstAttribute="leading" secondItem="TYf-aq-4QU" secondAttribute="leading" id="7Le-Uh-NEG"/>
+                            <constraint firstAttribute="bottom" secondItem="ini-Rk-QJ1" secondAttribute="bottom" id="8Rh-Tw-i7q"/>
+                            <constraint firstItem="ini-Rk-QJ1" firstAttribute="top" secondItem="TYf-aq-4QU" secondAttribute="top" id="ZEl-s7-VS8"/>
+                            <constraint firstItem="ini-Rk-QJ1" firstAttribute="trailing" secondItem="TYf-aq-4QU" secondAttribute="trailing" id="tHX-c4-QTC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HelloWorld" id="GWB-UQ-49t"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="ini-Rk-QJ1" id="fGJ-1Q-P6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCy-eJ-vKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="78"/>
+            <point key="canvasLocation" x="3060.8695652173915" y="77.678571428571431"/>
         </scene>
         <!--Item-->
         <scene sceneID="Kof-13-3tt">
@@ -225,6 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chiba" width="640" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

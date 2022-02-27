@@ -8,6 +8,7 @@
 import UIKit
 
 class RatingViewController: UIViewController {
+    @IBOutlet var backgroundImageView:UIImageView!;
 
     override func viewDidLoad() {
         super.viewDidLoad()
