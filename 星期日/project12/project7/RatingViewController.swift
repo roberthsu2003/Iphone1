@@ -16,7 +16,5 @@ class RatingViewController: UIViewController {
     }
     
 
-    @IBAction func userClick(_ sender:UIButton){
-        dismiss(animated: true, completion: nil)
-    }
+    
 }

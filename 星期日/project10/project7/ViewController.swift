@@ -49,6 +49,9 @@ class ViewController: UITableViewController {
             let cityName = sender as? String
             let detailViewController = segue.destination as! CityDetailViewController
             detailViewController.imageName = cityName
+            
+            
+            
         }
         
         
