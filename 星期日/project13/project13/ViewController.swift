@@ -38,6 +38,7 @@ class ViewController:UICollectionViewController{
         title = "城市"
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: 180, height: 120)
+        
     }
 
 
@@ -76,10 +77,22 @@ extension ViewController{
                 cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -10),
             ])
             
+            let cityLabel = UILabel()
+            cityLabel.translatesAutoresizingMaskIntoConstraints = false
+            cityLabel.tag = 2
+            cell.contentView.addSubview(cityLabel)
+            NSLayoutConstraint.activate([
+                cityLabel.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
+                cityLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor)
+            ])
         }
         
         let cityImageView = cell.viewWithTag(1) as! UIImageView
         cityImageView.image = UIImage(named: city.image)
+        
+        let label = cell.viewWithTag(2) as! UILabel
+        label.text = city.city
+        label.tintColor = UIColor.white
         
         return cell;
     }
