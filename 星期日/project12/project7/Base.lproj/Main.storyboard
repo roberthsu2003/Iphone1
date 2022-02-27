@@ -159,13 +159,14 @@
                     <navigationItem key="navigationItem" id="MP1-ns-eJN">
                         <barButtonItem key="rightBarButtonItem" title="評分" id="gK8-DL-Rlb">
                             <connections>
-                                <segue destination="lWz-rY-dLl" kind="presentation" identifier="goRate" id="sca-xZ-7CO"/>
+                                <action selector="goRank:" destination="DCN-7J-1iB" id="Ggu-Jd-jLb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cityImageView" destination="zYJ-mq-gpd" id="5lB-se-uCK"/>
                         <outlet property="tableView" destination="4zL-XV-JCR" id="Jxm-FV-DKH"/>
+                        <segue destination="lWz-rY-dLl" kind="presentation" identifier="goRate" id="Dqq-Mb-xvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3P-Sb-KXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

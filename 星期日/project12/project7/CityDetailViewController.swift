@@ -48,6 +48,10 @@ class CityDetailViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    @IBAction func goRank(_ sender:UIBarButtonItem){
+        performSegue(withIdentifier: "goRate", sender: nil)
+    }
 
 }
 
