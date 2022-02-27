@@ -34,8 +34,10 @@ class CityDetailViewController: UIViewController {
             switch userRating{
             case "科技化城市":
                 city.userRate = "科技化城市"
+                
             case "風景不錯":
                 city.userRate = "風景不錯"
+                
             case "現代化城市":
                 city.userRate = "現代化城市"
             case "環保城市":
@@ -43,6 +45,7 @@ class CityDetailViewController: UIViewController {
             default:
                 break;
             }
+            tableView.reloadData()
         }
     }
 
@@ -51,7 +54,7 @@ class CityDetailViewController: UIViewController {
 extension CityDetailViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView,
@@ -73,6 +76,14 @@ extension CityDetailViewController:UITableViewDataSource{
         case 3:
             cell.fieldLabel.text = "網址"
             cell.valueLabel.text = city.url
+            
+        case 4:
+            cell.fieldLabel.text = "評語"
+            if city.userRate == ""{
+                cell.valueLabel.text = "目前沒有資料"
+            }else{
+                cell.valueLabel.text = city.userRate
+            }
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
