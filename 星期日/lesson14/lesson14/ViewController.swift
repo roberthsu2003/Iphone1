@@ -20,14 +20,9 @@ class ViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goForm"{
-            /*
-            guard  let titleName = sender as? String else{
-                return
-            }
-             */
             let titleName = (sender as? String) ?? ""
-            print(titleName)
-            
+            let formViewController = segue.destination as! FormViewController
+            formViewController.titleName = titleName
         }
     }
     

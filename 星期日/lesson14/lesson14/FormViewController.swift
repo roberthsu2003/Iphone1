@@ -10,9 +10,12 @@ import UIKit
 class FormViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var passwordField:UITextField!
+    
+    var titleName:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = titleName
     }
     
     @IBAction func userBack(_ sender:UIBarButtonItem){
