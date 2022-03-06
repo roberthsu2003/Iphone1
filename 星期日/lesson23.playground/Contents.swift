@@ -61,3 +61,14 @@ enum OnOffSwitch:Togglable{
         }
     }
 }
+
+
+protocol SomeProtocol1{
+    init(someParameter:Int)
+}
+
+class SomeClass:SomeProtocol1{
+    required init(someParameter: Int) {
+        
+    }
+}
