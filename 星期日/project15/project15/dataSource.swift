@@ -32,4 +32,10 @@ class DataSource{
             print("資料庫開啟失敗")
         }
     }
+    
+    static func getAllCityData(){
+        self.copyFilesToDocuments()
+        self.createConn()
+        print("getData")
+    }
 }

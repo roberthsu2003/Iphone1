@@ -10,9 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    override func awakeFromNib() {
-        DataSource.copyFilesToDocuments()
-        DataSource.createConn()
+    override func awakeFromNib() {        
+        DataSource.getAllCityData()
     }
 
     override func viewDidLoad() {
