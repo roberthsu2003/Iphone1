@@ -11,30 +11,61 @@
         <scene sceneID="pmK-be-k6e">
             <objects>
                 <tableViewController id="Ua2-b6-hwU" customClass="ViewController" customModule="lesson14" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FiO-eC-CT7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="FiO-eC-CT7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PmB-gW-gse">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PmB-gW-gse" id="WXK-5V-g8O">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection headerTitle="標題" id="XQz-iU-bM5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="PmB-gW-gse">
+                                        <rect key="frame" x="16" y="49.5" width="288" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PmB-gW-gse" id="WXK-5V-g8O">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDa-7U-WKl">
+                                                    <rect key="frame" x="34" y="11" width="168" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vp7-Wh-dro">
+                                                    <rect key="frame" x="217" y="12.5" width="56" height="31"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="送出"/>
+                                                    <connections>
+                                                        <action selector="userClick:" destination="Ua2-b6-hwU" eventType="touchUpInside" id="swk-di-xp8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vp7-Wh-dro" firstAttribute="centerY" secondItem="WXK-5V-g8O" secondAttribute="centerY" id="Ab3-1m-oLT"/>
+                                                <constraint firstItem="SDa-7U-WKl" firstAttribute="centerY" secondItem="WXK-5V-g8O" secondAttribute="centerY" id="WjO-w7-s3X"/>
+                                                <constraint firstItem="SDa-7U-WKl" firstAttribute="leading" secondItem="WXK-5V-g8O" secondAttribute="leading" constant="34" id="jvf-sg-BU9"/>
+                                                <constraint firstItem="Vp7-Wh-dro" firstAttribute="width" secondItem="SDa-7U-WKl" secondAttribute="width" multiplier="1:3" id="ozJ-Ul-6yR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vp7-Wh-dro" secondAttribute="trailing" constant="15" id="plH-dX-aNC"/>
+                                                <constraint firstItem="Vp7-Wh-dro" firstAttribute="leading" secondItem="SDa-7U-WKl" secondAttribute="trailing" constant="15" id="wQQ-Gw-hHm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="Ua2-b6-hwU" id="HV7-DO-Bus"/>
                             <outlet property="delegate" destination="Ua2-b6-hwU" id="W4s-2t-BG1"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="dGP-h0-NQE"/>
+                    <connections>
+                        <outlet property="titleTextField" destination="SDa-7U-WKl" id="UQ5-XP-Ahv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msl-c4-U5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883" y="13"/>
+            <point key="canvasLocation" x="783.75" y="12.67605633802817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Swn-YL-XYz">

@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    @IBOutlet var titleTextField:UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func userClick(_ sender:UIButton){
+        
     }
 
 
