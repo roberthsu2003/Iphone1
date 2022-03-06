@@ -169,7 +169,13 @@
                             <outlet property="delegate" destination="f64-mj-tkn" id="ITK-dI-F82"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kcp-LQ-StJ"/>
+                    <navigationItem key="navigationItem" id="kcp-LQ-StJ">
+                        <barButtonItem key="rightBarButtonItem" title="傳回" id="WdI-72-X39">
+                            <connections>
+                                <action selector="userBack:" destination="f64-mj-tkn" id="d3k-5z-FV5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="Ea6-ca-WSB" id="5qT-MV-b1p"/>
                         <outlet property="passwordField" destination="zZI-8Z-K6T" id="H4r-sn-PyI"/>
