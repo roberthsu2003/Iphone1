@@ -6,12 +6,16 @@
 //
 
 import UIKit
+protocol FormViewControllerDelegate:AnyObject{
+    func callBack(name:String, password:String) -> Void
+}
 
 class FormViewController: UITableViewController {
     @IBOutlet var nameField:UITextField!
     @IBOutlet var passwordField:UITextField!
     
     var titleName:String!
+    weak var delegate:FormViewControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -29,7 +33,9 @@ class FormViewController: UITableViewController {
         case ("",_):
             message = "姓名不可以是空的"
         default:
-            
+            if let delegate = delegate {
+                delegate.callBack(name: nameField.text!, password: passwordField.text!)
+            }
             navigationController?.popViewController(animated: true)
         }
         

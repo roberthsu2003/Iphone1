@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A4CAACE327D450C9004CC76A /* lesson14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson14.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4CAACE327D450C9004CC76A /* lesson14_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson14_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CAACE627D450C9004CC76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CAACE827D450C9004CC76A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A4CAACEA27D450C9004CC76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		A4CAACE427D450C9004CC76A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4CAACE327D450C9004CC76A /* lesson14.app */,
+				A4CAACE327D450C9004CC76A /* lesson14_1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4CAACE227D450C9004CC76A /* lesson14 */ = {
+		A4CAACE227D450C9004CC76A /* lesson14_1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4CAACF727D450CB004CC76A /* Build configuration list for PBXNativeTarget "lesson14" */;
+			buildConfigurationList = A4CAACF727D450CB004CC76A /* Build configuration list for PBXNativeTarget "lesson14_1" */;
 			buildPhases = (
 				A4CAACDF27D450C9004CC76A /* Sources */,
 				A4CAACE027D450C9004CC76A /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = lesson14;
+			name = lesson14_1;
 			productName = lesson14;
-			productReference = A4CAACE327D450C9004CC76A /* lesson14.app */;
+			productReference = A4CAACE327D450C9004CC76A /* lesson14_1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A4CAACDE27D450C9004CC76A /* Build configuration list for PBXProject "lesson14" */;
+			buildConfigurationList = A4CAACDE27D450C9004CC76A /* Build configuration list for PBXProject "lesson14_1" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4CAACE227D450C9004CC76A /* lesson14 */,
+				A4CAACE227D450C9004CC76A /* lesson14_1 */,
 			);
 		};
 /* End PBXProject section */
@@ -295,6 +295,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson14/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lesson14_1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -305,7 +306,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.lesson14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.lesson14-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -322,6 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson14/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = lesson14_1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +334,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.roberthsu2003.lesson14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.lesson14-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -343,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4CAACDE27D450C9004CC76A /* Build configuration list for PBXProject "lesson14" */ = {
+		A4CAACDE27D450C9004CC76A /* Build configuration list for PBXProject "lesson14_1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4CAACF527D450CB004CC76A /* Debug */,
@@ -352,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4CAACF727D450CB004CC76A /* Build configuration list for PBXNativeTarget "lesson14" */ = {
+		A4CAACF727D450CB004CC76A /* Build configuration list for PBXNativeTarget "lesson14_1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4CAACF827D450CB004CC76A /* Debug */,
