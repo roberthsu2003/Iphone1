@@ -58,9 +58,12 @@
                             <outlet property="delegate" destination="Ua2-b6-hwU" id="W4s-2t-BG1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="dGP-h0-NQE"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="dGP-h0-NQE">
+                        <barButtonItem key="backBarButtonItem" title="回首頁" id="aRf-8w-olP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="titleTextField" destination="SDa-7U-WKl" id="UQ5-XP-Ahv"/>
+                        <segue destination="f64-mj-tkn" kind="show" identifier="goForm" id="hK2-8O-kmI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msl-c4-U5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -90,6 +93,7 @@
                             <outlet property="delegate" destination="f64-mj-tkn" id="ITK-dI-F82"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="kcp-LQ-StJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaq-82-tDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

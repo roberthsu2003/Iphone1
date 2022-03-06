@@ -17,7 +17,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
-        
+        performSegue(withIdentifier: "goForm", sender: nil)
     }
 
 
