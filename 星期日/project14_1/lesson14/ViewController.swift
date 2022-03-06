@@ -18,11 +18,17 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleTextField.text = ""
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goForm"{
             let titleName = (sender as? String) ?? ""
             let formViewController = segue.destination as! FormViewController
             formViewController.titleName = titleName
+            formViewController.delegate = self
         }
     }
     
@@ -40,5 +46,12 @@ class ViewController: UITableViewController {
     }
 
 
+}
+
+extension ViewController:FormViewControllerDelegate{
+    func callBack(name:String, password:String) -> Void{
+        nameField.text = name
+        passwordField.text = password
+    }
 }
 
