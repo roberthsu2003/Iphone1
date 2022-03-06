@@ -1,10 +1,8 @@
 import Foundation
 
-func copyFilesToDocuments(){
-    print("copFilesToDocuments")
-}
-
-
-func fillSQLData(){
-    print("fillSQLData")
+class DataSource{
+    static func copyFilesToDocuments(){
+        let sourceURL = Bundle.main.url(forResource: "citys", withExtension: "db")
+        print(sourceURL?.path)
+    }
 }

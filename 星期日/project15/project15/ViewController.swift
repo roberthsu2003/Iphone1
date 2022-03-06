@@ -8,10 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    override func awakeFromNib() {
+        DataSource.copyFilesToDocuments()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        copyFilesToDocuments()
+        
     }
 
 
