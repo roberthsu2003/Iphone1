@@ -18,6 +18,11 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleTextField.text = ""
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goForm"{
             let titleName = (sender as? String) ?? ""
