@@ -12,9 +12,7 @@ class ViewController: UIViewController {
     
     override func awakeFromNib() {
         DataSource.copyFilesToDocuments()
-        if let targetURLs = DataSource.targetURLs{
-            print(targetURLs)
-        }
+        DataSource.createConn()
     }
 
     override func viewDidLoad() {

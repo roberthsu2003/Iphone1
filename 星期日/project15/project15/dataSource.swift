@@ -24,4 +24,12 @@ class DataSource{
             
         }
     }
+    
+    static func createConn(){
+        if sqlite3_open(targetURLs!.path, &conn) == SQLITE_OK{
+            print("資料庫開啟成功")
+        }else{
+            print("資料庫開啟失敗")
+        }
+    }
 }
