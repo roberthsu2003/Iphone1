@@ -18,9 +18,23 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goForm"{
+            /*
+            guard  let titleName = sender as? String else{
+                return
+            }
+             */
+            let titleName = (sender as? String) ?? ""
+            print(titleName)
+            
+        }
+    }
+    
     @IBAction func userClick(_ sender:UIButton){
         if titleTextField.text != ""{
-            performSegue(withIdentifier: "goForm", sender: nil)
+            performSegue(withIdentifier: "goForm", sender: titleTextField.text)
+            
         }else{
             let alertController = UIAlertController(title: "警告", message: "標題必需有資料", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
