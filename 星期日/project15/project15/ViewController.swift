@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     
     override func awakeFromNib() {
         DataSource.copyFilesToDocuments()
+        if let targetURLs = DataSource.targetURLs{
+            print(targetURLs)
+        }
     }
 
     override func viewDidLoad() {
