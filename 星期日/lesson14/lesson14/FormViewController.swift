@@ -19,7 +19,26 @@ class FormViewController: UITableViewController {
     }
     
     @IBAction func userBack(_ sender:UIBarButtonItem){
-        navigationController?.popViewController(animated: true)
+        var message:String?
+        switch (nameField.text, passwordField.text){
+        case ("",""):
+            message = "姓名和密碼欄不可以是空的"
+        case (_, ""):
+            message = "密碼不可以是空的"
+        case ("",_):
+            message = "姓名不可以是空的"
+        default:
+            navigationController?.popViewController(animated: true)
+        }
+        
+        if let message = message{
+            let alertController = UIAlertController(title: "警告", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        
+        
     }
 
     
