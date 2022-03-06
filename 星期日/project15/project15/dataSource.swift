@@ -1,7 +1,9 @@
 import Foundation
+import SQLite3
 
 class DataSource{
     static var targetURLs:URL?
+    static var conn:OpaquePointer!
     
     static func copyFilesToDocuments(){
         //取得mainBundle內,citys.db的絕對路徑

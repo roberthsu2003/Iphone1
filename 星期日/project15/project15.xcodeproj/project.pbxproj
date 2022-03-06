@@ -15,6 +15,7 @@
 		A4CAAD1527D49759004CC76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CAAD1327D49759004CC76A /* LaunchScreen.storyboard */; };
 		A4CAAD1D27D4977E004CC76A /* citys.db in Resources */ = {isa = PBXBuildFile; fileRef = A4CAAD1C27D4977E004CC76A /* citys.db */; };
 		A4CAAD1F27D49DDB004CC76A /* dataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAAD1E27D49DDB004CC76A /* dataSource.swift */; };
+		A4CAAD2327D4ABE2004CC76A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CAAD2127D4ABB2004CC76A /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A4CAAD1627D49759004CC76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4CAAD1C27D4977E004CC76A /* citys.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = citys.db; sourceTree = "<group>"; };
 		A4CAAD1E27D49DDB004CC76A /* dataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSource.swift; sourceTree = "<group>"; };
+		A4CAAD2127D4ABB2004CC76A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4CAAD2327D4ABE2004CC76A /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				A4CAAD0727D49757004CC76A /* project15 */,
 				A4CAAD0627D49757004CC76A /* Products */,
+				A4CAAD2027D4ABB2004CC76A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 				A4CAAD1E27D49DDB004CC76A /* dataSource.swift */,
 			);
 			path = project15;
+			sourceTree = "<group>";
+		};
+		A4CAAD2027D4ABB2004CC76A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4CAAD2127D4ABB2004CC76A /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
