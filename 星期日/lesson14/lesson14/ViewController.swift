@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController {
     @IBOutlet var titleTextField:UITextField!
+    @IBOutlet var nameField:UITextField!
+    @IBOutlet var passwordField:UITextField!
     
 
     override func viewDidLoad() {
