@@ -16,7 +16,7 @@ class FormViewController: UITableViewController {
     }
     
     @IBAction func userBack(_ sender:UIBarButtonItem){
-        
+        navigationController?.popViewController(animated: true)
     }
 
     
