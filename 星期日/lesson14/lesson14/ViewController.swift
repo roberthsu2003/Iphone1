@@ -19,7 +19,15 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
-        performSegue(withIdentifier: "goForm", sender: nil)
+        if titleTextField.text != ""{
+            performSegue(withIdentifier: "goForm", sender: nil)
+        }else{
+            let alertController = UIAlertController(title: "警告", message: "標題必需有資料", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        
     }
 
 
