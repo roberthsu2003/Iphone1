@@ -12,6 +12,8 @@ class FormViewController: UITableViewController {
     @IBOutlet var passwordField:UITextField!
     
     var titleName:String!
+    //傳回值第1步
+    var callback:((String,String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,10 @@ class FormViewController: UITableViewController {
         case ("",_):
             message = "姓名不可以是空的"
         default:
+            //傳回值第3步
+            if let callback = callback {
+                callback(nameField.text!,passwordField.text!)
+            }
             navigationController?.popViewController(animated: true)
         }
         
