@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A483574327DD9EFD00E544C5 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A483574227DD9EFD00E544C5 /* City.swift */; };
 		A4CAAD0927D49757004CC76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAAD0827D49757004CC76A /* AppDelegate.swift */; };
 		A4CAAD0B27D49757004CC76A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAAD0A27D49757004CC76A /* SceneDelegate.swift */; };
 		A4CAAD0D27D49757004CC76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAAD0C27D49757004CC76A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A483574227DD9EFD00E544C5 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A4CAAD0527D49757004CC76A /* project15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = project15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CAAD0827D49757004CC76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CAAD0A27D49757004CC76A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		A4CAAD0727D49757004CC76A /* project15 */ = {
 			isa = PBXGroup;
 			children = (
+				A483574227DD9EFD00E544C5 /* City.swift */,
 				A4CAAD1C27D4977E004CC76A /* citys.db */,
 				A4CAAD0827D49757004CC76A /* AppDelegate.swift */,
 				A4CAAD0A27D49757004CC76A /* SceneDelegate.swift */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4CAAD0D27D49757004CC76A /* ViewController.swift in Sources */,
+				A483574327DD9EFD00E544C5 /* City.swift in Sources */,
 				A4CAAD0927D49757004CC76A /* AppDelegate.swift in Sources */,
 				A4CAAD1F27D49DDB004CC76A /* dataSource.swift in Sources */,
 				A4CAAD0B27D49757004CC76A /* SceneDelegate.swift in Sources */,

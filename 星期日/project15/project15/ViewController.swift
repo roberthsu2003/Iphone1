@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     let dataSource = DataSource.singleton
     
     override func awakeFromNib() {
-        dataSource.getAllCityData()
+        let cities = dataSource.getAllCityData()
+        for city in cities{
+            print(city.city)
+        }
         
     }
 
