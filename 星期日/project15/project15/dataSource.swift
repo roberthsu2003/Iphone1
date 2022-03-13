@@ -13,6 +13,8 @@ class DataSource{
         
         self.targetURLs = targetURLs.appendingPathComponent("citys.db")
         
+        print(targetURLs.path)
+        
         if !FileManager.default.fileExists(atPath: self.targetURLs!.path){
             do{
                 try FileManager.default.copyItem(at: sourceURL!, to: self.targetURLs!)
