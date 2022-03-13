@@ -71,3 +71,4 @@ struct Stack<T:Equatable>{
 }
 
 Stack(items: [1.0, 2.0, 3.0])
+Stack<String>(items: ["1", "2", "3"])
