@@ -43,7 +43,7 @@ extension ViewController:UISearchResultsUpdating{
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != "" {
             print("有打字了")
-            cities = [City]()
+            cities = DataSource.singleton.searchCity(searchString: searchString)
         }else{
             print("searchbar沒有文字")
             cities = DataSource.singleton.cities
