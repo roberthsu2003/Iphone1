@@ -37,6 +37,12 @@ class DataSource{
     }
     
     func searchCity(searchString:String) -> [City]{
+        DataSource.createConn()
+        let sql = """
+            SELECT * FROM city
+            WHERE cityName like '%taiwan%' OR continent like '%taiwan%' OR country like '%taiwan%' OR description like '%taiwan%'
+            """
+        
         return [City]()
     }
     
