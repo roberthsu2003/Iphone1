@@ -69,5 +69,9 @@ class DataSource{
         
     }
     
+    deinit{
+        sqlite3_close(DataSource.conn)
+    }
+    
     
 }
