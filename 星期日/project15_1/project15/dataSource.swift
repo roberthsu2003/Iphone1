@@ -1,8 +1,9 @@
 import Foundation
-
+import FMDB
 
 class DataSource{
     static var targetURLs:URL?
+    static var database: FMDatabase! // FMDBConnection
     
     
     static let singleton:DataSource = {        
@@ -11,8 +12,17 @@ class DataSource{
     }()
     
     var cities:[City]{
-        
+        DataSource.createConn()
         let sql = "SELECT * FROM city"
+        guard let rs = try? DataSource.database.executeQuery(sql, values: nil) else{
+            print("有出錯")
+            return [City]()
+        }
+        
+        while rs.next(){
+            let cityName = rs["cityName"] as! String
+            print(cityName)
+        }
         
         return [City]()
                 
@@ -52,7 +62,7 @@ class DataSource{
     }
     
     static func createConn(){
-        
+        database = FMDatabase(url: targetURLs!)
         
     }
     
