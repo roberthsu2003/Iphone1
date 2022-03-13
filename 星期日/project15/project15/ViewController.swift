@@ -11,7 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     override func awakeFromNib() {        
-        DataSource.getAllCityData()
+        let dataSource1 = DataSource.singleton
+        let datoSource2 = DataSource.singleton
+        
+        if dataSource1 === datoSource2{
+            print("它們是同一個實體")
+        }
+        
     }
 
     override func viewDidLoad() {
