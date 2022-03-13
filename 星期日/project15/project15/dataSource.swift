@@ -33,15 +33,22 @@ class DataSource{
     }
     
     static func createConn(){
-        if sqlite3_open(targetURLs!.path, &conn) == SQLITE_OK{
-            print("資料庫開啟成功")
-        }else{
-            print("資料庫開啟失敗")
+        if conn == nil{
+            if sqlite3_open(targetURLs!.path, &conn) == SQLITE_OK{
+                print("資料庫開啟成功")
+            }else{
+                print("資料庫開啟失敗")
+            }
         }
+        
     }
     
     func getAllCityData(){
         DataSource.createConn()
-        print("getData")
+        let sql = "SELECT * FROM city"
+        var statement:OpaquePointer!
+        if sqlite3_prepare_v2(DataSource.conn, sql, -1, &statement, nil) == SQLITE_OK{
+            print("statement實體建立成功")
+        }
     }
 }
