@@ -8,6 +8,7 @@ class DataSource{
     
     static let singleton:DataSource = {        
         copyFilesToDocuments()
+        database = FMDatabase(url: targetURLs!)
         return DataSource()
     }()
     
@@ -62,12 +63,16 @@ class DataSource{
     }
     
     static func createConn(){
-        database = FMDatabase(url: targetURLs!)
+        var isOpen: Bool = false
+        if !isOpen {
+            database.open()
+            isOpen = true
+        }
         
     }
     
     deinit{
-        
+        DataSource.database.close()
     }
     
     
