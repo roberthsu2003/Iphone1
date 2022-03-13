@@ -9,7 +9,7 @@ import UIKit
 
 
 class ViewController: UITableViewController {
-    let cities = DataSource.singleton.cities
+    var cities = DataSource.singleton.cities
     let searchController = UISearchController(searchResultsController: nil)
    
 
@@ -43,9 +43,12 @@ extension ViewController:UISearchResultsUpdating{
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != "" {
             print("有打字了")
+            cities = [City]()
         }else{
             print("searchbar沒有文字")
+            cities = DataSource.singleton.cities
         }
+        tableView.reloadData()
     }
 }
 
