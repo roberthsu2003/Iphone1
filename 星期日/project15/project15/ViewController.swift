@@ -9,12 +9,14 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    let dataSource = DataSource.singleton
+    let cities = DataSource.singleton.cities
     
     override func awakeFromNib() {
-        let cities = dataSource.getAllCityData()
+        
         for city in cities{
             print(city.city)
+            print(city.country)
+            print("===============")
         }
         
     }
