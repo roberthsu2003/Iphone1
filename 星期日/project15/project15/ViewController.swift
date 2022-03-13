@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UITableViewController {
     let cities = DataSource.singleton.cities
+    let searchController = UISearchController(searchResultsController: nil)
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
     }
 
 }
@@ -33,6 +35,13 @@ extension ViewController{
         cell.textLabel?.text = city.city
         return cell
         
+    }
+}
+
+extension ViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        print(searchBar.text)
     }
 }
 
