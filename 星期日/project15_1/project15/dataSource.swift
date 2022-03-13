@@ -39,13 +39,30 @@ class DataSource{
     }
     
     func searchCity(searchString:String) -> [City]{
-        
+        DataSource.createConn()
         let sql = """
             SELECT * FROM city
             WHERE cityName like ? OR continent like ? OR country like ? OR description like ?
             """
+        guard let rs = try? DataSource.database.executeQuery(sql, values: ["%\(searchString)%","%\(searchString)%","%\(searchString)%","%\(searchString)%"]) else{
+            print("有出錯")
+            return [City]()
+        }
         
-        return [City]()
+        var cities = [City]()
+        while rs.next(){
+            let cityName = rs["cityName"] as! String
+            let continent = rs["continent"] as! String
+            let country = rs["country"] as! String
+            let image = rs["image"] as! String
+            let description = rs["description"] as! String
+            let lat = rs["lat"] as! Double
+            let lon = rs["lon"] as! Double
+            let url = rs["url"] as! String
+            let city = City(city: cityName, continent: continent, country: country, image: image, local: description, lat: lat, lon: lon, url: url)
+            cities.append(city)
+        }
+        return cities
     }
     
     static func copyFilesToDocuments(){
