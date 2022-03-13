@@ -1,3 +1,5 @@
+import Darwin
+import CoreGraphics
 var someInt = 3
 var anotherInt = 107
 
@@ -25,7 +27,7 @@ swapTwoDoubles(&someDouble, &anotherDouble)
 someDouble
 anotherDouble
 
-func swapTwoValues<T>(_ a:inout T,_ b:inout T){
+func swapTwoValues<T:Equatable>(_ a:inout T,_ b:inout T){
     let tempararyA = a
     a = b
     b = tempararyA
@@ -45,3 +47,27 @@ var anotherDouble1 = 107.0
 swapTwoValues(&someDouble1, &anotherDouble1)
 someDouble1
 anotherDouble1
+
+
+//Generic Type
+struct IntStack{
+    var items:[Int] = []
+    mutating func push(_ item:Int){
+        items.append(item)
+    }
+    mutating func pop() -> Int{
+        return items.removeLast()
+    }
+}
+
+struct Stack<T:Equatable>{
+    var items:[T] = []
+    mutating func push(_ item:T){
+        items.append(item)
+    }
+    mutating func pop() -> T{
+        return items.removeLast()
+    }
+}
+
+Stack(items: [1.0, 2.0, 3.0])
