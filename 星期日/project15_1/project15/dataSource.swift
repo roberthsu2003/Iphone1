@@ -19,13 +19,21 @@ class DataSource{
             print("有出錯")
             return [City]()
         }
-        
+        var cities = [City]()
         while rs.next(){
             let cityName = rs["cityName"] as! String
-            print(cityName)
+            let continent = rs["continent"] as! String
+            let country = rs["country"] as! String
+            let image = rs["image"] as! String
+            let description = rs["description"] as! String
+            let lat = rs["lat"] as! Double
+            let lon = rs["lon"] as! Double
+            let url = rs["url"] as! String
+            let city = City(city: cityName, continent: continent, country: country, image: image, local: description, lat: lat, lon: lon, url: url)
+            cities.append(city)
         }
         
-        return [City]()
+        return cities
                 
         
     }
