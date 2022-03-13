@@ -40,9 +40,8 @@ class DataSource{
         }
     }
     
-    static func getAllCityData(){
-        self.copyFilesToDocuments()
-        self.createConn()
+    func getAllCityData(){
+        DataSource.createConn()
         print("getData")
     }
 }
