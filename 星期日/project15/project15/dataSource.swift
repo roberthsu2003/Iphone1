@@ -5,7 +5,10 @@ class DataSource{
     static var targetURLs:URL?
     static var conn:OpaquePointer!
     
-    static let singleton = DataSource()
+    static let singleton:DataSource = {        
+        copyFilesToDocuments()
+        return DataSource()
+    }()
     
     static func copyFilesToDocuments(){
         //取得mainBundle內,citys.db的絕對路徑
