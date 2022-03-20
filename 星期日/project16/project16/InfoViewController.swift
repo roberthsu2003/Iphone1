@@ -92,10 +92,13 @@ extension InfoViewController{
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let site = sites[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        var content = cell.defaultContentConfiguration();
-        content.text = site.ar
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! SiteViewCell
+        cell.siteName.text = "站名:" + site.sna
+        cell.total.text = "總數量:\(site.tot)"
+        cell.rent.text = "可借:\(site.sbi)"
+        cell.returns.text = "可還:\(site.bemp)"
+        cell.mday.text = site.mday
+        
         return cell
     }
     
