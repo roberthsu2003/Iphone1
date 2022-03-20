@@ -22,6 +22,7 @@ struct YoubikeData:Codable{
 class InfoViewController: UITableViewController {
     @IBOutlet var progressView:UIProgressView!
     
+    var sites = [YoubikeData.Site]()
     var area:String!
     lazy var urlSession:URLSession = {
         let config = URLSessionConfiguration.ephemeral
@@ -64,6 +65,10 @@ extension InfoViewController:URLSessionDownloadDelegate{
             return
         }
         print(youbikeData)
+        sites = youbikeData.data
+        for site in sites{
+            print(site.ar)
+        }
     }
     
     func urlSession(_ session: URLSession,
