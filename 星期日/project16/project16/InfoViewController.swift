@@ -56,6 +56,11 @@ extension InfoViewController:URLSessionDownloadDelegate{
             print("轉換為Data資料有問題")
             return
         }
-        print(String(data: data, encoding: .utf8))
+        let jsonDecoder = JSONDecoder()
+        guard let youbikeData = try? jsonDecoder.decode(YoubikeData.self, from: data) else{
+            print("json無法解析")
+            return
+        }
+        print(youbikeData)
     }
 }
