@@ -6,13 +6,23 @@
 //
 
 import UIKit
+//https://flask-robert.herokuapp.com/youbike/%E6%9D%BE%E5%B1%B1%E5%8D%80
 
 class InfoViewController: UITableViewController {
     var area:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = area
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "flask-robert.herokuapp.com"
+        urlComponents.path = "/youbike/" + area
+        guard let url = urlComponents.url else{
+            print("url編碼錯誤")
+            return
+        }
+        print(url.absoluteString)
+        
     }
 
     // MARK: - Table view data source
