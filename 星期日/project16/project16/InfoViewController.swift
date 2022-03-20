@@ -71,8 +71,8 @@ extension InfoViewController:URLSessionDownloadDelegate{
                 didWriteData bytesWritten: Int64,
            totalBytesWritten: Int64,
                     totalBytesExpectedToWrite: Int64){
-        print("totalBytesWritten:\(totalBytesWritten)")
-        print("didWriteData:\(bytesWritten)")
-        print("=================")
+        let percent = Float(bytesWritten / totalBytesWritten)
+        progressView.progress = percent
+        progressView.progressTintColor = UIColor.clear
     }
 }
