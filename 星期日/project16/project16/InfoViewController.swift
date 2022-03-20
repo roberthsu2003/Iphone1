@@ -40,6 +40,10 @@ extension InfoViewController:URLSessionDownloadDelegate{
     func urlSession(_ session: URLSession,
        downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL){
-        print(location.absoluteString)
+        guard let data = try? Data(contentsOf: location) else{
+            print("轉換為Data資料有問題")
+            return
+        }
+        print(String(data: data, encoding: .utf8))
     }
 }
