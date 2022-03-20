@@ -3,6 +3,7 @@
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,18 +44,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dFT-jY-yXK"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yE0-Bv-3Av">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" name="AccentColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d74-Pm-Yfp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2gH-9k-EOP"/>
+                            <constraint firstItem="yE0-Bv-3Av" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9hV-mL-9i6"/>
                             <constraint firstItem="d74-Pm-Yfp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Oe6-BI-KkW"/>
                             <constraint firstItem="d74-Pm-Yfp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dHW-2b-x0d"/>
                             <constraint firstItem="d74-Pm-Yfp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fZM-F6-Xhr"/>
+                            <constraint firstItem="yE0-Bv-3Av" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x7c-iq-SmJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="台北市youbike區域" id="4vv-Kg-pHG"/>
                     <connections>
+                        <outlet property="indicator" destination="yE0-Bv-3Av" id="IYg-qE-cjn"/>
                         <outlet property="regionTableView" destination="d74-Pm-Yfp" id="hpF-kF-yb0"/>
                     </connections>
                 </viewController>
@@ -100,6 +108,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
