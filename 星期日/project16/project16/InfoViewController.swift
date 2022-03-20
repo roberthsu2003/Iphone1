@@ -66,9 +66,8 @@ extension InfoViewController:URLSessionDownloadDelegate{
         }
         print(youbikeData)
         sites = youbikeData.data
-        for site in sites{
-            print(site.ar)
-        }
+        
+        tableView.reloadData()
     }
     
     func urlSession(_ session: URLSession,
@@ -80,4 +79,23 @@ extension InfoViewController:URLSessionDownloadDelegate{
         progressView.progress = percent
         progressView.progressTintColor = UIColor.clear
     }
+}
+
+extension InfoViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return sites.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let site = sites[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        var content = cell.defaultContentConfiguration();
+        content.text = site.ar
+        cell.contentConfiguration = content
+        return cell
+    }
+    
 }
