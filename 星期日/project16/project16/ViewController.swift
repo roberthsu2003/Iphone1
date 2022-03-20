@@ -17,14 +17,30 @@ class ViewController: UIViewController {
         }
         
         let urlRequest = URLRequest(url: url)
-        let downloadTask = URLSession.shared.dataTask(with: urlRequest) { (saveURL:Data?, response:URLResponse?, error:Error?) in
-            guard let saveURL = saveURL, let response = response, let error = error else{
+               
+        let downloadTask = URLSession.shared.downloadTask(with: urlRequest) { (saveURL:URL?, response:URLResponse?, error:Error?) in
+            guard let saveURL = saveURL, let response = response, error == nil else{
                 print("下載失敗")
                 return
             }
-            print("下載成功")
             
+            guard (response as! HTTPURLResponse).statusCode == 200 else {
+                 print("網站有異常")
+                 return
+            }
+            
+            guard let data = try? Data(contentsOf: saveURL) else{
+                print("下載資料Data有誤")
+                return
+            }
+            guard let downloadString = String(data: data, encoding: .utf8) else{
+                print("轉換資料有錯")
+                return
+            }
+            print(downloadString)
         }
+        downloadTask.resume()
+        
     }
 
 
