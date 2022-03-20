@@ -70,7 +70,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goinfo"{
             let area = sender as! String
-            let tableViewController = segue.destination
+            let infoViewController = segue.destination as! InfoViewController
+            infoViewController.area = area
         }
         
         
