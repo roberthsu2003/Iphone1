@@ -20,6 +20,8 @@ struct YoubikeData:Codable{
 }
 
 class InfoViewController: UITableViewController {
+    @IBOutlet var progressView:UIProgressView!
+    
     var area:String!
     lazy var urlSession:URLSession = {
         let config = URLSessionConfiguration.ephemeral
@@ -62,5 +64,15 @@ extension InfoViewController:URLSessionDownloadDelegate{
             return
         }
         print(youbikeData)
+    }
+    
+    func urlSession(_ session: URLSession,
+                downloadTask: URLSessionDownloadTask,
+                didWriteData bytesWritten: Int64,
+           totalBytesWritten: Int64,
+                    totalBytesExpectedToWrite: Int64){
+        print("totalBytesWritten:\(totalBytesWritten)")
+        print("didWriteData:\(bytesWritten)")
+        print("=================")
     }
 }
