@@ -27,11 +27,19 @@ class InfoViewController: UITableViewController {
             return
         }
         print(url.absoluteString)
+        
+        let downloadTask = urlSession.downloadTask(with: url)
+        downloadTask.resume()
+        
     }
 
 
 }
 
-extension InfoViewController:URLSessionDelegate{
-    
+extension InfoViewController:URLSessionDownloadDelegate{
+    func urlSession(_ session: URLSession,
+       downloadTask: URLSessionDownloadTask,
+                    didFinishDownloadingTo location: URL){
+        print(location.absoluteString)
+    }
 }
