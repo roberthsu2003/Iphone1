@@ -7,9 +7,14 @@
 
 import UIKit
 
+struct Region:Codable{
+    let areas:[String]
+}
+
 class ViewController: UIViewController {
     let areaHttpString = "https://flask-robert.herokuapp.com/youbike/"
-
+    var areas = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let url = URL(string: areaHttpString) else{
@@ -35,11 +40,21 @@ class ViewController: UIViewController {
             }
            
             DispatchQueue.main.async {
+                /*
                 guard let downloadString = String(data: data, encoding: .utf8) else{
                     print("轉換資料有錯")
                     return
                 }
                 print(downloadString)
+                 */
+                let jsonDecoder = JSONDecoder()
+                guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
+                    print("jsonDecoder無法轉換")
+                    return
+                }
+                
+                self.areas = region.areas
+                print(self.areas)
             }
             
         }
