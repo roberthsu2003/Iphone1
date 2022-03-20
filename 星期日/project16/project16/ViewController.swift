@@ -33,11 +33,15 @@ class ViewController: UIViewController {
                 print("下載資料Data有誤")
                 return
             }
-            guard let downloadString = String(data: data, encoding: .utf8) else{
-                print("轉換資料有錯")
-                return
+           
+            DispatchQueue.main.async {
+                guard let downloadString = String(data: data, encoding: .utf8) else{
+                    print("轉換資料有錯")
+                    return
+                }
+                print(downloadString)
             }
-            print(downloadString)
+            
         }
         downloadTask.resume()
         
