@@ -64,11 +64,41 @@
                     <connections>
                         <outlet property="indicator" destination="yE0-Bv-3Av" id="IYg-qE-cjn"/>
                         <outlet property="regionTableView" destination="d74-Pm-Yfp" id="hpF-kF-yb0"/>
+                        <segue destination="UJP-XC-LBY" kind="show" identifier="goinfo" id="k8w-VT-cAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2107.5" y="55.985915492957744"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="gcF-wo-Kf7">
+            <objects>
+                <tableViewController id="UJP-XC-LBY" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3Ck-xV-V0i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vcv-Fv-QHZ">
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vcv-Fv-QHZ" id="abj-VS-RMU">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UJP-XC-LBY" id="Q8l-Ce-Rdw"/>
+                            <outlet property="delegate" destination="UJP-XC-LBY" id="pfn-1n-WaA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="3KH-Rq-eSt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5X-Ak-yN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="56"/>
         </scene>
         <!--youbike-->
         <scene sceneID="6LW-mg-RIN">

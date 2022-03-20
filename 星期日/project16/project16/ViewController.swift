@@ -66,6 +66,16 @@ class ViewController: UIViewController {
         downloadTask.resume()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goinfo"{
+            let area = sender as! String
+            let tableViewController = segue.destination
+        }
+        
+        
+        
+    }
 
 
 }
@@ -84,6 +94,15 @@ extension ViewController:UITableViewDataSource{
         content.text = areaString
         cell.contentConfiguration = content
         return cell
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let area = areas[indexPath.row]
+        
+        performSegue(withIdentifier: "goinfo", sender: area)
     }
 }
 
