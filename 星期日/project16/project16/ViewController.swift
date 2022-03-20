@@ -17,7 +17,14 @@ class ViewController: UIViewController {
         }
         
         let urlRequest = URLRequest(url: url)
-        let downloadTask = URLSession.shared.downloadTask(with: urlRequest)
+        let downloadTask = URLSession.shared.dataTask(with: urlRequest) { (saveURL:Data?, response:URLResponse?, error:Error?) in
+            guard let saveURL = saveURL, let response = response, let error = error else{
+                print("下載失敗")
+                return
+            }
+            print("下載成功")
+            
+        }
     }
 
 
