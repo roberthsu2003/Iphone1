@@ -12,6 +12,8 @@ struct Region:Codable{
 }
 
 class ViewController: UIViewController {
+    @IBOutlet var regionTableView:UITableView!
+    
     let areaHttpString = "https://flask-robert.herokuapp.com/youbike/"
     var areas = [String]()
     
@@ -63,5 +65,17 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController:UITableViewDataSource{
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+    }
 }
 
