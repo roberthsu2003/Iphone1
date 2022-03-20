@@ -10,6 +10,7 @@ struct YoubikeData:Codable{
     struct Site:Codable{
         let ar:String
         let bemp:Int
+        let mday:String
         let lat:Double
         let lng:Double
         let sbi:Int

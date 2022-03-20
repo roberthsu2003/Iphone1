@@ -84,21 +84,57 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" textLabel="xLB-5e-L9a" style="IBUITableViewCellStyleDefault" id="Vcv-Fv-QHZ">
-                                <rect key="frame" x="0.0" y="47" width="320" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="100" id="Vcv-Fv-QHZ">
+                                <rect key="frame" x="0.0" y="47" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vcv-Fv-QHZ" id="abj-VS-RMU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xLB-5e-L9a">
-                                            <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="站名:文湖國小" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkf-Us-hEr">
+                                            <rect key="frame" x="25" y="19" width="270" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總輛數:44" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SX-LP-URl">
+                                            <rect key="frame" x="25" y="48" width="78" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可借:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlG-1H-Wvs">
+                                            <rect key="frame" x="226" y="48" width="60" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGreenColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可停:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNi-P4-O1T">
+                                            <rect key="frame" x="226" y="72" width="60" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemPinkColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-pb-Uoq">
+                                            <rect key="frame" x="25" y="72" width="41.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="aNi-P4-O1T" secondAttribute="trailing" constant="34" id="F78-FL-ntb"/>
+                                        <constraint firstItem="9SX-LP-URl" firstAttribute="top" secondItem="qkf-Us-hEr" secondAttribute="bottom" constant="8" symbolic="YES" id="Ift-G3-MR8"/>
+                                        <constraint firstItem="aNi-P4-O1T" firstAttribute="top" secondItem="BlG-1H-Wvs" secondAttribute="bottom" constant="3" id="Zth-JP-VJl"/>
+                                        <constraint firstItem="qkf-Us-hEr" firstAttribute="leading" secondItem="abj-VS-RMU" secondAttribute="leadingMargin" constant="9" id="cvd-5p-S41"/>
+                                        <constraint firstAttribute="bottom" secondItem="gIf-pb-Uoq" secondAttribute="bottom" constant="7" id="gvF-B6-Cgs"/>
+                                        <constraint firstItem="gIf-pb-Uoq" firstAttribute="leading" secondItem="abj-VS-RMU" secondAttribute="leading" constant="25" id="kA4-Vr-bIj"/>
+                                        <constraint firstItem="qkf-Us-hEr" firstAttribute="top" secondItem="abj-VS-RMU" secondAttribute="topMargin" constant="8" id="p7A-WL-U3H"/>
+                                        <constraint firstItem="BlG-1H-Wvs" firstAttribute="top" secondItem="qkf-Us-hEr" secondAttribute="bottom" constant="8" symbolic="YES" id="quO-N8-amL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="BlG-1H-Wvs" secondAttribute="trailing" constant="18" id="qzi-U9-Jth"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qkf-Us-hEr" secondAttribute="trailing" constant="9" id="tE0-7r-tZD"/>
+                                        <constraint firstItem="9SX-LP-URl" firstAttribute="leading" secondItem="abj-VS-RMU" secondAttribute="leadingMargin" constant="9" id="veD-Ia-odB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -114,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5X-Ak-yN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="56"/>
+            <point key="canvasLocation" x="3003.75" y="55.985915492957744"/>
         </scene>
         <!--youbike-->
         <scene sceneID="6LW-mg-RIN">
@@ -159,6 +195,12 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
