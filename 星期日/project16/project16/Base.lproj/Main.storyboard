@@ -84,7 +84,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </progressView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="100" id="Vcv-Fv-QHZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="100" id="Vcv-Fv-QHZ" customClass="SiteViewCell" customModule="project16" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="47" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vcv-Fv-QHZ" id="abj-VS-RMU">
@@ -115,8 +115,8 @@
                                             <color key="textColor" systemColor="systemPinkColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-pb-Uoq">
-                                            <rect key="frame" x="25" y="72" width="41.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20220320141328" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-pb-Uoq">
+                                            <rect key="frame" x="25" y="72" width="137" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -136,6 +136,13 @@
                                         <constraint firstItem="9SX-LP-URl" firstAttribute="leading" secondItem="abj-VS-RMU" secondAttribute="leadingMargin" constant="9" id="veD-Ia-odB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mday" destination="gIf-pb-Uoq" id="a45-rn-Bae"/>
+                                    <outlet property="rent" destination="BlG-1H-Wvs" id="9dN-0q-pC5"/>
+                                    <outlet property="returns" destination="aNi-P4-O1T" id="M47-bw-y2W"/>
+                                    <outlet property="siteName" destination="qkf-Us-hEr" id="y5q-cP-Qd9"/>
+                                    <outlet property="total" destination="9SX-LP-URl" id="3wx-6h-rMA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
