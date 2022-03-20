@@ -6,6 +6,18 @@
 //
 
 import UIKit
+struct YoubikeData:Codable{
+    struct Site:Codable{
+        let ar:String
+        let bemp:Int
+        let lat:Double
+        let lng:Double
+        let sbi:Int
+        let sna:String
+        let tot:Int
+    }
+    let data:[Site]
+}
 
 class InfoViewController: UITableViewController {
     var area:String!
