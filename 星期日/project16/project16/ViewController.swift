@@ -78,7 +78,9 @@ extension ViewController:UITableViewDataSource{
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let areaString = areas[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = areaString
+        var content = cell.defaultContentConfiguration();
+        content.text = areaString
+        cell.contentConfiguration = content
         return cell
     }
 }
