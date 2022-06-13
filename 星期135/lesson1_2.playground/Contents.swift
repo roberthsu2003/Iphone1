@@ -41,3 +41,28 @@ let pi4 = Double(three) + pointOneFourOneFiveNine
 
 let integerPi = Int(pi4)
 
+//Bool
+let YES = true
+let No = false
+
+//tuple
+let http404Error = (404, "Not Found")
+let http200Ok = (200, "OK")
+
+//如何取出tuple的值,使用索引
+http404Error.0
+http404Error.1
+
+//折解tuple到變數內
+let (statusCode, statusMessage) = http404Error
+statusCode
+statusMessage
+
+//建立有label的tuple
+
+let http200Status = (status:200, description:"OK")
+http200Status.status
+http200Status.description
+
+
+
