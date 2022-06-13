@@ -28,5 +28,16 @@ let anotherPi = 3 + 0.14159
 var one:UInt = 15
 //let anotherOne = one + 3.14159
 
+// let cannotBeNegative:UInt8 = -1
+// let tooBig:Int8 = Int8.max + 1
 
+let twoThousand:UInt16 = 2_000
+let one1:UInt8 = 1
+let twoThousandAndOne = twoThousand + UInt16(one1)
+
+let three = 3
+let pointOneFourOneFiveNine = 0.14159
+let pi4 = Double(three) + pointOneFourOneFiveNine
+
+let integerPi = Int(pi4)
 
