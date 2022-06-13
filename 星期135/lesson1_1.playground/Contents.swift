@@ -42,3 +42,7 @@ print("apple有\(apple)個,orange有\(orange)個")
 
 
 
+
+
+
+
