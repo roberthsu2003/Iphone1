@@ -24,6 +24,21 @@ welcomeMessage = "Hello"
 var red, green, blue:Double
 var red1 = 0.0
 
+var friendlyWelcome = "Hello!"
+friendlyWelcome = "Bonjour!"
+
+let languageName = "swift"
+//languageName = "swift++" ->常數不可以改變內容
+
+var value = 321
+print("value內儲存的內容是:" + String(value))
+
+var apple = 3
+var orange = 5
+print("apple有" + String(apple) + "個,orange有" + String(orange) + "個")
+
+//字串插補
+print("apple有\(apple)個,orange有\(orange)個")
 
 
 
