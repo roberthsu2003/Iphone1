@@ -29,9 +29,9 @@ if let convertedNumber3 = Int(possibleNumber3){
 
 //optional type
 let possibleString:String? = "An optional string."
-print(possibleString!)
+print(possibleString!.description)
 
 //implictly unwrapped optional
 let assumedString:String! = "An implicitly unwrapped optional stirng."
-print(assumedString)
+print(assumedString.description)
 
