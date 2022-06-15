@@ -20,4 +20,16 @@ someDouble
 var threeDoubles = Array(repeating: 0.0, count: 3)
 threeDoubles
 
+var shoppingList = ["Flour"]
+shoppingList += ["Baking Powder"]
+shoppingList += ["Chocolate", "Cheese", "Butter"]
+shoppingList.count
+shoppingList[0]
+shoppingList[1]
+shoppingList[2]
+shoppingList[0...2]
+shoppingList[...2]
+shoppingList[2...]
+
+
 
