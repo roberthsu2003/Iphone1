@@ -55,9 +55,9 @@ let contentHeight = 40
 let hasHeader = false
 var rowHeight = 0
 if hasHeader{
-    rowHeight = contentHeight + 50;
+    rowHeight = contentHeight + 50
 }else{
-    rowHeight = contentHeight + 20;
+    rowHeight = contentHeight + 20
 }
 
 print(rowHeight)
@@ -67,3 +67,11 @@ let contentHeight = 40
 let hasHeader = false
 let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 print(rowHeight)
+
+//nil運算子 ??
+
+var userDefinedColrName:String? = "green"
+var colorNameToUse = userDefinedColrName ?? "red"
+colorNameToUse
+
+
