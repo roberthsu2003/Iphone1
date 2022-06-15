@@ -74,4 +74,11 @@ var userDefinedColrName:String? = "green"
 var colorNameToUse = userDefinedColrName ?? "red"
 colorNameToUse
 
+//範圍運算子
+for index in 1...5{
+    print(index)
+}
 
+for index in 1..<5{
+    print(index)
+}
