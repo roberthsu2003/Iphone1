@@ -41,6 +41,32 @@ for (index, value) in shoppingList.enumerated(){
     print("\(index),\(value)")
 }
 
+for index in stride(from: 1, to: 4, by: 2){
+    print(shoppingList[index])
+}
+
+//set,裏面放的內容不可以重覆
+
+var intSet = Set<Int>()
+intSet.insert(1)
+intSet.insert(2)
+intSet.insert(3)
+intSet.insert(1)
+intSet.insert(2)
+intSet.insert(3)
+intSet
+
+
+//使用[]符號建立set
+var favoriteGenres:Set = ["Rock", "Classical", "Hip hop"]
+favoriteGenres
+
+for value in favoriteGenres{
+    print(value)
+}
+
+//2個set,交集,聯集,差集
+
 
 
 
