@@ -35,3 +35,35 @@ print(a3)
 var a4 = 5
 a4 *= 2
 print(a4)
+
+//比較運算子
+//得到Bool
+// ==,!=,>,<,>=, <=
+
+1 == 1
+2 != 1
+3 > 5
+
+let name = "world"
+if name == "world"{
+   print("Hello! World!")
+}
+
+//3元運算子
+/*
+let contentHeight = 40
+let hasHeader = false
+var rowHeight = 0
+if hasHeader{
+    rowHeight = contentHeight + 50;
+}else{
+    rowHeight = contentHeight + 20;
+}
+
+print(rowHeight)
+ */
+
+let contentHeight = 40
+let hasHeader = false
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+print(rowHeight)
