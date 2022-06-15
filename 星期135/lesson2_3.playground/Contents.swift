@@ -31,5 +31,21 @@ shoppingList[0...2]
 shoppingList[...2]
 shoppingList[2...]
 
+//一個一個取出值
+for item in shoppingList{
+    print(item)
+}
+
+//取出值和索引編號
+for (index, value) in shoppingList.enumerated(){
+    print("\(index),\(value)")
+}
+
+
+
+
+
+
+
 
 
