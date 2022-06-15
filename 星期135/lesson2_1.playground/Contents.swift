@@ -19,3 +19,11 @@ if convertedNumber1 == nil {
 
 let possibleNumber2 = "123"
 //let convertedNumber2:Int = Int(possibleNumber2) 會出錯,資料類型不一樣
+
+let possibleNumber3 = "123" //這是使用者輸入的
+if let convertedNumber3 = Int(possibleNumber3){
+    print("使用optional binding 檢查的結果\(convertedNumber3)")
+}else{
+    print("轉換失敗")
+}
+
