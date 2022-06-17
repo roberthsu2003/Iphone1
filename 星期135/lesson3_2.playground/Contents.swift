@@ -76,4 +76,23 @@ default:
     print("除a和z,y以外的")
 }
 
+//switch 整合範圍運算
+
+let approximateCount = 110
+
+switch(approximateCount){
+case 0:
+    print("0")
+case 1..<4:
+    print("1~4")
+case 5..<12:
+    print("5~11")
+case 12..<100:
+    print("12~99")
+case 100..<1000:
+    print("100~999")
+default:
+    print("1000以上")
+}
+
 
