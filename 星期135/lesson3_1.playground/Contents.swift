@@ -37,3 +37,19 @@ airports["APL"] = "Apple International"
 airports["APL"] = nil
 airports
 
+//一個一個取出key和value
+for (airportCode, airportName) in airports{
+    print("\(airportCode):\(airportName)")
+}
+
+for airportCode in airports.keys{
+    print(airportCode)
+}
+
+for airportName in airports.values{
+    print(airportName)
+}
+
+let arr1 = [String](airports.keys)
+arr1
+
