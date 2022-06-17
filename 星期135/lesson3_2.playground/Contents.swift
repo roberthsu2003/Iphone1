@@ -37,3 +37,15 @@ for tickMark in stride(from: 0, through: minutes, by: minuteInterval){
     print(tickMark)
 }
 
+var total = 0
+
+while(total < 1000){
+    total += Int.random(in: 100...150)
+}
+print(total)
+
+repeat{
+    total -= Int.random(in: 100...200)
+}while(total>0)
+print(total)
+
