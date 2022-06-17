@@ -49,3 +49,18 @@ repeat{
 }while(total>0)
 print(total)
 
+var temperatureInFahrenheit = 40
+if temperatureInFahrenheit <= 32{
+    print("非常冷")
+}else{
+    print("不太冷")
+}
+
+temperatureInFahrenheit = 90
+if temperatureInFahrenheit <= 32{
+    print("非常冷")
+}else if temperatureInFahrenheit >= 86{
+    print("非常熱")
+}else{
+    print("不冷不熱")
+}
