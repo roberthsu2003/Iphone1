@@ -27,11 +27,31 @@ func greet(person:String, alreadyGreeted:Bool) -> String{
 greet(person: "Tim", alreadyGreeted: false)
 
 //沒有傳出值的function
-func greet1(person:String){
-    print("Hello! \(person)")
+func greet(person1:String){
+    print("Hello! \(person1)")
 }
 
-greet1(person: "jenny")
+greet(person1: "jenny")
+
+//可傳出多個值的function
+func minMax(array:[Int]) -> (min:Int, max:Int){
+    var currentMin = array[0]
+    var currentMax = array[0]
+    for value in array[1...]{
+        if value < currentMin{
+            currentMin = value
+        }else if value > currentMax{
+            currentMax = value
+        }
+    }
+    return (currentMin, currentMax)
+}
+
+let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
+bounds.min
+bounds.max
+
+
 
 
 
