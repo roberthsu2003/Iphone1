@@ -64,3 +64,16 @@ if temperatureInFahrenheit <= 32{
 }else{
     print("不冷不熱")
 }
+
+//switch
+let someCharacter:Character = "y"
+switch someCharacter{
+case "a":
+    print("a")
+case "z","y":
+    print("z or y")
+default:
+    print("除a和z,y以外的")
+}
+
+
