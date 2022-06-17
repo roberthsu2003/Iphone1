@@ -95,4 +95,22 @@ default:
     print("1000以上")
 }
 
+//switch 和 tuple整合
+
+let somePoint = (3,2)
+switch somePoint{
+case (0,0):
+    print("中心點")
+case (_,0):
+    print("x軸上")
+case (0,_):
+    print("y軸上")
+case (-2...2,-2...2):
+    print("不在x,y軸上")
+default:
+    print("超出範圍")
+}
+
+
+
 
