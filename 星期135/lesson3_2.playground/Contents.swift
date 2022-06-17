@@ -111,6 +111,22 @@ default:
     print("超出範圍")
 }
 
+func greet(person:[String:String]){
+    guard let name = person["name"] else{
+        print("沒有name")
+        return
+    }
+    
+    print("Hello \(name)")
+    
+    guard let location = person["location"] else{
+        print("沒有location")
+        return
+    }
+    
+    print("這個\(location)不錯")
+}
 
-
+greet(person:["name":"John"])
+greet(person:["name":"robert", "location":"Taipei"])
 
