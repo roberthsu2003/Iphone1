@@ -47,5 +47,19 @@ swapTwoInts(&someInt, &anotherInt)
 someInt
 anotherInt
 
+func addTwoInts(_ a:Int,_ b:Int) -> Int{
+    return a + b
+}
+
+func multiplyTwoInts(_ a:Int,_ b:Int) -> Int{
+    return a * b
+}
+
+var mathFunction:(Int, Int) -> Int = addTwoInts
+mathFunction(3, 2)
+
+mathFunction = multiplyTwoInts
+mathFunction(3, 2)
+
 
 
