@@ -70,3 +70,18 @@ var nums = [35, 45, 55]
 nums[0] = 100
 nums[0]
 
+//結構建立簡單的資料類型
+struct Student{
+    var name:String
+    var chinese:Int
+    var english:Int
+    var math:Int
+}
+
+let stu1 = Student(name: "robert", chinese: 78, english: 98, math: 74)
+
+let stu1Total = stu1.chinese + stu1.english + stu1.math
+
+let stu2 = Student(name: "jenny", chinese: 78, english: 92, math: 65)
+
+let stu2Total = stu2.chinese + stu2.english + stu2.math
