@@ -72,6 +72,20 @@ if let bounds1 = minMax(array1: [Int]()){
     print("function出錯了")
 }
 
+//參數名稱和引數名稱都為同一個
+func someFunction(firstParameterName:Int, secondParameterName:Int){
+    
+}
+
+someFunction(firstParameterName: 1, secondParameterName: 2)
+
+//同時參數名稱和引數名稱
+func someFunction(argumentLabel parameterName:Int){
+    //只可以使用參數名稱
+}
+//呼叫時使用引數名稱
+someFunction(argumentLabel: 1)
+
 
 
 
