@@ -51,6 +51,30 @@ let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
 bounds.min
 bounds.max
 
+func minMax(array1:[Int]) -> (min:Int, max:Int)?{
+    if array1.isEmpty { return nil }
+    var currentMin = array1[0]
+    var currentMax = array1[0]
+    for value in array1[1...]{
+        if value < currentMin{
+            currentMin = value
+        }else if value > currentMax{
+            currentMax = value
+        }
+    }
+    return (currentMin, currentMax)
+}
+//optional binding
+if let bounds1 = minMax(array1: [Int]()){
+    bounds1.min
+    bounds1.max
+}else{
+    print("function出錯了")
+}
+
+
+
+
 
 
 
