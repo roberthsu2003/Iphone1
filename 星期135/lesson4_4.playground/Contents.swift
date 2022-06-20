@@ -60,3 +60,13 @@ let alsoTenEighty = tenEighty
 alsoTenEighty.frameRate = 30.0
 tenEighty.frameRate
 
+//識別運算子 ===
+
+if tenEighty === alsoTenEighty{
+    print("2個參考到同一個實體")
+}
+
+var nums = [35, 45, 55]
+nums[0] = 100
+nums[0]
+
