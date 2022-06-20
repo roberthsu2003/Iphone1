@@ -20,3 +20,17 @@ func someFunction(parameterWithoutDefault:Int, parameterWithDefault:Int=12){
 }
 someFunction(parameterWithoutDefault: 10)
 someFunction(parameterWithoutDefault: 10, parameterWithDefault: 15)
+
+//沒有限定數量的參數
+func arithmeticMean(_ numbers:Double...) -> Double{
+    var total:Double = 0
+    for number in numbers{
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+
+arithmeticMean(1,2,3,4,5,6,7)
+arithmeticMean(4,8,8.4,9.2,1.1)
+
+
