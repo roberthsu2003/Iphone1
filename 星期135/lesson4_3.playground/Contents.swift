@@ -21,7 +21,7 @@ case .south:
     print("South")
 }
 
-enum Planet{
+enum Planet:Int{
     case mercury, venus, earth, mars, jupiter, saturn ,uranus, neptune
 }
 
@@ -33,3 +33,5 @@ case .earth:
 default:
     print("其它星球")
 }
+
+Planet.earth.rawValue
