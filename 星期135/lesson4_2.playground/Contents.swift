@@ -31,3 +31,11 @@ reverseName3
 
 var reverseName4 = names.sorted(by: <)
 reverseName4
+
+//參數使用trailing closure標準語法
+var reverseName5 = names.sorted(){
+    (s1:String,s2:String) -> Bool in
+    return s1 < s2
+}
+
+reverseName5
