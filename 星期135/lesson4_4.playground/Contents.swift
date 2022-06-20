@@ -49,4 +49,14 @@ cinema.width = 2048
 hd.width
 cinema.width
 
+//class是refrence type
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+tenEighty.frameRate
 
