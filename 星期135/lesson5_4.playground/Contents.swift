@@ -15,3 +15,11 @@ class Vehicle{
 let someVehicle = Vehicle()
 someVehicle.currentSpeed = 50
 someVehicle.description
+
+class Bicycle:Vehicle{
+    
+}
+
+let someBicycle = Bicycle()
+someBicycle.currentSpeed = 50
+someBicycle.description
