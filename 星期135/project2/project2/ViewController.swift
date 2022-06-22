@@ -8,8 +8,24 @@
 import UIKit
 
 struct Rectangle{
-    var width = 0
-    var height = 0
+    var width:Int = 0{
+        didSet{
+            if width > 10{
+                width = 10
+            }else if width < 0{
+                width = oldValue
+            }
+        }
+    }
+    var height:Int = 0{
+        didSet{
+            if height > 10{
+                height = 10
+            }else if height < 0{
+                height = oldValue
+            }
+        }
+    }
     var area:Int{
         return width * height
     }
@@ -20,6 +36,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rec1.width = 100
+        rec1.height = 100
+        rec1.width = -10
+        rec1.height = -10
         print("rec1的寬是\(rec1.width)")
         print("rec1的高是\(rec1.height)")
         print("rec1的面積是\(rec1.area)")
