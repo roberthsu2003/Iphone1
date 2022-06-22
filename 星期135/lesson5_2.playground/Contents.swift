@@ -75,3 +75,17 @@ var overLight = TriStateSwitch.off
 overLight.next()
 overLight.next()
 overLight.next()
+
+
+//Type Methods
+class SomeClass{
+    static func someTypeMethod(){
+        
+    }
+    class func someTypeClassMethod(){
+        
+    }
+}
+SomeClass.someTypeMethod()
+SomeClass.someTypeClassMethod()
+
