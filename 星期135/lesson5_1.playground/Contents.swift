@@ -66,3 +66,14 @@ square.center = Point(x: 15.0, y: 15.0)
 
 square.center
 
+struct Cuboid{
+    var width=0.0, height = 0.0, depth = 0.0
+    //read only computed property
+    var volume:Double{
+        return width * height * depth
+    }
+}
+
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+fourByFiveByTwo.volume
+
