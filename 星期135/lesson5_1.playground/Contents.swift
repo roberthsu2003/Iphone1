@@ -77,3 +77,30 @@ struct Cuboid{
 let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
 fourByFiveByTwo.volume
 
+
+//property observer
+//配合store property
+
+class StepCounter{
+    var totalSteps:Int = 0{
+        willSet(newTotalSteps){
+            print("現在傳進來的值是\(newTotalSteps)")
+        }
+        didSet{
+            if totalSteps > oldValue{
+                print("比原來的值增加了\(totalSteps - oldValue)")
+            }
+        }
+    }
+}
+
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps
+
+stepCounter.totalSteps = 100
+stepCounter.totalSteps
+
+
+stepCounter.totalSteps = 360
+
