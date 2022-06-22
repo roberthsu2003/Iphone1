@@ -43,6 +43,16 @@ class ViewController: UIViewController {
         print("rec1的寬是\(rec1.width)")
         print("rec1的高是\(rec1.height)")
         print("rec1的面積是\(rec1.area)")
+        print(add(x: 10, y: 20))
+        print(ViewController.sub(x: 20, y: 10))
+    }
+    
+    func add(x:Int, y:Int) -> Int{
+        return x + y
+    }
+    
+    class func sub(x:Int, y:Int) -> Int{
+        return x-y
     }
 
 
