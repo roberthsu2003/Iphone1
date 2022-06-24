@@ -54,3 +54,29 @@ let car = Car()
 car.curretSpeeed = 25.0
 car.gear = 3
 print("Car:\(car.description)")
+
+//override property
+
+class AutomaticCar:Car{
+    override var curretSpeeed: Double{
+        didSet{
+            gear = Int(curretSpeeed / 10.0) + 1
+        }
+    }
+}
+
+let automatic = AutomaticCar()
+automatic.curretSpeeed = 35.0
+print("AutomaticCar:\(automatic.description)")
+
+//預防子類別覆寫
+
+//final var
+//final func
+//final class func
+//final subscript
+
+//預防子類別繼承
+//final class
+
+
