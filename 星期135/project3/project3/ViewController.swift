@@ -14,12 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myLabel = UILabel(
-            frame:CGRect(x: 100, y: 100, width: 100, height: 40)
-        )
-        myLabel.text = "Hello! iOS!"
         
-        view.addSubview(myLabel)
     }
     
     override func viewWillAppear(_ animated: Bool){
