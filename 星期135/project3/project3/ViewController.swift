@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var myLabel:UILabel!
+    @IBOutlet var myLabel:UILabel!
     
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        print("view已經出現了")
+        myLabel.text = "view已經出現了"
     }
 
 
