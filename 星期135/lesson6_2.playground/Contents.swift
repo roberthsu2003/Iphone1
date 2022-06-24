@@ -74,6 +74,14 @@ let cheeseQuestion = SurveyQuestion(text: "您喜歡cheese嗎?")
 cheeseQuestion.ask()
 cheeseQuestion.response = "是的我喜歡"
 
+//如果是class,沒有自訂的init,所有的store property都要有default value
+
+class ShoppingListItem{
+    var name:String?
+    var quantity = 1
+    var purchased = false
+}
+
 
 
 
