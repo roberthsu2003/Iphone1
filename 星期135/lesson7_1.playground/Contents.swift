@@ -34,3 +34,18 @@ class Hoverboard:Vehicle{
 let hoverboard = Hoverboard(color: "silver")
 hoverboard.description
 
+
+class Food{
+    var name:String
+    init(name:String){
+        self.name = name
+    }
+    
+    convenience init(){
+        self.init(name: "[Unnamed]")
+    }
+}
+
+let namedMeat = Food(name: "Bacon")
+let mysteryMeat = Food()
+
