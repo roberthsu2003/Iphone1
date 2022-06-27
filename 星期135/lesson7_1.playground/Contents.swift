@@ -16,4 +16,21 @@ class Bicycle:Vehicle{
         numberOfWheels = 2
     }
 }
+let bicycle = Bicycle()
+bicycle.description
+
+class Hoverboard:Vehicle{
+    var color:String
+    init(color:String){
+        self.color = color
+        super.init()
+    }
+    
+    override var description: String{
+        return "\(super.description) in a beautiful \(color)"
+    }
+}
+
+let hoverboard = Hoverboard(color: "silver")
+hoverboard.description
 
