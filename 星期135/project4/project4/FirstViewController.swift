@@ -14,8 +14,12 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(heightTextField.text!)
+        okButton.addTarget(self, action: #selector(userClick(_:)), for:.touchUpInside)
        
+    }
+    
+    @objc func userClick(_ sender:UIButton){
+        print("user click")
     }
     
 
