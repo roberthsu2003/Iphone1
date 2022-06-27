@@ -19,7 +19,8 @@ class FirstViewController: UIViewController {
     }
     
     @objc func userClick(_ sender:UIButton){
-        print("user click")
+        print("身高:\(heightTextField.text!)")
+        print("體重:\(weightTextField.text!)")
     }
     
 
