@@ -19,8 +19,19 @@ class FirstViewController: UIViewController {
     }
     
     @objc func userClick(_ sender:UIButton){
-        print("身高:\(heightTextField.text!)")
-        print("體重:\(weightTextField.text!)")
+        if let height = Int(heightTextField.text!){
+            print(height)
+        }else{
+            print("身高欄位資料有問題")
+        }
+        
+        if let weight = Int(weightTextField.text!){
+            print(weight)
+        }else{
+            print("體重欄位資料有問題")
+        }
+        
+        
     }
     
 
