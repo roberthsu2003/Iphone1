@@ -48,7 +48,16 @@ class FirstViewController: UIViewController {
             }
             
         }else{
-            print("欄位有問題")
+            let alertController = UIAlertController(title: "警告", message: "欄位有問題`", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "ok", style: .default){
+                (action:UIAlertAction) -> Void in
+                self.heightTextField.text = ""
+                self.weightTextField.text = ""
+                self.heightTextField.endEditing(true)
+                self.weightTextField.endEditing(true)
+            }
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
         }
         
         
