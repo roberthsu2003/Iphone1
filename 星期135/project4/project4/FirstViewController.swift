@@ -13,25 +13,11 @@ class FirstViewController: UIViewController {
     @IBOutlet var okButton:UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        okButton.addTarget(self, action: #selector(userClick(_:)), for:.touchUpInside)
-       
+        super.viewDidLoad()       
     }
     
-    @objc func userClick(_ sender:UIButton){
-        /*
-        if let height = Int(heightTextField.text!){
-            print(height)
-        }else{
-            print("身高欄位資料有問題")
-        }
-        
-        if let weight = Int(weightTextField.text!){
-            print(weight)
-        }else{
-            print("體重欄位資料有問題")
-        }*/
-        
+    @IBAction func userClick(_ sender:UIButton){
+              
         if let height = Int(heightTextField.text!),let weight = Int(weightTextField.text!){
             print(height)
             print(weight)
