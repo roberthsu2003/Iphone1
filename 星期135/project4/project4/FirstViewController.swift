@@ -37,9 +37,11 @@ class FirstViewController: UIViewController {
             print(weight)
             switch(height,weight){
                 case (100...250,40...300):
-                    print("正常範圍")
+                    let bmi = Double(weight) / ((Double(height)/100) * (Double(height)/100))
+                    navigationItem.prompt = String(format: "%.2f", bmi)
                     heightTextField.endEditing(true)
                     weightTextField.endEditing(true)
+                
                 default:
                     print("數值異常")
             }
