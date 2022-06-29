@@ -13,7 +13,7 @@ class FirstViewController: UIViewController {
     @IBOutlet var okButton:UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
     }
     
     @IBAction func userClick(_ sender:UIButton){
