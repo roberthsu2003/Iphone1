@@ -35,6 +35,15 @@ class FirstViewController: UIViewController {
         if let height = Int(heightTextField.text!),let weight = Int(weightTextField.text!){
             print(height)
             print(weight)
+            switch(height,weight){
+                case (100...250,40...300):
+                    print("正常範圍")
+                    heightTextField.endEditing(true)
+                    weightTextField.endEditing(true)
+                default:
+                    print("數值異常")
+            }
+            
         }else{
             print("欄位有問題")
         }
