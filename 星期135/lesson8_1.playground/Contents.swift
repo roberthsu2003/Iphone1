@@ -31,4 +31,10 @@ var playerOne:Player? = Player(coins: 100)
 print("現在此人有\(playerOne!.coinsInPurse)coins")
 print("現在銀行的有\(Bank.coinsInbank)coins")
 
+playerOne!.win(coins: 500)
+print("現在此人有\(playerOne!.coinsInPurse)coins")
+print("現在銀行的有\(Bank.coinsInbank)coins")
+
+playerOne = nil  //實體被回收了
+print("現在銀行的有\(Bank.coinsInbank)coins")
 
