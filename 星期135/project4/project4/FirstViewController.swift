@@ -44,7 +44,18 @@ class FirstViewController: UIViewController {
                     weightTextField.endEditing(true)
                 
                 default:
-                    print("數值異常")
+                
+                let alertController = UIAlertController(title: "警告", message: "數值異常", preferredStyle: .actionSheet)
+                    let okAction = UIAlertAction(title: "ok", style: .default){
+                        (action:UIAlertAction) -> Void in
+                        self.heightTextField.text = ""
+                        self.weightTextField.text = ""
+                        self.heightTextField.endEditing(true)
+                        self.weightTextField.endEditing(true)
+                    }
+                    alertController.addAction(okAction)
+                    present(alertController, animated: true)
+                    
             }
             
         }else{
