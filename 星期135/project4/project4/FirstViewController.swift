@@ -39,6 +39,7 @@ class FirstViewController: UIViewController {
                 case (100...250,40...300):
                     let bmi = Double(weight) / ((Double(height)/100) * (Double(height)/100))
                     navigationItem.prompt = String(format: "%.2f", bmi)
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "清除", style: .plain, target: self, action: #selector(userClear(_:)))
                     heightTextField.endEditing(true)
                     weightTextField.endEditing(true)
                 
@@ -51,6 +52,13 @@ class FirstViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func userClear(_ sender:UIBarButtonItem){
+        navigationItem.prompt = nil
+        navigationItem.rightBarButtonItem = nil
+        heightTextField.text = ""
+        weightTextField.text = ""
     }
     
 
