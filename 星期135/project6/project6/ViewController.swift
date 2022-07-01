@@ -28,7 +28,15 @@ class ViewController: UIViewController,UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let rowIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = list[rowIndex]
+        //版本檢查
+        if #available(iOS 15, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = list[rowIndex]
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel?.text = list[rowIndex]
+        }
+        
         return cell
     }
 
