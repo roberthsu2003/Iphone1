@@ -15,19 +15,20 @@ class ViewController: UIViewController,UITableViewDataSource {
         super.viewDidLoad()
         for i in 1...100{
             list.append("item\(i)")
-            print(list[i-1])
         }
         tableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        
+        return list.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+        let rowIndex = indexPath.row
+        print(rowIndex)
+        return UITableViewCell()
     }
 
 
