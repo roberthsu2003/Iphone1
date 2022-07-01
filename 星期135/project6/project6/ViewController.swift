@@ -27,8 +27,9 @@ class ViewController: UIViewController,UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let rowIndex = indexPath.row
-        print(rowIndex)
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = list[rowIndex]
+        return cell
     }
 
 
