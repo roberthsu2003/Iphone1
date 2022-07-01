@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDataSource {
     @IBOutlet var tableView:UITableView!
     var list:[String] = []
     
@@ -17,8 +17,17 @@ class ViewController: UIViewController {
             list.append("item\(i)")
             print(list[i-1])
         }
+        tableView.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
         
-        //tableView.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
     }
 
 
