@@ -46,3 +46,20 @@ if let roomCount = john.residence?.numberOfRooms{
 }else{
     print("取得失敗")
 }
+
+let someAddress = Address()
+someAddress.buildingNumber = "29"
+someAddress.street = "Acacia road"
+
+//john.residence?.address = someAddress
+if (john.residence?.address = someAddress) != nil{
+    print("給address成功")
+}else{
+    print("給address失敗")
+}
+
+if john.residence?.printNumberOfRooms() != nil{
+    print("呼叫method成功")
+}else{
+    print("呼叫method失敗")
+}
