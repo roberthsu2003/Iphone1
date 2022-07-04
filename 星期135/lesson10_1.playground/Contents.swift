@@ -81,3 +81,9 @@ do{
 }catch{
     print("無法預期的錯誤\(error)")
 }
+
+if (try? buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)) == nil{
+    print("有出錯誤")
+}
+
+try! buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
