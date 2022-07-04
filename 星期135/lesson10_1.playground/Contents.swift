@@ -65,3 +65,19 @@ struct PurchasedSnack{
         self.name = name
     }
 }
+
+var vendingMachine = VendingMachine()
+vendingMachine.coinsDeposited = 8
+
+do{
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+    print("購買成功")
+}catch VendingMachineError.invalidSelection{
+    print("沒有這個商品")
+}catch VendingMachineError.outOfStock{
+    print("這個商品已經售完")
+}catch VendingMachineError.insufficientFunds(let coinsNeeded){
+    print("金額不足,差\(coinsNeeded)")
+}catch{
+    print("無法預期的錯誤\(error)")
+}
