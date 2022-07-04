@@ -52,8 +52,13 @@ class ViewController: UIViewController,UITableViewDataSource {
         let rowIndex = indexPath.row
         let city = cities[rowIndex]
         let cityName = city["City"] as? String
+        let country = city["Country"] as? String
+        let imageName = city["Image"] as? String ?? ""
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         cell.textLabel?.text = cityName
+        cell.detailTextLabel?.text = country
+        cell.imageView?.image = UIImage(named: imageName)
         return cell
         
     }
