@@ -46,3 +46,22 @@ class VendingMachine{
         
     }
 }
+
+let favoriteSnacks = [
+    "Alice":"Chips",
+    "Bob":"Licorice",
+    "Eve":"Pretzels"
+]
+
+func buyFavoriteSnack(person:String, vendingMachine:VendingMachine) throws{
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(itemNamed: snackName)
+}
+
+struct PurchasedSnack{
+    let name:String
+    init(name:String, vendingMachine:VendingMachine) throws{
+        try vendingMachine.vend(itemNamed: name)
+        self.name = name
+    }
+}
