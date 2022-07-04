@@ -15,11 +15,16 @@ class ViewController: UIViewController {
             print("沒有發現檔案")
             return
         }
-        guard let citys = try? NSArray(contentsOf: pathURL, error: ()) else{
+        guard let cities = (try? NSArray(contentsOf: pathURL, error: ())) as? [[String:Any]] else{
             print("轉換為NSArray有問題")
             return
         }
-        print(citys)
+        /*
+        guard let cities = citys as? [[String:Any]] else{
+            print("NSArray轉換為Array有問題")
+            return
+        }*/
+        print(cities)
     }
 
     override func viewDidLoad() {
