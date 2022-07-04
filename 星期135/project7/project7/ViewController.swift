@@ -56,9 +56,18 @@ class ViewController: UIViewController,UITableViewDataSource {
         let imageName = city["Image"] as? String ?? ""
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = cityName
-        cell.detailTextLabel?.text = country
-        cell.imageView?.image = UIImage(named: imageName)
+        if #available(iOS 15, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            content.secondaryText = country
+            content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel?.text = cityName
+            cell.detailTextLabel?.text = country
+            cell.imageView?.image = UIImage(named: imageName)
+        }
         return cell
         
     }
