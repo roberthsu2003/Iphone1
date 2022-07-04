@@ -44,11 +44,17 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        
+        return cities.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        let cityName = city["City"] as? String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        cell.textLabel?.text = cityName
+        return cell
         
     }
     
