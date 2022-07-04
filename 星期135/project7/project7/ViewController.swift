@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var cities = [[String:Any]]()
     
     override func awakeFromNib() {
         let bundle = Bundle.main
@@ -24,13 +25,19 @@ class ViewController: UIViewController {
             print("NSArray轉換為Array有問題")
             return
         }*/
-        print(cities)
+        self.cities = cities
+        /*
+        for city in cities{
+            print(city)
+        }
+         */
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("viewDidLoad")
+       
+        
     }
 
 
