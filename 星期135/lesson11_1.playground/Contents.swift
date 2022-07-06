@@ -43,3 +43,15 @@ for item in library{
 
 movieCount
 songCount
+
+//as! -> 強制轉型
+//as? -> 如果無法轉型,傳出nil -> optional type
+
+for item in library{
+    if let movie = item as? Movie{
+        print("Movie:\(movie.name),director:\(movie.director)")
+    }else if let song = item as? Song{
+        print("Song:\(song.name), by \(song.artist)")
+    }
+}
+
