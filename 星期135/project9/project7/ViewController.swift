@@ -62,6 +62,11 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         cell.continentLabel.text = continentName
         cell.cityImageView.image = UIImage(named: imageName)
         cell.cityImageView.layer.cornerRadius = 40
+        if cityIsMarked[rowIndex]{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
         return cell
     }
     
@@ -92,14 +97,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             return
         }
         //建立和取消checkmark
-        switch currentCell.accessoryType{
-        case .checkmark:
+        if self.cityIsMarked[indexPath.row]{
+            self.cityIsMarked[indexPath.row] = false
             currentCell.accessoryType = .none
-        case .none:
+            
+        }else{
+            self.cityIsMarked[indexPath.row] = true
             currentCell.accessoryType = .checkmark
-        default:
-            return
         }
+       
         
         
         
