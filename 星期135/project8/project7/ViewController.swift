@@ -50,8 +50,19 @@ class ViewController: UIViewController,UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        let cityName = city["City"] as? String
+        let imageName = city["Image"] as? String ?? ""
+        let countryName = city["Country"] as? String
+        let continentName = city["Continent"] as? String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
+        cell.cityLable.text = cityName
+        cell.countryLabel.text = countryName
+        cell.continentLabel.text = continentName
+        cell.cityImageView.image = UIImage(named: imageName)
         
-        
+        return cell
     }
     
 
