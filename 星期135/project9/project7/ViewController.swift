@@ -72,7 +72,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        print("Selected\(indexPath.row)")
+        //建立一個action sheet的選項按鈕
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet)
+        //建立action sheet內的按鈕
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        
+        present(optionMenu, animated: true)
     }
     
 
