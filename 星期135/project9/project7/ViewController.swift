@@ -88,6 +88,24 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         optionMenu.addAction(callAction)
         
         present(optionMenu, animated: true)
+        
+        //建立accessoryType
+        //取得目前cell的實體
+        guard let currentCell = tableView.cellForRow(at: indexPath) else{
+            return
+        }
+        //建立和取消checkmark
+        switch currentCell.accessoryType{
+        case .checkmark:
+            currentCell.accessoryType = .none
+        case .none:
+            currentCell.accessoryType = .checkmark
+        default:
+            return
+        }
+        
+        
+        
     }
     
 
