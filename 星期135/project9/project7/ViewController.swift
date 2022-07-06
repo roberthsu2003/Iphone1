@@ -78,6 +78,15 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         optionMenu.addAction(cancelAction)
         
+        //建立action sheet內的按鈕call-action
+        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){ (action:UIAlertAction) -> Void in
+            let alertMessageController = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertMessageController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessageController, animated: true, completion: nil)
+        }
+        
+        optionMenu.addAction(callAction)
+        
         present(optionMenu, animated: true)
     }
     
