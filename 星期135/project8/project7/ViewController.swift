@@ -57,11 +57,12 @@ class ViewController: UIViewController,UITableViewDataSource {
         let countryName = city["Country"] as? String
         let continentName = city["Continent"] as? String
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
+        
         cell.cityLable.text = cityName
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
         cell.cityImageView.image = UIImage(named: imageName)
-        
+        cell.cityImageView.layer.cornerRadius = 40
         return cell
     }
     
