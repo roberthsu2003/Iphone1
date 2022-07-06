@@ -11,6 +11,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet var cityTableView:UITableView!
     
     var cities = [[String:Any]]()
+    var cityIsMarked:[Bool]!
     
     override func awakeFromNib() {
         let bundle = Bundle.main
@@ -28,11 +29,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             return
         }*/
         self.cities = cities
-        /*
-        for city in cities{
-            print(city)
-        }
-         */
+        cityIsMarked = Array(repeating: false, count: self.cities.count)
     }
 
     override func viewDidLoad() {
