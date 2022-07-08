@@ -89,24 +89,38 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         optionMenu.addAction(callAction)
         
-        present(optionMenu, animated: true)
+        
         
         //建立accessoryType
         //取得目前cell的實體
         guard let currentCell = tableView.cellForRow(at: indexPath) else{
             return
         }
-        //建立和取消checkmark
-        if self.cityIsMarked[indexPath.row]{
-            self.cityIsMarked[indexPath.row] = false
-            currentCell.accessoryType = .none
-            
+        //建立和取消checkmark        
+        //增加標示選項
+        var titleName:String
+        if cityIsMarked[indexPath.row]{
+            titleName = "取消標示"
         }else{
-            self.cityIsMarked[indexPath.row] = true
-            currentCell.accessoryType = .checkmark
+            titleName = "標示"
+        }
+        
+        let checkInMark = UIAlertAction(title: titleName, style: .default){
+            (action:UIAlertAction) -> Void in
+            switch titleName{
+            case "取消標示":
+                currentCell.accessoryType = .none
+                self.cityIsMarked[indexPath.row] = false
+            case "標示":
+                currentCell.accessoryType = .checkmark
+                self.cityIsMarked[indexPath.row] = true
+            default:
+                break;
+            }
         }
        
-        
+        optionMenu.addAction(checkInMark)
+        present(optionMenu, animated: true)
         
         
     }
