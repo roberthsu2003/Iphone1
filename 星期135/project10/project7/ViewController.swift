@@ -156,6 +156,27 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return [shareAction,deleteAction]
     }
     
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let shareAction = UIContextualAction(style: .normal, title: "分享") { (action:UIContextualAction, view:UIView, completionHandler:(Bool) -> Void) in
+            print("分享")
+            completionHandler(true)
+        }
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "刪除") { (action:UIContextualAction, view:UIView, completionHandler:(Bool) -> Void) in
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
+        
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255, blue: 202.0/255, alpha: 1.0)
+        
+        return UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
+    }
 
 
 }
