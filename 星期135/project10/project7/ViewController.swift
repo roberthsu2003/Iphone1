@@ -74,7 +74,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                      commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         if editingStyle == .delete{
-            print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
+            //print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
+            cities.remove(at: indexPath.row)
+            cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
