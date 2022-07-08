@@ -143,7 +143,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
             (action:UITableViewRowAction,indexPath:IndexPath) -> Void in
             print("share")
         }
-        return [shareAction]
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "刪除"){
+            (action:UITableViewRowAction,indexPath:IndexPath) -> Void in
+            self.cities.remove(at: indexPath.row)
+            self.cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
+        
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255, blue: 202.0/255, alpha: 1.0)
+        return [shareAction,deleteAction]
     }
     
 
