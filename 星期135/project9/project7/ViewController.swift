@@ -96,7 +96,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         guard let currentCell = tableView.cellForRow(at: indexPath) else{
             return
         }
-        //建立和取消checkmark        
+        //建立和取消checkmark
         //增加標示選項
         var titleName:String
         if cityIsMarked[indexPath.row]{
