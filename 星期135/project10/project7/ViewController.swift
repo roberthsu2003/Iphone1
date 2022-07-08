@@ -136,6 +136,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     
+    @available(iOS 8.0, *)
+    func tableView(_ tableView: UITableView,
+                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
+        let shareAction = UITableViewRowAction(style: .default, title: "分享"){
+            (action:UITableViewRowAction,indexPath:IndexPath) -> Void in
+            print("share")
+        }
+        return [shareAction]
+    }
+    
 
 
 }
