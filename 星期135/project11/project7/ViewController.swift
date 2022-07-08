@@ -70,7 +70,6 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                      commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         if editingStyle == .delete{
-            //print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
             cities.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -80,56 +79,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        /*
-        //建立一個action sheet的選項按鈕
-        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼?", preferredStyle: .actionSheet)
-        //建立action sheet內的按鈕
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        optionMenu.addAction(cancelAction)
-        
-        //建立action sheet內的按鈕call-action
-        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){ (action:UIAlertAction) -> Void in
-            let alertMessageController = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
-            alertMessageController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertMessageController, animated: true, completion: nil)
-        }
-        
-        optionMenu.addAction(callAction)
-        
-        
-        
-        //建立accessoryType
-        //取得目前cell的實體
-        guard let currentCell = tableView.cellForRow(at: indexPath) else{
-            return
-        }
-        //建立和取消checkmark
-        //增加標示選項
-        var titleName:String
-        if cityIsMarked[indexPath.row]{
-            titleName = "取消標示"
-        }else{
-            titleName = "標示"
-        }
-        
-        let checkInMark = UIAlertAction(title: titleName, style: .default){
-            (action:UIAlertAction) -> Void in
-            switch titleName{
-            case "取消標示":
-                currentCell.accessoryType = .none
-                self.cityIsMarked[indexPath.row] = false
-            case "標示":
-                currentCell.accessoryType = .checkmark
-                self.cityIsMarked[indexPath.row] = true
-            default:
-                break;
-            }
-        }
-       
-        optionMenu.addAction(checkInMark)
-        present(optionMenu, animated: true)
-        
-        */
+        let nextViewController = UIViewController()
+        nextViewController.view.backgroundColor = UIColor.blue
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     @available(iOS 8.0, *)
