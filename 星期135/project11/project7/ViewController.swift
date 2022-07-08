@@ -86,8 +86,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
          */
         
         /* 透過自訂的xib 和 ViewController建立一頁*/
+        /*
         let nextViewController  = NextViewController(nibName: "NextViewController", bundle: nil)
         navigationController?.pushViewController(nextViewController, animated: true)
+         */
+        
+        //透過storyboard 建立一頁，使用程式建立
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let nextViewController = storyboard.instantiateViewController(withIdentifier: "NextViewController") as? NextViewController{
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
          
     }
     
