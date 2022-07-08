@@ -30,4 +30,17 @@ struct BlackjackCard{
         }
         
     }
+    
+    let rank:Rank, suit:Suit
+    var description:String{
+        var output = "suit is \(suit.rawValue),"
+        output += "value is \(rank.values.first)"
+        if let second = rank.values.second{
+            output += "or \(second)"
+        }
+        return output
+    }
 }
+
+let theAceOfSpades =  BlackjackCard(rank: .ace, suit: .spades)
+theAceOfSpades.description
