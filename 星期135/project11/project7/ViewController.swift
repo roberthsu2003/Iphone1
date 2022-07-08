@@ -79,9 +79,16 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        /* 透過UIViewController的class 建立一頁
         let nextViewController = UIViewController()
         nextViewController.view.backgroundColor = UIColor.blue
         navigationController?.pushViewController(nextViewController, animated: true)
+         */
+        
+        /* 透過自訂的xib 和 ViewController建立一頁*/
+        let nextViewController  = NextViewController(nibName: "NextViewController", bundle: nil)
+        navigationController?.pushViewController(nextViewController, animated: true)
+         
     }
     
     @available(iOS 8.0, *)
