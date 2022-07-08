@@ -73,7 +73,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView,
                      commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
-        
+        if editingStyle == .delete{
+            print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
+        }
     }
     
     //MARK: - UITableViewDelegate
