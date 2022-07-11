@@ -8,6 +8,8 @@
 import UIKit
 
 class CityDetalViewController: UIViewController {
+    @IBOutlet var imageView:UIImageView!
+    
     var city = [String:Any]()
     
     override func viewDidLoad() {

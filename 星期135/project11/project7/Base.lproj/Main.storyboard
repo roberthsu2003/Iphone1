@@ -103,14 +103,30 @@
                     <view key="view" contentMode="scaleToFill" id="DSb-Z0-wQr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Xa-9i-KT0">
+                                <rect key="frame" x="34" y="140" width="347" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Xa-9i-KT0" secondAttribute="height" multiplier="347:220" id="ee7-0Y-Rza"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hzz-Po-wLy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Xa-9i-KT0" firstAttribute="top" secondItem="hzz-Po-wLy" secondAttribute="top" constant="52" id="E8U-Mv-1Dj"/>
+                            <constraint firstItem="1Xa-9i-KT0" firstAttribute="leading" secondItem="hzz-Po-wLy" secondAttribute="leading" constant="34" id="LwW-GC-vpa"/>
+                            <constraint firstItem="hzz-Po-wLy" firstAttribute="trailing" secondItem="1Xa-9i-KT0" secondAttribute="trailing" constant="33" id="qqF-4k-Gen"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KDa-7h-8fW"/>
+                    <connections>
+                        <outlet property="imageView" destination="1Xa-9i-KT0" id="rCv-Qx-AuN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7m-B9-F4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="23"/>
+            <point key="canvasLocation" x="2176.8115942028985" y="22.767857142857142"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="2dS-zH-slt">
