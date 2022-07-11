@@ -94,6 +94,25 @@ extension Int{
 
 746381295[2]
 
+//擴充巢狀類別
+
+extension Int{
+    enum Kind{
+        case negative, zero, positive
+    }
+    
+    var kind:Kind{
+        switch self{
+        case 0:
+            return .zero
+        case let x where x > 0:
+            return .positive
+        default:
+            return .negative
+        }
+    }
+}
 
 
+(-15).kind
 
