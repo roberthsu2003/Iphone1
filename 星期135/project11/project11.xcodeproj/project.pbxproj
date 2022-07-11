@@ -14,6 +14,7 @@
 		A422455428730C35008389FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A422455328730C35008389FC /* Assets.xcassets */; };
 		A422455728730C35008389FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A422455528730C35008389FC /* LaunchScreen.storyboard */; };
 		A422456128731139008389FC /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A422456028731139008389FC /* citylist.plist */; };
+		A423F9DF287C4C130065CFA7 /* CityDetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */; };
 		A4CE1CB32875AE3000382715 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CE1CB22875AE3000382715 /* CityCell.swift */; };
 		A4DDC7E32878682900F1A9FF /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDC7E12878682900F1A9FF /* NextViewController.swift */; };
 		A4DDC7E42878682900F1A9FF /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DDC7E22878682900F1A9FF /* NextViewController.xib */; };
@@ -29,6 +30,7 @@
 		A422455628730C35008389FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A422455828730C35008389FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A422456028731139008389FC /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetalViewController.swift; sourceTree = "<group>"; };
 		A4CE1CB22875AE3000382715 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		A4DDC7E12878682900F1A9FF /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		A4DDC7E22878682900F1A9FF /* NextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				A422455828730C35008389FC /* Info.plist */,
 				A4DDC7E12878682900F1A9FF /* NextViewController.swift */,
 				A4DDC7E22878682900F1A9FF /* NextViewController.xib */,
+				A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */,
 			);
 			path = project7;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				A4DDC7E32878682900F1A9FF /* NextViewController.swift in Sources */,
 				A422454F28730C31008389FC /* ViewController.swift in Sources */,
+				A423F9DF287C4C130065CFA7 /* CityDetalViewController.swift in Sources */,
 				A422454B28730C31008389FC /* AppDelegate.swift in Sources */,
 				A4CE1CB32875AE3000382715 /* CityCell.swift in Sources */,
 				A422454D28730C31008389FC /* SceneDelegate.swift in Sources */,
