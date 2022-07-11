@@ -72,7 +72,6 @@
                                             <outlet property="cityLable" destination="wco-co-E9A" id="Fab-uc-cTv"/>
                                             <outlet property="continentLabel" destination="iOU-mY-yZU" id="Rmj-0C-nMp"/>
                                             <outlet property="countryLabel" destination="iGm-Fu-4sY" id="SWJ-hc-ehS"/>
-                                            <segue destination="0b5-BO-HB4" kind="show" id="H80-IW-zUX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,6 +89,7 @@
                     <navigationItem key="navigationItem" title="Cities" id="BD3-xf-j8S"/>
                     <connections>
                         <outlet property="cityTableView" destination="hlQ-AR-G2g" id="Ad7-4B-Jxi"/>
+                        <segue destination="0b5-BO-HB4" kind="show" identifier="goDetail" id="HUc-Fm-1b2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
