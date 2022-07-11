@@ -12,7 +12,9 @@ class CityDetalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city)
+        if let cityName = city["City"] as? String{
+            title = cityName
+        }
     }
     
 
