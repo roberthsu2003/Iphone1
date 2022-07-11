@@ -63,4 +63,17 @@ let centerRect = Rect(center: Point(x: 4.0, y: 4.0), size: Size(width: 3.0, heig
 centerRect.origin.x
 centerRect.origin.y
 
+//擴充method
+extension Int{
+    func repetitions(task:()->Void){
+        for _ in 0..<self{
+            task()
+        }
+    }
+}
+
+3.repetitions{
+    print("Hello!")
+}
+
 
