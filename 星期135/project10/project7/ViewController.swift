@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController{
     @IBOutlet var cityTableView:UITableView!
     
     var cities = [[String:Any]]()
@@ -40,46 +40,12 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
     }
     
-    //MARK: - UITableViewDataSource
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int{
-        return cities.count
-    }
     
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-        let rowIndex = indexPath.row
-        let city = cities[rowIndex]
-        let cityName = city["City"] as? String
-        let imageName = city["Image"] as? String ?? ""
-        let countryName = city["Country"] as? String
-        let continentName = city["Continent"] as? String
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
-        
-        cell.cityLable.text = cityName
-        cell.countryLabel.text = countryName
-        cell.continentLabel.text = continentName
-        cell.cityImageView.image = UIImage(named: imageName)
-        cell.cityImageView.layer.cornerRadius = 40
-        if cityIsMarked[rowIndex]{
-            cell.accessoryType = .checkmark
-        }else{
-            cell.accessoryType = .none
-        }
-        return cell
-    }
     
-    func tableView(_ tableView: UITableView,
-                     commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath){
-        if editingStyle == .delete{
-            //print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
-            cities.remove(at: indexPath.row)
-            cityIsMarked.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }
+    
+}
+
+extension ViewController:UITableViewDelegate{
     
     //MARK: - UITableViewDelegate
     
@@ -179,5 +145,49 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
 
 
+}
+
+extension ViewController:UITableViewDataSource{
+    //MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        let cityName = city["City"] as? String
+        let imageName = city["Image"] as? String ?? ""
+        let countryName = city["Country"] as? String
+        let continentName = city["Continent"] as? String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
+        
+        cell.cityLable.text = cityName
+        cell.countryLabel.text = countryName
+        cell.continentLabel.text = continentName
+        cell.cityImageView.image = UIImage(named: imageName)
+        cell.cityImageView.layer.cornerRadius = 40
+        if cityIsMarked[rowIndex]{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                     commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            //print("使用者要刪除\(cities[indexPath.row]["City"] as? String ?? "")")
+            cities.remove(at: indexPath.row)
+            cityIsMarked.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
 }
 

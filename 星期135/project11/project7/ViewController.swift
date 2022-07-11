@@ -92,10 +92,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
          */
         
         //透過storyboard 建立一頁，使用程式建立
+        
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let nextViewController = storyboard.instantiateViewController(withIdentifier: "NextViewController") as? NextViewController{
             navigationController?.pushViewController(nextViewController, animated: true)
         }
+         
+        
          
     }
     
