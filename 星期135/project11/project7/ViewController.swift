@@ -40,6 +40,16 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goDetail"){
+            guard let city = sender as? [String:Any] else{
+                print("city沒有轉型成功")
+                return
+            }
+            print(city)
+        }
+    }
+    
     
     
 
@@ -89,30 +99,12 @@ extension ViewController:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-         
-        performSegue(withIdentifier: "goDetail", sender: nil)
+        let city = cities[indexPath.row]
+        performSegue(withIdentifier: "goDetail", sender: city)
          
     }
     
-    @available(iOS 8.0, *)
-    func tableView(_ tableView: UITableView,
-                   editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
-        let shareAction = UITableViewRowAction(style: .default, title: "分享"){
-            (action:UITableViewRowAction,indexPath:IndexPath) -> Void in
-            print("share")
-        }
         
-        let deleteAction = UITableViewRowAction(style: .default, title: "刪除"){
-            (action:UITableViewRowAction,indexPath:IndexPath) -> Void in
-            self.cities.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
-        
-        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255, blue: 202.0/255, alpha: 1.0)
-        return [shareAction,deleteAction]
-    }
-    
     @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
