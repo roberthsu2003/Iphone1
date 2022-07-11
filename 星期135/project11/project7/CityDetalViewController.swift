@@ -17,6 +17,10 @@ class CityDetalViewController: UIViewController {
         if let cityName = city["City"] as? String{
             title = cityName
         }
+        
+        if let imageName = city["Image"] as? String{
+            imageView.image = UIImage(named: imageName)
+        }
     }
     
 
