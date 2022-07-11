@@ -8,11 +8,11 @@
 import UIKit
 
 class CityDetalViewController: UIViewController {
-
+    var city = [String:Any]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(city)
     }
     
 
