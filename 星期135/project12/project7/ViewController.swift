@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var cityTableView:UITableView!
     
-    var cities = [[String:Any]]()
+    var cities = [City]()
     
     
     override func awakeFromNib() {
@@ -24,12 +24,18 @@ class ViewController: UIViewController {
             print("轉換為NSArray有問題")
             return
         }
-        /*
-        guard let cities = citys as? [[String:Any]] else{
-            print("NSArray轉換為Array有問題")
-            return
-        }*/
-        self.cities = cities
+        for city in cities{
+            let cityName = city["City"] as? String ?? ""
+            let country = city["Country"] as? String ?? ""
+            let continent = city["Continent"] as? String ?? ""
+            let image = city["Image"] as? String ?? ""
+            let local = city["Local"] as? String ?? ""
+            let url = city["url"] as? String ?? ""
+            let latitude = city["lat"] as? Double ?? 0.0
+            let longitude = city["long"] as? Double ?? 0.0
+            let oneCity = City(city: cityName, continent: continent, country: country, image: image, local: local, lat: latitude, lon: longitude, url: url)
+            self.cities.append(oneCity)
+        }
         
     }
 
