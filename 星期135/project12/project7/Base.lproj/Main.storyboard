@@ -156,11 +156,28 @@
                     <navigationItem key="navigationItem" id="RLK-Lg-grT"/>
                     <connections>
                         <outlet property="cityImageView" destination="YDR-xq-hph" id="5kM-28-FR8"/>
+                        <segue destination="OkN-uS-t8t" kind="show" identifier="goWeb" id="bdT-af-Ehq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCx-Lz-REE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2085.507246376812" y="16.741071428571427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rBC-jf-QF9">
+            <objects>
+                <viewController id="OkN-uS-t8t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rkJ-tJ-HEV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EO0-h0-32g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xeM-bK-0fD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2967" y="23"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="2dS-zH-slt">

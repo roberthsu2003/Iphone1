@@ -74,7 +74,7 @@ extension CityDetailViewController{
                             didSelectRowAt indexPath: IndexPath){
         
         if indexPath.row == 3{
-            print("換頁吧!")
+            performSegue(withIdentifier: "goWeb", sender: nil)
         }
     }
 }
