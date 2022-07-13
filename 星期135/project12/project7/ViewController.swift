@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goDetail"){
-            guard let city = sender as? [String:Any] else{
+            guard let city = sender as? City else{
                 print("city沒有轉型成功")
                 return
             }

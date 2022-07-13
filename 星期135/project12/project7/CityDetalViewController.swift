@@ -7,31 +7,18 @@
 
 import UIKit
 
-class CityDetailViewController: UIViewController {
-    @IBOutlet var imageView:UIImageView!
+class CityDetailViewController: UITableViewController {
+    //@IBOutlet var imageView:UIImageView!
     
-    var city = [String:Any]()
+    var city:City!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let cityName = city["City"] as? String{
-            title = cityName
-        }
+        title = city.city
+        //imageView.image = UIImage(named: city.image)
         
-        if let imageName = city["Image"] as? String{
-            imageView.image = UIImage(named: imageName)
-        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
