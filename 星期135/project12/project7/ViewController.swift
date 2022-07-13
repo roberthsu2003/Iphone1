@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     var cities = [City]()
     
-    
+        
     override func awakeFromNib() {
         let bundle = Bundle.main
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
@@ -78,10 +78,10 @@ extension ViewController:UITableViewDataSource{
         
         let rowIndex = indexPath.row
         let city = cities[rowIndex]
-        let cityName = city["City"] as? String
-        let imageName = city["Image"] as? String ?? ""
-        let countryName = city["Country"] as? String
-        let continentName = city["Continent"] as? String
+        let cityName = city.city
+        let imageName = city.image
+        let countryName = city.country
+        let continentName = city.continent
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! CityCell
         
         cell.cityLable.text = cityName
