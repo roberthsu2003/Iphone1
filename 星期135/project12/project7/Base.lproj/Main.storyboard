@@ -142,6 +142,10 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="nqc-1t-f6q" secondAttribute="trailing" constant="30" id="xwI-Ge-BB8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fieldLabel" destination="8bd-lP-oaH" id="szp-RW-3Ff"/>
+                                    <outlet property="valueLabel" destination="nqc-1t-f6q" id="IXf-ID-hmA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
