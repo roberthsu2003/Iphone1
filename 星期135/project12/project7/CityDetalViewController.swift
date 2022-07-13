@@ -38,12 +38,11 @@ extension CityDetailViewController{
                 content.text = city.city
             case 1:
                 content.text = city.country
-            case 3:
+            case 2:
                 content.text = city.continent
-                print("continent\(city.continent)")
-            case 4:
+            case 3:
                 content.text = city.url
-                print("url\(city.url)")
+                
             default:
                 break
             }
