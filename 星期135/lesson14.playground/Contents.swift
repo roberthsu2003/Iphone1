@@ -20,6 +20,7 @@ struct Person:FullyNamed{
 }
 
 let john = Person(fullName: "John Appleseed")
+print(john.fullName)
 
 class Starship:FullyNamed{
     var prefix:String?
@@ -35,3 +36,27 @@ class Starship:FullyNamed{
 }
 
 var ncc1701 = Starship(name: "Enterprise", prefix: "USS")
+
+//method Requirements
+
+protocol RandomNumberGenerator{
+    func random() -> Double
+}
+
+class LinearCongruentialGenerator:RandomNumberGenerator{
+    func random() -> Double{
+        return 75.234567
+    }
+}
+
+//initializer Requirements
+protocol SomeProtocol1{
+    init(someParameter:Int)
+}
+
+
+class SomeClass1:SomeProtocol1{
+    required init(someParameter:Int){
+        
+    }
+}
