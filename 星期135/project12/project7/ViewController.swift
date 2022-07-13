@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 print("city沒有轉型成功")
                 return
             }
-            let cityDetailViewController = segue.destination as! CityDetalViewController
+            let cityDetailViewController = segue.destination as! CityDetailViewController
             cityDetailViewController.city = city
             
             

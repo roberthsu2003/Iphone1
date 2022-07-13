@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityDetalViewController: UIViewController {
+class CityDetailViewController: UIViewController {
     @IBOutlet var imageView:UIImageView!
     
     var city = [String:Any]()
