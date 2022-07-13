@@ -45,6 +45,7 @@ extension CityDetailViewController{
         case 3:
             cell.fieldLabel?.text = "網址"
             cell.valueLabel?.text = city.url
+            cell.accessoryType = .disclosureIndicator
             
         case 4:
             cell.fieldLabel?.text = "說明"
@@ -57,3 +58,25 @@ extension CityDetailViewController{
        
     }
 }
+
+extension CityDetailViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   willSelectRowAt indexPath: IndexPath) -> IndexPath?{
+        if indexPath.row == 3{
+            return indexPath
+        }else{
+            return nil
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath){
+        
+        if indexPath.row == 3{
+            print("換頁吧!")
+        }
+    }
+}
+
+
