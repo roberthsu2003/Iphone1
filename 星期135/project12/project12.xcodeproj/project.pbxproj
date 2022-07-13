@@ -16,6 +16,7 @@
 		A422456128731139008389FC /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A422456028731139008389FC /* citylist.plist */; };
 		A423F9DF287C4C130065CFA7 /* CityDetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */; };
 		A423F9E1287C5EB30065CFA7 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A423F9E0287C5EB30065CFA7 /* City.swift */; };
+		A447CED2287EFDAA00FB092A /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A447CED1287EFDAA00FB092A /* DetailViewCell.swift */; };
 		A4CE1CB32875AE3000382715 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CE1CB22875AE3000382715 /* CityCell.swift */; };
 		A4DDC7E32878682900F1A9FF /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDC7E12878682900F1A9FF /* NextViewController.swift */; };
 		A4DDC7E42878682900F1A9FF /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DDC7E22878682900F1A9FF /* NextViewController.xib */; };
@@ -33,6 +34,7 @@
 		A422456028731139008389FC /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetalViewController.swift; sourceTree = "<group>"; };
 		A423F9E0287C5EB30065CFA7 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		A447CED1287EFDAA00FB092A /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		A4CE1CB22875AE3000382715 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		A4DDC7E12878682900F1A9FF /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		A4DDC7E22878682900F1A9FF /* NextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				A4DDC7E22878682900F1A9FF /* NextViewController.xib */,
 				A423F9DE287C4C130065CFA7 /* CityDetalViewController.swift */,
 				A423F9E0287C5EB30065CFA7 /* City.swift */,
+				A447CED1287EFDAA00FB092A /* DetailViewCell.swift */,
 			);
 			path = project7;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				A423F9DF287C4C130065CFA7 /* CityDetalViewController.swift in Sources */,
 				A422454B28730C31008389FC /* AppDelegate.swift in Sources */,
 				A4CE1CB32875AE3000382715 /* CityCell.swift in Sources */,
+				A447CED2287EFDAA00FB092A /* DetailViewCell.swift in Sources */,
 				A422454D28730C31008389FC /* SceneDelegate.swift in Sources */,
 				A423F9E1287C5EB30065CFA7 /* City.swift in Sources */,
 			);
