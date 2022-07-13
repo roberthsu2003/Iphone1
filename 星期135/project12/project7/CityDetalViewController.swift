@@ -24,7 +24,7 @@ extension CityDetailViewController{
     //UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 4;
+        return 5;
     }
     
     
@@ -45,6 +45,10 @@ extension CityDetailViewController{
         case 3:
             cell.fieldLabel?.text = "網址"
             cell.valueLabel?.text = city.url
+            
+        case 4:
+            cell.fieldLabel?.text = "說明"
+            cell.valueLabel?.text = city.local
         default:
             break
             
