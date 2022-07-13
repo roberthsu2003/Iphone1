@@ -8,14 +8,14 @@
 import UIKit
 
 class CityDetailViewController: UITableViewController {
-    //@IBOutlet var imageView:UIImageView!
+    @IBOutlet var cityImageView:UIImageView!
     
     var city:City!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = city.city
-        //imageView.image = UIImage(named: city.image)
+        cityImageView.image = UIImage(named: city.image)
         
     }
     
