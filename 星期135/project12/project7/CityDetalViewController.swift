@@ -30,38 +30,25 @@ extension CityDetailViewController{
     
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        if #available(iOS 15, *){
-            var content = cell.defaultContentConfiguration()
-            switch indexPath.row{
-            case 0:
-                content.text = city.city
-            case 1:
-                content.text = city.country
-            case 2:
-                content.text = city.continent
-            case 3:
-                content.text = city.url
-                
-            default:
-                break
-            }
-            cell.contentConfiguration = content
-        }else{
-            switch indexPath.row{
-            case 0:
-                cell.textLabel?.text = city.city
-            case 1:
-                cell.textLabel?.text  = city.country
-            case 3:
-                cell.textLabel?.text  = city.continent
-            case 4:
-                cell.textLabel?.text  = city.url
-            default:
-                break
-            }
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! DetailViewCell
         
+        switch indexPath.row{
+        case 0:
+            cell.fieldLabel?.text = "城市"
+            cell.valueLabel?.text = city.city
+        case 1:
+            cell.fieldLabel?.text = "國家"
+            cell.valueLabel?.text = city.country
+        case 2:
+            cell.fieldLabel?.text = "洲"
+            cell.valueLabel?.text = city.continent
+        case 3:
+            cell.fieldLabel?.text = "網址"
+            cell.valueLabel?.text = city.url
+        default:
+            break
+            
+        }
         return cell
        
     }
