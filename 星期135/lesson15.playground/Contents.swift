@@ -36,3 +36,31 @@ var anotherInt1 = 107
 swapTwoValues(&someInt1, &anotherInt1)
 print(someInt1,anotherInt1)
 
+
+struct IntStack{
+    var items:[Int] = []
+    mutating func push(_ item:Int){
+        items.append(item)
+    }
+    
+    mutating func pop() -> Int{
+        return items.removeLast()
+    }
+}
+
+//Generic Type
+struct Stack<Element>{
+    var items:[Element] = []
+    mutating func push(_ item:Element){
+        items.append(item)
+    }
+    
+    mutating func pop() -> Element{
+        return items.removeLast()
+    }
+}
+
+var stackOfStrins = Stack<String>()
+stackOfStrins.push("uno")
+stackOfStrins.push("dog")
+
