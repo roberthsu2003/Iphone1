@@ -194,12 +194,12 @@
                         <viewLayoutGuide key="safeArea" id="EO0-h0-32g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="top" secondItem="EO0-h0-32g" secondAttribute="top" id="EcY-no-FzD"/>
+                            <constraint firstAttribute="bottom" secondItem="5Gf-qF-Tij" secondAttribute="bottom" id="55I-75-XWk"/>
                             <constraint firstItem="UNz-eM-3sZ" firstAttribute="centerY" secondItem="rkJ-tJ-HEV" secondAttribute="centerY" id="Prf-N8-3we"/>
+                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="trailing" secondItem="EO0-h0-32g" secondAttribute="trailing" id="PsV-NR-Ca9"/>
                             <constraint firstItem="UNz-eM-3sZ" firstAttribute="centerX" secondItem="rkJ-tJ-HEV" secondAttribute="centerX" id="YD1-vh-vzU"/>
-                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="leading" secondItem="EO0-h0-32g" secondAttribute="leading" id="aCm-4u-DD2"/>
-                            <constraint firstAttribute="bottom" secondItem="5Gf-qF-Tij" secondAttribute="bottom" id="dya-6P-jah"/>
-                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="trailing" secondItem="EO0-h0-32g" secondAttribute="trailing" id="g3H-0O-Vdi"/>
+                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="leading" secondItem="EO0-h0-32g" secondAttribute="leading" id="Zu0-FP-XBz"/>
+                            <constraint firstItem="5Gf-qF-Tij" firstAttribute="top" secondItem="EO0-h0-32g" secondAttribute="top" id="o8Z-2a-VJO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xeM-bK-0fD"/>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="99"/>
+            <point key="canvasLocation" x="2882.608695652174" y="98.4375"/>
         </scene>
         <!--Item-->
         <scene sceneID="qg1-Dj-WIa">
@@ -219,14 +219,39 @@
                     <view key="view" contentMode="scaleToFill" id="ASI-7B-S3E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Edinburgh" translatesAutoresizingMaskIntoConstraints="NO" id="s7D-MQ-nuW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGv-WZ-fZk">
+                                <rect key="frame" x="40" y="100" width="334" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UGv-WZ-fZk" secondAttribute="height" multiplier="167:279" id="GnE-EM-mkx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YYG-sD-cSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s7D-MQ-nuW" firstAttribute="trailing" secondItem="YYG-sD-cSs" secondAttribute="trailing" id="G7o-gk-qG4"/>
+                            <constraint firstItem="s7D-MQ-nuW" firstAttribute="leading" secondItem="YYG-sD-cSs" secondAttribute="leading" id="Idk-I8-DJg"/>
+                            <constraint firstItem="UGv-WZ-fZk" firstAttribute="top" secondItem="YYG-sD-cSs" secondAttribute="top" constant="56" id="KFy-lT-kBe"/>
+                            <constraint firstAttribute="bottom" secondItem="s7D-MQ-nuW" secondAttribute="bottom" id="acY-0J-iip"/>
+                            <constraint firstItem="s7D-MQ-nuW" firstAttribute="top" secondItem="ASI-7B-S3E" secondAttribute="top" id="cl7-XQ-I5c"/>
+                            <constraint firstItem="UGv-WZ-fZk" firstAttribute="leading" secondItem="YYG-sD-cSs" secondAttribute="leading" constant="40" id="ek8-uD-fZ6"/>
+                            <constraint firstItem="YYG-sD-cSs" firstAttribute="trailing" secondItem="UGv-WZ-fZk" secondAttribute="trailing" constant="40" id="yDj-JT-D3i"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="vD6-1A-ed1"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="s7D-MQ-nuW" id="cwG-M0-boK"/>
+                        <outlet property="containerView" destination="UGv-WZ-fZk" id="DvW-yC-FK7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQL-aO-MtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2993" y="-695"/>
+            <point key="canvasLocation" x="2992.753623188406" y="-695.08928571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NYV-uL-dRI">
@@ -248,6 +273,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Edinburgh" width="640" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
