@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="2085.507246376812" y="16.741071428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="rBC-jf-QF9">
             <objects>
-                <viewController id="OkN-uS-t8t" sceneMemberID="viewController">
+                <viewController id="OkN-uS-t8t" customClass="WebViewController" customModule="project12" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkJ-tJ-HEV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="23"/>
+            <point key="canvasLocation" x="2884" y="23"/>
         </scene>
         <!--Next View Controller-->
         <scene sceneID="2dS-zH-slt">

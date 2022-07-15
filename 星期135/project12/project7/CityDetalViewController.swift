@@ -18,6 +18,13 @@ class CityDetailViewController: UITableViewController {
         cityImageView.image = UIImage(named: city.image)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goWeb"{
+            let webViewController = segue.destination as! WebViewController
+            webViewController.city = city
+        }
+    }
 }
 
 extension CityDetailViewController{
