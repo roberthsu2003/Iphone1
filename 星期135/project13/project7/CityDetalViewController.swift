@@ -27,6 +27,9 @@ class CityDetailViewController: UITableViewController {
         if segue.identifier == "goWeb"{
             let webViewController = segue.destination as! WebViewController
             webViewController.city = city
+        }else if segue.identifier == "goRate"{
+            let rateViewController = segue.destination as! RatingViewController
+            rateViewController.city = city
         }
     }
 }
