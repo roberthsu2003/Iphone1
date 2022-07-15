@@ -11,6 +11,7 @@ import WebKit
 class WebViewController: UIViewController {
     var city:City!
     @IBOutlet var webView:WKWebView!
+    @IBOutlet var indicatorView:UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,11 @@ class WebViewController: UIViewController {
 extension WebViewController:WKNavigationDelegate{
     func webView(_ webView: WKWebView,
                  didStartProvisionalNavigation navigation: WKNavigation!){
-        print("開始載入")
+        indicatorView.startAnimating()
     }
     
     func webView(_ webView: WKWebView,
                  didFinish navigation: WKNavigation!){
-        print("載入完成")
+        indicatorView.stopAnimating()
     }
 }

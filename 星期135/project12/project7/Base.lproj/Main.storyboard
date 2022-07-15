@@ -179,11 +179,17 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-eM-3sZ">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemBlueColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EO0-h0-32g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5Gf-qF-Tij" firstAttribute="top" secondItem="EO0-h0-32g" secondAttribute="top" id="EcY-no-FzD"/>
+                            <constraint firstItem="UNz-eM-3sZ" firstAttribute="centerY" secondItem="rkJ-tJ-HEV" secondAttribute="centerY" id="Prf-N8-3we"/>
+                            <constraint firstItem="UNz-eM-3sZ" firstAttribute="centerX" secondItem="rkJ-tJ-HEV" secondAttribute="centerX" id="YD1-vh-vzU"/>
                             <constraint firstItem="5Gf-qF-Tij" firstAttribute="leading" secondItem="EO0-h0-32g" secondAttribute="leading" id="aCm-4u-DD2"/>
                             <constraint firstAttribute="bottom" secondItem="5Gf-qF-Tij" secondAttribute="bottom" id="dya-6P-jah"/>
                             <constraint firstItem="5Gf-qF-Tij" firstAttribute="trailing" secondItem="EO0-h0-32g" secondAttribute="trailing" id="g3H-0O-Vdi"/>
@@ -191,7 +197,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="xeM-bK-0fD"/>
                     <connections>
-                        <outlet property="webView" destination="5Gf-qF-Tij" id="MwH-DJ-Jyx"/>
+                        <outlet property="indicatorView" destination="UNz-eM-3sZ" id="IdF-uz-jXT"/>
+                        <outlet property="webView" destination="5Gf-qF-Tij" id="SXn-yN-F74"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -253,6 +260,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
