@@ -154,11 +154,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="RLK-Lg-grT">
-                        <barButtonItem key="rightBarButtonItem" title="評分" id="HRe-ZK-rmW"/>
+                        <barButtonItem key="rightBarButtonItem" title="評分" id="HRe-ZK-rmW">
+                            <connections>
+                                <action selector="ratingClick:" destination="h34-32-ySv" id="1Ic-U1-sCy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cityImageView" destination="YDR-xq-hph" id="5kM-28-FR8"/>
                         <segue destination="OkN-uS-t8t" kind="show" identifier="goWeb" id="bdT-af-Ehq"/>
+                        <segue destination="H4D-38-Znh" kind="presentation" identifier="goRate" id="ag9-Tg-690"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCx-Lz-REE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,14 +210,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882.608695652174" y="22.767857142857142"/>
+            <point key="canvasLocation" x="2883" y="99"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="qg1-Dj-WIa">
             <objects>
                 <viewController id="H4D-38-Znh" customClass="RatingViewController" customModule="project13" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ASI-7B-S3E">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="YYG-sD-cSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

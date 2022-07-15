@@ -19,6 +19,10 @@ class CityDetailViewController: UITableViewController {
         
     }
     
+    @IBAction func ratingClick(_ sender:UIBarButtonItem){
+        performSegue(withIdentifier: "goRate", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goWeb"{
             let webViewController = segue.destination as! WebViewController
