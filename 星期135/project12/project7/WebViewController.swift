@@ -14,6 +14,13 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appStoreURL = city.url
+        if let urlString = appStoreURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),let url = URL(string: urlString){
+                let request = URLRequest(url: url)
+                webView.load(request)
+        }
+
+        
         
     }
     
