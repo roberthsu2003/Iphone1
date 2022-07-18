@@ -47,6 +47,8 @@ class CityDetailViewController: UITableViewController {
             default:
                 print("default")
             }
+            
+            tableView.reloadData()
         }
     }
 }
@@ -55,7 +57,7 @@ extension CityDetailViewController{
     //UITableViewDataSource
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
-        return 5;
+        return 6;
     }
     
     
@@ -77,8 +79,15 @@ extension CityDetailViewController{
             cell.fieldLabel?.text = "網址"
             cell.valueLabel?.text = city.url
             cell.accessoryType = .disclosureIndicator
-            
         case 4:
+            cell.fieldLabel?.text = "描繪"
+            if let userRate = city.userRate{
+                cell.valueLabel?.text = userRate
+            }else{
+                cell.valueLabel?.text = "目前無資料"
+            }
+            
+        case 5:
             cell.fieldLabel?.text = "說明"
             cell.valueLabel?.text = city.local
         default:
