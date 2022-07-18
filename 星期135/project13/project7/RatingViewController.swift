@@ -29,11 +29,6 @@ class RatingViewController: UIViewController {
         }
     }
     
-    @IBAction func backToDetailViewController(_ sender:UIButton){
-        dismiss(animated: true) {
-            print("回到DetailViewController")
-        }
-    }
     
 
     
