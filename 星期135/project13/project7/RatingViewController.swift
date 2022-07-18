@@ -12,6 +12,7 @@ class RatingViewController: UIViewController {
     @IBOutlet var cityImageView:UIImageView!
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView:UIView!
+    @IBOutlet var askLabel:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class RatingViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         containerView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
         cityImageView.image = UIImage(named: city.image)
-        
+        askLabel.text = "您曾經來過這裏嗎?\n給這個城市一個描素吧!"
     }
     
     override func viewDidAppear(_ animated: Bool) {

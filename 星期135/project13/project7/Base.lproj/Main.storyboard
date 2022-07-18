@@ -232,13 +232,22 @@
                                             <constraint firstAttribute="width" secondItem="QoH-dv-Eeq" secondAttribute="height" multiplier="334:197" id="mwY-9B-b7E"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-JW-qdm">
+                                        <rect key="frame" x="22" y="213" width="291" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="QoH-dv-Eeq" secondAttribute="trailing" id="ChE-T9-fP1"/>
+                                    <constraint firstItem="YTP-JW-qdm" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" constant="22" id="FeJ-6i-Ov1"/>
                                     <constraint firstAttribute="width" secondItem="UGv-WZ-fZk" secondAttribute="height" multiplier="167:279" id="GnE-EM-mkx"/>
                                     <constraint firstItem="QoH-dv-Eeq" firstAttribute="top" secondItem="UGv-WZ-fZk" secondAttribute="top" id="I6s-Ah-S2o"/>
+                                    <constraint firstAttribute="trailing" secondItem="YTP-JW-qdm" secondAttribute="trailing" constant="21" id="LVb-SW-XgB"/>
                                     <constraint firstItem="QoH-dv-Eeq" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" id="Z8M-4R-L4r"/>
+                                    <constraint firstItem="YTP-JW-qdm" firstAttribute="top" secondItem="QoH-dv-Eeq" secondAttribute="bottom" constant="16" id="laS-dX-KfH"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -256,6 +265,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="vD6-1A-ed1"/>
                     <connections>
+                        <outlet property="askLabel" destination="YTP-JW-qdm" id="OwQ-Or-g6n"/>
                         <outlet property="backgroundImageView" destination="s7D-MQ-nuW" id="cwG-M0-boK"/>
                         <outlet property="cityImageView" destination="QoH-dv-Eeq" id="tsc-oz-b98"/>
                         <outlet property="containerView" destination="UGv-WZ-fZk" id="DvW-yC-FK7"/>
