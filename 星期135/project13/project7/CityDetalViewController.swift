@@ -36,14 +36,14 @@ class CityDetailViewController: UITableViewController {
     @IBAction func userClose(_ segue:UIStoryboardSegue){
         if let userRating = segue.identifier{
             switch userRating{
-            case "n1":
-                print("n1")
+            case "n1":                
+                city.userRate = "科技化城市"
             case "n2":
-                print("n2")
+                city.userRate = "風景不錯"
             case "n3":
-                print("n3")
+                city.userRate = "現代化城市"
             case "n4":
-                print("n4")
+                city.userRate = "環保的城市"
             default:
                 print("default")
             }
