@@ -18,9 +18,19 @@ class ViewController: UICollectionViewController {
         let nsArray = try? NSArray(contentsOf: pathURL, error: ())
         if let array = nsArray as? [[String:Any]]{
             for cityDic in array{
-                print(cityDic)
+                let city = City()
+                city.country = cityDic["Country"] as? String ?? ""
+                city.continent = cityDic["Continent"] as? String ?? ""
+                city.image = cityDic["Image"] as? String ?? ""
+                city.local = cityDic["Local"] as? String ?? ""
+                city.url = cityDic["url"] as? String ?? ""
+                city.latitude = cityDic["lat"] as? Double ?? 0.0
+                city.longitude = cityDic["long"] as? Double ?? 0.0
+                cities.append(city)
             }
         }
+        
+        print(cities)
         
     }
 

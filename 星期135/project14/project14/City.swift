@@ -28,4 +28,8 @@ class City{
         self.longitude = longitude
         self.url = url
     }
+    
+    convenience init(){
+        self.init(city: "", continent: "", country: "", image: "", local: "", lat: 0.0, lon: 0.0, url: "")
+    }
 }
