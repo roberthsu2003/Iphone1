@@ -16,7 +16,7 @@ class Apartment{
     init(unit:String){
         self.unit = unit
     }
-    var tenant:Person?
+    weak var tenant:Person?
     deinit{
         print("Apartment \(unit) 記憶體已經回收")
     }
@@ -33,4 +33,5 @@ unit4A!.tenant = john
 
 john = nil
 unit4A = nil
+
 
