@@ -34,7 +34,20 @@ class CityDetailViewController: UITableViewController {
     }
     
     @IBAction func userClose(_ segue:UIStoryboardSegue){
-        print("userClose")
+        if let userRating = segue.identifier{
+            switch userRating{
+            case "n1":
+                print("n1")
+            case "n2":
+                print("n2")
+            case "n3":
+                print("n3")
+            case "n4":
+                print("n4")
+            default:
+                print("default")
+            }
+        }
     }
 }
 
