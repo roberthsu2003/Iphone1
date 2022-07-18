@@ -32,6 +32,10 @@ class CityDetailViewController: UITableViewController {
             rateViewController.city = city
         }
     }
+    
+    @IBAction func userClose(_ segue:UIStoryboardSegue){
+        print("userClose")
+    }
 }
 
 extension CityDetailViewController{

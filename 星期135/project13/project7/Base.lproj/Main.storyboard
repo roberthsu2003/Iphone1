@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ6-cm-vcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882.608695652174" y="98.4375"/>
+            <point key="canvasLocation" x="2983" y="93"/>
         </scene>
         <!--Item-->
         <scene sceneID="qg1-Dj-WIa">
@@ -238,16 +238,73 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-m9-Rxi">
+                                        <rect key="frame" x="39" y="277" width="256" height="246"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAP-az-ipE">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="50.5"/>
+                                                <color key="backgroundColor" red="0.43089865402029903" green="0.50744110241576723" blue="0.66764367487012732" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="科技化城市">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="lEa-ZJ-Wcn" kind="unwind" identifier="n1" unwindAction="userClose:" id="GNY-57-wam"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-Yz-wm5">
+                                                <rect key="frame" x="0.0" y="65.5" width="256" height="50"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="風景不錯">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="lEa-ZJ-Wcn" kind="unwind" identifier="n2" unwindAction="userClose:" id="gGx-uq-xkS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgl-tz-mFp">
+                                                <rect key="frame" x="0.0" y="130.5" width="256" height="50.5"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="很現代的城市">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="lEa-ZJ-Wcn" kind="unwind" identifier="n3" unwindAction="userClose:" id="rlZ-bX-Zt7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rC-PL-Asc">
+                                                <rect key="frame" x="0.0" y="196" width="256" height="50"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="環保的城市">
+                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="lEa-ZJ-Wcn" kind="unwind" identifier="n4" unwindAction="userClose:" id="733-IF-Cru"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vcV-m9-Rxi" secondAttribute="trailing" constant="39" id="8lB-k1-gfS"/>
                                     <constraint firstAttribute="trailing" secondItem="QoH-dv-Eeq" secondAttribute="trailing" id="ChE-T9-fP1"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcV-m9-Rxi" secondAttribute="bottom" constant="35" id="EHF-ra-IvT"/>
                                     <constraint firstItem="YTP-JW-qdm" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" constant="22" id="FeJ-6i-Ov1"/>
                                     <constraint firstAttribute="width" secondItem="UGv-WZ-fZk" secondAttribute="height" multiplier="167:279" id="GnE-EM-mkx"/>
                                     <constraint firstItem="QoH-dv-Eeq" firstAttribute="top" secondItem="UGv-WZ-fZk" secondAttribute="top" id="I6s-Ah-S2o"/>
                                     <constraint firstAttribute="trailing" secondItem="YTP-JW-qdm" secondAttribute="trailing" constant="21" id="LVb-SW-XgB"/>
+                                    <constraint firstItem="vcV-m9-Rxi" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" constant="39" id="PJp-oS-4S8"/>
                                     <constraint firstItem="QoH-dv-Eeq" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" id="Z8M-4R-L4r"/>
                                     <constraint firstItem="YTP-JW-qdm" firstAttribute="top" secondItem="QoH-dv-Eeq" secondAttribute="bottom" constant="16" id="laS-dX-KfH"/>
+                                    <constraint firstItem="vcV-m9-Rxi" firstAttribute="top" secondItem="YTP-JW-qdm" secondAttribute="bottom" constant="35" id="xJi-xt-Xny"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -272,8 +329,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQL-aO-MtJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lEa-ZJ-Wcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2992.753623188406" y="-695.08928571428567"/>
+            <point key="canvasLocation" x="2983" y="-576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NYV-uL-dRI">
