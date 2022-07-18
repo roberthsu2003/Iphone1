@@ -9,6 +9,7 @@ import UIKit
 
 class RatingViewController: UIViewController {
     var city:City!
+    @IBOutlet var cityImageView:UIImageView!
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView:UIView!
     
@@ -19,6 +20,7 @@ class RatingViewController: UIViewController {
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         containerView.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        cityImageView.image = UIImage(named: city.image)
         
     }
     

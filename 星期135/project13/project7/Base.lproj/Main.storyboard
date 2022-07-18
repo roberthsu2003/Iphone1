@@ -225,9 +225,20 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGv-WZ-fZk">
                                 <rect key="frame" x="40" y="100" width="334" height="558"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoH-dv-Eeq">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="197"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QoH-dv-Eeq" secondAttribute="height" multiplier="334:197" id="mwY-9B-b7E"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="QoH-dv-Eeq" secondAttribute="trailing" id="ChE-T9-fP1"/>
                                     <constraint firstAttribute="width" secondItem="UGv-WZ-fZk" secondAttribute="height" multiplier="167:279" id="GnE-EM-mkx"/>
+                                    <constraint firstItem="QoH-dv-Eeq" firstAttribute="top" secondItem="UGv-WZ-fZk" secondAttribute="top" id="I6s-Ah-S2o"/>
+                                    <constraint firstItem="QoH-dv-Eeq" firstAttribute="leading" secondItem="UGv-WZ-fZk" secondAttribute="leading" id="Z8M-4R-L4r"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -246,6 +257,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="vD6-1A-ed1"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="s7D-MQ-nuW" id="cwG-M0-boK"/>
+                        <outlet property="cityImageView" destination="QoH-dv-Eeq" id="tsc-oz-b98"/>
                         <outlet property="containerView" destination="UGv-WZ-fZk" id="DvW-yC-FK7"/>
                     </connections>
                 </viewController>
