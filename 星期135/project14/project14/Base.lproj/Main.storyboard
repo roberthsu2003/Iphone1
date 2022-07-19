@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--城市-->
         <scene sceneID="dVD-oV-APo">
             <objects>
                 <collectionViewController id="XDQ-QS-i7B" customClass="ViewController" customModule="project14" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="XDQ-QS-i7B" id="69y-z0-WsF"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="7ea-PK-lee"/>
+                    <navigationItem key="navigationItem" title="城市" id="7ea-PK-lee"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vec-Ie-oUj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
