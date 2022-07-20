@@ -50,6 +50,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="申請會員的種類" id="DuJ-v6-qn6"/>
+                    <connections>
+                        <outlet property="pickview" destination="GGJ-LP-4He" id="wCi-Eb-bjT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

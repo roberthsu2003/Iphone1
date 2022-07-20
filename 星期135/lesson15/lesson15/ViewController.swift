@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var pickview:UIPickerView!
     
     var kindOfMembers = ["一般會員","銀會員","金會員","黑卡會員"]
 
@@ -17,7 +18,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userChoise(_ sender:UIButton){
-        
+        let index = pickview.selectedRow(inComponent: 0)
+        print(kindOfMembers[index])
     }
     
     
