@@ -20,14 +20,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goMember"{
             print("我的會員申請的segue,被執行了")
+            let index = pickview.selectedRow(inComponent: 0)
+            print(kindOfMembers[index])
         }
         
     }
     
-    @IBAction func userChoise(_ sender:UIButton){
-        let index = pickview.selectedRow(inComponent: 0)
-        print(kindOfMembers[index])
-    }
     
     
 

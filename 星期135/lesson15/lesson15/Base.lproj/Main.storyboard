@@ -35,7 +35,6 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="userChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axy-PO-IJa"/>
                                     <segue destination="Jqh-aw-xzz" kind="show" identifier="goMember" id="Rbb-Qt-UT3"/>
                                 </connections>
                             </button>
