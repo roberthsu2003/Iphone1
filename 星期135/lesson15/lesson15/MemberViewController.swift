@@ -25,11 +25,7 @@ class MemberViewController: UIViewController {
     @IBAction func sendName(_ sender:UIButton){
         let name = nameField.text ?? ""
         let age = ageField.text ?? ""
-        /*
-        if (delegate?.receiveNameAndAge(name: name, age: age)) == nil{
-            print("傳送失敗")
-        }
-         */
+       
         if let delegate = delegate{
             delegate.receiveNameAndAge(name: name, age: age)
         }else{

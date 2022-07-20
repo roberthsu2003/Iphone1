@@ -23,6 +23,7 @@ class ViewController: UIViewController {
             let index = pickview.selectedRow(inComponent: 0)
             let memberName = kindOfMembers[index]
             let memberViewController = segue.destination as! MemberViewController
+            memberViewController.delegate = self
             memberViewController.kindOfMember = memberName
         }
         
@@ -50,6 +51,14 @@ extension ViewController:UIPickerViewDelegate{
                  titleForRow row: Int,
                     forComponent component: Int) -> String?{
         return kindOfMembers[row]
+    }
+}
+
+extension ViewController:MemberViewControllerDelegate{
+    func receiveNameAndAge(name:String, age:String){
+        print("name=\(name)")
+        print("age=\(age)")
+        navigationController!.popViewController(animated: true)
     }
 }
 
