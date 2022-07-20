@@ -36,6 +36,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="userChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axy-PO-IJa"/>
+                                    <segue destination="Jqh-aw-xzz" kind="show" identifier="goMember" id="Rbb-Qt-UT3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,6 +58,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1030" y="37"/>
+        </scene>
+        <!--Member View Controller-->
+        <scene sceneID="0aO-ct-RJ3">
+            <objects>
+                <viewController id="Jqh-aw-xzz" customClass="MemberViewController" customModule="lesson15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oVV-gM-Lf8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EmV-rM-fIe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m2S-1r-dKD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjY-h6-Xal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z6g-WB-nq7">

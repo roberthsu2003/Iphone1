@@ -13,6 +13,7 @@
 		A42340A3288820B700F90755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42340A1288820B700F90755 /* Main.storyboard */; };
 		A42340A5288820B800F90755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A42340A4288820B800F90755 /* Assets.xcassets */; };
 		A42340A8288820B800F90755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42340A6288820B800F90755 /* LaunchScreen.storyboard */; };
+		A42340B02888310300F90755 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42340AF2888310300F90755 /* MemberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A42340A4288820B800F90755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A42340A7288820B800F90755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A42340A9288820B800F90755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42340AF2888310300F90755 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				A42340A4288820B800F90755 /* Assets.xcassets */,
 				A42340A6288820B800F90755 /* LaunchScreen.storyboard */,
 				A42340A9288820B800F90755 /* Info.plist */,
+				A42340AF2888310300F90755 /* MemberViewController.swift */,
 			);
 			path = lesson15;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42340B02888310300F90755 /* MemberViewController.swift in Sources */,
 				A42340A0288820B700F90755 /* ViewController.swift in Sources */,
 				A423409C288820B700F90755 /* AppDelegate.swift in Sources */,
 				A423409E288820B700F90755 /* SceneDelegate.swift in Sources */,
