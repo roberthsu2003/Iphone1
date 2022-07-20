@@ -67,14 +67,67 @@
                     <view key="view" contentMode="scaleToFill" id="oVV-gM-Lf8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGh-3V-CPO">
+                                <rect key="frame" x="63" y="129.5" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0g-lj-qZi">
+                                <rect key="frame" x="121" y="123" width="251" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年齡:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WA8-rm-fsL">
+                                <rect key="frame" x="63" y="179.5" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ph4-fG-K29">
+                                <rect key="frame" x="121" y="173" width="251" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DO-Za-VUk">
+                                <rect key="frame" x="246.5" y="235" width="125.5" height="31"/>
+                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="送出"/>
+                                <connections>
+                                    <action selector="sendName:" destination="Jqh-aw-xzz" eventType="touchUpInside" id="yFs-sw-rjG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="EmV-rM-fIe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EmV-rM-fIe" firstAttribute="trailing" secondItem="k0g-lj-qZi" secondAttribute="trailing" constant="42" id="6tp-fR-Ph6"/>
+                            <constraint firstItem="EGh-3V-CPO" firstAttribute="leading" secondItem="EmV-rM-fIe" secondAttribute="leading" constant="63" id="D1H-MG-eJY"/>
+                            <constraint firstItem="4DO-Za-VUk" firstAttribute="top" secondItem="ph4-fG-K29" secondAttribute="bottom" constant="28" id="FIv-ef-VhC"/>
+                            <constraint firstItem="k0g-lj-qZi" firstAttribute="top" secondItem="EmV-rM-fIe" secondAttribute="top" constant="35" id="Lo7-iZ-46z"/>
+                            <constraint firstItem="4DO-Za-VUk" firstAttribute="width" secondItem="ph4-fG-K29" secondAttribute="width" multiplier="1:2" id="Qbu-nK-dha"/>
+                            <constraint firstItem="4DO-Za-VUk" firstAttribute="trailing" secondItem="ph4-fG-K29" secondAttribute="trailing" id="RLX-Pf-72H"/>
+                            <constraint firstItem="k0g-lj-qZi" firstAttribute="leading" secondItem="EGh-3V-CPO" secondAttribute="trailing" constant="18" id="Xzw-Eh-goN"/>
+                            <constraint firstItem="k0g-lj-qZi" firstAttribute="centerY" secondItem="EGh-3V-CPO" secondAttribute="centerY" id="fbc-PJ-sG4"/>
+                            <constraint firstItem="ph4-fG-K29" firstAttribute="top" secondItem="k0g-lj-qZi" secondAttribute="bottom" constant="16" id="k3f-vc-zo6"/>
+                            <constraint firstItem="ph4-fG-K29" firstAttribute="leading" secondItem="WA8-rm-fsL" secondAttribute="trailing" constant="18" id="plg-Mj-sdu"/>
+                            <constraint firstItem="ph4-fG-K29" firstAttribute="centerY" secondItem="WA8-rm-fsL" secondAttribute="centerY" id="tbs-6F-sC3"/>
+                            <constraint firstItem="WA8-rm-fsL" firstAttribute="leading" secondItem="EmV-rM-fIe" secondAttribute="leading" constant="63" id="u8W-YE-Moj"/>
+                            <constraint firstItem="EmV-rM-fIe" firstAttribute="trailing" secondItem="ph4-fG-K29" secondAttribute="trailing" constant="42" id="udF-ZH-bcv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="m2S-1r-dKD"/>
+                    <connections>
+                        <outlet property="ageField" destination="ph4-fG-K29" id="pWm-zD-wWc"/>
+                        <outlet property="nameField" destination="k0g-lj-qZi" id="PJc-zO-72S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjY-h6-Xal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="37"/>
+            <point key="canvasLocation" x="1819" y="-4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z6g-WB-nq7">

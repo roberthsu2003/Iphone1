@@ -8,11 +8,21 @@
 import UIKit
 
 class MemberViewController: UIViewController {
+    @IBOutlet var nameField:UITextField!
+    @IBOutlet var ageField:UITextField!
+    
     var kindOfMember:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = kindOfMember
+    }
+    
+    @IBAction func sendName(_ sender:UIButton){
+        let name = nameField.text ?? ""
+        let age = ageField.text ?? ""
+        print(name)
+        print(age)
     }
     
 
