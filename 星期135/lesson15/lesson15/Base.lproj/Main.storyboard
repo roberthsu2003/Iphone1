@@ -49,7 +49,9 @@
                             <constraint firstItem="GGJ-LP-4He" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WGf-bk-IHX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="申請會員的種類" id="DuJ-v6-qn6"/>
+                    <navigationItem key="navigationItem" title="申請會員的種類" id="DuJ-v6-qn6">
+                        <barButtonItem key="backBarButtonItem" title="種類" id="pVZ-Lk-kvw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="pickview" destination="GGJ-LP-4He" id="wCi-Eb-bjT"/>
                     </connections>

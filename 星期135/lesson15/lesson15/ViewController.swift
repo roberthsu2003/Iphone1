@@ -21,7 +21,9 @@ class ViewController: UIViewController {
         if segue.identifier == "goMember"{
             print("我的會員申請的segue,被執行了")
             let index = pickview.selectedRow(inComponent: 0)
-            print(kindOfMembers[index])
+            let memberName = kindOfMembers[index]
+            let memberViewController = segue.destination as! MemberViewController
+            memberViewController.kindOfMember = memberName
         }
         
     }
