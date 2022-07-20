@@ -23,10 +23,27 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cTN-Ha-Ugl"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWb-U8-aKW">
+                                <rect key="frame" x="144" y="790" width="126" height="31"/>
+                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="N6u-Hx-S0k"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="立即申辦">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="userChoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axy-PO-IJa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RWb-U8-aKW" secondAttribute="bottom" constant="41" id="M1V-Nd-o75"/>
+                            <constraint firstItem="RWb-U8-aKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcB-3r-RMK"/>
                             <constraint firstItem="GGJ-LP-4He" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OxT-sI-Wuu"/>
                             <constraint firstItem="GGJ-LP-4He" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SpT-Lc-K1J"/>
                             <constraint firstItem="GGJ-LP-4He" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WGf-bk-IHX"/>
@@ -58,6 +75,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
