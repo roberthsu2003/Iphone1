@@ -107,7 +107,11 @@ extension ViewController{
 
 
 extension ViewController{
-    //UICollectionViewDataDelegate
-    
+    //UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath){
+        let city = cities[indexPath.row]
+        performSegue(withIdentifier: "goMap", sender: city)
+    }
 }
 
