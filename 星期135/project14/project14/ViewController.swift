@@ -36,7 +36,8 @@ class ViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewController")
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
     }
 
 
