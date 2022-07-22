@@ -58,6 +58,10 @@ extension ViewController{
             bv.contentMode = .scaleToFill
             bv.backgroundColor = UIColor.lightGray
             cell.backgroundView = bv
+            
+            let selectionView = UIView(frame: cell.bounds)
+            selectionView.backgroundColor = UIColor(white: 0.2, alpha: 0.5)
+            cell.selectedBackgroundView = selectionView
         }
         return cell
     }
