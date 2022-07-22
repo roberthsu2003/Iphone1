@@ -30,8 +30,6 @@ class ViewController: UICollectionViewController {
             }
         }
         
-        print(cities)
-        
     }
 
     override func viewDidLoad() {
@@ -78,10 +76,31 @@ extension ViewController{
                 
                 cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
             ])
+            
+            let cityLabel = UILabel()
+            cityLabel.translatesAutoresizingMaskIntoConstraints = false
+            cell.contentView.addSubview(cityLabel)
+            cityLabel.tag = 2
+            NSLayoutConstraint.activate([
+                cityLabel.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor, constant: 0),
+                cityLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor, constant: 0),
+                cityLabel.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: -20),
+                cityLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 20),
+                cityLabel.heightAnchor.constraint(equalToConstant: 40)
+            ])
+            cityLabel.textColor = .white
+            cityLabel.highlightedTextColor = .black
+            cityLabel.backgroundColor = .clear
+            
         }
         
         let cityImageView = cell.viewWithTag(1) as! UIImageView
         cityImageView.image = UIImage(named: city.image)
+        
+        let lab = cell.viewWithTag(2) as! UILabel
+        
+        lab.text = city.city
+        print(city.city)
         return cell
     }
 }
