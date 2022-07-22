@@ -66,5 +66,14 @@ extension ViewController:MemberViewControllerDelegate{
         print("使用者按下cancel")
         dismiss(animated: true, completion: nil)
     }
+    
+    func func1(){
+        print("使用者按下功能1")
+        dismiss(animated: true, completion: nil)
+    }
+    func func2(){
+        print("使用者按下功能2")
+        dismiss(animated: true, completion: nil)
+    }
 }
 

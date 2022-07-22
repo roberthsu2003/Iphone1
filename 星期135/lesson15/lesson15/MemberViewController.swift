@@ -9,6 +9,8 @@ import UIKit
 protocol MemberViewControllerDelegate:AnyObject{
     func receiveNameAndAge(name:String, age:String)
     func cancelData()
+    func func1()
+    func func2()
 }
 
 class MemberViewController: UIViewController {
@@ -39,6 +41,18 @@ class MemberViewController: UIViewController {
     @IBAction func userClickCancel(_ sender:UIButton){
         if let delegate = delegate{
             delegate.cancelData()
+        }
+    }
+    
+    @IBAction func userClickfunc1(_ sender:UIButton){
+        if let delegate = delegate{
+            delegate.func1()
+        }
+    }
+    
+    @IBAction func userClickfunc2(_ sender:UIButton){
+        if let delegate = delegate{
+            delegate.func2()
         }
     }
     

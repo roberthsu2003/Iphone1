@@ -116,6 +116,9 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="功能1"/>
+                                <connections>
+                                    <action selector="userClickfunc1:" destination="Jqh-aw-xzz" eventType="touchUpInside" id="VMC-pI-jN9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URd-z4-MVt">
                                 <rect key="frame" x="246.5" y="370" width="125.5" height="31"/>
@@ -123,6 +126,9 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="功能2"/>
+                                <connections>
+                                    <action selector="userClickfunc2:" destination="Jqh-aw-xzz" eventType="touchUpInside" id="jlU-cO-xIn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EmV-rM-fIe"/>
