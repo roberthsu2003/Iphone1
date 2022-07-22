@@ -19,6 +19,7 @@ class ViewController: UICollectionViewController {
         if let array = nsArray as? [[String:Any]]{
             for cityDic in array{
                 let city = City()
+                city.city = cityDic["City"] as? String ?? ""
                 city.country = cityDic["Country"] as? String ?? ""
                 city.continent = cityDic["Continent"] as? String ?? ""
                 city.image = cityDic["Image"] as? String ?? ""
@@ -76,6 +77,7 @@ extension ViewController{
                 
                 cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
             ])
+             
             
             let cityLabel = UILabel()
             cityLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -83,10 +85,7 @@ extension ViewController{
             cityLabel.tag = 2
             NSLayoutConstraint.activate([
                 cityLabel.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor, constant: 0),
-                cityLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor, constant: 0),
-                cityLabel.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: -20),
-                cityLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 20),
-                cityLabel.heightAnchor.constraint(equalToConstant: 40)
+                cityLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor, constant: 0)
             ])
             cityLabel.textColor = .white
             cityLabel.highlightedTextColor = .black
@@ -96,11 +95,12 @@ extension ViewController{
         
         let cityImageView = cell.viewWithTag(1) as! UIImageView
         cityImageView.image = UIImage(named: city.image)
+         
         
         let lab = cell.viewWithTag(2) as! UILabel
-        
-        lab.text = city.city
         print(city.city)
+        lab.text = city.city
+        
         return cell
     }
 }
