@@ -22,7 +22,8 @@ class ViewController: UIViewController {
             print("我的會員申請的segue,被執行了")
             let index = pickview.selectedRow(inComponent: 0)
             let memberName = kindOfMembers[index]
-            let memberViewController = segue.destination as! MemberViewController
+            let navigationController = segue.destination as! UINavigationController
+            let memberViewController = navigationController.topViewController as! MemberViewController
             memberViewController.delegate = self
             memberViewController.kindOfMember = memberName
         }
@@ -58,7 +59,7 @@ extension ViewController:MemberViewControllerDelegate{
     func receiveNameAndAge(name:String, age:String){
         print("name=\(name)")
         print("age=\(age)")
-        navigationController!.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }
 
