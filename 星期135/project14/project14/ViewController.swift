@@ -68,6 +68,16 @@ extension ViewController{
             cityImageView.tag = 1
             cityImageView.contentMode = .scaleAspectFill
             cell.contentView.addSubview(cityImageView)
+            cityImageView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                cityImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
+                
+                cityImageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 0),
+                
+                cityImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 0),
+                
+                cityImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 0)
+            ])
         }
         
         let cityImageView = cell.viewWithTag(1) as! UIImageView
