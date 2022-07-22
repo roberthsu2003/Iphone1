@@ -61,5 +61,10 @@ extension ViewController:MemberViewControllerDelegate{
         print("age=\(age)")
         dismiss(animated: true, completion: nil)
     }
+    
+    func cancelData(){
+        print("使用者按下cancel")
+        dismiss(animated: true, completion: nil)
+    }
 }
 

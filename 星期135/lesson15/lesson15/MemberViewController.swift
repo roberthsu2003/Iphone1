@@ -8,6 +8,7 @@
 import UIKit
 protocol MemberViewControllerDelegate:AnyObject{
     func receiveNameAndAge(name:String, age:String)
+    func cancelData()
 }
 
 class MemberViewController: UIViewController {
@@ -20,6 +21,8 @@ class MemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = kindOfMember
+        nameField.delegate = self
+        ageField.delegate = self
     }
     
     @IBAction func sendName(_ sender:UIButton){
@@ -33,7 +36,20 @@ class MemberViewController: UIViewController {
         }
     }
     
+    @IBAction func userClickCancel(_ sender:UIButton){
+        if let delegate = delegate{
+            delegate.cancelData()
+        }
+    }
+    
 
    
 
+}
+
+extension  MemberViewController:UITextFieldDelegate{
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        print("文字欄位要開始編輯了")
+        return true
+    }
 }
