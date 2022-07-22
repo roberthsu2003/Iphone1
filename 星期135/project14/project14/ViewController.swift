@@ -38,6 +38,14 @@ class ViewController: UICollectionViewController {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: 180, height: 120)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap"{
+            let city = sender as! City
+            print(city.city)
+
+        }
+    }
 
 
 }
