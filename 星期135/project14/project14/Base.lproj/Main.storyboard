@@ -78,7 +78,7 @@
                                     <constraint firstAttribute="height" constant="250" id="rRj-59-cS4"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Hj4-Cp-gLq" kind="embed" id="4Al-Kf-4W3"/>
+                                    <segue destination="Hj4-Cp-gLq" kind="embed" identifier="goPart" id="4Al-Kf-4W3"/>
                                 </connections>
                             </containerView>
                         </subviews>

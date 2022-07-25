@@ -15,10 +15,6 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = city.city
-        
-        
-        
-        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -33,6 +29,12 @@ class MapViewController: UIViewController {
         let height = containerView.bounds.height + 44 + bottomSafeArea + 10
         containerView.transform = CGAffineTransform(translationX: 0, y: height)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goPart"{
+            print("segue goPart")
+        }
     }
     
     @IBAction func popView(_ sender:UIBarButtonItem){
