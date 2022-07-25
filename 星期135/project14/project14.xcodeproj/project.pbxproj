@@ -16,6 +16,7 @@
 		A44F8EFF2885936900E725E1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44F8EFD2885936900E725E1 /* City.swift */; };
 		A44F8F002885936900E725E1 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A44F8EFE2885936900E725E1 /* citylist.plist */; };
 		A4C6B82E288EB3B900702288 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6B82D288EB3B900702288 /* MapViewController.swift */; };
+		A4C6B830288EC27A00702288 /* PartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C6B82F288EC27A00702288 /* PartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A44F8EFD2885936900E725E1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		A44F8EFE2885936900E725E1 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		A4C6B82D288EB3B900702288 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A4C6B82F288EC27A00702288 /* PartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				A44F8EF42885920800E725E1 /* LaunchScreen.storyboard */,
 				A44F8EF72885920800E725E1 /* Info.plist */,
 				A4C6B82D288EB3B900702288 /* MapViewController.swift */,
+				A4C6B82F288EC27A00702288 /* PartViewController.swift */,
 			);
 			path = project14;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				A44F8EEE2885920600E725E1 /* ViewController.swift in Sources */,
 				A44F8EEA2885920600E725E1 /* AppDelegate.swift in Sources */,
 				A44F8EFF2885936900E725E1 /* City.swift in Sources */,
+				A4C6B830288EC27A00702288 /* PartViewController.swift in Sources */,
 				A4C6B82E288EB3B900702288 /* MapViewController.swift in Sources */,
 				A44F8EEC2885920600E725E1 /* SceneDelegate.swift in Sources */,
 			);

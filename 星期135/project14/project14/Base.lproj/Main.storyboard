@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-l8-lkt">
-                                <rect key="frame" x="0.0" y="548" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="592" width="414" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="rRj-59-cS4"/>
                                 </constraints>
@@ -89,12 +89,12 @@
                             <constraint firstItem="C2i-aS-8xV" firstAttribute="top" secondItem="UVN-W2-CNN" secondAttribute="top" id="7d8-gg-By8"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="top" secondItem="C2i-aS-8xV" secondAttribute="bottom" id="8oU-NB-wNf"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="Bad-ow-eXJ"/>
+                            <constraint firstAttribute="bottom" secondItem="6cd-l8-lkt" secondAttribute="bottom" id="FKb-ty-xnR"/>
                             <constraint firstItem="C2i-aS-8xV" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="JiS-wc-Ma1"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="NnU-zg-68h"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="bottom" secondItem="J8M-Vn-Gpx" secondAttribute="bottom" id="gkF-dE-7Td"/>
                             <constraint firstItem="6cd-l8-lkt" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="lH0-4q-OR8"/>
                             <constraint firstItem="6cd-l8-lkt" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="vuS-FS-mDA"/>
-                            <constraint firstItem="xUd-77-XFc" firstAttribute="top" secondItem="6cd-l8-lkt" secondAttribute="bottom" id="yAD-tj-oSz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qKL-1B-HPI"/>
@@ -142,20 +142,33 @@
             </objects>
             <point key="canvasLocation" x="1611.5942028985507" y="59.598214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Part View Controller-->
         <scene sceneID="F6a-xC-eHn">
             <objects>
-                <viewController id="Hj4-Cp-gLq" sceneMemberID="viewController">
+                <viewController id="Hj4-Cp-gLq" customClass="PartViewController" customModule="project14" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VRw-bJ-uah">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5w-TN-EMc">
+                                <rect key="frame" x="358" y="15" width="41" height="32"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="close:" destination="Hj4-Cp-gLq" eventType="touchUpInside" id="Qak-Db-xIc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hyI-du-R5D"/>
                         <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="u5w-TN-EMc" firstAttribute="top" secondItem="VRw-bJ-uah" secondAttribute="top" constant="15" id="Zjf-mB-g5g"/>
+                            <constraint firstAttribute="trailing" secondItem="u5w-TN-EMc" secondAttribute="trailing" constant="15" id="vSc-Pt-1T4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wE5-8w-eqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3549" y="248"/>
+            <point key="canvasLocation" x="3394" y="244"/>
         </scene>
     </scenes>
     <resources>
