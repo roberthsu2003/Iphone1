@@ -106,6 +106,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="6cd-l8-lkt" id="oMo-FL-jzr"/>
+                        <outlet property="mapView" destination="C2i-aS-8xV" id="9VI-XA-flM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bE-D1-6kE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

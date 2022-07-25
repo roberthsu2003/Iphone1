@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
     var city:City!
     var bottomSafeArea: CGFloat!
     var moveHeight:CGFloat!
+    @IBOutlet var mapView:MKMapView!
     
     @IBOutlet var containerView:UIView!
     
