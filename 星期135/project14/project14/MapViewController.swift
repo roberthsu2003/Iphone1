@@ -30,6 +30,7 @@ class MapViewController: UIViewController {
                 if let location = placemark?.location{
                     annotation.coordinate = location.coordinate
                     self.mapView.showAnnotations([annotation], animated: true)
+                    self.mapView.selectAnnotation(annotation, animated: true)
                     let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                     self.mapView.setRegion(region, animated: false)
                 }
