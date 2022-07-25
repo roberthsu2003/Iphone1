@@ -42,7 +42,9 @@ class ViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goMap"{
             let city = sender as! City
-            print(city.city)
+            let navi = segue.destination as! UINavigationController
+            let mapViewController = navi.topViewController as! MapViewController
+            mapViewController.city = city;
 
         }
     }

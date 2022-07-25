@@ -40,28 +40,45 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="城市" id="7ea-PK-lee"/>
                     <connections>
-                        <segue destination="ZJE-IP-9e9" kind="show" identifier="goMap" id="5AP-I7-VrI"/>
+                        <segue destination="kvf-cn-bEV" kind="presentation" identifier="goMap" id="PZU-Ps-G3Q"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vec-Ie-oUj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="784" y="60"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="3eE-So-m1W">
             <objects>
-                <viewController id="ZJE-IP-9e9" sceneMemberID="viewController">
+                <viewController id="ZJE-IP-9e9" customClass="MapViewController" customModule="project14" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UVN-W2-CNN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-77-XFc">
+                                <rect key="frame" x="0.0" y="798" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="功能1" id="Rqj-Cm-7SD"/>
+                                    <barButtonItem title="功能2" id="cGa-Wg-Yrv"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZTu-0I-Zq3"/>
+                                    <barButtonItem title="功能3" id="GMf-Ay-rAk"/>
+                                    <barButtonItem title="功能4" id="RPW-rU-ZHl"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J8M-Vn-Gpx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xUd-77-XFc" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="Bad-ow-eXJ"/>
+                            <constraint firstItem="xUd-77-XFc" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="NnU-zg-68h"/>
+                            <constraint firstItem="xUd-77-XFc" firstAttribute="bottom" secondItem="J8M-Vn-Gpx" secondAttribute="bottom" id="gkF-dE-7Td"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qKL-1B-HPI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bE-D1-6kE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613" y="60"/>
+            <point key="canvasLocation" x="2521.739130434783" y="59.598214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qka-tt-Xp1">
@@ -80,6 +97,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi6-uj-LXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="96" y="60"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nTA-R5-t9h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kvf-cn-bEV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="moK-He-Ymi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZJE-IP-9e9" kind="relationship" relationship="rootViewController" id="vhF-Ap-C1U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePt-ym-jQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1611.5942028985507" y="59.598214285714285"/>
         </scene>
     </scenes>
     <resources>
