@@ -58,7 +58,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-77-XFc">
                                 <rect key="frame" x="0.0" y="798" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="功能1" id="Rqj-Cm-7SD"/>
+                                    <barButtonItem title="功能1" id="Rqj-Cm-7SD">
+                                        <connections>
+                                            <action selector="popView:" destination="ZJE-IP-9e9" id="ren-qi-j97"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="功能2" id="cGa-Wg-Yrv"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ZTu-0I-Zq3"/>
                                     <barButtonItem title="功能3" id="GMf-Ay-rAk"/>

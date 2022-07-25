@@ -31,8 +31,14 @@ class MapViewController: UIViewController {
         }
 
         let height = containerView.bounds.height + 44 + bottomSafeArea + 10
-        containerView.transform = CGAffineTransform(translationX: 0, y: height)        
+        containerView.transform = CGAffineTransform(translationX: 0, y: height)
         
+    }
+    
+    @IBAction func popView(_ sender:UIBarButtonItem){
+        UIView.animate(withDuration: 0.5){
+            self.containerView.transform = CGAffineTransform.identity
+        }
     }
     
     
