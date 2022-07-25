@@ -9,10 +9,31 @@ import UIKit
 
 class MapViewController: UIViewController {
     var city:City!
+    var bottomSafeArea: CGFloat!
+    @IBOutlet var containerView:UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city.city)
+        title = city.city
+        
+        
+        
+        
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var bottomSafeArea: CGFloat!
 
+        if #available(iOS 11.0, *) {
+            bottomSafeArea = view.safeAreaInsets.bottom
+        } else {
+            bottomSafeArea = bottomLayoutGuide.length
+        }
+
+        let height = containerView.bounds.height + 44 + bottomSafeArea + 10
+        containerView.transform = CGAffineTransform(translationX: 0, y: height)        
+        
+    }
+    
+    
 }
