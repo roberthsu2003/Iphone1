@@ -10,6 +10,8 @@ import UIKit
 class MapViewController: UIViewController {
     var city:City!
     var bottomSafeArea: CGFloat!
+    var moveHeight:CGFloat!
+    
     @IBOutlet var containerView:UIView!
     
     override func viewDidLoad() {
@@ -26,8 +28,8 @@ class MapViewController: UIViewController {
             bottomSafeArea = bottomLayoutGuide.length
         }
 
-        let height = containerView.bounds.height + 44 + bottomSafeArea + 10
-        containerView.transform = CGAffineTransform(translationX: 0, y: height)
+        moveHeight = containerView.bounds.height + 44 + bottomSafeArea + 10
+        containerView.transform = CGAffineTransform(translationX: 0, y: moveHeight)
         
     }
     
@@ -49,6 +51,8 @@ class MapViewController: UIViewController {
 
 extension MapViewController:PartViewControllerDelegate{
     func popDown(){
-        print("popDown")
+        UIView.animate(withDuration: 0.5){
+            self.containerView.transform = CGAffineTransform(translationX: 0, y: self.moveHeight)
+        }
     }
 }
