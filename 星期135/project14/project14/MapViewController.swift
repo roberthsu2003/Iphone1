@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = city.city
+        mapView.delegate = self;
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -64,4 +65,8 @@ extension MapViewController:PartViewControllerDelegate{
             self.containerView.transform = CGAffineTransform(translationX: 0, y: self.moveHeight)
         }
     }
+}
+
+extension MapViewController:MKMapViewDelegate{
+    
 }
