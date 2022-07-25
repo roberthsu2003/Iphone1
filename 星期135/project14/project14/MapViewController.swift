@@ -33,7 +33,8 @@ class MapViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goPart"{
-            print("segue goPart")
+            let partViewController = segue.destination as! PartViewController
+            partViewController.delegate = self;
         }
     }
     
@@ -44,4 +45,10 @@ class MapViewController: UIViewController {
     }
     
     
+}
+
+extension MapViewController:PartViewControllerDelegate{
+    func popDown(){
+        print("popDown")
+    }
 }

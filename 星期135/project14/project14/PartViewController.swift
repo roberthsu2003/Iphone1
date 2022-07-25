@@ -6,8 +6,13 @@
 //
 
 import UIKit
+protocol PartViewControllerDelegate:AnyObject{
+    func popDown();
+}
 
 class PartViewController: UIViewController {
+    
+    weak var delegate:PartViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +21,9 @@ class PartViewController: UIViewController {
     }
     
     @IBAction func close(_ sender:UIButton){
-        print("user close")
+        if delegate != nil{
+            delegate?.popDown()
+        }
     }
 
 }
