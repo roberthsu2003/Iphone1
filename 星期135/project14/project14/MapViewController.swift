@@ -13,13 +13,21 @@ class MapViewController: UIViewController {
     var bottomSafeArea: CGFloat!
     var moveHeight:CGFloat!
     @IBOutlet var mapView:MKMapView!
-    
     @IBOutlet var containerView:UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = city.city
         mapView.delegate = self;
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(city.city) {
+            (placemarks:[CLPlacemark]?, error:Error?) in
+            if error == nil, let placemarks = placemarks{
+                print(placemarks)
+            }else{
+                print("取得緯經度錯誤")
+            }
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
