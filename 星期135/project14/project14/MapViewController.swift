@@ -23,7 +23,16 @@ class MapViewController: UIViewController {
         geoCoder.geocodeAddressString(city.city) {
             (placemarks:[CLPlacemark]?, error:Error?) in
             if error == nil, let placemarks = placemarks{
-                print(placemarks)
+                let annotation = MKPointAnnotation()
+                annotation.title = self.city.city
+                annotation.subtitle = self.city.country
+                let placemark = placemarks.first
+                if let location = placemark?.location{
+                    annotation.coordinate = location.coordinate
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    self.mapView.setRegion(region, animated: false)
+                }
             }else{
                 print("取得緯經度錯誤")
             }
