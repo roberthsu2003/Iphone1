@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="784" y="60"/>
         </scene>
-        <!--Map View Controller-->
+        <!--City-->
         <scene sceneID="3eE-So-m1W">
             <objects>
                 <viewController id="ZJE-IP-9e9" customClass="MapViewController" customModule="project14" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                                 </items>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="C2i-aS-8xV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="742"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-l8-lkt">
                                 <rect key="frame" x="0.0" y="592" width="414" height="250"/>
@@ -86,18 +86,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="C2i-aS-8xV" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="2kf-V8-fu4"/>
-                            <constraint firstItem="C2i-aS-8xV" firstAttribute="top" secondItem="UVN-W2-CNN" secondAttribute="top" id="7d8-gg-By8"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="top" secondItem="C2i-aS-8xV" secondAttribute="bottom" id="8oU-NB-wNf"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="Bad-ow-eXJ"/>
                             <constraint firstAttribute="bottom" secondItem="6cd-l8-lkt" secondAttribute="bottom" id="FKb-ty-xnR"/>
                             <constraint firstItem="C2i-aS-8xV" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="JiS-wc-Ma1"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="NnU-zg-68h"/>
+                            <constraint firstItem="C2i-aS-8xV" firstAttribute="top" secondItem="J8M-Vn-Gpx" secondAttribute="top" id="Zs8-id-Vnq"/>
                             <constraint firstItem="xUd-77-XFc" firstAttribute="bottom" secondItem="J8M-Vn-Gpx" secondAttribute="bottom" id="gkF-dE-7Td"/>
                             <constraint firstItem="6cd-l8-lkt" firstAttribute="leading" secondItem="J8M-Vn-Gpx" secondAttribute="leading" id="lH0-4q-OR8"/>
                             <constraint firstItem="6cd-l8-lkt" firstAttribute="trailing" secondItem="J8M-Vn-Gpx" secondAttribute="trailing" id="vuS-FS-mDA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qKL-1B-HPI"/>
+                    <navigationItem key="navigationItem" title="City" id="qKL-1B-HPI">
+                        <barButtonItem key="rightBarButtonItem" title="離開" id="U59-Ee-gjK">
+                            <connections>
+                                <action selector="goBack:" destination="ZJE-IP-9e9" id="acp-Nk-FAV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="6cd-l8-lkt" id="oMo-FL-jzr"/>
                     </connections>

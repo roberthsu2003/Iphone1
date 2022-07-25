@@ -46,6 +46,13 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func goBack(_ sender:UIBarButtonItem){
+        dismiss(animated: true)
+        UIView.animate(withDuration: 0.5){
+            self.containerView.transform = CGAffineTransform(translationX: 0, y: self.moveHeight)
+        }
+    }
+    
     
 }
 
