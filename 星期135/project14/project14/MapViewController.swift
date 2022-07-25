@@ -86,5 +86,19 @@ extension MapViewController:PartViewControllerDelegate{
 }
 
 extension MapViewController:MKMapViewDelegate{
-    
+    func mapView(_ mapView: MKMapView,
+                 viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "PIN")
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "PIN")
+            annotationView!.canShowCallout = true;
+        }
+        
+        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+        leftIconView.image = UIImage(named: city.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        return annotationView
+        
+    }
 }
