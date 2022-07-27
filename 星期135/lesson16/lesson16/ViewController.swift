@@ -15,6 +15,11 @@ class ViewController: UIViewController {
         }
         print(sourceUrl.path)
         
+        let documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("citylist.plist")
+        print(documentUrl.path)
+        
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
