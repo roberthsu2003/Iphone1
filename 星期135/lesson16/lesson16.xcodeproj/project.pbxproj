@@ -13,7 +13,7 @@
 		A4F582882891577400561704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F582862891577400561704 /* Main.storyboard */; };
 		A4F5828A2891577700561704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4F582892891577700561704 /* Assets.xcassets */; };
 		A4F5828D2891577700561704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4F5828B2891577700561704 /* LaunchScreen.storyboard */; };
-		A4F582952891580100561704 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4F582942891580100561704 /* citylist.plist */; };
+		A4F582972891605700561704 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4F582962891605700561704 /* citylist.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		A4F582892891577700561704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4F5828C2891577700561704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4F5828E2891577700561704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4F582942891580100561704 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = "../../../iOS行動程式基礎開發上架20堂課/第10堂課建立以表格為基礎的App/資源檔/citylist.plist"; sourceTree = "<group>"; };
+		A4F582962891605700561704 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		A4F5827F2891577400561704 /* lesson16 */ = {
 			isa = PBXGroup;
 			children = (
-				A4F582942891580100561704 /* citylist.plist */,
+				A4F582962891605700561704 /* citylist.plist */,
 				A4F582802891577400561704 /* AppDelegate.swift */,
 				A4F582822891577400561704 /* SceneDelegate.swift */,
 				A4F582842891577400561704 /* ViewController.swift */,
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F5828D2891577700561704 /* LaunchScreen.storyboard in Resources */,
-				A4F582952891580100561704 /* citylist.plist in Resources */,
+				A4F582972891605700561704 /* citylist.plist in Resources */,
 				A4F5828A2891577700561704 /* Assets.xcassets in Resources */,
 				A4F582882891577400561704 /* Main.storyboard in Resources */,
 			);
