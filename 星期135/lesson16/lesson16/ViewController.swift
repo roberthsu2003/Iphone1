@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var documentUrl:URL!
+    var cities:[[String:Any]]!
     
     override func awakeFromNib() {
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
@@ -42,7 +43,9 @@ class ViewController: UIViewController {
         guard let cities = cities_array as? [[String:Any]] else{
             return
         }
-        for city in cities{
+        self.cities = cities
+        
+        for city in self.cities{
             print(city["City"]!)
         }
     }
