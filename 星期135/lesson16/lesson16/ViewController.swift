@@ -61,6 +61,13 @@ class ViewController: UIViewController {
             print(oneCity["City"]!)
         }
     }
+    
+    @IBAction func saveFile(_ sender:UIButton){
+        let cities_array = self.cities as NSArray
+        if (try? cities_array.write(to: documentUrl)) != nil{
+            print("存檔成功")
+        }
+    }
 
 
 }
