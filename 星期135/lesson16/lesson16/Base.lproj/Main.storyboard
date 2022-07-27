@@ -27,15 +27,31 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="GET File"/>
                                 <connections>
-                                    <action selector="getFile:" destination="BYZ-38-t0r" eventType="touchDragInside" id="DYv-qn-KNK"/>
+                                    <action selector="getFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3s-Rt-BFg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vq-ep-mxE">
+                                <rect key="frame" x="124" y="233" width="166" height="66"/>
+                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="AjK-Ra-cFt"/>
+                                    <constraint firstAttribute="height" constant="66" id="Odo-Ao-9OK"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Modify File"/>
+                                <connections>
+                                    <action selector="modifyFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vK-PO-Wbq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7Vq-ep-mxE" firstAttribute="top" secondItem="xcr-HU-FIs" secondAttribute="bottom" constant="61" id="IDw-EK-L49"/>
                             <constraint firstItem="xcr-HU-FIs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="cqv-M2-CQE"/>
                             <constraint firstItem="xcr-HU-FIs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iuX-Cf-9oC"/>
+                            <constraint firstItem="7Vq-ep-mxE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sxO-Ce-fWX"/>
                         </constraints>
                     </view>
                 </viewController>

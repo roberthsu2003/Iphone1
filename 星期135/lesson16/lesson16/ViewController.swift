@@ -49,6 +49,18 @@ class ViewController: UIViewController {
             print(city["City"]!)
         }
     }
+    
+    @IBAction func modifyFile(_ sender:UIButton){
+        for (index,city) in self.cities.enumerated(){
+            var oneCity = city;
+            if var cityName = city["City"] as? String{
+                cityName += "1";
+                oneCity["City"] = cityName;
+            }
+            self.cities[index] = oneCity;
+            print(oneCity["City"]!)
+        }
+    }
 
 
 }
