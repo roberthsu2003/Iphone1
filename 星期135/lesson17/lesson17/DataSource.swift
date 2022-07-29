@@ -70,6 +70,16 @@ class DataSource{
         let cities = plist_array as! [[String:Any]]
         for city in cities{
             let sqlInsertString = "INSERT INTO city(cityName,continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
+            var statement:OpaquePointer!
+            if sqlite3_prepare_v2(db, sqlInsertString, -1, &statement, nil) == SQLITE_OK{
+                print("statement被建立")
+            }else{
+                print("statement建立失敗")
+                sqlite3_finalize(statement)
+                sqlite3_close(db)
+                return
+            }
+            
         }
     }
 }
