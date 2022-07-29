@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Fs-Az-1Nk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zx6-yq-tq3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--國家-->
         <scene sceneID="Lok-RF-pHb">
             <objects>
                 <tableViewController id="5Fs-Az-1Nk" customClass="ViewController" customModule="lesson17" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,10 +30,94 @@
                             <outlet property="delegate" destination="5Fs-Az-1Nk" id="DbN-40-zPF"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="國家" id="JvR-Ps-xh1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZdG-sN-Aiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="-181"/>
+            <point key="canvasLocation" x="2750.7246376811595" y="-181.47321428571428"/>
+        </scene>
+        <!--國家-->
+        <scene sceneID="xz2-sD-qt1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qFD-NI-yFZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="國家" id="Z4c-ip-rgG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ea8-gV-sD7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Fs-Az-1Nk" kind="relationship" relationship="rootViewController" id="cS4-8G-zHi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYh-I6-Rk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="-181.47321428571428"/>
+        </scene>
+        <!--城市-->
+        <scene sceneID="5AD-ND-rdi">
+            <objects>
+                <tableViewController id="RU0-Mf-SZW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="G91-ae-ZO9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CHz-tn-HeO">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CHz-tn-HeO" id="NsV-Wa-lPe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RU0-Mf-SZW" id="2wq-V8-Yn3"/>
+                            <outlet property="delegate" destination="RU0-Mf-SZW" id="6w3-BH-XPs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="城市" id="Ysc-0a-uMK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HO-kp-qTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751" y="552"/>
+        </scene>
+        <!--城市-->
+        <scene sceneID="57B-VW-XSs">
+            <objects>
+                <navigationController id="irI-0i-Ghq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="城市" id="b6c-wh-SmR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UdP-W5-x6a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RU0-Mf-SZW" kind="relationship" relationship="rootViewController" id="YXZ-ml-j9k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tM-Qx-hsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="552"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="grW-xw-gKJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Zx6-yq-tq3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S04-Dd-3xT">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qFD-NI-yFZ" kind="relationship" relationship="viewControllers" id="OGd-wt-vW8"/>
+                        <segue destination="irI-0i-Ghq" kind="relationship" relationship="viewControllers" id="CZJ-dY-5DM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pNq-gK-stE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="-181.47321428571428"/>
         </scene>
     </scenes>
     <resources>
