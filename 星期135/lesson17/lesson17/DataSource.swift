@@ -80,6 +80,37 @@ class DataSource{
                 return
             }
             
+            for (key,value) in city{
+                switch key{
+                case "City":
+                    sqlite3_bind_text(statement, 1, (value as! NSString).utf8String, -1, nil)
+                case "Continent":
+                    sqlite3_bind_text(statement, 2, (value as! NSString).utf8String, -1, nil)
+                case "Country":
+                    sqlite3_bind_text(statement, 3, (value as! NSString).utf8String, -1, nil)
+                case "Image":
+                    sqlite3_bind_text(statement, 4, (value as! NSString).utf8String, -1, nil)
+                case "Local":
+                    sqlite3_bind_text(statement, 5, (value as! NSString).utf8String, -1, nil)
+                case "lat":
+                    sqlite3_bind_double(statement, 6, value as! Double)
+                case "long":
+                    sqlite3_bind_double(statement, 7, value as! Double)
+                case "url":
+                    sqlite3_bind_text(statement, 8, (value as! NSString).utf8String, -1, nil)
+                default:
+                    break
+                }
+            }
+            
+            if sqlite3_step(statement) == SQLITE_DONE{
+                print("insert 成功")
+            }
+            
+            sqlite3_finalize(statement)
         }
+        
+        sqlite3_close(db)
+        print("資料全被加入")
     }
 }
