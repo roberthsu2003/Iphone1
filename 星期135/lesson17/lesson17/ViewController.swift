@@ -9,13 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    override func awakeFromNib() {
-        DataSource.copyFileToDocuments()        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
