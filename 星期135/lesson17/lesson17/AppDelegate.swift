@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //copy plist 和 db至sandbox內
         DataSource.copyFileToDocuments()
+        //fill_Data_to_city.db
+        if !DataSource.isFillDataToSQL{
+            //還沒有填滿資料
+            //開始填資料
+            DataSource.fillSQLiteData()
+        }
+        
         return true
     }
 

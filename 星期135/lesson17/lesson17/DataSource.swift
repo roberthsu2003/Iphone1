@@ -7,6 +7,7 @@
 
 import Foundation
 class DataSource{
+    static var isFillDataToSQL = false
     static func copyFileToDocuments(){
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
             return
@@ -24,15 +25,27 @@ class DataSource{
         
         //沒有檔案才copy檔案
         if !FileManager.default.fileExists(atPath: documentUrl.path){
+            //檔案不存在
             if (try? FileManager.default.copyItem(at: sourceUrl, to: documentUrl)) != nil{
                 print("plist copy 成功")
             }
+        }else{
+            //檔案存在
+            isFillDataToSQL = true;
         }
         
         if !FileManager.default.fileExists(atPath: db_documentUrl.path){
             if (try? FileManager.default.copyItem(at: dbUrl, to: db_documentUrl)) != nil{
+                //檔案不存在
                 print("db copy 成功")
             }
+        }else{
+            //檔案存在
+            isFillDataToSQL = true;
         }
+    }
+    
+    static func fillSQLiteData(){
+        print("fillSQLiteData")
     }
 }
