@@ -10,7 +10,7 @@ import SQLite3
 
 class DataSource{
     static var isFillDataToSQL = false
-    static var plistPath:String!;
+    static var plistURL:URL!;
     static var dbPath:String!;
     
     static func copyFileToDocuments(){
@@ -24,7 +24,7 @@ class DataSource{
         
         let documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("citylist.plist")
         
-        plistPath = documentUrl.path
+        plistURL = documentUrl
         print(documentUrl.path)
         
         let db_documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("city.db")
@@ -60,6 +60,16 @@ class DataSource{
             print("db open")
         }else{
             print("db open error")
+            return
+        }
+        
+        guard let plist_array = try? NSArray(contentsOf: plistURL, error: ()) else{
+            print("解析為NSArray失敗")
+            return
+        }
+        let cities = plist_array as! [[String:Any]]
+        for city in cities{
+            print(city)
         }
     }
 }
