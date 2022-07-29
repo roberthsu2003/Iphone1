@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45D2AB72893F9F50017FDCF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D2AB62893F9F50017FDCF /* DataSource.swift */; };
 		A4F582A5289173BB00561704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F582A4289173BB00561704 /* AppDelegate.swift */; };
 		A4F582A7289173BB00561704 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F582A6289173BB00561704 /* SceneDelegate.swift */; };
 		A4F582A9289173BB00561704 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F582A8289173BB00561704 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A45D2AB62893F9F50017FDCF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		A4F582A1289173BB00561704 /* lesson17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F582A4289173BB00561704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F582A6289173BB00561704 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,8 +28,8 @@
 		A4F582AD289173BD00561704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4F582B0289173BD00561704 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4F582B2289173BD00561704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4F582B82891744500561704 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citylist.plist; path = lesson17/citylist.plist; sourceTree = "<group>"; };
-		A4F582BA289178F500561704 /* city.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = city.db; path = lesson17/city.db; sourceTree = "<group>"; };
+		A4F582B82891744500561704 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		A4F582BA289178F500561704 /* city.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = city.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +46,6 @@
 		A4F58298289173BB00561704 = {
 			isa = PBXGroup;
 			children = (
-				A4F582BA289178F500561704 /* city.db */,
-				A4F582B82891744500561704 /* citylist.plist */,
 				A4F582A3289173BB00561704 /* lesson17 */,
 				A4F582A2289173BB00561704 /* Products */,
 			);
@@ -62,6 +62,9 @@
 		A4F582A3289173BB00561704 /* lesson17 */ = {
 			isa = PBXGroup;
 			children = (
+				A4F582BA289178F500561704 /* city.db */,
+				A4F582B82891744500561704 /* citylist.plist */,
+				A45D2AB62893F9F50017FDCF /* DataSource.swift */,
 				A4F582A4289173BB00561704 /* AppDelegate.swift */,
 				A4F582A6289173BB00561704 /* SceneDelegate.swift */,
 				A4F582A8289173BB00561704 /* ViewController.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				A4F582A9289173BB00561704 /* ViewController.swift in Sources */,
 				A4F582A5289173BB00561704 /* AppDelegate.swift in Sources */,
+				A45D2AB72893F9F50017FDCF /* DataSource.swift in Sources */,
 				A4F582A7289173BB00561704 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson17/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -322,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson17/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
