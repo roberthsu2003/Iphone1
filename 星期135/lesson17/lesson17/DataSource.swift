@@ -69,7 +69,7 @@ class DataSource{
         }
         let cities = plist_array as! [[String:Any]]
         for city in cities{
-            print(city)
+            let sqlInsertString = "INSERT INTO city(cityName,continent,country,image,description,lat,lon,url) VALUES (?,?,?,?,?,?,?,?)"
         }
     }
 }
