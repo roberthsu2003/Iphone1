@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import SQLite3
+
 class DataSource{
     static var isFillDataToSQL = false
+    static var plistPath:String!;
+    static var dbPath:String!;
+    
     static func copyFileToDocuments(){
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
             return
@@ -18,10 +23,14 @@ class DataSource{
         }
         
         let documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("citylist.plist")
+        
+        plistPath = documentUrl.path
         print(documentUrl.path)
         
         let db_documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("city.db")
+        dbPath = db_documentUrl.path
         print(db_documentUrl.path)
+        
         
         //沒有檔案才copy檔案
         if !FileManager.default.fileExists(atPath: documentUrl.path){
@@ -46,6 +55,11 @@ class DataSource{
     }
     
     static func fillSQLiteData(){
-        print("fillSQLiteData")
+        var db:OpaquePointer!
+        if sqlite3_open(dbPath, &db) == SQLITE_OK{
+            print("db open")
+        }else{
+            print("db open error")
+        }
     }
 }
