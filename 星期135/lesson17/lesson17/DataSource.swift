@@ -14,13 +14,15 @@ class DataSource{
     static var dbPath:String!;
     
     
+    /*
     static let singleton:DataSource = {
-        print("先做第1件事")
-        print("做第2件事")
+       
         return DataSource()
     }()
+     */
      
-    //static let singleton:DataSource = DataSource()
+    static let singleton:DataSource = DataSource()
+    
     
     
     static func copyFileToDocuments(){
