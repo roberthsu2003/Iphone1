@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    @IBOutlet var segments:UISegmentedControl!
+    
     var continents:[String]!
     
     override func awakeFromNib() {
@@ -16,7 +18,9 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(continents!)
+        for (index,continent) in continents.enumerated(){
+            segments.setTitle(continent, forSegmentAt: index)
+        }
     }
 
 
