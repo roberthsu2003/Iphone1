@@ -13,12 +13,15 @@ class DataSource{
     static var plistURL:URL!;
     static var dbPath:String!;
     
-    /*
+    
     static let singleton:DataSource = {
+        print("先做第1件事")
+        print("做第2件事")
         return DataSource()
     }()
-     */
-    static let singleton:DataSource = DataSource()
+     
+    //static let singleton:DataSource = DataSource()
+    
     
     static func copyFileToDocuments(){
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
@@ -121,7 +124,7 @@ class DataSource{
         print("資料全被加入")
     }
     
-    static func getCountries() -> [String]{
-        return [String]()
+    func getCountries() -> [String]{
+        return ["a", "b", "c"]
     }
 }
