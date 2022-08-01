@@ -9,10 +9,11 @@ import UIKit
 
 class CityTableViewController: UITableViewController {
     
-    //var city:[City] = DataSource.singleton.getCountries()
+    var cities = DataSource.singleton.getCities()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(cities)
     }
        
     // MARK: - Table view data source

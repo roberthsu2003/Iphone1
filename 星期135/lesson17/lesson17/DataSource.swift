@@ -124,9 +124,11 @@ class DataSource{
         
         sqlite3_close(db)
         print("資料全被加入")
-    }
+    }    
+   
     
-    func getCountries() -> [String]{
-        return ["a", "b", "c"]
+    func getCities() -> [City]{
+        
+        return [City]()
     }
 }

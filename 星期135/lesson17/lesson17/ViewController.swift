@@ -13,9 +13,6 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(DataSource.singleton.getCountries())
-        
-        
     }
 
 
