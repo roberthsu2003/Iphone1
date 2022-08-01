@@ -9,10 +9,11 @@ import UIKit
 
 class CityTableViewController: UITableViewController {
     
-    var cities = DataSource.singleton.getCities()
+    var cities:[City]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        cities = DataSource.singleton.getCities()
         guard let cityies = cities else{
             print("建立失敗")
             return;

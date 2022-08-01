@@ -133,9 +133,21 @@ class DataSource{
             print("db建立成功")
         }else{
             print("db建立失敗")
+            sqlite3_close(db)
             return nil
         }
         
+        let citySqlString = "SELECT * FROM city"
+        var statement:OpaquePointer!
+        if sqlite3_prepare_v2(db, citySqlString, -1, &statement, nil) == SQLITE_OK{
+            print("statement建立成功")
+        }else{
+            print("statement建立成功")
+            sqlite3_finalize(statement)
+            sqlite3_close(db)
+            return nil;
+        }
+        sqlite3_finalize(statement)
         sqlite3_close(db)
         return [City]()
     }
