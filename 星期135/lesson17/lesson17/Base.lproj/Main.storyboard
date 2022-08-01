@@ -42,6 +42,9 @@
                                 <segment title=""/>
                                 <segment title=""/>
                             </segments>
+                            <connections>
+                                <action selector="segmentsChange:" destination="5Fs-Az-1Nk" eventType="valueChanged" id="7aw-7N-XoV"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>

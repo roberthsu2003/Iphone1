@@ -12,6 +12,11 @@ class ViewController: UITableViewController {
     
     var continents:[String]!
     
+    @IBAction func segmentsChange(_ sender:UISegmentedControl){
+        let selectedIndex = sender.selectedSegmentIndex
+        print(continents[selectedIndex])
+    }
+    
     override func awakeFromNib() {
         continents = DataSource.singleton.getContinents()
     }
@@ -22,6 +27,8 @@ class ViewController: UITableViewController {
             segments.setTitle(continent, forSegmentAt: index)
         }
     }
+    
+    
 
 
 }
