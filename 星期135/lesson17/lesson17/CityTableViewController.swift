@@ -18,7 +18,9 @@ class CityTableViewController: UITableViewController {
             print("建立失敗")
             return;
         }
-        print(cityies)
+        for city in cityies{
+            print(city.city)
+        }
     }
        
     // MARK: - Table view data source
