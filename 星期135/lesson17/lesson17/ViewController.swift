@@ -10,9 +10,14 @@ import UIKit
 class ViewController: UITableViewController {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dataSource1 = DataSource.singleton
+        let dataSource2 = DataSource.singleton
+        
+        if dataSource1 === dataSource2{
+            print("相同的實體")
+        }
         
     }
 

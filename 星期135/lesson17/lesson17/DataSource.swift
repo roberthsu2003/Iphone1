@@ -13,6 +13,13 @@ class DataSource{
     static var plistURL:URL!;
     static var dbPath:String!;
     
+    /*
+    static let singleton:DataSource = {
+        return DataSource()
+    }()
+     */
+    static let singleton:DataSource = DataSource()
+    
     static func copyFileToDocuments(){
         guard let sourceUrl = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
             return
