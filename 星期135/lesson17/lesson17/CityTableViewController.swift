@@ -13,7 +13,11 @@ class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(cities)
+        guard let cityies = cities else{
+            print("建立失敗")
+            return;
+        }
+        print(cityies)
     }
        
     // MARK: - Table view data source

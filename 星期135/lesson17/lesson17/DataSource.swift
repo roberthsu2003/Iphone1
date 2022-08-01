@@ -127,8 +127,16 @@ class DataSource{
     }    
    
     
-    func getCities() -> [City]{
+    func getCities() -> [City]?{
+        var db:OpaquePointer!
+        if sqlite3_open(DataSource.dbPath, &db) == SQLITE_OK{
+            print("db建立成功")
+        }else{
+            print("db建立失敗")
+            return nil
+        }
         
+        sqlite3_close(db)
         return [City]()
     }
 }
