@@ -8,11 +8,15 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    var continents:[String]!
     
+    override func awakeFromNib() {
+        continents = DataSource.singleton.getContinents()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(continents!)
     }
 
 

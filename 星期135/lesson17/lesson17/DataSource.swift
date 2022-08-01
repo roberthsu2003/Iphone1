@@ -164,4 +164,35 @@ class DataSource{
         sqlite3_close(db)
         return cities
     }
+    
+    func getContinents() -> [String]?{
+        var db:OpaquePointer!
+        if sqlite3_open(DataSource.dbPath, &db) == SQLITE_OK{
+            print("db建立成功")
+        }else{
+            print("db建立失敗")
+            sqlite3_close(db)
+            return nil
+        }
+        
+        let citySqlString = "SELECT  DISTINCT continent FROM city"
+        var statement:OpaquePointer!
+        if sqlite3_prepare_v2(db, citySqlString, -1, &statement, nil) == SQLITE_OK{
+            print("statement建立成功")
+        }else{
+            print("statement建立成功")
+            sqlite3_finalize(statement)
+            sqlite3_close(db)
+            return nil;
+        }
+        var continents = [String]()
+        while sqlite3_step(statement) == SQLITE_ROW{
+            let continent = String(cString:  sqlite3_column_text(statement, 0))
+            continents.append(continent)
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(db)
+        return continents        
+        
+    }
 }
