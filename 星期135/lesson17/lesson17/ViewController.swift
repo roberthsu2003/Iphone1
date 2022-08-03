@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
         }
         
         currentCountries = countries
+        tableView.reloadData()
         print(currentCountries!)
     }
     
@@ -40,9 +41,32 @@ class ViewController: UITableViewController {
         segmentsChange(segments)
         
     }
-    
-    
 
 
+}
+
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return currentCountries.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let country = currentCountries[indexPath.row]
+        if #available(iOS 15, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = country;
+            
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel?.text = country
+            
+        }
+        
+        return cell;
+    }
 }
 
