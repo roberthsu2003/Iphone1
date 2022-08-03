@@ -70,3 +70,15 @@ extension ViewController{
     }
 }
 
+extension ViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let selectedCountry = currentCountries[indexPath.row]
+        
+        performSegue(withIdentifier: "goCities", sender: selectedCountry)
+        
+    }
+}
+
+
