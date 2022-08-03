@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController {
     @IBOutlet var segments:UISegmentedControl!
-    
     var continents:[String]!
+    var selectedContinent:String!
     
     @IBAction func segmentsChange(_ sender:UISegmentedControl){
         let selectedIndex = sender.selectedSegmentIndex
@@ -19,6 +19,7 @@ class ViewController: UITableViewController {
     
     override func awakeFromNib() {
         continents = DataSource.singleton.getContinents()
+        selectedContinent = continents[0]
     }
     
     override func viewDidLoad() {
@@ -26,6 +27,8 @@ class ViewController: UITableViewController {
         for (index,continent) in continents.enumerated(){
             segments.setTitle(continent, forSegmentAt: index)
         }
+        let countries = DataSource.singleton.getCountries(withContinents:selectedContinent)
+        print(countries)
     }
     
     
