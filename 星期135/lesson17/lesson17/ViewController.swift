@@ -27,7 +27,9 @@ class ViewController: UITableViewController {
         for (index,continent) in continents.enumerated(){
             segments.setTitle(continent, forSegmentAt: index)
         }
-        let countries = DataSource.singleton.getCountries(withContinents:selectedContinent)
+        guard let countries = DataSource.singleton.getCountries(withContinents:selectedContinent) else{
+            return
+        }
         print(countries)
     }
     
