@@ -17,7 +17,7 @@ class CityOfCountryViewController: UITableViewController {
         super.viewDidLoad()
         title = country
         cities = DataSource.singleton.getCities(withCountry: country)
-        print(cities)
+        print(cities!)
     }
     
 
