@@ -11,10 +11,18 @@ class ViewController: UITableViewController {
     @IBOutlet var segments:UISegmentedControl!
     var continents:[String]!
     var selectedContinent:String!
+    var currentCountries:[String]!
     
     @IBAction func segmentsChange(_ sender:UISegmentedControl){
         let selectedIndex = sender.selectedSegmentIndex
         print(continents[selectedIndex])
+        selectedContinent = continents[selectedIndex]
+        guard let countries = DataSource.singleton.getCountries(withContinents:selectedContinent) else{
+            return
+        }
+        
+        currentCountries = countries
+        print(currentCountries!)
     }
     
     override func awakeFromNib() {
@@ -27,10 +35,10 @@ class ViewController: UITableViewController {
         for (index,continent) in continents.enumerated(){
             segments.setTitle(continent, forSegmentAt: index)
         }
-        guard let countries = DataSource.singleton.getCountries(withContinents:selectedContinent) else{
-            return
-        }
-        print(countries)
+        
+        //呼叫IBAction
+        segmentsChange(segments)
+        
     }
     
     
