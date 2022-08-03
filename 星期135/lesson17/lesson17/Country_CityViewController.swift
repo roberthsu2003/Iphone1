@@ -17,6 +17,7 @@ class Country_CityViewController: UITableViewController {
         print(continents[selectedIndex])
         selectedContinent = continents[selectedIndex]
         print(selectedContinent)
+        tableView.reloadData()
         
     }
     override func awakeFromNib() {
@@ -47,9 +48,11 @@ extension Country_CityViewController{
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int{
-        return 0
+       let countryNums =   DataSource.singleton.numberOfCountries(withContinent: selectedContinent)
+        print(countryNums)
+        return countryNums!
     }
-    
+    /*
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
@@ -59,6 +62,7 @@ extension Country_CityViewController{
                             titleForHeaderInSection section: Int) -> String?{
         
     }
+     */
     
     
     

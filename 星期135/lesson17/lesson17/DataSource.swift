@@ -268,4 +268,36 @@ class DataSource{
         return cities
         
     }
+    
+    func numberOfCountries(withContinent continent:String) -> Int?{
+        var db:OpaquePointer!
+        if sqlite3_open(DataSource.dbPath, &db) == SQLITE_OK{
+            print("db建立成功")
+        }else{
+            print("db建立失敗")
+            sqlite3_close(db)
+            return nil
+        }
+        
+        let sqlString = "SELECT count(DISTINCT country) FROM city WHERE continent=?"
+        var statement:OpaquePointer!
+        if sqlite3_prepare_v2(db, sqlString, -1, &statement, nil) == SQLITE_OK{
+            print("statement建立成功")
+        }else{
+            print("statement建立成功")
+            sqlite3_finalize(statement)
+            sqlite3_close(db)
+            return nil;
+        }
+        sqlite3_bind_text(statement, 1, (continent as NSString).utf8String, -1, nil)
+        
+        var countryNums=0
+        while sqlite3_step(statement) == SQLITE_ROW{
+            countryNums = Int(sqlite3_column_int(statement, 0))
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(db)
+        return countryNums
+        
+    }
 }
