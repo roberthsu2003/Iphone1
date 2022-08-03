@@ -228,4 +228,8 @@ class DataSource{
         return countries
         
     }
+    
+    func getCities(withCountry country:String) -> [City]?{
+        return [City]()
+    }
 }
