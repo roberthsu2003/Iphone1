@@ -41,6 +41,22 @@ class ViewController: UITableViewController {
         segmentsChange(segments)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goCities"{
+            guard let country = sender as? String else{
+                return
+            }
+            
+            let cityOfCountryViewController = segue.destination as! CityOfCountryViewController
+            cityOfCountryViewController.country = country
+            
+        }
+        
+        
+    }
+    
+    
 
 
 }
