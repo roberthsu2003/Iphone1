@@ -11,6 +11,7 @@ class Country_CityViewController: UITableViewController {
     @IBOutlet var segments:UISegmentedControl!
     var continents:[String]!
     var selectedContinent:String!
+    var countries:[String]!
     
     @IBAction func segmentsChange(_ sender:UISegmentedControl){
         let selectedIndex = sender.selectedSegmentIndex
@@ -44,13 +45,15 @@ extension Country_CityViewController{
     
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
+        let country = countries[section]
+        let cities = DataSource.singleton.getCities(withCountry: country)
+        print(cities?.count)
         return 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int{
-       let countryNums =   DataSource.singleton.numberOfCountries(withContinent: selectedContinent)
-        print(countryNums)
-        return countryNums!
+        countries = DataSource.singleton.getCountries(withContinents: selectedContinent)
+        return countries!.count
     }
     /*
     override func tableView(_ tableView: UITableView,
