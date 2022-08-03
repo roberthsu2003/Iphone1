@@ -192,6 +192,71 @@
             </objects>
             <point key="canvasLocation" x="1883" y="552"/>
         </scene>
+        <!--Country City View Controller-->
+        <scene sceneID="nwx-p1-kLy">
+            <objects>
+                <tableViewController id="Ead-HB-caD" customClass="Country_CityViewController" customModule="lesson17" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JCg-Bs-dJo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3vp-GV-chI">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3vp-GV-chI" id="Cnh-7W-cfU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ead-HB-caD" id="RgO-oG-Ljr"/>
+                            <outlet property="delegate" destination="Ead-HB-caD" id="Z8a-15-bIg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qB8-PA-ee9">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="YTF-Oi-CuV">
+                            <rect key="frame" x="42.5" y="6" width="329" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                                <segment title=""/>
+                                <segment title=""/>
+                                <segment title=""/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentsChange:" destination="Ead-HB-caD" eventType="valueChanged" id="SXw-fN-UaB"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segments" destination="YTF-Oi-CuV" id="AsL-Aj-cBc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3X-yf-vYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="1255"/>
+        </scene>
+        <!--國家-城市-->
+        <scene sceneID="Ixa-Zb-caW">
+            <objects>
+                <navigationController id="hhE-s0-7I6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="國家-城市" id="O8g-Y8-fca"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h3d-F0-6AV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ead-HB-caD" kind="relationship" relationship="rootViewController" id="Hbf-Sa-z42"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQv-W0-RiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="1255"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="grW-xw-gKJ">
             <objects>
@@ -205,6 +270,7 @@
                     <connections>
                         <segue destination="qFD-NI-yFZ" kind="relationship" relationship="viewControllers" id="OGd-wt-vW8"/>
                         <segue destination="irI-0i-Ghq" kind="relationship" relationship="viewControllers" id="CZJ-dY-5DM"/>
+                        <segue destination="hhE-s0-7I6" kind="relationship" relationship="viewControllers" id="zKP-6p-gve"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNq-gK-stE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

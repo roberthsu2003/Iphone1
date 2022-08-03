@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A414CE4F289A9DF0009F0047 /* CityOfCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414CE4E289A9DF0009F0047 /* CityOfCountryViewController.swift */; };
+		A414CE51289AAA65009F0047 /* Country_CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414CE50289AAA65009F0047 /* Country_CityViewController.swift */; };
 		A45D2AB72893F9F50017FDCF /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45D2AB62893F9F50017FDCF /* DataSource.swift */; };
 		A45D2ABA2894037C0017FDCF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A45D2AB92894037C0017FDCF /* libsqlite3.tbd */; };
 		A4CFDF5E2897F66C0045627C /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CFDF5D2897F66C0045627C /* CityTableViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		A414CE4E289A9DF0009F0047 /* CityOfCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityOfCountryViewController.swift; sourceTree = "<group>"; };
+		A414CE50289AAA65009F0047 /* Country_CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country_CityViewController.swift; sourceTree = "<group>"; };
 		A45D2AB62893F9F50017FDCF /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		A45D2AB92894037C0017FDCF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4CFDF5D2897F66C0045627C /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A4F582B2289173BD00561704 /* Info.plist */,
 				A4CFDF5D2897F66C0045627C /* CityTableViewController.swift */,
 				A414CE4E289A9DF0009F0047 /* CityOfCountryViewController.swift */,
+				A414CE50289AAA65009F0047 /* Country_CityViewController.swift */,
 			);
 			path = lesson17;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				A4F582A5289173BB00561704 /* AppDelegate.swift in Sources */,
 				A4CFDF602897F8340045627C /* City.swift in Sources */,
 				A4CFDF5E2897F66C0045627C /* CityTableViewController.swift in Sources */,
+				A414CE51289AAA65009F0047 /* Country_CityViewController.swift in Sources */,
 				A45D2AB72893F9F50017FDCF /* DataSource.swift in Sources */,
 				A414CE4F289A9DF0009F0047 /* CityOfCountryViewController.swift in Sources */,
 				A4F582A7289173BB00561704 /* SceneDelegate.swift in Sources */,
