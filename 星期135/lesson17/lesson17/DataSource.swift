@@ -269,5 +269,56 @@ class DataSource{
         
     }
     
+    func searchData(name:String) -> [City]?{
+        var db:OpaquePointer!
+        if sqlite3_open(DataSource.dbPath, &db) == SQLITE_OK{
+            print("db建立成功")
+        }else{
+            print("db建立失敗")
+            sqlite3_close(db)
+            return nil
+        }
+        
+        let SqlString = """
+        SELECT *
+        FROM city
+        WHERE cityName like ? OR continent like ? OR country like ? OR description like ?
+        """
+        var statement:OpaquePointer!
+        if sqlite3_prepare_v2(db, SqlString, -1, &statement, nil) == SQLITE_OK{
+            print("statement建立成功")
+        }else{
+            print("statement建立失敗")
+            sqlite3_finalize(statement)
+            sqlite3_close(db)
+            return nil;
+        }
+        
+        sqlite3_bind_text(statement, 1, ("%\(name)%" as NSString).utf8String , -1, nil)
+        
+        sqlite3_bind_text(statement, 2, ("%\(name)%" as NSString).utf8String , -1, nil)
+        
+        sqlite3_bind_text(statement, 3, ("%\(name)%" as NSString).utf8String , -1, nil)
+        
+        sqlite3_bind_text(statement, 4, ("%\(name)%" as NSString).utf8String , -1, nil)
+        
+        var cities = [City]()
+        while sqlite3_step(statement) == SQLITE_ROW{
+            let cityName = String(cString:  sqlite3_column_text(statement, 0))
+            let continent = String(cString:  sqlite3_column_text(statement, 1))
+            let country = String(cString:  sqlite3_column_text(statement, 2))
+            let image = String(cString:  sqlite3_column_text(statement, 3))
+            let description = String(cString:  sqlite3_column_text(statement, 4))
+            let latitude = sqlite3_column_double(statement, 5)
+            let longitude = sqlite3_column_double(statement, 6)
+            let url = String(cString:  sqlite3_column_text(statement, 7))
+            let city = City(city: cityName, continent: continent, country: country, image: image, description: description, lat: latitude, lon: longitude, url: url)
+            cities.append(city)
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(db)
+        return cities
+    }
+    
     
 }
