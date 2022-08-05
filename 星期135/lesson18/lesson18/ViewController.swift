@@ -19,7 +19,17 @@ class ViewController: UITableViewController{
         guard let url = URL(string: httpString) else{
             return
         }
-        let downloadTask = URLSession.shared.downloadTask(with: url)
+        let downloadTask = URLSession.shared.downloadTask(with: url){
+            (saveURL:URL?, response:URLResponse?, error:Error?) in
+            guard let saveURL=saveURL,let response=response, error == nil else{
+                print("下載失敗")
+                return
+            }
+            print("下載成功")
+        }
+        downloadTask.resume()
+        
+        
     }
 
 
