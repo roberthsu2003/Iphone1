@@ -25,7 +25,22 @@ class ViewController: UITableViewController{
                 print("下載失敗")
                 return
             }
+            
+            guard (response as! HTTPURLResponse).statusCode == 200 else{
+                print("下載狀態不是200")
+                return
+            }
+            
+            guard let data = try? Data(contentsOf: saveURL) else{
+                print("下載的資料無法轉成Data")
+                return
+            }
+            guard let jsonString = String(data: data, encoding: .utf8) else{
+                print("資料轉成字串出錯了")
+                return
+            }
             print("下載成功")
+            print(jsonString)
         }
         downloadTask.resume()
         
