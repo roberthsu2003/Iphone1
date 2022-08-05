@@ -10,6 +10,7 @@ import UIKit
 class CityTableViewController: UITableViewController {
     
     var cities:[City]!
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func awakeFromNib() {
         if let c = DataSource.singleton.getCities(){
@@ -20,7 +21,7 @@ class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableHeaderView = searchController.searchBar
         
     }
        
