@@ -57,17 +57,45 @@ extension Country_CityViewController{
         countries = DataSource.singleton.getCountries(withContinents: selectedContinent)
         return countries!.count
     }
-    /*
+    
     override func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let section = indexPath.section
+        let country = countries[section]
+        
+        let row = indexPath.row
+        guard let cities = DataSource.singleton.getCities(withCountry: country) else{
+            return UITableViewCell()
+        }
+        let city = cities[row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        
+        if #available(iOS 15, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = city.city
+            content.secondaryText = city.country
+            content.image = UIImage(named: city.image)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel?.text = city.city
+            cell.detailTextLabel?.text =  city.country
+            cell.imageView?.image = UIImage(named: city.image)
+        }
+        
+        return cell;
+        
+        
         
     }
+     
     
     override func tableView(_ tableView: UITableView,
                             titleForHeaderInSection section: Int) -> String?{
-        
+        return countries[section]
     }
-     */
+     
     
     
     
