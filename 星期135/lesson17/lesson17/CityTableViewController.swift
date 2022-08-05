@@ -65,10 +65,16 @@ extension CityTableViewController:UISearchResultsUpdating{
         let searchBar = searchController.searchBar
         if let searchString = searchBar.text, searchString != ""{
             //searchBar.text不是空字串
-            print(searchString)
+            cities = DataSource.singleton.searchData(name: searchString)
+            
         }else{
             //searchBar.text是空字串
+            if let c = DataSource.singleton.getCities(){
+                self.cities = c
+            }
         }
+        
+        tableView.reloadData()
     }
 }
 

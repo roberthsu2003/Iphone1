@@ -284,6 +284,7 @@ class DataSource{
         FROM city
         WHERE cityName like ? OR continent like ? OR country like ? OR description like ?
         """
+        
         var statement:OpaquePointer!
         if sqlite3_prepare_v2(db, SqlString, -1, &statement, nil) == SQLITE_OK{
             print("statement建立成功")
