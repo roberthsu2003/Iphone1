@@ -62,7 +62,13 @@ extension CityTableViewController{
 
 extension CityTableViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
-        print("run")
+        let searchBar = searchController.searchBar
+        if let searchString = searchBar.text, searchString != ""{
+            //searchBar.text不是空字串
+            print(searchString)
+        }else{
+            //searchBar.text是空字串
+        }
     }
 }
 
