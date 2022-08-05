@@ -17,6 +17,8 @@ class CityTableViewController: UITableViewController {
             self.cities = c
         }
         
+        searchController.searchResultsUpdater = self;
+        
     }
 
     override func viewDidLoad() {
@@ -56,5 +58,11 @@ extension CityTableViewController{
     }
     
     
+}
+
+extension CityTableViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        print("run")
+    }
 }
 
