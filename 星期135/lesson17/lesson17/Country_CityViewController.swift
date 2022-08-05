@@ -46,9 +46,11 @@ extension Country_CityViewController{
     override func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int{
         let country = countries[section]
-        let cities = DataSource.singleton.getCities(withCountry: country)
-        print(cities?.count)
-        return 0
+        guard let cities = DataSource.singleton.getCities(withCountry: country) else{
+            return 0
+        }
+        
+        return cities.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int{
