@@ -17,7 +17,8 @@ class CityTableViewController: UITableViewController {
             self.cities = c
         }
         
-        searchController.searchResultsUpdater = self;
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
         
     }
 
