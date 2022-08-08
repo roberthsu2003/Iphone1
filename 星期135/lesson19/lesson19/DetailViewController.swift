@@ -4,7 +4,19 @@
 //
 //  Created by 徐國堂 on 2022/8/8.
 //
-
+struct YoubikeData:Codable{
+    struct Site:Codable{
+        let ar:String
+        let bemp:Int
+        let lat:Double
+        let lng:Double
+        let mday:String
+        let sbi:Int
+        let sna:String
+        let tot:Int
+    }
+    let data:[Site]
+}
 import UIKit
 
 class DetailViewController: UITableViewController {
@@ -48,6 +60,12 @@ extension DetailViewController:URLSessionDownloadDelegate{
             print("轉換為Data時出現問題")
             return
         }
-        print(String(data: data, encoding: .utf8))
+        //print(String(data: data, encoding: .utf8))
+        let jsonDecoder = JSONDecoder()
+        guard let youbikeData = try? jsonDecoder.decode(YoubikeData.self, from: data)else{
+            return
+        }
+        print(youbikeData.data)
+        
     }
 }
