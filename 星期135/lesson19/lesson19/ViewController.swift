@@ -38,15 +38,21 @@ class ViewController: UITableViewController {
                 print("下載的資料無法轉成Data")
                 return
             }
-            
+            /*
             guard let jsonString = String(data: data, encoding: .utf8) else{
                 print("資料轉成字串出錯了")
                 return
             }
+             */
             
             DispatchQueue.main.async {
                 print("下載成功")
-                print(jsonString)
+                let jsonDecoder = JSONDecoder()
+                guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
+                    print("jsondecoder錯誤")
+                    return
+                }
+                print(region.areas)
             }
             
         }
