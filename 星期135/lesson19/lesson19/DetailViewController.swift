@@ -32,9 +32,22 @@ class DetailViewController: UITableViewController {
             return
         }
         print(url.absoluteString)
-        
+        let downloadTask = urlSession.downloadTask(with: url)
+        downloadTask.resume()
     }
 
    
 
+}
+
+extension DetailViewController:URLSessionDownloadDelegate{
+    func urlSession(_ session: URLSession,
+       downloadTask: URLSessionDownloadTask,
+                    didFinishDownloadingTo location: URL){
+        guard let data = try? Data(contentsOf: location) else{
+            print("轉換為Data時出現問題")
+            return
+        }
+        print(String(data: data, encoding: .utf8))
+    }
 }
