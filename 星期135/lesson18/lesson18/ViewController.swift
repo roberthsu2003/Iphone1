@@ -35,12 +35,17 @@ class ViewController: UITableViewController{
                 print("下載的資料無法轉成Data")
                 return
             }
+            
             guard let jsonString = String(data: data, encoding: .utf8) else{
                 print("資料轉成字串出錯了")
                 return
             }
-            print("下載成功")
-            print(jsonString)
+            
+            DispatchQueue.main.async {
+                print("下載成功")
+                print(jsonString)
+            }
+            
         }
         downloadTask.resume()
         
