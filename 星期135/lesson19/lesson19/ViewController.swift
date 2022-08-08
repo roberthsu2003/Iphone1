@@ -21,6 +21,7 @@ class ViewController: UITableViewController {
     
     func download_areas(urlString:String){
         let documentUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("areas.plist")
+        print(documentUrl.path)
         if !FileManager.default.fileExists(atPath: documentUrl.path){
             guard let url = URL(string: httpString) else{
                 return
@@ -57,8 +58,14 @@ class ViewController: UITableViewController {
                     }
                     print(region.areas)
                     self.areas = region.areas
+                    
                     //儲存為plist
-                   
+                    let areas_nsarray = region.areas as NSArray
+                    if (try? areas_nsarray.write(to: documentUrl)) == nil{
+                        print("存檔失敗")
+                    }else{
+                        print("存檔成功")
+                    }
                 }
                 
             }
