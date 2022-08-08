@@ -59,7 +59,7 @@ class ViewController: UITableViewController {
                     
                     print("資料來源下載檔案\(region.areas)")
                     self.areas = region.areas
-                    
+                    self.tableView.reloadData()
                     //儲存為plist
                     let areas_nsarray = region.areas as NSArray
                     if (try? areas_nsarray.write(to: documentUrl)) == nil{
@@ -82,5 +82,29 @@ class ViewController: UITableViewController {
     }
 
 
+}
+
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return areas.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let area = areas[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        if #available(iOS 15, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = area;
+            cell.contentConfiguration = content
+        }else{
+            cell.textLabel?.text = area
+            
+        }
+        
+        return cell
+    }
 }
 
