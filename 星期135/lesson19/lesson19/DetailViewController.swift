@@ -9,6 +9,16 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     var area:String!
+    lazy var urlSession:URLSession = {
+        let config = URLSessionConfiguration.ephemeral
+        config.allowsExpensiveNetworkAccess = true
+        let urlSession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
+        return urlSession
+    }()
+    
+    override func awakeFromNib() {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
