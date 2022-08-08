@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     let httpString = "https://flask-robert.herokuapp.com/youbike/"
     
     override func viewDidLoad() {
