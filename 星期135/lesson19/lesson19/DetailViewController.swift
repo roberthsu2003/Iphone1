@@ -27,6 +27,7 @@ class DetailViewController: UITableViewController {
         let urlSession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
         return urlSession
     }()
+    var sites = [YoubikeData.Site]()
     
     override func awakeFromNib() {
         
@@ -65,7 +66,7 @@ extension DetailViewController:URLSessionDownloadDelegate{
         guard let youbikeData = try? jsonDecoder.decode(YoubikeData.self, from: data)else{
             return
         }
-        print(youbikeData.data)
-        
+        sites = youbikeData.data
+        tableView.reloadData()        
     }
 }
