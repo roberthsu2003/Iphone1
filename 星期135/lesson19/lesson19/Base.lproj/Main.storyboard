@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--台北市行政區-->
         <scene sceneID="obT-27-Mdc">
             <objects>
                 <tableViewController id="e3V-Yb-BzQ" customClass="ViewController" customModule="lesson19" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,11 +39,43 @@
                             <outlet property="delegate" destination="e3V-Yb-BzQ" id="4br-57-DiH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hf9-Oo-9L1"/>
+                    <navigationItem key="navigationItem" title="台北市行政區" id="hf9-Oo-9L1"/>
+                    <connections>
+                        <segue destination="JtS-87-biC" kind="show" identifier="goDetail" id="EJb-PZ-D3O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxY-0s-NFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="566.66666666666674" y="86.383928571428569"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="oWE-lq-eN4">
+            <objects>
+                <tableViewController id="JtS-87-biC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gfg-Hk-1Bi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="voq-Ox-hWA">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="voq-Ox-hWA" id="JBP-JC-bQU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JtS-87-biC" id="GXF-Jx-I0U"/>
+                            <outlet property="delegate" destination="JtS-87-biC" id="o2U-ao-mOF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fq1-VQ-22a"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5NR-I3-FcF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdI-6d-BGP">

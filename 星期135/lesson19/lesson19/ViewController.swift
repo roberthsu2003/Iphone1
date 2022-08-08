@@ -108,3 +108,13 @@ extension ViewController{
     }
 }
 
+extension ViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let area = areas[indexPath.row]
+        performSegue(withIdentifier: "goDetail", sender: area)
+    }
+    
+}
+
