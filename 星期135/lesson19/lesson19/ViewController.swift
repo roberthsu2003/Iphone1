@@ -80,6 +80,14 @@ class ViewController: UITableViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail"{
+            let area = sender as! String
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.area = area
+        }
+    }
 
 
 }
