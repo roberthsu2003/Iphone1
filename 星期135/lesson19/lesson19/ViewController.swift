@@ -6,12 +6,19 @@
 //
 
 import UIKit
+struct Region:Codable{
+    let areas:[String]
+}
 
 class ViewController: UITableViewController {
     let httpString = "https://flask-robert.herokuapp.com/youbike/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        download_areas(urlString: httpString)
+    }
+    
+    func download_areas(urlString:String){
         guard let url = URL(string: httpString) else{
             return
         }
@@ -44,7 +51,6 @@ class ViewController: UITableViewController {
             
         }
         downloadTask.resume()
-        
     }
 
 
