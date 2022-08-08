@@ -56,7 +56,8 @@ class ViewController: UITableViewController {
                         print("jsondecoder錯誤")
                         return
                     }
-                    print(region.areas)
+                    
+                    print("資料來源下載檔案\(region.areas)")
                     self.areas = region.areas
                     
                     //儲存為plist
@@ -70,6 +71,12 @@ class ViewController: UITableViewController {
                 
             }
             downloadTask.resume()
+        }
+        else{
+            if let areas = (try? NSArray(contentsOf: documentUrl, error: ())) as? [String]{
+                self.areas = areas
+                print("資料來源為plist\(self.areas)")
+            }
         }
         
     }
