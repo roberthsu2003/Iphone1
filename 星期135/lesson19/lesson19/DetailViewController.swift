@@ -67,6 +67,7 @@ extension DetailViewController:URLSessionDownloadDelegate{
             return
         }
         sites = youbikeData.data
+        print(sites)
         tableView.reloadData()        
     }
 }

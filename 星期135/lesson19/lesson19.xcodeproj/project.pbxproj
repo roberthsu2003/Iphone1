@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4140C9B28A3CDB5005695CF /* SiteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4140C9A28A3CDB5005695CF /* SiteViewCell.swift */; };
 		A4266BB828A1297100B1831D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266BB728A1297100B1831D /* AppDelegate.swift */; };
 		A4266BBA28A1297100B1831D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266BB928A1297100B1831D /* SceneDelegate.swift */; };
 		A4266BBC28A1297100B1831D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4266BBB28A1297100B1831D /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A4140C9A28A3CDB5005695CF /* SiteViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewCell.swift; sourceTree = "<group>"; };
 		A4266BB428A1297100B1831D /* lesson19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lesson19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4266BB728A1297100B1831D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4266BB928A1297100B1831D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				A4266BC228A1297200B1831D /* LaunchScreen.storyboard */,
 				A4266BC528A1297200B1831D /* Info.plist */,
 				A4266BCB28A140AF00B1831D /* DetailViewController.swift */,
+				A4140C9A28A3CDB5005695CF /* SiteViewCell.swift */,
 			);
 			path = lesson19;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				A4266BBC28A1297100B1831D /* ViewController.swift in Sources */,
 				A4266BB828A1297100B1831D /* AppDelegate.swift in Sources */,
+				A4140C9B28A3CDB5005695CF /* SiteViewCell.swift in Sources */,
 				A4266BBA28A1297100B1831D /* SceneDelegate.swift in Sources */,
 				A4266BCC28A140AF00B1831D /* DetailViewController.swift in Sources */,
 			);
