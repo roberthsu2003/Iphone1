@@ -86,6 +86,11 @@ class ViewController: UITableViewController {
             let area = sender as! String
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.area = area
+            detailViewController.passBack = {
+                (site:YoubikeData.Site) -> Void in
+                print(site.sna)
+                self.title = site.sna
+            }
         }
     }
 

@@ -29,6 +29,8 @@ class DetailViewController: UITableViewController {
         return urlSession
     }()
     var sites = [YoubikeData.Site]()
+    var passBack:((YoubikeData.Site)->Void)!
+    
     
     override func awakeFromNib() {
         
@@ -102,6 +104,8 @@ extension DetailViewController{
     //UITableViewDelegate
     override func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
+        let site = sites[indexPath.row]
         navigationController?.popViewController(animated: true)
+        passBack(site)
     }
 }
