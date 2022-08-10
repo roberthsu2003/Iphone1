@@ -97,3 +97,11 @@ extension DetailViewController{
     
     
 }
+
+extension DetailViewController{
+    //UITableViewDelegate
+    override func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        navigationController?.popViewController(animated: true)
+    }
+}
