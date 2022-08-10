@@ -56,9 +56,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <activityIndicatorView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="0T8-AM-Vtr">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL" rowHeight="137" id="voq-Ox-hWA" customClass="SiteViewCell" customModule="lesson19" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="137"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="137"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="voq-Ox-hWA" id="JBP-JC-bQU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
@@ -139,10 +144,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ihi-hg-uDC" secondAttribute="trailing" constant="25" id="Uxf-3c-P55"/>
-                                        <constraint firstItem="Ihi-hg-uDC" firstAttribute="top" secondItem="JBP-JC-bQU" secondAttribute="topMargin" id="Wfe-Qi-5Wg"/>
-                                        <constraint firstItem="Ihi-hg-uDC" firstAttribute="leading" secondItem="JBP-JC-bQU" secondAttribute="leadingMargin" constant="25" id="fqm-oJ-3lO"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ihi-hg-uDC" secondAttribute="bottom" constant="9" id="uWD-wl-ezl"/>
+                                        <constraint firstItem="Ihi-hg-uDC" firstAttribute="leading" secondItem="JBP-JC-bQU" secondAttribute="leadingMargin" constant="25" id="M0l-Li-snV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ihi-hg-uDC" secondAttribute="trailing" constant="25" id="cyT-kW-Ice"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ihi-hg-uDC" secondAttribute="bottom" constant="9" id="iBp-WO-pEz"/>
+                                        <constraint firstItem="Ihi-hg-uDC" firstAttribute="top" secondItem="JBP-JC-bQU" secondAttribute="topMargin" id="y1Q-Ez-hYo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -159,10 +164,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fq1-VQ-22a"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="0T8-AM-Vtr" id="FoB-1m-wHn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NR-I3-FcF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378.2608695652175" y="81.696428571428569"/>
+            <point key="canvasLocation" x="1349" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tdI-6d-BGP">

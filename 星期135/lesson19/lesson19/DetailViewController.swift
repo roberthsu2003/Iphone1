@@ -20,6 +20,7 @@ struct YoubikeData:Codable{
 import UIKit
 
 class DetailViewController: UITableViewController {
+    @IBOutlet var indicatorView:UIActivityIndicatorView!
     var area:String!
     lazy var urlSession:URLSession = {
         let config = URLSessionConfiguration.ephemeral
@@ -57,6 +58,8 @@ extension DetailViewController:URLSessionDownloadDelegate{
     func urlSession(_ session: URLSession,
        downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL){
+        indicatorView.stopAnimating()
+        tableView.tableHeaderView = nil
         guard let data = try? Data(contentsOf: location) else{
             print("轉換為Data時出現問題")
             return
