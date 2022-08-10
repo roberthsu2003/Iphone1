@@ -71,3 +71,26 @@ extension DetailViewController:URLSessionDownloadDelegate{
         tableView.reloadData()        
     }
 }
+
+extension DetailViewController{
+    //UITableViewDataSource
+    override func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int{
+        return sites.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let site = sites[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! SiteViewCell
+        cell.siteName.text = site.sna
+        cell.total.text = "\(site.tot)"
+        cell.rents.text = "\(site.sbi)"
+        cell.returns.text = "\(site.bemp)"
+        
+        return cell
+        
+    }
+    
+    
+}
