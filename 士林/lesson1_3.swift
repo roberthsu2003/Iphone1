@@ -6,13 +6,16 @@ var surverAnswer:Int? = 404 //明確宣告建立optional type
 //surverAnswer = nil
 //print(surverAnswer)
 
-let possibleNumber = "123a"
+let possibleNumber = "123"
 let convertedNumber = Int(possibleNumber)
 
 if convertedNumber == nil{
 	print("輸入錯誤")
 }else{
-	print("轉換成功")
-	print(convertedNumber!)
+	print("轉換成功:" + String(convertedNumber!))
 }
+
+var n = 10
+var m = 20
+print("n+m=" + String(n+m))
 
