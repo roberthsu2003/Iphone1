@@ -41,6 +41,22 @@ if let convertedNumber = Int(possibleNumber){
 }else{
     print("轉換失敗")
 }
+/*
+//巢狀檢查
+if let firstNumber = Int("4"){
+    if let secondNumber = Int("42"){
+        print(firstNumber * secondNumber)
+    }
+}
+*/
+
+
+if let firstNumber = Int("4"),let secondNumber = Int("42"){
+    print(firstNumber * secondNumber)
+}
+
+
+
 
 
 
