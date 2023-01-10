@@ -29,3 +29,34 @@ print(contentHeight + (hasHeader ? 50 : 20))
 var userDefineColorName:String?
 //nil運算子
 userDefineColorName ?? "red"
+
+for index in 25...30{
+    print(index)
+}
+
+for index in 25..<30{
+    print(index)
+}
+
+let english = 99
+let math = 99
+
+//巢狀判斷
+if english == 100{
+    
+    if math == 100{
+        print(1000)
+    }else{
+        print(500)
+    }
+    
+}else{
+    
+    if math == 100{
+        print(500)
+    }else{
+        print(0)
+    }
+    
+}
+
