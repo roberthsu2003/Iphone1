@@ -38,8 +38,8 @@ for index in 25..<30{
     print(index)
 }
 
-let english = 99
-let math = 99
+let english = 100
+let math = 100
 
 //巢狀判斷
 if english == 100{
@@ -58,5 +58,15 @@ if english == 100{
         print(0)
     }
     
+}
+
+if english == 100 && math == 100{
+    print(1000)
+}else{
+    if english == 100 || math == 100{
+        print(500)
+    }else{
+        print(0)
+    }
 }
 
