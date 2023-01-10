@@ -26,3 +26,6 @@ if hasHeader{
 
 print(contentHeight + (hasHeader ? 50 : 20))
 
+var userDefineColorName:String?
+//nil運算子
+userDefineColorName ?? "red"
