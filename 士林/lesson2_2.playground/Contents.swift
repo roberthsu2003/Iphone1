@@ -14,3 +14,15 @@ print(b)
 var c = 20
 c += 10
 print(c)
+
+let contentHeight = 40
+let hasHeader = true
+
+if hasHeader{
+    print(contentHeight + 50)
+}else{
+    print(contentHeight + 20)
+}
+
+print(contentHeight + (hasHeader ? 50 : 20))
+
