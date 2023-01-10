@@ -55,6 +55,23 @@ if let firstNumber = Int("4"),let secondNumber = Int("42"){
     print(firstNumber * secondNumber)
 }
 
+//我保證一定不是nil
+let firstNumber1 = Int("4")
+let secondNumber1 = Int("42")
+
+print(firstNumber1! * secondNumber1!)
+
+let possibleString:String? = "an optional string"
+print(possibleString!)
+
+let forceString:String = possibleString!
+
+//implicit optional String
+let assumedString:String! = "An implicitly unwrapped optional string"
+//let implicitString:String = assumedString!
+let implicitString:String = assumedString
+
+
 
 
 
