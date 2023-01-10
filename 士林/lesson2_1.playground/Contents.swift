@@ -1,3 +1,5 @@
 import UIKit
 
-var greeting = "Hello, playground"
+var n = 10  //推測
+
+var i:Int  = 20
