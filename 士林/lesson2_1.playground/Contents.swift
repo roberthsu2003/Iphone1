@@ -19,18 +19,30 @@ name
 chinese
 english
 math
-
-let possibleNumber = "123a"
+/*
+let possibleNumber = "123"
 let convertedNumber = Int(possibleNumber)
 
 5 == 5
 5 != 5
 
 if convertedNumber != nil{
-    print("轉換成功")
+    print("轉換成功,值為\(convertedNumber!)")
+    
 }else{
     print("轉換失敗")
 }
+*/
+
+//optional binding
+let possibleNumber = "123"
+if let convertedNumber = Int(possibleNumber){
+    print("轉換成功,值為\(convertedNumber)")
+}else{
+    print("轉換失敗")
+}
+
+
 
 
 
