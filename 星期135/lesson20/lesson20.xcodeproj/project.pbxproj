@@ -48,7 +48,6 @@
 				C279D1FFFBCC62E7754D66FC /* Pods-lesson20.debug.xcconfig */,
 				162ACD9651D87AC729E0B55C /* Pods-lesson20.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -357,6 +356,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGZJX339KV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson20/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -385,6 +385,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XGZJX339KV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = lesson20/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
