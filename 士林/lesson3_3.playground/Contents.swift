@@ -43,4 +43,16 @@ if let airportName = airports["dUB"]{
     print("沒有這個key")
 }
 
+for (key,value) in airports{
+    print("key是\(key),value是\(value)")
+}
+
+for key in airports.keys{
+    print(key)
+}
+
+for value in airports.values{
+    print(value)
+}
+
 
