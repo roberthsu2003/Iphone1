@@ -23,3 +23,33 @@ var myName = name;
 myName = "Mr. Robert"
 name
 myName
+
+let multiplier =  3
+
+3 * 2.5
+
+let message = "2.5的\(multiplier)倍是\(Double(multiplier) * 2.5)"
+message
+
+let 名字😙 = "robert"
+名字😙
+
+let greeting = "Guten Tag!"
+greeting[greeting.startIndex]
+
+
+let name1 = "Robert"
+let name2 = "Robert"
+
+name1 == name2
+
+let nums:[Int] = [45, 92, 31]
+nums
+
+var someInt:[Int] = []
+someInt.count
+
+
+
+
+
