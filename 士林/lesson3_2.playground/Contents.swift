@@ -37,5 +37,19 @@ for item in favoriteGenres.sorted(){
     print(item)
 }
 
+//set 和  set 的運算
+
+let oddDigits:Set = [1, 3, 5, 7, 9]
+let evenDigits:Set = [0, 2, 4, 6, 8]
+let singleDigitPrimeNumbers:Set = [2, 3, 5, 7]
+
+oddDigits.union(evenDigits).sorted()  //聯集
+
+oddDigits.intersection(evenDigits).sorted() //交集
+
+oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()  //差集
+
+oddDigits.subtracting(singleDigitPrimeNumbers).sorted() //減
+
 
 
