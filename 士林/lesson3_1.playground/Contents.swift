@@ -105,6 +105,21 @@ shoppingList1
 shoppingList1.remove(at: 0)
 shoppingList1
 
+for i in 3...6{
+    print(i)
+}
+
+for item in shoppingList1{
+    print(item)
+}
+
+for  (index,value) in shoppingList1.enumerated(){
+    print("index:\(index),value:\(value)")
+}
+
+
+
+
 
 
 
