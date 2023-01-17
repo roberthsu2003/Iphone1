@@ -81,12 +81,33 @@ if shoppingList1.isEmpty{
 }else{
     print("shoppingList有\(shoppingList1.count)")
 }
-
+//加在後面
 shoppingList1.append("Flour")
 
 shoppingList1 += ["Baking Powder"]
 
 shoppingList1 += ["Chocolate Spread", "Chees", "Butter"]
+
+//取出值
+shoppingList1[0]
+shoppingList1[0] = "Six eggs"
+shoppingList1
+
+shoppingList1.count
+shoppingList1[3...6]
+shoppingList1[3..<6]
+
+//插入元素
+shoppingList1.insert("Maple Syrup", at: 0)
+shoppingList1
+
+//移除元素
+shoppingList1.remove(at: 0)
+shoppingList1
+
+
+
+
 
 
 
