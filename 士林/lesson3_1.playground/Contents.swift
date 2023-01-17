@@ -64,6 +64,29 @@ someInt.append(7)
 var tenDoubles = Array(repeating: 0.0, count: 10)
 tenDoubles
 
+//陣列可以使用 + 運算子
+
+var anotherThreeDoubles  = Array(repeating: 2.5, count: 3)
+
+tenDoubles + anotherThreeDoubles
+
+var shoppingList:[String] =  ["Eggs", "Milk"]
+var shoppingList1 =  ["Eggs", "Milk"]
+
+
+shoppingList1.count
+
+if shoppingList1.isEmpty{
+    print("shoppingList是空的")
+}else{
+    print("shoppingList有\(shoppingList1.count)")
+}
+
+shoppingList1.append("Flour")
+
+shoppingList1 += ["Baking Powder"]
+
+shoppingList1 += ["Chocolate Spread", "Chees", "Butter"]
 
 
 
