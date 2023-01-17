@@ -46,9 +46,23 @@ name1 == name2
 let nums:[Int] = [45, 92, 31]
 nums
 
-var someInt:[Int] = []
-someInt.count
 
+
+let nums1:[Int] = [78, 92, 75, 83] //明確宣告
+nums1
+
+let nums2 = [78, 92, 75, 83] // 不明確宣告
+nums2
+
+var someInt:[Int] = [] //建立空的陣列,一定要明確宣告資料類型
+someInt.count
+someInt.append(3)
+someInt.append(5)
+someInt.append(7)
+
+//var threeDoubls = [0.0, 0.0, 0.0]
+var tenDoubles = Array(repeating: 0.0, count: 10)
+tenDoubles
 
 
 
