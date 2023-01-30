@@ -34,3 +34,33 @@ default:
     print("這不是字元a或z")
 }
 
+
+let score = 70
+
+if score >= 80{
+    if score < 90{
+        print("80~90")
+    }
+}
+
+if score >= 80 && score < 90{
+    print("80~90")
+}
+
+if score < 80 || score >= 90{
+    print("0~79,90~100")
+}
+
+let score1 = 95
+
+if score1 >= 90{
+    print("優")
+}else if score1 >= 80{
+    print("甲")
+}else if score1 >= 70{
+    print("乙")
+}else if score1 >= 60{
+    print("丙")
+}else{
+    print("丁")
+}
