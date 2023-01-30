@@ -64,3 +64,20 @@ if score1 >= 90{
 }else{
     print("丁")
 }
+
+//switch 數值範圍
+
+switch score1{
+case 90...100:
+    print("優")
+case 80..<90:
+    print("甲")
+case 70..<80:
+    print("乙")
+case 60..<70:
+    print("丙")
+case 0..<60:
+    print("丁")
+default:
+    print("不在範圍內")
+}
