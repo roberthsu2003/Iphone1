@@ -81,3 +81,35 @@ case 0..<60:
 default:
     print("不在範圍內")
 }
+
+let x=1
+let y=0
+
+if x==0 && y==0{
+    print("(0,0)")
+}else if x==0{
+    print("在y軸上")
+}else if y==0{
+    print("在x軸上")
+}else if (x <= 2) && (x >= -2) && (y <= 2) && (y >= -2){
+    print("在2和負2之間")
+}else{
+    print("不在範圍內")
+}
+
+//switch tuple
+
+let somePoint = (5,0)
+switch somePoint{
+case (0,0):
+    print("(0,0)")
+case (0,_):
+    print("在y軸上")
+case (_,0):
+    print("在x軸上")
+case (-2...2, -2...2):
+    print("在2和負2之間")
+default:
+    print("不在範圍內")
+}
+
