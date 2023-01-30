@@ -32,3 +32,11 @@ for tickMark in stride(from: 0, to: minutes, by: 5){
 for tickMark in stride(from: 0, through: minutes, by: 5){
     print(tickMark)
 }
+
+var i = 1
+let n = 1000
+
+while(i<=n){
+    print(i)
+    i += 2;
+}
