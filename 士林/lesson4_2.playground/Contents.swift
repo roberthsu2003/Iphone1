@@ -23,3 +23,14 @@ if temperatureInFahrenheit2 <= 32{
 }
 
 
+let someCharacter:Character = "c"
+
+switch someCharacter{
+case "a":
+    print("這是字元a")
+case "z":
+    print("這是字元z")
+default:
+    print("這不是字元a或z")
+}
+
