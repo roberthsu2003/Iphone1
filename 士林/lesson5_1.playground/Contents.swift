@@ -61,3 +61,11 @@ if let bounds1 = minMax1(array:[Int]()){
 }else{
     print("您的陣列是空的")
 }
+
+
+func someFunction(argumentLabel parameterName:Int){
+    //參數名稱
+}
+
+
+someFunction(argumentLabel: 50)
