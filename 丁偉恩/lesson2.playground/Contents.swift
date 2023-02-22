@@ -88,3 +88,16 @@ func someFunction(parameterWithoutDefault:Int, paramerWithDefault:Int=12){
 someFunction(parameterWithoutDefault: 50)
 someFunction(parameterWithoutDefault: 50,paramerWithDefault: 45)
 
+let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+
+func backward(_ a:String,_ b:String) -> Bool{
+    return a < b
+}
+
+let reverseName = names.sorted(by: backward)
+reverseName
+
+names.sorted(){
+    (s1:String,s2:String)->Bool in
+    return s1 < s2
+}
