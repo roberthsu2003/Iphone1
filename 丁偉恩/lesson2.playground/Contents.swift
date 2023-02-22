@@ -54,3 +54,37 @@ case let(x,y):
     print("\(x),\(y)")
 }
 
+if #available(iOS 10,macOS 10.12,*){
+    
+}else{
+    
+}
+
+func greeting(for person:String) -> String{
+     "Hello, " + person + "!"
+}
+
+greeting(for: "robert")
+
+func greeting(with person:String) -> String{
+     "Hello, " + person + "!"
+}
+
+greeting(with: "jenny")
+
+//省略引數名稱(_)
+func someFunction(_ firstParameterName:Int, secondParameterName:Int){
+    
+}
+
+someFunction(10, secondParameterName: 90)
+
+//參數有default value
+
+func someFunction(parameterWithoutDefault:Int, paramerWithDefault:Int=12){
+    
+}
+
+someFunction(parameterWithoutDefault: 50)
+someFunction(parameterWithoutDefault: 50,paramerWithDefault: 45)
+
