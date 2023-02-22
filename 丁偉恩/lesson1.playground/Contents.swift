@@ -61,4 +61,9 @@ greet(person:["name":"John"])
 greet(person:["name":"John","location":"Taipei"])
 
 
+let defaultColorName = "red"
+var userDefineColorName:String?
+
+var colorNameToUse = userDefineColorName ?? defaultColorName
+colorNameToUse
 
