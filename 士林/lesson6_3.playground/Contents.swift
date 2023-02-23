@@ -25,8 +25,11 @@ someVideoMode.resolution.width = 1280
 
 let vga = Resolution(width: 640, height: 480)  // 智慧型成員初始化
 
+let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
 
-
+cinema.width = 2048
+hd.width
 
 
 
