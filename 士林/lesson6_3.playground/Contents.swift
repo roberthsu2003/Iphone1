@@ -32,6 +32,15 @@ cinema.width = 2048
 hd.width
 
 
+let  tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlanced = true;
+tenEighty.frameRate  = 25.0
+tenEighty.name="1080i"
 
 
+
+let alsoTenEighty =  tenEighty
+alsoTenEighty.frameRate  = 30
+tenEighty.frameRate
 
