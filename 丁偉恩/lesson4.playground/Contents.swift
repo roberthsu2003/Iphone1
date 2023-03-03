@@ -6,10 +6,11 @@ enum CompassPoint{
     case east
     case west
 }
-
+/*
 enum Planet{
     case mercury, venus, earth, mars, jupiter, asturn, uranus, neptune
 }
+ */
 var directionToHead = CompassPoint.west
 directionToHead = .north
 
@@ -26,6 +27,9 @@ case .east:
     print("east")
 }
 
+enum Planet:Int{
+    case mercury=1, venus, earth, mars, jupiter, asturn, uranus, neptune
+}
 
 let somePlanet = Planet.earth
 switch somePlanet{
@@ -46,3 +50,19 @@ Beverage.allCases.count
 for beverage in Beverage.allCases{
     print(beverage)
 }
+
+Planet.earth.rawValue
+
+if let possiblePlanet = Planet(rawValue: 1){
+    possiblePlanet.rawValue
+}
+func test() -> Void{
+    guard let possiblePlanet = Planet(rawValue: 1) else{
+        return
+    }
+    print(possiblePlanet.rawValue)
+}
+
+test()
+
+
