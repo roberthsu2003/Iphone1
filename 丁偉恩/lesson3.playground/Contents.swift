@@ -15,3 +15,19 @@ names.sorted(by: {s1, s2  in s1 < s2})
 
 //使用$0,$1取代參數名稱
 names.sorted(by:<)
+
+func someFunctionThatTakesAClosure(closure:() -> Void){
+    
+}
+
+someFunctionThatTakesAClosure{
+    print("Hello")
+}
+
+func someFunctionThatTakesAClosure1(s1:Int,closure:() -> Void){
+    
+}
+
+someFunctionThatTakesAClosure1(s1:5){
+    print("Hello")
+}
