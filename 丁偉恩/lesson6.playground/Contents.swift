@@ -56,3 +56,39 @@ var initialSquareCenter = square.center
 
 square.center = Point(x: 15.0, y: 15.0)
 square.origin
+
+
+//Read-Only Computed Properties
+struct Cuboid{
+    var width = 0.0, height=0.0, depth = 0.0
+    var volume:Double{
+            return width * height * depth
+    }
+}
+
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+
+
+class StepCounter{
+    var totalSteps:Int = 0{
+        willSet(newTotalSteps){
+            print("傳進來的值是\(newTotalSteps)")
+        }
+        
+        didSet{
+            if totalSteps > oldValue{
+                print("增加了\(totalSteps - oldValue)")
+            }
+        }
+    }
+}
+
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps = 360
+stepCounter.totalSteps = 100
+
+stepCounter.totalSteps = 500
+
+
+
