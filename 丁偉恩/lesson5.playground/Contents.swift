@@ -44,3 +44,19 @@ enum CompasssPoint{
 var currentDirection = CompasssPoint.west
 currentDirection.turnNorth()
 currentDirection
+
+
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+tenEighty.frameRate
+
+//識別運算子(===,!==)
+
+tenEighty === alsoTenEighty
+
