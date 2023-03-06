@@ -63,3 +63,14 @@ ovenLight.next()
 ovenLight.next()
 
 
+//type method
+
+class SomeClass{
+    class func someTypeMethod(){
+        
+    }
+}
+
+SomeClass.someTypeMethod()
+
+
