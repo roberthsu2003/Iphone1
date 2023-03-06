@@ -22,18 +22,23 @@ class ViewController: UIViewController {
         //保證一定有值,使用force unwrapping
         let button1_titleLabel = button1.titleLabel
         button1_titleLabel!.text = "左開關"
+        button1.addTarget(self, action: #selector(b1_action(_:)), for: UIControl.Event.touchUpInside)
          
         //使用optional binding 同時檢查,同時force unwrapping
         if let button2_titleLabel = button2.titleLabel{
             button2_titleLabel.text = "中間開關"
         }
         
-        //使用guard else        
+        //使用guard else
         guard let button3_titleLabel = button3.titleLabel else{
             return
         }
         button3_titleLabel.text = "右邊開關"
         
+    }
+    
+    @objc func b1_action(_ sender:UIButton){
+        print("左按鈕被按了")
     }
 
 
