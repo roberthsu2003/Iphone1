@@ -66,3 +66,12 @@ var ovenLight = TriStateSwitch.low
 ovenLight.next()
 ovenLight.next()
 ovenLight.next()
+
+//Type Method
+class SomeClass{
+    class func someTypeMethod(){
+        
+    }
+}
+
+SomeClass.someTypeMethod()
