@@ -20,6 +20,9 @@
                                 <rect key="frame" x="50" y="44" width="220" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Press Me"/>
+                                <connections>
+                                    <action selector="userClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fR8-3e-BwN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
