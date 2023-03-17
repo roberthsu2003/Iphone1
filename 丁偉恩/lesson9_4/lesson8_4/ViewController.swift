@@ -52,10 +52,28 @@ extension ViewController:UITableViewDataSource{
         let index = indexPath.row
         let city = cities[index]
         let cityName = city["City"] as? String
+        let countryName = city["Country"] as? String
+        let imageName = city["Image"] as? String ?? ""
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         
-        cell.textLabel!.text = cityName
+        if #available(iOS 14, *){
+            var content = cell.defaultContentConfiguration()
+            content.text = cityName
+            content.secondaryText = countryName
+            content.image = UIImage(named: imageName)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            //content.imageProperties.cornerRadius = 20
+            cell.contentConfiguration = content
+            
+            
+        }else{
+            cell.textLabel!.text = cityName
+            cell.detailTextLabel!.text = countryName
+            cell.imageView!.image = UIImage(named: imageName)
+        }
+        
+        
         return cell
     }
 }
