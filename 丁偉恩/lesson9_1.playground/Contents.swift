@@ -62,7 +62,7 @@ let halfGray = Color(white: 0.5)
 
 
 class SurveyQuestion{
-    var text:String
+    let text:String
     var response:String?
     
     init(text:String){
