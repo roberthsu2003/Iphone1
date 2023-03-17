@@ -69,6 +69,24 @@ let oneBacon = RecipeIngredient(name: "Bacon")
 let sixEggs = RecipeIngredient(name: "Eggs", quantity: 6)
 
 
+struct Animal{
+    let species:String
+    
+    init?(species:String){
+        if species.isEmpty {
+            return nil
+        }
+        
+        self.species = species
+    }
+}
+
+if let someCreature = Animal(species: "Giraffe"){
+    someCreature
+}
+
+
+
 
 
 
