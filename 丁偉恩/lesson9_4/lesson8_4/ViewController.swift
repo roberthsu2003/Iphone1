@@ -62,7 +62,7 @@ extension ViewController:UITableViewDataSource{
             content.text = cityName
             content.secondaryText = countryName
             content.image = UIImage(named: imageName)
-            content.imageProperties.reservedLayoutSize = CGSize(width: 80, height: 50)
+            content.imageProperties.reservedLayoutSize = CGSize(width: 50, height: 35)
             //content.imageProperties.cornerRadius = 20
             cell.contentConfiguration = content
             
