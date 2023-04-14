@@ -8,10 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var messageLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        messageLabel.text = "swift,起步走"
+        messageLabel.textColor = UIColor.red
+        messageLabel.font = UIFont(name: "Helvetica-Light", size: 24)
     }
 
 

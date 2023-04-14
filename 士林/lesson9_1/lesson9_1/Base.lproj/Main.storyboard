@@ -49,10 +49,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3yv-Ru-nvd" secondAttribute="trailing" constant="10" id="tij-N6-8GU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="3yv-Ru-nvd" id="YB6-fi-lBy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="-39"/>
+            <point key="canvasLocation" x="43" y="-39"/>
         </scene>
     </scenes>
     <resources>
