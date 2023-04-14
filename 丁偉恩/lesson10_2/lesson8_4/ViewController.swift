@@ -95,6 +95,16 @@ extension ViewController:UITableViewDelegate{
         let optionMenu = UIAlertController(title: nil, message: "您想要做什麼", preferredStyle:.actionSheet)
         let cancelAction = UIAlertAction(title: "取法", style: .default)
         optionMenu.addAction(cancelAction)
+        
+        //actionSheet內建立一個action
+        let callAction = UIAlertAction(title: "聯絡旅行社", style: .default){
+            (action:UIAlertAction) -> Void in
+            let alertController = UIAlertController(title: "連線失敗", message: "目前正在忙線中", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alertController, animated: true)
+        }
+        
+        optionMenu.addAction(callAction)
         self.present(optionMenu, animated: true)
     }
 }
