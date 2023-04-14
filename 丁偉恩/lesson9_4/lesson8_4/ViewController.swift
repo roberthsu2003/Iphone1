@@ -68,8 +68,9 @@ extension ViewController:UITableViewDataSource{
             
             
         }else{
-            cell.textLabel!.text = cityName
-            cell.detailTextLabel!.text = countryName
+            //cell.textLabel?.text = cityName
+            cell.textLabel?.text = cityName
+            cell.detailTextLabel?.text = countryName
             cell.imageView!.image = UIImage(named: imageName)
         }
         
