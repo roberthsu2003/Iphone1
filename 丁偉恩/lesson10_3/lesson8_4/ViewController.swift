@@ -89,11 +89,24 @@ extension ViewController:UITableViewDelegate{
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ){
-        let markController = UIAlertController(title: "標示", message: "標示選取", preferredStyle: .alert)
+        let selectedCell = tableView.cellForRow(at: indexPath) as! CityCell
+        var message = ""
+        switch (selectedCell.accessoryType){
+        case .checkmark:
+                message="取消標示"
+        default:
+            message="標示選取"
+        }
+        let markController = UIAlertController(title: "標示", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {
             (action:UIAlertAction) -> Void in
             let selectedCell = tableView.cellForRow(at: indexPath) as! CityCell
-            selectedCell.accessoryType = .checkmark
+            if message == "標示選取"{
+                selectedCell.accessoryType = .checkmark
+            }else{
+                selectedCell.accessoryType = .none
+            }
+            
         })
         
         let cancelAction = UIAlertAction(title: "取消", style: .default)
