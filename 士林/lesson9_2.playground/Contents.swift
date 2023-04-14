@@ -25,6 +25,19 @@ case .west:
     print("西")
 }
 
+//列舉的純值
+enum Planet:Int{
+    case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+
+let earths = Planet.earth
+earths.rawValue
+
+if let mars_planet = Planet(rawValue: 4){ //optional binding
+    mars_planet
+}
+
+
 
 
 
