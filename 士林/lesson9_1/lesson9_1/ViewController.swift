@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         }
         messageLabel.text = "switch,被按了,\(switchState)"
     }
+    
+    @IBAction func userSlider(_ sender:UISlider){
+        messageLabel.text = "現在的進度是:\(sender.value)"
+    }
 
 
 }

@@ -32,6 +32,9 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zhi-iD-xhM">
                                 <rect key="frame" x="37" y="190" width="254" height="31"/>
+                                <connections>
+                                    <action selector="userSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="EPa-GZ-9fw"/>
+                                </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxp-tw-RSr">
                                 <rect key="frame" x="37" y="277" width="51" height="31"/>
@@ -61,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="-39"/>
+            <point key="canvasLocation" x="184" y="-14"/>
         </scene>
     </scenes>
     <resources>
