@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cityTableView.dataSource = self
+        cityTableView.delegate = self
     }
     
     
@@ -76,9 +77,25 @@ extension ViewController:UITableViewDataSource{
         cell.cityLabel.text = cityName
         cell.continentLabel.text = continentName
         cell.countryLabel.text = countryName
-        cell.cityImageView.image = UIImage(named: imageName)        
+        cell.cityImageView.image = UIImage(named: imageName)
+        cell.cityImageView.layer.cornerRadius = 30
         
         return cell
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ){
+        let rowIndex = indexPath.row
+        let city = cities[rowIndex]
+        
+        let optionMenu = UIAlertController(title: nil, message: "您想要做什麼", preferredStyle:.actionSheet)
+        let cancelAction = UIAlertAction(title: "取法", style: .default)
+        optionMenu.addAction(cancelAction)
+        self.present(optionMenu, animated: true)
     }
 }
 
