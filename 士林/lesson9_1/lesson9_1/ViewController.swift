@@ -16,6 +16,20 @@ class ViewController: UIViewController {
         messageLabel.textColor = UIColor.red
         messageLabel.font = UIFont(name: "Helvetica-Light", size: 24)
     }
+    
+    @IBAction func userClick(_ sender:UIButton){
+        messageLabel.text = "按鈕被按了"
+    }
+    
+    @IBAction func userSwitch(_ sender:UISwitch){
+        var switchState = ""
+        if sender.isOn{
+            switchState = "開啟狀態"
+        }else{
+            switchState = "關閉狀態"
+        }
+        messageLabel.text = "switch,被按了,\(switchState)"
+    }
 
 
 }
