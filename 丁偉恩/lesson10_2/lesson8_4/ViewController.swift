@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var cityTableView:UITableView!
-    var cities:[[String:Any]]!
+    var cities = [City]()
     
     
     override func awakeFromNib() {
@@ -24,7 +24,20 @@ class ViewController: UIViewController {
             print("解析錯誤")
             return
         }
-        cities = nsArray as? [[String:Any]]
+        if let cityItems = nsArray as? [[String:Any]]{
+            for dic_city in cityItems{
+                let city = dic_city["City"] as? String ?? ""
+                let country = dic_city["Country"] as? String ?? ""
+                let continent = dic_city["Continent"] as? String ?? ""
+                let image = dic_city["Image"] as? String ?? ""
+                let local = dic_city["Local"] as? String ?? ""
+                let url = dic_city["url"] as? String ?? ""
+                let latitude = dic_city["lat"] as? Double ?? 0.0
+                let longitude = dic_city["long"] as? Double ?? 0.0
+                let oneCity = City(city: city, continent: continent, country: country, image: image, local: local, latitude: latitude, longitude: longitude, url: url)
+                cities.append(oneCity)
+            }
+        }
         
     }
 
