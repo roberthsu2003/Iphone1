@@ -66,9 +66,9 @@ extension ViewController:UITableViewDataSource{
     ) -> UITableViewCell{
         let index = indexPath.row
         let city = cities[index]
-        let cityName = city["City"] as? String
-        let countryName = city["Country"] as? String
-        let imageName = city["Image"] as? String ?? ""
+        let cityName = city.city
+        let countryName = city.country
+        let imageName = city.image
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         
