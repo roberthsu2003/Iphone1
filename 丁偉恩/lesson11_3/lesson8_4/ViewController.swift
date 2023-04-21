@@ -141,7 +141,21 @@ extension ViewController:UITableViewDelegate{
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration?{
-        return nil
+        let shareAction = UIContextualAction(style: .normal, title: "分享") { (action:UIContextualAction, view:UIView,handler:(Bool)->Void ) in
+            print("分享")
+            handler(true)
+        }
+        
+        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { (action:UIContextualAction, view:UIView,handler:(Bool)->Void ) in
+            let index = indexPath.row
+            self.cities.remove(at: index)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            handler(true)
+        }
+        shareAction.backgroundColor = UIColor(red: 48.0/255, green: 173.0/255, blue: 99.0/255, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 202.0/255, green: 202.0/255, blue: 202.0/255, alpha: 1.0)
+        
+        return UISwipeActionsConfiguration(actions: [shareAction,deleteAction])
     }
     
     
