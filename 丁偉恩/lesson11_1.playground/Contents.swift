@@ -85,5 +85,13 @@ do{
 }
 
 
+if let x = try? buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine){
+    print("沒有錯誤")
+}else{
+    print("有錯誤")
+}
+
+try! buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+
 
 
