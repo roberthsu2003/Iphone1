@@ -56,5 +56,34 @@ class VendingMachine{
     }
 }
 
+let favoriteSnacks = [
+    "Alice": "Chips",
+    "Bob": "Licorice",
+    "Eve": "Pretzels"
+]
+
+func buyFavoriteSnack(person:String, vendingMachine:VendingMachine) throws {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(itemNamed: snackName)
+}
+
+
+var vendingMachine = VendingMachine()
+vendingMachine.coinsDeposited = 8
+
+do{
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+}catch VendingMachineError.invalidSelection{
+    print("沒有這個商品")
+    
+}catch VendingMachineError.outOfStock{
+    print("已經售完")
+}catch VendingMachineError.insufficientFunds(coinsNeeded: 5){
+    print("金額不足")
+}catch{
+    print("不明錯誤")
+}
+
+
 
 
