@@ -89,7 +89,10 @@ extension ViewController:UITableViewDelegate{
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ){
-        print("selected:\(indexPath.row)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewcontroller = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.navigationController?.pushViewController(detailViewcontroller, animated: true)
+        
     }
     
     
