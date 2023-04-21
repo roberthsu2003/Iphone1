@@ -42,4 +42,25 @@ for item in library{
 
 movieCount
 songCount
+
+if let item1 = library[0] as? Movie{
+    print("item\(item1.director)")
+}
+
+if let item1 = library[0] as? Song{
+    print("item\(item1.artist)")
+}else{
+    print("轉型不成功")
+}
+
+for item in library{
+    if let movie = item as? Movie{
+        print("item:\(movie.director)")
+    }else if let song = item as? Song{
+        print("item:\(song.artist)")
+    }
+}
+
+
+
     
