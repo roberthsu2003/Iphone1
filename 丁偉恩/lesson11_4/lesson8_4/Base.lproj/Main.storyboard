@@ -118,6 +118,7 @@
                             <constraint firstItem="ZdJ-Zw-T7C" firstAttribute="top" secondItem="kiw-BZ-NSE" secondAttribute="top" constant="63" id="pf6-Ze-hh1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cBH-AW-Yej"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ0-QC-r7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
