@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct City{
+class City{
     var city:String
     var continent:String
     var country:String
@@ -15,4 +15,15 @@ struct City{
     var latitude:Double
     var longitude:Double
     var url:String
+    
+    init(city: String, continent: String, country: String, image: String, local: String, latitude: Double, longitude: Double, url: String) {
+        self.city = city
+        self.continent = continent
+        self.country = country
+        self.image = image
+        self.local = local
+        self.latitude = latitude
+        self.longitude = longitude
+        self.url = url
+    }
 }
