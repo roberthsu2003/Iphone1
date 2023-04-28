@@ -53,9 +53,10 @@ class ViewController: UIViewController {
             guard let indexPath = sender as? IndexPath else{
                 return
             }
-            print("showCity")
             let city = cities[indexPath.row]
-            print(city.city)
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.city = city
+            
         }
     }
     
