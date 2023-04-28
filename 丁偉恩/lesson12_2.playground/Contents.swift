@@ -37,5 +37,43 @@ Rect(center: Point(x: 10, y: 10), size: Size(width: 20, height: 10))
 
 //method
 
+extension Int{
+    func repetitions(task:()->Void){
+        for _ in 0..<self{
+            task()
+        }
+    }
+}
+
+3.repetitions{
+    print("Hello!")
+}
+
+//Subscripts
+extension Int{
+    subscript(digitIndex:Int) -> Int{
+        var decimalBase = 1
+        for _ in 0..<digitIndex{
+            decimalBase *= 10
+        }
+        return (self/decimalBase) % 10
+    }
+}
+
+746381295[0]
+746381295[1]
+746381295[2]
+
+
+//Nested Types
+extension Int{
+    enum Kind{
+        
+    }
+}
+
+
+
+
 
 
