@@ -104,14 +104,30 @@
                     <view key="view" contentMode="scaleToFill" id="fPE-N5-fcG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mTg-t1-QAs">
+                                <rect key="frame" x="22" y="84" width="276" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mTg-t1-QAs" secondAttribute="height" multiplier="276:155" id="p4Y-qD-gmE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z8t-ya-d48"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mTg-t1-QAs" firstAttribute="top" secondItem="z8t-ya-d48" secondAttribute="top" constant="20" id="Mhn-Lz-KDb"/>
+                            <constraint firstItem="z8t-ya-d48" firstAttribute="trailing" secondItem="mTg-t1-QAs" secondAttribute="trailing" constant="22" id="h9j-Vk-KM3"/>
+                            <constraint firstItem="mTg-t1-QAs" firstAttribute="leading" secondItem="z8t-ya-d48" secondAttribute="leading" constant="22" id="idh-jn-3t9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kxR-ys-2pO"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="mTg-t1-QAs" id="56J-bK-ZDM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IG4-wd-6VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="-35"/>
+            <point key="canvasLocation" x="1732.5" y="-35.91549295774648"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2E-di-Z09">
