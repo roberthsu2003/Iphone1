@@ -166,10 +166,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kxR-ys-2pO">
-                        <barButtonItem key="rightBarButtonItem" title="評分" id="Iws-4v-imE"/>
+                        <barButtonItem key="rightBarButtonItem" title="評分" id="Iws-4v-imE">
+                            <connections>
+                                <action selector="userPress:" destination="UEJ-c1-qU6" id="ahs-3a-2mL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="y88-he-Jb1" id="iGW-Va-rJ2"/>
+                        <segue destination="kEw-42-ltY" kind="presentation" identifier="goRating" id="V8q-sZ-Vrs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IG4-wd-6VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -181,7 +186,7 @@
             <objects>
                 <viewController id="kEw-42-ltY" customClass="RatingViewController" customModule="lesson13_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WnX-sE-PHn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="zpb-6k-6Xd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

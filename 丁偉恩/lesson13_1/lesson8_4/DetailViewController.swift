@@ -23,8 +23,8 @@ class DetailViewController: UIViewController {
     }
     
 
-    deinit{
-        print("被消滅了")
+    @IBAction func userPress(_ sender:UIBarButtonItem){
+        print("press")
     }
 }
 
