@@ -129,7 +129,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FieldValue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWx-hA-N05">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FieldValue" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWx-hA-N05">
                                                             <rect key="frame" x="72.5" y="0.0" width="195.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -165,7 +165,9 @@
                             <constraint firstItem="y88-he-Jb1" firstAttribute="top" secondItem="z8t-ya-d48" secondAttribute="top" id="xdg-hd-Pbr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kxR-ys-2pO"/>
+                    <navigationItem key="navigationItem" id="kxR-ys-2pO">
+                        <barButtonItem key="rightBarButtonItem" title="評分" id="Iws-4v-imE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="y88-he-Jb1" id="iGW-Va-rJ2"/>
                     </connections>
@@ -173,6 +175,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IG4-wd-6VK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741.875" y="-35.91549295774648"/>
+        </scene>
+        <!--Rating View Controller-->
+        <scene sceneID="4XU-hg-3Ap">
+            <objects>
+                <viewController id="kEw-42-ltY" customClass="RatingViewController" customModule="lesson13_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WnX-sE-PHn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zpb-6k-6Xd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FDZ-OO-4md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2589" y="-36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T2E-di-Z09">

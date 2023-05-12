@@ -17,6 +17,7 @@
 		A43E23E629FBBFE4003DD0AD /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E23E529FBBFE4003DD0AD /* DetailViewCell.swift */; };
 		A474DDFD29E92F2200400140 /* city.swift in Sources */ = {isa = PBXBuildFile; fileRef = A474DDFC29E92F2200400140 /* city.swift */; };
 		A474DDFF29E9381C00400140 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A474DDFE29E9381C00400140 /* CityCell.swift */; };
+		A490B9672A0E2C49007514AB /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490B9662A0E2C48007514AB /* RatingViewController.swift */; };
 		A4A188CD29F282E300FCAE84 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A188CC29F282E300FCAE84 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		A43E23E529FBBFE4003DD0AD /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		A474DDFC29E92F2200400140 /* city.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = city.swift; sourceTree = "<group>"; };
 		A474DDFE29E9381C00400140 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		A490B9662A0E2C48007514AB /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		A4A188CC29F282E300FCAE84 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				A474DDFE29E9381C00400140 /* CityCell.swift */,
 				A4A188CC29F282E300FCAE84 /* DetailViewController.swift */,
 				A43E23E529FBBFE4003DD0AD /* DetailViewCell.swift */,
+				A490B9662A0E2C48007514AB /* RatingViewController.swift */,
 			);
 			path = lesson8_4;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42AA30029C1B09700DA501E /* ViewController.swift in Sources */,
+				A490B9672A0E2C49007514AB /* RatingViewController.swift in Sources */,
 				A42AA2FC29C1B09700DA501E /* AppDelegate.swift in Sources */,
 				A43E23E629FBBFE4003DD0AD /* DetailViewCell.swift in Sources */,
 				A474DDFF29E9381C00400140 /* CityCell.swift in Sources */,
