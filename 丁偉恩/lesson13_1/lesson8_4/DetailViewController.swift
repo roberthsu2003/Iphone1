@@ -22,9 +22,16 @@ class DetailViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goRating"{
+            let ratingViewController = segue.destination as! RatingViewController
+            ratingViewController.city = city
+        }
+    }
+    
 
     @IBAction func userPress(_ sender:UIBarButtonItem){
-        print("press")
+        performSegue(withIdentifier: "goRating", sender: nil)
     }
 }
 
