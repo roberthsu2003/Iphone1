@@ -25,3 +25,44 @@ class Starship:FullyNamed{
         return "Robert"
     }
 }
+
+protocol SomeProtocol1{
+    //method requirements
+    func random() -> Double
+}
+
+
+class LinearCongruentialGenerator:SomeProtocol1{
+    func random() -> Double{
+        return 56.789
+    }
+}
+
+protocol someProtocol2{
+    init(someParameter:Int)
+}
+
+class SomeClass:someProtocol2{
+    required init(someParameter: Int) {
+        
+    }
+}
+
+protocol DiceGame{
+    var dice:Int{get}
+    func play()
+}
+
+class SnakesAndLadders{
+    var delegate:DiceGame?
+}
+
+class Abc:DiceGame{
+    var dice:Int = 5
+    func play(){
+        //dosomeThine
+    }
+}
+
+var snack = SnakesAndLadders()
+snack.delegate = Abc()
