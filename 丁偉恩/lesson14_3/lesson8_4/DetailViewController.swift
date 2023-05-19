@@ -33,13 +33,13 @@ class DetailViewController: UIViewController {
     @IBAction func userClick(_ sender:UIStoryboardSegue){
         switch(sender.identifier){
         case "n1":
-            print("n1")
+            print("科技化城市")
         case "n2":
-            print("n2")
+            print("風景不錯")
         case "n3":
-            print("n3")
+            print("現代城市")
         case "n4":
-            print("n4")
+            print("環保城市")
         default:
             print("無資料")
         }
