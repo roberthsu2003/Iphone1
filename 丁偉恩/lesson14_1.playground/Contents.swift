@@ -78,3 +78,13 @@ stackOfStrings.push("uno")
 stackOfStrings.push("dos")
 stackOfStrings.push("tres")
 stackOfStrings.pop()
+
+
+func swapTwoValues1<T:Hashable>(_ a:inout T,_ b:inout T){
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+let myArray = [Int]()
+let yourArray = Array<Int>()
