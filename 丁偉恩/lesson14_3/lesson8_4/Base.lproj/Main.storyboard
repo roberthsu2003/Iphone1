@@ -193,7 +193,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-8T-SJR">
-                                <rect key="frame" x="40" y="40" width="240" height="350"/>
+                                <rect key="frame" x="40" y="40" width="240" height="400"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chiba" translatesAutoresizingMaskIntoConstraints="NO" id="oP6-h3-uc0">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -201,11 +201,68 @@
                                             <constraint firstAttribute="height" constant="128" id="cQq-A3-JBf"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您曾經來過這裏嗎?給它打個分數?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6V-0d-fMC">
+                                        <rect key="frame" x="23" y="142" width="195" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wJ9-pa-dOU">
+                                        <rect key="frame" x="30" y="199" width="180" height="162"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rn-o2-iCy">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="34.5"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="科技化城市"/>
+                                                <connections>
+                                                    <segue destination="oT0-Uq-pJf" kind="unwind" identifier="n1" unwindAction="userClick:" id="3fy-1c-VHm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymF-6c-fP4">
+                                                <rect key="frame" x="0.0" y="42.5" width="180" height="34.5"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="風景不錯"/>
+                                                <connections>
+                                                    <segue destination="oT0-Uq-pJf" kind="unwind" identifier="n2" unwindAction="userClick:" id="4pS-I8-hnq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJD-v5-Ubo">
+                                                <rect key="frame" x="0.0" y="85" width="180" height="34.5"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="現代城市"/>
+                                                <connections>
+                                                    <segue destination="oT0-Uq-pJf" kind="unwind" identifier="n3" unwindAction="userClick:" id="78B-7L-AUX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-oX-cyg">
+                                                <rect key="frame" x="0.0" y="127.5" width="180" height="34.5"/>
+                                                <color key="backgroundColor" red="0.43089865399999999" green="0.50744110239999995" blue="0.66764367489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="環保城市"/>
+                                                <connections>
+                                                    <segue destination="oT0-Uq-pJf" kind="unwind" identifier="n4" unwindAction="userClick:" id="QJg-cB-68T"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lo4-8T-SJR" secondAttribute="height" multiplier="24:35" id="9y9-Zg-4VQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wJ9-pa-dOU" secondAttribute="trailing" constant="30" id="0c3-Ya-t3i"/>
+                                    <constraint firstItem="wJ9-pa-dOU" firstAttribute="top" secondItem="v6V-0d-fMC" secondAttribute="bottom" constant="21" id="1Hc-iG-65a"/>
+                                    <constraint firstAttribute="width" secondItem="Lo4-8T-SJR" secondAttribute="height" multiplier="24:40" id="9y9-Zg-4VQ"/>
+                                    <constraint firstItem="v6V-0d-fMC" firstAttribute="leading" secondItem="Lo4-8T-SJR" secondAttribute="leading" constant="23" id="AGS-3r-sFE"/>
+                                    <constraint firstAttribute="trailing" secondItem="v6V-0d-fMC" secondAttribute="trailing" constant="22" id="PGx-2H-A0R"/>
+                                    <constraint firstItem="v6V-0d-fMC" firstAttribute="top" secondItem="oP6-h3-uc0" secondAttribute="bottom" constant="14" id="Ro8-Ji-qNd"/>
                                     <constraint firstAttribute="trailing" secondItem="oP6-h3-uc0" secondAttribute="trailing" id="WsH-L3-enn"/>
+                                    <constraint firstItem="wJ9-pa-dOU" firstAttribute="leading" secondItem="Lo4-8T-SJR" secondAttribute="leading" constant="30" id="eVB-yT-tBN"/>
                                     <constraint firstItem="oP6-h3-uc0" firstAttribute="leading" secondItem="Lo4-8T-SJR" secondAttribute="leading" id="kij-gC-C28"/>
                                     <constraint firstItem="oP6-h3-uc0" firstAttribute="top" secondItem="Lo4-8T-SJR" secondAttribute="top" id="vJ7-Qd-OSO"/>
                                 </constraints>
@@ -224,11 +281,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="askLabel" destination="v6V-0d-fMC" id="9cB-Do-3pq"/>
                         <outlet property="backgroundImageView" destination="1Vz-2j-4Fo" id="yZy-4h-SA8"/>
                         <outlet property="containerImageView" destination="oP6-h3-uc0" id="9kN-64-t7h"/>
+                        <outlet property="containerView" destination="Lo4-8T-SJR" id="Tib-0P-NsH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDZ-OO-4md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="oT0-Uq-pJf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2587.5" y="-36.971830985915496"/>
         </scene>

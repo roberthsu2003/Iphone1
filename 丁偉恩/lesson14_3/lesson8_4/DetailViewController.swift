@@ -29,6 +29,22 @@ class DetailViewController: UIViewController {
         }
     }
     
+    //exit的function
+    @IBAction func userClick(_ sender:UIStoryboardSegue){
+        switch(sender.identifier){
+        case "n1":
+            print("n1")
+        case "n2":
+            print("n2")
+        case "n3":
+            print("n3")
+        case "n4":
+            print("n4")
+        default:
+            print("無資料")
+        }
+    }
+    
 
     @IBAction func userPress(_ sender:UIBarButtonItem){
         performSegue(withIdentifier: "goRating", sender: nil)
