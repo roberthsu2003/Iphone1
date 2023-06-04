@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
         if segue.identifier == "goRating"{
             let ratingViewController = segue.destination as! RatingViewController
             ratingViewController.city = city
+            ratingViewController.delegate = self
             
         }
     }
@@ -80,4 +81,11 @@ extension DetailViewController:UITableViewDataSource{
     
     
     
+}
+
+extension DetailViewController:RatingViewControllerDelegate{
+    func userClickRate(text:String)->Void{
+        city.userRate = text
+        tableView.reloadData()
+    }
 }
