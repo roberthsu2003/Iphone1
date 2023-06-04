@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol RatingViewControllerDelegate:AnyObject{
+    func userClickRate(text:String)->Void
+}
 
 class RatingViewController: UIViewController {
     @IBOutlet var backgroundImageView:UIImageView!
@@ -13,6 +16,7 @@ class RatingViewController: UIViewController {
     @IBOutlet var askLabel:UILabel!
     @IBOutlet var containerView:UIView!
     var city:City!
+    weak var delegate:RatingViewControllerDelegate?
     
     
     
@@ -37,7 +41,7 @@ class RatingViewController: UIViewController {
     
     @IBAction func userClick(_ sender:UIButton){
         if let titleLabel = sender.titleLabel{
-           
+            delegate?.userClickRate(text: titleLabel.text!)
             self.dismiss(animated: true)
         }
         
