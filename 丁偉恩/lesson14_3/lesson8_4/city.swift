@@ -15,6 +15,7 @@ class City{
     var latitude:Double
     var longitude:Double
     var url:String
+    var userRate:String!
     
     init(city: String, continent: String, country: String, image: String, local: String, latitude: Double, longitude: Double, url: String) {
         self.city = city

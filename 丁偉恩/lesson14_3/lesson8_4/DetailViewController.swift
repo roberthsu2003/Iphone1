@@ -34,12 +34,16 @@ class DetailViewController: UIViewController {
         switch(sender.identifier){
         case "n1":
             print("科技化城市")
+            city.userRate = "科技化城市"
         case "n2":
             print("風景不錯")
+            city.userRate = "風景不錯"
         case "n3":
             print("現代城市")
+            city.userRate = "現代城市"
         case "n4":
             print("環保城市")
+            city.userRate = "環保城市"
         default:
             print("無資料")
         }
