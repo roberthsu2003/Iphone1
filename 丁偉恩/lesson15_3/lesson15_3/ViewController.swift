@@ -22,6 +22,7 @@ struct Site:Codable{
 class ViewController: UITableViewController {
     var url = "https://youbike-json.onrender.com/youbike"
     var urlSession = URLSession.shared
+    var areas = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +49,13 @@ class ViewController: UITableViewController {
                 print("jsonDecoder無法轉換")
                 return
             }
-            
+            var tempArea = Set<String>()
             for site in sites{
-                print(site)
+                tempArea.insert(site.sarea)
             }
+            self.areas = Array(tempArea)
             
-            
+            print(self.areas)
             
           
         }
