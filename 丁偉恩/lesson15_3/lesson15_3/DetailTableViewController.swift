@@ -50,6 +50,26 @@ extension DetailTableViewController{
     }
 }
 
-extension DetailTableViewController:URLSessionDelegate{
-    
+extension DetailTableViewController:URLSessionDownloadDelegate{
+    func urlSession(
+        _ session: URLSession,
+        downloadTask: URLSessionDownloadTask,
+        didFinishDownloadingTo location: URL
+    ){
+        guard let data = try? Data(contentsOf: location) else{
+            print("轉換資料有問題")
+            return
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        guard let youbikeData = try? jsonDecoder.decode([Site].self, from: data) else{
+            print("json無法解析")
+            return
+        }
+        
+        for site in youbikeData{
+            print(site)
+        }
+        
+    }
 }
