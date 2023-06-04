@@ -28,6 +28,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         //下載資料
         let siteURL = URL(string: url)!
         let downloadTask = urlSession.downloadTask(with: siteURL) { (saveURL:URL?, response:URLResponse?, error:Error?) in
@@ -64,10 +65,6 @@ class ViewController: UITableViewController {
                 print(self.areas)
             }
            
-            
-            
-            
-          
         }
         downloadTask.resume()
     }
@@ -92,4 +89,16 @@ extension ViewController{
     }
     
 }
+
+extension ViewController{
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ){
+        let area = areas[indexPath.row]
+        print(area)
+    }
+}
+
+
 
