@@ -35,7 +35,11 @@ class RatingViewController: UIViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
-        print(sender)
+        if let titleLabel = sender.titleLabel{
+            print(titleLabel.text!)
+            self.dismiss(animated: true)
+        }
+        
     }
     
     
