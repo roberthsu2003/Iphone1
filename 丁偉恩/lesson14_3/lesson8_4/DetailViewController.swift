@@ -47,6 +47,7 @@ class DetailViewController: UIViewController {
         default:
             print("無資料")
         }
+        tableView.reloadData()
     }
     
 
