@@ -26,6 +26,11 @@ class DetailViewController: UIViewController {
         if segue.identifier == "goRating"{
             let ratingViewController = segue.destination as! RatingViewController
             ratingViewController.city = city
+            ratingViewController.callbackFunction = {
+                (suggest:String) -> Void in
+                self.city.userRate = suggest
+                self.tableView.reloadData()
+            }
         }
     }
     

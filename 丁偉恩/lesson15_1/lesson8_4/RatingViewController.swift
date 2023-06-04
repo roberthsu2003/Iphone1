@@ -13,6 +13,7 @@ class RatingViewController: UIViewController {
     @IBOutlet var askLabel:UILabel!
     @IBOutlet var containerView:UIView!
     var city:City!
+    var callbackFunction:((String)->Void)!
     
     
     override func viewDidLoad() {
@@ -36,7 +37,7 @@ class RatingViewController: UIViewController {
     
     @IBAction func userClick(_ sender:UIButton){
         if let titleLabel = sender.titleLabel{
-            print(titleLabel.text!)
+            callbackFunction(titleLabel.text!)
             self.dismiss(animated: true)
         }
         
