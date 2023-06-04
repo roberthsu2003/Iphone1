@@ -59,7 +59,7 @@ extension DetailViewController:UITableViewDataSource{
     
     // Return the number of rows for the table.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 5
+       return 6
     }
 
     // Provide a cell object for each row.
@@ -80,6 +80,9 @@ extension DetailViewController:UITableViewDataSource{
             cell.fieldLabel.text = "網址"
             cell.valueLabel.text = city.url;
         case 4:
+            cell.fieldLabel.text = "評分"
+            cell.valueLabel.text = city.userRate ?? "目前無評分";
+        case 5:
             cell.fieldLabel.text = "簡介"
             cell.valueLabel.text = city.local;
         default:
