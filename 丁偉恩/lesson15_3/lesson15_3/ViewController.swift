@@ -7,6 +7,18 @@
 
 import UIKit
 
+struct Site:Codable{
+    let act:String
+    let ar:String
+    let bemp:Int
+    let lat:Double
+    let lng:Double
+    let mday:String
+    let sarea:String
+    let sbi:Int
+    let sna:String
+}
+
 class ViewController: UITableViewController {
     var url = "https://youbike-json.onrender.com/youbike"
     var urlSession = URLSession.shared
@@ -30,9 +42,16 @@ class ViewController: UITableViewController {
                 return
             }
             print(data)
-            let stringValue = String(decoding: data, as: UTF8.self)
+            let jsonDecoder = JSONDecoder()
               
+            guard let sites = try? jsonDecoder.decode([Site].self, from: data) else{
+                print("jsonDecoder無法轉換")
+                return
+            }
             
+            for site in sites{
+                print(site)
+            }
             
             
             
