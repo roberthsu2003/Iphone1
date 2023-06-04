@@ -20,6 +20,7 @@ struct Site:Codable{
 }
 
 class ViewController: UITableViewController {
+    @IBOutlet var indicator:UIActivityIndicatorView!
     var url = "https://youbike-json.onrender.com/youbike"
     var urlSession = URLSession.shared
     var areas = [String]()
@@ -54,8 +55,13 @@ class ViewController: UITableViewController {
                 tempArea.insert(site.sarea)
             }
             self.areas = Array(tempArea)
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                print(self.areas)
+            }
+           
             
-            print(self.areas)
+            
             
           
         }
