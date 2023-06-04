@@ -47,11 +47,41 @@
                     <navigationItem key="navigationItem" title="台北市youbikeData" id="wIg-Fp-Kzb"/>
                     <connections>
                         <outlet property="indicator" destination="afN-LX-erx" id="GRd-2a-x5s"/>
+                        <segue destination="OGZ-s7-2PI" kind="show" identifier="goDetail" id="Br5-Z2-2mv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0r-CE-DON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="358" y="-52"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="9Pv-ZJ-wKo">
+            <objects>
+                <tableViewController id="OGZ-s7-2PI" customClass="DetailTableViewController" customModule="lesson15_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NFt-S0-pB6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PXn-Wc-4We">
+                                <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PXn-Wc-4We" id="22o-cQ-3TW">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OGZ-s7-2PI" id="PBT-em-dmR"/>
+                            <outlet property="delegate" destination="OGZ-s7-2PI" id="wcf-ef-RGG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mL5-5S-GBJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzj-qB-w6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="-52"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kab-BD-WQ8">

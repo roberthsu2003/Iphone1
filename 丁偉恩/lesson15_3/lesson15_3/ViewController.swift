@@ -69,8 +69,15 @@ class ViewController: UITableViewController {
         downloadTask.resume()
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goDetail"){
+            let detailViewController = segue.destination as! DetailTableViewController
+            detailViewController.area = sender as? String
+        }
+    }
 }
+
+
 
 extension ViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,7 +103,8 @@ extension ViewController{
         didSelectRowAt indexPath: IndexPath
     ){
         let area = areas[indexPath.row]
-        print(area)
+        performSegue(withIdentifier: "goDetail", sender: area)
+        
     }
 }
 
