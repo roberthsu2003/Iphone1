@@ -27,6 +27,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        //下載資料
         let siteURL = URL(string: url)!
         let downloadTask = urlSession.downloadTask(with: siteURL) { (saveURL:URL?, response:URLResponse?, error:Error?) in
             guard let saveURL = saveURL, let response = response, error == nil else{
@@ -57,6 +59,8 @@ class ViewController: UITableViewController {
             self.areas = Array(tempArea)
             DispatchQueue.main.async {
                 self.indicator.stopAnimating()
+                self.tableView.reloadData()
+                self.tableView.tableHeaderView = nil
                 print(self.areas)
             }
            
@@ -69,5 +73,23 @@ class ViewController: UITableViewController {
     }
 
 
+}
+
+extension ViewController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return areas.count
+    }
+
+    // Provide a cell object for each row.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // Fetch a cell of the appropriate type.
+       let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+       
+        let index = indexPath.row
+       cell.textLabel!.text = areas[index]
+           
+       return cell
+    }
+    
 }
 
