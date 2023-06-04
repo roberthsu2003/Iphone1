@@ -9,6 +9,7 @@ import UIKit
 
 class DetailTableViewController: UITableViewController {
     var area:String!
+    var sites = [Site]()
     lazy var urlSesssion:URLSession = {
         let config = URLSessionConfiguration.ephemeral
         config.allowsExpensiveNetworkAccess = true
@@ -66,10 +67,7 @@ extension DetailTableViewController:URLSessionDownloadDelegate{
             print("json無法解析")
             return
         }
-        
-        for site in youbikeData{
-            print(site)
-        }
-        
+        sites = youbikeData
+        tableView.reloadData()
     }
 }
