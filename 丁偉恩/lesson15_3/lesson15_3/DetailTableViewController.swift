@@ -40,14 +40,20 @@ class DetailTableViewController: UITableViewController {
 extension DetailTableViewController{
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sites.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       // Fetch a cell of the appropriate type.
+        let site = sites[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+       
+        cell.textLabel!.text = site.sna
+           
+       return cell
     }
 }
 
