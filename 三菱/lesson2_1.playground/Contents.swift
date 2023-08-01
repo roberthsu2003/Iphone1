@@ -55,4 +55,16 @@ if let assumedString = assumedString{
     print(assumedString)
 }
 
+func canThrowAnError() throws{
+    
+}
+
+//canThrowAnError()
+
+do{
+    try canThrowAnError()
+}catch{
+    
+}
+
 
