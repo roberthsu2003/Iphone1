@@ -43,4 +43,16 @@ print(implicitString1)
 let implicitString3:String = assumedString
 print(implicitString3)
 
+if assumedString != nil{
+    print(assumedString!)
+}
+
+if let definiteString = assumedString{
+    print(definiteString)
+}
+
+if let assumedString = assumedString{
+    print(assumedString)
+}
+
 
