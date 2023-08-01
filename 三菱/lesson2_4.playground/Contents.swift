@@ -32,4 +32,11 @@ let hasHeader = false
 let rowHeight = contentHeight + (hasHeader ? 50 : 20)
 rowHeight
 
+let defaultColorName = "red"
+var userDefinedColorName:String?
+
+//nil運算子
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+colorNameToUse
+
 
