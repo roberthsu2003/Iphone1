@@ -66,3 +66,17 @@ for name in names[...2]{
 for name in names[2...]{
     print(name)
 }
+
+let range = 1...5
+range.contains(7)
+range.contains(4)
+range.contains(-1)
+
+//邏輯運算子
+let allowedEntry = false
+
+if !allowedEntry{
+    print("ACCESS DENIED")
+}
+
+
