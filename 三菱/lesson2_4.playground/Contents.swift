@@ -73,10 +73,27 @@ range.contains(4)
 range.contains(-1)
 
 //邏輯運算子
+//not運算子
 let allowedEntry = false
 
 if !allowedEntry{
     print("ACCESS DENIED")
 }
+
+//&&運算子
+let enteredDoorCode = true
+let passedRetinaScan = false
+if enteredDoorCode && passedRetinaScan{
+    print("Welcome!")
+}else{
+    print("ACCESS DENIED")
+}
+
+if enteredDoorCode || passedRetinaScan{
+    print("Welcome!")
+}else{
+    print("ACCESS DENIED")
+}
+
 
 
