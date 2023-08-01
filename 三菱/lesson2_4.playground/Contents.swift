@@ -89,11 +89,23 @@ if enteredDoorCode && passedRetinaScan{
     print("ACCESS DENIED")
 }
 
-if enteredDoorCode || passedRetinaScan{
+let hasDoorKey = false
+let knowsOverridePassword = true
+
+if hasDoorKey || knowsOverridePassword{
     print("Welcome!")
 }else{
     print("ACCESS DENIED")
 }
+
+//整合邏輯運算子
+
+if (enteredDoorCode && passedRetinaScan) || hasDoorKey || knowsOverridePassword{
+    print("true")
+}else{
+    print("false")
+}
+
 
 
 
