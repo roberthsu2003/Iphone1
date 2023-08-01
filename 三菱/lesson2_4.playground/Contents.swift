@@ -55,3 +55,14 @@ for i in 0..<count{
     print(names[i])
 }
 
+for name in names{
+    print(name)
+}
+
+for name in names[...2]{
+    print(name)
+}
+
+for name in names[2...]{
+    print(name)
+}
