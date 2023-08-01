@@ -28,3 +28,19 @@ if let firstNumber = Int("4"),let secondNumber = Int("42"), firstNumber < second
     print("\(firstNumber) < \(secondNumber) < 100")
 }
 
+//implicit optional type
+let possibleString:String? = "An optional string."
+let forcedString = possibleString!
+
+let assumedString:String! = "An implicitly unwrapped optional String."
+
+let implicitString = assumedString
+print(implicitString)
+
+let implicitString1 = assumedString!
+print(implicitString1)
+
+let implicitString3:String = assumedString
+print(implicitString3)
+
+
