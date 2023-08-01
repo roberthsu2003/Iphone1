@@ -39,4 +39,19 @@ var userDefinedColorName:String?
 var colorNameToUse = userDefinedColorName ?? defaultColorName
 colorNameToUse
 
+//range operator(範圍運算子)
+for index in 1...5{
+    print(index)
+}
+
+for index in 1..<5{
+    print(index)
+}
+
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+
+for i in 0..<count{
+    print(names[i])
+}
 
