@@ -44,3 +44,7 @@ let setCharacters:[Character] = ["C", "a", "t", "!"]
 
 let catString = String(setCharacters)
 catString
+
+var instruction = "look over"
+instruction.append("!")
+
