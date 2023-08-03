@@ -24,3 +24,5 @@ let range = welcome.index(welcome.endIndex, offsetBy: -6) ..< welcome.endIndex
 welcome.removeSubrange(range)
 
 
+
+
