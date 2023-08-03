@@ -50,3 +50,18 @@ shoppingList.insert("Maple Syrup", at: 0)
 //shoppingList.remove(at: 0)
 let mapleSyrup = shoppingList.remove(at: 0)
 mapleSyrup
+
+
+//removeLast()
+let apples = shoppingList.removeLast()
+apples
+shoppingList
+
+for item in shoppingList{
+    print(item)
+}
+
+for (index, value) in shoppingList.enumerated(){
+    print("index=\(index)")
+    print("Item=\(value)")
+}
