@@ -33,3 +33,14 @@ variableString1 += "."
 variableString1
 variableString
 
+for character in "Dog!"{
+    print(character)
+}
+
+let exclamationMark:Character = "!"
+exclamationMark
+
+let setCharacters:[Character] = ["C", "a", "t", "!"]
+
+let catString = String(setCharacters)
+catString
