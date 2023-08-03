@@ -21,3 +21,23 @@ anotherThreeDouble
 
 var sixDouble = threeDoubles + anotherThreeDouble
 sixDouble
+
+//var shoppingList:[String] = ["Eggs", "Milk"]
+var shoppingList = ["Eggs", "Milk"]
+
+shoppingList.count
+shoppingList.isEmpty
+shoppingList.append("Flour")
+
+shoppingList += ["Baking Powder"]
+shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
+//透過索引編號取出值
+shoppingList[0]
+//透過索引編號更新值
+shoppingList[0] = "Six eggs"
+//使用Range取出值
+shoppingList[4...6]
+//使用Range改變值
+
+shoppingList[4...6] = ["Bananas", "Apples"]
+shoppingList
