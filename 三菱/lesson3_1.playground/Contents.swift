@@ -17,4 +17,19 @@ let sparklingHeart = "\u{1F496}"
 //空字串
 var emptyString = ""
 var anotherEmptyString = String()
-ano
+if emptyString.isEmpty {
+    print("字串是空的")
+}
+
+var variableString = "Horse"
+variableString += " and carriage"
+
+let constantString = "Highlander"
+//constantString += " and carriage"
+
+//String Ares Value Type
+var variableString1 = variableString
+variableString1 += "."
+variableString1
+variableString
+
