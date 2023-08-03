@@ -41,3 +41,12 @@ shoppingList[4...6]
 
 shoppingList[4...6] = ["Bananas", "Apples"]
 shoppingList
+
+//insert()插入
+
+shoppingList.insert("Maple Syrup", at: 0)
+
+//remove()移除
+//shoppingList.remove(at: 0)
+let mapleSyrup = shoppingList.remove(at: 0)
+mapleSyrup
