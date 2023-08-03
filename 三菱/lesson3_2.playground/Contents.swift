@@ -14,4 +14,13 @@ for index in greeting.indices{
 var welcome = "hello"
 welcome.insert("!", at: welcome.endIndex)
 
-welcome.insert(contentsOf: " there", at: welcome.endIndex)
+welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+welcome
+
+let range = welcome.index(welcome.endIndex, offsetBy: -6) ..< welcome.endIndex
+
+welcome.removeSubrange(range)
+
+
