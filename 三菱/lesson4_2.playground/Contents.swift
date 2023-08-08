@@ -36,3 +36,25 @@ airports["APL"] = "Apple International"
 //刪除元素
 airports["APL"] = nil
 airports
+
+//移除元素
+if let removedValue = airports.removeValue(forKey: "DUB"){
+    print("\(removedValue)被移除")
+}
+
+//取出所有key,value
+for (airportCode, airportName) in airports{
+    print("\(airportCode):\(airportName)")
+}
+
+//取出key
+for key in airports.keys{
+    print("\(key):\(airports[key]!)")
+}
+
+//取出value
+for airportName in airports.values{
+    print(airportName)
+}
+
+[String](airports.keys)
