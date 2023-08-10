@@ -30,3 +30,15 @@ case (-2...2,-2...2):
 default:
     print("在範圍外")
 }
+
+
+//value binding
+let anotherPoint = (2, 2)
+switch anotherPoint{
+case (let x,0):
+    print("x=\(x),y=0")
+case (0, let y):
+    print("x=0,y=\(y)")
+case let(x, y):
+    print("x=\(x),y=\(y)")
+}
