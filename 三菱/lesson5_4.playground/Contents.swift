@@ -19,3 +19,7 @@ func chooseBestColor() -> String{
 }
 
 print(chooseBestColor())
+
+if #unavailable(iOS 10){
+    
+}
