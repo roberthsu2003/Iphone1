@@ -42,3 +42,16 @@ case (0, let y):
 case let(x, y):
     print("x=\(x),y=\(y)")
 }
+
+//where 判斷式
+let yetAnotherPoint = (3, 1)
+switch yetAnotherPoint{
+case let(x,y) where x==y:
+    print("綠線上")
+case let(x,y) where x == -y:
+    print("藍線上")
+case let(x,y):
+    print("不在綠,藍線上,\(x),\(y)")
+}
+
+
