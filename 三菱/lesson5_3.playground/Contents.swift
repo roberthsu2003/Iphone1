@@ -23,7 +23,7 @@ print("Game over")
 
 //guard else,提早離開function
 //解決判斷optional type 是否為nil
-
+/*
 func greet(person:[String:String]){
     if let name = person["name"]{
         print("Hello! \(name)")
@@ -40,3 +40,19 @@ func greet(person:[String:String]){
 }
 
 greet(person: ["name":"Jane","location":"台北"])
+*/
+func greet1(person:[String:String]){
+    guard let name = person["name"] else{
+        return
+    }
+    print("Hello \(name)")
+    
+    guard let location = person["location"] else{
+        return
+    }
+    print("\(location)位置希望天氣很好")
+}
+
+greet1(person: ["name":"Jane"])
+greet1(person: ["name":"robert","location":"台北"])
+
