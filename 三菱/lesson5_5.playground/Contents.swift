@@ -29,3 +29,10 @@ func greet(person:String, alreadyGreeted:Bool) -> String{
 }
 
 greet(person: "Tim", alreadyGreeted: true)
+
+//沒有傳出值的function
+func greet(person1:String) -> Void{
+    print("Hello, \(person1)!")
+}
+
+greet(person1: "David")
