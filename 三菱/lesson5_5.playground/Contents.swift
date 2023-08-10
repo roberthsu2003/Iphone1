@@ -36,3 +36,14 @@ func greet(person1:String) -> Void{
 }
 
 greet(person1: "David")
+
+func printAndCount(string:String) -> Int{
+    print(string)
+    return string.count
+}
+
+func printWithoutCounting(string:String){
+    let _ = printAndCount(string: string)
+}
+
+printWithoutCounting(string: "hello, world!")
