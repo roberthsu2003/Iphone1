@@ -54,4 +54,14 @@ case let(x,y):
     print("不在綠,藍線上,\(x),\(y)")
 }
 
-
+//混合case
+let someCharacter:Character = "c"
+switch someCharacter{
+case "a","e","i","o","u":
+    print("母音")
+case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+    "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+    print("子音")
+default:
+    print("不是母音,也不是子音")
+}
