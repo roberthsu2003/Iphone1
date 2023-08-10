@@ -20,3 +20,23 @@ gameLoop: while square != finalSquare{
 }
 
 print("Game over")
+
+//guard else,提早離開function
+//解決判斷optional type 是否為nil
+
+func greet(person:[String:String]){
+    if let name = person["name"]{
+        print("Hello! \(name)")
+        
+        if let location = person["location"]{
+            print("\(location)位置希望天氣很好")
+        }else{
+            return
+        }
+        
+    }else{
+        return
+    }
+}
+
+greet(person: ["name":"Jane","location":"台北"])
