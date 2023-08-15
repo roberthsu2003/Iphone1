@@ -96,3 +96,19 @@ func arithmeticMean(_ numbers:Double...) -> Double{
 
 arithmeticMean(1,2,3,4,5)
 arithmeticMean(3, 8.25, 18.75)
+
+//inout參數
+func swapTwoInts(_ a:inout Int,_ b:inout Int){
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+var someInt = 3
+var anotherInt = 107
+
+swapTwoInts(&someInt, &anotherInt)
+someInt
+anotherInt
+
+
