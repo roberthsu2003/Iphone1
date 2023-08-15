@@ -74,8 +74,13 @@ func someFunction(_ firstParameterName:Int, secondParameterName:Int){
 }
 someFunction(1, secondParameterName: 2)
 
+//參數的預設值
+//預設值必需放在後的參數
+//呼叫的方法會變多
 
+func someFunction(parameterWithoutDefault:Int, parameterWithDefault:Int = 12){
+    
+}
 
-
-
-
+someFunction(parameterWithoutDefault: 3)
+someFunction(parameterWithoutDefault: 3, parameterWithDefault: 4)
