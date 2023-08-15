@@ -39,4 +39,15 @@ if let bounds1 = minMax(array1: [8, -6, 2, 109, 3, 71]){
     print("最小值是\(bounds1.min),最大值是\(bounds1.max)")
 }
 
+//function的程式區塊內,只有1行,會自動return
+func greeting(for person:String) -> String{
+    "Hello, " + person + "!"
+}
+print(greeting(for: "Dave"))
+
+func anotherGreeting(for person:String) ->String{
+     "Hello, " + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+
 
