@@ -69,6 +69,13 @@ func greet(person:String,from hometown:String) -> String{
 
 greet(person: "Bill", from: "新北市")
 
+//省略引數名稱
+func someFunction(_ firstParameterName:Int, secondParameterName:Int){
+}
+someFunction(1, secondParameterName: 2)
+
+
+
 
 
 
