@@ -30,7 +30,7 @@ printMathResult(multiplyTwoInts, 10, 5)
 
 
 /*-------------------------------------*/
-
+/*
 //function type可以被return
 func stepForward(_ input:Int) -> Int{
     return input + 1
@@ -48,15 +48,35 @@ var currentValue = -5
 
 let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
 //moveNearerToZero(currentValue)
- 
 
-print("計算到0:")
+print("zeor")
+*/
+
+
+/*------------------------------*/
+//巢狀的function
+
+func chooseStepFunction(backward:Bool) -> (Int)->Int{
+    func stepForward(_ input:Int) -> Int{
+        return input + 1
+    }
+    func stepBackward(_ input:Int) -> Int{
+        return input - 1
+    }
+    return backward ? stepBackward : stepForward
+}
+
+var currentValue = 3
+
+let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+
 while currentValue != 0{
     print("\(currentValue)")
     currentValue = moveNearerToZero(currentValue)
 }
-print("zeor")
 
+
+print("zeor")
 
 
 
