@@ -17,6 +17,7 @@ mathFunction = multiplyTwoInts
 
 mathFunction(2, 3)
 
+/*-------------------------------------*/
 //function 可以當作引數值
 //function參數可以定義function type
 
@@ -26,6 +27,38 @@ func printMathResult(_ mathFunction:(Int,Int)->Int,_ a:Int,_ b:Int){
 
 printMathResult(addTwoInts, 10, 5)
 printMathResult(multiplyTwoInts, 10, 5)
+
+
+/*-------------------------------------*/
+
+//function type可以被return
+func stepForward(_ input:Int) -> Int{
+    return input + 1
+}
+
+func stepBackward(_ input:Int) -> Int{
+    return input - 1
+}
+
+func chooseStepFunction(backward:Bool) -> (Int)->Int{
+    return backward ? stepBackward : stepForward
+}
+
+var currentValue = -5
+
+let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+//moveNearerToZero(currentValue)
+ 
+
+print("計算到0:")
+while currentValue != 0{
+    print("\(currentValue)")
+    currentValue = moveNearerToZero(currentValue)
+}
+print("zeor")
+
+
+
 
 
 
