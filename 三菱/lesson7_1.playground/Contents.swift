@@ -29,3 +29,19 @@ var reverseName4 = names.sorted(by: {
 //operator method
 
 var reverseName5 = names.sorted(by: < )
+
+//在最後的colsure
+//trailing closure
+//使用trailing closure,引數名稱可以省略
+names.sorted(){
+    (s1:String, s2:String)->Bool in
+    return s1 < s2
+}
+
+//trailing closure,如果只有一個參數,可以省略()
+names.sorted{
+    (s1:String, s2:String)->Bool in
+    return s1 < s2
+}
+
+
