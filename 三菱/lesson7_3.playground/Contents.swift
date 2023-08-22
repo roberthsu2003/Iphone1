@@ -65,6 +65,29 @@ case .qrCode(let productCode):
     print("QR code:\(productCode)")
 }
 
+//raw value
+enum Planet1:Int{
+    case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+
+Planet1.earth.rawValue
+
+enum ASCIIControlCharacter:Character{
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+ASCIIControlCharacter.tab.rawValue
+
+enum CompassPoint1:String{
+    case north, south, east, west
+}
+
+CompassPoint1.north.rawValue
+
+
+
 
 
 
