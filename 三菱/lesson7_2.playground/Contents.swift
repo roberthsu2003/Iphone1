@@ -63,5 +63,22 @@ class SomeClass1{
     }
 }
 
+var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+
+func serve(customer customerProvider:()->String){
+    print("Now serving \(customerProvider())!")
+}
+
+serve(customer: {
+    customersInLine.remove(at: 0)
+})
+
+func serve1(customer customerProvider:@autoclosure ()->String){
+    print("Now serving \(customerProvider())!")
+}
+
+//serve1(customer:customersInLine.remove(at: 0))
+serve1(customer:customersInLine.remove(at: 0))
+
 
 
