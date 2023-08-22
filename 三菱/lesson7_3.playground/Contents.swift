@@ -86,6 +86,22 @@ enum CompassPoint1:String{
 
 CompassPoint1.north.rawValue
 
+//如果有定義rawValue,可以使用初始化的方式建立實體
+
+if let possiblePlanet = Planet1(rawValue: 9){
+    switch possiblePlanet{
+    case .earth:
+        print("人住的地方")
+    default:
+        print("其它星球")
+    }
+}else{
+    print("沒有這個星球")
+}
+
+
+
+
 
 
 
