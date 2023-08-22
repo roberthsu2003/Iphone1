@@ -28,3 +28,24 @@ switch directionToHead{
     case .west:
         print("西")
 }
+
+let somePlanet = Planet.earth
+switch somePlanet{
+case .earth:
+    print("人類住的地方")
+default:
+    print("其它的星球")
+}
+
+enum Beverage:CaseIterable{
+    case coffee, tea, juice
+}
+
+let numberOfChoices = Beverage.allCases.count
+print(numberOfChoices)
+
+for beverage in Beverage.allCases{
+    print(beverage)
+}
+
+
