@@ -18,3 +18,6 @@ incrementBySeven()
 incrementBySeven()
 
 incrementByTen()
+
+let alsoIncrementByTen = incrementByTen
+alsoIncrementByTen()
