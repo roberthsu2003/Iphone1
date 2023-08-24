@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         if let window = window, let rootViewC = window.rootViewController{
-           print(rootViewC)
+            window.backgroundColor = UIColor.green
         }else{
             print("沒有window的實體")
         }
