@@ -8,10 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("view的實體已經建立完成")
+        if let color = view.backgroundColor{
+            print(color)
+        }
+        view.backgroundColor = UIColor.systemBlue
     }
 
 
