@@ -43,3 +43,18 @@ var cinema = hd
 cinema.width = 2048
 hd.width
 cinema.width
+
+
+enum CompassPoint{
+    case north, south, east, west
+    mutating func turnNorth(){
+        self = .north
+    }
+}
+
+var currentDirection = CompassPoint.west
+let rememberedDirection = currentDirection
+currentDirection.turnNorth()
+
+currentDirection
+rememberedDirection
