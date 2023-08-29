@@ -1,3 +1,6 @@
+//store property
+//let property的結構的實體,不可以更實體內的store property的值
+
 struct FixedLengthRange{
     var firstValue:Int
     let length:Int
@@ -28,3 +31,5 @@ manager.data.append("some more data")
 manager
 manager.importer.filename
 manager
+
+
