@@ -20,10 +20,10 @@ struct Rect{
             let centerY = origin.y + size.height / 2.0
             return Point(x: centerX, y: centerX)
         }
-        set(newCenter){
+        set{
             //傳入,使用newCenter
-            origin.x = newCenter.x - (size.width / 2)
-            origin.y = newCenter.y - (size.height / 2)
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
         }
     }
 }
@@ -36,3 +36,17 @@ initialSquareCenter.y
 square.center = Point(x: 15.0, y: 15.0)
 square.origin.x
 square.origin.y
+
+
+// read-only computed Properties
+struct Cuboid{
+    var width = 0.0, height = 0.0, depth = 0.0
+    //read only computed property
+    var volume:Double{
+            return width * height * depth
+    }
+}
+
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+fourByFiveByTwo.volume
+
