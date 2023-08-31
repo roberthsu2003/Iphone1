@@ -51,6 +51,10 @@ class ViewController: UIViewController {
         v2.backgroundColor = UIColor(named: "myColor")
         
         v1.addSubview(v2)
+        
+        if let v3 = view.viewWithTag(99){
+            v3.backgroundColor = UIColor(named: "yourColor")
+        }
     }
 
 
