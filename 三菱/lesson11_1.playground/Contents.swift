@@ -48,3 +48,34 @@ somePoint1.y
 
 let fixedPoint1 = Point1(x: 3.0, y: 3.0)
 //fixedPoint1.moveBy(x: 2.0, y: 3.0)
+
+var somePoint2 = Point1(x: 1.0, y: 1.0)
+somePoint2 = Point1(x: 3.0, y: 3.0)
+
+struct Point2{
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX:Double, y deltaY:Double){
+        self = Point2(x: x+deltaX, y: y+deltaY)
+    }
+}
+
+enum TriStateSwitch{
+    case off, low, high
+    
+    mutating func next(){
+        switch self{
+        case .off:
+            self = .low
+        case .low:
+            self = .high
+        case .high:
+            self = .off
+        }
+    }
+}
+
+var ovenLight = TriStateSwitch.low
+ovenLight.next()
+ovenLight.next()
+ovenLight.next()
+
