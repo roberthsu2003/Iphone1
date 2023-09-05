@@ -8,8 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var mint:UIView?
+    @IBOutlet var mint:UIView!
     
+    
+    /*
     override func awakeFromNib() {
         super.awakeFromNib()
         print(#function)
@@ -19,16 +21,21 @@ class ViewController: UIViewController {
             print("mint是nil")
         }
     }
+     */
     
     override func viewDidLoad() {
         //當storyboard 內的view,已經可以使用程式控制了
+        //ViewController內只會執行一次
         super.viewDidLoad()
         print(#function)
+        /*
         if let mint = self.mint{
-            print("mint不是nil")
+            print(mint)
         }else{
             print("mint是nil")
         }
+         */
+        print(mint.frame)
     }
 
 
