@@ -32,3 +32,19 @@ let somePoint = Point(x: 4.0, y: 5.0)
 if somePoint.isToTheRightOf(x: 1.0){
     print("實體的x,大於參數1.0")
 }
+
+struct Point1{
+    var x = 0.0, y = 0.0
+    mutating func moveBy(x deltaX:Double, y deltay:Double){
+        x += deltaX
+        y += deltay
+    }
+}
+
+var somePoint1 = Point1(x: 1.0, y: 1.0)
+somePoint1.moveBy(x: 2.0, y: 3.0)
+somePoint1.x
+somePoint1.y
+
+let fixedPoint1 = Point1(x: 3.0, y: 3.0)
+//fixedPoint1.moveBy(x: 2.0, y: 3.0)
