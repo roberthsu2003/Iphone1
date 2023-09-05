@@ -7,17 +7,41 @@
 
 import UIKit
 class MyView:UIView{
+    var which:Int{
+        return 2
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         //用程式自訂
-        let v1 = UIView(frame: CGRect(x: 113, y: 111, width: 132, height: 194))
-                v1.backgroundColor = UIColor.red
+        switch which{
+        case 1:
+            let v1 = UIView(frame: CGRect(x: 113, y: 111, width: 132, height: 194))
+                    v1.backgroundColor = UIColor.red
+            
+            let v2 = UIView(frame: v1.bounds.insetBy(dx: 10, dy: 10))
+            v2.backgroundColor = .gray
+            
+            self.addSubview(v1)
+            v1.addSubview(v2)
+            
+        case 2:
+            let v1 = UIView(frame: CGRect(x: 113, y: 111, width: 132, height: 194))
+                    v1.backgroundColor = UIColor.red
+            
+            let v2 = UIView(frame: v1.bounds.insetBy(dx: 10, dy: 10))
+            v2.backgroundColor = .gray
+            
+            self.addSubview(v1)
+            v1.addSubview(v2)
+            v2.bounds.size.width += 20
+            v2.bounds.size.height += 20
+            
+            
+        default:
+            break
+        }
         
-        let v2 = UIView(frame: v1.bounds.insetBy(dx: 10, dy: 10))
-        v2.backgroundColor = .gray
-        
-        self.addSubview(v1)
-        v1.addSubview(v2)
     }
 }
 
