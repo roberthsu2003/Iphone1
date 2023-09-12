@@ -13,7 +13,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        heightField.text = "56"
+        heightField.placeholder = "cm"
+        btn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        
+    }
+    
+    @objc func onClick(_ sender:UIButton){
+        let heightValue = Int(heightField.text ?? "0")
+        print(heightValue!)
         
     }
 
