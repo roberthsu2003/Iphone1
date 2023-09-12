@@ -45,3 +45,15 @@ var matrix = Matrix(rows: 2, columns: 2)
 matrix[1,0] = 10.0 //set
 matrix[1,0] //get
 //matrix[2,1]
+
+//type subscript
+
+enum Planet:Int{
+    case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
+    static subscript(n:Int) -> Planet{
+        return Planet(rawValue: n)!
+    }
+}
+
+let mars = Planet[4]
+mars.rawValue
