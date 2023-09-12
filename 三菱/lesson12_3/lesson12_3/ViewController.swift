@@ -19,8 +19,13 @@ class ViewController: UIViewController {
     }
     
     @objc func onClick(_ sender:UIButton){
-        let heightValue = Int(heightField.text ?? "0")
-        print(heightValue!)
+        if heightField.text != "" {
+            let heightValue = Int(heightField.text ?? "0")
+            print(heightValue!)
+        }else{
+            print("不可以是空字串")
+        }
+        
         
     }
 
