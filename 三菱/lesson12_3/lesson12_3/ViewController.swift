@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         heightField.placeholder = "cm"
         btn.addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
+        heightField.addTarget(self, action: #selector(beginEdit(_:)), for: .editingDidBegin)
         
     }
     
@@ -27,6 +28,10 @@ class ViewController: UIViewController {
         }
         
         
+    }
+    
+    @objc func beginEdit(_ sender:UITextField){
+        print("開始編輯")
     }
 
 
