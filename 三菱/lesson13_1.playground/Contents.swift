@@ -31,3 +31,14 @@ tandem.hasBasket = true
 tandem.currentSpeed = 22.0
 tandem.currentNumberOfpassengers = 2
 print("Tandem:\(tandem.description)")
+
+//override method
+class Train:Vehicle{
+    override func makeNoise(){
+        //super.makeNoise()
+        print("Choo Choo")
+    }
+}
+
+let train = Train()
+train.makeNoise()
