@@ -28,8 +28,8 @@ class ViewController: UIViewController {
         let weightValue = Int(weightField.text!)
         
         if let heightValue = heightValue, let weightValue = weightValue{
-            print(heightValue)
-            print(weightValue)
+            let bmi = Double(weightValue) / pow(Double(heightValue) / 100.0,2)
+            print(bmi)
         }
         
         
