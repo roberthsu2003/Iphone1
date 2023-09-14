@@ -24,6 +24,15 @@ class ViewController: UIViewController {
             self.present(emptyAlert, animated: true)
             return
         }
+        let heightValue = Int(heightField.text!)
+        let weightValue = Int(weightField.text!)
+        
+        if let heightValue = heightValue, let weightValue = weightValue{
+            print(heightValue)
+            print(weightValue)
+        }
+        
+        
     }
 
 
