@@ -42,3 +42,18 @@ class Train:Vehicle{
 
 let train = Train()
 train.makeNoise()
+
+//override property(改變方法)
+class Car:Vehicle{
+    var gear = 1
+    override var description:String{
+        return "\(super.description),目前檔數是:\(gear)"
+    }
+}
+
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+
+print("Car:\(car.description)")
+
