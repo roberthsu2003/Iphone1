@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="conditional_constraints" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-bK-A9w">
+                                <rect key="frame" x="23" y="37" width="329" height="180"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-l6-NzR">
+                                        <rect key="frame" x="20" y="20" width="289" height="140"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wpc-zo-S5k">
+                                                <rect key="frame" x="0.0" y="0.0" width="289" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cf0-0P-bKJ">
+                                                <rect key="frame" x="0.0" y="53" width="289" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3E5-b3-p25">
+                                                <rect key="frame" x="0.0" y="106" width="289" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="329" id="9gR-AZ-nGj"/>
+                                    <constraint firstItem="eu2-l6-NzR" firstAttribute="top" secondItem="zhJ-bK-A9w" secondAttribute="top" constant="20" symbolic="YES" id="BJ9-4S-dFi"/>
+                                    <constraint firstItem="eu2-l6-NzR" firstAttribute="leading" secondItem="zhJ-bK-A9w" secondAttribute="leading" constant="20" symbolic="YES" id="pud-FI-KYd"/>
+                                    <constraint firstAttribute="trailing" secondItem="eu2-l6-NzR" secondAttribute="trailing" constant="20" symbolic="YES" id="sqp-r0-gP0"/>
+                                    <constraint firstAttribute="height" constant="180" id="yJw-F4-TpF"/>
+                                    <constraint firstAttribute="bottom" secondItem="eu2-l6-NzR" secondAttribute="bottom" constant="20" symbolic="YES" id="zl4-1a-EBy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9gR-AZ-nGj"/>
+                                        <exclude reference="yJw-F4-TpF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9gR-AZ-nGj"/>
+                                        <include reference="yJw-F4-TpF"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zhJ-bK-A9w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="My3-zU-b5E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zhJ-bK-A9w" secondAttribute="trailing" constant="23" id="N6A-rP-wcP"/>
+                            <constraint firstItem="zhJ-bK-A9w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="NTS-QT-cAb"/>
+                            <constraint firstItem="zhJ-bK-A9w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="dDu-oe-BzU"/>
+                            <constraint firstItem="zhJ-bK-A9w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hgG-Br-U2A"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="N6A-rP-wcP"/>
+                                <exclude reference="My3-zU-b5E"/>
+                                <exclude reference="NTS-QT-cAb"/>
+                                <exclude reference="dDu-oe-BzU"/>
+                                <exclude reference="hgG-Br-U2A"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="My3-zU-b5E"/>
+                                <include reference="hgG-Br-U2A"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="N6A-rP-wcP"/>
+                                <include reference="NTS-QT-cAb"/>
+                                <include reference="dDu-oe-BzU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="-6"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
