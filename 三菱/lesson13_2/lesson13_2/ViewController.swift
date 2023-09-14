@@ -18,7 +18,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userClick(_ sender:UIButton){
-        print("user click")
+        if heightField.text == "" || weightField.text == ""{
+            let emptyAlert = UIAlertController(title: "出錯", message: "欄位沒有填寫", preferredStyle: .actionSheet)
+            emptyAlert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(emptyAlert, animated: true)
+            return
+        }
     }
 
 
