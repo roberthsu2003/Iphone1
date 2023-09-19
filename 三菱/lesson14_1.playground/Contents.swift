@@ -105,3 +105,13 @@ class ShoppingListItem{
 
  var item = ShoppingListItem()
 item
+
+struct Size{
+    var width = 0.0
+    var height = 0.0
+}
+
+Size(width: 2.0, height: 2.0)
+let zeroByTwo = Size(height: 2.0)
+let zeroByZero = Size(width: 2.0)
+
