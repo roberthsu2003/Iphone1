@@ -34,8 +34,9 @@ class ViewController: UIViewController {
         }
         print(bmi)
         var message = ""
+        
         switch bmi{
-        case 0 ..< 18.5:
+        case let bmi where bmi < 18.5:
             message = "體重過輕"
         case 18.5 ..< 24:
             message = "標準"
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
             message = "輕度肥胖"
         case 30..<35:
             message = "中度肥胖"
-        case 35..<1000:
+        case let bmi where bmi >= 35:
             message = "重度肥胖"
         default:
             break
