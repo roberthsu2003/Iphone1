@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bmiField.text = ""
+        messageField.text = ""
         
     }
     
@@ -34,7 +36,7 @@ class ViewController: UIViewController {
         if let heightValue = heightValue, let weightValue = weightValue{
             bmi = Double(weightValue) / pow(Double(heightValue) / 100.0,2)
         }
-        print(bmi)
+        bmiField.text = "BMI: " + String(format: "%.2f", bmi)
         var message = ""
         
         switch bmi{
@@ -54,7 +56,7 @@ class ViewController: UIViewController {
             break
         }
         
-        print(message)
+        messageField.text = message
         
     }
 
