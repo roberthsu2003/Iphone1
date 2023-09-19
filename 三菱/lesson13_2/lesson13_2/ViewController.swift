@@ -19,7 +19,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         bmiField.text = ""
         messageField.text = ""
+        heightField.addTarget(self, action: #selector(beginEditField(_:)), for: .editingDidBegin)
+        weightField.addTarget(self, action: #selector(beginEditField(_:)), for: .editingDidBegin)
         
+    }
+    
+    @objc func beginEditField(_ sender:UITextField){
+        //清空欄位資料
+        sender.text = ""
+        bmiField.text = ""
+        messageField.text = ""
     }
     
     @IBAction func userClick(_ sender:UIButton){
@@ -57,6 +66,9 @@ class ViewController: UIViewController {
         }
         
         messageField.text = message
+        
+        heightField.resignFirstResponder()
+        weightField.resignFirstResponder()
         
     }
 
