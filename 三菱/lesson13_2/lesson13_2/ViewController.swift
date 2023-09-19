@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var heightField:UITextField!
     @IBOutlet var weightField:UITextField!
+    @IBOutlet var bmiField:UITextField!
+    @IBOutlet var messageField:UITextField!
     
     
     

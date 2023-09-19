@@ -72,11 +72,29 @@
                                             <constraint firstItem="O3k-Bb-VuY" firstAttribute="leading" secondItem="o9a-ut-FoZ" secondAttribute="leading" constant="26" id="xVt-JO-ZP1"/>
                                         </constraints>
                                     </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BMI:24" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ikh-dk-IvE" userLabel="bmiValue">
+                                        <rect key="frame" x="20" y="250" width="90" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="umJ-18-2hh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="狀態:過重過重" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLV-uV-d0k" userLabel="message">
+                                        <rect key="frame" x="130" y="250" width="225" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
+                                    <constraint firstItem="Ikh-dk-IvE" firstAttribute="leading" secondItem="kD5-Ps-5IG" secondAttribute="leading" constant="20" id="0bZ-Us-7qU"/>
+                                    <constraint firstItem="Ikh-dk-IvE" firstAttribute="top" secondItem="o9a-ut-FoZ" secondAttribute="bottom" constant="17" id="AJH-ea-rdq"/>
+                                    <constraint firstAttribute="trailing" secondItem="RLV-uV-d0k" secondAttribute="trailing" constant="20" id="NIy-25-kRD"/>
+                                    <constraint firstItem="RLV-uV-d0k" firstAttribute="top" secondItem="o9a-ut-FoZ" secondAttribute="bottom" constant="17" id="dwY-NX-uH0"/>
                                     <constraint firstItem="o9a-ut-FoZ" firstAttribute="leading" secondItem="kD5-Ps-5IG" secondAttribute="leading" constant="20" id="kW3-ca-6E6"/>
                                     <constraint firstAttribute="trailing" secondItem="o9a-ut-FoZ" secondAttribute="trailing" constant="20" id="oXv-11-xmz"/>
+                                    <constraint firstItem="RLV-uV-d0k" firstAttribute="leading" secondItem="Ikh-dk-IvE" secondAttribute="trailing" constant="20" id="vhk-kQ-C9x"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -91,7 +109,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bmiField" destination="Ikh-dk-IvE" id="DtH-FT-Nhk"/>
                         <outlet property="heightField" destination="QEx-JB-tgV" id="Vai-IE-NJa"/>
+                        <outlet property="messageField" destination="RLV-uV-d0k" id="Fkr-Xs-g7H"/>
                         <outlet property="weightField" destination="bRd-on-fYI" id="UR9-zb-azs"/>
                     </connections>
                 </viewController>
