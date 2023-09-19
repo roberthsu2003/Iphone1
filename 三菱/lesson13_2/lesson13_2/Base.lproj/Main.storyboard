@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-ut-FoZ" userLabel="innerView">
-                                        <rect key="frame" x="20" y="40" width="335" height="238"/>
+                                        <rect key="frame" x="20" y="40" width="335" height="193"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身高:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFS-FV-klJ">
                                                 <rect key="frame" x="26" y="21.5" width="40" height="21"/>
@@ -55,7 +55,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="INl-BV-Eft" secondAttribute="bottom" constant="75" id="6on-tV-Dr1"/>
+                                            <constraint firstAttribute="bottom" secondItem="INl-BV-Eft" secondAttribute="bottom" constant="30" id="6on-tV-Dr1"/>
                                             <constraint firstItem="QEx-JB-tgV" firstAttribute="leading" secondItem="RFS-FV-klJ" secondAttribute="trailing" constant="7.5" id="7ad-Pm-mcx"/>
                                             <constraint firstItem="QEx-JB-tgV" firstAttribute="top" secondItem="o9a-ut-FoZ" secondAttribute="top" constant="15" id="92L-xJ-UkB"/>
                                             <constraint firstItem="bRd-on-fYI" firstAttribute="centerY" secondItem="O3k-Bb-VuY" secondAttribute="centerY" id="GEL-WI-8iD"/>
