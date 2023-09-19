@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var weightField:UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

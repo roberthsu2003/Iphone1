@@ -78,3 +78,30 @@ let cheeseQuestion = SurveyQuestion(text: "您喜歡cheese?")
 cheeseQuestion.ask()
 
 cheeseQuestion.response = "Yes, I do like cheese"
+
+//常數,可以在init時,才給值
+class SurveyQuestion1{
+    let text:String
+    var response:String?
+    
+    init(text:String){
+        self.text = text
+    }
+    
+    func ask(){
+        print(text)
+    }
+}
+
+SurveyQuestion1(text: "很熱嗎?")
+
+//Default Initializer
+
+class ShoppingListItem{
+    var name:String?
+    var quantity = 1
+    var purchased = false
+}
+
+ var item = ShoppingListItem()
+item
