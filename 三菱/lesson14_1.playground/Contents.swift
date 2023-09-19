@@ -26,6 +26,10 @@ struct Celsius{
     init(fromKelvin kelvin:Double){
         temperatureInCelsius = kelvin - 273.15
     }
+    
+    init(_ celsius:Double){
+        temperatureInCelsius = celsius
+    }
 }
 
 let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
@@ -33,6 +37,8 @@ boilingPointOfWater.temperatureInCelsius
 
 let freezingPointOfWater = Celsius(fromKelvin: 273.15)
 freezingPointOfWater.temperatureInCelsius
+
+let bodyTemperature = Celsius(37.0)
 
 struct Color{
     let red, green, blue:Double
@@ -55,3 +61,20 @@ let halfGray = Color(white: 0.5)
 
 //let veryGreen = Color(0.0, 1.0, 0.0)
 
+class SurveyQuestion{
+    var text:String
+    var response:String?
+    
+    init(text:String){
+        self.text = text
+    }
+    
+    func ask(){
+        print(text)
+    }
+}
+
+let cheeseQuestion = SurveyQuestion(text: "您喜歡cheese?")
+cheeseQuestion.ask()
+
+cheeseQuestion.response = "Yes, I do like cheese"
