@@ -40,66 +40,77 @@ class ViewController: UIViewController {
         v1.addSubview(v2)
         v1.addSubview(v3)
         
-        v1.addConstraint(NSLayoutConstraint(item: v1!,
-                                            attribute: .top,
-                                            relatedBy: .equal,
-                                            toItem: v2,
-                                            attribute: .top,
-                                            multiplier: 1,
-                                            constant: 0))
-        v1.addConstraint(NSLayoutConstraint(item: v1!,
-                                            attribute: .leading,
-                                            relatedBy: .equal,
-                                            toItem: v2,
-                                            attribute: .leading,
-                                            multiplier: 1,
-                                            constant: 0))
-        v1.addConstraint(NSLayoutConstraint(item: v1!,
-                                            attribute: .trailing,
-                                            relatedBy: .equal,
-                                            toItem: v2,
-                                            attribute: .trailing,
-                                            multiplier: 1,
-                                            constant: 0))
-        v2.addConstraint(NSLayoutConstraint(item: v2,
-                                            attribute: .height,
-                                            relatedBy: .equal,
-                                            toItem: nil,
-                                            attribute: .notAnAttribute,
-                                            multiplier: 1,
-                                            constant: 10))
+        var which:Int{
+            return 1
+        }
+        switch which{
+        case 1:
+            v1.addConstraint(NSLayoutConstraint(item: v1!,
+                                                attribute: .top,
+                                                relatedBy: .equal,
+                                                toItem: v2,
+                                                attribute: .top,
+                                                multiplier: 1,
+                                                constant: 0))
+            v1.addConstraint(NSLayoutConstraint(item: v1!,
+                                                attribute: .leading,
+                                                relatedBy: .equal,
+                                                toItem: v2,
+                                                attribute: .leading,
+                                                multiplier: 1,
+                                                constant: 0))
+            v1.addConstraint(NSLayoutConstraint(item: v1!,
+                                                attribute: .trailing,
+                                                relatedBy: .equal,
+                                                toItem: v2,
+                                                attribute: .trailing,
+                                                multiplier: 1,
+                                                constant: 0))
+            v2.addConstraint(NSLayoutConstraint(item: v2,
+                                                attribute: .height,
+                                                relatedBy: .equal,
+                                                toItem: nil,
+                                                attribute: .notAnAttribute,
+                                                multiplier: 1,
+                                                constant: 10))
+            
+            v1.addConstraint(NSLayoutConstraint(item: v1!,
+                                                attribute: .trailing,
+                                                relatedBy: .equal,
+                                                toItem: v3,
+                                                attribute: .trailing,
+                                                multiplier: 1,
+                                                constant: 0))
+            
+            v1.addConstraint(NSLayoutConstraint(item: v1!,
+                                                attribute: .bottom,
+                                                relatedBy: .equal,
+                                                toItem: v3,
+                                                attribute: .bottom,
+                                                multiplier: 1,
+                                                constant: 0))
+            
+            v3.addConstraint(NSLayoutConstraint(item: v3,
+                                                attribute: .width,
+                                                relatedBy: .equal,
+                                                toItem: nil,
+                                                attribute: .notAnAttribute,
+                                                multiplier: 1,
+                                                constant: 20))
+            
+            v3.addConstraint(NSLayoutConstraint(item: v3,
+                                                attribute: .height,
+                                                relatedBy: .equal,
+                                                toItem: nil,
+                                                attribute: .notAnAttribute,
+                                                multiplier: 1,
+                                                constant: 20))
+            
+        case 2:break
+        case 3:break
+        default:break
+        }
         
-        v1.addConstraint(NSLayoutConstraint(item: v1!,
-                                            attribute: .trailing,
-                                            relatedBy: .equal,
-                                            toItem: v3,
-                                            attribute: .trailing,
-                                            multiplier: 1,
-                                            constant: 0))
-        
-        v1.addConstraint(NSLayoutConstraint(item: v1!,
-                                            attribute: .bottom,
-                                            relatedBy: .equal,
-                                            toItem: v3,
-                                            attribute: .bottom,
-                                            multiplier: 1,
-                                            constant: 0))
-        
-        v3.addConstraint(NSLayoutConstraint(item: v3,
-                                            attribute: .width,
-                                            relatedBy: .equal,
-                                            toItem: nil,
-                                            attribute: .notAnAttribute,
-                                            multiplier: 1,
-                                            constant: 20))
-        
-        v3.addConstraint(NSLayoutConstraint(item: v3,
-                                            attribute: .height,
-                                            relatedBy: .equal,
-                                            toItem: nil,
-                                            attribute: .notAnAttribute,
-                                            multiplier: 1,
-                                            constant: 20))
         
         
         
