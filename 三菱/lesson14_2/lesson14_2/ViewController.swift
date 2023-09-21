@@ -7,8 +7,10 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     var n:Int
+    var v1:UIView!
     
     required init?(coder: NSCoder) {
         self.n = 5
@@ -19,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //v1要使用自動產生constraints
-        let v1 = UIView(frame: CGRect(x: 100, y: 111, width: 132, height: 194))
+        v1 = UIView(frame: CGRect(x: 100, y: 111, width: 132, height: 194))
         v1.backgroundColor = UIColor(red: 1, green: 0.4, blue: 1, alpha: 1)
         
         
@@ -38,21 +40,21 @@ class ViewController: UIViewController {
         v1.addSubview(v2)
         v1.addSubview(v3)
         
-        v1.addConstraint(NSLayoutConstraint(item: v1,
+        v1.addConstraint(NSLayoutConstraint(item: v1!,
                                             attribute: .top,
                                             relatedBy: .equal,
                                             toItem: v2,
                                             attribute: .top,
                                             multiplier: 1,
                                             constant: 0))
-        v1.addConstraint(NSLayoutConstraint(item: v1,
+        v1.addConstraint(NSLayoutConstraint(item: v1!,
                                             attribute: .leading,
                                             relatedBy: .equal,
                                             toItem: v2,
                                             attribute: .leading,
                                             multiplier: 1,
                                             constant: 0))
-        v1.addConstraint(NSLayoutConstraint(item: v1,
+        v1.addConstraint(NSLayoutConstraint(item: v1!,
                                             attribute: .trailing,
                                             relatedBy: .equal,
                                             toItem: v2,
@@ -67,7 +69,7 @@ class ViewController: UIViewController {
                                             multiplier: 1,
                                             constant: 10))
         
-        v1.addConstraint(NSLayoutConstraint(item: v1,
+        v1.addConstraint(NSLayoutConstraint(item: v1!,
                                             attribute: .trailing,
                                             relatedBy: .equal,
                                             toItem: v3,
@@ -75,7 +77,7 @@ class ViewController: UIViewController {
                                             multiplier: 1,
                                             constant: 0))
         
-        v1.addConstraint(NSLayoutConstraint(item: v1,
+        v1.addConstraint(NSLayoutConstraint(item: v1!,
                                             attribute: .bottom,
                                             relatedBy: .equal,
                                             toItem: v3,
@@ -101,6 +103,15 @@ class ViewController: UIViewController {
         
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        delay(2, closure: {
+            self.v1.bounds.size.width += 40
+            self.v1.bounds.size.height -= 50
+        
+        })
     }
 
 
