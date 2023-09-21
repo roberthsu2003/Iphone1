@@ -18,4 +18,23 @@ class Bicycle:Vehicle{
 let bicycle = Bicycle()
 print("Bicycle:\(bicycle.description)")
 
+class Hoverboard:Vehicle{
+    var color:String
+    init(color:String){
+        self.color = color
+        super.init()
+    }
+    
+    override convenience init(){
+        self.init(color: "Blue")
+    }
+    
+    override var description:String{
+        return "\(super.description) is a beautiful \(color)"
+    }
+}
+
+let hoverboard = Hoverboard(color: "silver")
+print("Hoverboard:\(hoverboard.description)")
+
 
