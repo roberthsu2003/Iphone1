@@ -8,7 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var n:Int
+    
+    required init?(coder: NSCoder) {
+        self.n = 5
+        super.init(coder: coder)
+        print(self.n)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //v1要使用自動產生constraints
