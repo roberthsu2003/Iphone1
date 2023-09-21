@@ -41,12 +41,22 @@
                                             <constraint firstAttribute="height" constant="10" id="xLN-2U-72S"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqV-m0-Bxl" userLabel="v3">
+                                        <rect key="frame" x="112" y="174" width="20" height="20"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8RL-Oy-SPc"/>
+                                            <constraint firstAttribute="width" constant="20" id="dNQ-UN-9Hd"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40600415209790208" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="oN9-0h-sIm" firstAttribute="top" secondItem="f9I-9e-yki" secondAttribute="top" id="3Cz-Qb-Rac"/>
                                     <constraint firstAttribute="height" constant="194" id="5Ac-qf-Vzz"/>
+                                    <constraint firstAttribute="bottom" secondItem="cqV-m0-Bxl" secondAttribute="bottom" id="7oA-Ut-xkN"/>
                                     <constraint firstAttribute="width" constant="132" id="C4U-hE-Xqn"/>
+                                    <constraint firstAttribute="trailing" secondItem="cqV-m0-Bxl" secondAttribute="trailing" id="Fll-KM-gv4"/>
                                     <constraint firstItem="oN9-0h-sIm" firstAttribute="leading" secondItem="f9I-9e-yki" secondAttribute="leading" id="Wvd-gP-JjE"/>
                                     <constraint firstAttribute="trailing" secondItem="oN9-0h-sIm" secondAttribute="trailing" id="jJl-8e-L4R"/>
                                 </constraints>

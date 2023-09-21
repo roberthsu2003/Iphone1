@@ -28,10 +28,15 @@ class ViewController: UIViewController {
         //v2請不要自動產生autoresing的contraints
         v2.translatesAutoresizingMaskIntoConstraints = false
         
+        let v3 = UIView()
+        v3.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+        v3.translatesAutoresizingMaskIntoConstraints = false
+        
         
         
         self.view.addSubview(v1)
         v1.addSubview(v2)
+        v1.addSubview(v3)
         
         v1.addConstraint(NSLayoutConstraint(item: v1,
                                             attribute: .top,
@@ -61,6 +66,38 @@ class ViewController: UIViewController {
                                             attribute: .notAnAttribute,
                                             multiplier: 1,
                                             constant: 10))
+        
+        v1.addConstraint(NSLayoutConstraint(item: v1,
+                                            attribute: .trailing,
+                                            relatedBy: .equal,
+                                            toItem: v3,
+                                            attribute: .trailing,
+                                            multiplier: 1,
+                                            constant: 0))
+        
+        v1.addConstraint(NSLayoutConstraint(item: v1,
+                                            attribute: .bottom,
+                                            relatedBy: .equal,
+                                            toItem: v3,
+                                            attribute: .bottom,
+                                            multiplier: 1,
+                                            constant: 0))
+        
+        v3.addConstraint(NSLayoutConstraint(item: v3,
+                                            attribute: .width,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: 20))
+        
+        v3.addConstraint(NSLayoutConstraint(item: v3,
+                                            attribute: .height,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: 20))
         
         
         
