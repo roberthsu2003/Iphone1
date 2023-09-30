@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm3-F2-cWk">
+                                <rect key="frame" x="16" y="41" width="343" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="T3F-uK-35f"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xW0-uY-IPG">
+                                <rect key="frame" x="16" y="244" width="343" height="26"/>
+                                <connections>
+                                    <action selector="userDidPage:" destination="BYZ-38-t0r" eventType="valueChanged" id="RZ0-vn-adE"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xm3-F2-cWk" secondAttribute="trailing" constant="16" id="5VU-ds-GJ2"/>
+                            <constraint firstItem="Xm3-F2-cWk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="7rK-BS-lbk"/>
+                            <constraint firstItem="Xm3-F2-cWk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GKk-zF-sMJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xW0-uY-IPG" secondAttribute="trailing" constant="16" id="SlD-KE-jkU"/>
+                            <constraint firstItem="xW0-uY-IPG" firstAttribute="top" secondItem="Xm3-F2-cWk" secondAttribute="bottom" constant="18" id="p39-Bb-1Cn"/>
+                            <constraint firstItem="xW0-uY-IPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tGN-Xa-ctB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pager" destination="xW0-uY-IPG" id="KW2-zF-HdQ"/>
+                        <outlet property="sv" destination="Xm3-F2-cWk" id="m3Z-nn-KeR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18.399999999999999" y="3.1484257871064472"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
