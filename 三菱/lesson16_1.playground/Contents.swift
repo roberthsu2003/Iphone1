@@ -60,6 +60,25 @@ if unknowUnit == nil{
     print("沒有的溫度單位,初始化失敗")
 }
 
+class Product{
+    let name:String
+    init?(name:String){
+        if name.isEmpty {return nil}
+        self.name = name
+    }
+}
 
+class CartItem:Product{
+    let quantity:Int
+    init?(name:String, quantity:Int){
+        if quantity < 1 {return nil}
+        self.quantity = quantity
+        super.init(name: name)
+    }
+}
+
+if let twoSocks = CartItem(name: "sock", quantity: 2){
+    print("Item:\(twoSocks.name), quantity:\(twoSocks.quantity)")
+}
 
 
