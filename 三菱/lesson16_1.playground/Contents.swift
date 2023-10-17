@@ -32,3 +32,34 @@ let anonymousCreature = Animal(species: "")
 if anonymousCreature == nil {
     print("沒有種類名稱不可以初始化")
 }
+
+enum TemperatureUnit{
+    case Kelvin, celsius, fahrenheit
+    init?(symbol:Character){
+        switch symbol{
+        case "K":
+            self = .Kelvin
+        case "C":
+            self = .celsius
+        case "F":
+            self = .fahrenheit
+        default:
+            return nil
+        }
+        
+    }
+}
+
+let fahrenheitUnit = TemperatureUnit(symbol: "F")
+if fahrenheitUnit != nil{
+    print("溫度單位定義成功")
+}
+
+let unknowUnit = TemperatureUnit(symbol: "X")
+if unknowUnit == nil{
+    print("沒有的溫度單位,初始化失敗")
+}
+
+
+
+
