@@ -106,6 +106,54 @@ class AutomaticallyNamedDocument:Document{
     }
 }
 
+class SomeClass{
+    required init(){
+        
+    }
+}
+
+class SomeSubClass:SomeClass{
+    required init(){
+        
+    }
+}
+
+//設定default value 使用closure
+
+class SomeClass1{
+    let someProperty:Int = {
+        var a = 10
+        a += 20
+        return a
+    }()
+}
+
+struct Chessboard{
+    let boardColors:[Bool] = {
+        print("執行")
+        var temporaryBoard:[Bool] = []
+        var isBlack = false
+        for i in 1...8{
+            for j in 1...8{
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    
+    func squareIsBlackAt(row:Int, column:Int) -> Bool{
+        return boardColors[(row*8) + column]
+    }
+    
+}
+
+let board = Chessboard()
+
+print(board.boardColors)
+print(board.boardColors)
+print(board.boardColors)
 
 
 
