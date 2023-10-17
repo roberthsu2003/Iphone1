@@ -81,4 +81,31 @@ if let twoSocks = CartItem(name: "sock", quantity: 2){
     print("Item:\(twoSocks.name), quantity:\(twoSocks.quantity)")
 }
 
+class Document{
+    var name:String?
+    init(){}
+    init?(name:String){
+        if name.isEmpty {return nil}
+        self.name = name
+    }
+}
+
+class AutomaticallyNamedDocument:Document{
+    override init(){
+        super.init()
+        self.name = "[untitled]"
+    }
+    
+    override init(name:String){
+        super.init()
+        if name.isEmpty{
+            self.name = "[untitled]"
+        }else{
+            self.name = name
+        }
+    }
+}
+
+
+
 
