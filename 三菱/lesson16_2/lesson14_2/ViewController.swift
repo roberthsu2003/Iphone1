@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         v1.addSubview(v3)
         
         var which:Int{
-            return 2
+            return 3
         }
         
         switch which{
@@ -130,7 +130,18 @@ class ViewController: UIViewController {
                 
             ].flatMap({$0}))
             
-        case 3:break
+        case 3:
+            //NSLayoutAnchor
+            NSLayoutConstraint.activate([
+                v2.topAnchor.constraint(equalTo: v1.topAnchor),
+                v2.leadingAnchor.constraint(equalTo: v1.leadingAnchor),
+                v2.trailingAnchor.constraint(equalTo: v1.trailingAnchor),
+                v2.heightAnchor.constraint(equalToConstant: 10),
+                v3.trailingAnchor.constraint(equalTo: v1.trailingAnchor),
+                v3.bottomAnchor.constraint(equalTo: v1.bottomAnchor),
+                v3.widthAnchor.constraint(equalToConstant: 20),
+                v3.heightAnchor.constraint(equalToConstant: 20)
+            ])
             
         default:break
         }
