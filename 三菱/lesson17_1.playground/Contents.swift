@@ -14,3 +14,10 @@ if let roomCount = john.residence?.numberOfRooms{
     print("執行失敗")
 }
 
+john.residence = Residence()
+
+if let roomCount = john.residence?.numberOfRooms{
+    print(roomCount)
+}else{
+    print("執行失敗")
+}
