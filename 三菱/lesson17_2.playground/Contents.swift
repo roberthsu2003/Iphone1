@@ -63,6 +63,16 @@ someAddress.street = "Acacia Road"
 if (john.residence?.address = someAddress) == nil{
     print("失敗")
 }
+func createAddress() -> Address{
+    print("function被執行")
+    let someAddress = Address()
+    someAddress.buildingNumber = "29"
+    someAddress.street = "Acacia Road"
+    return someAddress
+}
+
+john.residence?.address = createAddress()
+
 
 
 
