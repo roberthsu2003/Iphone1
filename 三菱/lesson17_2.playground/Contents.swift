@@ -73,6 +73,14 @@ func createAddress() -> Address{
 
 john.residence?.address = createAddress()
 
+if john.residence?.printNumberOfRooms() != nil{
+    print("function執行成功")
+}else{
+    print("function執行失敗")
+}
+
+
+
 
 
 
