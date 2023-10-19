@@ -50,6 +50,12 @@ class Address{
 
 let john = Person()
 
+let johnsHouse = Residence()
+johnsHouse.rooms.append(Room(name: "Living Room"))
+johnsHouse.rooms.append(Room(name: "Kitchen"))
+
+john.residence = johnsHouse
+
 if let roomCount = john.residence?.numberOfRooms{
     print(roomCount)
 }else{
@@ -90,6 +96,8 @@ if let firstRoomName = john.residence?[0].name{
 if (john.residence?[0] = Room(name:"Bathroom")) == nil{
     print("給Room失敗")
 }
+
+
 
 
 
