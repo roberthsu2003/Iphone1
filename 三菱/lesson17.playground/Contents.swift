@@ -39,3 +39,5 @@ playerOne = nil
 
 print("bank的coins是\(Bank.coinsInBank)")
 
+
+
