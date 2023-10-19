@@ -129,4 +129,12 @@ if let johnsStreet = john.residence?.address?.street{
 }
 
 
+if let  beginswithAcacia=john.residence?.address?.buildingIdentifier()?.hasPrefix("Acacia"){
+    if beginswithAcacia {
+        print("有")
+    }else{
+        print("沒有")
+    }
+}
+
 
