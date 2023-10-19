@@ -75,7 +75,7 @@ func createAddress() -> Address{
     return someAddress
 }
 
-john.residence?.address = createAddress()
+
 
 if john.residence?.printNumberOfRooms() != nil{
     print("function執行成功")
@@ -83,9 +83,10 @@ if john.residence?.printNumberOfRooms() != nil{
     print("function執行失敗")
 }
 
+/*
 if (john.residence?.address = someAddress) == nil{
     print("失敗")
-}
+}*/
 
 if let firstRoomName = john.residence?[0].name{
     print(firstRoomName)
@@ -97,11 +98,35 @@ if (john.residence?[0] = Room(name:"Bathroom")) == nil{
     print("給Room失敗")
 }
 
+var testScores = [
+    "Dave":[86, 82, 84],
+    "Bev":[79, 94, 81]
+]
+
+if let math = testScores["Dave"]?[0]{
+    print(math)
+}
+
+if (testScores["Dave"]?[0] == 90) {
+    print("給值失敗")
+}else{
+    print("給值成功")
+}
+
+if let johnsStreet = john.residence?.address?.street{
+    print("取得地址\(johnsStreet)")
+}else{
+    print("取得地址失敗")
+}
+
+john.residence?.address = createAddress()
 
 
-
-
-
+if let johnsStreet = john.residence?.address?.street{
+    print("取得地址\(johnsStreet)")
+}else{
+    print("取得地址失敗")
+}
 
 
 
