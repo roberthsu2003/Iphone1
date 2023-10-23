@@ -45,10 +45,10 @@ class ViewController: UIViewController {
     
     func displayBMI(){
         bmiLabel.text = "Hello! World!"
+        bmiLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bmiLabel)
         labelConstraints.append(NSLayoutConstraint(item: contentView ?? UIView(), attribute: .bottom, relatedBy: .equal, toItem: bmiLabel, attribute: .top, multiplier: 1, constant: -20))
-        labelConstraints.append(NSLayoutConstraint(item: view!, attribute: .leading, relatedBy: .equal, toItem: bmiLabel, attribute: .leading, multiplier: 1, constant: -50))
-        bmiLabel.translatesAutoresizingMaskIntoConstraints = false
+        labelConstraints.append(NSLayoutConstraint(item: view!, attribute: .leading, relatedBy: .equal, toItem: bmiLabel, attribute: .leading, multiplier: 1, constant: -50))        
         view.addConstraints(labelConstraints)
         
     }
