@@ -114,4 +114,22 @@ func eat(item:String){
     
 }
 
+func someThrowingFunction() throws -> Int{
+    /*
+    if(true){
+        throw VendingMachineError.outOfStock
+    }
+    */
+    return 50
+}
+
+if let value = try? someThrowingFunction(){
+    print(value)
+}else{
+    print("出錯了")
+}
+
+let value = try! someThrowingFunction()
+print(value)
+
 
