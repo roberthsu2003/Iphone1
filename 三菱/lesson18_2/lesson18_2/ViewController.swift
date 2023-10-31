@@ -15,7 +15,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clickSecond(_ sender:UIButton){
-        print("SecondViewController")
+        let secondViewController = SecondViewController(nibName: nil, bundle: nil)
+        secondViewController.title = "SecondViewController"
+        secondViewController.view.backgroundColor = .systemBackground
+        
+        let navigationController = UINavigationController(rootViewController: secondViewController)
+        
+        self.present(navigationController, animated: true)
+        
     }
 
 
