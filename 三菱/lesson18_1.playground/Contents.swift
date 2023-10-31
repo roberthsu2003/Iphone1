@@ -90,3 +90,28 @@ do{
     print("不知名的錯誤")
 }
 
+
+func nourish(with item:String){
+    do{
+        try vendingMachine.vend(itemNamed: item)
+    }catch is VendingMachineError{
+        print("購買出現錯誤")
+    }catch{
+        print("不知名的錯誤")
+    }
+}
+
+func eat(item:String){
+    do{
+        try vendingMachine.vend(itemNamed: item)
+    }catch VendingMachineError.invalidSelection,
+           VendingMachineError.insufficentFunds,
+           VendingMachineError.outOfStock{
+        print("出現錯誤")
+    }catch{
+        print("不知名的錯誤")
+    }
+    
+}
+
+
