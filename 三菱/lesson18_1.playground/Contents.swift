@@ -4,7 +4,7 @@ enum VendingMachineError:Error{
     case outOfStock
 }
 
-throw VendingMachineError.invalidSelection
+//throw VendingMachineError.invalidSelection
 
 //建立一個會throws的function
 func canThrowErrors() throws -> String{
@@ -73,3 +73,20 @@ struct PurchesedSnack{
         self.name = name
     }
 }
+
+var vendingMachine = VendingMachine()
+vendingMachine.coinsDeposited = 20
+
+do{
+    try buyFavoriteSnack(person: "Alice", vendingMachine: vendingMachine)
+    print("成功購買")
+}catch VendingMachineError.invalidSelection{
+    print("沒有這個商品")
+}catch VendingMachineError.outOfStock{
+    print("商品賣完")
+}catch VendingMachineError.insufficentFunds(let coinsNeeded){
+    print("還缺\(coinsNeeded)")
+}catch{
+    print("不知名的錯誤")
+}
+
