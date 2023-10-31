@@ -11,7 +11,7 @@ class CardViewController: UIViewController {
     private lazy var panelView:CartPanelView = {
         let view = CartPanelView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        view.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         view.layer.cornerCurve = .continuous
         view.layer.cornerRadius = 10
         return view
@@ -21,7 +21,10 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .tertiarySystemBackground
         title = "Cart"
-        isModalInPresentation = true
+        //下面設定不會成功
+        //navigationController?.modalPresentationStyle = .fullScreen
+        //isModalInPresentation = true
+        //modalPresentationStyle = .currentContext
         
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.navigationBar.backgroundColor = .systemGroupedBackground
@@ -37,7 +40,7 @@ class CardViewController: UIViewController {
             panelView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             panelView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             panelView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            panelView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/3)
+            panelView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/4)
         ])
     }
     

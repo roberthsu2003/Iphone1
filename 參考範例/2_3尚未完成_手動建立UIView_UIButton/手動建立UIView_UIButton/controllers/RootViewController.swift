@@ -13,19 +13,21 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         title = "自訂View和UIButton"
-        
-        navigationItem.largeTitleDisplayMode = .never //可以使用.automatic
+              
+        navigationItem.largeTitleDisplayMode = .never //可以使用.automatic,.always //查詢說明largeTitleDisplayMode
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let cartButton = UIBarButtonItem(
             title: "Cart",
             image: UIImage(systemName: "cart"),
             primaryAction:UIAction{ _ in
-                self.present(
-                    UINavigationController(
-                        rootViewController:CardViewController()
-                    )
-                    , animated: true)
+                let navi = UINavigationController(
+                    rootViewController:CardViewController()
+                )
+                //只有在這設定才成功
+                //navi.modalPresentationStyle = .fullScreen
+                navi.modalPresentationStyle = .formSheet
+                self.present(navi, animated: true)
             }
         )
         
