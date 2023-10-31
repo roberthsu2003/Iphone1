@@ -50,6 +50,26 @@ class VendingMachine{
         
         print("Dispensing \(name)")
         
-        
+    }
+}
+
+//propagate(傳遞錯誤)
+//try
+let favoriteSnacks = [
+    "Alice":"Chips",
+    "Bob":"Licorice",
+    "Eve":"Pretzels"
+]
+
+func buyFavoriteSnack(person:String, vendingMachine:VendingMachine) throws {
+    let snackName = favoriteSnacks[person] ?? "Candy Bar"
+    try vendingMachine.vend(itemNamed: snackName)
+}
+
+struct PurchesedSnack{
+    let name:String
+    init(name:String, vendingMachine:VendingMachine) throws{
+        try vendingMachine.vend(itemNamed: name)
+        self.name = name
     }
 }
