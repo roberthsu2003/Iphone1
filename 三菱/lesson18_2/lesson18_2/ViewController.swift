@@ -24,6 +24,15 @@ class ViewController: UIViewController {
         self.present(navigationController, animated: true)
         
     }
+    
+    @IBAction func clickThird(_ sender:UIButton){
+        
+        let thirdViewController = ThirdViewController(nibName: "ThirdViewController", bundle: nil)
+        thirdViewController.title = "ThirdViewController"
+        let navigationContoller = UINavigationController(rootViewController: thirdViewController)
+        
+        self.present(navigationContoller, animated: true)
+    }
 
 
 }
