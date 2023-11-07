@@ -39,3 +39,14 @@ for item in library{
         songCount += 1
     }
 }
+
+
+for item in library{
+    if let movie = item as? Movie{ //向下轉型
+        print("name是\(movie.name),導演是\(movie.director)")
+    }else if let song = item as? Song{
+        print("name是\(song.name),作曲是\(song.artist)")
+    }
+    
+}
+
