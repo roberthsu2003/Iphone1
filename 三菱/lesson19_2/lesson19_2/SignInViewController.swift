@@ -66,10 +66,19 @@ class SignInViewController: UIViewController {
         ])
         return button
     }()
+    
+    //var scrollView:UIScrollView!
+    
+    override func loadView() {
+        super.loadView()
+        self.view = UIView()
+        //scrollView = self.view as? UIScrollView
+        view.backgroundColor = .systemBackground
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        
         navigationItem.title = "SignIn Button"
         view.addSubview(stackView)
         
