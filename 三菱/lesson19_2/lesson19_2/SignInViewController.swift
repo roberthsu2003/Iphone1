@@ -42,6 +42,18 @@ class SignInViewController: UIViewController {
         button.setTitle("Sign In", for: .normal)
         return button
     }()
+    
+    private lazy var helpButton:UIButton = {
+        var config = UIButton.Configuration.tinted()
+        config.buttonSize = .large
+        config.cornerStyle = .medium
+        
+        
+        let button = UIButton(type: .system)
+        button.configuration = config
+        button.setTitle("Get Help", for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +65,20 @@ class SignInViewController: UIViewController {
         stackView.addArrangedSubview(logoImageView)
         //加入signIn button
         stackView.addArrangedSubview(signInButton)
+        //加入Help Button
+        stackView.addArrangedSubview(helpButton)
         
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            logoImageView.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 6/7),
+            signInButton.heightAnchor.constraint(equalTo: helpButton.heightAnchor, multiplier: 1/1),
+            signInButton.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 1/1),
+            helpButton.widthAnchor.constraint(equalTo: signInButton.widthAnchor, multiplier: 1/1)
+            
         ])
     }
 
