@@ -50,9 +50,20 @@ class SignInViewController: UIViewController {
         let button = UIButton(type: .system)
         button.configuration = config
         button.setTitle("Get Help", for: .normal)
+        /*
         button.addAction(UIAction(handler: { _ in
             print("Get Help")
         }), for: .touchUpInside)
+         */
+        button.showsMenuAsPrimaryAction = true
+        button.menu = UIMenu(children: [
+            UIAction(title: "Forgot Password", image: UIImage(systemName: "key.fill"), handler: { _ in
+                print("Forgot Password Tapped.")
+            }),
+            UIAction(title: "Contact Support", image: UIImage(systemName: "person.crop.circle.badge.questionmark"), handler: { _ in
+                print("Contact Support Tapped")
+            })
+        ])
         return button
     }()
 
