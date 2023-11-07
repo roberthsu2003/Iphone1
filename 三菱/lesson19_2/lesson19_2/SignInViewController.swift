@@ -80,6 +80,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "SignIn Button"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
         view.addSubview(stackView)
         
         //加入圖片
