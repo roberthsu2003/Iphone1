@@ -25,7 +25,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyR-ml-1bS">
                                         <rect key="frame" x="0.0" y="526" width="343" height="34"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
+                                        <buttonConfiguration key="configuration" style="filled" image="chevron.right" catalog="system" imagePlacement="trailing" title="Button" imagePadding="5">
                                             <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
                                         </buttonConfiguration>
                                     </button>
@@ -80,6 +80,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="launchLogo" width="287" height="287"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
