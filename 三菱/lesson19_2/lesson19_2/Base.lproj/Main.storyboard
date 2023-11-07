@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8ku-wg-Vxb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -8,23 +8,79 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--自訂Button-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson19_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="pnL-im-BAH">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gfE-6K-djq">
+                                        <rect key="frame" x="28" y="0.0" width="287" height="517"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyR-ml-1bS">
+                                        <rect key="frame" x="0.0" y="526" width="343" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-n6-kji">
+                                        <rect key="frame" x="0.0" y="569" width="343" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Button">
+                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fuz-n6-kji" firstAttribute="height" secondItem="wyR-ml-1bS" secondAttribute="height" id="0nd-iq-jfW"/>
+                                    <constraint firstItem="fuz-n6-kji" firstAttribute="width" secondItem="wyR-ml-1bS" secondAttribute="width" id="Evp-SR-cxd"/>
+                                    <constraint firstItem="gfE-6K-djq" firstAttribute="height" secondItem="pnL-im-BAH" secondAttribute="height" multiplier="6:7" id="stL-0A-Rv4"/>
+                                    <constraint firstItem="wyR-ml-1bS" firstAttribute="width" secondItem="pnL-im-BAH" secondAttribute="width" multiplier="1:1" id="xXu-Qt-9Oa"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pnL-im-BAH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JPY-4r-xYQ"/>
+                            <constraint firstItem="pnL-im-BAH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Jjp-j1-b8G"/>
+                            <constraint firstItem="pnL-im-BAH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fxR-1g-avU"/>
+                            <constraint firstItem="pnL-im-BAH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rMk-xS-RTj"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="自訂Button" id="Och-fr-K3Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="4"/>
+            <point key="canvasLocation" x="938" y="-36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2so-bf-8jT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ku-wg-Vxb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G9C-DU-IpG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="75q-mU-p7Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1K1-gu-GfM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="-35"/>
         </scene>
     </scenes>
     <resources>
+        <image name="launchLogo" width="287" height="287"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
