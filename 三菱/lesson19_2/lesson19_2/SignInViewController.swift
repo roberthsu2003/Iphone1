@@ -47,11 +47,12 @@ class SignInViewController: UIViewController {
         var config = UIButton.Configuration.tinted()
         config.buttonSize = .large
         config.cornerStyle = .medium
-        
-        
         let button = UIButton(type: .system)
         button.configuration = config
         button.setTitle("Get Help", for: .normal)
+        button.addAction(UIAction(handler: { _ in
+            print("Get Help")
+        }), for: .touchUpInside)
         return button
     }()
 
