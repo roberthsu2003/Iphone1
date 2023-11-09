@@ -14,6 +14,9 @@ class CardViewController: UIViewController {
         //view.backgroundColor = .systemBackground
         view.backgroundColor = .brown
         navigationItem.title = "Card"
+        navigationController?.navigationBar.backgroundColor = .systemGroupedBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
     
     required init?(coder: NSCoder) {

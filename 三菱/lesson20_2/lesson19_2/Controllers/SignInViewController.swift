@@ -114,7 +114,7 @@ class SignInViewController: UIViewController {
             title: "Cart",
             image: UIImage(systemName: "cart"),
             primaryAction: UIAction(handler: { _ in
-                let naviController = UINavigationController(rootViewController: CardViewController())
+                let naviController = UINavigationController(rootViewController: CardViewController())                
                 //naviController.modalPresentationStyle = .fullScreen
                 naviController.modalPresentationStyle = .formSheet
                 //naviController.modalTransitionStyle = .flipHorizontal
