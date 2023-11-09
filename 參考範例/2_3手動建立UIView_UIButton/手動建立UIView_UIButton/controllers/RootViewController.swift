@@ -14,7 +14,7 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
         title = "自訂View和UIButton"
               
-        navigationItem.largeTitleDisplayMode = .never //可以使用.automatic,.always //查詢說明largeTitleDisplayMode
+        navigationItem.largeTitleDisplayMode = .always //可以使用.automatic,.always //查詢說明largeTitleDisplayMode
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let cartButton = UIBarButtonItem(
