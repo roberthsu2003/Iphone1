@@ -109,7 +109,13 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "SignIn Button"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Cart",
+            image: UIImage(systemName: "cart"),
+            primaryAction: UIAction(handler: { _ in
+                print("換頁面")
+            }))
         view.addSubview(stackView)
         
         //加入圖片
