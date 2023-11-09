@@ -114,7 +114,8 @@ class SignInViewController: UIViewController {
             title: "Cart",
             image: UIImage(systemName: "cart"),
             primaryAction: UIAction(handler: { _ in
-                print("換頁面")
+                let naviController = UINavigationController(rootViewController: CardViewController())
+                self.present(naviController, animated: true)
             }))
         view.addSubview(stackView)
         
