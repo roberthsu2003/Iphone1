@@ -11,7 +11,8 @@ class CardViewController: UIViewController {
 
     init(){
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .systemBackground
+        //view.backgroundColor = .systemBackground
+        view.backgroundColor = .brown
         navigationItem.title = "Card"
     }
     
