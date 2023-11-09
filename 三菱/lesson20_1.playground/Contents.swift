@@ -26,7 +26,15 @@ struct BlackjackCard{
         }
     }
     
-    let suit:Suit
+    let suit:Suit, rank:Rank
+    var description:String{
+        var output = "排色是\(suit.rawValue)"
+        output += "分數是\(rank.values.first)"
+        if let second = rank.values.second{
+            output += "或者\(second)"
+        }
+        return output
+    }
 }
 
 
