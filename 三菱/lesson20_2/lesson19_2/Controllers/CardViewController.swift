@@ -11,12 +11,8 @@ class CardViewController: UIViewController {
 
     init(){
         super.init(nibName: nil, bundle: nil)
-        //view.backgroundColor = .systemBackground
-        view.backgroundColor = .brown
-        navigationItem.title = "Card"
-        navigationController?.navigationBar.backgroundColor = .systemGroupedBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+             
+        
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +21,14 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Card"
+        navigationController?.navigationBar.backgroundColor = .systemGroupedBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.leftBarButtonItem = UIBarButtonItem(systemItem: .close, primaryAction: UIAction(handler: { _ in
+            self.dismiss(animated: true)
+        }))
     }
     
     
