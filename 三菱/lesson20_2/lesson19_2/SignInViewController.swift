@@ -49,6 +49,10 @@ class SignInViewController: UIViewController {
         button.configurationUpdateHandler = {
             singInButton in
             var config = singInButton.configuration
+            config?.showsActivityIndicator = self.signingIn
+            config?.imagePlacement = self.signingIn ? .leading:.trailing
+            button.configuration = config
+            button.isEnabled = !self.signingIn
             print("執行updateHandler")
             
         }
