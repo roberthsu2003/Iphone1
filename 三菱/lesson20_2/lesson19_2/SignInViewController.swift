@@ -35,6 +35,7 @@ class SignInViewController: UIViewController {
         config.image = UIImage(systemName: "chevron.right")
         config.imagePlacement = .trailing
         config.imagePadding = 5
+        config.preferredSymbolConfigurationForImage = UIImage.SymbolConfiguration(scale: .medium)
         
         
         let button = UIButton(type: .system)
