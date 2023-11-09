@@ -42,11 +42,24 @@ class SignInViewController: UIViewController {
         button.setTitle("Sign In", for: .normal)
         button.addAction(UIAction{
             _ in
-            print("Sign Press")
+            self.signingIn = true
             
         }, for: .touchUpInside)
+        
+        button.configurationUpdateHandler = {
+            singInButton in
+            var config = singInButton.configuration
+            print("執行updateHandler")
+            
+        }
         return button
     }()
+    
+    private var signingIn = false{
+        didSet{
+            signInButton.setNeedsUpdateConfiguration()
+        }
+    }
     
     private lazy var helpButton:UIButton = {
         var config = UIButton.Configuration.tinted()
