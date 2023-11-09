@@ -11,7 +11,7 @@
         <!--自訂Button-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson19_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson20_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,20 +61,31 @@
             <point key="canvasLocation" x="938" y="-36"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="MUi-4I-ydA">
+        <scene sceneID="sbs-Lb-AV4">
             <objects>
-                <viewController id="tgI-FW-tV5" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="Bey-On-txh">
+                <viewController id="MPT-rA-EF1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fiu-Sn-g5f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <viewLayoutGuide key="safeArea" id="j44-SX-AgS"/>
-                        <viewLayoutGuide key="contentLayoutGuide" id="6Pd-fm-m4R"/>
-                        <viewLayoutGuide key="frameLayoutGuide" id="FNt-lA-3DO"/>
-                    </scrollView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYx-GD-NMQ">
+                                <rect key="frame" x="16" y="500.5" width="343" height="166.5"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RMa-Ov-gnt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wYx-GD-NMQ" firstAttribute="bottom" secondItem="RMa-Ov-gnt" secondAttribute="bottom" id="KXW-dy-6oA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wYx-GD-NMQ" secondAttribute="trailing" id="oNm-yL-3oZ"/>
+                            <constraint firstItem="wYx-GD-NMQ" firstAttribute="leading" secondItem="fiu-Sn-g5f" secondAttribute="leadingMargin" id="qVV-AG-XPi"/>
+                            <constraint firstItem="wYx-GD-NMQ" firstAttribute="height" secondItem="fiu-Sn-g5f" secondAttribute="height" multiplier="1:4" id="zWD-zM-iik"/>
+                        </constraints>
+                    </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OCA-Tb-c14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TuK-Qv-5em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="-36"/>
+            <point key="canvasLocation" x="1752.8" y="-35.532233883058474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2so-bf-8jT">
@@ -100,6 +111,9 @@
         <image name="launchLogo" width="287" height="287"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

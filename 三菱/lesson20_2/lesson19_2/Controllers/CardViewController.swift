@@ -8,16 +8,25 @@
 import UIKit
 
 class CardViewController: UIViewController {
+    
+    
 
     init(){
         super.init(nibName: nil, bundle: nil)
-             
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private lazy var panelView:UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .systemMint
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +38,14 @@ class CardViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(systemItem: .close, primaryAction: UIAction(handler: { _ in
             self.dismiss(animated: true)
         }))
+        
+        view.addSubview(panelView)
+        NSLayoutConstraint.activate([
+            panelView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            panelView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            panelView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            panelView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1/4)
+        ])
     }
     
     
