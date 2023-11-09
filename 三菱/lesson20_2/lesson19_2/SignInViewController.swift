@@ -43,6 +43,12 @@ class SignInViewController: UIViewController {
         button.addAction(UIAction{
             _ in
             self.signingIn = true
+            Timer.scheduledTimer(withTimeInterval: 1,
+                                 repeats: false) {
+                _ in
+                self.signingIn = false
+            }
+            
             
         }, for: .touchUpInside)
         
