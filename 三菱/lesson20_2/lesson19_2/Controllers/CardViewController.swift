@@ -7,8 +7,11 @@
 
 import UIKit
 
-class CardViewController: UIViewController {
+class CardPanelView:UIView{
     
+}
+
+class CardViewController: UIViewController {
     
 
     init(){
@@ -20,8 +23,8 @@ class CardViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var panelView:UIView = {
-        let view = UIView()
+    private lazy var panelView:CardPanelView = {
+        let view = CardPanelView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemMint
         return view
