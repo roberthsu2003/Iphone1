@@ -37,5 +37,8 @@ struct BlackjackCard{
     }
 }
 
+let theAceOfSpades = BlackjackCard(suit: .spade, rank: .ace)
+theAceOfSpades.description
+
 
 
