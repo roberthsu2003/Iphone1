@@ -71,4 +71,24 @@ centerRect.origin.y
 centerRect.size.width
 centerRect.size.height
 
+//擴充Int的實體方法
+extension Int{
+    func repetitions(task:()->Void){
+        for _ in 0..<self{
+            task()
+        }
+    }
+}
 
+3.repetitions {
+    print("Hello!")
+}
+
+extension Int{
+    mutating func square(){
+        self = self * self
+    }
+}
+
+var someInt = 3
+someInt.square()
