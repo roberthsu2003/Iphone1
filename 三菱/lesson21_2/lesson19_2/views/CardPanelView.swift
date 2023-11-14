@@ -10,7 +10,12 @@ import UIKit
 class CardPanelView: UIView {
     private lazy var stackView:UIStackView = {
         let stackView = UIStackView(frame: CGRect.zero)
-        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        //stackView.backgroundColor = .brown
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 10
         return stackView
     }()
     
@@ -18,6 +23,12 @@ class CardPanelView: UIView {
         super.init(frame: CGRect.zero)
         backgroundColor = .secondarySystemBackground
         addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor)
+        ])
         
     }
     
