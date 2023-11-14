@@ -92,3 +92,18 @@ extension Int{
 
 var someInt = 3
 someInt.square()
+
+//擴充subscripts
+extension Int{
+    subscript(digitIndex:Int) -> Int{
+        var decimalBase = 1
+        for _ in 0..<digitIndex{
+            decimalBase *= 10
+        }
+        return (self / decimalBase) % 10
+    }
+}
+
+746381295[0]
+746381295[1]
+746381295[2]
