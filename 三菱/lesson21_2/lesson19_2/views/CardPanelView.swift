@@ -73,6 +73,8 @@ class CardPanelView: UIView {
         var config = UIButton.Configuration.filled()
         config.buttonSize = .large
         config.cornerStyle = .medium
+        config.imagePadding = 5
+        config.imagePlacement = .leading
         config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer({ incoming in
             var outgoing = incoming
             outgoing.font = UIFont.preferredFont(forTextStyle: .headline)
@@ -82,9 +84,30 @@ class CardPanelView: UIView {
         let button = UIButton(type: .system)
         button.configuration = config
         button.setTitle("Check Out", for: .normal)
+        button.configurationUpdateHandler = {
+            button in
+            var config = button.configuration
+            config?.showsActivityIndicator = self.checkingOut
+            config?.title = self.checkingOut ? "Checking Out...":"Checkout"
+            button.isEnabled = !self.checkingOut
+            button.configuration = config
+        }
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addAction(UIAction(handler: { _ in
+            self.checkingOut = true
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+                self.checkingOut = false
+            }
+        }),
+                         for: .touchUpInside)
         return button
     }()
+    
+    private var checkingOut:Bool = false {
+        didSet{
+            checkoutButton.setNeedsUpdateConfiguration()
+        }
+    }
     
     init(){
         super.init(frame: CGRect.zero)
