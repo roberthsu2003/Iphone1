@@ -40,6 +40,13 @@ class CardPanelView: UIView {
     
     private lazy var shippingSpeedButton:UIButton = {
         var config = UIButton.Configuration.tinted()
+        config.buttonSize = .medium
+        config.cornerStyle = .medium
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer({ incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.preferredFont(forTextStyle: .headline)
+            return outgoing
+        })
         let button = UIButton(type: .system)
         button.configuration = config
         button.translatesAutoresizingMaskIntoConstraints = false
