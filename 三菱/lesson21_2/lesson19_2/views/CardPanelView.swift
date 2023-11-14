@@ -69,6 +69,23 @@ class CardPanelView: UIView {
         return button
     }()
     
+    private lazy var checkoutButton:UIButton = {
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .large
+        config.cornerStyle = .medium
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer({ incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.preferredFont(forTextStyle: .headline)
+            return outgoing
+        })
+        
+        let button = UIButton(type: .system)
+        button.configuration = config
+        button.setTitle("Check Out", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     init(){
         super.init(frame: CGRect.zero)
         backgroundColor = .secondarySystemBackground
@@ -81,10 +98,16 @@ class CardPanelView: UIView {
         ])
         
         stackView.addArrangedSubview(infomationStackView)
+        
         infomationStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        infomationStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
         infomationStackView.addArrangedSubview(costLabel)
         infomationStackView.addArrangedSubview(shippingSpeedButton)
         
+        stackView.addArrangedSubview(checkoutButton)
+        
+        checkoutButton.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
     }
     
