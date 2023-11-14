@@ -8,9 +8,17 @@
 import UIKit
 
 class CardPanelView: UIView {
+    private lazy var stackView:UIStackView = {
+        let stackView = UIStackView(frame: CGRect.zero)
+        
+        return stackView
+    }()
     
     init(){
-        super.init(frame: CGRect.zero)        
+        super.init(frame: CGRect.zero)
+        backgroundColor = .secondarySystemBackground
+        addSubview(stackView)
+        
     }
     
     required init?(coder: NSCoder) {

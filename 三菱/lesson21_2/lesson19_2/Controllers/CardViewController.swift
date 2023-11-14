@@ -21,8 +21,7 @@ class CardViewController: UIViewController {
     
     private lazy var panelView:CardPanelView = {
         let panelView = CardPanelView()
-        panelView.translatesAutoresizingMaskIntoConstraints = false
-        panelView.backgroundColor = .systemMint
+        panelView.translatesAutoresizingMaskIntoConstraints = false        
         panelView.layer.cornerRadius = 10
         panelView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         return panelView
