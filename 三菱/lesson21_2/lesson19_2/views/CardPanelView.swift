@@ -18,6 +18,16 @@ class CardPanelView: UIView {
         stackView.spacing = 10
         return stackView
     }()
+    private lazy var infomationStackView:UIStackView = {
+        let stackView = UIStackView(frame: CGRect.zero)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .brown
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .center
+        stackView.spacing = 10
+        return stackView
+    }()
     
     init(){
         super.init(frame: CGRect.zero)
@@ -29,6 +39,10 @@ class CardPanelView: UIView {
             stackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor)
         ])
+        
+        stackView.addArrangedSubview(infomationStackView)
+        infomationStackView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        
         
     }
     
