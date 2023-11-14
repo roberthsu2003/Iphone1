@@ -43,7 +43,22 @@ class CardPanelView: UIView {
         let button = UIButton(type: .system)
         button.configuration = config
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Shipping Speed", for: .normal)
+        button.setTitle("", for: .normal)
+        button.showsMenuAsPrimaryAction = true
+        button.changesSelectionAsPrimaryAction = true
+        button.menu = UIMenu(children: [
+            UIAction(title: "Express Shipping",
+                     image: UIImage(systemName: "hare.fill"),
+                     handler: { _ in
+                         print("Express Shipping選取")
+                     }),
+            UIAction(title: "Standard Shipping",
+                     image: UIImage(systemName: "tortoise.fill"),
+                     handler: { _ in
+                         print("Standard Shipping選取")
+                     }),
+            
+        ])
         return button
     }()
     
