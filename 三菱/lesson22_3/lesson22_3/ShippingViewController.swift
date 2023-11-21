@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol ShippingViewControllerDelegate{
+    
+}
+
 class ShippingViewController: UIViewController {
     @IBOutlet var shippingButton:UIButton!
+    var delegate:ShippingViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

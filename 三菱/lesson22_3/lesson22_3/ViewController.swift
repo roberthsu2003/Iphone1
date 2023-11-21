@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,ShippingViewControllerDelegate {
     @IBOutlet var shippingLabel:UILabel!
     
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func userNext(_ sender:UIBarButtonItem){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let shippingViewController = storyboard.instantiateViewController(withIdentifier: "shippingViewController") as! ShippingViewController
-    
+        shippingViewController.delegate = self
         self.present(shippingViewController, animated: true)
     }
 
