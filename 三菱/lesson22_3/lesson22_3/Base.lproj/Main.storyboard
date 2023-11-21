@@ -48,7 +48,7 @@
         <!--Shipping View Controller-->
         <scene sceneID="Gff-su-Vh2">
             <objects>
-                <viewController id="lJw-wu-sTz" customClass="ShippingViewController" customModule="lesson22_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shippingViewController" id="lJw-wu-sTz" customClass="ShippingViewController" customModule="lesson22_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vn5-jX-van">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ktm-cP-ero" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="17"/>
+            <point key="canvasLocation" x="1150" y="-152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a7y-Gl-Q9a">

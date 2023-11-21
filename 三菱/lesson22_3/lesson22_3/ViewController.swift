@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func userNext(_ sender:UIBarButtonItem){
-        print("Next")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let shippingViewController = storyboard.instantiateViewController(withIdentifier: "shippingViewController") as! ShippingViewController
+    
+        self.present(shippingViewController, animated: true)
     }
 
 
