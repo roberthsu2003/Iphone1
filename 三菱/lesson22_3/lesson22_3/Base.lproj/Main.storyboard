@@ -30,14 +30,50 @@
                             <constraint firstItem="boH-5n-rAl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uQp-fZ-N5f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Shipping" id="va8-oj-1td"/>
+                    <navigationItem key="navigationItem" title="Shipping" id="va8-oj-1td">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="8YH-VY-Ani">
+                            <connections>
+                                <action selector="userNext:" destination="BYZ-38-t0r" id="3eL-Dz-CeX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="shippingLabel" destination="boH-5n-rAl" id="sAC-Hz-0CT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="372" y="17"/>
+            <point key="canvasLocation" x="327" y="17"/>
+        </scene>
+        <!--Shipping View Controller-->
+        <scene sceneID="Gff-su-Vh2">
+            <objects>
+                <viewController id="lJw-wu-sTz" customClass="ShippingViewController" customModule="lesson22_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vn5-jX-van">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlv-XB-Gfo">
+                                <rect key="frame" x="96" y="69" width="183" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Shipping Speed"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cDx-eO-FDB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jlv-XB-Gfo" firstAttribute="centerX" secondItem="Vn5-jX-van" secondAttribute="centerX" id="U25-Uq-2y2"/>
+                            <constraint firstItem="jlv-XB-Gfo" firstAttribute="leading" secondItem="cDx-eO-FDB" secondAttribute="leading" constant="96" id="dur-VR-Pjz"/>
+                            <constraint firstItem="jlv-XB-Gfo" firstAttribute="top" secondItem="cDx-eO-FDB" secondAttribute="top" constant="49" id="uxM-L5-94k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shippingButton" destination="jlv-XB-Gfo" id="aLG-FA-gEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktm-cP-ero" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="17"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a7y-Gl-Q9a">

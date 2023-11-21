@@ -13,6 +13,7 @@
 		8EE5B2672B0C889200EF916B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5B2652B0C889200EF916B /* Main.storyboard */; };
 		8EE5B2692B0C889400EF916B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5B2682B0C889400EF916B /* Assets.xcassets */; };
 		8EE5B26C2B0C889400EF916B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EE5B26A2B0C889400EF916B /* LaunchScreen.storyboard */; };
+		8EE5B2742B0C89E200EF916B /* ShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5B2732B0C89E200EF916B /* ShippingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8EE5B2682B0C889400EF916B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EE5B26B2B0C889400EF916B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EE5B26D2B0C889400EF916B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE5B2732B0C89E200EF916B /* ShippingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8EE5B25F2B0C889200EF916B /* AppDelegate.swift */,
 				8EE5B2612B0C889200EF916B /* SceneDelegate.swift */,
 				8EE5B2632B0C889200EF916B /* ViewController.swift */,
+				8EE5B2732B0C89E200EF916B /* ShippingViewController.swift */,
 				8EE5B2652B0C889200EF916B /* Main.storyboard */,
 				8EE5B2682B0C889400EF916B /* Assets.xcassets */,
 				8EE5B26A2B0C889400EF916B /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE5B2742B0C89E200EF916B /* ShippingViewController.swift in Sources */,
 				8EE5B2642B0C889200EF916B /* ViewController.swift in Sources */,
 				8EE5B2602B0C889200EF916B /* AppDelegate.swift in Sources */,
 				8EE5B2622B0C889200EF916B /* SceneDelegate.swift in Sources */,
