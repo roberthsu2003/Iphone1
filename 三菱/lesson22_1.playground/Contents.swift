@@ -26,3 +26,5 @@ class Starship:FullyNamed{
 
 var ncc1701 = Starship.init(name: "Enterprise", prefix: "USS")
 ncc1701.fullName
+
+
