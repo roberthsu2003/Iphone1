@@ -7,24 +7,24 @@
 
 import UIKit
 
-protocol ShippingViewControllerDelegate{
-    
+protocol ShippingViewControllerDelegate:AnyObject{
+    func userSelected(shipping:String)
 }
 
 class ShippingViewController: UIViewController {
     @IBOutlet var shippingButton:UIButton!
-    var delegate:ShippingViewControllerDelegate?
+    weak var delegate:ShippingViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         shippingButton.showsMenuAsPrimaryAction = true
         shippingButton.menu = UIMenu(children: [
             UIAction(title: "Express Shipping", image: UIImage(systemName: "hare.fill"), handler: { [self] _ in
-                print("Express Shipping")
+                delegate?.userSelected(shipping: "Express Shipping")
                 dismiss(animated: true)
             }),
             UIAction(title: "Standard Shipping", image: UIImage(systemName: "tortoise.fill"), handler: { [self] _ in
-                print("Standards Shipping")
+                delegate?.userSelected(shipping: "Standard Shipping")
                 dismiss(animated: true)
             }),
         ])

@@ -21,6 +21,10 @@ class ViewController: UIViewController,ShippingViewControllerDelegate {
         shippingViewController.delegate = self
         self.present(shippingViewController, animated: true)
     }
+    
+    func userSelected(shipping:String){
+        shippingLabel.text = shipping
+    }
 
 
 }
