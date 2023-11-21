@@ -69,3 +69,25 @@ class SomeSubClass:SomeSuperClass,SomeProtocol1{
         
     }
 }
+
+class Dice{
+    let sides:Int
+    //使用protocol的型別
+    let generator:RandomNumberGenerator
+    
+    init(sides:Int, generator:RandomNumberGenerator){
+        self.sides = sides
+        self.generator = generator
+    }
+    
+    func roll() -> Int{
+        return Int(generator.random() * Double(sides)) + 1
+    }
+}
+
+var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+for _ in 1...5{
+    print(d6.roll())
+}
+
+
