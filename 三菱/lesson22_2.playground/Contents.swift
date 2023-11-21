@@ -20,3 +20,24 @@ let generator = LinearCongruentialGenerator()
 generator.random()
 generator.random()
 generator.random()
+
+protocol Togglable{
+    //mutating method requirements
+    mutating func toggle()
+}
+
+enum OnOffSwitch:Togglable{
+    case off, on
+    mutating func toggle(){
+        switch self{
+        case .off:
+            self = .on
+        case .on:
+            self = .off
+        }
+    }
+}
+
+var lightSwitch = OnOffSwitch.off
+lightSwitch.toggle()
+lightSwitch.toggle()
