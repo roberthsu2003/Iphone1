@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson22_4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1369"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBl-cx-bb2">
@@ -67,8 +67,6 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Uyg-Mh-156"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="g2K-z4-oXZ"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -80,7 +78,7 @@
                             <constraint firstItem="hBl-cx-bb2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="tpP-SJ-GQD"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="667"/>
+                    <size key="freeformSize" width="375" height="1369"/>
                     <connections>
                         <outlet property="containerView" destination="UHg-Xa-dqu" id="O7O-e1-5gS"/>
                         <outlet property="scrollView" destination="hBl-cx-bb2" id="bNr-h8-T2U"/>
@@ -88,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="253.2233883058471"/>
+            <point key="canvasLocation" x="141.59999999999999" y="565.36731634182911"/>
         </scene>
     </scenes>
     <resources>
