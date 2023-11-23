@@ -77,6 +77,18 @@ let anotherTwoThreeFour = Vector3D(x: 2.0, y: 3.0, z: 4.0)
 
 twoThreeFour == anotherTwoThreeFour
 
+enum SkillLevel:Comparable{
+    case beginner
+    case intermediate
+    case expert(stars:Int)
+}
+
+var levels = [SkillLevel.intermediate, SkillLevel.beginner, SkillLevel.expert(stars: 5), SkillLevel.expert(stars: 3)]
+
+for level in levels.sorted(){
+    print(level)
+}
+
 
 
 
