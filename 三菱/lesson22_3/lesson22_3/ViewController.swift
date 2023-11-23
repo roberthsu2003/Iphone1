@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,ShippingViewControllerDelegate {
+class ViewController: UIViewController {
     @IBOutlet var shippingLabel:UILabel!
     
     override func viewDidLoad() {
@@ -22,10 +22,12 @@ class ViewController: UIViewController,ShippingViewControllerDelegate {
         self.present(shippingViewController, animated: true)
     }
     
+    
+}
+
+extension ViewController:ShippingViewControllerDelegate{
     func userSelected(shipping:String){
         shippingLabel.text = shipping
     }
-
-
 }
 
