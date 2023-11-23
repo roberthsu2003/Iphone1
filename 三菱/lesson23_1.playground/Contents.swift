@@ -42,4 +42,17 @@ extension Dice:TextRepresentable{
 let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
 d12.textualDescription
 
+let d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+
+extension Array:TextRepresentable where Element:TextRepresentable {
+    var textualDescription:String{
+        return "abc"
+    }
+}
+
+let myDice = [d12, d6]
+
+myDice.textualDescription
+
+
 
