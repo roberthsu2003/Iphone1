@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.indicatorStyle = .default
-        scrollView.backgroundColor = .blue
+        scrollView.backgroundColor = .systemGray
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(scrollView)
         NSLayoutConstraint.activate([
