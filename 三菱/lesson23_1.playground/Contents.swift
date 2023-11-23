@@ -89,6 +89,11 @@ for level in levels.sorted(){
     print(level)
 }
 
+protocol PrettyTextRepresentable:TextRepresentable{
+    var prettyTextualDescription:String{get}
+}
+
+
 
 
 
