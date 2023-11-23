@@ -19,9 +19,9 @@ class ViewController: UIViewController {
         self.sv = sv
         sv.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(sv)
+        
         //設定contentInSet
         //測試.never,.automatic
-        
         sv.contentInsetAdjustmentBehavior = .automatic
         NSLayoutConstraint.activate([
             sv.topAnchor.constraint(equalTo: self.view.topAnchor),
@@ -47,12 +47,20 @@ class ViewController: UIViewController {
         
         let svflg = sv.frameLayoutGuide
         //svclg.widthAnchor.constraint(equalTo: svflg.widthAnchor).isActive = true
-        sv.delegate = self
+        //sv.delegate = self
         //試驗加上contentInset
-        sv.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 100, right: 0)
+        //sv.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 100, right: 0)
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(sv.frame)
+        print(sv.frameLayoutGuide)
+    }
 }
+
+
 
 extension ViewController:UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
