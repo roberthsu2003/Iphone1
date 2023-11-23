@@ -54,5 +54,19 @@ let myDice = [d12, d6]
 
 myDice.textualDescription
 
+struct Hamster{
+    var name:String
+    var textualDescription:String{
+        return "A hamster named \(name)"
+    }
+}
+
+extension Hamster:TextRepresentable{}
+
+let simonTheHamster = Hamster(name: "Simon")
+let somethingTextRepresentable:TextRepresentable = simonTheHamster
+somethingTextRepresentable.textualDescription
+
+
 
 
