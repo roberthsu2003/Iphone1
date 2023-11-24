@@ -19,7 +19,13 @@ class ViewController: UIViewController {
             print("view有背影色")
         }
         
-        view.backgroundColor = UIColor.systemOrange
+        //view.backgroundColor = UIColor.systemOrange
+        let myLabel = UILabel()
+        myLabel.text = "Hello! World!"
+        myLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(myLabel)
+        myLabel.frame = CGRect(x: 102, y: 183, width: 139, height: 32)
+        
     }
 
 
