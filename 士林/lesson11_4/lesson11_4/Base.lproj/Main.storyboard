@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WuB-5A-0JH">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--汽車-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson11_4" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,6 +30,13 @@
                             <constraint firstItem="Fdw-hT-7b8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2D-Qc-IjG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="汽車" id="wPS-3e-zRt">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="I85-YM-nmA">
+                            <connections>
+                                <segue destination="Iuo-MO-O9K" kind="show" id="t1a-nA-hcg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myLabel" destination="Fdw-hT-7b8" id="9YE-gP-FqE"/>
                         <outlet property="xCenter" destination="A7g-s4-Fd2" id="DCk-7S-FBF"/>
@@ -37,10 +44,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="-3"/>
+            <point key="canvasLocation" x="1374" y="10"/>
+        </scene>
+        <!--零件-->
+        <scene sceneID="rgh-Yg-e6o">
+            <objects>
+                <viewController id="Iuo-MO-O9K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEO-80-kdj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="22D-sd-afL"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="零件" id="R4y-X4-umA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpp-Dk-kYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2220" y="9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5jX-sI-fMH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WuB-5A-0JH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vR1-i5-02j">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="A1P-Yv-ksY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfS-n5-nlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.79999999999995" y="10.344827586206897"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
