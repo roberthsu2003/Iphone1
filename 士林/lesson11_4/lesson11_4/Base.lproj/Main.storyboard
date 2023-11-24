@@ -15,9 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdw-hT-7b8">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Fdw-hT-7b8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A7g-s4-Fd2"/>
+                            <constraint firstItem="Fdw-hT-7b8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q2D-Qc-IjG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myLabel" destination="Fdw-hT-7b8" id="9YE-gP-FqE"/>
+                        <outlet property="xCenter" destination="A7g-s4-Fd2" id="DCk-7S-FBF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
