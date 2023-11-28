@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 self.scrollView.addSubview(innerView)
             }
             self.scrollView.contentSize = CGSize(width: 3 * sz.width, height: sz.height)
-            
+            self.scrollView.isPagingEnabled = true
         }
         
     }
