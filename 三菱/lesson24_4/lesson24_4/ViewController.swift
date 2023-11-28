@@ -19,7 +19,20 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         if !self.didLayou{
             self.didLayou = true
-            print(scrollView.bounds.size)
+            let sz = scrollView.bounds.size
+            let colors:[UIColor] = [.red, .green, .yellow]
+            for i in 0..<colors.count{
+                let innerView = UIView(frame: CGRect.init(
+                    x: sz.width * CGFloat(i),
+                    y: 0,
+                    width: sz.width,
+                    height: sz.height))
+                innerView.backgroundColor = colors[i]
+                innerView.layer.borderWidth = 1
+                innerView.layer.borderColor = UIColor.black.cgColor
+                self.scrollView.addSubview(innerView)
+            }
+            self.scrollView.contentSize = CGSize(width: 3 * sz.width, height: sz.height)
             
         }
         
