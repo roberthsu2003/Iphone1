@@ -8,6 +8,14 @@ import Foundation
 class Counter{
     var count = 0
     var dataSource:CounterDataSource?
+    
+    func increment(){
+        if let amount = dataSource?.increment?(forCount: count){
+            count += amount
+        }else if let amount = dataSource?.fixedIncrement{
+            count += amount
+        }
+    }
 }
 
 class ThreeSource:NSObject,CounterDataSource{
@@ -28,3 +36,16 @@ class ToWardsZeroSource:NSObject, CounterDataSource{
 
 var counter = Counter()
 counter.dataSource = ThreeSource()
+for _ in 1...4{
+    counter.increment()
+    print(counter.count)
+}
+
+counter.count = -4
+counter.dataSource = ToWardsZeroSource()
+
+for _ in 1...5{
+    counter.increment()
+    print(counter.count)
+}
+
