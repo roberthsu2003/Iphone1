@@ -100,6 +100,23 @@ let abc = Abc()
 abc.prettyTextualDescription
 
 
+extension Collection where Element:Equatable{
+    func allEqual() -> Bool{
+        for element in self{
+            if element != self.first{
+                return false
+            }
+        }
+        return true
+    }
+}
+
+let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+equalNumbers.allEqual()
+differentNumbers.allEqual()
+
+
 
 
 
