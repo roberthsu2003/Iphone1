@@ -48,6 +48,7 @@ class ViewController: UIViewController {
             contentLayoutGuide.bottomAnchor.constraint(equalTo: previousLabel!.bottomAnchor, constant: 20)
         ])*/
         contentLayoutGuide.bottomAnchor.constraint(equalTo: previousLabel!.bottomAnchor, constant: 20).isActive = true
+        scrollView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 100, right: 0)
        
     }
     
