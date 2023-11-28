@@ -11,7 +11,18 @@ class ViewController: UIViewController {
     @IBOutlet var scrollView:UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(scrollView.bounds.size)
+    }
+    
+    var didLayou = false
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !self.didLayou{
+            self.didLayou = true
+            print(scrollView.bounds.size)
+            
+        }
+        
     }
 
 
