@@ -76,6 +76,31 @@ let generator = LinearCongruentialGenerator()
 generator.random()
 generator.randomBool()
 
+protocol TextRepresentable{
+    var textualDescription:String {get}
+}
+
+protocol PrettyTextRepresentable:TextRepresentable{
+    var prettyTextualDescription:String { get }
+}
+
+//提供預設實作需求
+extension PrettyTextRepresentable{
+    var prettyTextualDescription:String{
+        return textualDescription
+    }
+}
+
+class Abc:PrettyTextRepresentable{
+    var textualDescription = "abc"
+    
+}
+
+let abc = Abc()
+abc.prettyTextualDescription
+
+
+
 
 
 
