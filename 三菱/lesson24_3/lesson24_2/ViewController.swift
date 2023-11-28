@@ -36,6 +36,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //navigationItem.title =
+        title = "我的Title"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.tintColor = .blue
         let contentLayoutGuide = scrollView.contentLayoutGuide
         //let safeLayoutGuid = view.safeAreaLayoutGuide
         var previousLabel:UILabel? = nil
@@ -44,7 +48,8 @@ class ViewController: UIViewController {
             lab.translatesAutoresizingMaskIntoConstraints = false
             lab.text = "這是Label \(i+1)"
             scrollView.addSubview(lab)
-            lab.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+            //lab.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+            lab.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
             lab.topAnchor.constraint(equalTo: previousLabel?.bottomAnchor ?? scrollView.topAnchor,
                                      constant: 20).isActive = true
             
