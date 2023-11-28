@@ -26,8 +26,39 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scroll = self.scrollView
+        let contentLayoutGuide = scrollView.contentLayoutGuide
+        //let safeLayoutGuid = view.safeAreaLayoutGuide
+        var previousLabel:UILabel? = nil
+        for i in 0..<50{
+            let lab = UILabel()
+            lab.translatesAutoresizingMaskIntoConstraints = false
+            lab.text = "這是Label \(i+1)"
+            scrollView.addSubview(lab)
+            lab.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+            lab.topAnchor.constraint(equalTo: previousLabel?.bottomAnchor ?? scrollView.topAnchor,
+                                     constant: 20).isActive = true
+            
+            previousLabel = lab
+        }
+        /*
+        NSLayoutConstraint.activate([
+            contentLayoutGuide.topAnchor.constraint(equalTo: safeLayoutGuid.topAnchor),
+            contentLayoutGuide.trailingAnchor.constraint(equalTo: safeLayoutGuid.trailingAnchor),
+            contentLayoutGuide.leadingAnchor.constraint(equalTo: safeLayoutGuid.leadingAnchor),
+            contentLayoutGuide.bottomAnchor.constraint(equalTo: previousLabel!.bottomAnchor, constant: 20)
+        ])*/
+        contentLayoutGuide.bottomAnchor.constraint(equalTo: previousLabel!.bottomAnchor, constant: 20).isActive = true
        
+    }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(self.scrollView.contentLayoutGuide)
+        print("========================")
+        print(self.scrollView.frameLayoutGuide)
     }
 
 
