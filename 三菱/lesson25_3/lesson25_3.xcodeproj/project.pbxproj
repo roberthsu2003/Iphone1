@@ -13,7 +13,7 @@
 		8E50CF042B1876D3004C2376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E50CF022B1876D3004C2376 /* Main.storyboard */; };
 		8E50CF062B1876D4004C2376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E50CF052B1876D4004C2376 /* Assets.xcassets */; };
 		8E50CF092B1876D4004C2376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E50CF072B1876D4004C2376 /* LaunchScreen.storyboard */; };
-		8E50CF112B18777A004C2376 /* bird.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E50CF102B187779004C2376 /* bird.jpg */; };
+		8E50CF132B187882004C2376 /* bird.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E50CF122B187882004C2376 /* bird.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		8E50CF052B1876D4004C2376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E50CF082B1876D4004C2376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E50CF0A2B1876D4004C2376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E50CF102B187779004C2376 /* bird.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bird.jpg; path = "../../../參考範例/3_1_3_2_程式建立zooming/zooming/bird.jpg"; sourceTree = "<group>"; };
+		8E50CF122B187882004C2376 /* bird.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bird.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 				8E50CEFC2B1876D3004C2376 /* AppDelegate.swift */,
 				8E50CEFE2B1876D3004C2376 /* SceneDelegate.swift */,
 				8E50CF002B1876D3004C2376 /* ViewController.swift */,
-				8E50CF102B187779004C2376 /* bird.jpg */,
 				8E50CF022B1876D3004C2376 /* Main.storyboard */,
+				8E50CF122B187882004C2376 /* bird.jpg */,
 				8E50CF052B1876D4004C2376 /* Assets.xcassets */,
 				8E50CF072B1876D4004C2376 /* LaunchScreen.storyboard */,
 				8E50CF0A2B1876D4004C2376 /* Info.plist */,
@@ -128,7 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E50CF112B18777A004C2376 /* bird.jpg in Resources */,
+				8E50CF132B187882004C2376 /* bird.jpg in Resources */,
 				8E50CF092B1876D4004C2376 /* LaunchScreen.storyboard in Resources */,
 				8E50CF062B1876D4004C2376 /* Assets.xcassets in Resources */,
 				8E50CF042B1876D3004C2376 /* Main.storyboard in Resources */,
