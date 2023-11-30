@@ -11,7 +11,7 @@
         <!--pagging-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson24_4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson25_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,17 +22,24 @@
                                     <constraint firstAttribute="height" constant="200" id="Ooy-4u-DBT"/>
                                 </constraints>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="MId-ps-kjK">
+                                <rect key="frame" x="20" y="272" width="335" height="26"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MId-ps-kjK" firstAttribute="top" secondItem="wBg-K4-KqH" secondAttribute="bottom" constant="8" symbolic="YES" id="3t7-Sh-IQ8"/>
                             <constraint firstItem="wBg-K4-KqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bo8-xr-pe5"/>
                             <constraint firstItem="wBg-K4-KqH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MRb-pN-yuH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wBg-K4-KqH" secondAttribute="trailing" constant="20" id="MqH-Wr-Jmj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MId-ps-kjK" secondAttribute="trailing" constant="20" id="s21-em-rT4"/>
+                            <constraint firstItem="MId-ps-kjK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tYH-f7-GVM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="pagging" id="0D5-Un-9yk"/>
                     <connections>
+                        <outlet property="pager" destination="MId-ps-kjK" id="4Mg-Tw-pDy"/>
                         <outlet property="scrollView" destination="wBg-K4-KqH" id="Jlv-f0-MXy"/>
                     </connections>
                 </viewController>

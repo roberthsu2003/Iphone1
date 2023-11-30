@@ -9,10 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var scrollView:UIScrollView!
+    @IBOutlet var pager:UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(scrollView.bounds.size)
         scrollView.delegate = self
+        print(pager)
     }
     
     var didLayou = false
