@@ -24,7 +24,7 @@ func swapTwoDoubles(_ a:inout Double,_ b:inout Double){
 }
 
 //利用generic function解決這樣的問題
-
+//generic function
 func swapTwoValues<T>(_ a:inout T,_ b:inout T){
     let temporaryA = a
     a = b
@@ -42,3 +42,41 @@ var anotherString = "world"
 swapTwoValues(&someString, &anotherString)
 
 print(someString, anotherString)
+
+
+struct IntStack{
+    var items = [Int]()
+    mutating func push(_ item:Int){
+        items.append(item)
+    }
+    
+    mutating func pop() -> Int{
+        return items.removeLast()
+    }
+}
+
+//generic Type
+struct Stack<Element>{
+    var items = [Element]()
+    mutating func push(_ item:Element){
+        items.append(item)
+    }
+    
+    mutating func pop() -> Element{
+        return items.removeLast()
+    }
+}
+
+var stackOfStrings = Stack<String>()
+stackOfStrings.push("uno")
+stackOfStrings.push("dos")
+stackOfStrings.push("tres")
+stackOfStrings.push("cuatro")
+
+stackOfStrings.pop()
+
+var stackOfInts = Stack<Int>()
+
+stackOfInts.push(5)
+stackOfInts.push(10)
+stackOfInts.pop()
