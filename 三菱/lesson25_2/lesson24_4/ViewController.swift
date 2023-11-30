@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         //print(pager as Any)
         pager.currentPageIndicatorTintColor = .systemRed
         pager.pageIndicatorTintColor = .systemGray
+        pager.numberOfPages = 3
+        //pager.backgroundColor = .blue
+        //pager.preferredIndicatorImage = UIImage(systemName: "diamond.fill")
+        /*
+        pager.setIndicatorImage(
+            UIImage(systemName: "questionmark.circle.fill"),
+            forPage: 0)
+         */
     }
     
     var didLayou = false
