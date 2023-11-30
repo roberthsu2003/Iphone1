@@ -80,3 +80,18 @@ var stackOfInts = Stack<Int>()
 stackOfInts.push(5)
 stackOfInts.push(10)
 stackOfInts.pop()
+
+//擴充Generic Type
+//extendtion Generic Type
+
+extension Stack{
+    var topItem:Element? {
+        return items.isEmpty ? nil : items[items.count-1]
+    }
+}
+
+if let topItem = stackOfStrings.topItem{
+    print(topItem)
+}
+
+
