@@ -54,7 +54,10 @@ class ViewController: UIViewController {
         
     }
 
-    
+    @IBAction func userDidPage(_ sender:UIPageControl){
+        let index = sender.currentPage
+        print(index)
+    }
 }
 
 extension ViewController:UIScrollViewDelegate{
