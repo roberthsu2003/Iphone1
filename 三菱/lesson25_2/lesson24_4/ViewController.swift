@@ -56,7 +56,10 @@ class ViewController: UIViewController {
 
     @IBAction func userDidPage(_ sender:UIPageControl){
         let index = sender.currentPage
-        print(index)
+        let width = scrollView.bounds.width
+        scrollView.setContentOffset(
+            CGPoint(x: index * Int(width), y: 0),
+            animated: true)
     }
 }
 
