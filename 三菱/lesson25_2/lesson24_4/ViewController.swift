@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print(scrollView.bounds.size)
         scrollView.delegate = self
+        scrollView.showsHorizontalScrollIndicator = false
         //print(pager as Any)
         pager.currentPageIndicatorTintColor = .systemRed
         pager.pageIndicatorTintColor = .systemGray
@@ -62,7 +63,10 @@ extension ViewController:UIScrollViewDelegate{
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
-        print("已經停止")
+        let offsetX = scrollView.contentOffset.x
+        let width = scrollView.bounds.width
+        pager.currentPage = Int(offsetX / width)
+        
     }
 }
  
