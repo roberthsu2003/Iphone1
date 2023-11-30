@@ -94,4 +94,34 @@ if let topItem = stackOfStrings.topItem{
     print(topItem)
 }
 
+//型別的限定
+/*
+func findIndex(ofString valueToFind:String, in array:[String]) -> Int?{
+    for (index,value) in array.enumerated(){
+        if value == valueToFind{
+            return index
+        }
+    }
+    return nil
+}
+ */
+
+func findIndex<T:Equatable>(of valueToFind:T, in array:[T]) -> Int?{
+    for (index,value) in array.enumerated(){
+        if value == valueToFind{
+            return index
+        }
+    }
+    return nil
+}
+
+let strings = ["cat", "dog", "llama", "parakeet", "terrapin"]
+if let foundIndex = findIndex(of: "llama", in: strings){
+    print(foundIndex)
+}
+
+findIndex(of: 9.3, in: [3.14159, 0.1, 9.3])
+
+
+
 
