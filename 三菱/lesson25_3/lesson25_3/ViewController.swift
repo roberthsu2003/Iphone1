@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     private lazy var imageView:UIImageView = {
         let imageView = UIImageView()
+        imageView.tag = 111
         imageView.image = UIImage(named: "bird.jpg")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,7 +48,11 @@ class ViewController: UIViewController {
 
 extension ViewController:UIScrollViewDelegate{
     func viewForZooming(in scrollView: UIScrollView) -> UIView?{
-        return imageView
+        if let imageView = scrollView.viewWithTag(111) as? UIImageView{
+            return imageView
+        }else{
+            return nil
+        }
     }
 }
 
