@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(scrollView.bounds.size)
+        scrollView.delegate = self
     }
     
     var didLayou = false
@@ -39,6 +40,17 @@ class ViewController: UIViewController {
         
     }
 
-
+    
 }
+
+extension ViewController:UIScrollViewDelegate{
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView){
+        print("開始減速")
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
+        print("已經停止")
+    }
+}
+ 
 
