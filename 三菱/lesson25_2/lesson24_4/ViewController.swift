@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print(scrollView.bounds.size)
         scrollView.delegate = self
-        print(pager)
+        //print(pager as Any)
+        pager.currentPageIndicatorTintColor = .systemRed
+        pager.pageIndicatorTintColor = .systemGray
     }
     
     var didLayou = false
