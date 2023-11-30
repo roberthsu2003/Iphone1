@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     private lazy var scrollView:UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .systemRed
+        scrollView.delegate = self
+        //scrollView.backgroundColor = .systemRed
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(scrollView)
         NSLayoutConstraint.activate([
@@ -19,16 +20,34 @@ class ViewController: UIViewController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        scrollView.minimumZoomScale = 0.5
+        scrollView.maximumZoomScale = 5
         return scrollView
     }()
     
-    var imageView:UIImageView!
+    private lazy var imageView:UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "bird.jpg")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.scrollView)
+        self.scrollView.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        ])
     }
 
 
+}
+
+extension ViewController:UIScrollViewDelegate{
+    func viewForZooming(in scrollView: UIScrollView) -> UIView?{
+        return imageView
+    }
 }
 
