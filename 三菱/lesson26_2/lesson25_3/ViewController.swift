@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         return scrollView
     }()
     
+    
     private lazy var imageView:UIImageView = {
         let imageView = UIImageView()
         imageView.tag = 111
@@ -65,6 +66,7 @@ class ViewController: UIViewController {
         return imageView
     }()
     
+    var tapGesture = UITapGestureRecognizer()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.addSubview(imageView)
@@ -72,6 +74,15 @@ class ViewController: UIViewController {
             imageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
         ])
+        tapGesture.numberOfTapsRequired = 2
+        tapGesture.numberOfTouchesRequired = 1
+        tapGesture.addTarget(self, action: #selector(tapped(_:)))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func tapped(_ sender:UITapGestureRecognizer){
+        print("tapped")
     }
 
 
