@@ -1,5 +1,5 @@
 protocol Container{
-    associatedtype Item
+    associatedtype Item:Equatable
     mutating func append(_ item:Item)
     var count:Int{get}
     subscript(i:Int)->Item{get}
@@ -26,7 +26,7 @@ struct IntStack:Container{
     }
 }
 
-struct Stack<Element>:Container{
+struct Stack<Element:Equatable>:Container{
     var items:[Element] = []
     mutating func push(_ item:Element){
         items.append(item)
@@ -45,3 +45,6 @@ struct Stack<Element>:Container{
         return items[i]
     }
 }
+
+extension Array:Container where Element:Equatable{}
+
