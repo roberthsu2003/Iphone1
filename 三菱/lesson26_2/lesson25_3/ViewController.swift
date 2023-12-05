@@ -53,5 +53,22 @@ extension ViewController:UIScrollViewDelegate{
             return nil
         }
     }
+    
+    func scrollViewWillBeginZooming(
+        _ scrollView: UIScrollView,
+        with view: UIView?
+    ){
+        print("開始縮放")
+    }
+    
+    func scrollViewDidEndZooming(
+        _ scrollView: UIScrollView,
+        with view: UIView?,
+        atScale scale: CGFloat
+    ){
+        print("結束縮放")
+    }
+    
+    
 }
 
