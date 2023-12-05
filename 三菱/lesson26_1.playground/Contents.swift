@@ -99,3 +99,18 @@ if allItemsMatch(stackOfStrings, arrayOfString){
     print("沒有全相同")
 }
 
+extension Stack where Element:Equatable{
+    func isTop(_ item:Element) -> Bool{
+        guard let topItem = items.last else{
+            return false
+        }
+        return topItem == item
+    }
+}
+
+
+if stackOfStrings.isTop("tres") {
+    print("最上面的")
+}else{
+    print("不是最上面的")
+}
