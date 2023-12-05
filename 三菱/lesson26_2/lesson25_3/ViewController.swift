@@ -6,10 +6,17 @@
 //
 
 import UIKit
+class MyScrollView:UIScrollView{
+    override func layoutSubviews(){
+        super.layoutSubviews()
+        print("改變")
+        
+    }
+}
 
 class ViewController: UIViewController {
-    private lazy var scrollView:UIScrollView = {
-        let scrollView = UIScrollView()
+    private lazy var scrollView:MyScrollView = {
+        let scrollView = MyScrollView()
         scrollView.delegate = self
         //scrollView.backgroundColor = .systemRed
         scrollView.translatesAutoresizingMaskIntoConstraints = false
