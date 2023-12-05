@@ -9,7 +9,18 @@ import UIKit
 class MyScrollView:UIScrollView{
     override func layoutSubviews(){
         super.layoutSubviews()
-        print("改變")
+        /*
+        if let imageView = self.viewWithTag(111) as? UIImageView{
+            print("有imageView")
+        }*/
+        
+        if let view = self.delegate?.viewForZooming?(in: self){
+            var viewFrame = view.frame
+            print(viewFrame.origin.x)
+            print(viewFrame.origin.y)
+        }
+        
+        
         
     }
 }
