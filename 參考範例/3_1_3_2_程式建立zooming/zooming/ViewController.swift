@@ -18,8 +18,11 @@ class MyScrollView:UIScrollView{
             let viewHeight = view.frame.height
             var viewFrame = view.frame
             if viewWidth < scrollViewWidth{
+                //print(viewFrame.origin.x)->顯示constraints限制產生的x
                 viewFrame.origin.x = (scrollViewWidth - viewWidth) / 2.0
+                //print(viewFrame.origin.x)->手動的更改後的更改
             }else{
+                //print(viewFrame.origin.x)
                 viewFrame.origin.x = 0 //不知為何要0
             }
             

@@ -29,8 +29,7 @@ class ViewController: UIViewController {
         let imageView = UIImageView()
         imageView.tag = 111
         imageView.image = UIImage(named: "bird.jpg")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
+        imageView.translatesAutoresizingMaskIntoConstraints = false      
         return imageView
     }()
     
