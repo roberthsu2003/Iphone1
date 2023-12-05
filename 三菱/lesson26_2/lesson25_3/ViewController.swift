@@ -82,7 +82,11 @@ class ViewController: UIViewController {
     }
     
     @objc func tapped(_ sender:UITapGestureRecognizer){
-        print("tapped")
+        if let imageView = sender.view as? UIImageView,let scrollView = imageView.superview as? UIScrollView{
+            
+            scrollView.setZoomScale(1.0, animated: true)
+        }
+    
     }
 
 
