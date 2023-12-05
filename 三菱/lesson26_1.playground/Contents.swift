@@ -114,3 +114,16 @@ if stackOfStrings.isTop("tres") {
 }else{
     print("不是最上面的")
 }
+
+
+extension Container where Item:Equatable{
+    func startsWith(_ item:Item) -> Bool{
+        return count >= 1 && self[0] == item
+    }
+}
+
+if [9, 9, 9].startsWith(42){
+    print("是42")
+}else{
+    print("不是42")
+}
