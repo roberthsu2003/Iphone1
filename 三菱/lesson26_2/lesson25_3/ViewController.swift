@@ -16,8 +16,22 @@ class MyScrollView:UIScrollView{
         
         if let view = self.delegate?.viewForZooming?(in: self){
             var viewFrame = view.frame
-            print(viewFrame.origin.x)
-            print(viewFrame.origin.y)
+            let scrollViewWidth = self.bounds.width
+            let scorllViewHeight = self.bounds.height
+            let viewWidth = viewFrame.width
+            let viewHeight = viewFrame.height
+            if viewWidth < scrollViewWidth{
+                viewFrame.origin.x = (scrollViewWidth-viewWidth) / 2.0
+            }
+            
+            if viewHeight < scorllViewHeight{
+                viewFrame.origin.y = (scorllViewHeight - viewHeight) / 2.0
+            }
+            
+            view.frame = viewFrame
+            
+            
+            
         }
         
         
