@@ -26,3 +26,16 @@ struct FlippedShape<T:Shape>:Shape{
 let flippedTriangle = FlippedShape(shape: smallTriangle)
 print("============")
 print(flippedTriangle.draw())
+
+struct JoinedShape<T:Shape, U:Shape>:Shape{
+    var top:T
+    var bottom:U
+    func draw() -> String{
+        return top.draw() + "\n" + bottom.draw()
+    }
+}
+
+let joinedTriangles = JoinedShape(top: smallTriangle, bottom: flippedTriangle)
+print("================")
+print(joinedTriangles.draw())
+
