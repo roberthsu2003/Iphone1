@@ -39,3 +39,33 @@ let joinedTriangles = JoinedShape(top: smallTriangle, bottom: flippedTriangle)
 print("================")
 print(joinedTriangles.draw())
 
+func max<T>(_ x:T,_ y:T) -> T where T:Comparable{
+    return x > y ? x : y
+}
+
+max(3, 5)
+max("abc","efg")
+
+struct Square:Shape{
+    var size:Int
+    func draw() -> String{
+        let line = String(repeating: "*", count: size)
+        let result = Array<String>(repeating: line, count: size)
+        return result.joined(separator: "\n")
+    }
+}
+
+func makeTrapezoid() -> some Shape{
+    let top = Triangle(size: 2)
+    let middle = Square(size: 2)
+    let bottom = FlippedShape(shape: top)
+    let trapezoid = JoinedShape(top: top, bottom: JoinedShape(top: middle, bottom: bottom))
+    return trapezoid
+}
+
+let trapezoid = makeTrapezoid()
+trapezoid.draw()
+
+
+
+
