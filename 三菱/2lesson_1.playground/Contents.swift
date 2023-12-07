@@ -77,6 +77,29 @@ func join<T:Shape, U:Shape>(_ top:T,_ bottom:U) -> some Shape{
 
 let opaqueJoinedTriangles = join(smallTriangle, flip(smallTriangle))
 print(opaqueJoinedTriangles.draw())
+/*
+func invalidFlip<T:Shape>(_ shape:T) -> some Shape{
+    if shape is Square{
+        return shape
+    }
+    
+    return FlippedShape(shape: shape)
+}
+ */
+
+func protoFlip<T:Shape>(_ shape:T) -> Shape{
+    
+    if shape is Square{
+        return shape
+    }
+     
+    return FlippedShape(shape: shape)
+}
+
+let protoFlippedtriangle = protoFlip(smallTriangle)
+let sameThing = protoFlip(smallTriangle)
+
+protoFlippedtriangle == sameThing
 
 
 
