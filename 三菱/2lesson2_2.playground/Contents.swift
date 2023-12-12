@@ -16,7 +16,7 @@ class Apartment{
     init(unit: String) {
         self.unit = unit
     }
-    var tenant:Person?
+    weak var tenant:Person?
     deinit{
         print("\(unit)記憶體被釋放")
     }
