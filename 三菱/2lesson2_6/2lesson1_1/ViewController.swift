@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var scrollView:UIScrollView!
     var activeField:UITextField!
     
     override func viewDidLoad() {
@@ -30,11 +31,21 @@ class ViewController: UIViewController {
     }
     
     @objc func keyboardDidShow(_ sender:Notification){
-        print("鍵盤起")
+        if let keyboardSise = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
+            let keyboardHeight = keyboardSise.height
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+            
+            
+        }
     }
     
     @objc func keyboardWillBeHidden(_ sender:Notification){
         print("鍵盤落")
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 }
 
