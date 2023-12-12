@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var activeField:UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,6 +22,11 @@ extension ViewController:UITextFieldDelegate{
         print("按了return")
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        activeField = textField
+        
     }
 }
 
