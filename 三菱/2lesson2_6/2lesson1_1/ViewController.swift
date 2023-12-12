@@ -14,6 +14,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //加入
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardDidShow(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //移除
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardDidShow(_ sender:Notification){
+        print("鍵盤起")
+    }
+    
+    @objc func keyboardWillBeHidden(_ sender:Notification){
+        print("鍵盤落")
+    }
 }
 
 extension ViewController:UITextFieldDelegate{
