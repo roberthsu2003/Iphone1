@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,
+            .userDomainMask, true)
+        let documentsPath = paths.first!
+        print(documentsPath)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +57,7 @@ class ViewController: UIViewController {
         if userdefaults.synchronize(){
             print("存檔成功")
         }
+        
     }
     
     @objc func keyboardDidShow(_ sender:Notification){
