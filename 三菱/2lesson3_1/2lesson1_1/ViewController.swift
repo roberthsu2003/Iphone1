@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class ViewController: UIViewController {
     @IBOutlet var scrollView:UIScrollView!
@@ -106,6 +107,13 @@ class ViewController: UIViewController {
         let contentInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @IBAction func imageChange(_ sender:UIButton){
+        let config = PHPickerConfiguration()
+        let picker = PHPickerViewController(configuration: config)
+        self.present(picker, animated: true)
+        
     }
 }
 

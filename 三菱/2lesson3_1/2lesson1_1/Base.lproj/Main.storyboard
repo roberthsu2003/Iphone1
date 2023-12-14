@@ -65,6 +65,9 @@
                                                                 <rect key="frame" x="24" y="15" width="59" height="34.5"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="變更"/>
+                                                                <connections>
+                                                                    <action selector="imageChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B5v-9q-jFQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeK-se-H3f">
                                                                 <rect key="frame" x="24" y="60.5" width="59" height="34.5"/>
