@@ -24,6 +24,29 @@ class ViewController: UIViewController {
             .userDomainMask, true)
         let documentsPath = paths.first!
         print(documentsPath)
+        let userdefaults = UserDefaults.standard
+        if let name = userdefaults.string(forKey: "name"){
+            nameField.text = name
+        }
+        if let address = userdefaults.string(forKey: "address"){
+            addressField.text = address
+        }
+        
+        if let phone = userdefaults.string(forKey: "phone"){
+            phoneField.text = phone
+        }
+        
+        if let email = userdefaults.string(forKey: "email"){
+            emailField.text = email
+        }
+        
+        if let password = userdefaults.string(forKey: "password"){
+            passwordField.text = password
+        }
+        
+        if let confirm = userdefaults.string(forKey: "confirm"){
+            confirmField.text = confirm
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
