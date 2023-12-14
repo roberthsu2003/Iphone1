@@ -289,6 +289,7 @@
                         <outlet property="nameField" destination="QDN-Nj-1Ha" id="H88-sd-i6U"/>
                         <outlet property="passwordField" destination="bBa-cG-jOr" id="KLL-H2-1sl"/>
                         <outlet property="phoneField" destination="cS5-kV-Pgo" id="g49-pn-dHz"/>
+                        <outlet property="photoImageView" destination="Ghg-a5-4Xp" id="Zju-sY-xWO"/>
                         <outlet property="scrollView" destination="9o2-Xd-I7F" id="gfZ-0O-Iz0"/>
                     </connections>
                 </viewController>

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var emailField:UITextField!
     @IBOutlet var passwordField:UITextField!
     @IBOutlet var confirmField:UITextField!
+    @IBOutlet var photoImageView:UIImageView!
     
     
     override func viewDidLoad() {
@@ -47,6 +48,10 @@ class ViewController: UIViewController {
         if let confirm = userdefaults.string(forKey: "confirm"){
             confirmField.text = confirm
         }
+        
+        if let imageData = userdefaults.data(forKey: "image"){
+            photoImageView.image = UIImage(data: imageData)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -77,6 +82,9 @@ class ViewController: UIViewController {
         userdefaults.setValue(email, forKey: "email")
         userdefaults.setValue(password, forKey: "password")
         userdefaults.setValue(confirm, forKey: "confirm")
+        if let imageData = photoImageView.image?.pngData(){
+            userdefaults.setValue(imageData, forKey: "image")
+        }
         if userdefaults.synchronize(){
             print("存檔成功")
         }
