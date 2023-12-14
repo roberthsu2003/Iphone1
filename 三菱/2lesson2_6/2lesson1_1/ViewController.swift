@@ -35,8 +35,7 @@ class ViewController: UIViewController {
             let keyboardHeight = keyboardSise.height
             let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
             scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
-            
+            scrollView.scrollIndicatorInsets = contentInsets        
             
         }
     }
