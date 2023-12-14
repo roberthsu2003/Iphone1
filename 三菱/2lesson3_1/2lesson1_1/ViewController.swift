@@ -44,7 +44,16 @@ class ViewController: UIViewController {
         let email = emailField.text
         let password = passwordField.text
         let confirm = confirmField.text
-        
+        let userdefaults = UserDefaults.standard
+        userdefaults.setValue(name, forKey: "name")
+        userdefaults.setValue(address, forKey: "address")
+        userdefaults.setValue(phone, forKey: "phone")
+        userdefaults.setValue(email, forKey: "email")
+        userdefaults.setValue(password, forKey: "password")
+        userdefaults.setValue(confirm, forKey: "confirm")
+        if userdefaults.synchronize(){
+            print("存檔成功")
+        }
     }
     
     @objc func keyboardDidShow(_ sender:Notification){
