@@ -54,7 +54,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1E-Jo-4dk">
                                                         <rect key="frame" x="130" y="0.0" width="213" height="110"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0064" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-a5-4Xp">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0064" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-a5-4Xp">
                                                                 <rect key="frame" x="113" y="15" width="80" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="80" id="Gjh-4O-Mu7"/>

@@ -112,6 +112,7 @@ class ViewController: UIViewController {
     @IBAction func imageChange(_ sender:UIButton){
         let config = PHPickerConfiguration()
         let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
         self.present(picker, animated: true)
         
     }
@@ -127,6 +128,31 @@ extension ViewController:UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField){
         activeField = textField
+        
+    }
+}
+
+extension ViewController:PHPickerViewControllerDelegate{
+    func picker(
+        _ picker: PHPickerViewController,
+        didFinishPicking results: [PHPickerResult]
+    ){
+        if let result = results.first{
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (image:NSItemProviderReading?, error:Error? ) in
+                guard error == nil else{
+                    print("取得錯誤")
+                    return
+                }
+                if let image = image as? UIImage{
+                    DispatchQueue.main.async {
+                        self.photoImageView.image = image
+                    }
+                }
+                
+            }
+        }
+        
+        picker.dismiss(animated: true)
         
     }
 }
