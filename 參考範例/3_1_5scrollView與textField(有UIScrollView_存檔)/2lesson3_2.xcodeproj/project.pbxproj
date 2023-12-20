@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E9B692E2AFB9E72005C009B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9B692D2AFB9E72005C009B /* AppDelegate.swift */; };
-		8E9B69302AFB9E72005C009B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9B692F2AFB9E72005C009B /* SceneDelegate.swift */; };
-		8E9B69322AFB9E72005C009B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9B69312AFB9E72005C009B /* ViewController.swift */; };
-		8E9B69352AFB9E72005C009B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B69332AFB9E72005C009B /* Main.storyboard */; };
-		8E9B69372AFB9E72005C009B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B69362AFB9E72005C009B /* Assets.xcassets */; };
-		8E9B693A2AFB9E72005C009B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9B69382AFB9E72005C009B /* LaunchScreen.storyboard */; };
+		8E266A342B219EFA00AA2DF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E266A332B219EFA00AA2DF3 /* AppDelegate.swift */; };
+		8E266A362B219EFA00AA2DF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E266A352B219EFA00AA2DF3 /* SceneDelegate.swift */; };
+		8E266A382B219EFA00AA2DF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E266A372B219EFA00AA2DF3 /* ViewController.swift */; };
+		8E266A3B2B219EFA00AA2DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E266A392B219EFA00AA2DF3 /* Main.storyboard */; };
+		8E266A3D2B219EFB00AA2DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E266A3C2B219EFB00AA2DF3 /* Assets.xcassets */; };
+		8E266A402B219EFB00AA2DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E266A3E2B219EFB00AA2DF3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E9B692A2AFB9E72005C009B /* scrollView與textField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "scrollView與textField.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E9B692D2AFB9E72005C009B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E9B692F2AFB9E72005C009B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8E9B69312AFB9E72005C009B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8E9B69342AFB9E72005C009B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8E9B69362AFB9E72005C009B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8E9B69392AFB9E72005C009B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8E9B693B2AFB9E72005C009B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E266A302B219EFA00AA2DF3 /* 2lesson3_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson3_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E266A332B219EFA00AA2DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E266A352B219EFA00AA2DF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8E266A372B219EFA00AA2DF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E266A3A2B219EFA00AA2DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E266A3C2B219EFB00AA2DF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E266A3F2B219EFB00AA2DF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E266A412B219EFB00AA2DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8E9B69272AFB9E72005C009B /* Frameworks */ = {
+		8E266A2D2B219EFA00AA2DF3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,72 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E9B69212AFB9E72005C009B = {
+		8E266A272B219EFA00AA2DF3 = {
 			isa = PBXGroup;
 			children = (
-				8E9B692C2AFB9E72005C009B /* scrollView與textField */,
-				8E9B692B2AFB9E72005C009B /* Products */,
+				8E266A322B219EFA00AA2DF3 /* 2lesson1_1 */,
+				8E266A312B219EFA00AA2DF3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8E9B692B2AFB9E72005C009B /* Products */ = {
+		8E266A312B219EFA00AA2DF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E9B692A2AFB9E72005C009B /* scrollView與textField.app */,
+				8E266A302B219EFA00AA2DF3 /* 2lesson3_2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E9B692C2AFB9E72005C009B /* scrollView與textField */ = {
+		8E266A322B219EFA00AA2DF3 /* 2lesson1_1 */ = {
 			isa = PBXGroup;
 			children = (
-				8E9B692D2AFB9E72005C009B /* AppDelegate.swift */,
-				8E9B692F2AFB9E72005C009B /* SceneDelegate.swift */,
-				8E9B69312AFB9E72005C009B /* ViewController.swift */,
-				8E9B69332AFB9E72005C009B /* Main.storyboard */,
-				8E9B69362AFB9E72005C009B /* Assets.xcassets */,
-				8E9B69382AFB9E72005C009B /* LaunchScreen.storyboard */,
-				8E9B693B2AFB9E72005C009B /* Info.plist */,
+				8E266A332B219EFA00AA2DF3 /* AppDelegate.swift */,
+				8E266A352B219EFA00AA2DF3 /* SceneDelegate.swift */,
+				8E266A372B219EFA00AA2DF3 /* ViewController.swift */,
+				8E266A392B219EFA00AA2DF3 /* Main.storyboard */,
+				8E266A3C2B219EFB00AA2DF3 /* Assets.xcassets */,
+				8E266A3E2B219EFB00AA2DF3 /* LaunchScreen.storyboard */,
+				8E266A412B219EFB00AA2DF3 /* Info.plist */,
 			);
-			path = "scrollView與textField";
+			path = 2lesson1_1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E9B69292AFB9E72005C009B /* scrollView與textField */ = {
+		8E266A2F2B219EFA00AA2DF3 /* 2lesson3_2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E9B693E2AFB9E72005C009B /* Build configuration list for PBXNativeTarget "scrollView與textField" */;
+			buildConfigurationList = 8E266A442B219EFB00AA2DF3 /* Build configuration list for PBXNativeTarget "2lesson3_2" */;
 			buildPhases = (
-				8E9B69262AFB9E72005C009B /* Sources */,
-				8E9B69272AFB9E72005C009B /* Frameworks */,
-				8E9B69282AFB9E72005C009B /* Resources */,
+				8E266A2C2B219EFA00AA2DF3 /* Sources */,
+				8E266A2D2B219EFA00AA2DF3 /* Frameworks */,
+				8E266A2E2B219EFA00AA2DF3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "scrollView與textField";
-			productName = "scrollView與textField";
-			productReference = 8E9B692A2AFB9E72005C009B /* scrollView與textField.app */;
+			name = 2lesson3_2;
+			productName = 2lesson1_1;
+			productReference = 8E266A302B219EFA00AA2DF3 /* 2lesson3_2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8E9B69222AFB9E72005C009B /* Project object */ = {
+		8E266A282B219EFA00AA2DF3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					8E9B69292AFB9E72005C009B = {
+					8E266A2F2B219EFA00AA2DF3 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 8E9B69252AFB9E72005C009B /* Build configuration list for PBXProject "scrollView與textField" */;
+			buildConfigurationList = 8E266A2B2B219EFA00AA2DF3 /* Build configuration list for PBXProject "2lesson3_2" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,55 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 8E9B69212AFB9E72005C009B;
-			productRefGroup = 8E9B692B2AFB9E72005C009B /* Products */;
+			mainGroup = 8E266A272B219EFA00AA2DF3;
+			productRefGroup = 8E266A312B219EFA00AA2DF3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E9B69292AFB9E72005C009B /* scrollView與textField */,
+				8E266A2F2B219EFA00AA2DF3 /* 2lesson3_2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8E9B69282AFB9E72005C009B /* Resources */ = {
+		8E266A2E2B219EFA00AA2DF3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E9B693A2AFB9E72005C009B /* LaunchScreen.storyboard in Resources */,
-				8E9B69372AFB9E72005C009B /* Assets.xcassets in Resources */,
-				8E9B69352AFB9E72005C009B /* Main.storyboard in Resources */,
+				8E266A402B219EFB00AA2DF3 /* LaunchScreen.storyboard in Resources */,
+				8E266A3D2B219EFB00AA2DF3 /* Assets.xcassets in Resources */,
+				8E266A3B2B219EFA00AA2DF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8E9B69262AFB9E72005C009B /* Sources */ = {
+		8E266A2C2B219EFA00AA2DF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E9B69322AFB9E72005C009B /* ViewController.swift in Sources */,
-				8E9B692E2AFB9E72005C009B /* AppDelegate.swift in Sources */,
-				8E9B69302AFB9E72005C009B /* SceneDelegate.swift in Sources */,
+				8E266A382B219EFA00AA2DF3 /* ViewController.swift in Sources */,
+				8E266A342B219EFA00AA2DF3 /* AppDelegate.swift in Sources */,
+				8E266A362B219EFA00AA2DF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8E9B69332AFB9E72005C009B /* Main.storyboard */ = {
+		8E266A392B219EFA00AA2DF3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8E9B69342AFB9E72005C009B /* Base */,
+				8E266A3A2B219EFA00AA2DF3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8E9B69382AFB9E72005C009B /* LaunchScreen.storyboard */ = {
+		8E266A3E2B219EFB00AA2DF3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8E9B69392AFB9E72005C009B /* Base */,
+				8E266A3F2B219EFB00AA2DF3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8E9B693C2AFB9E72005C009B /* Debug */ = {
+		8E266A422B219EFB00AA2DF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,7 +229,7 @@
 			};
 			name = Debug;
 		};
-		8E9B693D2AFB9E72005C009B /* Release */ = {
+		8E266A432B219EFB00AA2DF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -285,7 +285,7 @@
 			};
 			name = Release;
 		};
-		8E9B693F2AFB9E72005C009B /* Debug */ = {
+		8E266A452B219EFB00AA2DF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -293,7 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "scrollView與textField/Info.plist";
+				INFOPLIST_FILE = 2lesson1_1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -304,7 +304,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.scrollView-textField";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.-lesson1-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -312,7 +312,7 @@
 			};
 			name = Debug;
 		};
-		8E9B69402AFB9E72005C009B /* Release */ = {
+		8E266A462B219EFB00AA2DF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -320,7 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "scrollView與textField/Info.plist";
+				INFOPLIST_FILE = 2lesson1_1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -331,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.scrollView-textField";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roberthsu2003.-lesson1-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,25 +342,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8E9B69252AFB9E72005C009B /* Build configuration list for PBXProject "scrollView與textField" */ = {
+		8E266A2B2B219EFA00AA2DF3 /* Build configuration list for PBXProject "2lesson3_2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8E9B693C2AFB9E72005C009B /* Debug */,
-				8E9B693D2AFB9E72005C009B /* Release */,
+				8E266A422B219EFB00AA2DF3 /* Debug */,
+				8E266A432B219EFB00AA2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E9B693E2AFB9E72005C009B /* Build configuration list for PBXNativeTarget "scrollView與textField" */ = {
+		8E266A442B219EFB00AA2DF3 /* Build configuration list for PBXNativeTarget "2lesson3_2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8E9B693F2AFB9E72005C009B /* Debug */,
-				8E9B69402AFB9E72005C009B /* Release */,
+				8E266A452B219EFB00AA2DF3 /* Debug */,
+				8E266A462B219EFB00AA2DF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8E9B69222AFB9E72005C009B /* Project object */;
+	rootObject = 8E266A282B219EFA00AA2DF3 /* Project object */;
 }
