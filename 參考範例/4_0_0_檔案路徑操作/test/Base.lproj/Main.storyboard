@@ -72,6 +72,32 @@
                                     <action selector="doButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cIP-lf-R6K"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seA-tK-hFN">
+                                <rect key="frame" x="33" y="448" width="130" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="save a Person"/>
+                                <connections>
+                                    <action selector="doButton7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Gz-hl-93X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byq-z5-xYr">
+                                <rect key="frame" x="33" y="504" width="189" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="save a ArrayOfPerson"/>
+                                <connections>
+                                    <action selector="doButton8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q9P-wb-lki"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpc-hA-tbb">
+                                <rect key="frame" x="33" y="547" width="120" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="get a Person"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aib-fY-ZR0">
+                                <rect key="frame" x="33" y="590" width="179" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="get a ArrayOfPerson"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,23 +106,35 @@
                             <constraint firstItem="Uuj-2o-QWS" firstAttribute="top" secondItem="WvI-l4-tqt" secondAttribute="bottom" constant="24" id="2Ji-Sc-LIj"/>
                             <constraint firstItem="IZw-gI-lzz" firstAttribute="top" secondItem="05n-UM-ykH" secondAttribute="bottom" constant="17" id="2wJ-ej-Hgp"/>
                             <constraint firstItem="WvI-l4-tqt" firstAttribute="top" secondItem="Pwm-XM-1eD" secondAttribute="bottom" constant="21" id="6Fb-vH-ZUg"/>
+                            <constraint firstItem="rpc-hA-tbb" firstAttribute="top" secondItem="byq-z5-xYr" secondAttribute="bottom" constant="8" symbolic="YES" id="CMj-d8-i0x"/>
+                            <constraint firstItem="Aib-fY-ZR0" firstAttribute="top" secondItem="rpc-hA-tbb" secondAttribute="bottom" constant="8" symbolic="YES" id="E8U-Gm-wrm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WvI-l4-tqt" secondAttribute="trailing" constant="106" id="Gw7-C1-56p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uuj-2o-QWS" secondAttribute="trailing" constant="184" id="HJ2-yS-EmA"/>
+                            <constraint firstItem="seA-tK-hFN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="JDt-S1-bhz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pwm-XM-1eD" secondAttribute="trailing" constant="136" id="LSQ-td-XqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Aib-fY-ZR0" secondAttribute="trailing" constant="100" id="MB3-Br-IAA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Hb-aK-80Y" secondAttribute="trailing" constant="107" id="NNC-uX-aRc"/>
                             <constraint firstItem="3Hb-aK-80Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="OkK-z8-sQk"/>
                             <constraint firstItem="IZw-gI-lzz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="PdZ-oy-rUE"/>
+                            <constraint firstItem="byq-z5-xYr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="PtX-da-sLT"/>
                             <constraint firstItem="05n-UM-ykH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="Q9d-Xm-cd6"/>
                             <constraint firstItem="05n-UM-ykH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="QSb-XH-LMh"/>
+                            <constraint firstItem="Aib-fY-ZR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="RpG-wM-hdj"/>
+                            <constraint firstItem="rpc-hA-tbb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="SbW-3R-JkP"/>
                             <constraint firstItem="Pwm-XM-1eD" firstAttribute="top" secondItem="fkz-Ss-jlh" secondAttribute="bottom" constant="24" id="UwS-IX-jCJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="seA-tK-hFN" secondAttribute="trailing" constant="100" id="ZHy-7P-bes"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rpc-hA-tbb" secondAttribute="trailing" constant="100" id="ZPt-Sk-gjy"/>
                             <constraint firstItem="fkz-Ss-jlh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="Zzr-yt-ef7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IZw-gI-lzz" secondAttribute="trailing" constant="163" id="fyC-3p-er2"/>
                             <constraint firstItem="3Hb-aK-80Y" firstAttribute="top" secondItem="IZw-gI-lzz" secondAttribute="bottom" constant="21" id="j2R-7d-nhL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="05n-UM-ykH" secondAttribute="trailing" constant="164" id="jVE-r7-fgt"/>
                             <constraint firstItem="WvI-l4-tqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="n3N-3u-3n0"/>
                             <constraint firstItem="Pwm-XM-1eD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="nIR-mK-zQe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="byq-z5-xYr" secondAttribute="trailing" constant="100" id="p3S-z5-7iO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fkz-Ss-jlh" secondAttribute="trailing" constant="143" id="rIJ-yz-iFK"/>
+                            <constraint firstItem="byq-z5-xYr" firstAttribute="top" secondItem="seA-tK-hFN" secondAttribute="bottom" constant="21" id="sI0-yi-MCb"/>
                             <constraint firstItem="fkz-Ss-jlh" firstAttribute="top" secondItem="3Hb-aK-80Y" secondAttribute="bottom" constant="21" id="whS-Ca-ZKj"/>
+                            <constraint firstItem="seA-tK-hFN" firstAttribute="top" secondItem="Uuj-2o-QWS" secondAttribute="bottom" constant="22" id="xx2-tg-8vk"/>
                         </constraints>
                     </view>
                 </viewController>
