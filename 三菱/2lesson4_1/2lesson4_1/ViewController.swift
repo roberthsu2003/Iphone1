@@ -27,6 +27,21 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
+    @IBAction func doButton3(_ sender:UIButton)
+    {
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄(url)\(documentURL)")
+            print("Document的目錄(字串)\(documentURL.path())")
+            
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 }
 
