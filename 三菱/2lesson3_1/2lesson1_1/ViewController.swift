@@ -8,6 +8,27 @@
 import UIKit
 import PhotosUI
 
+extension UIImage{
+    func scale(newWidth:CGFloat) -> UIImage{
+        guard self.size.width <= newWidth else{
+            return self
+        }
+        
+        let scaleFactor = newWidth / self.size.width
+        let newHeight = self.size.height * scaleFactor
+        let newSize = CGSize(width: newWidth, height: newHeight)
+        
+        let graphicRender = UIGraphicsImageRenderer(size: newSize)
+        let scaleImage = graphicRender.image
+        {
+            (context) in
+            self.draw(in: CGRect.init(x: 0, y: 0, width: newWidth, height: newHeight))
+        }
+        return scaleImage
+        
+    }
+}
+
 
 class ViewController: UIViewController {
     @IBOutlet var scrollView:UIScrollView!
@@ -152,7 +173,7 @@ extension ViewController:PHPickerViewControllerDelegate{
                 }
                 if let image = image as? UIImage{
                     DispatchQueue.main.async {
-                        self.photoImageView.image = image
+                        self.photoImageView.image = image.scale(newWidth: 200)
                     }
                 }
                 
