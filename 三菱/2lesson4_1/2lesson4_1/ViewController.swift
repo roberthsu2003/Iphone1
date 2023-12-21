@@ -99,8 +99,15 @@ class ViewController: UIViewController {
             let fileManager = FileManager.default
             let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             //print("Document的目錄(url)\(documentURL)")
-            let dir = fileManager.enumerator(at: documentURL, includingPropertiesForKeys: nil)
-            
+            let dir = fileManager.enumerator(at: documentURL, includingPropertiesForKeys: nil)!
+            /*
+            for case let f as URL in dir where f.pathExtension == "txt"{
+                print(f)
+            }
+             */
+            for case let f as URL in dir where f.pathExtension == "txt"{
+                print(f)
+            }
             
         }
         catch
