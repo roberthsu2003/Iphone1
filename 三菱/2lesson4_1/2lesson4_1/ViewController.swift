@@ -115,5 +115,33 @@ class ViewController: UIViewController {
             print(error)
         }
     }
+    
+    @IBAction func doButton6(_ sender:UIButton)
+    {
+        //String的儲存
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄\(documentURL.path())")
+            
+            let fileURL = documentURL.appending(path: "pep.plist", directoryHint: .inferFromPath)
+            let array = ["robert","徐國堂","巨匠"]
+            if (array as NSArray).write(to: fileURL, atomically: true){
+                print("轉換和存檔成功")
+                
+            }
+            
+            let dict = ["name":"徐國堂","address":"台北市","code":12345] as [String:Any]
+            let fileURL1 = documentURL.appending(path: "pep1.plist", directoryHint: .inferFromPath)
+            try (dict as NSDictionary).write(to: fileURL1)
+        
+            
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 }
 
