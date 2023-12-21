@@ -24,12 +24,23 @@
                                     <action selector="doButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWK-zL-orV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mw-kr-2bd">
+                                <rect key="frame" x="29" y="93" width="327" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="取得Documents絕對路徑(FileManager)"/>
+                                <connections>
+                                    <action selector="doButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iy6-EY-Nct"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0TQ-Ix-OrR"/>
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="gzp-Xd-dQJ"/>
+                            <constraint firstItem="2mw-kr-2bd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="hCw-6V-Rkj"/>
+                            <constraint firstItem="2mw-kr-2bd" firstAttribute="top" secondItem="Tav-Aq-Xmy" secondAttribute="bottom" constant="8" symbolic="YES" id="pou-JH-k0Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2mw-kr-2bd" secondAttribute="trailing" constant="19" id="wJy-Jk-x2W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tav-Aq-Xmy" secondAttribute="trailing" constant="90" id="yxA-IO-yE9"/>
                         </constraints>
                     </view>
