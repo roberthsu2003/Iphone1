@@ -143,5 +143,26 @@ class ViewController: UIViewController {
             print(error)
         }
     }
+    
+    @IBAction func doButton7(_ sender:UIButton)
+    {
+        //String的儲存
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄\(documentURL.path())")
+            let pepURL = documentURL.appending(path: "pep.plist", directoryHint: .inferFromPath)
+            let pep1URL = documentURL.appending(path: "pep1.plist", directoryHint: .inferFromPath)
+            
+            
+        
+            
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 }
 

@@ -64,6 +64,14 @@
                                     <action selector="doButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sC9-lY-bZs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-Qv-149">
+                                <rect key="frame" x="35" y="308" width="130" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="取出plist檔案"/>
+                                <connections>
+                                    <action selector="doButton7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FP-Y1-AgF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,11 +79,13 @@
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0TQ-Ix-OrR"/>
                             <constraint firstItem="tJo-Pm-i8t" firstAttribute="top" secondItem="BdR-Fe-rOM" secondAttribute="bottom" constant="8" symbolic="YES" id="2SP-j1-xKT"/>
                             <constraint firstItem="BdR-Fe-rOM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="C7V-bk-mmW"/>
+                            <constraint firstItem="hRF-Qv-149" firstAttribute="top" secondItem="O3B-vA-89Q" secondAttribute="bottom" constant="8" symbolic="YES" id="KUe-eG-v2X"/>
                             <constraint firstItem="Moo-83-HRV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="MvM-cO-ft4"/>
                             <constraint firstItem="tJo-Pm-i8t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="QNh-i8-lGf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BdR-Fe-rOM" secondAttribute="trailing" constant="100" id="ZlY-hE-scr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="O3B-vA-89Q" secondAttribute="trailing" constant="100" id="cUk-qL-sbR"/>
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="gzp-Xd-dQJ"/>
+                            <constraint firstItem="hRF-Qv-149" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="hAi-fM-1bx"/>
                             <constraint firstItem="2mw-kr-2bd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="hCw-6V-Rkj"/>
                             <constraint firstItem="O3B-vA-89Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="m7H-YI-JKd"/>
                             <constraint firstItem="Moo-83-HRV" firstAttribute="top" secondItem="tJo-Pm-i8t" secondAttribute="bottom" constant="8" symbolic="YES" id="o2o-yf-lcf"/>
@@ -86,6 +96,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2mw-kr-2bd" secondAttribute="trailing" constant="19" id="wJy-Jk-x2W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Moo-83-HRV" secondAttribute="trailing" constant="80" id="xHU-wR-PJD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tav-Aq-Xmy" secondAttribute="trailing" constant="90" id="yxA-IO-yE9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hRF-Qv-149" secondAttribute="trailing" constant="80" id="zKz-NE-Adx"/>
                         </constraints>
                     </view>
                 </viewController>
