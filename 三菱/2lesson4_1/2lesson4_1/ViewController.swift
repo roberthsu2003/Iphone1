@@ -34,9 +34,20 @@ class ViewController: UIViewController {
         {
             let fileManager = FileManager.default
             let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            print("Document的目錄(url)\(documentURL)")
-            print("Document的目錄(字串)\(documentURL.path())")
+            //print("Document的目錄(url)\(documentURL)")
             
+            let folder = "MyFolder"
+            let myName1 = "robert"
+            let myName2 = "徐國堂"
+            let myFolderURL = documentURL.appending(path:folder , directoryHint: .isDirectory)
+            try fileManager.createDirectory(at: myFolderURL, withIntermediateDirectories: true)
+            
+            let myName1URL = myFolderURL.appending(path: "name1.txt", directoryHint: .inferFromPath)
+            let myName2URL = myFolderURL.appending(path: "name2.txt", directoryHint: .inferFromPath)
+            try myName1.write(to: myName1URL, atomically: true, encoding: .utf8)
+            try myName2.write(to: myName2URL, atomically: true, encoding: .utf8)
+            print("存檔成功")
+            print("Document的目錄(字串)\(documentURL.path())")
         }
         catch
         {
