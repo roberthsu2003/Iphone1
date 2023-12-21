@@ -90,5 +90,23 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func doButton5(_ sender:UIButton)
+    {
+        //String的儲存
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            //print("Document的目錄(url)\(documentURL)")
+            let dir = fileManager.enumerator(at: documentURL, includingPropertiesForKeys: nil)
+            
+            
+        }
+        catch
+        {
+            print(error)
+        }
+    }
 }
 
