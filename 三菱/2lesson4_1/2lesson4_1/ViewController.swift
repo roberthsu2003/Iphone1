@@ -154,8 +154,18 @@ class ViewController: UIViewController {
             print("Document的目錄\(documentURL.path())")
             let pepURL = documentURL.appending(path: "pep.plist", directoryHint: .inferFromPath)
             let pep1URL = documentURL.appending(path: "pep1.plist", directoryHint: .inferFromPath)
+            let pepData = try Data(contentsOf: pepURL)
+            if let pep = try PropertyListSerialization.propertyList(from: pepData, format: nil) as? [String]{
+                print(pep)
+            }
+            let pep1Data = try Data(contentsOf: pep1URL)
             
-            
+            if let pep1 = try PropertyListSerialization.propertyList(from: pep1Data, format: nil) as? [String:Any]{
+                let address = pep1["address"] as? String ?? ""
+                let code = pep1["code"] as? Int ?? 0
+                let name = pep1["name"] as? String ?? ""
+                print(address, code, name)
+            }
         
             
         }
