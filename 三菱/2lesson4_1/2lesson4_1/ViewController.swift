@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     @IBAction func doButton3(_ sender:UIButton)
     {
+        //String的儲存
         do
         {
             let fileManager = FileManager.default
@@ -53,6 +54,41 @@ class ViewController: UIViewController {
         {
             print(error)
         }
+    }
+    
+    @IBAction func doButton4(_ sender:UIButton){
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄(字串)\(documentURL.path())")
+            let infoArray = try fileManager.contentsOfDirectory(at: documentURL, includingPropertiesForKeys: nil)
+            print("documents目錄內的資料")
+            infoArray.forEach 
+            { itemURL in
+                let foldersURL = itemURL
+                print(foldersURL.path())
+                do{
+                    let infoArray = try fileManager.contentsOfDirectory(at: foldersURL, includingPropertiesForKeys: nil)
+                    infoArray.forEach 
+                    {
+                        print($0.path())
+                    }
+                    
+                    
+                }catch{
+                    print(error)
+                }
+                
+            
+            }
+            
+        }
+        catch
+        {
+            print(error)
+        }
+        
     }
 }
 

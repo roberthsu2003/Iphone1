@@ -40,15 +40,26 @@
                                     <action selector="doButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPv-xa-FzO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJo-Pm-i8t">
+                                <rect key="frame" x="29" y="179" width="232" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="搜尋一個目錄內的檔案資料"/>
+                                <connections>
+                                    <action selector="doButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UaL-F4-Qyc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0TQ-Ix-OrR"/>
+                            <constraint firstItem="tJo-Pm-i8t" firstAttribute="top" secondItem="BdR-Fe-rOM" secondAttribute="bottom" constant="8" symbolic="YES" id="2SP-j1-xKT"/>
                             <constraint firstItem="BdR-Fe-rOM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="C7V-bk-mmW"/>
+                            <constraint firstItem="tJo-Pm-i8t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="QNh-i8-lGf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BdR-Fe-rOM" secondAttribute="trailing" constant="100" id="ZlY-hE-scr"/>
                             <constraint firstItem="Tav-Aq-Xmy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="gzp-Xd-dQJ"/>
                             <constraint firstItem="2mw-kr-2bd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="hCw-6V-Rkj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tJo-Pm-i8t" secondAttribute="trailing" constant="80" id="pA0-7F-fXy"/>
                             <constraint firstItem="2mw-kr-2bd" firstAttribute="top" secondItem="Tav-Aq-Xmy" secondAttribute="bottom" constant="8" symbolic="YES" id="pou-JH-k0Z"/>
                             <constraint firstItem="BdR-Fe-rOM" firstAttribute="top" secondItem="2mw-kr-2bd" secondAttribute="bottom" constant="8" symbolic="YES" id="rI7-c3-iNo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2mw-kr-2bd" secondAttribute="trailing" constant="19" id="wJy-Jk-x2W"/>
