@@ -92,11 +92,17 @@
                                 <rect key="frame" x="33" y="547" width="120" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="get a Person"/>
+                                <connections>
+                                    <action selector="doButton9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N09-5s-JjN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aib-fY-ZR0">
                                 <rect key="frame" x="33" y="590" width="179" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="get a ArrayOfPerson"/>
+                                <connections>
+                                    <action selector="doButton10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMB-mk-8uR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

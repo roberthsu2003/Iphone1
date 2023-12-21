@@ -18,6 +18,11 @@ class Person:NSObject, NSSecureCoding,Codable{ //因為要用property list encod
         super.init()
     }
     
+    override var description: String{
+        return self.firstName + " " + self.lastName
+    }
+    
+    
     func encode(with coder: NSCoder) {
         coder.encode(self.lastName, forKey: "last")
         coder.encode(self.firstName, forKey: "first")

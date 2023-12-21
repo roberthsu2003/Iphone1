@@ -4,6 +4,7 @@
 //
 //  Created by 徐國堂 on 2023/12/1.
 //singleton class的使用
+class City:NSObject,
 
 import Foundation
 class DataSource{

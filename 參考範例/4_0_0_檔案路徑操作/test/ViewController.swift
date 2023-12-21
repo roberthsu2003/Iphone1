@@ -146,6 +146,45 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func doButton9(_ sender:UIButton)
+    {
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let userFile = documentURL.appending(path: "user1.plist", directoryHint: .inferFromPath)
+            let user1Data = try Data(contentsOf: userFile)
+            let user1 = try PropertyListDecoder().decode(Person.self, from: user1Data)
+            print(user1)
+        }
+        catch
+        {
+           print("error")
+        }
+    }
+    
+    @IBAction func doButton10(_ sender:UIButton)
+    {
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let userFile = documentURL.appending(path: "user.plist", directoryHint: .inferFromPath)
+            let userData = try Data(contentsOf: userFile)
+            
+            let users = try PropertyListDecoder().decode([Person].self, from: userData)
+            /*
+            使用這種方法會傳出nil,因為Person是手動建立的方法。使用這種方法只可以使用內建的資料類型
+            let users = try PropertyListSerialization.propertyList(from: userData, format: nil) as? [Person]
+             */
+            print(users)
+        }
+        catch
+        {
+           print("error")
+        }
+    }
+    
     
     
 
