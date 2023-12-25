@@ -8,7 +8,7 @@
 
 import Foundation
 class DataSource{
-    subscript(continent:String) -> [String]?{
+        subscript(continent:String) -> [String]?{
         let currentContinents = DataSource.continents;
         if !currentContinents.contains(continent){
             //沒有這個洲
@@ -42,6 +42,7 @@ class DataSource{
         }
         
     }()
+    
     private init(){
         
     }

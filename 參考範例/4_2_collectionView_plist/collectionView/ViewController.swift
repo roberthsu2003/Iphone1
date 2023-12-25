@@ -6,31 +6,27 @@
 //
 
 import UIKit
-
-//注意這裏的citys.list儲存的是class City
-//image儲存的是Data
-
-
+//citys.plist 是儲存City
+//City的image是Data
 class ViewController: UICollectionViewController {
     private  lazy var sections:[City] = {
         let bundle = Bundle.main
-        guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
+        guard let pathURL = bundle.url(forResource: "citys", withExtension: "plist") else{
             return [City]()
         }
         do{
             let data = try Data(contentsOf: pathURL)
-            guard let sections = try PropertyListSerialization.propertyList(from: data, format: nil) as? [[String:Any]] else{
-                return [[String:Any]]()
-            }
+            let sections = try PropertyListDecoder().decode([City].self, from: data)
             return sections
         }catch{
             print("讀取檔案錯誤",error)
         }
-        return [[String:Any]]()
+        return [City]()
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(sections)
         if let flowlayout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
             flowlayout.itemSize = CGSize(width: self.collectionView.bounds.width, height: 120)
         }
@@ -54,14 +50,12 @@ extension ViewController{
         let index = indexPath.item
         //取出值
         let city = sections[index]
-        
         /*
         let imageName = sections[index]["Image"] as! String
         let continent = sections[index]["Continent"] as! String
         let city = sections[index]["City"] as! String
         let country = sections[index]["Country"] as! String
          */
-        
         if cell.contentView.viewWithTag(1) == nil{
             //加入背景
             let imageView = UIImageView(image: UIImage(data: city.image))
@@ -76,6 +70,7 @@ extension ViewController{
                 imageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
                 imageView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor)
             ])
+            
             //加入stackView
             let stackview = UIStackView()
             stackview.translatesAutoresizingMaskIntoConstraints = false
@@ -91,33 +86,33 @@ extension ViewController{
                 stackview.widthAnchor.constraint(greaterThanOrEqualToConstant: 150)
             ])
             let cityLabel = UILabel()
-            cityLabel.text = city
+            cityLabel.text = city.city
             cityLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             cityLabel.tag = 2
             cityLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
             stackview.addArrangedSubview(cityLabel)
             
             let countryLabel = UILabel()
-            countryLabel.text = country
+            countryLabel.text = city.country
             countryLabel.tag = 3
             stackview.addArrangedSubview(countryLabel)
             
             let continentLabel = UILabel()
-            continentLabel.text = continent
+            continentLabel.text = city.continent
             continentLabel.tag = 4
             stackview.addArrangedSubview(continentLabel)
             
         }else{
             let oldImageView = cell.contentView.viewWithTag(1) as! UIImageView
-            oldImageView.image = UIImage(named: imageName)!
+            oldImageView.image = UIImage(data: city.image)
             let oldCityLabel = cell.contentView.viewWithTag(2) as! UILabel
-            oldCityLabel.text = city
+            oldCityLabel.text = city.city
             
             let oldCountryLabel = cell.contentView.viewWithTag(3) as! UILabel
-            oldCountryLabel.text = country
+            oldCountryLabel.text = city.country
             
             let oldContinentLabel = cell.contentView.viewWithTag(4) as! UILabel
-            oldContinentLabel.text = continent
+            oldContinentLabel.text = city.continent
         }
         
         return cell
