@@ -97,16 +97,66 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doButton6(_ sender:UIButton){
-        //Array 儲存檔案
-        print("測試儲存array成為檔案")
-        let array = ["Manny", "Moe", "Jack"]
-        let fileManger = FileManager.default.temporaryDirectory
-        let fileURL = fileManger.appending(path: "pep.plist", directoryHint: .inferFromPath)
-        if (array as NSArray).write(to: fileURL, atomically: true){
-            print("存檔成功")
+        //Array 儲存檔案為plist
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄\(documentURL.path())")
+            
+            let fileURL = documentURL.appending(path: "pep.plist", directoryHint: .inferFromPath)
+            let array = ["robert","徐國堂","巨匠"]
+            if (array as NSArray).write(to: fileURL, atomically: true){
+                print("轉換和存檔成功")
+                
+            }
+            
+            let dict = ["name":"徐國堂","address":"台北市","code":12345] as [String:Any]
+            let fileURL1 = documentURL.appending(path: "pep1.plist", directoryHint: .inferFromPath)
+            try (dict as NSDictionary).write(to: fileURL1)
+        
+            
+        }
+        catch
+        {
+            print(error)
+        }
+        
+        
+    }
+    
+    @IBAction func doButton6_1(_ sender:UIButton){
+        //取出plist內資料
+        do
+        {
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            print("Document的目錄\(documentURL.path())")
+            let pepURL = documentURL.appending(path: "pep.plist", directoryHint: .inferFromPath)
+            let pep1URL = documentURL.appending(path: "pep1.plist", directoryHint: .inferFromPath)
+            let pepData = try Data(contentsOf: pepURL)
+            if let pep = try PropertyListSerialization.propertyList(from: pepData, format: nil) as? [String]{
+                print(pep)
+            }
+            let pep1Data = try Data(contentsOf: pep1URL)
+            
+            if let pep1 = try PropertyListSerialization.propertyList(from: pep1Data, format: nil) as? [String:Any]{
+                let address = pep1["address"] as? String ?? ""
+                let code = pep1["code"] as? Int ?? 0
+                let name = pep1["name"] as? String ?? ""
+                print(address, code, name)
+            }
+        
+            
+        }
+        catch
+        {
+            print(error)
         }
         
     }
+    
+    
     //NSCoding protocol
     //採納NSCoding,可以將物件轉成NSData
     //採納NSCoding,實作 encode(with:), init(coder:)
@@ -114,6 +164,7 @@ class ViewController: UIViewController {
     
     @IBAction func doButton7(_ sender:UIButton)
     {
+        //儲存Person
         do{
             let fileManager = FileManager.default
             let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)

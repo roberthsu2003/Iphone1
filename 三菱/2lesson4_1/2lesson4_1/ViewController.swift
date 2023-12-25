@@ -146,7 +146,7 @@ class ViewController: UIViewController {
     
     @IBAction func doButton7(_ sender:UIButton)
     {
-        //String的儲存
+        //取出plist內資料
         do
         {
             let fileManager = FileManager.default

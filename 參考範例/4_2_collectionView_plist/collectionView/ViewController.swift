@@ -7,11 +7,15 @@
 
 import UIKit
 
+//注意這裏的citys.list儲存的是class City
+//image儲存的是Data
+
+
 class ViewController: UICollectionViewController {
-    private  lazy var sections:[[String:Any]] = {
+    private  lazy var sections:[City] = {
         let bundle = Bundle.main
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist") else{
-            return [[String:Any]]()
+            return [City]()
         }
         do{
             let data = try Data(contentsOf: pathURL)
@@ -49,13 +53,18 @@ extension ViewController{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myItem", for: indexPath)
         let index = indexPath.item
         //取出值
+        let city = sections[index]
+        
+        /*
         let imageName = sections[index]["Image"] as! String
         let continent = sections[index]["Continent"] as! String
         let city = sections[index]["City"] as! String
         let country = sections[index]["Country"] as! String
+         */
+        
         if cell.contentView.viewWithTag(1) == nil{
             //加入背景
-            let imageView = UIImageView(image: UIImage(named: imageName)!)
+            let imageView = UIImageView(image: UIImage(data: city.image))
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .scaleAspectFill
             imageView.tag = 1 //不可以是0
