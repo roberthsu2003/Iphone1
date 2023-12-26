@@ -12,20 +12,34 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = .brown
+        tableView.dataSource = self //預設就為self
     }
 
-    // MARK: - Table view data source
+}
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+extension RootViewController{
+    //UITableViewController已經採納UITableViewDataSource
     
-
+    override func numberOfSections(in tableView: UITableView) -> Int{
+        //多少個section
+        return 1
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int{
+        //每個section,多少個row
+        return 100
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        //給Row資料
+        print(indexPath.row)
+        return UITableViewCell(style: .default, reuseIdentifier: "cellID")
+    }
+    
 }
