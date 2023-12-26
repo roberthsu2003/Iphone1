@@ -9,11 +9,25 @@ import UIKit
 
 class RootViewController: UITableViewController {
     let cellID = "cellID"
-    let citys:[[String:Any]] = []
+    var cities:[[String:Any]] = []
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        let mainBundle = Bundle.main
+        if let plistURL = mainBundle.url(forResource: "citylist", withExtension: "plist"){
+            //print(plistURL.path())
+            do{
+                let plistData = try Data(contentsOf: plistURL)
+                self.cities = try PropertyListSerialization.propertyList(from: plistData, format: nil) as! [[String:Any]]
+            }
+            catch
+            {
+                print("讀檔錯誤")
+            }
+            
+        }
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        print("初始化")
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +38,7 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.backgroundColor = .brown
         tableView.dataSource = self //預設就為self
+        print(cities)
         
         
     }
@@ -80,7 +95,6 @@ extension RootViewController{
         let rowIndex = indexPath.row
         if #available(iOS 15, *)
         {
-            print("ios 15以執行")
             var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
             if cell == nil{
                 //print(rowIndex)
