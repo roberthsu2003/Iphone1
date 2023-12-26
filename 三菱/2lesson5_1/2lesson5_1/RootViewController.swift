@@ -8,6 +8,7 @@
 import UIKit
 
 class RootViewController: UITableViewController {
+    let cellID = "cellID"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +39,13 @@ extension RootViewController{
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
         //給Row資料
-        print(indexPath.row)
-        return UITableViewCell(style: .default, reuseIdentifier: "cellID")
+        let rowIndex = indexPath.row
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+        if cell == nil{
+            print(rowIndex)
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+        }
+        return cell!
     }
     
 }
