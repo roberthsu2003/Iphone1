@@ -44,7 +44,9 @@ extension RootViewController{
         if cell == nil{
             //print(rowIndex)
             cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+            //cell外觀永遠不會改變的
         }
+        //cell外觀會改變的
         cell?.textLabel?.text = "cell-\(rowIndex)"
         return cell!
     }
