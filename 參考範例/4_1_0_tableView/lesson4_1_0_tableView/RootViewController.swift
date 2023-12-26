@@ -58,7 +58,7 @@ extension RootViewController{
                 var backgroundConfiguration = UIBackgroundConfiguration.listPlainCell()
                 let image = UIImage(named: "linen.png") //不需要設frame
                 backgroundConfiguration.image = image
-                cell?.backgroundConfiguration = backgroundConfiguration               
+                cell?.backgroundConfiguration = backgroundConfiguration
             }
             
             var content = cell?.defaultContentConfiguration()
