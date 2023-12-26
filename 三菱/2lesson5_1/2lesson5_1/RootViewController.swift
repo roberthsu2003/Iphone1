@@ -45,6 +45,10 @@ extension RootViewController{
             //print(rowIndex)
             cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
             //cell外觀永遠不會改變的
+            cell?.textLabel?.textColor = .systemRed
+            let imageView = UIImageView(image: UIImage(named: "linen.png"))
+            imageView.contentMode = .scaleToFill
+            cell?.backgroundView = imageView
         }
         //cell外觀會改變的
         cell?.textLabel?.text = "cell-\(rowIndex)"
