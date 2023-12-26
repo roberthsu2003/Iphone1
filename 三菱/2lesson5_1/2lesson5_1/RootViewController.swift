@@ -42,9 +42,10 @@ extension RootViewController{
         let rowIndex = indexPath.row
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         if cell == nil{
-            print(rowIndex)
+            //print(rowIndex)
             cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
         }
+        cell?.textLabel?.text = "cell-\(rowIndex)"
         return cell!
     }
     
