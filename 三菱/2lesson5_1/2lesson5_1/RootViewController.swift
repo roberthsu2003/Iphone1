@@ -33,7 +33,8 @@ extension RootViewController{
         //每個section,多少個row
         return 100
     }
-    
+    /* 有相同的function 名稱,不可以這樣寫
+    @available(iOS 15, *)
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
@@ -56,6 +57,58 @@ extension RootViewController{
         //cell外觀會改變的
         cell?.textLabel?.text = "cell-\(rowIndex)"
         return cell!
+    }
+    */
+    
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        //給Row資料
+        let rowIndex = indexPath.row
+        if #available(iOS 15, *)
+        {
+            print("ios 15以執行")
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+            if cell == nil{
+                //print(rowIndex)
+                cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+                //cell外觀永遠不會改變的
+                cell?.textLabel?.textColor = .systemRed
+                let imageView = UIImageView(image: UIImage(named: "linen.png"))
+                imageView.contentMode = .scaleToFill
+                cell?.backgroundView = imageView
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+                cell?.selectedBackgroundView = selectedView
+            }
+            //cell外觀會改變的
+            var contentConfiguration = cell?.defaultContentConfiguration()
+            contentConfiguration?.text = "cell-\(rowIndex)"
+            contentConfiguration?.textProperties.color = .systemRed
+            cell?.contentConfiguration = contentConfiguration
+            return cell!
+        }
+        else
+        {
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+            if cell == nil{
+                //print(rowIndex)
+                cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+                //cell外觀永遠不會改變的
+                cell?.textLabel?.textColor = .systemRed
+                let imageView = UIImageView(image: UIImage(named: "linen.png"))
+                imageView.contentMode = .scaleToFill
+                cell?.backgroundView = imageView
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+                cell?.selectedBackgroundView = selectedView
+            }
+            //cell外觀會改變的
+            cell?.textLabel?.text = "cell-\(rowIndex)"
+            return cell!
+            
+        }
     }
     
 }
