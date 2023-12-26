@@ -49,6 +49,9 @@ extension RootViewController{
             let imageView = UIImageView(image: UIImage(named: "linen.png"))
             imageView.contentMode = .scaleToFill
             cell?.backgroundView = imageView
+            let selectedView = UIView()
+            selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+            cell?.selectedBackgroundView = selectedView
         }
         //cell外觀會改變的
         cell?.textLabel?.text = "cell-\(rowIndex)"
