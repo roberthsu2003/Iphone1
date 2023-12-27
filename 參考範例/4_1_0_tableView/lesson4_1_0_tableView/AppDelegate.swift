@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  lesson4_1_0_tableView
+//  2lesson5_1
 //
 //  Created by 徐國堂 on 2023/12/26.
 //
@@ -10,13 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if #available(iOS 13.0, *){
-            return true
+        if #available(iOS 13, *){
+            //版本13以上執行這裏
+            print("版本13以上")
         }else{
-            //多個一些事情
+            //版本12執行這裏
         }
         return true
     }
@@ -37,4 +36,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

@@ -1,6 +1,6 @@
 //
 //  RootViewController.swift
-//  lesson4_1_0_tableView
+//  2lesson5_1
 //
 //  Created by 徐國堂 on 2023/12/26.
 //
@@ -8,97 +8,108 @@
 import UIKit
 
 class RootViewController: UITableViewController {
-    let cellID = "Cell"
+    let cellID = "cellID"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.backgroundColor = .brown
+        tableView.dataSource = self //預設就為self
     }
-
-    
-
-   
 
 }
 
-/*
-Simple "dequeue" (without "forIndexPath") might return a nil cell, and certainly will at the
-outset as the initial stack of reusable cells is needed. This means that everything in the code
-has to accommodate this possibility: the cell must be a var because you might need to create
-and assign it, the cell must be typed as an Optional, and all references to the cell must be
-unwrapped. This is annoying - and completely unnecessary. I'm only showing it here
-for illustrative purposes. For the rest of the book, I'll use dequeue...:forIndexPath: which
-has none of those issues, and the cell will never be an Optional (or nil) ever again.
-*/
-
-
 extension RootViewController{
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    //UITableViewController已經採納UITableViewDataSource
+    
+    override func numberOfSections(in tableView: UITableView) -> Int{
+        //多少個section
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 20
+    
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int{
+        //每個section,多少個row
+        return 100
     }
+    /* 有相同的function 名稱,不可以這樣寫
+    @available(iOS 15, *)
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        //給Row資料
+        let rowIndex = indexPath.row
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+        if cell == nil{
+            //print(rowIndex)
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+            //cell外觀永遠不會改變的
+            cell?.textLabel?.textColor = .systemRed
+            let imageView = UIImageView(image: UIImage(named: "linen.png"))
+            imageView.contentMode = .scaleToFill
+            cell?.backgroundView = imageView
+            let selectedView = UIView()
+            selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+            cell?.selectedBackgroundView = selectedView
+        }
+        //cell外觀會改變的
+        cell?.textLabel?.text = "cell-\(rowIndex)"
+        return cell!
+    }
+    */
     
-    
-   
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // Fetch a cell of the appropriate type.
-       //let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-       //上面這行會傳出空的cell,下面這行會傳出nil
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        //給Row資料
+        let rowIndex = indexPath.row
         if #available(iOS 15, *)
         {
+            print("ios 15以執行")
             var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-            if cell == nil            {
+            if cell == nil{
+                //print(rowIndex)
                 cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
-                var backgroundConfiguration = UIBackgroundConfiguration.listPlainCell()
-                let image = UIImage(named: "linen.png") //不需要設frame
-                backgroundConfiguration.image = image
-                cell?.backgroundConfiguration = backgroundConfiguration
+                //cell外觀永遠不會改變的
+                cell?.textLabel?.textColor = .systemRed
+                let imageView = UIImageView(image: UIImage(named: "linen.png"))
+                imageView.contentMode = .scaleToFill
+                cell?.backgroundView = imageView
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+                cell?.selectedBackgroundView = selectedView
             }
-            
-            var content = cell?.defaultContentConfiguration()
-            content?.text = "Hello ther! \(indexPath.row)"
-            content?.textProperties.color = .systemBlue
-            cell?.contentConfiguration = content
+            //cell外觀會改變的
+            var contentConfiguration = cell?.defaultContentConfiguration()
+            contentConfiguration?.text = "cell-\(rowIndex)"
+            contentConfiguration?.textProperties.color = .systemRed
+            cell?.contentConfiguration = contentConfiguration
             return cell!
         }
         else
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-            if cell == nil
-            {
-                
-                let cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
-                
-                cell.textLabel!.textColor = .systemGray
-                let v = UIImageView(image: UIImage(named: "linen.png")) //不需要設frame
-                v.contentMode = .scaleToFill
-                cell.backgroundView = v
-                /*
-                let v2 = UIView() //不需要設frame
-                v2.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
-                cell.selectedBackgroundView = v2
-                cell.backgroundColor = .systemRed
-                 */
-                
+            var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+            if cell == nil{
+                //print(rowIndex)
+                cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+                //cell外觀永遠不會改變的
+                cell?.textLabel?.textColor = .systemRed
+                let imageView = UIImageView(image: UIImage(named: "linen.png"))
+                imageView.contentMode = .scaleToFill
+                cell?.backgroundView = imageView
+                let selectedView = UIView()
+                selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+                cell?.selectedBackgroundView = selectedView
             }
-            cell?.textLabel!.text = "Hello ther! \(indexPath.row)"
+            //cell外觀會改變的
+            cell?.textLabel?.text = "cell-\(rowIndex)"
             return cell!
             
-            
         }
-        
-        
-           
-       
     }
-
     
 }
-
 
