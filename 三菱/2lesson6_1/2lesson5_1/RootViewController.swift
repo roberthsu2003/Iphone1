@@ -90,7 +90,20 @@ extension RootViewController{
         contentConfiguration?.textProperties.color = .systemRed
         contentConfiguration?.secondaryText = countryName
         contentConfiguration?.secondaryTextProperties.color = .systemGray
-        contentConfiguration?.image = UIImage(named: imageName)
+        //contentConfiguration?.image = UIImage(named: imageName)
+        
+        if let originImage = UIImage(named: imageName){
+            let imageRender = UIGraphicsImageRenderer(
+                bounds: CGRect(x: 0, y: 0, width: 100, height: 50),
+                format: originImage.imageRendererFormat)
+            let image = imageRender.image { _ in
+                originImage.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
+            }
+            contentConfiguration?.image = image
+        }
+        
+        
+        
         cell?.contentConfiguration = contentConfiguration
         
         return cell!
