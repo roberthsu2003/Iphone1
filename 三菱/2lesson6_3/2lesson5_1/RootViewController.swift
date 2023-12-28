@@ -40,7 +40,7 @@ class RootViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self //預設就為self
         navigationItem.title = "世界城市"
-        tableView.rowHeight = 80
+        tableView.rowHeight = 120
         //tableView.estimatedRowHeight = 100
         //print(cities)
         
@@ -80,9 +80,31 @@ extension RootViewController{
             //全新的
             //永遠不變的內容
             let imageView = UIImageView()
-            imageView.frame = CGRect(x: 100, y: 10, width: 150, height: 80)
             imageView.tag = 1
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.layer.cornerRadius = 50
             cell.contentView.addSubview(imageView)
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            var con = [NSLayoutConstraint]()
+            con.append(
+                imageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor)
+            )
+            
+            con.append(
+                imageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor
+                                                    , constant: -16)
+            )
+            
+            con.append(
+                imageView.widthAnchor.constraint(equalToConstant: 100)
+            )
+            
+            con.append(
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            )
+            
+            NSLayoutConstraint.activate(con)
         }
         
         //reuse
