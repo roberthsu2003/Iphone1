@@ -65,28 +65,30 @@ extension RootViewController{
     {
         //給Row資料
         let rowIndex = indexPath.row
-        print(rowIndex)
-        print("=====city資料==========")
+        //print(rowIndex)
+        //print("=====city資料==========")
         let city = cities[rowIndex]
         let cityName = city["City"] as? String ?? ""
+        let countryName = city["Country"] as? String ?? ""
        
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         if cell == nil{
-            //print(rowIndex)
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+            print(rowIndex)
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
             //cell外觀永遠不會改變的
-            cell?.textLabel?.textColor = .systemRed
-            let imageView = UIImageView(image: UIImage(named: "linen.png"))
-            imageView.contentMode = .scaleToFill
-            cell?.backgroundView = imageView
+            let view1 = UIView()
+            view1.backgroundColor = UIColor.white
+            cell?.backgroundView = view1
             let selectedView = UIView()
-            selectedView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+            selectedView.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.2)
             cell?.selectedBackgroundView = selectedView
         }
         //cell外觀會改變的
         var contentConfiguration = cell?.defaultContentConfiguration()
         contentConfiguration?.text = cityName
         contentConfiguration?.textProperties.color = .systemRed
+        contentConfiguration?.secondaryText = countryName
+        contentConfiguration?.secondaryTextProperties.color = .systemGray
         cell?.contentConfiguration = contentConfiguration
         return cell!
     

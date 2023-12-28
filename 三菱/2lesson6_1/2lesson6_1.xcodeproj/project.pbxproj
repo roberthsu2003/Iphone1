@@ -12,7 +12,6 @@
 		8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E62B3A9E2100E6FB60 /* Assets.xcassets */; };
 		8ECEA5EA2B3A9E2100E6FB60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E82B3A9E2100E6FB60 /* LaunchScreen.storyboard */; };
 		8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */; };
-		8ECEA5F42B3AB5C500E6FB60 /* linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F32B3AB5C500E6FB60 /* linen.png */; };
 		8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		8ECEA5E92B3A9E2100E6FB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ECEA5EB2B3A9E2100E6FB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		8ECEA5F32B3AB5C500E6FB60 /* linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linen.png; sourceTree = SOURCE_ROOT; };
 		8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 		8ECEA5DC2B3A9E2000E6FB60 /* 2lesson5_1 */ = {
 			isa = PBXGroup;
 			children = (
-				8ECEA5F32B3AB5C500E6FB60 /* linen.png */,
 				8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */,
 				8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */,
 				8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */,
@@ -131,7 +128,6 @@
 				8ECEA5EA2B3A9E2100E6FB60 /* LaunchScreen.storyboard in Resources */,
 				8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */,
 				8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */,
-				8ECEA5F42B3AB5C500E6FB60 /* linen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
