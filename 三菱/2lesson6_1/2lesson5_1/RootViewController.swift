@@ -70,6 +70,7 @@ extension RootViewController{
         let city = cities[rowIndex]
         let cityName = city["City"] as? String ?? ""
         let countryName = city["Country"] as? String ?? ""
+        let imageName = city["Image"] as? String ?? ""
        
         var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         if cell == nil{
@@ -89,7 +90,9 @@ extension RootViewController{
         contentConfiguration?.textProperties.color = .systemRed
         contentConfiguration?.secondaryText = countryName
         contentConfiguration?.secondaryTextProperties.color = .systemGray
+        contentConfiguration?.image = UIImage(named: imageName)
         cell?.contentConfiguration = contentConfiguration
+        
         return cell!
     
     
