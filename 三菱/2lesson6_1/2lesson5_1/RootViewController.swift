@@ -39,6 +39,8 @@ class RootViewController: UITableViewController {
         //self.tableView.backgroundColor = .brown
         tableView.dataSource = self //預設就為self
         navigationItem.title = "世界城市"
+        tableView.rowHeight = 80
+        //tableView.estimatedRowHeight = 100
         //print(cities)
         
     }
