@@ -24,7 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          */
         self.window = UIWindow(windowScene: windowScene)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = RootViewController(nibName: nil, bundle: nil)
+        let rootViewController = RootViewController(nibName: nil, bundle: nil)
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
     

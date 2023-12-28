@@ -36,8 +36,9 @@ class RootViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundColor = .brown
+        //self.tableView.backgroundColor = .brown
         tableView.dataSource = self //預設就為self
+        navigationItem.title = "世界城市"
         print(cities)
         
         
