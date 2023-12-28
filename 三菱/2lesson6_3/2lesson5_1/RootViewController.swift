@@ -74,9 +74,30 @@ extension RootViewController{
         let cityName = city["City"] as? String ?? ""
         let countryName = city["Country"] as? String ?? ""
         let imageName = city["Image"] as? String ?? ""
-       
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        if cell.viewWithTag(1) == nil{
+            //全新的
+            //永遠不變的內容
+            let imageView = UIImageView()
+            imageView.frame = CGRect(x: 100, y: 10, width: 150, height: 80)
+            imageView.tag = 1
+            cell.contentView.addSubview(imageView)
+        }
+        
+        //reuse
+        //每次會改變的內容
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        let originImage = UIImage(named: imageName)!
+        let imageRender = UIGraphicsImageRenderer(
+            bounds: CGRect(x: 0, y: 0, width: 150, height: 80),
+            format: originImage.imageRendererFormat
+        )
+    
+        let showImage = imageRender.image { _ in
+            originImage.draw(in: CGRect.init(x: 0, y: 0, width: 150, height: 80))
+        }
+        imageView.image = showImage
         
         
         return cell
