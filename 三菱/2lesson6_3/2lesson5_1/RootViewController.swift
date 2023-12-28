@@ -79,13 +79,26 @@ extension RootViewController{
         if cell.viewWithTag(1) == nil{
             //全新的
             //永遠不變的內容
+            //imageView
             let imageView = UIImageView()
             imageView.tag = 1
             imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
             imageView.layer.cornerRadius = 50
             cell.contentView.addSubview(imageView)
+            
+            //stackView
+            /*
+            let stackView = UIStackView()
+            stackView.axis = .vertical
+            stackView.distribution = .fillEqually
+            stackView.alignment = .leading
+            cell.contentView.addSubview(stackView)
+             */
+            
             imageView.translatesAutoresizingMaskIntoConstraints = false
+            //stackView.translatesAutoresizingMaskIntoConstraints = false
+            
             var con = [NSLayoutConstraint]()
             con.append(
                 imageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor)
