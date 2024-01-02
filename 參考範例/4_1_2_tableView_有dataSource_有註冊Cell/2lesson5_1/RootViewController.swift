@@ -12,6 +12,7 @@ class RootViewController: UITableViewController {
     let cellID = "cellID"
     var cities:[[String:Any]] = []
     
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let mainBundle = Bundle.main
         if let plistURL = mainBundle.url(forResource: "citylist", withExtension: "plist"){
@@ -74,6 +75,13 @@ extension RootViewController{
         let imageName = city["Image"] as? String
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let leftInsets:CGFloat =  indexPath.row % 2 == 1 ? 50 : 20;
+          
+           
+        
+        
+        
+        
         if cell.viewWithTag(1) == nil
         {
             var imageView:UIImageView!
@@ -107,6 +115,9 @@ extension RootViewController{
             stackView.translatesAutoresizingMaskIntoConstraints = false
             imageView.translatesAutoresizingMaskIntoConstraints = false
             var con = [NSLayoutConstraint]()
+            //先手動建立statkView leading constarain
+            
+            
             con.append(
                 imageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor)
             )
@@ -120,19 +131,19 @@ extension RootViewController{
                 imageView.heightAnchor.constraint(equalTo: imageView.heightAnchor)
             )
             
-            
-            
-            
             con.append(contentsOf:
                 NSLayoutConstraint.constraints(withVisualFormat: "V:|-30-[stack]-20-|", metrics: nil, views: d as [String : Any])
             )
+            //等一會要取出此constraints
+            let stackViewLeadingConstrain = stackView.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor, constant: 0)
+            stackViewLeadingConstrain.identifier = "stackViewleading"
             
             con.append(
-                titleLabel.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor)
+                stackViewLeadingConstrain
             )
             
             con.append(
-                titleLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -16)
+                stackView.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -16)
             )
             
             con.append(
@@ -141,6 +152,11 @@ extension RootViewController{
             NSLayoutConstraint.activate(con)
             
         }
+        
+        let stackViewLeading = cell.contentView.constraints.first { (constraint:NSLayoutConstraint) -> Bool in
+            constraint.identifier == "stackViewleading"
+        }
+        stackViewLeading?.constant = leftInsets
         
         let titleLabel = cell.viewWithTag(2) as! UILabel
         titleLabel.text = cityName
