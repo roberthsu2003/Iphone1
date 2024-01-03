@@ -7,15 +7,24 @@
 
 import UIKit
 
-struct Region:Codable{
-    let areas:[String]
+typealias YoubikeData1 = [Site]
+struct Site:Codable {
+    let ar:String
+    let bemp:Int
+    let lat:Double
+    let lng:Double
+    let mday:String
+    let sbi:Int
+    let sna:String
+    let tot:Int
 }
+
 
 class ViewController: UIViewController {
     @IBOutlet var regionTableView:UITableView!
     @IBOutlet var indicator:UIActivityIndicatorView!
     
-    let areasHttpString = "https://flask-robert.herokuapp.com/youbike/"
+    let areasHttpString = "https://youbike-json.onrender.com/youbike"
     //var areas:[String]!
     var areas = [String]()
     
@@ -47,16 +56,16 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {
                 let jsonDecoder = JSONDecoder()
-                guard let region = try? jsonDecoder.decode(Region.self, from: data) else{
+                guard let youbike = try? jsonDecoder.decode(YoubikeData1.self, from: data) else{
                     print("jsonDecoder無法轉換")
                     return
                 }
                 
-                
-                self.areas = region.areas
-                self.regionTableView.reloadData()
-                self.indicator.stopAnimating()
-                print(self.areas)
+                print(youbike)
+                //self.areas = youbike.data
+                //self.regionTableView.reloadData()
+                //self.indicator.stopAnimating()
+                //print(self.areas)
             }
         }
         downloadTask.resume()
