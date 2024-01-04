@@ -11,7 +11,8 @@ class RootViewController: UITableViewController {
     let cellID = "cellID"
     var cities:[[String:Any]] = []
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         let mainBundle = Bundle.main
         if let plistURL = mainBundle.url(forResource: "citylist", withExtension: "plist"){
             //print(plistURL.path())
@@ -25,13 +26,7 @@ class RootViewController: UITableViewController {
             }
             
         }
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        print("storyboard 預設的初始化位址")
     }
     
     override func viewDidLoad() {
