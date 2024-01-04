@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E75A6A72B46882000C381AA /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A6A62B46882000C381AA /* MyCell.xib */; };
 		8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75A6A82B46942B00C381AA /* MyCell.swift */; };
 		8E75A6AF2B46998C00C381AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A6AE2B46998C00C381AA /* Main.storyboard */; };
 		8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8E75A6A62B46882000C381AA /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		8E75A6A82B46942B00C381AA /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8E75A6AE2B46998C00C381AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8ECEA5DA2B3A9E2000E6FB60 /* 2lesson7_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson7_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +67,6 @@
 				8ECEA5E62B3A9E2100E6FB60 /* Assets.xcassets */,
 				8ECEA5E82B3A9E2100E6FB60 /* LaunchScreen.storyboard */,
 				8ECEA5EB2B3A9E2100E6FB60 /* Info.plist */,
-				8E75A6A62B46882000C381AA /* MyCell.xib */,
 				8E75A6A82B46942B00C381AA /* MyCell.swift */,
 				8E75A6AE2B46998C00C381AA /* Main.storyboard */,
 			);
@@ -136,7 +133,6 @@
 			files = (
 				8ECEA5EA2B3A9E2100E6FB60 /* LaunchScreen.storyboard in Resources */,
 				8E75A6AF2B46998C00C381AA /* Main.storyboard in Resources */,
-				8E75A6A72B46882000C381AA /* MyCell.xib in Resources */,
 				8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */,
 				8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */,
 			);

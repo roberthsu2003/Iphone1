@@ -77,7 +77,7 @@ extension RootViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MyCell
         
         
-        /*
+        
         cell.myImageView.contentMode = .scaleAspectFill
         cell.myImageView.layer.cornerRadius = 40
         let sourceImage = UIImage(named: imageName)!
@@ -91,7 +91,7 @@ extension RootViewController{
         
         cell.subLabel.text = countryName
          
-        */
+        
         
         return cell
     
