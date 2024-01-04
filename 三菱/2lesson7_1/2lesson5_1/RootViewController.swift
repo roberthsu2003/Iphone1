@@ -96,6 +96,19 @@ extension RootViewController{
             stackView.backgroundColor = .brown
             cell.contentView.addSubview(stackView)
             
+            let titleLabel = UILabel()
+            titleLabel.tag = 2
+            titleLabel.text = "城市名稱"
+            titleLabel.font = UIFont(name: "Helvetica-Bold", size: 16)
+            titleLabel.lineBreakMode = .byTruncatingTail
+            stackView.addArrangedSubview(titleLabel)
+            
+            let subLabel = UILabel()
+            subLabel.tag = 3
+            subLabel.text = "國家名稱"
+            subLabel.font = UIFont.systemFont(ofSize: 13)
+            subLabel.textColor = .systemCyan
+            stackView.addArrangedSubview(subLabel)
             let d = ["iv":imageView,"stack":stackView]
             
             
