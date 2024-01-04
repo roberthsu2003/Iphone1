@@ -87,17 +87,21 @@ extension RootViewController{
             imageView.layer.cornerRadius = 40
             cell.contentView.addSubview(imageView)
             
-            //stackView
-            /*
+            
+            
             let stackView = UIStackView()
             stackView.axis = .vertical
             stackView.distribution = .fillEqually
             stackView.alignment = .leading
+            stackView.backgroundColor = .brown
             cell.contentView.addSubview(stackView)
-             */
+            
+            let d = ["iv":imageView,"stack":stackView]
+            
+            
             
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            //stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.translatesAutoresizingMaskIntoConstraints = false
             
             var con = [NSLayoutConstraint]()
             con.append(
@@ -116,6 +120,20 @@ extension RootViewController{
             con.append(
                 imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
             )
+            
+            con.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[stack]-20-|", metrics: nil, views: d))
+            
+            con.append(
+                stackView.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor, constant: 20)
+            )
+            
+            con.append(
+                stackView.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -20)
+            )
+            
+            
+            
+            
             
             NSLayoutConstraint.activate(con)
         }
