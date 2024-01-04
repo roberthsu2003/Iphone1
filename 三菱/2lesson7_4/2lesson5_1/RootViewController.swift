@@ -33,7 +33,7 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         //self.tableView.backgroundColor = .brown
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-        tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: cellID)
+        //tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: cellID)
         tableView.dataSource = self //預設就為self
         navigationItem.title = "世界城市"
         //tableView.separatorColor = .red
@@ -77,7 +77,7 @@ extension RootViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MyCell
         
         
-        
+        /*
         cell.myImageView.contentMode = .scaleAspectFill
         cell.myImageView.layer.cornerRadius = 40
         let sourceImage = UIImage(named: imageName)!
@@ -91,7 +91,7 @@ extension RootViewController{
         
         cell.subLabel.text = countryName
          
-        
+        */
         
         return cell
     
