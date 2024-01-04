@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E75A6A72B46882000C381AA /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A6A62B46882000C381AA /* MyCell.xib */; };
+		8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75A6A82B46942B00C381AA /* MyCell.swift */; };
 		8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */; };
 		8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */; };
 		8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E62B3A9E2100E6FB60 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		8E75A6A62B46882000C381AA /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
+		8E75A6A82B46942B00C381AA /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8ECEA5DA2B3A9E2000E6FB60 /* 2lesson7_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson7_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8ECEA5E82B3A9E2100E6FB60 /* LaunchScreen.storyboard */,
 				8ECEA5EB2B3A9E2100E6FB60 /* Info.plist */,
 				8E75A6A62B46882000C381AA /* MyCell.xib */,
+				8E75A6A82B46942B00C381AA /* MyCell.swift */,
 			);
 			path = 2lesson5_1;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */,
+				8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */,
 				8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
 			);
