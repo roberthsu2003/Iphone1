@@ -93,7 +93,7 @@ extension RootViewController{
             stackView.axis = .vertical
             stackView.distribution = .fillEqually
             stackView.alignment = .leading
-            stackView.backgroundColor = .brown
+            //stackView.backgroundColor = .brown
             cell.contentView.addSubview(stackView)
             
             let titleLabel = UILabel()
@@ -134,7 +134,7 @@ extension RootViewController{
                 imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
             )
             
-            con.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[stack]-20-|", metrics: nil, views: d))
+            con.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-30-[stack]-20-|", metrics: nil, views: d))
             
             con.append(
                 stackView.leadingAnchor.constraint(equalTo: cell.contentView.layoutMarginsGuide.leadingAnchor, constant: 20)
@@ -151,7 +151,7 @@ extension RootViewController{
             NSLayoutConstraint.activate(con)
         }
         
-        //reuse
+        //reuse或全新的要修改內容
         //每次會改變的內容
         let imageView = cell.viewWithTag(1) as! UIImageView
         let originImage = UIImage(named: imageName)!
@@ -165,6 +165,11 @@ extension RootViewController{
         }
         imageView.image = showImage
         
+        let titleLabel = cell.viewWithTag(2) as! UILabel
+        titleLabel.text = cityName
+        
+        let subLabel = cell.viewWithTag(3) as! UILabel
+        subLabel.text = countryName
         
         return cell
     
