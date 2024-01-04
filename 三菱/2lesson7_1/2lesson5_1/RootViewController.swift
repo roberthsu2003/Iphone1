@@ -40,6 +40,9 @@ class RootViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self //預設就為self
         navigationItem.title = "世界城市"
+        //tableView.separatorColor = .red
+        //tableView.separatorStyle = .none
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         tableView.rowHeight = 100
         //tableView.estimatedRowHeight = 100
         //print(cities)
