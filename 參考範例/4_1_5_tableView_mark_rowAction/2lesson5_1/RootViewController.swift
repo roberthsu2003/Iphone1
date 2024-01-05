@@ -103,6 +103,14 @@ extension RootViewController{
         cell.cityImage.image = image2
         
         cityIsMarked[rowIndex] ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
+        //增加background
+        //如果MyCell有 override func updateConfiguration(using state: UICellConfigurationState),這就沒有背景效果
+        /*
+        var back = UIBackgroundConfiguration.listPlainCell()
+        back.backgroundColor = .blue.withAlphaComponent(0.1)
+        back.backgroundInsets =  NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        cell.backgroundConfiguration = back
+         */
         
         return cell
         

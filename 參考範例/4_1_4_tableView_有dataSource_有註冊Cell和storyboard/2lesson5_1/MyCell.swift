@@ -20,8 +20,23 @@ class MyCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+        
     }
+    
+    override func updateConfiguration(using state: UICellConfigurationState) {
+        var backgroundConfig = UIBackgroundConfiguration.listPlainCell().updated(for: state)
+        if state.isHighlighted || state.isSelected {
+                //backgroundColor如果設定為nil則繼承父容器的tintColor
+                //使用父類別的tintColor
+                backgroundConfig.backgroundColor = nil
+            backgroundConfig.backgroundColor = .red.withAlphaComponent(0.1)            
+        }else{
+            backgroundConfig.backgroundColor = .blue.withAlphaComponent(0.1)
+        }
+        backgroundConfig.backgroundInsets =  NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        self.backgroundConfiguration = backgroundConfig
+    }
+    
 
 }
