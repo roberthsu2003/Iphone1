@@ -49,8 +49,23 @@ class RootViewController: UITableViewController {
                 self.present(list_navi, animated: true)
             })),
             UIBarButtonItem.init(title: "picker", primaryAction: UIAction(handler: { _ in
-                print("picker")
-            }))
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let pickerController = storyboard.instantiateViewController(withIdentifier: "picker") as! UINavigationController
+                self.present(pickerController, animated: true)
+            })),
+            UIBarButtonItem(title: "thermometer", menu: UIMenu(children:
+                    [UIAction(title:"progress",handler: {_ in
+                                    print("progress")
+                                        }),
+                     UIAction(title:"customView",handler: {_ in
+                                     print("customView")
+                                         }),
+                     UIAction(title:"customButton",handler: {_ in
+                                     print("button")
+                                        })
+                    ]
+                                    
+                ))
         ]
         
     }

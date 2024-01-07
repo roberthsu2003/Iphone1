@@ -70,7 +70,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dr-Xf-Gqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.5267175572519" y="-1037.323943661972"/>
+            <point key="canvasLocation" x="999" y="-1468"/>
+        </scene>
+        <!--PickerController-->
+        <scene sceneID="vOW-Z8-3Dz">
+            <objects>
+                <viewController id="eho-eH-5lq" customClass="PickerViewController" customModule="_lesson5_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Sm-cd-VNK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BA-9W-k7g">
+                                <rect key="frame" x="0.0" y="167" width="393" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F5H-jL-Weh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8BA-9W-k7g" firstAttribute="top" secondItem="F5H-jL-Weh" secondAttribute="top" constant="30" id="K49-Ku-vfh"/>
+                            <constraint firstItem="8BA-9W-k7g" firstAttribute="trailing" secondItem="F5H-jL-Weh" secondAttribute="trailing" id="gbV-QC-fwh"/>
+                            <constraint firstItem="8BA-9W-k7g" firstAttribute="leading" secondItem="F5H-jL-Weh" secondAttribute="leading" id="k79-dQ-ORs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PickerController" prompt="選取美國50州" id="2JN-RS-67v"/>
+                    <connections>
+                        <outlet property="picker" destination="8BA-9W-k7g" id="Vvo-X8-x0s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5S-bY-46o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1949" y="-788"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="hV0-rl-Gfg">
@@ -157,7 +186,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHe-Ph-agv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776" y="-1037"/>
+            <point key="canvasLocation" x="273" y="-1468"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p7B-a9-bSA">
+            <objects>
+                <navigationController storyboardIdentifier="picker" automaticallyAdjustsScrollViewInsets="NO" id="QWE-QK-uit" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="42H-LL-RlQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eho-eH-5lq" kind="relationship" relationship="rootViewController" id="hUm-bx-PV1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5b9-83-UJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-788"/>
         </scene>
     </scenes>
     <resources>
