@@ -55,13 +55,19 @@ class RootViewController: UITableViewController {
             })),
             UIBarButtonItem(title: "thermometer", menu: UIMenu(children:
                     [UIAction(title:"progress",handler: {_ in
-                                    print("progress")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let thermometerNavi = storyboard.instantiateViewController(withIdentifier: "thermometer") as! UINavigationController
+                        self.present(thermometerNavi, animated: true)
                                         }),
                      UIAction(title:"customView",handler: {_ in
-                                     print("customView")
+                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                         let thermometerNavi = storyboard.instantiateViewController(withIdentifier: "thermometer") as! UINavigationController
+                         self.present(thermometerNavi, animated: true)
                                          }),
                      UIAction(title:"customButton",handler: {_ in
-                                     print("button")
+                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                         let thermometerNavi = storyboard.instantiateViewController(withIdentifier: "thermometer") as! UINavigationController
+                         self.present(thermometerNavi, animated: true)
                                         })
                     ]
                                     

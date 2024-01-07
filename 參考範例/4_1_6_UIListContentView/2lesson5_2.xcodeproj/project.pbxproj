@@ -12,6 +12,10 @@
 		8E40F3412B47E0E400A6CC7A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E40F3402B47E0E400A6CC7A /* ListViewController.swift */; };
 		8E4A89962B4A5617008B0A87 /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E4A89952B4A5617008B0A87 /* states.txt */; };
 		8E4A89982B4A5649008B0A87 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4A89972B4A5649008B0A87 /* PickerViewController.swift */; };
+		8EA08CC62B4A72AE00AB4F18 /* ThermometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA08CC52B4A72AE00AB4F18 /* ThermometerViewController.swift */; };
+		8EA08CC82B4A871A00AB4F18 /* MyProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA08CC72B4A871A00AB4F18 /* MyProgressView.swift */; };
+		8EA08CCA2B4A8BBC00AB4F18 /* MyCircularProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA08CC92B4A8BBC00AB4F18 /* MyCircularProgressButton.swift */; };
+		8EA08CCC2B4A8C6F00AB4F18 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA08CCB2B4A8C6F00AB4F18 /* pause.png */; };
 		8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */; };
 		8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */; };
 		8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E62B3A9E2100E6FB60 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 		8E40F3402B47E0E400A6CC7A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8E4A89952B4A5617008B0A87 /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = "<group>"; };
 		8E4A89972B4A5649008B0A87 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		8EA08CC52B4A72AE00AB4F18 /* ThermometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerViewController.swift; sourceTree = "<group>"; };
+		8EA08CC72B4A871A00AB4F18 /* MyProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProgressView.swift; sourceTree = "<group>"; };
+		8EA08CC92B4A8BBC00AB4F18 /* MyCircularProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCircularProgressButton.swift; sourceTree = "<group>"; };
+		8EA08CCB2B4A8C6F00AB4F18 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = 2lesson5_1/pause.png; sourceTree = SOURCE_ROOT; };
 		8ECEA5DA2B3A9E2000E6FB60 /* 2lesson5_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson5_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,9 +58,13 @@
 		8E4A89992B4A5676008B0A87 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				8EA08CCB2B4A8C6F00AB4F18 /* pause.png */,
 				8E4A89952B4A5617008B0A87 /* states.txt */,
 				8E40F3402B47E0E400A6CC7A /* ListViewController.swift */,
 				8E4A89972B4A5649008B0A87 /* PickerViewController.swift */,
+				8EA08CC52B4A72AE00AB4F18 /* ThermometerViewController.swift */,
+				8EA08CC72B4A871A00AB4F18 /* MyProgressView.swift */,
+				8EA08CC92B4A8BBC00AB4F18 /* MyCircularProgressButton.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -150,6 +162,7 @@
 			files = (
 				8ECEA5EA2B3A9E2100E6FB60 /* LaunchScreen.storyboard in Resources */,
 				8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */,
+				8EA08CCC2B4A8C6F00AB4F18 /* pause.png in Resources */,
 				8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */,
 				8E0BFC262B43DA1000117105 /* Main.storyboard in Resources */,
 				8E4A89962B4A5617008B0A87 /* states.txt in Resources */,
@@ -166,7 +179,10 @@
 				8E4A89982B4A5649008B0A87 /* PickerViewController.swift in Sources */,
 				8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */,
 				8E3839192B43B021003C1E29 /* MyCell.swift in Sources */,
+				8EA08CC62B4A72AE00AB4F18 /* ThermometerViewController.swift in Sources */,
 				8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */,
+				8EA08CC82B4A871A00AB4F18 /* MyProgressView.swift in Sources */,
+				8EA08CCA2B4A8BBC00AB4F18 /* MyCircularProgressButton.swift in Sources */,
 				8E40F3412B47E0E400A6CC7A /* ListViewController.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
 			);
