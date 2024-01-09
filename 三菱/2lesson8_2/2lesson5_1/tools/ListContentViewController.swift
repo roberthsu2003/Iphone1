@@ -12,6 +12,14 @@ class ListContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ListContent選取"
+        for pep in ["manny", "moe", "jack"]{
+            var config = UIListContentConfiguration.cell()
+            config.text = pep
+            config.image = UIImage(named: pep)
+            let listContentView = UIListContentView(configuration: config)
+            stackView.addArrangedSubview(listContentView)
+        }
+        
     }
     
 
