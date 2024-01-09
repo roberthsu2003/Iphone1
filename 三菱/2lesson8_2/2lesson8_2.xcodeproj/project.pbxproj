@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		8E75A6A82B46942B00C381AA /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8E75A6AE2B46998C00C381AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8E8914872B4D2AB4006F9ADB /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = states.txt; sourceTree = SOURCE_ROOT; };
+		8E8914872B4D2AB4006F9ADB /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = states.txt; path = 2lesson5_1/tools/states.txt; sourceTree = SOURCE_ROOT; };
 		8E8914892B4D2E02006F9ADB /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		8ECEA5DA2B3A9E2000E6FB60 /* 2lesson8_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson8_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E89148B2B4D30BF006F9ADB /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				8E8914892B4D2E02006F9ADB /* PickerViewController.swift */,
+				8E8914872B4D2AB4006F9ADB /* states.txt */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
 		8ECEA5D12B3A9E2000E6FB60 = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +74,7 @@
 		8ECEA5DC2B3A9E2000E6FB60 /* 2lesson5_1 */ = {
 			isa = PBXGroup;
 			children = (
-				8E8914872B4D2AB4006F9ADB /* states.txt */,
+				8E89148B2B4D30BF006F9ADB /* tools */,
 				8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */,
 				8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */,
 				8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */,
@@ -74,7 +83,6 @@
 				8ECEA5EB2B3A9E2100E6FB60 /* Info.plist */,
 				8E75A6A82B46942B00C381AA /* MyCell.swift */,
 				8E75A6AE2B46998C00C381AA /* Main.storyboard */,
-				8E8914892B4D2E02006F9ADB /* PickerViewController.swift */,
 			);
 			path = 2lesson5_1;
 			sourceTree = "<group>";

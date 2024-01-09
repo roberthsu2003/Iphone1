@@ -33,8 +33,18 @@
                     <view key="view" contentMode="scaleToFill" id="2ab-qO-4on">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPD-yC-sLF">
+                                <rect key="frame" x="0.0" y="103" width="393" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uzt-iI-KU4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wPD-yC-sLF" firstAttribute="top" secondItem="Uzt-iI-KU4" secondAttribute="top" id="5aq-A6-jbP"/>
+                            <constraint firstItem="wPD-yC-sLF" firstAttribute="trailing" secondItem="Uzt-iI-KU4" secondAttribute="trailing" id="CEl-Af-kCD"/>
+                            <constraint firstItem="wPD-yC-sLF" firstAttribute="leading" secondItem="Uzt-iI-KU4" secondAttribute="leading" id="ENl-gM-GlB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CYg-2j-Pni"/>
                 </viewController>
