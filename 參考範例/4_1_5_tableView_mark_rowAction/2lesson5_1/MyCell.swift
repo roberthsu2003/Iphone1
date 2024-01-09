@@ -18,7 +18,7 @@ class MyCell: UITableViewCell {
         if state.isHighlighted || state.isSelected {
                 //backgroundColor如果設定為nil則繼承父容器的tintColor
                 //使用父類別的tintColor
-                backgroundConfig.backgroundColor = nil
+                //backgroundConfig.backgroundColor = nil
             backgroundConfig.backgroundColor = .red.withAlphaComponent(0.1)
         }else{
             backgroundConfig.backgroundColor = .blue.withAlphaComponent(0.1)
