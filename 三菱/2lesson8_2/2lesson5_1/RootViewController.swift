@@ -50,7 +50,9 @@ class RootViewController: UITableViewController {
                 self.present(pickerNavi, animated: true)
             })),
             UIBarButtonItem.init(systemItem: .compose, primaryAction: UIAction(handler: { _ in
-                print("compose")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let listContent_navi = storyboard.instantiateViewController(withIdentifier: "list_content_navi") as! UINavigationController
+                self.present(listContent_navi, animated: true)
             }))
         ]
         

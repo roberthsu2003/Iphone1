@@ -11,6 +11,7 @@
 		8E75A6AF2B46998C00C381AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A6AE2B46998C00C381AA /* Main.storyboard */; };
 		8E8914882B4D2AB4006F9ADB /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E8914872B4D2AB4006F9ADB /* states.txt */; };
 		8E89148A2B4D2E02006F9ADB /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8914892B4D2E02006F9ADB /* PickerViewController.swift */; };
+		8E89148D2B4D36D6006F9ADB /* ListContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E89148C2B4D36D6006F9ADB /* ListContentViewController.swift */; };
 		8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */; };
 		8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */; };
 		8ECEA5E72B3A9E2100E6FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E62B3A9E2100E6FB60 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		8E75A6AE2B46998C00C381AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8E8914872B4D2AB4006F9ADB /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = states.txt; path = 2lesson5_1/tools/states.txt; sourceTree = SOURCE_ROOT; };
 		8E8914892B4D2E02006F9ADB /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		8E89148C2B4D36D6006F9ADB /* ListContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentViewController.swift; sourceTree = "<group>"; };
 		8ECEA5DA2B3A9E2000E6FB60 /* 2lesson8_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson8_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECEA5DD2B3A9E2000E6FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECEA5DF2B3A9E2000E6FB60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				8E8914892B4D2E02006F9ADB /* PickerViewController.swift */,
 				8E8914872B4D2AB4006F9ADB /* states.txt */,
+				8E89148C2B4D36D6006F9ADB /* ListContentViewController.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				8E89148A2B4D2E02006F9ADB /* PickerViewController.swift in Sources */,
 				8ECEA5DE2B3A9E2000E6FB60 /* AppDelegate.swift in Sources */,
+				8E89148D2B4D36D6006F9ADB /* ListContentViewController.swift in Sources */,
 				8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */,
 				8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
