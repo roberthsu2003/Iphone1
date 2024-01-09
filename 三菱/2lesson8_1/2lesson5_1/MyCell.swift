@@ -12,16 +12,21 @@ class MyCell: UITableViewCell {
     @IBOutlet var titleLabel:UILabel!
     @IBOutlet var subLabel:UILabel!
     
+    override func updateConfiguration(using state: UICellConfigurationState){
+        var backgroundConfig = UIBackgroundConfiguration.listPlainCell().updated(for: state)
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+        // Customize the background color to use the tint color when the cell is highlighted or selected.
+         if state.isHighlighted || state.isSelected {
+             backgroundConfig.backgroundColor = .red.withAlphaComponent(0.1)
+         }else{
+             backgroundConfig.backgroundColor = .blue.withAlphaComponent(0.1)
+         }
+
+        backgroundConfig.backgroundInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            // Apply the background configuration to the cell.
+            self.backgroundConfiguration = backgroundConfig
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
 
 }

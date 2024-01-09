@@ -87,13 +87,14 @@ extension RootViewController{
         cell.titleLabel.text = cityName
         
         cell.subLabel.text = countryName
-         
+        
+        /*
         var backgroundConfigure = cell.defaultBackgroundConfiguration()
         backgroundConfigure.backgroundColor = .blue.withAlphaComponent(0.2)
         backgroundConfigure.cornerRadius = 5
         backgroundConfigure.backgroundInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         cell.backgroundConfiguration = backgroundConfigure
-        
+        */
         
         return cell
     
