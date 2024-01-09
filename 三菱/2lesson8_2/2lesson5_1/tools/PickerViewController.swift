@@ -34,10 +34,24 @@ extension PickerViewController:UIPickerViewDataSource{
         _ pickerView: UIPickerView,
         numberOfRowsInComponent component: Int
     ) -> Int{
-        return 10
+        return states.count
     }
 }
 
 extension PickerViewController:UIPickerViewDelegate{
+    func pickerView(
+        _ pickerView: UIPickerView,
+        titleForRow row: Int,
+        forComponent component: Int
+    ) -> String?{
+        return states[row]
+    }
     
+    func pickerView(
+        _ pickerView: UIPickerView,
+        didSelectRow row: Int,
+        inComponent component: Int
+    ){
+       print(states[row])
+    }
 }
