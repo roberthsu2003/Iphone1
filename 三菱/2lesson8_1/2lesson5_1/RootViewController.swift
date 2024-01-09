@@ -127,9 +127,28 @@ extension RootViewController{
             print("分享")
             completionHandler(true)
         }
+        /*
+        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { action, view, completionHandler in
+            print("刪除")
+            completionHandler(true)
+        }
+         */
         shareAction.backgroundColor = .systemGreen
+        //deleteAction.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [shareAction])
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration?{
         
+        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { action, view, completionHandler in
+            print("刪除")
+            completionHandler(true)
+        }
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
 }
