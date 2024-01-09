@@ -142,9 +142,11 @@ extension RootViewController{
         _ tableView: UITableView,
         leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration?{
-        
-        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { action, view, completionHandler in
-            print("刪除")
+        let rowIndex = indexPath.row
+        let deleteAction = UIContextualAction(style: .normal, title: "刪除") { [self] action, view, completionHandler in
+            cities.remove(at: rowIndex)
+            cityISMarked.remove(at: rowIndex)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
         deleteAction.backgroundColor = .systemRed
