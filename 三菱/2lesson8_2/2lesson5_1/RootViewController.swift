@@ -42,6 +42,16 @@ class RootViewController: UITableViewController {
         //tableView.estimatedRowHeight = 100
         //print(cities)
         
+        //建立UIBarButtonItem
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem.init(title: "picker", primaryAction: UIAction(handler: { _ in
+                print("picker")
+            })),
+            UIBarButtonItem.init(systemItem: .compose, primaryAction: UIAction(handler: { _ in
+                print("compose")
+            }))
+        ]
+        
     }
 
 }
