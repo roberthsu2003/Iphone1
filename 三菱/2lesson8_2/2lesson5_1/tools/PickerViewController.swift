@@ -12,21 +12,32 @@ class PickerViewController: UIViewController {
     var states = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "美國50洲"
         guard let state_url = Bundle.main.url(forResource: "states", withExtension: "txt") else{return}
         guard let state_str = try? String.init(contentsOf: state_url) else {return}
         states = state_str.components(separatedBy: "\n")
         print(states)
+        
+        //使用代理人機制
+        picerView.dataSource = self
+        picerView.delegate = self
+    }
+
+}
+
+extension PickerViewController:UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func pickerView(
+        _ pickerView: UIPickerView,
+        numberOfRowsInComponent component: Int
+    ) -> Int{
+        return 10
     }
-    */
+}
 
+extension PickerViewController:UIPickerViewDelegate{
+    
 }
