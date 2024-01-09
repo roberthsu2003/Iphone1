@@ -13,6 +13,7 @@ class ThermometerViewController: UIViewController {
     @IBOutlet var progressView2:UIProgressView!
     @IBOutlet var progressView3:MyProgressView!
     @IBOutlet var progressView4:MyCircularProgressButton!
+
     
     
     override func viewDidLoad() {
@@ -54,8 +55,8 @@ class ThermometerViewController: UIViewController {
             con.setFillColor(UIColor.yellow.cgColor)
             con.fillEllipse(in: CGRect.init(x: 2, y: 2, width: 6, height: 6))
         }
-        self.progressView2.trackImage = trackim?.resizableImage(withCapInsets: UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4), resizingMode: .stretch)
-        self.progressView2.progressImage = im.resizableImage(withCapInsets: UIEdgeInsets.init(top: 4, left: 4, bottom: 5, right: 4), resizingMode: .stretch)
+        self.progressView2.trackImage = trackim?.resizableImage(withCapInsets: UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5), resizingMode: .stretch)
+        self.progressView2.progressImage = im.resizableImage(withCapInsets: UIEdgeInsets.init(top: 2, left: 4, bottom: 2, right: 4), resizingMode: .stretch)
         
         
     }
