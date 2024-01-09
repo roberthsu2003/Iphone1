@@ -119,4 +119,17 @@ extension RootViewController{
         
     }
     
+    override func tableView(
+        _ tableView: UITableView,
+        trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration?{
+        let shareAction = UIContextualAction(style: .normal, title: "分享") { action, view, completionHandler in
+            print("分享")
+            completionHandler(true)
+        }
+        shareAction.backgroundColor = .systemGreen
+        return UISwipeActionsConfiguration(actions: [shareAction])
+        
+    }
+    
 }
