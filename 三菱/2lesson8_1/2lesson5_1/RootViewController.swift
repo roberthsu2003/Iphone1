@@ -107,5 +107,19 @@ extension RootViewController{
 
 extension RootViewController{
     //Mark: - UITableViewDelegate
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ){
+        let rowIndex = indexPath.row
+        //let city = self.cities[rowIndex]
+        //print(city)
+        if let cell = tableView.cellForRow(at: indexPath) as? MyCell{
+            cell.accessoryType = .checkmark
+        }
+        
+        
+        
+    }
     
 }
