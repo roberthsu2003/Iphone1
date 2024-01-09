@@ -10,6 +10,7 @@ import UIKit
 class RootViewController: UITableViewController {
     let cellID = "cellID"
     var cities:[[String:Any]] = []
+    var cityISMarked = [Bool]()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -19,6 +20,7 @@ class RootViewController: UITableViewController {
             do{
                 let plistData = try Data(contentsOf: plistURL)
                 self.cities = try PropertyListSerialization.propertyList(from: plistData, format: nil) as! [[String:Any]]
+                cityISMarked = Array(repeating: false, count: self.cities.count)
             }
             catch
             {
@@ -88,13 +90,7 @@ extension RootViewController{
         
         cell.subLabel.text = countryName
         
-        /*
-        var backgroundConfigure = cell.defaultBackgroundConfiguration()
-        backgroundConfigure.backgroundColor = .blue.withAlphaComponent(0.2)
-        backgroundConfigure.cornerRadius = 5
-        backgroundConfigure.backgroundInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        cell.backgroundConfiguration = backgroundConfigure
-        */
+        cityISMarked[rowIndex] ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         
         return cell
     
@@ -114,10 +110,11 @@ extension RootViewController{
         let rowIndex = indexPath.row
         //let city = self.cities[rowIndex]
         //print(city)
+        let markedState = !cityISMarked[rowIndex]
         if let cell = tableView.cellForRow(at: indexPath) as? MyCell{
-            cell.accessoryType = .checkmark
+            markedState ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         }
-        
+        cityISMarked[rowIndex] = markedState
         
         
     }
