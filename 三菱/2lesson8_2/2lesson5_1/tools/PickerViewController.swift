@@ -8,11 +8,14 @@
 import UIKit
 
 class PickerViewController: UIViewController {
-
+    @IBOutlet var picerView:UIPickerView!
+    var states = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let state_url = Bundle.main.url(forResource: "states", withExtension: "txt") else{return}
+        guard let state_str = try? String.init(contentsOf: state_url) else {return}
+        states = state_str.components(separatedBy: "\n")
+        print(states)
     }
     
 
