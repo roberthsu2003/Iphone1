@@ -24,10 +24,19 @@ class ListContentViewController: UIViewController {
         
     }
     
+    var currentFavorite:String!
+    
     @objc func didTap(_ tapGesture:UIGestureRecognizer){
         if tapGesture.state == .ended, let stackView = tapGesture.view {
             let stackViewPoint = tapGesture.location(in: stackView)
-            print(stackViewPoint)
+            if let listContentView = stackView.hitTest(stackViewPoint, with: nil) as? UIListContentView{
+                if let configuration = listContentView.configuration as? UIListContentConfiguration{
+                    if let which = configuration.text{
+                        print(which)
+                        self.currentFavorite = which
+                    }
+                }
+            }
         }
     }
 
