@@ -8,23 +8,20 @@
 import UIKit
 
 class ThermometerViewController: UIViewController {
+    lazy var seg:UISegmentedControl = {
+        let seg = UISegmentedControl(items: ["pro1","pro2","pro3","pro4"])
+        return seg
+    }()
+    
     @IBOutlet var progressView1:UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.titleView = seg
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
