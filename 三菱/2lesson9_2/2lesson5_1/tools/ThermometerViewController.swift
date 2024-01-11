@@ -30,6 +30,18 @@ class ThermometerViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.titleView = seg
         
+        //初始化progress1的外觀
+        progressView1.progressTintColor = .red
+        progressView1.trackTintColor = .black
+        
+        //初始化progress2的外觀
+        let imageRender = UIGraphicsImageRenderer(size: CGSize.init(width: 10, height: 10))
+        let im = imageRender.image { (context:UIGraphicsImageRendererContext) in
+            let cgContext = context.cgContext
+            //取得cgContext,透過cgContext畫圖片
+        }
+        
+        
     }
     @objc func incre1(_ timer:Timer){
         seg.isEnabled = false
