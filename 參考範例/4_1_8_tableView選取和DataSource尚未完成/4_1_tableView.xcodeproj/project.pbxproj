@@ -16,6 +16,7 @@
 		8E11E42D2B3A6BFA000AD3DB /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E11E42C2B3A6BFA000AD3DB /* citylist.plist */; };
 		8EF991102B4F746200C2880E /* dataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF9910F2B4F746200C2880E /* dataSource.swift */; };
 		8EF991122B4F8B0300C2880E /* CityDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF991112B4F8B0300C2880E /* CityDetialViewController.swift */; };
+		8EF991142B4F90D900C2880E /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF991132B4F90D900C2880E /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8E11E42C2B3A6BFA000AD3DB /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		8EF9910F2B4F746200C2880E /* dataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSource.swift; sourceTree = "<group>"; };
 		8EF991112B4F8B0300C2880E /* CityDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetialViewController.swift; sourceTree = "<group>"; };
+		8EF991132B4F90D900C2880E /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				8E11E4182B3A6AE1000AD3DB /* SceneDelegate.swift */,
 				8E11E41A2B3A6AE1000AD3DB /* ViewController.swift */,
 				8EF991112B4F8B0300C2880E /* CityDetialViewController.swift */,
+				8EF991132B4F90D900C2880E /* DetailTableViewCell.swift */,
 				8E11E41C2B3A6AE1000AD3DB /* Main.storyboard */,
 				8E11E41F2B3A6AE2000AD3DB /* Assets.xcassets */,
 				8E11E4212B3A6AE2000AD3DB /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF991142B4F90D900C2880E /* DetailTableViewCell.swift in Sources */,
 				8E11E41B2B3A6AE1000AD3DB /* ViewController.swift in Sources */,
 				8E11E4172B3A6AE1000AD3DB /* AppDelegate.swift in Sources */,
 				8E11E4192B3A6AE1000AD3DB /* SceneDelegate.swift in Sources */,

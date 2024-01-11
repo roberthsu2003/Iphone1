@@ -51,6 +51,46 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Y3-Ha9">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailCell" rowHeight="66" id="SA5-Pc-045" customClass="DetailTableViewCell" customModule="__1_tableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SA5-Pc-045" id="BGA-g2-mPR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVa-Ia-5fe">
+                                                    <rect key="frame" x="35" y="23" width="50" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="MhZ-pw-5a9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FieldContent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnD-Mw-bfC">
+                                                    <rect key="frame" x="108" y="23" width="97.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="MnD-Mw-bfC" secondAttribute="trailing" constant="20" id="EN0-zK-6rz"/>
+                                                <constraint firstItem="hVa-Ia-5fe" firstAttribute="top" secondItem="BGA-g2-mPR" secondAttribute="topMargin" constant="12" id="R9F-cW-kvN"/>
+                                                <constraint firstItem="MnD-Mw-bfC" firstAttribute="top" secondItem="BGA-g2-mPR" secondAttribute="topMargin" constant="12" id="d4x-W5-OTx"/>
+                                                <constraint firstItem="MnD-Mw-bfC" firstAttribute="leading" secondItem="hVa-Ia-5fe" secondAttribute="trailing" constant="23" id="jgW-FB-t1m"/>
+                                                <constraint firstItem="hVa-Ia-5fe" firstAttribute="leading" secondItem="BGA-g2-mPR" secondAttribute="leadingMargin" constant="19" id="lDx-4i-umV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hVa-Ia-5fe" secondAttribute="bottom" constant="11" id="t4V-zB-Ciq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MnD-Mw-bfC" secondAttribute="bottom" constant="11" id="vgK-Zu-o4J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldContent" destination="MnD-Mw-bfC" id="kYg-yd-ep1"/>
+                                            <outlet property="fieldName" destination="hVa-Ia-5fe" id="TqL-IA-uUA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hP0-cq-sVb"/>

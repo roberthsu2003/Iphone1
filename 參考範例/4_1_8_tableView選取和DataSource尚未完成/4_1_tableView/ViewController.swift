@@ -34,7 +34,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CityDetail"{
             let city = sender as! City
-            print(city)
+            let cityDetailViewController = segue.destination as! CityDetialViewController
+            cityDetailViewController.city = city
         }
     }
 
