@@ -53,8 +53,10 @@ class ListContentViewController: UIViewController {
                     checkImage.translatesAutoresizingMaskIntoConstraints = false;
                     checkImage.tag = 100
                     listContentView.addSubview(checkImage)
-                    checkImage.trailingAnchor.constraint(equalTo: listContentView.trailingAnchor, constant: -10).isActive = true
-                    checkImage.centerYAnchor.constraint(equalTo: listContentView.centerYAnchor).isActive = true
+                    if let textLayouGuide = listContentView.textLayoutGuide{
+                        checkImage.leadingAnchor.constraint(equalTo: textLayouGuide.trailingAnchor, constant: 20).isActive = true
+                        checkImage.centerYAnchor.constraint(equalTo: textLayouGuide.centerYAnchor).isActive = true
+                    }
                 }
                 
             }
