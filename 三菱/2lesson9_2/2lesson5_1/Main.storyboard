@@ -108,6 +108,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6RN-lp-M15"/>
+                    <connections>
+                        <outlet property="progressView1" destination="ogS-w9-BW0" id="grN-a1-anh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwa-dD-25U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
