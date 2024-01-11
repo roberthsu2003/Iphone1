@@ -46,6 +46,9 @@ class ListContentViewController: UIViewController {
     
     func checkFavorite(){
         for listContentView in stackView.arrangedSubviews as! [UIListContentView]{
+            if let checkImage = listContentView.viewWithTag(100){
+                checkImage.removeFromSuperview()
+            }
             if let config = listContentView.configuration as? UIListContentConfiguration{
                 if let which = config.text,which == self.currentFavorite{
                     print(which)
