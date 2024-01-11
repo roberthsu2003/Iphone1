@@ -21,12 +21,12 @@ class ListContentViewController: UIViewController {
         }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
         stackView.addGestureRecognizer(tapGesture)
-        
+        checkFavorite()
     }
     
-    var currentFavorite = "moe" {
+    var currentFavorite = "manny" {
         didSet{
-            //print("您現在選擇的是:\(currentFavorite)")
+            print("您現在選擇的是:\(currentFavorite)")
             checkFavorite()
         }
     }
@@ -51,7 +51,6 @@ class ListContentViewController: UIViewController {
             }
             if let config = listContentView.configuration as? UIListContentConfiguration{
                 if let which = config.text,which == self.currentFavorite{
-                    print(which)
                     let checkImage = UIImageView(image: UIImage.init(systemName: "checkmark"))
                     checkImage.translatesAutoresizingMaskIntoConstraints = false;
                     checkImage.tag = 100
