@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jj0-v6-SGI">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -96,25 +97,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ogS-w9-BW0">
-                                <rect key="frame" x="20" y="123" width="353" height="4"/>
+                                <rect key="frame" x="20" y="123" width="353" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="QcG-hd-eAy"/>
+                                </constraints>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-bs-0LP">
+                                <rect key="frame" x="20" y="189" width="353" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="1TM-fn-S8r"/>
+                                </constraints>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RHN-4H-bQD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hQ9-bs-0LP" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="20N-n1-BQO"/>
                             <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="ogS-w9-BW0" secondAttribute="trailing" constant="20" id="5aS-RM-9mb"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="top" secondItem="RHN-4H-bQD" secondAttribute="top" constant="20" id="Ahr-KL-iC4"/>
+                            <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="hQ9-bs-0LP" secondAttribute="trailing" constant="20" id="VGS-ky-fiO"/>
+                            <constraint firstItem="hQ9-bs-0LP" firstAttribute="top" secondItem="ogS-w9-BW0" secondAttribute="bottom" constant="56" id="fdd-83-e6g"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="je2-7v-6Ro"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6RN-lp-M15"/>
                     <connections>
                         <outlet property="progressView1" destination="ogS-w9-BW0" id="grN-a1-anh"/>
+                        <outlet property="progressView2" destination="hQ9-bs-0LP" id="R2I-7f-Nad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwa-dD-25U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5117" y="-801"/>
+            <point key="canvasLocation" x="5116.7938931297704" y="-801.4084507042254"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="anM-Oq-pY7">
