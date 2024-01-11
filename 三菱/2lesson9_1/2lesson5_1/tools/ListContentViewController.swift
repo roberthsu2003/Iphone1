@@ -26,7 +26,8 @@ class ListContentViewController: UIViewController {
     
     var currentFavorite = "moe" {
         didSet{
-            print("您現在選擇的是:\(currentFavorite)")
+            //print("您現在選擇的是:\(currentFavorite)")
+            checkFavorite()
         }
     }
     
@@ -39,6 +40,23 @@ class ListContentViewController: UIViewController {
                         self.currentFavorite = which
                     }
                 }
+            }
+        }
+    }
+    
+    func checkFavorite(){
+        for listContentView in stackView.arrangedSubviews as! [UIListContentView]{
+            if let config = listContentView.configuration as? UIListContentConfiguration{
+                if let which = config.text,which == self.currentFavorite{
+                    print(which)
+                    let checkImage = UIImageView(image: UIImage.init(systemName: "checkmark"))
+                    checkImage.translatesAutoresizingMaskIntoConstraints = false;
+                    checkImage.tag = 100
+                    listContentView.addSubview(checkImage)
+                    checkImage.trailingAnchor.constraint(equalTo: listContentView.trailingAnchor, constant: -10).isActive = true
+                    checkImage.centerYAnchor.constraint(equalTo: listContentView.centerYAnchor).isActive = true
+                }
+                
             }
         }
     }
