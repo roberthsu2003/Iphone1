@@ -24,7 +24,11 @@ class ListContentViewController: UIViewController {
         
     }
     
-    var currentFavorite:String!
+    var currentFavorite = "moe" {
+        didSet{
+            print("您現在選擇的是:\(currentFavorite)")
+        }
+    }
     
     @objc func didTap(_ tapGesture:UIGestureRecognizer){
         if tapGesture.state == .ended, let stackView = tapGesture.view {
@@ -32,7 +36,6 @@ class ListContentViewController: UIViewController {
             if let listContentView = stackView.hitTest(stackViewPoint, with: nil) as? UIListContentView{
                 if let configuration = listContentView.configuration as? UIListContentConfiguration{
                     if let which = configuration.text{
-                        print(which)
                         self.currentFavorite = which
                     }
                 }
