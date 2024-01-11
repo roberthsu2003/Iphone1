@@ -8,7 +8,8 @@
 import UIKit
 
 class ThermometerViewController: UIViewController {
-
+    @IBOutlet var progressView1:UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

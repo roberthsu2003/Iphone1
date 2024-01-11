@@ -94,14 +94,24 @@
                     <view key="view" contentMode="scaleToFill" id="mQg-Ur-FoH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ogS-w9-BW0">
+                                <rect key="frame" x="20" y="123" width="353" height="4"/>
+                            </progressView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RHN-4H-bQD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="ogS-w9-BW0" secondAttribute="trailing" constant="20" id="5aS-RM-9mb"/>
+                            <constraint firstItem="ogS-w9-BW0" firstAttribute="top" secondItem="RHN-4H-bQD" secondAttribute="top" constant="20" id="Ahr-KL-iC4"/>
+                            <constraint firstItem="ogS-w9-BW0" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="je2-7v-6Ro"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6RN-lp-M15"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwa-dD-25U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4828.2442748091598" y="-737.32394366197184"/>
+            <point key="canvasLocation" x="4759.5419847328239" y="-725.35211267605632"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="anM-Oq-pY7">
@@ -223,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUU-6g-lvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="-750"/>
+            <point key="canvasLocation" x="4051" y="-735"/>
         </scene>
     </scenes>
     <resources>
