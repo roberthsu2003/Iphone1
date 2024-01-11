@@ -9,7 +9,10 @@ import UIKit
 
 class ThermometerViewController: UIViewController {
     lazy var seg:UISegmentedControl = {
-        let seg = UISegmentedControl(items: ["pro1","pro2","pro3","pro4"])
+        let action1 = UIAction(title: "progress1") { _ in
+            self.progressView1.progress = 0.0
+        }
+        let seg = UISegmentedControl(items: [action1])
         return seg
     }()
     
