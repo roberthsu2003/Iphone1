@@ -70,4 +70,17 @@ alsoTenEighty.frameRate = 30.0
 
 tenEighty.frameRate
 
+//==
+//compare Operator
+//2邊的值是否一樣
+
+//identity Operator
+//識別運算子
+//===
+//!==
+//它們參考的是不是同一個實體
+
+alsoTenEighty === tenEighty
+
+
 
