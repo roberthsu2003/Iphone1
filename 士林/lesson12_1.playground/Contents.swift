@@ -1,0 +1,37 @@
+struct Resolution{
+    var width = 0
+    var height = 0
+}
+
+class VideoMode{
+    var resolution = Resolution()
+    var interlace = false
+    var frameRate = 0.0
+    var name:String?
+}
+
+let someVideoMode = VideoMode()
+someVideoMode.resolution.width
+someVideoMode.resolution.height
+
+someVideoMode.resolution.width = 100
+someVideoMode.resolution.height = 200
+
+someVideoMode.resolution.width
+someVideoMode.resolution.height
+
+
+let someResolution = Resolution()
+someResolution.width
+//someResolution.width = 100
+
+var someResolution1 = Resolution()
+someResolution1.width
+someResolution1.width = 100
+
+let vga = Resolution(width: 640, height: 480)
+vga.width
+vga.height
+
+//vga.width = 800
+
