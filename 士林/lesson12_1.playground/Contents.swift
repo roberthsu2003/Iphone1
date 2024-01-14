@@ -35,3 +35,13 @@ vga.height
 
 //vga.width = 800
 
+let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
+cinema.width
+cinema.height
+
+cinema.width = 2048
+hd.width
+
+
+
