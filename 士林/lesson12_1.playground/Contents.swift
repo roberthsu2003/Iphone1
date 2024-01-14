@@ -44,4 +44,19 @@ cinema.width = 2048
 hd.width
 
 
+enum CompassPoint{
+    case north, south, east, west
+}
+
+var currentDirection = CompassPoint.west
+let rememberedDirection = currentDirection
+
+currentDirection
+rememberedDirection
+
+
+currentDirection = .north
+currentDirection
+rememberedDirection
+
 
