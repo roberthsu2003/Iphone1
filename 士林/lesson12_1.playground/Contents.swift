@@ -59,4 +59,15 @@ currentDirection = .north
 currentDirection
 rememberedDirection
 
+let tenEighty = VideoMode()
+//tenEighty = VideoMode()
+
+//reference type
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+
+
+tenEighty.frameRate
+
 
