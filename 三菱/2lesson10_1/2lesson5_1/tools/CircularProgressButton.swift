@@ -12,8 +12,7 @@ class CircularProgressButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        guard self.shapeLayer == nil else {return}
-        print("執行")
+        guard self.shapeLayer == nil else {return}        
         let layer = CAShapeLayer()
         shapeLayer = layer
     }
