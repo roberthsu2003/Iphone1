@@ -30,17 +30,31 @@ class ThermometerViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.titleView = seg
         
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         //初始化progress1的外觀
         progressView1.progressTintColor = .red
         progressView1.trackTintColor = .black
         
         //初始化progress2的外觀
         let imageRender = UIGraphicsImageRenderer(size: CGSize.init(width: 10, height: 10))
-        let im = imageRender.image { (context:UIGraphicsImageRendererContext) in
+        var trackIm:UIImage!
+        let progressIm = imageRender.image { (context:UIGraphicsImageRendererContext) in
             let cgContext = context.cgContext
             //取得cgContext,透過cgContext畫圖片
+            cgContext.setFillColor(UIColor.brown.cgColor)
+            cgContext.fill(CGRect.init(x: 0, y: 0, width: 10.0, height: 10.0))
+            trackIm = context.currentImage
+            cgContext.setFillColor(UIColor.yellow.cgColor)
+            cgContext.fillEllipse(in: CGRect.init(x: 2, y: 2, width: 6, height: 6))
         }
         
+        progressView2.progressImage = progressIm.resizableImage(withCapInsets: UIEdgeInsets.init(top: 2, left: 4, bottom: 2, right: 4))
+        progressView2.trackImage = trackIm
         
     }
     @objc func incre1(_ timer:Timer){
