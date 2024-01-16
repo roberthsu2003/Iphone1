@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBAction func doButton7(_ sender:UIButton){
         print("doButton7")
+        let person1 = Person(firstName: "國堂", lastName: "徐")
+        print(person1)
     }
 
 
