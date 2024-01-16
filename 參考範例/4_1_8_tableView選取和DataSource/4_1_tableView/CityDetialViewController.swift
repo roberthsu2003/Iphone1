@@ -62,17 +62,26 @@ extension CityDetialViewController:UITableViewDataSource{
             cellConfiguration?.text = "網站介紹"
             cellConfiguration?.textProperties.font = .boldSystemFont(ofSize: 18)
             cellConfiguration?.textProperties.color = .blue
+            cellConfiguration?.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 02, bottom: 20, trailing: 20)
             cell?.contentConfiguration = cellConfiguration
             cell?.accessoryType = .disclosureIndicator
             return cell!
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell")
-            var cellConfiguration = cell?.defaultContentConfiguration()
-            cellConfiguration?.text = "地圖"
-            cellConfiguration?.textProperties.font = .boldSystemFont(ofSize: 18)
-            cellConfiguration?.textProperties.color = .blue
-            cell?.contentConfiguration = cellConfiguration
+            let titleLabel = UILabel()
+            titleLabel.text = "地圖介紹"
+            titleLabel.font = .boldSystemFont(ofSize: 18)
+            titleLabel.textColor = .blue
+            titleLabel.sizeToFit()
+            cell?.contentView.addSubview(titleLabel)
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                titleLabel.trailingAnchor.constraint(equalTo: cell!.contentView.trailingAnchor, constant: -20),
+                titleLabel.centerYAnchor.constraint(equalTo: cell!.contentView.centerYAnchor),
+                titleLabel.topAnchor.constraint(equalTo: cell!.contentView.topAnchor, constant: 20)
+            ])
             cell?.accessoryType = .disclosureIndicator
+            
             return cell!
         default:
             break
@@ -102,9 +111,12 @@ extension CityDetialViewController:UITableViewDelegate{
         didSelectRowAt indexPath: IndexPath
     ){
         let rowIndex = indexPath.row
+        let web_url = city.url        
         switch rowIndex{
         case 4:
-            print("網站")
+            let cityWebViewController = CityWebViewController(web_url: web_url)
+            self.navigationController?.pushViewController(cityWebViewController, animated: true)
+            
         case 5:
             print("地圖")
         default:
