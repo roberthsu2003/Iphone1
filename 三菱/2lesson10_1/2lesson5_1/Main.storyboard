@@ -117,18 +117,28 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="pause"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-B7-4hf" customClass="MyProgressView" customModule="_lesson10_1" customModuleProvider="target">
+                                <rect key="frame" x="51" y="228" width="291" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bcS-aI-gdh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RHN-4H-bQD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hQ9-bs-0LP" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="20N-n1-BQO"/>
                             <constraint firstItem="o7p-SX-I4l" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="51" id="2up-hb-wYo"/>
+                            <constraint firstItem="ZGU-B7-4hf" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="51" id="4I9-vT-JLo"/>
                             <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="ogS-w9-BW0" secondAttribute="trailing" constant="20" id="5aS-RM-9mb"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="top" secondItem="RHN-4H-bQD" secondAttribute="top" constant="20" id="Ahr-KL-iC4"/>
                             <constraint firstItem="o7p-SX-I4l" firstAttribute="top" secondItem="hQ9-bs-0LP" secondAttribute="bottom" constant="149" id="EEy-1S-gnM"/>
+                            <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="ZGU-B7-4hf" secondAttribute="trailing" constant="51" id="FFq-Pj-QAI"/>
                             <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="hQ9-bs-0LP" secondAttribute="trailing" constant="20" id="VGS-ky-fiO"/>
                             <constraint firstItem="hQ9-bs-0LP" firstAttribute="top" secondItem="ogS-w9-BW0" secondAttribute="bottom" constant="56" id="fdd-83-e6g"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="je2-7v-6Ro"/>
+                            <constraint firstItem="ZGU-B7-4hf" firstAttribute="top" secondItem="hQ9-bs-0LP" secondAttribute="bottom" constant="29" id="rk7-MH-J30"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6RN-lp-M15"/>
@@ -140,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwa-dD-25U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5116.7938931297704" y="-801.4084507042254"/>
+            <point key="canvasLocation" x="5115.2671755725187" y="-801.4084507042254"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="anM-Oq-pY7">
