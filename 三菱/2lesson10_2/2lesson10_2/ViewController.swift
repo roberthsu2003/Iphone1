@@ -17,7 +17,18 @@ class ViewController: UIViewController {
     @IBAction func doButton7(_ sender:UIButton){
         print("doButton7")
         let person1 = Person(firstName: "國堂", lastName: "徐")
-        print(person1)
+        let person2 = Person(firstName: "徐", lastName: "國堂")
+        let userArray:[Person] = [person1,person2]
+        print(userArray)
+        
+        do{
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            print(documentURL)
+            
+        }catch{
+            print(error)
+        }
     }
 
 
