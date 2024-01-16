@@ -8,6 +8,7 @@
 import UIKit
 
 class MyProgressView: UIView {
+    var value:CGFloat = 0
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         UIColor.red.set()
@@ -35,7 +36,7 @@ class MyProgressView: UIView {
         context?.strokePath()
         context?.addPath(path)
         context?.clip()
-        context?.fill(CGRect.init(x: r.origin.x, y: r.origin.y, width: r.width, height: r.height))
+        context?.fill(CGRect.init(x: r.origin.x, y: r.origin.y, width: r.width * self.value , height: r.height))
     }
    
 }
