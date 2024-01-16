@@ -146,6 +146,7 @@
                         <outlet property="progressView1" destination="ogS-w9-BW0" id="grN-a1-anh"/>
                         <outlet property="progressView2" destination="hQ9-bs-0LP" id="R2I-7f-Nad"/>
                         <outlet property="progressView3" destination="o7p-SX-I4l" id="DKQ-7L-gMW"/>
+                        <outlet property="progressView4" destination="ZGU-B7-4hf" id="viy-FE-gJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwa-dD-25U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -24,13 +24,20 @@ class ThermometerViewController: UIViewController {
             Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(incre3), userInfo: nil, repeats: true)
         }
         
-        let seg = UISegmentedControl(items: [action1,action2,action3])
+        let action4 = UIAction(title: "prg4") { [self] _ in
+            self.progressView4.value = 0.0
+            progressView4.setNeedsDisplay()
+            Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(incre4), userInfo: nil, repeats: true)
+        }
+        
+        let seg = UISegmentedControl(items: [action1,action2,action3,action4])
         return seg
     }()
     
     @IBOutlet var progressView1:UIProgressView!
     @IBOutlet var progressView2:UIProgressView!
     @IBOutlet var progressView3:CircularProgressButton!
+    @IBOutlet var progressView4:MyProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +99,19 @@ class ThermometerViewController: UIViewController {
         var value = progressView3.progress
         value += 0.1
         progressView3.progress = value
+        if value >= 1.0{
+            timer.invalidate()
+            seg.isEnabled = true
+            seg.selectedSegmentIndex = -1
+        }
+    }
+    
+    @objc func incre4(_ timer:Timer){
+        seg.isEnabled = false
+        var value = progressView4.value
+        value += 0.1
+        progressView4.value = value
+        progressView4.setNeedsDisplay()
         if value >= 1.0{
             timer.invalidate()
             seg.isEnabled = true
