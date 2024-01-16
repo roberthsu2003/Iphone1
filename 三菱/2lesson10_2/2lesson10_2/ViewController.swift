@@ -24,7 +24,9 @@ class ViewController: UIViewController {
         do{
             let fileManager = FileManager.default
             let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            print(documentURL)
+            let userFile = documentURL.appending(path: "user.plist")
+            let plistEncoder = PropertyListEncoder()
+            //let userArrayData:Data = try plistEncoder.encode(userArray)
             
         }catch{
             print(error)

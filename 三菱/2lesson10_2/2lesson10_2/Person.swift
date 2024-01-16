@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Person: NSObject {
+class Person: NSObject{
     var firstName:String
     var lastName:String
     
