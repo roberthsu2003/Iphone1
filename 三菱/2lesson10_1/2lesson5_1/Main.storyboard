@@ -30,7 +30,7 @@
         <!--Picker View Controller-->
         <scene sceneID="263-Te-ITy">
             <objects>
-                <viewController id="91y-pr-trw" customClass="PickerViewController" customModule="_lesson9_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="91y-pr-trw" customClass="PickerViewController" customModule="_lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ab-qO-4on">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--List Content View Controller-->
         <scene sceneID="JOf-kr-wkA">
             <objects>
-                <viewController id="aBh-8D-fYA" customClass="ListContentViewController" customModule="_lesson9_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aBh-8D-fYA" customClass="ListContentViewController" customModule="_lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tED-4m-qla">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,7 +91,7 @@
         <!--Thermometer View Controller-->
         <scene sceneID="xQT-wf-ThL">
             <objects>
-                <viewController id="TzZ-lu-xHO" customClass="ThermometerViewController" customModule="_lesson9_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TzZ-lu-xHO" customClass="ThermometerViewController" customModule="_lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mQg-Ur-FoH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,13 +108,24 @@
                                     <constraint firstAttribute="height" constant="10" id="1TM-fn-S8r"/>
                                 </constraints>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-SX-I4l" customClass="CircularProgressButton" customModule="_lesson10_1" customModuleProvider="target">
+                                <rect key="frame" x="51" y="348" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Qma-Rf-g6S"/>
+                                    <constraint firstAttribute="height" constant="50" id="uId-Kf-0YH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pause"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RHN-4H-bQD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hQ9-bs-0LP" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="20N-n1-BQO"/>
+                            <constraint firstItem="o7p-SX-I4l" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="51" id="2up-hb-wYo"/>
                             <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="ogS-w9-BW0" secondAttribute="trailing" constant="20" id="5aS-RM-9mb"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="top" secondItem="RHN-4H-bQD" secondAttribute="top" constant="20" id="Ahr-KL-iC4"/>
+                            <constraint firstItem="o7p-SX-I4l" firstAttribute="top" secondItem="hQ9-bs-0LP" secondAttribute="bottom" constant="149" id="EEy-1S-gnM"/>
                             <constraint firstItem="RHN-4H-bQD" firstAttribute="trailing" secondItem="hQ9-bs-0LP" secondAttribute="trailing" constant="20" id="VGS-ky-fiO"/>
                             <constraint firstItem="hQ9-bs-0LP" firstAttribute="top" secondItem="ogS-w9-BW0" secondAttribute="bottom" constant="56" id="fdd-83-e6g"/>
                             <constraint firstItem="ogS-w9-BW0" firstAttribute="leading" secondItem="RHN-4H-bQD" secondAttribute="leading" constant="20" id="je2-7v-6Ro"/>
@@ -133,13 +144,13 @@
         <!--Root View Controller-->
         <scene sceneID="anM-Oq-pY7">
             <objects>
-                <tableViewController id="2SK-jm-fpM" customClass="RootViewController" customModule="_lesson9_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2SK-jm-fpM" customClass="RootViewController" customModule="_lesson10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lcc-RS-Tum">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="100" id="8O3-Oz-ZlR" customClass="MyCell" customModule="_lesson9_2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="100" id="8O3-Oz-ZlR" customClass="MyCell" customModule="_lesson10_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8O3-Oz-ZlR" id="XRz-Tc-kCQ">
@@ -254,6 +265,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pause" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

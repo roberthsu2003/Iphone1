@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E12E9E22B56571A002B0390 /* CircularProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E12E9E12B56571A002B0390 /* CircularProgressButton.swift */; };
 		8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E75A6A82B46942B00C381AA /* MyCell.swift */; };
 		8E75A6AF2B46998C00C381AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A6AE2B46998C00C381AA /* Main.storyboard */; };
 		8E8914882B4D2AB4006F9ADB /* states.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E8914872B4D2AB4006F9ADB /* states.txt */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E12E9E12B56571A002B0390 /* CircularProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressButton.swift; sourceTree = "<group>"; };
 		8E75A6A82B46942B00C381AA /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8E75A6AE2B46998C00C381AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8E8914872B4D2AB4006F9ADB /* states.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = states.txt; path = 2lesson5_1/tools/states.txt; sourceTree = SOURCE_ROOT; };
@@ -56,6 +58,7 @@
 				8E8914872B4D2AB4006F9ADB /* states.txt */,
 				8E89148C2B4D36D6006F9ADB /* ListContentViewController.swift */,
 				8EF00EAE2B4FCF30003514F7 /* ThermometerViewController.swift */,
+				8E12E9E12B56571A002B0390 /* CircularProgressButton.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				8E89148D2B4D36D6006F9ADB /* ListContentViewController.swift in Sources */,
 				8EF00EAF2B4FCF30003514F7 /* ThermometerViewController.swift in Sources */,
 				8E75A6A92B46942B00C381AA /* MyCell.swift in Sources */,
+				8E12E9E22B56571A002B0390 /* CircularProgressButton.swift in Sources */,
 				8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
 			);
