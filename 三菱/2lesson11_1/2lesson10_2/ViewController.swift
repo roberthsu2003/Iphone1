@@ -36,7 +36,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doButton8(_ sender:UIButton){
-        
+        do{
+            let fileManager = FileManager.default
+            let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            print(documentURL)
+            let userFileURL = documentURL.appending(path: "user.plist")
+            let usersData = try Data(contentsOf: userFileURL)
+            let users = try PropertyListDecoder().decode([Person].self, from: usersData)
+            print(users)
+        }catch{
+            print(error)
+        }
+       
     }
 
 
