@@ -13,18 +13,12 @@ class CityDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city as Any)
+        let image = UIImage(named: city.image)
+        let imageView = UIImageView(image: image)
+        tableView.tableHeaderView = imageView
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
