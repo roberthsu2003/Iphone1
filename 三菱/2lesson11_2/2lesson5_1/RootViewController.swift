@@ -10,11 +10,15 @@ import UIKit
 class RootViewController: UITableViewController {
     let cellID = "cellID"
     var cities:[City]
-    var cityISMarked = [Bool]()
+    lazy var cityISMarked:[Bool] = {
+        let bools = Array(repeating: false, count: cities.count)
+        return bools
+    }()
     
     required init?(coder: NSCoder) {
         self.cities = DataSource.main!.cities
-        super.init(coder: coder)        
+        
+        super.init(coder: coder)
     }
     
     override func viewDidLoad() {
@@ -55,9 +59,9 @@ extension RootViewController{
         //print(rowIndex)
         //print("=====city資料==========")
         let city = cities[rowIndex]
-        let cityName = city["City"] as? String ?? ""
-        let countryName = city["Country"] as? String ?? ""
-        let imageName = city["Image"] as? String ?? ""
+        let cityName = city.city
+        let countryName = city.country
+        let imageName = city.image
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! MyCell
         
