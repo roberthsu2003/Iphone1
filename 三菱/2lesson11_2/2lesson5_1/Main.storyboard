@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,13 +29,13 @@
         <!--Root View Controller-->
         <scene sceneID="anM-Oq-pY7">
             <objects>
-                <tableViewController id="2SK-jm-fpM" customClass="RootViewController" customModule="_lesson7_4" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2SK-jm-fpM" customClass="RootViewController" customModule="_lesson11_2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lcc-RS-Tum">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="100" id="8O3-Oz-ZlR" customClass="MyCell" customModule="_lesson7_4" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="100" id="8O3-Oz-ZlR" customClass="MyCell" customModule="_lesson11_2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8O3-Oz-ZlR" id="XRz-Tc-kCQ">
@@ -88,10 +89,29 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NCe-sd-shy"/>
+                    <connections>
+                        <segue destination="fai-o4-nF5" kind="show" identifier="goDetail" id="FBv-VW-UPb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZB-VT-OX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="988.54961832061065" y="2.8169014084507045"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6r6-gW-GP1">
+            <objects>
+                <viewController id="fai-o4-nF5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0on-gp-ZCs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="j22-Fb-aPj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W4U-93-CoH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4s4-zP-8RY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="3"/>
         </scene>
     </scenes>
     <resources>

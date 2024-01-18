@@ -102,7 +102,7 @@ extension RootViewController{
     ){
         let rowIndex = indexPath.row
         let city = self.cities[rowIndex]
-        print(city)
+        self.performSegue(withIdentifier: "goDetail", sender: city)
         /*
         let markedState = !cityISMarked[rowIndex]
         if let cell = tableView.cellForRow(at: indexPath) as? MyCell{
