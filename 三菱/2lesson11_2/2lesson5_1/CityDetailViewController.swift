@@ -15,7 +15,11 @@ class CityDetailViewController: UIViewController {
         super.viewDidLoad()
         let image = UIImage(named: city.image)
         let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
         tableView.tableHeaderView = imageView
+        var headerFrame = tableView.tableHeaderView?.frame
+        headerFrame?.size.height = 250
+        tableView.tableHeaderView?.frame = headerFrame!
         
     }
     
