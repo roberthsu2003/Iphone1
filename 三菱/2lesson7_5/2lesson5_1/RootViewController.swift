@@ -89,8 +89,8 @@ extension RootViewController{
         cell.subLabel.text = countryName
         
         //改變cell的背景
-        let backgroundConfiguration = UIBackgroundConfiguration.listPlainCell()
-        backgroundConfiguration.backgroundColor = .blue
+        var backgroundConfiguration = UIBackgroundConfiguration.listPlainCell()
+        backgroundConfiguration.backgroundColor = UIColor.systemBackground
         
         cell.backgroundConfiguration = backgroundConfiguration
         
