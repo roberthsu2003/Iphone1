@@ -9,27 +9,12 @@ import UIKit
 
 class RootViewController: UITableViewController {
     let cellID = "cellID"
-    var cities:[[String:Any]] = []
+    var cities:[City]
     var cityISMarked = [Bool]()
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        let mainBundle = Bundle.main
-        if let plistURL = mainBundle.url(forResource: "citylist", withExtension: "plist"){
-            //print(plistURL.path())
-            do{
-                let plistData = try Data(contentsOf: plistURL)
-                self.cities = try PropertyListSerialization.propertyList(from: plistData, format: nil) as! [[String:Any]]
-                cityISMarked = Array(repeating: false, count: self.cities.count)
-            }
-            catch
-            {
-                print("讀檔錯誤")
-            }
-            
-        }
-        print("storyboard 預設的初始化位址")
-        print(DataSource.main!)
+        self.cities = DataSource.main!.cities
+        super.init(coder: coder)        
     }
     
     override func viewDidLoad() {

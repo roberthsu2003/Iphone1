@@ -59,6 +59,7 @@ class City:NSObject,Codable{
 
 class DataSource{
     static var main = DataSource.init()
+    var cities = [City]()
     private init?(){
         do{
             guard let urlPath = Bundle.main.url(forResource: "citylist", withExtension: "plist") else{
@@ -66,10 +67,22 @@ class DataSource{
             }
             let data = try Data(contentsOf: urlPath)
             if let cities = try PropertyListSerialization.propertyList(from: data, format: nil) as? [[String:Any]]{
-                print(cities)
+                for item in cities{
+                    let cityName = item["City"] as? String ?? "空的"
+                    let continent = item["Continent"] as? String ?? "空的"
+                    let country = item["Country"] as? String ?? "空的"
+                    let image = item["Image"] as? String ?? "空的"
+                    let local = item["Local"] as? String ?? "空的"
+                    let url = item["url"] as? String ?? "空的"
+                    let lat = item["lat"] as? Double ?? 0.0
+                    let long = item["long"] as? Double ?? 0.0
+                    let city = City(city: cityName, continent: continent, country: country, image: image, local: local, lat: lat, long: long, url: url)
+                    self.cities.append(city)
+                }
             }
         }catch{
             print(error)
+            return nil
         }
             
         
