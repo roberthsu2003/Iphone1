@@ -58,5 +58,9 @@ class City:NSObject,Codable{
 }
 
 class DataSource{
-    
+    static var main = DataSource.init()
+    private init(){
+        
+    }
 }
+
