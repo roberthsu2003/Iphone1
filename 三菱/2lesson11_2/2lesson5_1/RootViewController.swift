@@ -35,6 +35,14 @@ class RootViewController: UITableViewController {
         //print(cities)
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goDetail"{
+            let city = sender as! City
+            let detailViewController = segue.destination as! CityDetailViewController
+            detailViewController.city = city
+        }
+    }
 
 }
 

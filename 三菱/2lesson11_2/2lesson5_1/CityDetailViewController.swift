@@ -9,11 +9,11 @@ import UIKit
 
 class CityDetailViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
-
+    var city:City!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(city as Any)
     }
     
 
