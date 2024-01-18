@@ -10,10 +10,12 @@ import UIKit
 class RootViewController: UITableViewController {
     let cellID = "cellID"
     var cities:[City]
+    /*
     lazy var cityISMarked:[Bool] = {
         let bools = Array(repeating: false, count: cities.count)
         return bools
     }()
+     */
     
     required init?(coder: NSCoder) {
         self.cities = DataSource.main!.cities
@@ -80,7 +82,7 @@ extension RootViewController{
         
         cell.subLabel.text = countryName
         
-        cityISMarked[rowIndex] ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
+        //cityISMarked[rowIndex] ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         
         return cell
     
@@ -98,13 +100,15 @@ extension RootViewController{
         didSelectRowAt indexPath: IndexPath
     ){
         let rowIndex = indexPath.row
-        //let city = self.cities[rowIndex]
-        //print(city)
+        let city = self.cities[rowIndex]
+        print(city)
+        /*
         let markedState = !cityISMarked[rowIndex]
         if let cell = tableView.cellForRow(at: indexPath) as? MyCell{
             markedState ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
         }
         cityISMarked[rowIndex] = markedState
+         */
         
         
     }
@@ -135,7 +139,7 @@ extension RootViewController{
         let rowIndex = indexPath.row
         let deleteAction = UIContextualAction(style: .normal, title: "刪除") { [self] action, view, completionHandler in
             cities.remove(at: rowIndex)
-            cityISMarked.remove(at: rowIndex)
+            //cityISMarked.remove(at: rowIndex)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
