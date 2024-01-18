@@ -29,6 +29,7 @@ class RootViewController: UITableViewController {
             
         }
         print("storyboard 預設的初始化位址")
+        print(DataSource.main!)
     }
     
     override func viewDidLoad() {
