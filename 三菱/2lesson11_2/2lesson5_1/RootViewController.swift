@@ -83,6 +83,7 @@ extension RootViewController{
         cell.subLabel.text = countryName
         
         //cityISMarked[rowIndex] ? (cell.accessoryType = .checkmark) : (cell.accessoryType = .none)
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     

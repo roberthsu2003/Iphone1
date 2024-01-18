@@ -18,12 +18,12 @@ class MyCell: UITableViewCell {
 
         // Customize the background color to use the tint color when the cell is highlighted or selected.
          if state.isHighlighted || state.isSelected {
-             backgroundConfig.backgroundColor = .red.withAlphaComponent(0.1)
-         }else{
              backgroundConfig.backgroundColor = .blue.withAlphaComponent(0.1)
+         }else{
+             backgroundConfig.backgroundColor = UIColor.systemBackground
          }
 
-        backgroundConfig.backgroundInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        backgroundConfig.backgroundInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
             // Apply the background configuration to the cell.
             self.backgroundConfiguration = backgroundConfig
     }
