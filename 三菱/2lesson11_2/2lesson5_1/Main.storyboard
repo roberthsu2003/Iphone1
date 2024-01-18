@@ -104,14 +104,29 @@
                     <view key="view" contentMode="scaleToFill" id="0on-gp-ZCs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AGG-Zn-mZF">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="j22-Fb-aPj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AGG-Zn-mZF" firstAttribute="trailing" secondItem="j22-Fb-aPj" secondAttribute="trailing" id="59F-oy-lgO"/>
+                            <constraint firstItem="AGG-Zn-mZF" firstAttribute="leading" secondItem="j22-Fb-aPj" secondAttribute="leading" id="6ny-YT-dLp"/>
+                            <constraint firstAttribute="bottom" secondItem="AGG-Zn-mZF" secondAttribute="bottom" id="cPu-e4-V5F"/>
+                            <constraint firstItem="AGG-Zn-mZF" firstAttribute="top" secondItem="j22-Fb-aPj" secondAttribute="top" id="nVM-v0-gGT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W4U-93-CoH"/>
+                    <connections>
+                        <outlet property="tableView" destination="AGG-Zn-mZF" id="NWG-Sw-Rz2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s4-zP-8RY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="3"/>
+            <point key="canvasLocation" x="1826.7175572519084" y="2.8169014084507045"/>
         </scene>
     </scenes>
     <resources>
