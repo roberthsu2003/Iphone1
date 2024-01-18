@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_lesson10_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_lesson11_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,9 +23,20 @@
                                     <constraint firstAttribute="width" constant="84" id="yDX-1r-syd"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button7"/>
+                                <buttonConfiguration key="configuration" style="filled" title="encode"/>
                                 <connections>
                                     <action selector="doButton7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79m-cr-zGq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-Za-cdj">
+                                <rect key="frame" x="237" y="105" width="82" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="dz1-f8-CiE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="decode"/>
+                                <connections>
+                                    <action selector="doButton8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dga-lk-UjK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,6 +44,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gNY-ZO-R9x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="6db-PN-Zlb"/>
+                            <constraint firstItem="VdW-Za-cdj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="Mei-QV-fLF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VdW-Za-cdj" secondAttribute="trailing" constant="56" id="cej-A5-myb"/>
                             <constraint firstItem="gNY-ZO-R9x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="85" id="x2n-1e-R7f"/>
                         </constraints>
                     </view>
