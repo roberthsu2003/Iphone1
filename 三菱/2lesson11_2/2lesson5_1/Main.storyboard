@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="988.54961832061065" y="2.8169014084507045"/>
         </scene>
-        <!--View Controller-->
+        <!--City Detail View Controller-->
         <scene sceneID="6r6-gW-GP1">
             <objects>
-                <viewController id="fai-o4-nF5" sceneMemberID="viewController">
+                <viewController id="fai-o4-nF5" customClass="CityDetailViewController" customModule="_lesson11_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0on-gp-ZCs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
