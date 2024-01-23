@@ -70,11 +70,27 @@ extension CityDetailViewController:UITableViewDataSource{
             cellConfiguration.text = "網站介紹"
             cellConfiguration.textProperties.font = UIFont.boldSystemFont(ofSize: 18)
             cellConfiguration.textProperties.color = .systemBlue
+            cellConfiguration.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
             cell.contentConfiguration = cellConfiguration
+            
             cell.accessoryType = .disclosureIndicator
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+            let titleLabel = UILabel()
+            titleLabel.text = "地圖介紹"
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            titleLabel.textColor = .systemBlue
+            titleLabel.sizeToFit()
+            cell.contentView.addSubview(titleLabel)
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                titleLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -20),
+                titleLabel.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+                titleLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 20)
+                
+            ])
+            cell.accessoryType = .disclosureIndicator
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
