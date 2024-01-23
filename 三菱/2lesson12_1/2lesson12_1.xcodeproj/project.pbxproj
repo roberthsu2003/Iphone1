@@ -18,6 +18,7 @@
 		8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */; };
 		8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */; };
 		8EEB12512B5F8D5D00E36823 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB12502B5F8D5D00E36823 /* DetailCell.swift */; };
+		8EEB12532B5F9CAE00E36823 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB12522B5F9CAE00E36823 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
 		8EEB12502B5F8D5D00E36823 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		8EEB12522B5F9CAE00E36823 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				8E24A4892B58FBAD0070E4AF /* DataSource.swift */,
 				8E24A48B2B5912680070E4AF /* CityDetailViewController.swift */,
 				8EEB12502B5F8D5D00E36823 /* DetailCell.swift */,
+				8EEB12522B5F9CAE00E36823 /* WebViewController.swift */,
 			);
 			path = 2lesson5_1;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				8E24A48C2B5912680070E4AF /* CityDetailViewController.swift in Sources */,
 				8EEB12512B5F8D5D00E36823 /* DetailCell.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
+				8EEB12532B5F9CAE00E36823 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

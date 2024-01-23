@@ -121,7 +121,9 @@ extension CityDetailViewController:UITableViewDelegate{
         let rowIndex = indexPath.row
         switch rowIndex{
         case 4:
-            print("goToWebView")
+            let webViewController = WebViewController()
+            self.navigationController?.pushViewController(webViewController, animated: true)
+            self.navigationItem.backButtonTitle = "回前面"
         case 5:
             print("goToMapView")
         default:
