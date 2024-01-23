@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
     var web_url:String
@@ -19,9 +20,21 @@ class WebViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        super.loadView()
+        let webViewConfiguration = WKWebViewConfiguration()
+        view = WKWebView(frame: .zero, configuration: webViewConfiguration)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(web_url)
+        let webView = self.view as! WKWebView
+        guard let url = URL(string: web_url) else{
+            print("網址無法解析")
+            return
+        }
+        let request = URLRequest(url: url, timeoutInterval: 20)
+        webView.load(request)
 
     }
 
