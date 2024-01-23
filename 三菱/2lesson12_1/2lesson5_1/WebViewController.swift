@@ -10,9 +10,10 @@ import WebKit
 
 class WebViewController: UIViewController {
     var web_url:String
+    var obs = Set<NSKeyValueObservation>()
     lazy var activityIndicatoerView:UIActivityIndicatorView = {
         let act = UIActivityIndicatorView(style: .large)
-        act.backgroundColor = .blue
+        act.backgroundColor = .blue.withAlphaComponent(0.2)
         act.color = .white
         act.hidesWhenStopped = true
         return act
@@ -44,7 +45,21 @@ class WebViewController: UIViewController {
             activityIndicatoerView.centerYAnchor.constraint(equalTo: webView.centerYAnchor)
         ])
         
-        webView.navigationDelegate = self
+        //加入KVO
+        let ob = webView.observe(\.isLoading, options: .new) { [unowned self](webView:WKWebView, ch:NSKeyValueObservedChange<Bool> )in
+            if let val = ch.newValue{
+                if val{
+                    print("正在載入")
+                    activityIndicatoerView.startAnimating()
+                }else{
+                    print("載入完成")
+                    activityIndicatoerView.stopAnimating()
+                }
+            }
+        }
+        obs.insert(ob)
+        
+        //webView.navigationDelegate = self
         guard let url = URL(string: web_url) else{
             print("網址無法解析")
             return
@@ -55,23 +70,24 @@ class WebViewController: UIViewController {
     }
 
 }
-
-extension WebViewController:WKNavigationDelegate{
-    func webView(
-        _ webView: WKWebView,
-        didStartProvisionalNavigation navigation: WKNavigation!
-    ){
-        print("開始載入")
-        activityIndicatoerView.startAnimating()
-    }
-    
-    func webView(
-        _ webView: WKWebView,
-        didFinish navigation: WKNavigation!
-    ){
-        print("載入完成")
-        activityIndicatoerView.stopAnimating()
-    }
-    
-    
-}
+/*
+ extension WebViewController:WKNavigationDelegate{
+ func webView(
+ _ webView: WKWebView,
+ didStartProvisionalNavigation navigation: WKNavigation!
+ ){
+ 
+ activityIndicatoerView.startAnimating()
+ }
+ 
+ func webView(
+ _ webView: WKWebView,
+ didFinish navigation: WKNavigation!
+ ){
+ 
+ activityIndicatoerView.stopAnimating()
+ }
+ 
+ 
+ }
+ */
