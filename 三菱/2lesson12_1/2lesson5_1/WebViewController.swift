@@ -10,6 +10,13 @@ import WebKit
 
 class WebViewController: UIViewController {
     var web_url:String
+    lazy var activityIndicatoerView:UIActivityIndicatorView = {
+        let act = UIActivityIndicatorView(style: .large)
+        act.backgroundColor = .blue
+        act.color = .white
+        act.hidesWhenStopped = true
+        return act
+    }()
     
     init(web_url:String){
         self.web_url = web_url
@@ -30,6 +37,13 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let webView = self.view as! WKWebView
+        webView.addSubview(activityIndicatoerView)
+        activityIndicatoerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicatoerView.centerXAnchor.constraint(equalTo: webView.centerXAnchor),
+            activityIndicatoerView.centerYAnchor.constraint(equalTo: webView.centerYAnchor)
+        ])
+        
         webView.navigationDelegate = self
         guard let url = URL(string: web_url) else{
             print("網址無法解析")
@@ -48,6 +62,7 @@ extension WebViewController:WKNavigationDelegate{
         didStartProvisionalNavigation navigation: WKNavigation!
     ){
         print("開始載入")
+        activityIndicatoerView.startAnimating()
     }
     
     func webView(
@@ -55,6 +70,7 @@ extension WebViewController:WKNavigationDelegate{
         didFinish navigation: WKNavigation!
     ){
         print("載入完成")
+        activityIndicatoerView.stopAnimating()
     }
     
     
