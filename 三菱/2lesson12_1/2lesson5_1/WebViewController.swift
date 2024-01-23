@@ -68,6 +68,11 @@ class WebViewController: UIViewController {
         webView.load(request)
 
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        obs.removeAll()
+    }
 
 }
 /*
