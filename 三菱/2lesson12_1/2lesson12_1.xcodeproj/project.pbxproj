@@ -17,6 +17,7 @@
 		8ECEA5EA2B3A9E2100E6FB60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5E82B3A9E2100E6FB60 /* LaunchScreen.storyboard */; };
 		8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */; };
 		8ECEA5F62B3ABDCD00E6FB60 /* citylist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */; };
+		8EEB12512B5F8D5D00E36823 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB12502B5F8D5D00E36823 /* DetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8ECEA5EB2B3A9E2100E6FB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECEA5F12B3AA49100E6FB60 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8ECEA5F52B3ABDCD00E6FB60 /* citylist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = citylist.plist; sourceTree = "<group>"; };
+		8EEB12502B5F8D5D00E36823 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8E75A6AE2B46998C00C381AA /* Main.storyboard */,
 				8E24A4892B58FBAD0070E4AF /* DataSource.swift */,
 				8E24A48B2B5912680070E4AF /* CityDetailViewController.swift */,
+				8EEB12502B5F8D5D00E36823 /* DetailCell.swift */,
 			);
 			path = 2lesson5_1;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				8ECEA5E02B3A9E2000E6FB60 /* SceneDelegate.swift in Sources */,
 				8E24A48A2B58FBAD0070E4AF /* DataSource.swift in Sources */,
 				8E24A48C2B5912680070E4AF /* CityDetailViewController.swift in Sources */,
+				8EEB12512B5F8D5D00E36823 /* DetailCell.swift in Sources */,
 				8ECEA5F22B3AA49100E6FB60 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

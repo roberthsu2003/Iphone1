@@ -11,6 +11,7 @@ class CityDetailViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
     var city:City!
     let cellID = "defaultCell"
+    let cellID1 = "DetailCell"
     override func viewDidLoad() {
         super.viewDidLoad()
         let image = UIImage(named: city.image)
