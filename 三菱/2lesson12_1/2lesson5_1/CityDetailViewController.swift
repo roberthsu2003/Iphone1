@@ -33,14 +33,32 @@ extension CityDetailViewController:UITableViewDataSource{
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int{
-        
+        return 6
     }
     
     func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let rowIndex = indexPath.row
+        switch rowIndex{
+        case 0:
+            return cell
+        case 1:
+            return cell
+        case 2:
+            return cell
+        case 3:
+            return cell
+        case 4:
+            return cell
+        case 5:
+            return cell
+        default:
+            return cell
+        }
+       
     }
 }
 
