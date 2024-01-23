@@ -24,11 +24,13 @@ class WebViewController: UIViewController {
         super.loadView()
         let webViewConfiguration = WKWebViewConfiguration()
         view = WKWebView(frame: .zero, configuration: webViewConfiguration)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let webView = self.view as! WKWebView
+        webView.navigationDelegate = self
         guard let url = URL(string: web_url) else{
             print("網址無法解析")
             return
@@ -38,4 +40,22 @@ class WebViewController: UIViewController {
 
     }
 
+}
+
+extension WebViewController:WKNavigationDelegate{
+    func webView(
+        _ webView: WKWebView,
+        didStartProvisionalNavigation navigation: WKNavigation!
+    ){
+        print("開始載入")
+    }
+    
+    func webView(
+        _ webView: WKWebView,
+        didFinish navigation: WKNavigation!
+    ){
+        print("載入完成")
+    }
+    
+    
 }
