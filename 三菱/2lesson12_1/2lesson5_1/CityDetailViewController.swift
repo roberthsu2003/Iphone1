@@ -113,6 +113,21 @@ extension CityDetailViewController:UITableViewDelegate{
             return indexPath
         }
     }
+    
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ){
+        let rowIndex = indexPath.row
+        switch rowIndex{
+        case 4:
+            print("goToWebView")
+        case 5:
+            print("goToMapView")
+        default:
+            break;
+        }
+    }
 }
 
 
