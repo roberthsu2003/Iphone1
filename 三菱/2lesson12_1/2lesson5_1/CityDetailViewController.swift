@@ -66,6 +66,12 @@ extension CityDetailViewController:UITableViewDataSource{
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+            var cellConfiguration = cell.defaultContentConfiguration()
+            cellConfiguration.text = "網站介紹"
+            cellConfiguration.textProperties.font = UIFont.boldSystemFont(ofSize: 18)
+            cellConfiguration.textProperties.color = .systemBlue
+            cell.contentConfiguration = cellConfiguration
+            cell.accessoryType = .disclosureIndicator
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
