@@ -41,22 +41,37 @@ extension CityDetailViewController:UITableViewDataSource{
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
         let rowIndex = indexPath.row
         switch rowIndex{
         case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID1, for: indexPath) as! DetailCell
+            cell.fieldName.text = "城市:"
+            cell.fieldContent.text = city.city
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID1, for: indexPath) as! DetailCell
+            cell.fieldName.text = "國家:"
+            cell.fieldContent.text = city.country
             return cell
         case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID1, for: indexPath) as! DetailCell
+            cell.fieldName.text = "洲:"
+            cell.fieldContent.text = city.continent
             return cell
         case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID1, for: indexPath) as! DetailCell
+            cell.fieldName.text = "說明:"
+            cell.fieldContent.text = city.local
             return cell
         case 4:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
             return cell
         case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
             return cell
         default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
             return cell
         }
        

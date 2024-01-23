@@ -115,7 +115,36 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZM-QZ-FrW" id="YUY-7o-FuU">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fieldName:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-KV-3Pz">
+                                                    <rect key="frame" x="32" y="17" width="83" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="83" id="6xH-kB-HBl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fieldContent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAH-G2-GYP">
+                                                    <rect key="frame" x="126" y="17" width="237" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="qAH-G2-GYP" secondAttribute="bottom" constant="6" id="9n3-wW-B9f"/>
+                                                <constraint firstItem="qAH-G2-GYP" firstAttribute="leading" secondItem="mKP-KV-3Pz" secondAttribute="trailing" constant="11" id="Clf-n4-2Uu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qAH-G2-GYP" secondAttribute="trailing" constant="10" id="L0J-vf-9hT"/>
+                                                <constraint firstItem="qAH-G2-GYP" firstAttribute="top" secondItem="YUY-7o-FuU" secondAttribute="topMargin" constant="6" id="P8p-B7-qGc"/>
+                                                <constraint firstItem="mKP-KV-3Pz" firstAttribute="leading" secondItem="YUY-7o-FuU" secondAttribute="leadingMargin" constant="12" id="bB6-fh-hTx"/>
+                                                <constraint firstItem="mKP-KV-3Pz" firstAttribute="top" secondItem="YUY-7o-FuU" secondAttribute="topMargin" constant="6" id="sDh-t0-WTR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldContent" destination="qAH-G2-GYP" id="x9c-Cl-6e2"/>
+                                            <outlet property="fieldName" destination="mKP-KV-3Pz" id="RlV-w8-DzA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
