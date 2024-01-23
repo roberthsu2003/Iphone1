@@ -24,6 +24,7 @@ class CityDetailViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.dataSource = self
+        tableView.delegate = self
     }
 
     
@@ -97,6 +98,20 @@ extension CityDetailViewController:UITableViewDataSource{
             return cell
         }
        
+    }
+}
+
+extension CityDetailViewController:UITableViewDelegate{
+    func tableView(
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath?{
+        switch indexPath.row{
+        case 0...3:
+            return nil
+        default:
+            return indexPath
+        }
     }
 }
 
