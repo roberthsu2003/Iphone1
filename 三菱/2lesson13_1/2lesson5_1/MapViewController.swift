@@ -15,7 +15,15 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         title = city.city
         let navigationBar = self.navigationController!.navigationBar
-        navigationBar.prefersLargeTitles = true    
+        navigationBar.prefersLargeTitles = true
+        //建立bar的外觀
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .darkGray
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor:UIColor.white]
+        //navigationBar.standardAppearance = navBarAppearance
+        navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        
         
     }
     
