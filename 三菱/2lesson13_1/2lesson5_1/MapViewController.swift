@@ -6,10 +6,20 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
     
     var city:City!
+    lazy var map:MKMapView = {
+        let mapView = MKMapView()
+        return mapView
+    }()
+    
+    override func loadView() {
+        super.loadView()
+        self.view = map
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
