@@ -14,10 +14,14 @@ func delay(_ delay:Double, closure:@escaping ()->()) {
 
 class ViewController: UIViewController {
     @IBOutlet var map:MKMapView!
-    var which:Int{return 10}
+    /*
+     1 - 只有設定地圖中心,
+     */
+    var which:Int{return 1}
     let bikeid = "bike"
     let bikeid2 = "bike2"
-    let annloc = CLLocationCoordinate2DMake(34.923964, -120.219558)
+    //台中科博館外面的點
+    let annloc = CLLocationCoordinate2DMake(24.15693,120.66782)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +30,12 @@ class ViewController: UIViewController {
         
         self.map.delegate = self
         self.map.tintColor = .green
-        let loc = CLLocationCoordinate2DMake(34.927752, -120.217608)
+        //台中國立自然科學博物館
+        let loc = CLLocationCoordinate2DMake(24.15811, 120.66862)
         let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
-        let reg = MKCoordinateRegion(center: loc, span: span)
+        //let reg = MKCoordinateRegion(center: loc, span: span)
         // or...
-        //let reg = MKCoordinateRegion(center: loc, latitudinalMeters: 1200, longitudinalMeters: 1200)
+        let reg = MKCoordinateRegion(center: loc, latitudinalMeters: 400, longitudinalMeters: 400)
         self.map.region = reg
         
         // new in iOS 13 we can at last limit scroll and zoom!
@@ -39,14 +44,13 @@ class ViewController: UIViewController {
         //不知是什麼
         self.map.cameraZoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 130_000)
         
-        self.map.showsCompass = false
-        //自訂compass,可以使用constraints
+        self.map.showsCompass = false //使用自訂compass,可以使用constraints
         let compass = MKCompassButton(mapView: self.map)
         compass.frame.origin = CGPoint(x: 20, y: 600)
         compass.compassVisibility = .visible
         self.view.addSubview(compass)
         
-        
+        /*
         if which == 1 {
             // try snapshot feature
             delay(2) {
@@ -63,12 +67,13 @@ class ViewController: UIViewController {
 
             return
         }
+         */
         
         if which < 6 {
             let ann = MKPointAnnotation()
             ann.coordinate = self.annloc
-            ann.title = "Park here"
-            ann.subtitle = "Fun awaits down the road!"
+            ann.title = "停車場"
+            ann.subtitle = "可容納20台車"
             self.map.addAnnotation(ann)
         } else {
             let ann = MyBikeAnnotation(location:self.annloc)
@@ -180,6 +185,28 @@ class ViewController: UIViewController {
 
 extension ViewController:MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+        
+        if which == 1 {
+            let id = MKMapViewDefaultAnnotationViewReuseIdentifier
+            if let v = mapView.dequeueReusableAnnotationView(withIdentifier: id, for: annotation) as? MKMarkerAnnotationView {
+                if let t = annotation.title, t == "Park here" {
+                    v.titleVisibility = .visible
+                    v.subtitleVisibility = .visible
+                    v.markerTintColor = .green
+                    v.glyphText = "!"
+                    // v.glyphImage = UIImage(named:"smileyWithTransparencyTiny")!.withRenderingMode(.alwaysOriginal)
+                    //v.glyphImage = UIImage(systemName:"exclamationmark.circle")!
+                    v.glyphTintColor = .black
+                    // v.animatesWhenAdded = true
+                    v.isDraggable = true
+                    print("tried to make it draggable")
+                    return v
+                }
+            }
+            
+        }
+        
+        
         if which == 3 {
             let id = MKMapViewDefaultAnnotationViewReuseIdentifier
             if let v = mapView.dequeueReusableAnnotationView(withIdentifier: id, for: annotation) as? MKMarkerAnnotationView {
