@@ -48,6 +48,7 @@ class MapViewController: UIViewController {
         navigationBar.scrollEdgeAppearance = navBarAppearance
         
         //改變MapView
+        //mapView.mapType = .satellite
         mapView.delegate = self
         
     }
