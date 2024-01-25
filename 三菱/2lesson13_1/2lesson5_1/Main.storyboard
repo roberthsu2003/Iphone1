@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" id="W4U-93-CoH"/>
                     <connections>
                         <outlet property="tableView" destination="AGG-Zn-mZF" id="NWG-Sw-Rz2"/>
-                        <segue destination="uxp-GK-of1" kind="push" identifier="goMap" id="60a-6q-gg0"/>
+                        <segue destination="uxp-GK-of1" kind="show" identifier="goMap" id="dYK-x5-Tm0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s4-zP-8RY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Oo-AC-V7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2663" y="-3"/>
+            <point key="canvasLocation" x="2769" y="3"/>
         </scene>
     </scenes>
     <resources>

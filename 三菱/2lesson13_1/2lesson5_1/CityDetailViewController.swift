@@ -26,6 +26,14 @@ class CityDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goMap"{
+            let city = sender as! City
+            let mapViewController = segue.destination as! MapViewController
+            mapViewController.city = city
+        }
+    }
 
     
 }
@@ -125,7 +133,7 @@ extension CityDetailViewController:UITableViewDelegate{
             self.navigationController?.pushViewController(webViewController, animated: true)
             self.navigationItem.backButtonTitle = "回前面"
         case 5:
-            print("goToMapView")
+            performSegue(withIdentifier: "goMap", sender: city)
         default:
             break;
         }
