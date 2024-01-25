@@ -71,6 +71,8 @@ class DataSource{
             let fileURL = documentURL.appending(path: "cities.plist")
             if !fileManager.fileExists(atPath: fileURL.path()){
                 print("沒有這個檔")
+                let cities2 = readBundleFile()
+                print(cities2 as Any)
             }else{
                 print("有這個檔")
             }
@@ -79,9 +81,24 @@ class DataSource{
         catch{
             print("error")
         }
+    }
+    //讀取bundle
+    func readBundleFile() -> [[String:Any]]?{
+        guard let sourcePath = Bundle.main.url(forResource: "citylist", withExtension: "plist")else{
+            print("讀bundle檔出錯")
+            return nil
+        }
         
-       
+        do{
+            let sourceData = try Data(contentsOf: sourcePath)
+            let cities3 = try PropertyListSerialization.propertyList(from: sourceData, format: nil) as? [[String:Any]] ?? [[String:Any]]()
+            return cities3
+        }catch{
+            print("轉換為Data出錯了")
+            print(error)
+        }
         
+        return nil
     }
 }
 
