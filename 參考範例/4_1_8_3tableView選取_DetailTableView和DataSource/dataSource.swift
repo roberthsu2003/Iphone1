@@ -96,7 +96,7 @@ class DataSource{
             print(error)
         }
     }
-    
+    //讀取bundleFile
     func readBundleFile() -> [[String:Any]]?{
         var cities3 = [[String:Any]]()
         guard let sourcePath = Bundle.main.url(forResource: "citylist", withExtension: "plist") else
@@ -116,6 +116,7 @@ class DataSource{
         return cities3
     }
     
+    //解析bundleFile
     func parseCity(cities:[[String:Any]])->[City]{
         //轉換[[String:Any]])->[City]
         var cities1 = [City]()
@@ -133,6 +134,7 @@ class DataSource{
         }
         return cities1
     }
+    
     
     func saveCityToDocuments(cities:[City]){
         do{
