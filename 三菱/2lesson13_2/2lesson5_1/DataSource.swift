@@ -76,10 +76,12 @@ class DataSource{
                     return
                 }
                 self.cities = parseCity(cities: cities2)
-                print(cities)
+                saveCityToDocuments(cities: self.cities)
                 
             }else{
-                print("有這個檔")
+                let plister = PropertyListDecoder()
+                let data = try Data(contentsOf: fileURL)
+                self.cities = try plister.decode([City].self, from: data)
             }
             
         }
@@ -123,6 +125,23 @@ class DataSource{
         }
         
         return cities1
+    }
+    
+    func saveCityToDocuments(cities:[City]){
+        let fileManager = FileManager.default
+        do{
+            let documentURL = try fileManager.url(for: .documentDirectory,
+                                                  in: .userDomainMask,
+                                                  appropriateFor: nil,
+                                                  create: false)
+            let fileURL = documentURL.appending(path: "cities.plist")
+            let plister = PropertyListEncoder()
+            try plister.encode(cities).write(to: fileURL)
+            
+        }catch{
+            print("存檔失敗")
+            print(error)
+        }
     }
 }
 
