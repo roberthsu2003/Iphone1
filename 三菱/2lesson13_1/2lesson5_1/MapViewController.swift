@@ -13,6 +13,10 @@ class MapViewController: UIViewController {
     var city:City!
     lazy var map:MKMapView = {
         let mapView = MKMapView()
+        //mapView.preferredConfiguration = MKMapConfiguration()
+        let center = CLLocationCoordinate2DMake(city.lat, city.long)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 200, longitudinalMeters: 200)
+        mapView.region = region
         return mapView
     }()
     
