@@ -71,8 +71,13 @@ class DataSource{
             let fileURL = documentURL.appending(path: "cities.plist")
             if !fileManager.fileExists(atPath: fileURL.path()){
                 print("沒有這個檔")
-                let cities2 = readBundleFile()
-                print(cities2 as Any)
+                guard let cities2 = readBundleFile() else{
+                    print("讀檔失敗")
+                    return
+                }
+                self.cities = parseCity(cities: cities2)
+                print(cities)
+                
             }else{
                 print("有這個檔")
             }
@@ -99,6 +104,25 @@ class DataSource{
         }
         
         return nil
+    }
+    
+    func parseCity(cities:[[String:Any]]) -> [City]{
+        var cities1 = [City]()
+        for item in cities{
+            let cityName = item["City"] as? String ?? "空的"
+            let continent = item["Continent"] as? String ?? "空的"
+            let country = item["Country"] as? String ?? "空的"
+            let image = item["Image"] as? String ?? "空的"
+            let local = item["Local"] as? String ?? "空的"
+            let url = item["url"] as? String ?? "空的"
+            let lat = item["lat"] as? Double ?? 0.0
+            let long = item["long"] as? Double ?? 0.0
+            let city = City(city: cityName, continent: continent, country: country, image: image, local: local, lat: lat, long: long, url: url)
+            cities1.append(city)
+            
+        }
+        
+        return cities1
     }
 }
 
