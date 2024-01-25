@@ -17,6 +17,12 @@ class MapViewController: UIViewController {
         let center = CLLocationCoordinate2DMake(city.lat, city.long)
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 200, longitudinalMeters: 200)
         mapView.region = region
+        //建立annotation
+        let ann = MKPointAnnotation()
+        ann.coordinate = center
+        ann.title = city.city
+        ann.subtitle = city.country
+        mapView.addAnnotation(ann)
         return mapView
     }()
     
