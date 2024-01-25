@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 
 class MyBikeAnnotation : NSObject, MKAnnotation {
-    dynamic var coordinate : CLLocationCoordinate2D
+    dynamic var coordinate : CLLocationCoordinate2D //有dynamic才可以做動畫
     /* dynamic */ var title: String?
     var subtitle: String?
     

@@ -21,27 +21,21 @@ class MyPathOverlayRenderer : MKOverlayRenderer {
         NSLog("draw this: %@", MKStringFromMapRect(mapRect))
         NSLog("converts to: %@", NSCoder.string(for: self.rect(for:mapRect)))
         NSLog("currently clipping to: %@", NSCoder.string(for: con.boundingBoxOfClipPath))
-        print(con.ctm)
 
         con.setStrokeColor(UIColor.black.cgColor)
         con.setFillColor(UIColor.red.withAlphaComponent(0.2).cgColor)
-        // again, something is wrong here
-        // I need to work out what this has to do with scale
-        // I presume it's because the context fails now to take that into account
-        let scale = UIScreen.main.scale
-        con.setLineWidth(2/(zoomScale/scale))
-        // con.setLineWidth(100)
+        con.setLineWidth(1.2/zoomScale)
         
-        let unit = CGFloat(overlay.boundingMapRect.width/4.0)
+        let unit = CGFloat((self.overlay.boundingMapRect).width/4.0)
         
         let p = CGMutablePath()
-        let start = CGPoint(0, unit*1.5)
-        let p1 = CGPoint(start.x+2*unit, start.y)
-        let p2 = CGPoint(p1.x, p1.y-unit)
-        let p3 = CGPoint(p2.x+unit*2, p2.y+unit*1.5)
-        let p4 = CGPoint(p2.x, p2.y+unit*3)
-        let p5 = CGPoint(p4.x, p4.y-unit)
-        let p6 = CGPoint(p5.x-2*unit, p5.y)
+        let start = CGPoint(x: 0, y: unit*1.5)
+        let p1 = CGPoint(x: start.x+2*unit, y: start.y)
+        let p2 = CGPoint(x: p1.x, y: p1.y-unit)
+        let p3 = CGPoint(x: p2.x+unit*2, y: p2.y+unit*1.5)
+        let p4 = CGPoint(x: p2.x, y: p2.y+unit*3)
+        let p5 = CGPoint(x: p4.x, y: p4.y-unit)
+        let p6 = CGPoint(x: p5.x-2*unit, y: p5.y)
         let points = [start, p1, p2, p3, p4, p5, p6]
         // rotate the arrow around its center
         let t1 = CGAffineTransform(translationX: unit*2, y: unit*2)

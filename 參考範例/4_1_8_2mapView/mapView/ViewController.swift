@@ -1,84 +1,51 @@
+//
+//  ViewController.swift
+//  mapView
+//
+//  Created by 徐國堂 on 2024/1/23.
+//
 
 import UIKit
 import MapKit
-
 func delay(_ delay:Double, closure:@escaping ()->()) {
     let when = DispatchTime.now() + delay
     DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
 }
 
-extension CGRect {
-    init(_ x:CGFloat, _ y:CGFloat, _ w:CGFloat, _ h:CGFloat) {
-        self.init(x:x, y:y, width:w, height:h)
-    }
-}
-extension CGSize {
-    init(_ width:CGFloat, _ height:CGFloat) {
-        self.init(width:width, height:height)
-    }
-}
-extension CGPoint {
-    init(_ x:CGFloat, _ y:CGFloat) {
-        self.init(x:x, y:y)
-    }
-}
-extension CGVector {
-    init (_ dx:CGFloat, _ dy:CGFloat) {
-        self.init(dx:dx, dy:dy)
-    }
-}
-
-
-
-class ViewController: UIViewController, MKMapViewDelegate {
-    
-    let which = 10 // 1...10
-    
-    @IBOutlet var map : MKMapView!
-    let annloc = CLLocationCoordinate2DMake(34.923964,-120.219558)
-
-    
+class ViewController: UIViewController {
+    @IBOutlet var map:MKMapView!
+    var which:Int{return 10}
     let bikeid = "bike"
     let bikeid2 = "bike2"
-
+    let annloc = CLLocationCoordinate2DMake(34.923964, -120.219558)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.map.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: self.bikeid)
         self.map.register(MyBikeAnnotationView.self, forAnnotationViewWithReuseIdentifier: self.bikeid2)
-
-        self.map.tintColor = .green
         
-        let loc = CLLocationCoordinate2DMake(34.927752,-120.217608)
+        self.map.delegate = self
+        self.map.tintColor = .green
+        let loc = CLLocationCoordinate2DMake(34.927752, -120.217608)
         let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
         let reg = MKCoordinateRegion(center: loc, span: span)
-        // or ...
-        // let reg = MKCoordinateRegionMakeWithDistance(loc, 1200, 1200)
+        // or...
+        //let reg = MKCoordinateRegion(center: loc, latitudinalMeters: 1200, longitudinalMeters: 1200)
         self.map.region = reg
-        //  or ...
-        do {
-            let pt = MKMapPoint(loc)
-            let w = MKMapPointsPerMeterAtLatitude(loc.latitude) * 1200
-            _ = MKMapRect(x: pt.x - w/2.0, y: pt.y - w/2.0, width: w, height: w)
-            let p2 = MKMapPoint(loc)
-            _ = pt.distance(to:p2)
-            _ = MKMetersPerMapPointAtLatitude(loc.latitude)
-        }
         
         // new in iOS 13 we can at last limit scroll and zoom!
-        self.map.cameraBoundary = MKMapView.CameraBoundary(coordinateRegion: MKCoordinateRegion(center: loc, span: MKCoordinateSpan(latitudeDelta: 0.6, longitudeDelta: 0.6)))
+        //不知是什麼
+        self.map.cameraBoundary = MKMapView.CameraBoundary(coordinateRegion: MKCoordinateRegion.init(center: loc, span: MKCoordinateSpan.init(latitudeDelta: 0.6, longitudeDelta: 0.6)))
+        //不知是什麼
         self.map.cameraZoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 130_000)
         
-        // try new iOS 11 feature
         self.map.showsCompass = false
-        let compass = MKCompassButton(mapView:self.map)
-        compass.frame.origin = CGPoint(20,400)
+        //自訂compass,可以使用constraints
+        let compass = MKCompassButton(mapView: self.map)
+        compass.frame.origin = CGPoint(x: 20, y: 600)
         compass.compassVisibility = .visible
-        // compass.isHidden = true // prevent annoying initial flash
-        // ok I guess that doesn't do anything useful any more
         self.view.addSubview(compass)
         
-
         
         if which == 1 {
             // try snapshot feature
@@ -96,6 +63,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
 
             return
         }
+        
         if which < 6 {
             let ann = MKPointAnnotation()
             ann.coordinate = self.annloc
@@ -137,6 +105,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             let tri = MKPolygon(points:&points, count:3)
             self.map.addOverlay(tri)
         }
+        
         if which == 9 {
             // start with our position and derive a nice unit for drawing
             let lat = self.annloc.latitude
@@ -144,17 +113,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
             let c = MKMapPoint(self.annloc)
             let unit = CGFloat(75.0/metersPerPoint)
             // size and position the overlay bounds on the earth
-            let sz = CGSize(4*unit, 4*unit)
+            let sz = CGSize(width: 4*unit, height: 4*unit)
             let mr = MKMapRect(x: c.x + 2*Double(unit), y: c.y - 4.5*Double(unit), width: Double(sz.width), height: Double(sz.height))
             // describe the arrow as a CGPath
             let p = CGMutablePath()
-            let start = CGPoint(0, unit*1.5)
-            let p1 = CGPoint(start.x+2*unit, start.y)
-            let p2 = CGPoint(p1.x, p1.y-unit)
-            let p3 = CGPoint(p2.x+unit*2, p2.y+unit*1.5)
-            let p4 = CGPoint(p2.x, p2.y+unit*3)
-            let p5 = CGPoint(p4.x, p4.y-unit)
-            let p6 = CGPoint(p5.x-2*unit, p5.y)
+            let start = CGPoint(x: 0, y: unit*1.5)
+            let p1 = CGPoint(x: start.x+2*unit, y: start.y)
+            let p2 = CGPoint(x: p1.x, y: p1.y-unit)
+            let p3 = CGPoint(x: p2.x+unit*2, y: p2.y+unit*1.5)
+            let p4 = CGPoint(x: p2.x, y: p2.y+unit*3)
+            let p5 = CGPoint(x: p4.x, y: p4.y-unit)
+            let p6 = CGPoint(x: p5.x-2*unit, y: p5.y)
             let points = [start, p1, p2, p3, p4, p5, p6]
             // rotate the arrow around its center
             let t1 = CGAffineTransform(translationX: unit*2, y: unit*2)
@@ -169,29 +138,48 @@ class ViewController: UIViewController, MKMapViewDelegate {
             self.map.addOverlay(over)
             // print(self.map.overlays)
         }
-        noAnnotation: if which == 10 {
-            
+        
+        noAnnotation: if which == 10{
             let lat = self.annloc.latitude
             let metersPerPoint = MKMetersPerMapPointAtLatitude(lat)
-            let c = MKMapPoint(self.annloc)
-            let unit = 75.0/metersPerPoint
-            // size and position the overlay bounds on the earth
-            let sz = CGSize(4*CGFloat(unit), 4*CGFloat(unit))
+            let c = MKMapPoint(annloc)
+            let unit = 75.0 / metersPerPoint
+            let sz = CGSize(width: 4*CGFloat(unit), height: 4*CGFloat(unit))
             let mr = MKMapRect(x: c.x + 2*unit, y: c.y - 4.5*unit, width: Double(sz.width), height: Double(sz.height))
             let over = MyPathOverlay(rect:mr)
-            self.map.addOverlay(over, level:.aboveRoads)
+            self.map.addOverlay(over, level: .aboveRoads)
             
             break noAnnotation
             
-            let annot = MKPointAnnotation()
-            annot.coordinate = over.coordinate
-            annot.title = "This way!"
-            self.map.addAnnotation(annot)
         }
         
     }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+    @IBAction func showPOIinMapApp(_ sender:UIButton){
+        let p = MKPlacemark(coordinate:self.annloc, addressDictionary:nil)
+        let mi = MKMapItem(placemark: p)
+        mi.name = "A Great Place to Dirt Bike" // label to appear in Maps app
+        // this now works!
+        print(MKMapItemTypeIdentifier)
+        print(MKMapType.standard.rawValue)
+        let coord = self.map.region.center
+        let span = self.map.region.span
+        let opts : [String:Any] = [
+            MKLaunchOptionsMapTypeKey: MKMapType.standard.rawValue,
+            MKLaunchOptionsMapCenterKey: coord,
+            MKLaunchOptionsMapSpanKey: span
+        ]
+        let scene = self.view.window?.windowScene
+        // iOS 13.2
+        mi.openInMaps(launchOptions: opts, from: scene) { ok in
+            print(ok)
+        }
+    }
+}
+
+
+extension ViewController:MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
         if which == 3 {
             let id = MKMapViewDefaultAnnotationViewReuseIdentifier
             if let v = mapView.dequeueReusableAnnotationView(withIdentifier: id, for: annotation) as? MKMarkerAnnotationView {
@@ -211,18 +199,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
             return nil
         }
+        
         if which == 4 {
             let v = mapView.dequeueReusableAnnotationView(withIdentifier: self.bikeid, for: annotation)
             if let t = annotation.title, t == "Park here" {
                 v.image = UIImage(named:"clipartdirtbike.gif")
                 v.bounds.size.height /= 3.0
                 v.bounds.size.width /= 3.0
-                v.centerOffset = CGPoint(0,-20)
+                v.centerOffset = CGPoint(x: 0,y: -20)
                 v.canShowCallout = true
                 return v
             }
             return nil
         }
+        
         if which == 5 {
             let v = mapView.dequeueReusableAnnotationView(withIdentifier: self.bikeid2, for: annotation)
             if let t = annotation.title, t == "Park here" {
@@ -250,11 +240,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
             return nil
         }
+        
         return nil
     }
-    
-    // is this a bug? we get this message even if the user taps the whole callout,
-    // reporting that the button was tapped even though it wasn't
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print("tap \(control)")
@@ -275,10 +263,9 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    // hmm, now returns non-nil MKOverlayRenderer [I've filed a bug]
-    // this changes the structure of my code
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer{
+        
         if which == 8 {
             if let overlay = overlay as? MKPolygon {
                 let r = MKPolygonRenderer(polygon:overlay)
@@ -288,6 +275,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 return r
             }
         }
+        
         if which == 9 {
             if let overlay = overlay as? MyPathOverlay {
                 let r = MKOverlayPathRenderer(overlay:overlay)
@@ -298,48 +286,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
                 return r
             }
         }
+        
         if which == 10 {
             if overlay is MyPathOverlay {
                 let r = MyPathOverlayRenderer(overlay:overlay, angle: -.pi/3.5)
                 return r
             }
         }
-        return MKOverlayRenderer() // ???? why did they make this non-nil?
-    }
-    
-    @IBAction func showPOIinMapsApp (_ sender: Any) {
-        let p = MKPlacemark(coordinate:self.annloc, addressDictionary:nil)
-        let mi = MKMapItem(placemark: p)
-        mi.name = "A Great Place to Dirt Bike" // label to appear in Maps app
-        // this now works!
-        print(MKMapItemTypeIdentifier)
-        print(MKMapType.standard.rawValue)
-        let coord = self.map.region.center
-        let span = self.map.region.span
-        let opts : [String:Any] = [
-            MKLaunchOptionsMapTypeKey: MKMapType.standard.rawValue,
-            MKLaunchOptionsMapCenterKey: coord,
-            MKLaunchOptionsMapSpanKey: span
-        ]
-        let scene = self.view.window?.windowScene
-        // iOS 13.2
-        mi.openInMaps(launchOptions: opts, from: scene) { ok in
-            print(ok)
-        }
         
+        return MKOverlayRenderer()
     }
     
-    // this is no longer needed! my views are draggable as long as `isDraggable` is true
-    // though to be sure the dragging gesture is a bit tricky
-    private func mapViewNOT(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
-        print("here")
-        switch newState {
-        case .starting:
-            view.dragState = .dragging
-        case .ending, .canceling:
-            view.dragState = .none
-        default: break
-        }
-    }
     
 }
