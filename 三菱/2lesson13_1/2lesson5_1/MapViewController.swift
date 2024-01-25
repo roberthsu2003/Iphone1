@@ -13,7 +13,10 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city as Any)
+        title = city.city
+        let navigationBar = self.navigationController!.navigationBar
+        navigationBar.prefersLargeTitles = true    
+        
     }
     
 

@@ -32,6 +32,7 @@ class CityDetailViewController: UIViewController {
             let city = sender as! City
             let mapViewController = segue.destination as! MapViewController
             mapViewController.city = city
+            
         }
     }
 
@@ -134,6 +135,7 @@ extension CityDetailViewController:UITableViewDelegate{
             self.navigationItem.backButtonTitle = "回前面"
         case 5:
             performSegue(withIdentifier: "goMap", sender: city)
+            self.navigationItem.backButtonTitle = "回Detail"
         default:
             break;
         }
