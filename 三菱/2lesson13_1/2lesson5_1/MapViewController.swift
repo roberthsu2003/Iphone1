@@ -33,6 +33,7 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mapView = self.view as! MKMapView
         title = city.city
         let navigationBar = self.navigationController!.navigationBar
         navigationBar.tintColor = .lightGray
@@ -46,10 +47,21 @@ class MapViewController: UIViewController {
         //navigationBar.standardAppearance = navBarAppearance
         navigationBar.scrollEdgeAppearance = navBarAppearance
         
-        
+        //改變MapView
+        mapView.delegate = self
         
     }
     
 
 
+}
+
+extension MapViewController:MKMapViewDelegate{
+    func mapView(
+        _ mapView: MKMapView,
+        viewFor annotation: MKAnnotation
+    ) -> MKAnnotationView?{
+        print("要產生AnnotationView")
+        return nil
+    }
 }
