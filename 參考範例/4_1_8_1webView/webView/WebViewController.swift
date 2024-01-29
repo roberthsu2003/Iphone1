@@ -2,266 +2,147 @@
 //  WebViewController.swift
 //  webView
 //
-//  Created by 徐國堂 on 2024/1/21.
+//  Created by 徐國堂 on 2024/1/29.
 //
 
 import UIKit
 import WebKit
-import SafariServices
 
-class MyMessageHandler:NSObject, WKScriptMessageHandler{
-    weak var delegate: WKScriptMessageHandler?
-    init(delegate:WKScriptMessageHandler){
-        self.delegate = delegate
-        super.init()
-    }
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        self.delegate?.userContentController(userContentController, didReceive: message)
-        print("playbutton")
-    }
+class WebViewController: UIViewController {
     
-    deinit{
-        print("message handler dealloc")
+    override func loadView() {
+        super.loadView()
+        let config = WKWebViewConfiguration()
+        //和回應html內的javascript
+        /*
+        let preferences = WKWebpagePreferences()
+        preferences.allowsContentJavaScript = true
+        config.defaultWebpagePreferences = preferences
+         */
+        config.userContentController = WKUserContentController()
+        //使用這個方法才可以使用WKUserContentController
+        //這個不行 config.userContentController.add(self, contentWorld: .defaultClient ,name: "contact")
+        config.userContentController.add(self, name: "toApp") //使用代理人機制
+        self.view = WKWebView(frame: .zero, configuration: config)
+        
     }
-}
 
-final class WebViewController: UIViewController {
-    @IBOutlet weak var wv:WKWebView!
-    var activity = UIActivityIndicatorView()
-    var obs = Set<NSKeyValueObservation>()
-    var fontsize = 18
-    var oldHTMLString:String?
-    var safariurl:URL?
-    
-    var cssrule:String{
-        return """
-        var s = document.createElement('style');
-        s.textContent = 'body { font-size: \(self.fontsize)px; }';
-        document.documentElement.appendChild(s);
-        """
-    }
-    
-    var cssrule2:String{
-        return """
-        var s = document.createElement('style');
-        s.textContent = `body { font-size: ${thefontsize}px; }`;
-        document.documentElement.appendChild(s);
-        """
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.edgesForExtendedLayout = []
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        var leak:Bool{return false}
-        switch leak{
-        case true:
-            //要自已建立WKWebViewConfiguration()才可以,不可以使用取出來的,不然不會出現
-            //let config = self.wv.configuration
-            //config.userContentController.add(self, contentWorld: .defaultClient, name: "playbutton")
-            
-            let configuration = WKWebViewConfiguration()
-            configuration.userContentController = WKUserContentController()
-            configuration.userContentController.add(self, name: "playbutton")
-            let webView = WKWebView(frame: self.view.bounds, configuration: configuration)
-            webView.navigationDelegate = self
-            self.view.addSubview(webView)
-            self.wv = webView
-        case false:
-            let handler = MyMessageHandler(delegate: self)
-            let configuration = WKWebViewConfiguration()
-            configuration.userContentController = WKUserContentController()
-            configuration.userContentController.add(handler, name: "playbutton")
-            let webView = WKWebView(frame: self.view.bounds, configuration: configuration)
-            webView.navigationDelegate = self
-            self.view.addSubview(webView)
-            self.wv = webView
+        let webView = self.view as! WKWebView
+        webView.navigationDelegate = self
+        if let fileURL = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "inance-html"){
+            webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL)
         }
-        //可以看到捲動後超過的背景色
-        wv.scrollView.backgroundColor = .black
         
-        //進度畫面
-        let act = UIActivityIndicatorView(style: .large)
-        act.backgroundColor = UIColor(white: 0.1, alpha: 0.1)
-        act.color = .white
-        self.activity = act
-        wv.addSubview(act)
-        act.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            act.centerXAnchor.constraint(equalTo: wv.centerXAnchor),
-            act.centerYAnchor.constraint(equalTo: wv.centerYAnchor)
-        ])
-        
-        //webkit 使用 KVO
-        obs.insert(wv.observe(\.isLoading, options: .new, changeHandler: { [unowned self](wv:WKWebView, ch:NSKeyValueObservedChange<Bool>) in
-            if let val = ch.newValue{
-                if val{
-                    print("開始載入")
-                    self.activity.startAnimating()
-                }else{
-                    self.activity.stopAnimating()
+        self.navigationController?.isToolbarHidden = false
+        self.setToolbarItems([
+            UIBarButtonItem(primaryAction: UIAction(title: "home", handler: { _ in
+                //呼叫html內的javascript
+                webView.evaluateJavaScript("goHome();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String, error == nil else{
+                        print("錯誤")
+                        print(error!)
+                        return
+                    }
+                    self.title = result
                 }
-                
-                
-            }}))
+            })),
+            UIBarButtonItem(primaryAction: UIAction(title: "contact", handler: { _ in
+                webView.evaluateJavaScript("goContact();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String, error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
+            })),
+            UIBarButtonItem(primaryAction: UIAction(title: "service", handler: { _ in
+                webView.evaluateJavaScript("goService();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String, error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
+            })),
+            UIBarButtonItem(primaryAction: UIAction(title: "about", handler: { _ in
+                webView.evaluateJavaScript("goAbout();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String, error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
+            }))
+            
+        ], animated: true)
+        self.navigationController?.hidesBarsOnSwipe = true
+        self.navigationItem.title = "Home"
         
-        obs.insert(wv.observe(\.title, changeHandler: { (wv:WKWebView, change:NSKeyValueObservedChange<String?>) in
-            if let val = change.newValue, let title = val{
-                print(title)
-            }
-        }))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("view did appear, req:\(self.wv.url as Any)")
-        print("wv scroll view delegate", self.wv.scrollView.delegate as Any)
         
         
-        var which:Int {return 1}
-        switch which{
-        case 1:
-            let b = UIBarButtonItem(title: "Size", style: .plain, target: self, action: #selector(doDecreaseSize))
-            self.navigationItem.rightBarButtonItems = [b]
-            //加入css規則
-            do{
-                let rule = self.cssrule
-                let script = WKUserScript(source: rule, injectionTime: .atDocumentStart, forMainFrameOnly: true, in: .defaultClient)
-                let config = self.wv.configuration
-                config.userContentController.addUserScript(script)
-            }
-            
-            if let oldHTMLString = self.oldHTMLString{
-                //如果有舊的html
-                print("restoring html")
-                let templatepath = Bundle.main.path(forResource: "htmlTemplate", ofType: "html")!
-                let oldBase = URL(fileURLWithPath: templatepath)
-                
-                self.wv.loadHTMLString(oldHTMLString, baseURL: oldBase)
-                return
-            }
-            //載入html的內容
-            let bodypath = Bundle.main.path(forResource: "htmlbody", ofType: "txt")!
-            let ss = try! String(contentsOfFile: bodypath)
-            
-            let templatePath = Bundle.main.path(forResource: "htmlTemplate", ofType: "html")!
-            let base = URL(fileURLWithPath: templatePath)
-            var s = try! String(contentsOfFile: templatePath)
-            
-            s = s.replacingOccurrences(of: "<maximagewidth>", with: "80%")
-            s = s.replacingOccurrences(of: "<margin>", with: "10")
-            s = s.replacingOccurrences(of:"<guid>", with:"http://tidbits.com/article/12228")
-            s = s.replacingOccurrences(of:"<ourtitle>", with:"Lion Details Revealed with Shipping Date and Price")
-            // note way to set up messaging from web page's javascript to us
-            s = s.replacingOccurrences(of:"<playbutton>", with:#"<img src="listen.png" onclick="window.webkit.messageHandlers.playbutton.postMessage('play')">"#)
-            s = s.replacingOccurrences(of:"<author>", with:"TidBITS Staff")
-            s = s.replacingOccurrences(of:"<date>", with:"Mon, 06 Jun 2011 13:00:39 PDT")
-            s = s.replacingOccurrences(of:"<content>", with:ss)
-            print(s)
-            //print("======")
-            //print(base)
-            self.wv.loadHTMLString(s, baseURL: base)
-            self.oldHTMLString = s
-            
-            
-            
-        default:
-            break
-        }
-        
-    }
-    
-    @objc func doDecreaseSize(_ sender:UIBarButtonItem){
-        print("減小文字大小")
-        self.fontsize -= 1
-        if self.fontsize < 10{
-            self.fontsize = 20
-        }
-        /*
-         可以這樣加入javascript,也可以向下加入javascript
-        let s = self.cssrule
-        self.wv.evaluateJavaScript(s, in: nil, in: .defaultClient)
-         */
-        self.wv.callAsyncJavaScript(self.cssrule2, arguments: ["thefontsize":self.fontsize], in: nil, in: .defaultClient)
     }
     
 
 }
 
 extension WebViewController:WKScriptMessageHandler{
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "playbutton"{
+    func userContentController(
+        _ userContentController: WKUserContentController,
+        didReceive message: WKScriptMessage
+    ){
+        print("userContentController")
+        if message.name == "toApp"{
             if let body = message.body as? String{
-                if body == "play"{
-                    print("user would like to hear the podcast")
+                if body == "contact"{
+                    //自動開啟手機的phone call
+                    let alertController = UIAlertController(title: "聯絡方式", message: "AM:9:00 to PM:6:00", preferredStyle: .alert)
+                    let taipei = UIAlertAction(title: "台北公司", style: .default) { _ in
+                        if let phoneCallURL = URL(string: "tel://0976876923"){
+                            let application = UIApplication.shared
+                            if (application.canOpenURL(phoneCallURL)){
+                                application.open(phoneCallURL)
+                            }
+                        }else{
+                            print("不可以聯絡")
+                        }
+                        
+                    }
+                    
+                    let taichan = UIAlertAction(title: "台中公司", style: .default) { _ in
+                        print("台中公司")
+                    }
+                    
+                    alertController.addAction(taipei)
+                    alertController.addAction(taichan)
+                    present(alertController, animated: true)
+                    
                 }
             }
         }
     }
-    
-    
 }
 
 extension WebViewController:WKNavigationDelegate{
-    //追蹤WebView連結
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
         preferences: WKWebpagePreferences,
         decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void
     ){
-        print("超連結")
-        preferences.preferredContentMode = .desktop
-        print("要求桌面版本")
-        if navigationAction.navigationType == .linkActivated{
-            if let url = navigationAction.request.url{
-                if url.scheme == "file"{
-                    decisionHandler(.allow, preferences)
+       //decisionHandler是給我們一個method,而不是要我們實作這個method
+      //一定要執行,決定看允許連結嗎?
+        if navigationAction.navigationType == .linkActivated{ //查看是否是連結
+            if let url = navigationAction.request.url{ //取得連結網址
+                //取得連結最後的文字
+                if url.lastPathComponent == "goBack"{
+                    self.navigationController?.popViewController(animated: true)
+                    decisionHandler(.cancel,preferences)
                     return
                 }
-                
-                print("使用者要導覽至\(url)")
-                var whichNav:Int { return 1}
-                switch whichNav{
-                case 0:
-                    UIApplication.shared.open(url)
-                    decisionHandler(.cancel, preferences)
-                    
-                case 1:
-                    let svc = SFSafariViewController(url: url)
-                    self.safariurl = url
-                    svc.delegate = self
-                    self.present(svc, animated: true)
-                    decisionHandler(.cancel, preferences)
-                    return
-                    
-                default:
-                    decisionHandler(.allow, preferences)
-                    return
-                }
-                
-                
             }
         }
-        decisionHandler(.allow,preferences)
-    }
-}
-
-extension WebViewController:SFSafariViewControllerDelegate{
-    func safariViewController(
-        _ controller: SFSafariViewController,
-        didCompleteInitialLoad didLoadSuccessfully: Bool
-    ){
-        print("safari load完成")
-    }
-    
-    func safariViewControllerWillOpenInBrowser(_ controller: SFSafariViewController){
-        print("will open in browser")
-    }
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController){
-        self.dismiss(animated: true)
+        decisionHandler(.allow, preferences)
     }
 }
