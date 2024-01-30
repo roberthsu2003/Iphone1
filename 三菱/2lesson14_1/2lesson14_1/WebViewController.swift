@@ -56,6 +56,16 @@ class WebViewController: UIViewController {
             //載入網頁
             webView.loadFileURL(url, allowingReadAccessTo: url)
         }
+        
+        //加入手勢
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipe.direction = .right
+        webView.addGestureRecognizer(swipe)
+    }
+    
+    @objc func swiped(_ sender:UISwipeGestureRecognizer){
+        print("swiped")
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
