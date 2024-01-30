@@ -14,6 +14,7 @@
 		8EC0DA612B68C2CC00773F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC0DA602B68C2CC00773F39 /* Assets.xcassets */; };
 		8EC0DA642B68C2CC00773F39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC0DA622B68C2CC00773F39 /* LaunchScreen.storyboard */; };
 		8EC0DA6C2B68C32500773F39 /* inance-html in Resources */ = {isa = PBXBuildFile; fileRef = 8EC0DA6B2B68C32500773F39 /* inance-html */; };
+		8EC0DA6E2B68C61500773F39 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0DA6D2B68C61500773F39 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8EC0DA632B68C2CC00773F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EC0DA652B68C2CC00773F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC0DA6B2B68C32500773F39 /* inance-html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "inance-html"; sourceTree = SOURCE_ROOT; };
+		8EC0DA6D2B68C61500773F39 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				8EC0DA602B68C2CC00773F39 /* Assets.xcassets */,
 				8EC0DA622B68C2CC00773F39 /* LaunchScreen.storyboard */,
 				8EC0DA652B68C2CC00773F39 /* Info.plist */,
+				8EC0DA6D2B68C61500773F39 /* WebViewController.swift */,
 			);
 			path = 2lesson14_1;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				8EC0DA5C2B68C2CB00773F39 /* ViewController.swift in Sources */,
 				8EC0DA582B68C2CB00773F39 /* AppDelegate.swift in Sources */,
 				8EC0DA5A2B68C2CB00773F39 /* SceneDelegate.swift in Sources */,
+				8EC0DA6E2B68C61500773F39 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

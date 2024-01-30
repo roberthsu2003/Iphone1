@@ -13,7 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "WebView"
         navigationItem.rightBarButtonItem = UIBarButtonItem(primaryAction: UIAction(title: "static", handler: { _ in
-            print("Hello")
+            let webViewController = WebViewController(nibName: nil, bundle: nil)
+            self.navigationController?.pushViewController(webViewController, animated: true)
         }))
     }
 
