@@ -86,7 +86,19 @@ extension WebViewController:WKScriptMessageHandler{
         if message.name == "toApp"{
             if let body = message.body as? String{
                 if body == "contact"{
-                    print("使用者按了contact")
+                    let alertController = UIAlertController(title: "聯絡方式", message: "AM:9:00 to PM:6:00", preferredStyle: .alert)
+                    let taipeiAction = UIAlertAction(title: "台北公司", style: .default) { _ in
+                        print("台北公司")
+                    }
+                    
+                    let taichanAction = UIAlertAction(title: "台中公司", style: .default) { _ in
+                        print("台中公司")
+                    }
+                    
+                    alertController.addAction(taipeiAction)
+                    alertController.addAction(taichanAction)
+                    self.present(alertController, animated: true)                    
+                    
                 }
             }
         }
