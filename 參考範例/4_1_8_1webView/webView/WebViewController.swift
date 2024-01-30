@@ -7,8 +7,11 @@
 
 import UIKit
 import WebKit
+import SafariServices
 
 class WebViewController: UIViewController {
+    var activityIndicator = UIActivityIndicatorView()
+    var obs = Set<NSKeyValueObservation>()
     
     override func loadView() {
         super.loadView()
@@ -31,10 +34,51 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         let webView = self.view as! WKWebView
         webView.navigationDelegate = self
+        
+        self.activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        activityIndicator.color = .white
+        webView.addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: webView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: webView.centerYAnchor)
+        ])
+        
+        //webView使用KVO,載入網頁之前就要建立KVO
+        let kvo = webView.observe(\.isLoading, options: .new) { [unowned  self](webView:WKWebView, ch:NSKeyValueObservedChange<Bool>) in
+            if let val = ch.newValue{
+                if val{
+                    print("開始動畫")
+                    self.activityIndicator.startAnimating()
+                }else{
+                    print("停止動畫")
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        }
+        
+        obs.insert(kvo)
+        //載入網頁
         if let fileURL = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "inance-html"){
             webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL)
         }
         
+        //加入手勢
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        swipe.direction = .right
+        webView.scrollView.addGestureRecognizer(swipe)
+        
+    
+    }
+    
+    @objc func swiped(_ sender:UISwipeGestureRecognizer){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let webView = self.view as! WKWebView
         self.navigationController?.isToolbarHidden = false
         self.setToolbarItems([
             UIBarButtonItem(primaryAction: UIAction(title: "home", handler: { _ in
@@ -79,9 +123,6 @@ class WebViewController: UIViewController {
         ], animated: true)
         self.navigationController?.hidesBarsOnSwipe = true
         self.navigationItem.title = "Home"
-        
-        
-        
     }
     
 
@@ -142,7 +183,25 @@ extension WebViewController:WKNavigationDelegate{
                     return
                 }
             }
+            
+            if let url = navigationAction.request.url{ //取得連結網址
+                //取得連結最後的文字
+                
+                if url.absoluteString == "http://tidbits.com/article/11682"{
+                    let svc = SFSafariViewController(url: url)
+                    svc.delegate = self
+                    self.present(svc, animated: true)
+                    decisionHandler(.cancel,preferences)
+                    return
+                }
+            }
         }
         decisionHandler(.allow, preferences)
+    }
+}
+
+extension WebViewController:SFSafariViewControllerDelegate{
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController){
+        print("safariViewController結束")
     }
 }
