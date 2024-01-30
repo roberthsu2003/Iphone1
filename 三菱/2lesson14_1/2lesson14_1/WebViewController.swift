@@ -10,6 +10,8 @@ import WebKit
 
 class WebViewController: UIViewController {
     var webView:WKWebView!
+    var obs = Set<NSKeyValueObservation>()
+    var activityIndicator:UIActivityIndicatorView!
     
     override func loadView() {
         super.loadView()
@@ -24,16 +26,30 @@ class WebViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Home"
         self.webView = self.view as? WKWebView
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-        activityIndicator.color = UIColor.white
+        self.activityIndicator = UIActivityIndicatorView(style: .large)
+        self.activityIndicator.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        self.activityIndicator.color = UIColor.white
         self.webView.addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: webView.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: webView.centerYAnchor)
+            self.activityIndicator.centerXAnchor.constraint(equalTo: webView.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: webView.centerYAnchor)
         ])
-        activityIndicator.startAnimating()
+        //KVO
+        let kvo = self.webView.observe(\.isLoading, options: .new) { [unowned self](webView:WKWebView, change:NSKeyValueObservedChange<Bool>) in
+            if let val = change.newValue{
+                if val{
+                    print("動畫開始")
+                    activityIndicator.startAnimating()
+                }else{
+                    activityIndicator.stopAnimating()
+                    print("動畫結束")
+                }
+            }
+        }
+        
+        obs.insert(kvo)
+        
         
         //取得inance-html/index.html的URL
         if let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "inance-html"){
