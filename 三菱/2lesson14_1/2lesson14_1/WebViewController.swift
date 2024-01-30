@@ -88,7 +88,13 @@ extension WebViewController:WKScriptMessageHandler{
                 if body == "contact"{
                     let alertController = UIAlertController(title: "聯絡方式", message: "AM:9:00 to PM:6:00", preferredStyle: .alert)
                     let taipeiAction = UIAlertAction(title: "台北公司", style: .default) { _ in
-                        print("台北公司")
+                        if let phoneCallURL = URL(string: "tel://0976878878"){
+                            let application = UIApplication.shared
+                            if application.canOpenURL(phoneCallURL){
+                                application.open(phoneCallURL)
+                            }
+                        }
+                        
                     }
                     
                     let taichanAction = UIAlertAction(title: "台中公司", style: .default) { _ in
@@ -97,7 +103,7 @@ extension WebViewController:WKScriptMessageHandler{
                     
                     alertController.addAction(taipeiAction)
                     alertController.addAction(taichanAction)
-                    self.present(alertController, animated: true)                    
+                    self.present(alertController, animated: true)
                     
                 }
             }
