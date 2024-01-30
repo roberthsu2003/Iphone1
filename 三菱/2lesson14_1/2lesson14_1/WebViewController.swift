@@ -16,6 +16,7 @@ class WebViewController: UIViewController {
     override func loadView() {
         super.loadView()
         let config = WKWebViewConfiguration()
+        config.userContentController.add(self, name: "toApp")
         let preferences = WKWebpagePreferences()
         preferences.allowsContentJavaScript = true
         config.defaultWebpagePreferences = preferences
@@ -75,4 +76,19 @@ class WebViewController: UIViewController {
     }
 
 
+}
+
+extension WebViewController:WKScriptMessageHandler{
+    func userContentController(
+        _ userContentController: WKUserContentController,
+        didReceive message: WKScriptMessage
+    ){
+        if message.name == "toApp"{
+            if let body = message.body as? String{
+                if body == "contact"{
+                    print("使用者按了contact")
+                }
+            }
+        }
+    }
 }

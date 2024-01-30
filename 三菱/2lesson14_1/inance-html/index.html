@@ -104,6 +104,7 @@
               <script type="text/javascript">
                   function responseWebView(){
                       console.log("contact Us")
+                      window.webkit.messageHandlers.toApp.postMessage("contact")
                   }
               </script>
             </div>
