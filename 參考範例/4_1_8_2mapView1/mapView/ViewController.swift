@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         self.map.tintColor = .green
         //台中國立自然科學博物館
         let loc = museumLoc
-        let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
+        //let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
         //let reg = MKCoordinateRegion(center: loc, span: span)
         // or...
         let reg = MKCoordinateRegion(center: loc, latitudinalMeters: 1600, longitudinalMeters: 1600)
@@ -148,6 +148,25 @@ extension ViewController:MKMapViewDelegate{
             r.lineWidth = 2
         return r
         
-    } 
+    }
+    
+    @IBAction func showMapApp(_ sender:UIButton){
+        let p = MKPlacemark(coordinate: hotelLoc,addressDictionary: nil)
+        let hotelItem = MKMapItem(placemark: p)
+        //let currentItem = MKMapItem.forCurrentLocation()
+        hotelItem.name = "nice place"
+        let coord = self.museumLoc
+        let span = self.map.region.span
+        let opts:[String:Any] = [
+            MKLaunchOptionsCameraKey:MKMapType.standard.rawValue,
+            MKLaunchOptionsMapCenterKey:coord,
+            MKLaunchOptionsMapSpanKey:span
+        ]
+        
+        let scene = self.view.window?.windowScene
+        hotelItem.openInMaps(launchOptions: opts, from: scene) { ok in
+            print(ok)
+        }
+    }
     
 }

@@ -30,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Show in Maps app"/>
                                 <connections>
-                                    <action selector="showPOIinMapApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N06-wi-kZg"/>
+                                    <action selector="showMapApp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JBr-Gg-zOf"/>
                                 </connections>
                             </button>
                         </subviews>
