@@ -69,6 +69,8 @@ class WebViewController: UIViewController {
         
         //加入toolbarItem
         self.setToolbarItems([
+            UIBarButtonItem(systemItem: .flexibleSpace)
+            ,
             UIBarButtonItem(title: "Home", primaryAction: UIAction.init(handler: { _ in
                 print("Home")
             })),
@@ -80,7 +82,8 @@ class WebViewController: UIViewController {
             })),
             UIBarButtonItem(title: "about", primaryAction: UIAction.init(handler: { _ in
                 print("about")
-            }))
+            })),
+            UIBarButtonItem(systemItem: .flexibleSpace)
             
         ], animated: false)
     }
