@@ -47,9 +47,14 @@ class ViewController: UIViewController {
         // new in iOS 13 we can at last limit scroll and zoom!
         self.map.showsCompass = false //使用自訂compass,可以使用constraints
         let compass = MKCompassButton(mapView: self.map)
-        compass.frame.origin = CGPoint(x: 20, y: 600)
+        //compass.frame.origin = CGPoint(x: 20, y: 600)
         compass.compassVisibility = .visible
         self.view.addSubview(compass)
+        compass.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            compass.topAnchor.constraint(equalTo: self.map.topAnchor),
+            compass.leadingAnchor.constraint(equalTo: self.map.trailingAnchor, constant: 20)
+        ])
        
         let museumAnno = MKPointAnnotation()
         museumAnno.coordinate = museumLoc
@@ -68,23 +73,36 @@ class ViewController: UIViewController {
         hotelAnno.subtitle = "4星級飯店"
         self.map.addAnnotation(hotelAnno)
         
-        //
-        let lat = self.parkLoc.latitude
-        let metersPerPoint = MKMetersPerMapPointAtLatitude(lat)
-        var c = MKMapPoint(self.parkLoc)
-        c.x += 150/metersPerPoint
-        c.y -= 50/metersPerPoint
+        //畫三角形
+        let parklat = self.parkLoc.latitude
+        let metersPerPoint = MKMetersPerMapPointAtLatitude(parklat) //公尺比例
+        let c = MKMapPoint(self.parkLoc)
         var p1 = MKMapPoint(x: c.x, y: c.y)
-        p1.y -= 100/metersPerPoint
+        p1.x += 150/metersPerPoint
+        p1.y -= 75/metersPerPoint
         var p2 = MKMapPoint(x: c.x, y: c.y)
-        p2.x += 100/metersPerPoint
+        p2.x += 150/metersPerPoint
+        p2.y += 75/metersPerPoint
         var p3 = MKMapPoint(x: c.x, y: c.y)
-        p3.x += 300/metersPerPoint
-        p3.y -= 400/metersPerPoint
-        var points = [p1, p2, p3]
-        let tri = MKPolygon(points:&points, count:3)
-        self.map.addOverlay(tri)
+        p3.x -= 150/metersPerPoint
+        p3.y -= 75/metersPerPoint
+        var p4 = MKMapPoint(x: c.x, y: c.y)
+        p4.x -= 150/metersPerPoint
+        p4.y += 75/metersPerPoint
+        
+        var points = [p1, p2, p3, p4]
+        let rec = MKPolygon(points:&points, count:4)
+        self.map.addOverlay(rec)
+        
+         
+        //畫圓形
+        let hotelLat = self.hotelLoc.latitude
+        let metersPerPoint1 = MKMetersPerMapPointAtLatitude(hotelLat)
+        let cir = MKCircle(center: self.hotelLoc, radius: 30/metersPerPoint1)
+        cir.title = "hotel"
+        self.map.addOverlay(cir)
 }
+    
     
 }
 
@@ -141,12 +159,23 @@ extension ViewController:MKMapViewDelegate{
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer{
-        
-        let r = MKPolygonRenderer(polygon:overlay as! MKPolygon)
+        if overlay.title == "hotel"{
+            //畫圓形
+            let r = MKCircleRenderer(circle: overlay as! MKCircle)
             r.fillColor = UIColor.red.withAlphaComponent(0.1)
             r.strokeColor = UIColor.red.withAlphaComponent(0.8)
             r.lineWidth = 2
-        return r
+            return r
+        }else{
+            //畫三角形
+            let r = MKPolygonRenderer(polygon:overlay as! MKPolygon)
+            r.fillColor = UIColor.red.withAlphaComponent(0.1)
+            r.strokeColor = UIColor.red.withAlphaComponent(0.8)
+            r.lineWidth = 2
+            return r
+        }
+        
+        
         
     }
     
@@ -155,10 +184,10 @@ extension ViewController:MKMapViewDelegate{
         let hotelItem = MKMapItem(placemark: p)
         //let currentItem = MKMapItem.forCurrentLocation()
         hotelItem.name = "nice place"
-        let coord = self.museumLoc
+        let coord = self.hotelLoc
         let span = self.map.region.span
         let opts:[String:Any] = [
-            MKLaunchOptionsCameraKey:MKMapType.standard.rawValue,
+            MKLaunchOptionsMapTypeKey:MKMapType.standard.rawValue,
             MKLaunchOptionsMapCenterKey:coord,
             MKLaunchOptionsMapSpanKey:span
         ]
