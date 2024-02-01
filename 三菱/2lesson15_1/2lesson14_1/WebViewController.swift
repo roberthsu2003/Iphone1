@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SafariServices
 
 class WebViewController: UIViewController {
     var webView:WKWebView!
@@ -128,6 +129,15 @@ extension WebViewController:WKNavigationDelegate{
                     decisionHandler(.cancel,preferences)
                     return
                 }
+                
+                if url.absoluteString == "http://tidbits.com/article/11682"{
+                    let svc = SFSafariViewController(url: url)
+                    svc.delegate = self
+                    self.present(svc, animated: true)
+                    decisionHandler(.cancel,preferences)
+                    return
+                    
+                }
             }
             
         }
@@ -138,4 +148,14 @@ extension WebViewController:WKNavigationDelegate{
         
         
     }
+}
+
+extension WebViewController:SFSafariViewControllerDelegate{
+    func safariViewController(
+        _ controller: SFSafariViewController,
+        didCompleteInitialLoad didLoadSuccessfully: Bool
+    ){
+        print("safariViewContorller載入完成")
+    }
+    
 }
