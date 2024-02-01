@@ -72,16 +72,40 @@ class WebViewController: UIViewController {
             UIBarButtonItem(systemItem: .flexibleSpace)
             ,
             UIBarButtonItem(title: "Home", primaryAction: UIAction.init(handler: { _ in
-                print("Home")
+                self.webView.evaluateJavaScript("goHome();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String,error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
             })),
             UIBarButtonItem(title: "contact", primaryAction: UIAction.init(handler: { _ in
-                print("contact")
+                self.webView.evaluateJavaScript("goContact();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String,error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
             })),
             UIBarButtonItem(title: "service", primaryAction: UIAction.init(handler: { _ in
-                print("service")
+                self.webView.evaluateJavaScript("goService();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String,error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
             })),
             UIBarButtonItem(title: "about", primaryAction: UIAction.init(handler: { _ in
-                print("about")
+                self.webView.evaluateJavaScript("goAbout();") { (result:Any?, error:Error?) in
+                    guard let result = result as? String,error == nil else{
+                        print("錯誤")
+                        return
+                    }
+                    self.title = result
+                }
             })),
             UIBarButtonItem(systemItem: .flexibleSpace)
             
