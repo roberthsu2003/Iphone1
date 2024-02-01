@@ -40,3 +40,25 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+
+function goContact(){
+    window.location.href = "cantact.html"
+    return "contact"
+}
+
+function goHome(){
+    window.location.href = "index.html"
+    return "home"
+}
+
+function goAbout(){
+    window.location.href = "about.html"
+    return "about"
+}
+
+function goService(){
+    window.location.href = "service.html"
+    return "service"
+}
+
