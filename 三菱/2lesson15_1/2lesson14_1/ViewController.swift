@@ -17,6 +17,14 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(webViewController, animated: true)
         }))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.hidesBarsOnSwipe = false
+        //self.navigationController?.hidesBarsOnTap = true
+    }
+
 
 
 }

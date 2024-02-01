@@ -123,10 +123,13 @@ extension WebViewController:WKNavigationDelegate{
     ){
         if navigationAction.navigationType == .linkActivated{
             if let url = navigationAction.request.url{
-                print(url.lastPathComponent)
+                if url.lastPathComponent == "goBack"{
+                    self.navigationController?.popViewController(animated: true)
+                    decisionHandler(.cancel,preferences)
+                    return
+                }
             }
-            decisionHandler(.cancel,preferences)
-            return
+            
         }
         
         decisionHandler(.allow,preferences)
