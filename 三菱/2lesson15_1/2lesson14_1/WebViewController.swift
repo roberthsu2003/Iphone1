@@ -66,6 +66,23 @@ class WebViewController: UIViewController {
         
         //導覽的代理人機制
         webView.navigationDelegate = self
+        
+        //加入toolbarItem
+        self.setToolbarItems([
+            UIBarButtonItem(title: "Home", primaryAction: UIAction.init(handler: { _ in
+                print("Home")
+            })),
+            UIBarButtonItem(title: "contact", primaryAction: UIAction.init(handler: { _ in
+                print("contact")
+            })),
+            UIBarButtonItem(title: "service", primaryAction: UIAction.init(handler: { _ in
+                print("service")
+            })),
+            UIBarButtonItem(title: "about", primaryAction: UIAction.init(handler: { _ in
+                print("about")
+            }))
+            
+        ], animated: false)
     }
     
     @objc func swiped(_ sender:UISwipeGestureRecognizer){
@@ -78,6 +95,8 @@ class WebViewController: UIViewController {
         self.navigationController?.hidesBarsOnSwipe = true
         //self.navigationController?.hidesBarsOnTap = true
         self.navigationController?.isToolbarHidden = false
+        
+        
     }
 
 
