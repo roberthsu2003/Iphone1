@@ -32,6 +32,16 @@ class MapViewController: UIViewController {
         museumAnno.title = "台中國立自然科學博學館"
         museumAnno.subtitle = "可容納1000人"
         self.mapView.addAnnotation(museumAnno)
+        
+        let parkAnno = MKPointAnnotation()
+        parkAnno.coordinate = parkLoc
+        parkAnno.title = "第3停車場"
+        parkAnno.subtitle = "可停200輛車"
+        self.mapView.addAnnotation(parkAnno)
+        
+        let hotelAnno = HotelAnnotation(coordinate: hotelLoc, title: "住宿飯站", subtitle: "4星級飯站")
+        self.mapView.addAnnotation(hotelAnno)
+        
     }
     
 
