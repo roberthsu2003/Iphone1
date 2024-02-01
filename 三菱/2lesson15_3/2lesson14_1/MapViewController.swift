@@ -21,6 +21,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         self.mapView.tintColor = .green
+        self.mapView.delegate = self
         //let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
         //MKCoordinateRegion(center: museumLoc, span:span )
         
@@ -49,4 +50,13 @@ class MapViewController: UIViewController {
         print("Show Map App")
     }
 
+}
+
+extension MapViewController:MKMapViewDelegate{
+    func mapView(
+        _ mapView: MKMapView,
+        viewFor annotation: MKAnnotation
+    ) -> MKAnnotationView?{
+        return nil
+    }
 }
