@@ -26,6 +26,12 @@ class MapViewController: UIViewController {
         
         let reg = MKCoordinateRegion(center: museumLoc, latitudinalMeters: 1600, longitudinalMeters: 1600)
         self.mapView.region = reg
+        
+        let museumAnno = MKPointAnnotation()
+        museumAnno.coordinate = museumLoc
+        museumAnno.title = "台中國立自然科學博學館"
+        museumAnno.subtitle = "可容納1000人"
+        self.mapView.addAnnotation(museumAnno)
     }
     
 
