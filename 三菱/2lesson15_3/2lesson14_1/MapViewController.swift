@@ -57,6 +57,19 @@ extension MapViewController:MKMapViewDelegate{
         _ mapView: MKMapView,
         viewFor annotation: MKAnnotation
     ) -> MKAnnotationView?{
+        
+        if let t = annotation.title,t == "台中國立自然科學博學館"{
+            let id = MKMapViewDefaultAnnotationViewReuseIdentifier
+            if let v = mapView.dequeueReusableAnnotationView(withIdentifier: id, for: annotation) as? MKMarkerAnnotationView{
+                v.markerTintColor = .green
+                v.glyphText = "!"
+                v.isSelected = true
+                return v
+                
+            }
+            
+        }
+        
         return nil
     }
 }
