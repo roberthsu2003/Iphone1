@@ -77,6 +77,7 @@ class WebViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.hidesBarsOnSwipe = true
         //self.navigationController?.hidesBarsOnTap = true
+        self.navigationController?.isToolbarHidden = false
     }
 
 

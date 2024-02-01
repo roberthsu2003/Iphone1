@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.hidesBarsOnSwipe = false
         //self.navigationController?.hidesBarsOnTap = true
+        self.navigationController?.isToolbarHidden = true
     }
 
 
