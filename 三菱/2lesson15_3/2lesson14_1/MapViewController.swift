@@ -96,7 +96,20 @@ class MapViewController: UIViewController {
     
 
     @IBAction func showMapApp(_ sender:UIButton){
-        print("Show Map App")
+        let p = MKPlacemark(coordinate: hotelLoc, addressDictionary: nil)
+        let hotelItem = MKMapItem(placemark: p)
+        hotelItem.name = "Nice Place"
+        let coord = self.hotelLoc
+        let span = self.mapView.region.span
+        let opts:[String:Any] = [
+            MKLaunchOptionsMapTypeKey:MKMapType.standard.rawValue,
+            MKLaunchOptionsMapCenterKey:coord,
+            MKLaunchOptionsMapSpanKey:span
+        ]
+        let scene = self.view.window?.windowScene
+        hotelItem.openInMaps(launchOptions: opts, from: scene) { ok in
+            print("ok")
+        }
     }
 
 }
