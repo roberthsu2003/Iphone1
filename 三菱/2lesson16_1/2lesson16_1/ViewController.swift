@@ -44,6 +44,8 @@ class ViewController: UIViewController {
             }
         }
         
+        progress.observedProgress = task.progress
+        
         DispatchQueue.global(qos: .background).async {
             task.resume()
         }
