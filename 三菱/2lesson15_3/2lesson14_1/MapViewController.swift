@@ -17,6 +17,9 @@ class MapViewController: UIViewController {
     //台中國立自然科學博物館
     let museumLoc = CLLocationCoordinate2DMake(24.15811, 120.66862)
     
+    let parkId = "park"
+    let hotelId = "hotel"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,9 @@ class MapViewController: UIViewController {
         self.mapView.delegate = self
         //let span = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
         //MKCoordinateRegion(center: museumLoc, span:span )
+        
+        mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: parkId)
+        mapView.register(HotelAnnotationView.self, forAnnotationViewWithReuseIdentifier: hotelId)
         
         let reg = MKCoordinateRegion(center: museumLoc, latitudinalMeters: 1600, longitudinalMeters: 1600)
         self.mapView.region = reg
@@ -65,9 +71,21 @@ extension MapViewController:MKMapViewDelegate{
                 v.glyphText = "!"
                 v.isSelected = true
                 return v
-                
             }
             
+        }
+        
+        if let t = annotation.title, t == "第3停車場"{
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: parkId, for: annotation)
+            
+            return nil
+        }
+        
+        if let t = annotation.title, t == "住宿飯站"{
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: hotelId, for: annotation) as! HotelAnnotationView
+            
+            
+            return annotationView
         }
         
         return nil

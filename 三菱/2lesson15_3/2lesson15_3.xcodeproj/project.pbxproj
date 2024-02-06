@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E18CA232B72012900B98F39 /* MyAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E18CA222B72012900B98F39 /* MyAnnotationView.swift */; };
 		8EC0DA582B68C2CB00773F39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0DA572B68C2CB00773F39 /* AppDelegate.swift */; };
 		8EC0DA5A2B68C2CB00773F39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0DA592B68C2CB00773F39 /* SceneDelegate.swift */; };
 		8EC0DA5C2B68C2CB00773F39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0DA5B2B68C2CB00773F39 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E18CA222B72012900B98F39 /* MyAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotationView.swift; sourceTree = "<group>"; };
 		8EC0DA542B68C2CB00773F39 /* 2lesson15_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson15_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC0DA572B68C2CB00773F39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC0DA592B68C2CB00773F39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				8EC0DA6D2B68C61500773F39 /* WebViewController.swift */,
 				8ED977DA2B6B816C00444574 /* MapViewController.swift */,
 				8ED977DC2B6B888F00444574 /* MyAnnotation.swift */,
+				8E18CA222B72012900B98F39 /* MyAnnotationView.swift */,
 			);
 			path = 2lesson14_1;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E18CA232B72012900B98F39 /* MyAnnotationView.swift in Sources */,
 				8EC0DA5C2B68C2CB00773F39 /* ViewController.swift in Sources */,
 				8EC0DA582B68C2CB00773F39 /* AppDelegate.swift in Sources */,
 				8ED977DD2B6B888F00444574 /* MyAnnotation.swift in Sources */,
