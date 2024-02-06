@@ -8,9 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var imageView:UIImageView!
+    @IBOutlet var progress:UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    
+    @IBAction func doSimpleHTTP(_ sender:UIButton){
+        self.imageView.image = nil
         let s = "https://www.apeth.net/matt/images/phoenixnewest.jpg"
         let url = URL(string: s)!
         let session = URLSession.shared
@@ -35,7 +43,6 @@ class ViewController: UIViewController {
         }
         
         task.resume()
-        
     }
 
 

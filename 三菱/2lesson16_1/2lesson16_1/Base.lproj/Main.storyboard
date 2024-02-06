@@ -15,13 +15,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WtO-mM-76j">
+                                <rect key="frame" x="49" y="68" width="317" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WtO-mM-76j" secondAttribute="height" multiplier="317:225" id="JEG-x3-Mip"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paq-oI-oqh">
+                                <rect key="frame" x="49" y="324" width="94" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="下載圖片"/>
+                                <connections>
+                                    <action selector="doSimpleHTTP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FHc-8U-l9M"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1bE-ET-IBd">
+                                <rect key="frame" x="49" y="383" width="317" height="4"/>
+                            </progressView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Paq-oI-oqh" secondAttribute="trailing" constant="100" id="Kaz-Bj-Lpu"/>
+                            <constraint firstItem="Paq-oI-oqh" firstAttribute="top" secondItem="WtO-mM-76j" secondAttribute="bottom" constant="31" id="Wy3-3Q-Aql"/>
+                            <constraint firstItem="1bE-ET-IBd" firstAttribute="top" secondItem="Paq-oI-oqh" secondAttribute="bottom" constant="24" id="dn1-6m-UqC"/>
+                            <constraint firstItem="WtO-mM-76j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="eHV-wa-hcG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WtO-mM-76j" secondAttribute="trailing" constant="48" id="i9j-NI-3x7"/>
+                            <constraint firstItem="Paq-oI-oqh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="kw5-BD-5gl"/>
+                            <constraint firstItem="WtO-mM-76j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="nLm-V8-32e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1bE-ET-IBd" secondAttribute="trailing" constant="48" id="vW6-Wv-Ee4"/>
+                            <constraint firstItem="1bE-ET-IBd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="yb5-hj-eDm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="WtO-mM-76j" id="1xU-Jw-Bnf"/>
+                        <outlet property="progress" destination="1bE-ET-IBd" id="QMj-ld-2eT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="7"/>
+            <point key="canvasLocation" x="134.78260869565219" y="6.5217391304347831"/>
         </scene>
     </scenes>
     <resources>
