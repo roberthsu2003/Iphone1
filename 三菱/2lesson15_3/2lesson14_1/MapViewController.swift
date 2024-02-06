@@ -49,6 +49,13 @@ class MapViewController: UIViewController {
         let hotelAnno = HotelAnnotation(coordinate: hotelLoc, title: "住宿飯站", subtitle: "4星級飯站")
         self.mapView.addAnnotation(hotelAnno)
         
+        //加overLay
+        let hotelLat = self.hotelLoc.latitude
+        let metersPerPoint1 = MKMetersPerMapPointAtLatitude(hotelLat)
+        let cir = MKCircle(center: self.hotelLoc, radius: 30/metersPerPoint1)
+        cir.title = "hotel"
+        self.mapView.addOverlay(cir)
+        
     }
     
 
@@ -101,5 +108,20 @@ extension MapViewController:MKMapViewDelegate{
         }
         
         return nil
+    }
+    
+    func mapView(
+        _ mapView: MKMapView,
+        rendererFor overlay: MKOverlay
+    ) -> MKOverlayRenderer{
+        if overlay.title == "hotel"{
+            let r = MKCircleRenderer(circle: overlay as! MKCircle)
+            r.fillColor = UIColor.red.withAlphaComponent(0.1)
+            r.strokeColor = UIColor.red.withAlphaComponent(0.8)
+            r.lineWidth = 2
+            return r
+        }else{
+            return MKOverlayRenderer()
+        }
     }
 }
