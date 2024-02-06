@@ -39,10 +39,15 @@ class ViewController: UIViewController {
             }
             
             let image = UIImage(data: imageData)
-            print(image!)
+            DispatchQueue.main.async {
+                self.imageView.image = image
+            }
         }
         
-        task.resume()
+        DispatchQueue.global(qos: .background).async {
+            task.resume()
+        }
+        
     }
 
 
