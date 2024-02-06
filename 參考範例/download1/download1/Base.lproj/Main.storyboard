@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a7Y-ff-jrB">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ahu-WY-I5W">
+                        <rightBarButtonItems>
+                            <barButtonItem title="下載1" id="x5p-pU-FM7">
+                                <connections>
+                                    <segue destination="ZP0-dE-467" kind="show" id="cYX-kZ-v7V"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="下載2" id="slp-xF-pjo">
+                                <connections>
+                                    <segue destination="T0D-5H-ea4" kind="show" id="ekS-Fm-HiW"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="137"/>
+        </scene>
+        <!--使用完成任務closure下載-->
+        <scene sceneID="NQd-Zg-E1E">
+            <objects>
+                <viewController id="ZP0-dE-467" customClass="ViewController" customModule="download1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yD2-wF-2v0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qq3-ae-T4z">
+                                <rect key="frame" x="20" y="64" width="335" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qq3-ae-T4z" secondAttribute="height" multiplier="153:100" id="JlH-RQ-grA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRf-WD-tVb">
+                                <rect key="frame" x="20" y="304" width="138" height="30"/>
+                                <state key="normal" title="執行詳細說明的下載"/>
+                                <connections>
+                                    <action selector="doElaborateHTTP:" destination="ZP0-dE-467" eventType="touchUpInside" id="cUB-7I-3gc"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-h3-nNJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u57-CL-3NN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IRf-WD-tVb" firstAttribute="top" secondItem="Qq3-ae-T4z" secondAttribute="bottom" constant="21" id="22f-C5-aeV"/>
+                            <constraint firstItem="Qq3-ae-T4z" firstAttribute="top" secondItem="u57-CL-3NN" secondAttribute="top" constant="20" id="49D-sx-867"/>
+                            <constraint firstItem="jc8-h3-nNJ" firstAttribute="top" secondItem="u57-CL-3NN" secondAttribute="top" id="5nz-Qa-ofW"/>
+                            <constraint firstItem="u57-CL-3NN" firstAttribute="trailing" secondItem="jc8-h3-nNJ" secondAttribute="trailing" id="6eK-Ho-nke"/>
+                            <constraint firstItem="Qq3-ae-T4z" firstAttribute="leading" secondItem="u57-CL-3NN" secondAttribute="leading" constant="20" id="ZS2-ZF-M9Q"/>
+                            <constraint firstItem="u57-CL-3NN" firstAttribute="trailing" secondItem="Qq3-ae-T4z" secondAttribute="trailing" constant="20" id="l0u-7c-vhw"/>
+                            <constraint firstItem="jc8-h3-nNJ" firstAttribute="leading" secondItem="u57-CL-3NN" secondAttribute="leading" id="q6L-7H-d0q"/>
+                            <constraint firstItem="IRf-WD-tVb" firstAttribute="leading" secondItem="u57-CL-3NN" secondAttribute="leading" constant="20" id="tDs-3E-Twn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="使用完成任務closure下載" id="mh8-Pk-u98"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="Qq3-ae-T4z" id="Sbl-kD-2aJ"/>
+                        <outlet property="progressView" destination="jc8-h3-nNJ" id="V7o-Gy-UCg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKA-P0-Ldi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SPA-JX-XZ3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a7Y-ff-jrB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QSP-io-vec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z9K-qt-Xpq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-cX-dgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501.60000000000002" y="137.18140929535232"/>
+        </scene>
+        <!--使用delegate完全下載-->
+        <scene sceneID="e6w-vN-jAe">
+            <objects>
+                <viewController id="T0D-5H-ea4" customClass="ViewController1" customModule="download1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nD7-Ik-JRI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VYE-fa-UFx">
+                                <rect key="frame" x="20" y="64" width="335" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VYE-fa-UFx" secondAttribute="height" multiplier="153:100" id="Edn-Ta-Isk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwZ-qy-TNW">
+                                <rect key="frame" x="20" y="304" width="138" height="30"/>
+                                <state key="normal" title="執行詳細說明的下載"/>
+                                <connections>
+                                    <action selector="doElaborateHTTP:" destination="T0D-5H-ea4" eventType="touchUpInside" id="vGn-CY-4Et"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="17O-NU-bQW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="17O-NU-bQW" firstAttribute="trailing" secondItem="VYE-fa-UFx" secondAttribute="trailing" constant="20" id="NfC-XI-2ki"/>
+                            <constraint firstItem="pwZ-qy-TNW" firstAttribute="leading" secondItem="17O-NU-bQW" secondAttribute="leading" constant="20" id="nSE-YZ-swH"/>
+                            <constraint firstItem="VYE-fa-UFx" firstAttribute="top" secondItem="17O-NU-bQW" secondAttribute="top" constant="20" id="nj5-SF-lu4"/>
+                            <constraint firstItem="pwZ-qy-TNW" firstAttribute="top" secondItem="VYE-fa-UFx" secondAttribute="bottom" constant="21" id="te1-RG-H1k"/>
+                            <constraint firstItem="VYE-fa-UFx" firstAttribute="leading" secondItem="17O-NU-bQW" secondAttribute="leading" constant="20" id="xZm-wh-fBc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="使用delegate完全下載" id="EoG-fn-bXb"/>
+                    <connections>
+                        <outlet property="cityImageView" destination="VYE-fa-UFx" id="ls3-Pg-CII"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRZ-E1-qIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2156" y="842"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

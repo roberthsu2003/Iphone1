@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="simpleHttp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p2v-V0-BC8">
+                                <rect key="frame" x="45" y="46" width="324" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="p2v-V0-BC8" secondAttribute="height" multiplier="162:101" id="jRp-5A-uhc"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UA4-7m-3kY">
+                                <rect key="frame" x="52" y="332" width="317" height="4"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2p-mJ-UAo">
+                                <rect key="frame" x="45" y="271" width="59" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="下載"/>
+                                <connections>
+                                    <action selector="doSimpleHTTP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dgm-D5-4kH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p2v-V0-BC8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="2Mg-wJ-ofn"/>
+                            <constraint firstItem="UA4-7m-3kY" firstAttribute="top" secondItem="V2p-mJ-UAo" secondAttribute="bottom" constant="26" id="77h-hc-Y3x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UA4-7m-3kY" secondAttribute="trailing" constant="45" id="7Mg-ga-l2S"/>
+                            <constraint firstItem="UA4-7m-3kY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="A9W-p9-YLT"/>
+                            <constraint firstItem="V2p-mJ-UAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="DB7-dA-L1D"/>
+                            <constraint firstItem="p2v-V0-BC8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="MAE-5u-5rw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p2v-V0-BC8" secondAttribute="trailing" constant="45" id="MeH-G8-eGD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V2p-mJ-UAo" secondAttribute="trailing" constant="100" id="aMO-2z-JDq"/>
+                            <constraint firstItem="V2p-mJ-UAo" firstAttribute="top" secondItem="p2v-V0-BC8" secondAttribute="bottom" constant="23" id="xN8-7p-qAO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="p2v-V0-BC8" id="gbi-yh-m5d"/>
+                        <outlet property="progress" destination="UA4-7m-3kY" id="ne0-BO-Rp7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="-61.141304347826093"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
