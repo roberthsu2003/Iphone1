@@ -49,12 +49,37 @@ class MapViewController: UIViewController {
         let hotelAnno = HotelAnnotation(coordinate: hotelLoc, title: "住宿飯站", subtitle: "4星級飯站")
         self.mapView.addAnnotation(hotelAnno)
         
-        //加overLay
+        //加圓形的overLay
         let hotelLat = self.hotelLoc.latitude
         let metersPerPoint1 = MKMetersPerMapPointAtLatitude(hotelLat)
         let cir = MKCircle(center: self.hotelLoc, radius: 30/metersPerPoint1)
         cir.title = "hotel"
         self.mapView.addOverlay(cir)
+        
+        //加矩形
+        let parklat = self.parkLoc.latitude
+        let metersPerPoint = MKMetersPerMapPointAtLatitude(parklat)
+        let c = MKMapPoint(self.parkLoc)
+        var p1 = MKMapPoint(x: c.x, y: c.y)
+        p1.x += 150 / metersPerPoint
+        p1.y -= 75 / metersPerPoint
+        
+        var p2 = MKMapPoint(x: c.x, y: c.y)
+        p2.x += 150 / metersPerPoint
+        p2.y += 75 / metersPerPoint
+        
+        var p3 = MKMapPoint(x: c.x, y: c.y)
+        p3.x -= 150 / metersPerPoint
+        p3.y += 75 / metersPerPoint
+        
+        var p4 = MKMapPoint(x: c.x, y: c.y)
+        p4.x -= 150 / metersPerPoint
+        p4.y -= 75 / metersPerPoint
+        
+        var points = [p1, p2, p3, p4]
+        var rec = MKPolygon(points: &points, count: 4)
+        self.mapView.addOverlay(rec)
+        
         
     }
     
@@ -121,7 +146,11 @@ extension MapViewController:MKMapViewDelegate{
             r.lineWidth = 2
             return r
         }else{
-            return MKOverlayRenderer()
+            let render = MKPolygonRenderer(polygon: overlay as! MKPolygon)
+            render.fillColor = UIColor.blue.withAlphaComponent(0.1)
+            render.strokeColor = UIColor.blue.withAlphaComponent(0.8)
+            render.lineWidth = 2
+            return render
         }
     }
 }
