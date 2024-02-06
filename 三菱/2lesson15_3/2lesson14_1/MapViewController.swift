@@ -77,8 +77,19 @@ class MapViewController: UIViewController {
         p4.y -= 75 / metersPerPoint
         
         var points = [p1, p2, p3, p4]
-        var rec = MKPolygon(points: &points, count: 4)
+        let rec = MKPolygon(points: &points, count: 4)
         self.mapView.addOverlay(rec)
+        
+        //自訂的Compass
+        self.mapView.showsCompass = false
+        let compass = MKCompassButton(mapView: self.mapView)
+        compass.compassVisibility = .visible
+        self.view.addSubview(compass)
+        compass.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            compass.topAnchor.constraint(equalTo: self.mapView.topAnchor),
+            compass.leadingAnchor.constraint(equalTo: self.mapView.trailingAnchor, constant: 20)
+        ])
         
         
     }
