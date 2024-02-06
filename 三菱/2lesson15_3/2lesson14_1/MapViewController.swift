@@ -77,13 +77,25 @@ extension MapViewController:MKMapViewDelegate{
         
         if let t = annotation.title, t == "第3停車場"{
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: parkId, for: annotation)
-            
-            return nil
+            annotationView.image = UIImage(systemName: "hand.raised.square.on.square.fill")
+            annotationView.canShowCallout = true
+            return annotationView
         }
         
         if let t = annotation.title, t == "住宿飯站"{
             let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: hotelId, for: annotation) as! HotelAnnotationView
+            annotationView.canShowCallout = true
+            let rightImage = UIImage(systemName: "heart.square.fill")
+            let rightImageView = UIImageView(image: rightImage)
+            annotationView.rightCalloutAccessoryView = rightImageView
             
+            annotationView.leftCalloutAccessoryView = UIButton.init(type: .infoLight, primaryAction: UIAction.init(handler: { _ in
+                print("這是Hotel!")
+            }))
+            let lab = UILabel()
+            lab.text = "網紅飯店"
+            lab.font = lab.font.withSize(10)
+            annotationView.detailCalloutAccessoryView = lab
             
             return annotationView
         }
