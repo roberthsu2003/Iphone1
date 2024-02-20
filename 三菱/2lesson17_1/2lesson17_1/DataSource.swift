@@ -51,6 +51,7 @@ class DataSource{
                     print("無法解析")
                     return
                 }
+                print("沒有錯誤")
                 print(youbike)
                
             }
