@@ -6,6 +6,18 @@
 //
 
 import Foundation
+typealias YoubikeData = [Site]
+
+struct Site:Codable{
+    let ar:String
+    let bemp:Int
+    let lat:Double
+    let lng:Double
+    let mday:String
+    let sbi:Int
+    let sna:String
+    let tot:Int
+}
 
 class DataSource{
     static var session:URLSession?
@@ -34,8 +46,13 @@ class DataSource{
             }
             DispatchQueue.main.async {
                 //跳回主執行緒
-                print(data)
-               print(NSString(data: data, encoding: 1))
+                let jsonDecoder = JSONDecoder()
+                guard let youbike = try?jsonDecoder.decode( YoubikeData.self, from: data) else{
+                    print("無法解析")
+                    return
+                }
+                print(youbike)
+               
             }
             
             //
