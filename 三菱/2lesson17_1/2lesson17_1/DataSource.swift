@@ -18,11 +18,16 @@ struct Site:Codable{
     let sna:String
     let tot:Int
 }
+protocol DataSourceDelegate:AnyObject{
+    func finishDownLoad(data:YoubikeData)
+}
 
 class DataSource{
     static var session:URLSession?
+    weak static var delegate:DataSourceDelegate?
     
-    static func startDownLoad(){
+    static func startDownLoad(delegate:DataSourceDelegate){
+        self.delegate = delegate
         let youbike = "https://youbike-json.onrender.com/youbike"
         let configuration = URLSessionConfiguration.default
         configuration.allowsExpensiveNetworkAccess = true
@@ -51,8 +56,8 @@ class DataSource{
                     print("無法解析")
                     return
                 }
-                print("沒有錯誤")
-                print(youbike)
+                
+                self.delegate?.finishDownLoad(data: youbike)
                
             }
             

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        DataSource.startDownLoad()
+        DataSource.startDownLoad(delegate: self)
     }
 
     override func viewDidLoad() {
@@ -20,5 +20,11 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension ViewController:DataSourceDelegate{
+    func finishDownLoad(data:YoubikeData){
+        print(data)
+    }
 }
 
