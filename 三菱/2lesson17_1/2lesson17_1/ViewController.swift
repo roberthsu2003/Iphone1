@@ -32,7 +32,15 @@ class ViewController: UITableViewController {
             indicatorView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -100)
         ])
         
+        //建立refresh
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         
+        
+    }
+    
+    @objc func handleRefreshControl(){
+        DataSource.startDownLoad(delegate: self)
     }
 
 
@@ -42,6 +50,7 @@ extension ViewController:DataSourceDelegate{
     func finishDownLoad(data:YoubikeData){
         siteInfos = data
         indicatorView.stopAnimating()
+        self.tableView.refreshControl?.endRefreshing()
         print(siteInfos)
     }
     
