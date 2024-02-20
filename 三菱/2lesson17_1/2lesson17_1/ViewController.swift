@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    var siteInfos:YoubikeData = YoubikeData()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "台北市youbike2.0及時資料"
         
     }
 
@@ -24,7 +26,8 @@ class ViewController: UIViewController {
 
 extension ViewController:DataSourceDelegate{
     func finishDownLoad(data:YoubikeData){
-        print(data)
+        siteInfos = data
+        print(siteInfos)
     }
 }
 
