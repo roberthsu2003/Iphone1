@@ -31,7 +31,7 @@ class ViewController: UITableViewController {
             indicatorView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -100)
         ])
-        indicatorView.startAnimating()
+        
         
     }
 
@@ -41,7 +41,12 @@ class ViewController: UITableViewController {
 extension ViewController:DataSourceDelegate{
     func finishDownLoad(data:YoubikeData){
         siteInfos = data
+        indicatorView.stopAnimating()
         print(siteInfos)
+    }
+    
+    func startDownLoad(){
+        indicatorView.startAnimating()
     }
 }
 

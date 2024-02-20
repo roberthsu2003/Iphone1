@@ -20,6 +20,7 @@ struct Site:Codable{
 }
 protocol DataSourceDelegate:AnyObject{
     func finishDownLoad(data:YoubikeData)
+    func startDownLoad()
 }
 
 class DataSource{
@@ -64,6 +65,7 @@ class DataSource{
             //
         }){
             dataTask.resume()
+            self.delegate?.startDownLoad()
         }
         
     }
