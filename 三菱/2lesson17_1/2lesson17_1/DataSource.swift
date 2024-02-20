@@ -32,8 +32,13 @@ class DataSource{
                 print("沒有資料")
                 return
             }
-            print(data)
-            //print(String(data: data, encoding: .utf8)!)
+            DispatchQueue.main.async {
+                //跳回主執行緒
+                print(data)
+               print(NSString(data: data, encoding: 1))
+            }
+            
+            //
         }){
             dataTask.resume()
         }
