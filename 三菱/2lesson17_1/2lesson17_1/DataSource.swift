@@ -21,6 +21,7 @@ struct Site:Codable{
 protocol DataSourceDelegate:AnyObject{
     func finishDownLoad(data:YoubikeData)
     func startDownLoad()
+    func failDownLoad(message:String)
 }
 
 class DataSource{
@@ -42,19 +43,22 @@ class DataSource{
                 return
             }
             guard (response as! HTTPURLResponse).statusCode == 200 else{
-                print("status code出錯")
+                
+                self.delegate?.failDownLoad(message: "status code出錯")
                 return
             }
             
             guard let data = data else{
-                print("沒有資料")
+               
+                self.delegate?.failDownLoad(message: "沒有資料")
                 return
             }
             DispatchQueue.main.async {
                 //跳回主執行緒
                 let jsonDecoder = JSONDecoder()
                 guard let youbike = try?jsonDecoder.decode( YoubikeData.self, from: data) else{
-                    print("無法解析")
+                    
+                    self.delegate?.failDownLoad(message: "無法解析json")
                     return
                 }
                 

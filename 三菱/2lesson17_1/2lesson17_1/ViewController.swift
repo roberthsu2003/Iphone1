@@ -48,5 +48,19 @@ extension ViewController:DataSourceDelegate{
     func startDownLoad(){
         indicatorView.startAnimating()
     }
+    
+    func failDownLoad(message:String){
+        let alertController = UIAlertController(title: "網路下載有問題", message: message, preferredStyle: .alert)
+        if self.indicatorView.isAnimating{
+            self.indicatorView.stopAnimating()
+        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "重新下載", primaryAction: UIAction.init(handler: { _ in
+            DataSource.startDownLoad(delegate: self)
+        }))
+        
+        alertController.addAction(UIAlertAction.init(title: "確定", style: .default))
+        
+        self.present(alertController, animated: true)
+    }
 }
 
