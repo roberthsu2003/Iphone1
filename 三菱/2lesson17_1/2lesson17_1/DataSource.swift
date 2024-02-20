@@ -16,6 +16,28 @@ class DataSource{
         configuration.allowsExpensiveNetworkAccess = true
         configuration.timeoutIntervalForRequest = 180
         session = URLSession(configuration: configuration)
+        let youbikeURL = URL(string: youbike)!
+        let youbikeRequest = URLRequest(url: youbikeURL, timeoutInterval: 180)
+        if let dataTask = session?.dataTask(with: youbikeRequest, completionHandler: { (data:Data?, response:URLResponse?, error:Error?)in
+            guard error == nil else{
+                print(error?.localizedDescription as Any)
+                return
+            }
+            guard (response as! HTTPURLResponse).statusCode == 200 else{
+                print("status code出錯")
+                return
+            }
+            
+            guard let data = data else{
+                print("沒有資料")
+                return
+            }
+            print(data)
+            //print(String(data: data, encoding: .utf8)!)
+        }){
+            dataTask.resume()
+        }
+        
     }
     
     private init(){
