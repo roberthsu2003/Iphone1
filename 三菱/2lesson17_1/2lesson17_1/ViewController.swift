@@ -36,6 +36,8 @@ class ViewController: UITableViewController {
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl!.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         
+        tableView.dataSource = self
+        
         
     }
     
@@ -45,12 +47,34 @@ class ViewController: UITableViewController {
 
 
 }
+extension ViewController{
+    //UITableViewDataSource
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int{
+        return siteInfos.count
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        var configure = cell.defaultContentConfiguration()
+        let site = siteInfos[indexPath.row]
+        configure.text = site.sna
+        cell.contentConfiguration = configure
+        return cell
+    }
+}
 
 extension ViewController:DataSourceDelegate{
     func finishDownLoad(data:YoubikeData){
         siteInfos = data
         indicatorView.stopAnimating()
         self.tableView.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
         print(siteInfos)
     }
     
