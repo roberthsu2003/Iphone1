@@ -6,6 +6,18 @@
 //
 
 import Foundation
+struct Site:Codable{
+    struct Record:Codable{
+        let sitename:String
+        let county:String
+        let aqi:String
+        let status:String
+        let datacreationdate:String
+        let longitude:String
+        let latitude:String
+    }
+    let records:[Record]
+}
 class DataSource:NSObject{
     static var main = DataSource()
     var urlSession:URLSession!
@@ -36,7 +48,19 @@ extension DataSource:URLSessionDownloadDelegate{
         downloadTask: URLSessionDownloadTask,
         didFinishDownloadingTo location: URL
     ){
-        print("下載完成\(location)")
+        guard let data = try? Data(contentsOf: location) else{
+            print("轉換Data失敗")
+            return
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        guard let aqiData = try? jsonDecoder.decode(Site.self, from: data) else{
+            print("解析json失敗")
+            return
+        }
+        
+        print(aqiData)
+        
     }
     
     func urlSession(
