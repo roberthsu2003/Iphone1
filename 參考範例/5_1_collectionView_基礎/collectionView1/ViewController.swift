@@ -13,7 +13,6 @@ class ViewController: UICollectionViewController {
         super.viewDidLoad()
         let layout = self.collectionView.collectionViewLayout
         as! UICollectionViewFlowLayout
-        
         layout.itemSize = CGSize(width: 150, height: 50)
         let v = UIView()
         v.backgroundColor = .systemGray

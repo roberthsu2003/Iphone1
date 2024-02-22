@@ -32,17 +32,11 @@ class ViewController: UITableViewController {
             indicatorView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor, constant: -100)
         ])
         
-        
-        
         //建立refresh
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl!.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         
         tableView.dataSource = self
-        
-        //tableView的row的大小
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
         
         
     }
@@ -70,8 +64,6 @@ extension ViewController{
         var configure = cell.defaultContentConfiguration()
         let site = siteInfos[indexPath.row]
         configure.text = site.sna
-        configure.secondaryText = site.ar
-        configure.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 20, trailing: 10)
         cell.contentConfiguration = configure
         return cell
     }
