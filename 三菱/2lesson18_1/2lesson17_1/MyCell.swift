@@ -7,5 +7,9 @@
 
 import UIKit
 class MyCell:UITableViewCell{
-    
+    @IBOutlet var siteName:UILabel!
+    @IBOutlet var datetime:UILabel!
+    @IBOutlet var totLabel:UILabel!
+    @IBOutlet var sbiLabel:UILabel!
+    @IBOutlet var bempLabel:UILabel!
 }

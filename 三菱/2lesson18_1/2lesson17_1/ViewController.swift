@@ -64,6 +64,8 @@ extension ViewController{
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
+        let site = siteInfos[indexPath.row]
+        /*
         var configure = cell.defaultContentConfiguration()
         let site = siteInfos[indexPath.row]
         configure.text = site.sna
@@ -71,6 +73,12 @@ extension ViewController{
         configure.textToSecondaryTextVerticalPadding = 10
         configure.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 20, trailing: 10)
         cell.contentConfiguration = configure
+         */
+        cell.siteName.text = site.sna
+        cell.datetime.text = site.mday
+        cell.totLabel.text = "總車數:\(site.tot)"
+        cell.sbiLabel.text = "可借:\(site.sbi)"
+        cell.bempLabel.text = "可還:\(site.bemp)"
         return cell
     }
 }
