@@ -38,6 +38,9 @@ class ViewController: UITableViewController {
         
         tableView.dataSource = self
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        
         
     }
     
@@ -60,10 +63,13 @@ extension ViewController{
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
         var configure = cell.defaultContentConfiguration()
         let site = siteInfos[indexPath.row]
         configure.text = site.sna
+        configure.secondaryText = site.ar
+        configure.textToSecondaryTextVerticalPadding = 10
+        configure.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 10, bottom: 20, trailing: 10)
         cell.contentConfiguration = configure
         return cell
     }

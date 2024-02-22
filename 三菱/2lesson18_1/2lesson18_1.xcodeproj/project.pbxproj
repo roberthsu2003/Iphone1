@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E5799952B871A39004B45C4 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5799942B871A39004B45C4 /* MyCell.swift */; };
 		8E5DD4EF2B8472E2004C500A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DD4EE2B8472E2004C500A /* AppDelegate.swift */; };
 		8E5DD4F12B8472E2004C500A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DD4F02B8472E2004C500A /* SceneDelegate.swift */; };
 		8E5DD4F32B8472E2004C500A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5DD4F22B8472E2004C500A /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E5799942B871A39004B45C4 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8E5DD4EB2B8472E2004C500A /* 2lesson18_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2lesson18_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E5DD4EE2B8472E2004C500A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E5DD4F02B8472E2004C500A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8E5DD4F92B8472E3004C500A /* LaunchScreen.storyboard */,
 				8E5DD4FC2B8472E3004C500A /* Info.plist */,
 				8E7A28012B84734A00DFDF33 /* DataSource.swift */,
+				8E5799942B871A39004B45C4 /* MyCell.swift */,
 			);
 			path = 2lesson17_1;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E5DD4F32B8472E2004C500A /* ViewController.swift in Sources */,
+				8E5799952B871A39004B45C4 /* MyCell.swift in Sources */,
 				8E5DD4EF2B8472E2004C500A /* AppDelegate.swift in Sources */,
 				8E7A28022B84734A00DFDF33 /* DataSource.swift in Sources */,
 				8E5DD4F12B8472E2004C500A /* SceneDelegate.swift in Sources */,
