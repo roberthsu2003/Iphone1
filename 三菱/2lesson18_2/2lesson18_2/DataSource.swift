@@ -39,5 +39,26 @@ extension DataSource:URLSessionDownloadDelegate{
         print("下載完成\(location)")
     }
     
+    func urlSession(
+        _ session: URLSession,
+        downloadTask: URLSessionDownloadTask,
+        didWriteData bytesWritten: Int64,
+        totalBytesWritten: Int64,
+        totalBytesExpectedToWrite: Int64
+    ){
+        let percent = Double(totalBytesWritten) / Double(totalBytesWritten)
+        print(percent)
+    }
+    
+    func urlSession(
+        _ session: URLSession,
+        task: URLSessionTask,
+        didCompleteWithError error: Error?
+    ){
+        guard error == nil else{
+            print(error?.localizedDescription as Any)
+            return
+        }
+    }
     
 }
