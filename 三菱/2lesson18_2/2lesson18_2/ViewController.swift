@@ -11,7 +11,9 @@ class ViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        DataSource.main
+        DataSource.main
+        DataSource.main
     }
 
 
