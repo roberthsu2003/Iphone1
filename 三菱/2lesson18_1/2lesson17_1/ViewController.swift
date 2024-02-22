@@ -64,7 +64,9 @@ extension ViewController{
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as! MyCell
+        
         let site = siteInfos[indexPath.row]
+        print(site)
         /*
         var configure = cell.defaultContentConfiguration()
         let site = siteInfos[indexPath.row]
