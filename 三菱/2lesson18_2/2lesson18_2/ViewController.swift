@@ -11,9 +11,9 @@ class ViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataSource.main
-        DataSource.main
-        DataSource.main
+        let dataSource = DataSource.main
+        dataSource.delegate = self
+        
     }
 
 
