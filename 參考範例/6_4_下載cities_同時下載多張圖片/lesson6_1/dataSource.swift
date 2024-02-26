@@ -9,20 +9,21 @@ import UIKit
 //全部使用type property,type method
 //不需要init()
 
-typealias YoubikeData = [Site]
-struct Site:Codable {
-    let ar:String
-    let bemp:Int
-    let lat:Double
-    let lng:Double
-    let mday:String
-    let sbi:Int
-    let sna:String
-    let tot:Int
+
+struct Root:Codable {
+    struct City:Codable{
+        let cityId:Int
+        let cityName:String
+        let continent:String
+        let country:String
+        let image:String
+    }
+    let root:[City]
+    
 }
 protocol DataSourceDelegate:AnyObject{
     func startDownLoad()
-    func finishDownLoad(data:YoubikeData)
+    func finishDownLoad(data:[Root.City])
     func failDownLoad(message:String)
 }
 
@@ -31,9 +32,9 @@ class DataSource{
     static func startDownload(delegate:DataSourceDelegate){
         self.delegate = delegate
         self.delegate?.startDownLoad()
-        let youbikeURL = URL(string: "https://webapi-2rhb.onrender.com/youbike")
-        let youbikeRequest = URLRequest(url:youbikeURL!, timeoutInterval: 120)
-        let downloadTask = URLSession.shared.dataTask(with: youbikeRequest) { (data:Data?, response:URLResponse?, error:Error?) in
+        let cityURL = URL(string: "https://webapi-2rhb.onrender.com/cities")
+        let cityRequest = URLRequest(url:cityURL!, timeoutInterval: 120)
+        let downloadTask = URLSession.shared.dataTask(with: cityRequest) { (data:Data?, response:URLResponse?, error:Error?) in
             guard error == nil else{
                 print(error?.localizedDescription as Any)
                 self.delegate?.failDownLoad(message: error!.localizedDescription)
@@ -55,12 +56,12 @@ class DataSource{
             
             DispatchQueue.main.async {
                 let jsonDecoder = JSONDecoder()
-                guard let youbike = try? jsonDecoder.decode(YoubikeData.self, from: data) else{
+                guard let root = try? jsonDecoder.decode(Root.self, from: data) else{
                     print("無法解析錯誤")
                     self.delegate?.failDownLoad(message: "無法解析錯誤")
                     return
                 }
-                self.delegate?.finishDownLoad(data: youbike)
+                self.delegate?.finishDownLoad(data: root.root)
             }
            
         }
