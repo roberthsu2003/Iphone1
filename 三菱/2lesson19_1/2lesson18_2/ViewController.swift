@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UICollectionViewController {
     var records = [Site.Record]() //必需要是空的
     let progressBar = UIProgressView(progressViewStyle: .bar)
+    let cellId = "CELL"
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -31,7 +32,12 @@ class ViewController: UICollectionViewController {
             progressBar.tintColor = UIColor.systemBlue
             progressBar.progress = 0
         }
-        
+        //設定collectionView的dataSoure
+        collectionView.dataSource = self
+        //修改UICollectionViewFlowLayout
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: 50, height: 50)
+        layout.scrollDirection = .horizontal
         
     }
 
@@ -44,12 +50,32 @@ extension ViewController:DataSourceDelegate{
         //print("下載完成")
         //print(records)
         progressBar.isHidden = true
+        collectionView.reloadData()
     }
     func failDownLoad(message:String){
         print("錯誤:\(message)")
     }
     func percentInProcess(percent:Double){
         progressBar.progress = Float(percent)
+    }
+}
+
+extension ViewController{
+    //UICollectionViewDataSource
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int{
+        return records.count
+    }
+    
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell{
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        cell.backgroundColor = .brown
+        return cell
     }
 }
 
