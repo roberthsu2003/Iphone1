@@ -34,11 +34,14 @@ class ViewController: UICollectionViewController {
         }
         //設定collectionView的dataSoure
         collectionView.dataSource = self
+        
+        //建立collectionView的padding
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         //修改UICollectionViewFlowLayout
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWidth = self.collectionView.frame.width / 2 - 10
+        let cellWidth = self.collectionView.frame.width / 2 - 30
         layout.itemSize = CGSize(width: cellWidth, height: 150)
-        layout.minimumInteritemSpacing = 10
+        layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         layout.scrollDirection = .vertical
         
@@ -77,7 +80,14 @@ extension ViewController{
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .brown
+        if cell.backgroundView == nil{ //全新的
+            let backgroundV = UIView()
+            backgroundV.backgroundColor = UIColor.systemTeal
+            cell.backgroundView = backgroundV
+        }
+        //已經有backgroundView
+        
+        
         return cell
     }
 }
