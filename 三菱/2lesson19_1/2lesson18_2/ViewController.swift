@@ -100,12 +100,53 @@ extension ViewController{
                 countyLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
                 countyLabel.heightAnchor.constraint(equalToConstant: 30)
             ])
+            countyLabel.textColor = .black
+            countyLabel.highlightedTextColor = .systemTeal
+            countyLabel.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+            countyLabel.textAlignment = .center
+            countyLabel.font = UIFont.systemFont(ofSize: 14)
+            
+            //AQILabel
+            let aqiLabel = UILabel()
+            cell.contentView.addSubview(aqiLabel)
+            aqiLabel.translatesAutoresizingMaskIntoConstraints = false
+            aqiLabel.tag = 2
+            NSLayoutConstraint.activate([
+                aqiLabel.topAnchor.constraint(equalTo: countyLabel.bottomAnchor, constant: 20),
+                aqiLabel.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor),
+                aqiLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -10)
+            ])
+            aqiLabel.textColor = .white
+            aqiLabel.textAlignment = .center
+            aqiLabel.font = UIFont.systemFont(ofSize: 40)
         }
         
         //已經有backgroundView,這裏負責改變內容
         let record = records[indexPath.row]
         let countyLabel = cell.viewWithTag(1) as! UILabel
         countyLabel.text = "\(record.county)-\(record.sitename)"
+        
+        //建立aqiLabel內容
+        //AQI值0-50代表空氣品質良好(綠色)、51-100為普通(黃色)、101-150為對敏感族群不良(橘色)、151-200為對所有族群不良(紅色)、201-300為非常不良(紫色)、301-500為有害(褐紅)
+        let aqiLabel = cell.viewWithTag(2) as! UILabel
+        aqiLabel.text = record.aqi
+        if let aqiValue = Int(record.aqi){ //有可能會是nil
+            switch aqiValue{
+            case 0...50:
+                aqiLabel.textColor = .green
+            case 51...100:
+                aqiLabel.textColor = .yellow
+            case 101...150:
+                aqiLabel.textColor = .orange
+            case 151...200:
+                aqiLabel.textColor = .red
+            case 201...300:
+                aqiLabel.textColor = .purple
+            default:
+                aqiLabel.textColor = UIColor(red: 1, green: 1, blue: 0, alpha: 1)
+            }
+            
+        }
         
         
         return cell
