@@ -80,12 +80,32 @@ extension ViewController{
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        if cell.backgroundView == nil{ //全新的
+        if cell.backgroundView == nil{ //全新的,這裏負責layout
             let backgroundV = UIView()
             backgroundV.backgroundColor = UIColor.systemTeal
             cell.backgroundView = backgroundV
+            
+            let selectedView = UIView()
+            selectedView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+            cell.selectedBackgroundView = selectedView
+            
+            //coutyLabel
+            let countyLabel = UILabel()
+            cell.contentView.addSubview(countyLabel)
+            countyLabel.translatesAutoresizingMaskIntoConstraints = false
+            countyLabel.tag = 1
+            NSLayoutConstraint.activate([
+                countyLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+                countyLabel.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+                countyLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
+                countyLabel.heightAnchor.constraint(equalToConstant: 30)
+            ])
         }
-        //已經有backgroundView
+        
+        //已經有backgroundView,這裏負責改變內容
+        let record = records[indexPath.row]
+        let countyLabel = cell.viewWithTag(1) as! UILabel
+        countyLabel.text = "\(record.county)-\(record.sitename)"
         
         
         return cell
