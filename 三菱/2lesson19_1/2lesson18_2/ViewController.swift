@@ -36,8 +36,11 @@ class ViewController: UICollectionViewController {
         collectionView.dataSource = self
         //修改UICollectionViewFlowLayout
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: 50, height: 50)
-        layout.scrollDirection = .horizontal
+        let cellWidth = self.collectionView.frame.width / 2 - 10
+        layout.itemSize = CGSize(width: cellWidth, height: 150)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 20
+        layout.scrollDirection = .vertical
         
     }
 
