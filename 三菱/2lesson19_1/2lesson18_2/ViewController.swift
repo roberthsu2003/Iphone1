@@ -11,6 +11,7 @@ class ViewController: UICollectionViewController {
     var records = [Site.Record]() //必需要是空的
     let progressBar = UIProgressView(progressViewStyle: .bar)
     let cellId = "CELL"
+    let refreshControl = UIRefreshControl()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -45,6 +46,16 @@ class ViewController: UICollectionViewController {
         layout.minimumLineSpacing = 20
         layout.scrollDirection = .vertical
         
+        //UIRefreshControl()
+        collectionView.alwaysBounceVertical = true
+        refreshControl.tintColor = UIColor.systemTeal
+        refreshControl.addTarget(self, action: #selector(doRefresh), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+        
+    }
+    
+    @objc func doRefresh(){
+        DataSource.main.download()
     }
 
 
@@ -57,6 +68,7 @@ extension ViewController:DataSourceDelegate{
         //print(records)
         progressBar.isHidden = true
         collectionView.reloadData()
+        refreshControl.endRefreshing()
     }
     func failDownLoad(message:String){
         print("錯誤:\(message)")
