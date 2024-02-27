@@ -119,6 +119,16 @@ extension ViewController{
             aqiLabel.textColor = .white
             aqiLabel.textAlignment = .center
             aqiLabel.font = UIFont.systemFont(ofSize: 40)
+            
+            //statusLabel
+            let statusLabel = UILabel()
+            cell.contentView.addSubview(statusLabel)
+            statusLabel.translatesAutoresizingMaskIntoConstraints = false
+            statusLabel.tag = 3
+            NSLayoutConstraint.activate([
+                statusLabel.topAnchor.constraint(equalTo: countyLabel.bottomAnchor, constant: 10),
+                statusLabel.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 10)
+            ])
         }
         
         //已經有backgroundView,這裏負責改變內容
@@ -147,6 +157,10 @@ extension ViewController{
             }
             
         }
+        
+        //建立statusLabel內容
+        let statusLabel = cell.viewWithTag(3) as! UILabel
+        statusLabel.text = record.status
         
         
         return cell
