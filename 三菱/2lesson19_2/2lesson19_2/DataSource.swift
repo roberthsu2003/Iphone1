@@ -6,6 +6,26 @@
 //
 
 import Foundation
+class City{
+    var name:String
+    var continent:String
+    var country:String
+    var image:String
+    var local:String
+    var lat:Double
+    var long:Double
+    var url:String
+    init(name: String="", continent: String="", country: String="", image: String="", local: String="", lat: Double=0, long: Double=0, url: String="") {
+        self.name = name
+        self.continent = continent
+        self.country = country
+        self.image = image
+        self.local = local
+        self.lat = lat
+        self.long = long
+        self.url = url
+    }
+}
 
 class DataSource{
     static var main = DataSource()
