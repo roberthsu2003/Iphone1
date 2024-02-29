@@ -23,10 +23,12 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "世界城市"
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        
     }
 
 }
@@ -44,6 +46,11 @@ extension ViewController:UITableViewDataSource{
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MyCell
+        var configuration = cell.defaultContentConfiguration()
+        let city = cities[indexPath.row]
+        configuration.text = city.name
+        configuration.secondaryText = city.country
+        cell.contentConfiguration = configuration
         return cell
     }
 }
