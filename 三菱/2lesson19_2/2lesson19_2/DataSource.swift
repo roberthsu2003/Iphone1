@@ -184,4 +184,8 @@ class DataSource{
         
         return tempCitys
     }
+    
+    func searchCity(searchText:String) -> [City]?{
+        return [City]()
+    }
 }

@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         //建立搜尋的介面
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
     }
 
 }
@@ -88,7 +89,22 @@ extension ViewController:UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController){
         let searchBar = searchController.searchBar
         let searchText = searchBar.text!
-        print(searchText,searchText.count)
+        guard searchText.count > 0 else{
+            cities = DataSource.main.getCities()!
+            return
+        }
+        guard let searchResultCitys = DataSource.main.searchCity(searchText: searchText) else{
+            return
+        }
+        cities = searchResultCitys
+        tableView.reloadData()
+    }
+}
+
+extension ViewController:UISearchBarDelegate{
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+        cities = DataSource.main.getCities()!
+        tableView.reloadData()
     }
 }
 
