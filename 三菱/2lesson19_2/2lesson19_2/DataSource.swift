@@ -186,6 +186,40 @@ class DataSource{
     }
     
     func searchCity(searchText:String) -> [City]?{
-        return [City]()
+        guard sqlite3_open(documentSqlitePath, &db) == SQLITE_OK else{
+            print("sqlite3_open()失敗")
+            sqlite3_close(db)
+            return nil
+        }
+        
+        var statement:OpaquePointer!
+        let sqlStatement = "SELECT name,continent,country,image,local,lat,long,url FROM city WHERE name LIKE ? OR continent LIKE ? OR country LIKE ? OR local LIKE ?";
+        guard sqlite3_prepare_v2(db, sqlStatement, -1, &statement, nil) == SQLITE_OK else{
+            sqlite3_finalize(statement)
+            sqlite3_close(db)
+            print("建立sqlite3_statement失敗")
+            return nil
+        }
+        sqlite3_bind_text(statement,1,("%\(searchText)%" as NSString).utf8String,-1,nil)
+        sqlite3_bind_text(statement,2,("%\(searchText)%" as NSString).utf8String,-1,nil)
+        sqlite3_bind_text(statement,3,("%\(searchText)%" as NSString).utf8String,-1,nil)
+        sqlite3_bind_text(statement,4,("%\(searchText)%" as NSString).utf8String,-1,nil)
+        
+        var tempCitys = [City]()
+        while sqlite3_step(statement) == SQLITE_ROW{
+            let name = String(cString:sqlite3_column_text(statement, 0))
+            let continent = String(cString:sqlite3_column_text(statement, 1))
+            let country = String(cString:sqlite3_column_text(statement, 2))
+            let image = String(cString:sqlite3_column_text(statement, 3))
+            let local = String(cString:sqlite3_column_text(statement, 4))
+            let lat = sqlite3_column_double(statement, 5)
+            let long = sqlite3_column_double(statement, 6)
+            let url = String(cString:sqlite3_column_text(statement, 7))
+            let city = City(name: name, continent: continent, country: country, image: image, local: local, lat: lat, long: long, url: url)
+            tempCitys.append(city)
+        }
+        sqlite3_finalize(statement)
+        sqlite3_close(db)
+        return tempCitys
     }
 }
