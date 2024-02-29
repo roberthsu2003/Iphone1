@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
 }
@@ -47,6 +49,12 @@ extension ViewController:UITableViewDataSource{
 }
 
 extension ViewController:UITableViewDelegate{
-    
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat{
+        //return UITableView.automaticDimension
+        return 80
+    }
 }
 
