@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
     let cellId = "CELL"
     var cities = [City]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
+        //建立搜尋的介面
+        tableView.tableHeaderView = searchController.searchBar
         
     }
 
