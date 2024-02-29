@@ -28,7 +28,27 @@ class DataSource{
             if !fileManager.fileExists(atPath: targetURL.path()){
                 try fileManager.copyItem(at: sqliteURL, to: targetURL)
                 print("複制city0811.db至document/city.db成功")
+                plistFillDataToSqlite(documentSqliteURL: targetURL)
             }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    private func plistFillDataToSqlite(documentSqliteURL:URL){
+        guard let plistURL = Bundle.main.url(forResource: "citylist", withExtension: "plist")else{
+            print("cityplist.plist沒有發現")
+            return
+        }
+        do{
+            let plistData = try Data(contentsOf: plistURL)
+            guard let cities = try PropertyListSerialization.propertyList(from: plistData, format: nil) as? [[String:Any]] else{
+                print("plist無法轉換為swift資料結構")
+                return
+            }
+            print(cities)
             
         }catch{
             print(error.localizedDescription)
