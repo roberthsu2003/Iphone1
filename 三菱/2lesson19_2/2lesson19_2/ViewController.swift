@@ -6,8 +6,13 @@
 //
 
 import UIKit
+class MyCell:UITableViewCell{
+    
+}
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
+    
     var cities = [City]()
     
     required init?(coder: NSCoder) {
@@ -18,7 +23,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.cities)        
+        print(self.cities)
     }
 
 
