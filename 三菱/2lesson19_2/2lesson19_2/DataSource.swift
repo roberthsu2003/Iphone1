@@ -68,7 +68,37 @@ class DataSource{
                 print("plist無法轉換為swift資料結構")
                 return
             }
-            print(cities)
+            
+            //將city的dictionary轉換為City實體
+            var tempCities = [City]()
+            for cityDict in cities{
+                let city = City()
+                for (key,value) in cityDict{
+                    switch(key){
+                    case "City":
+                        city.name = value as! String
+                    case "Country":
+                        city.country = value as! String
+                    case "Continent":
+                        city.continent = value as! String
+                    case "Image":
+                        city.image = value as! String
+                    case "Local":
+                        city.local = value as! String
+                    case "url":
+                        city.url = value as! String
+                    case "long":
+                        city.long = value as! Double
+                    case "lat":
+                        city.lat = value as! Double
+                    default:
+                        break
+                    }
+                }
+                tempCities.append(city)
+            }
+            print(tempCities)
+            
             
         }catch{
             print(error.localizedDescription)
