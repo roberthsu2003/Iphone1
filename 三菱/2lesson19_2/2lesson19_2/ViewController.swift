@@ -50,6 +50,14 @@ extension ViewController:UITableViewDataSource{
         let city = cities[indexPath.row]
         configuration.text = city.name
         configuration.secondaryText = city.country
+        configuration.textToSecondaryTextVerticalPadding = 10
+        let sourceImage = UIImage(named: city.image)
+        let targetSize = CGSize(width: 80, height: 50)
+        let imageRender = UIGraphicsImageRenderer(size: targetSize)
+        let resizeImage = imageRender.image { context in
+            sourceImage?.draw(in: CGRect.init(origin: .zero, size: targetSize))
+        }
+        configuration.image = resizeImage
         cell.contentConfiguration = configuration
         return cell
     }
