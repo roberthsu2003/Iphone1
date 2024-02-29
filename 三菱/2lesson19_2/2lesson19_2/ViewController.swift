@@ -7,7 +7,15 @@
 
 import UIKit
 class MyCell:UITableViewCell{
-    
+    override func updateConfiguration(using state: UICellConfigurationState){
+        var back = UIBackgroundConfiguration.listPlainCell().updated(for: state)
+        if state.isSelected || state.isHighlighted{
+            back.backgroundColor = .lightGray.withAlphaComponent(0.4)
+        }else{
+            back.backgroundColor = .lightGray.withAlphaComponent(0.2)
+        }
+        self.backgroundConfiguration = back
+    }
 }
 
 class ViewController: UIViewController {
