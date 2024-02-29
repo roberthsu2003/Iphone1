@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SQLite3
+
 class City{
     var name:String
     var continent:String
@@ -29,6 +31,8 @@ class City{
 
 class DataSource{
     static var main = DataSource()
+    var db:OpaquePointer! //db的指標,使用c語言的指標
+    var documentSqlitePath:String!
     
     private init(){
         guard let sqliteURL = Bundle.main.url(forResource: "city0811", withExtension: "db") else{
@@ -45,6 +49,7 @@ class DataSource{
             let documentURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             print("document路徑",documentURL)
             let targetURL = documentURL.appending(path: "city.db", directoryHint: .notDirectory)
+            documentSqlitePath = targetURL.path()
             if !fileManager.fileExists(atPath: targetURL.path()){
                 try fileManager.copyItem(at: sqliteURL, to: targetURL)
                 print("複制city0811.db至document/city.db成功")
@@ -98,6 +103,46 @@ class DataSource{
                 tempCities.append(city)
             }
             print(tempCities)
+            //開始建立sqlite
+            
+            guard sqlite3_open(documentSqlitePath, &db) == SQLITE_OK else{
+                print("sqlite3_open()失敗")
+                sqlite3_close(db)
+                return
+            }
+            
+            for city in tempCities{
+                //一個城市建立一個sql statement
+                var statement:OpaquePointer!
+                let sqlStatement = "INSERT INTO city (name, continent, country, image, local,lat,long,url) VALUES (?,?,?,?,?,?,?,?)"
+                guard sqlite3_prepare_v2(db, sqlStatement, -1, &statement, nil) == SQLITE_OK else{
+                    sqlite3_finalize(statement)
+                    sqlite3_close(db)
+                    print("建立sqlite3_statement失敗")
+                    return
+                }
+                //statement bind 值
+                sqlite3_bind_text(statement,1,(city.name as NSString).utf8String,-1,nil)
+                sqlite3_bind_text(statement,2,(city.continent as NSString).utf8String,-1,nil)
+                sqlite3_bind_text(statement,3,(city.country as NSString).utf8String,-1,nil)
+                sqlite3_bind_text(statement,4,(city.image as NSString).utf8String,-1,nil)
+                sqlite3_bind_text(statement,5,(city.local as NSString).utf8String,-1,nil)
+                sqlite3_bind_double(statement, 6, city.lat)
+                sqlite3_bind_double(statement, 7, city.long)
+                sqlite3_bind_text(statement,8,(city.url as NSString).utf8String,-1,nil)
+                
+                guard sqlite3_step(statement) == SQLITE_DONE else{
+                    print("slqite3_step失敗")
+                    sqlite3_finalize(statement)
+                    sqlite3_close(db)
+                    return
+                }
+                sqlite3_finalize(statement)
+                
+            }
+            //全部新建完成
+            //關閉db
+            sqlite3_close(db)
             
             
         }catch{
