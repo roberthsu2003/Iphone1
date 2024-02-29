@@ -8,10 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var cities = [City]()
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        if let cities = DataSource.main.getCities(){
+            self.cities = cities
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataSource.main
+        print(self.cities)
+        
     }
 
 

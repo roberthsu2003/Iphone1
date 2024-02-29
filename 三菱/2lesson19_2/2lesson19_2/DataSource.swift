@@ -102,7 +102,7 @@ class DataSource{
                 }
                 tempCities.append(city)
             }
-            print(tempCities)
+            //print(tempCities)
             //開始建立sqlite
             
             guard sqlite3_open(documentSqlitePath, &db) == SQLITE_OK else{
@@ -149,5 +149,9 @@ class DataSource{
             print(error.localizedDescription)
         }
         
+    }
+    
+    func getCities() -> [City]?{
+        return [City]()
     }
 }
