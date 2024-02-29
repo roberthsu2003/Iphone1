@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         //建立搜尋的介面
         tableView.tableHeaderView = searchController.searchBar
-        
+        searchController.searchResultsUpdater = self
     }
 
 }
@@ -81,6 +81,14 @@ extension ViewController:UITableViewDelegate{
     ) -> CGFloat{
         //return UITableView.automaticDimension
         return 80
+    }
+}
+
+extension ViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!
+        print(searchText,searchText.count)
     }
 }
 
