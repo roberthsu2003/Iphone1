@@ -1,0 +1,122 @@
+//
+//  ViewController.swift
+//  6_5citydb
+//
+//  Created by 徐國堂 on 2024/2/27.
+//
+
+import UIKit
+class MyCell:UITableViewCell{
+    override func updateConfiguration(using state: UICellConfigurationState) {
+           var back = UIBackgroundConfiguration.listPlainCell().updated(for: state)
+           
+           if state.isSelected || state.isHighlighted{
+              back.backgroundColor = .lightGray.withAlphaComponent(0.4)
+           }else{
+               back.backgroundColor = .lightGray.withAlphaComponent(0.2)
+           }
+           self.backgroundConfiguration = back
+           
+    }
+}
+
+class ViewController: UIViewController {
+    @IBOutlet var tableView:UITableView!
+    var cities = [City]()
+    let cellId = "CELL"
+    
+    var searchController = UISearchController(searchResultsController: nil)
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        if let citys = DataSource.main.getCitys(){
+            cities = citys
+        }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "世界城市"
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        //navigationController?.hidesBarsOnSwipe = true
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self;
+        
+    }
+    
+    
+}
+
+extension ViewController:UITableViewDataSource{
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int{
+        return cities.count
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MyCell
+        var configuration = cell.defaultContentConfiguration()
+        let city = cities[indexPath.row]
+        configuration.text = city.name
+        configuration.textToSecondaryTextVerticalPadding = 10
+        configuration.secondaryText = city.country
+        let sourceImage = UIImage(named: city.image)
+        let targetSize = CGSize(width: 80, height: 50)
+        let imageRender = UIGraphicsImageRenderer(size: targetSize)
+        let resizeImage = imageRender.image { context in
+            sourceImage?.draw(in: CGRect.init(origin: CGPoint.zero, size: targetSize))
+        }
+        configuration.image = resizeImage
+        cell.contentConfiguration = configuration
+        return cell
+    }
+}
+
+extension ViewController:UITableViewDelegate{
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat{
+        return 80
+    }
+}
+
+extension ViewController:UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController){
+        
+        
+        let searchBar = searchController.searchBar
+        let searchText = searchBar.text!
+        guard searchText.count > 0 else{
+            cities = DataSource.main.getCitys()!
+            return
+        }
+        
+        guard let searchResultCitys = DataSource.main.searchCity(searchText: searchText) else{
+            cities = DataSource.main.getCitys()!
+            return
+        }
+        
+        cities = searchResultCitys
+        tableView.reloadData()
+        
+    }
+    
+}
+
+extension ViewController:UISearchBarDelegate{
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+        cities = DataSource.main.getCitys()!
+        tableView.reloadData()
+    }
+}
