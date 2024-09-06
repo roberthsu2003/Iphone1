@@ -7,3 +7,10 @@ var welcomeMessage:String
 
 welcomeMessage = "Hello!"
 print(welcomeMessage)
+
+//字串插補
+var friendlyWelcome = "Hello!"
+friendlyWelcome = "Bonjour!"
+
+print("The current value of friendlyWelcome is \(friendlyWelcome)")
+
