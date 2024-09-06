@@ -49,6 +49,26 @@ var serverResponseCode:Int? = 404
 serverResponseCode = nil
 print(serverResponseCode)
 
+//如果使用optional type,不給值,會有default value nil
+var surverAnswer:String?
+
+print(surverAnswer)
+
+//optional type
+let possibleNumber1 = "123a"
+let convertedNumber1 = Int(possibleNumber1)
+if convertedNumber1 != nil{
+	print(convertedNumber1!)
+}else{
+	print("無法轉換")
+}
+
+
+
+let serverResponseCode1:Int? = 404
+print(serverResponseCode1!)
+
+
 
 
 
