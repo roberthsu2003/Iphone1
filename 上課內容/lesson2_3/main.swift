@@ -80,3 +80,21 @@ func greet(person:[String:String]){
 }
 
 greet(person:["name":"robert","location":"taipei"])
+
+if #available(iOS 10, macOS 10.12,*){
+	
+}else{
+	
+}
+
+@available(macOS 10.12,*)
+struct ColorPreference{
+	var bestColor="blue"
+}
+
+func chooseBestColor() -> String{
+	guard #available(macOS 10.12, *) else{
+		return "gray"
+	}	
+	
+}
