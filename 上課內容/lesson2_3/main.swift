@@ -57,3 +57,26 @@ switch somePoint{
 		print("超出範圍")
 	
 }
+
+//dictionary
+var person = ["name":"John"]
+person["location"] = "Taipei"
+var myName = person["name"]
+
+
+func greet(person:[String:String]){
+	guard let name = person["name"] else{
+		print("沒有name這個key")
+		return
+	}
+	print("Hello \(name)!")
+
+	guard let location = person["location"] else{
+		print("沒有location")
+		return
+	}
+	print("Hello! \(location)")
+	
+}
+
+greet(person:["name":"robert","location":"taipei"])
