@@ -36,3 +36,10 @@ let forcedString:String = possibleString!
 
 let assumedString:String! = "An implicitly unwrapped optional String."
 let implicitString:String = assumedString
+
+
+let defaultColorName = "red"
+var userDefinedColorName:String?
+
+var  colorNameToUse = userDefinedColorName ?? defaultColorName
+print(colorNameToUse)
