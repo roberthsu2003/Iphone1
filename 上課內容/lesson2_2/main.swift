@@ -49,3 +49,16 @@ var shoppingList:Array<String> = ["Eggs", "Milk"]
 print(shoppingList)
 
 print("==========")
+
+//Set
+var favoriteInts:Set = [1, 1, 2, 2, 3, 3]
+print(favoriteInts)
+
+//Set交集,聯集,差集
+let oddDigits:Set = [1, 3, 5, 7, 9]
+let evenDigits:Set = [0, 2, 4, 6, 8]
+let singleDigitprimeNumbers:Set = [2, 3, 5, 7]
+
+print(oddDigits.union(evenDigits).sorted())
+
+
