@@ -61,4 +61,24 @@ let singleDigitprimeNumbers:Set = [2, 3, 5, 7]
 
 print(oddDigits.union(evenDigits).sorted())
 
+print("=========")
+//Dictionary
+var namesOfIntegers:[Int:String] = [:]
+print(namesOfIntegers)
 
+print("=========")
+
+namesOfIntegers[16] = "sixteen"
+
+print(namesOfIntegers)
+
+print("========")
+
+var airports:[String:String] = ["YYZ":"Toronto Pearson", "DUB":"Dublin"]
+
+print(airports)
+print("==========")
+
+for (airportCode,airportName) in airports{
+	print("\(airportCode),\(airportName)")
+}
