@@ -24,3 +24,28 @@ for name in names[...2]{
 }
 
 print("============")
+
+//集合型別
+
+//建立空的陣列
+var someInts:[Int] = []
+someInts.append(3)
+print(someInts)
+someInts = []
+print(someInts)
+
+print("============")
+
+var threeDouble = Array(repeating:0.0, count:3)
+print(threeDouble)
+
+var anotherThreeDoubles = Array(repeating:2.5, count:3)
+var sixDouble = threeDouble + anotherThreeDoubles
+print(sixDouble)
+
+print("==========")
+
+var shoppingList:Array<String> = ["Eggs", "Milk"]
+print(shoppingList)
+
+print("==========")
