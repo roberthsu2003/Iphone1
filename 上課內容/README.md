@@ -21,3 +21,11 @@ https://youtube.com/live/YIdSkoQhDGQ
 [2024_09_06_下午2]
 https://youtube.com/live/Kx2dQJKTFnc
 
+---
+
+[2024_09_09_上午]
+
+https://youtube.com/live/FP2N8tFjBjU
+
+---
+
