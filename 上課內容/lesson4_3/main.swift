@@ -78,3 +78,21 @@ struct Cuboid{
 let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
 print(fourByFiveByTwo.volume)
 
+//property Observer
+class StepCounter{
+	var totalSteps:Int = 0 {
+		willSet(newTotalSteps){
+			print("傳進來的值是\(newTotalSteps)")
+		}
+
+		didSet{
+			if totalSteps > oldValue{
+				print("新增\(totalSteps-oldValue)")
+			}
+		}
+	}
+}
+
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps = 250
