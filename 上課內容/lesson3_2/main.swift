@@ -34,3 +34,11 @@ func someFunction(_ firstParamenterName:Int, secondParamenterName:Int){
 }
 
 someFunction(1, secondParamenterName: 87)
+
+//參數的default value
+func someFunction(p:Int,pWithDefault:Int=12){
+}
+
+someFunciton(p:10)
+someFunction(p: 10, pWithDefault: 25)
+
