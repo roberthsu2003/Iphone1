@@ -1,3 +1,8 @@
+[上課網址]
+
+https://meet.google.com/dwg-sotn-rvp
+
+---
 [2024_09_06_早上]
 https://youtube.com/live/skfwSycdhtM
 
