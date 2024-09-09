@@ -5,8 +5,8 @@ enum CompassPoint{
 	case west
 }
 
-enum Planet{
-	case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+enum Planet:Int{
+	case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 
 //var directionToHead:CompassPoint = .west
@@ -36,3 +36,5 @@ switch somePlanet{
 	default:
 	print("沒有人住的星球")
 }
+
+print(Planet.earth.rawValue)
