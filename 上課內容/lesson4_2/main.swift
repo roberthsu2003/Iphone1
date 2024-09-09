@@ -10,11 +10,17 @@ class VideoMode{
 	var name:String?
 }
 
-let someResolution = Resolution()
+var someResolution = Resolution()
+someResolution.width = 1027
+someResolution.height = 768
+
 print(someResolution.width)
 print(someResolution.height)
 
 let someVideoMode = VideoMode()
+someVideoMode.resolution.width = 1024
+someVideoMode.resolution.height = 768
+
 print(someVideoMode.resolution.width)
 print(someVideoMode.resolution.height)
 print(someVideoMode.interlaced)
