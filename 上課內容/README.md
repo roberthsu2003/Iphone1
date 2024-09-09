@@ -29,9 +29,14 @@ https://youtube.com/live/FP2N8tFjBjU
 
 ---
 
+
 [2024_09_09_下午]
 
 https://youtube.com/live/p9IIZUbGwlc
 
 ---
+
+[檔案下載位置]
+
+https://drive.google.com/drive/folders/1IVB7FC-CohAPDIbAPVNzhXzYPIMq68WU?usp=sharing
 
