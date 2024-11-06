@@ -48,6 +48,35 @@ emptyArray.append("blueberries")
 emptyArray = []
 
 
+let individualScores = [75, 43, 103, 87, 12]
+var teamScore = 0
+for score in individualScores {
+    if score > 50 {
+        teamScore += 3
+    }else{
+        teamScore += 1
+    }
+}
+
+print(teamScore)
+
+var optionalString:String? = "Hello, playground"
+print(optionalString == nil)
+
+var optionalName:String? = "John Appleseed"
+var greeting1 = "Hello!"
+
+if optionalName != nil {
+    print(optionalName!.uppercased())
+}
+
+let nickname:String? = nil
+let fullName:String = "John Appleseed"
+
+let informalGreeting = "Hi \(nickname ?? fullName)"
+
+//let informalGreeting = "Hi \(nickname!)"
+
 
 
 
