@@ -22,6 +22,34 @@ let apples = 3
 let oranges = 5
 let appleSummary = "I have \(apples) apples and \(oranges) oranges."
 
+let quotation = """
+I said "I have \(apples) apples."
+And then I said "I have \(apples + oranges) pieces of fruit.
+"""
+print(quotation)
+
+//Array
+var fruits = ["strawberries", "bananas", "apples"]
+fruits[0]
+
+
+//Dictionary
+var occupations = [
+    "Malcolm": "Captain",
+    "Kaylee": "Mechanic",
+    "Marie": "Doctor",
+    "James": "Pilot"
+]
+
+var emptyArray:[String] = []
+let emptyDictionary:[String:Float] = [:]
+
+emptyArray.append("blueberries")
+emptyArray = []
+
+
+
+
 
 
 
