@@ -124,6 +124,15 @@ func someFunction(_ firstParameterName:Int, secondParameterName:Int){
 
 someFunction(5, secondParameterName: 6)
 
+//預設參數的值
+func someFunction(parameterWithoutDefault:Int, ParameterWithDefault:Int = 2){
+    
+}
+
+someFunction(parameterWithoutDefault: 1)
+someFunction(parameterWithoutDefault: 1, ParameterWithDefault: 3)
+
+
 
 
 
