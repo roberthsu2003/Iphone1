@@ -40,7 +40,7 @@ default:
     print("More than 1000")
 }
 
-let somePoint = (1, 1)
+let somePoint = (1, 3)
 switch somePoint {
 case (0, 0):
     print("The origin")
@@ -53,6 +53,32 @@ case (-2...2, -2...2):
 default:
     print("Outside the square")
 }
+
+//Value Bindings
+let anotherPoint = (1, 3)
+switch anotherPoint {
+case (let x, 0):
+    print("On the x-axis with value \(x)")
+case (0, let y):
+    print("On the y-axis with value \(y)")
+case let (x, y):
+    print("At (\(x), \(y))")
+}
+
+//where
+let yetAnotherPoint = (1, 1)
+switch yetAnotherPoint {
+case let (x, y) where x == y:
+    print("(\(x), \(y)) is at a 相同的")
+case let (x, y) where x == -y:
+    print("(\(x), \(y)) is at an 相反的")
+case let(x,y):
+    print("(\(x), \(y)) is not at a diagonal or antidiagonal")
+
+}
+
+
+
 
 
 
