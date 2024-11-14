@@ -132,6 +132,16 @@ func someFunction(parameterWithoutDefault:Int, ParameterWithDefault:Int = 2){
 someFunction(parameterWithoutDefault: 1)
 someFunction(parameterWithoutDefault: 1, ParameterWithDefault: 3)
 
+func arithmeticMean(_ numbers:Double...) -> Double{
+    var total:Double = 0
+    for number in numbers{
+        total += number
+    }
+    return total / Double(numbers.count)
+}
+
+arithmeticMean(4, 5, 6, 7, 8)
+
 
 
 
