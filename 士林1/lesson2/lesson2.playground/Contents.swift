@@ -2,6 +2,7 @@ import UIKit
 
 func greet(person:[String:String]){
     guard let name = person["name"] else{
+        print("沒有key:name")
         return
     }
     
@@ -14,6 +15,9 @@ func greet(person:[String:String]){
     
     print("done")
 }
+//greet(person:[:])
 
-greet(person:["name":"John","location":"New York"])
+greet(person:["name":"John"])
+
+//greet(person:["name":"John","location":"New York"])
 
