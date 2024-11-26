@@ -9,3 +9,6 @@ https://youtube.com/live/U5qJkiH_3pI
 
 ## 2024_11_14
 https://youtube.com/live/EFKwM8U6idU
+
+## 2024_11_26
+https://youtube.com/live/vctzkBiSx38
