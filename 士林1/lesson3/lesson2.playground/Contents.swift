@@ -19,3 +19,29 @@ print(someResolution.width)
 someVideoMode.resolution.width = 1280
 print(someVideoMode.resolution.width)
 
+let vga = Resolution(width: 640, height: 480) //memberwise initializer
+
+//結構和列舉是value type
+let hd = Resolution.init(width: 1920, height: 1080)
+
+var cinema = hd
+cinema.width = 2048
+print(hd.width)
+print(cinema.width)
+
+
+enum CompassPoint{
+    case north, south, east, west
+    mutating func turnNorth(){
+        self = .north
+    }
+}
+
+var currentDirection = CompassPoint.west
+let rememberedDirection = currentDirection
+currentDirection.turnNorth()
+print(rememberedDirection)
+print(currentDirection)
+
+
+
