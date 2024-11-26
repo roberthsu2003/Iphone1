@@ -43,5 +43,18 @@ currentDirection.turnNorth()
 print(rememberedDirection)
 print(currentDirection)
 
+//class是Reference
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlanced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25
+
+let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30
+
+tenEighty.frameRate
+
+
 
 
