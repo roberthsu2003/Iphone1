@@ -1,14 +1,14 @@
 import UIKit
 
-enum CompassPoint {
+enum CompassPoint:String {
     case north
     case east
     case south
     case west
 }
 
-enum Planet {
-    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+enum Planet:Int {
+    case mercury=1, venus, earth, mars, jupiter, saturn, uranus, neptune
 }
 
 var direcToHead = CompassPoint.north
@@ -24,3 +24,8 @@ case .north:
 case .west:
     print("West")
 }
+
+direcToHead.rawValue
+
+let planet = Planet.earth
+print(planet.rawValue)
