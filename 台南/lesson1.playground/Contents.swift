@@ -44,6 +44,15 @@ print(x, y, z)
 //透過推測,給予資料類型
 var welcomeMessage = "Hello World!"
 
+//"Robert! " + welcomeMessage
+
+//透過字串插補(string interpolation)
+"Robert! \(welcomeMessage)"
+
+"Roboert! \(1)"
+
+"Roboert! \(25.54)"
+
 
 
 
