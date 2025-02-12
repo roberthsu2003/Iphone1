@@ -8,14 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var count = 0
-    var count1:Int?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let desc = count1?.description{
-            print("執行成功")
-        }
+        
     }
 
 
