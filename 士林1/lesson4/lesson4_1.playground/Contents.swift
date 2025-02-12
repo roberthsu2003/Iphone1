@@ -43,14 +43,12 @@ struct Rect{
     var size = Size()
     var center:Point{ //computed property
         get{ //被別人取出,要有return
-            let centerX = origin.x + size.width / 2
-            let centerY = origin.y + size.height / 2
-            return Point(x:centerX, y:centerY)
+            Point(x:origin.x + size.width / 2, y:origin.y + size.height / 2)
         }
         
-        set(newCenter){ //要有參數
-            origin.x = newCenter.x - size.width / 2
-            origin.y = newCenter.y - size.height / 2
+        set{ //要有參數
+            origin.x = newValue.x - size.width / 2
+            origin.y = newValue.y - size.height / 2
         }
     }
     
@@ -62,6 +60,16 @@ let initialSquareCenter = square.center
 square.center = Point(x: 10.0, y: 10.0)
 print("square.origin.x \(square.origin.x)")
 print("square.origin.y \(square.origin.y)")
+
+struct Cuboid{
+    var widht = 0.0, height = 0.0, depth = 0.0
+    var volume:Double{ //readonly computed property
+        return widht * height * depth
+    }
+}
+
+let fourByFiveByTwo = Cuboid(widht: 4.0, height: 5.0, depth: 2.0)
+fourByFiveByTwo.volume
 
 
 
