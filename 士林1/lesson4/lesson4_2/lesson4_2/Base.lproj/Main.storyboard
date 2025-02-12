@@ -50,6 +50,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ymB-Ap-7MW" secondAttribute="trailing" constant="30" id="Pmb-Wm-sTc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="height_textFile" destination="Ebe-2r-zmx" id="irw-hd-scQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

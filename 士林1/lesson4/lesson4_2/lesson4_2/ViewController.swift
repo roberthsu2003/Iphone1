@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var height_textFile: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        height_textFile.text = "Hello! World."
     }
 
 
