@@ -12,4 +12,20 @@ rangeOfThreeItems.firstValue = 10
 let rangeOfFourItems = rangeOfThreeItems
 //rangeOfFourItems.firstValue = 20
 
+//lazy stored Properties
+
+class DataImporter{
+     var filename = "data.txt"
+}
+
+class DataManager{
+    lazy var importer = DataImporter()
+    var data:[String] = []
+}
+
+let manager = DataManager()
+manager.data.append("Some data")
+manager.data.append("Some more data")
+manager.importer.filename
+
 
