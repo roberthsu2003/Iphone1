@@ -25,6 +25,25 @@ let twoThousands:AudioSample = 20_000_000
 let ones:UInt8 = 1
 let twoAndones = twoThousand + AudioSample(one)
 
+//將多個變數或數值暫時儲存在一起
+//tuple
+
+(404, "Not Found")
+
+let http404Error = (404, "Not Found")
+http404Error.0
+http404Error.1
+
+let http200Status = (statusCode:200, description:"OK")
+http200Status.statusCode
+http200Status.description
+
+
+
+
+
+
+
 
 
 
