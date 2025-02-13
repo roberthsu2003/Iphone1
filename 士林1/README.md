@@ -12,3 +12,6 @@ https://youtube.com/live/EFKwM8U6idU
 
 ## 2024_11_26
 https://youtube.com/live/vctzkBiSx38
+
+## 2025_02_12
+https://youtube.com/live/TqYM9tGsLJA
