@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        height_textFile.text = "Hello! World."
+        
     }
 
 
