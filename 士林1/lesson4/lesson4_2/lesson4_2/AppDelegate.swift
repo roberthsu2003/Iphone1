@@ -7,6 +7,8 @@
 
 import UIKit
 
+let age = 50
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
