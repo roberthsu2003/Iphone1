@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         weight_textField.keyboardType = .numberPad
         //caculate_button.addTarget(self, action: #selector(caculate), for: .touchUpInside)
         caculate_button.addTarget(self, action: #selector(caculate), for: .touchUpInside)
+        message_textField.isUserInteractionEnabled = false
         
     }
     
@@ -75,17 +76,22 @@ class ViewController: UIViewController {
         let bmi = Double(weight) / pow(Double(height)/100.0, 2)
         bmi_textField.text = "BMI:\(String(format: "%.2f", bmi))"
         var message = ""
+        var color:UIColor = .systemRed
         switch bmi{
             case ..<18.5:
             message = "過輕"
         case 18.5...24.9:
             message = "正常"
+            color = .systemBlue
         case 25...29.9:
             message = "過重"
         default:
             message = "肥胖"
         }
         message_textField.text = message
+        message_textField.textColor = color
+        height_textField.resignFirstResponder()
+        weight_textField.resignFirstResponder()
         
     }
 
