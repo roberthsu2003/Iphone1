@@ -94,6 +94,11 @@ class ViewController: UIViewController {
         weight_textField.resignFirstResponder()
         
     }
+    
+    @IBAction func userWillTapField(_ sender:UITextField){
+        bmi_textField.text = nil
+        message_textField.text = nil
+    }
 
 
 }
