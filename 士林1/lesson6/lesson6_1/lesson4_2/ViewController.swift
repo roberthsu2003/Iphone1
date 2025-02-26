@@ -47,12 +47,20 @@ class ViewController: UIViewController {
         }
          */
         guard let height_textField_value = height_textField.text,!height_textField_value.isEmpty else{
-            print("身高不可以是空的")
+            //提早離開
+            //let height_textField_value = height_textField.text(optional binding)
+            let emptyAlertController = UIAlertController(title: "身高", message: "身高不可以是空的", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            emptyAlertController.addAction(okAction)
+            self.present(emptyAlertController, animated: true, completion: nil)
             return
         }
         
         guard let weight_textField_value = weight_textField.text,!weight_textField_value.isEmpty else{
-            print("體重不可以是空的")
+            let emptyAlertController = UIAlertController(title: "體重", message: "體重不可以是空的", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            emptyAlertController.addAction(okAction)
+            self.present(emptyAlertController, animated: true, completion: nil)
             return
         }
               
