@@ -32,23 +32,19 @@ class ViewController: UIViewController {
         
         print(weight_value)
         */
-        print("abc")
         height_textField.keyboardType = .numberPad
         weight_textField.keyboardType = .numberPad
-        //caculate_button.addTarget(self, action: #selector(caculate), for: .touchUpInside)
-        caculate_button.addTarget(self, action: #selector(caculate(_:)), for: .touchUpInside)
+        caculate_button.addTarget(self, action: #selector(caculate), for: .touchUpInside)
         
     }
     
-    @objc func caculate(_ sender:UIButton){
+    @objc func caculate(){
         /*
         guard !height_textField.text!.isEmpty, !weight_textField.text!.isEmpty else{
             print("不可以是空的")
             return
         }
          */
-        print(sender)
-        print("Hello!")
         guard let height_textField_value = height_textField.text,!height_textField_value.isEmpty else{
             print("身高不可以是空的")
             return
