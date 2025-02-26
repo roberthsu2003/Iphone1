@@ -31,5 +31,18 @@ struct Point{
     }
 }
 
+//mutating func
+
+struct Point1{
+    var x=0.0, y=0.0
+    
+    mutating func moveBy(x:Double, y:Double){ //mutating func才可以更改store property
+        self.x += x
+        self.y += y
+    }
+}
+
+
+
 
 
