@@ -65,8 +65,16 @@ class ViewController: UIViewController {
             self.present(emptyAlertController, animated: true, completion: nil)
         }
               
-        print("身高:\(height_textField_value)")
-        print("體重:\(weight_textField_value)")
+        guard let height = Int(height_textField_value), let weight = Int(weight_textField_value) else{
+            displayAlertController(title: "數字格式錯誤", message: "請輸入正確的數字")
+            return
+        }
+        
+        let bmi = Double(weight) / pow(Double(height)/100.0, 2)
+        print(bmi)
+        
+        
+        
     }
 
 
