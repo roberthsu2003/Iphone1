@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet var weight_textField: UITextField!
     @IBOutlet var caculate_button:UIButton!
     @IBOutlet var bmi_textField: UITextField!
+    @IBOutlet var message_textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +74,18 @@ class ViewController: UIViewController {
         
         let bmi = Double(weight) / pow(Double(height)/100.0, 2)
         bmi_textField.text = "BMI:\(String(format: "%.2f", bmi))"
-        
-        
-        
+        var message = ""
+        switch bmi{
+            case ..<18.5:
+            message = "過輕"
+        case 18.5...24.9:
+            message = "正常"
+        case 25...29.9:
+            message = "過重"
+        default:
+            message = "肥胖"
+        }
+        message_textField.text = message
         
     }
 

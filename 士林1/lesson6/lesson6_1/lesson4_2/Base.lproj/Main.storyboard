@@ -61,6 +61,7 @@
                                     <constraint firstItem="Ebe-2r-zmx" firstAttribute="leading" secondItem="xbc-X2-6H2" secondAttribute="trailing" constant="8" symbolic="YES" id="aCV-SS-eyM"/>
                                     <constraint firstItem="OnD-tD-CKQ" firstAttribute="top" secondItem="Ebe-2r-zmx" secondAttribute="bottom" constant="18" id="cME-pR-r9D"/>
                                     <constraint firstItem="sVj-9i-dcx" firstAttribute="leading" secondItem="xbc-X2-6H2" secondAttribute="leading" id="hvj-To-Q0t"/>
+                                    <constraint firstAttribute="width" constant="319" id="mbI-aY-Dhe"/>
                                     <constraint firstAttribute="trailing" secondItem="Ebe-2r-zmx" secondAttribute="trailing" constant="35" id="mzF-v8-lmI"/>
                                     <constraint firstItem="hsi-fb-Aox" firstAttribute="top" secondItem="OnD-tD-CKQ" secondAttribute="bottom" constant="20" id="naN-FX-dqu"/>
                                     <constraint firstAttribute="width" secondItem="ymB-Ap-7MW" secondAttribute="height" multiplier="29:17" id="opu-rR-vvv"/>
@@ -75,16 +76,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cU0-6D-Xoh">
+                                <rect key="frame" x="215" y="272" width="132" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="0c6-FY-57k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cU0-6D-Xoh" firstAttribute="top" secondItem="ymB-Ap-7MW" secondAttribute="bottom" constant="17" id="0YR-in-YqM"/>
                             <constraint firstItem="2c5-XG-MVk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="AKF-0T-w8O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cU0-6D-Xoh" secondAttribute="trailing" constant="28" id="CKv-MJ-ZuZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ymB-Ap-7MW" secondAttribute="trailing" constant="28" id="DQg-bi-3Xd"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="MOm-8a-d2y"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="bFF-8v-yEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ymB-Ap-7MW" secondAttribute="trailing" constant="28" id="di3-g5-P3s"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="hVY-pV-R4q"/>
                             <constraint firstItem="2c5-XG-MVk" firstAttribute="top" secondItem="ymB-Ap-7MW" secondAttribute="bottom" constant="17" id="igh-K3-bvS"/>
+                            <constraint firstItem="ymB-Ap-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="xDb-Nh-Dpj"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="ytl-6P-T7g"/>
                         </constraints>
                     </view>
@@ -92,6 +105,7 @@
                         <outlet property="bmi_textField" destination="2c5-XG-MVk" id="nHS-Ga-y6P"/>
                         <outlet property="caculate_button" destination="hsi-fb-Aox" id="njt-5Q-Dbd"/>
                         <outlet property="height_textField" destination="Ebe-2r-zmx" id="7uT-7u-2bL"/>
+                        <outlet property="message_textField" destination="cU0-6D-Xoh" id="XF3-GI-2I1"/>
                         <outlet property="weight_textField" destination="OnD-tD-CKQ" id="kuD-4y-wXp"/>
                     </connections>
                 </viewController>
