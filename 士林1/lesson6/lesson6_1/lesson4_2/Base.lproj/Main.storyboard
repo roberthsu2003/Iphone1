@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson5_3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lesson6_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
                                             <constraint firstAttribute="width" constant="100" id="pLv-h4-ejD"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="計算"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -67,16 +67,29 @@
                                     <constraint firstItem="OnD-tD-CKQ" firstAttribute="trailing" secondItem="Ebe-2r-zmx" secondAttribute="trailing" id="vNa-oe-cWk"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BMI:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-XG-MVk">
+                                <rect key="frame" x="28" y="272" width="107" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="f2L-NU-61p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2c5-XG-MVk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="AKF-0T-w8O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ymB-Ap-7MW" secondAttribute="trailing" constant="28" id="DQg-bi-3Xd"/>
+                            <constraint firstItem="ymB-Ap-7MW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="MOm-8a-d2y"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="bFF-8v-yEa"/>
                             <constraint firstItem="ymB-Ap-7MW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="hVY-pV-R4q"/>
+                            <constraint firstItem="2c5-XG-MVk" firstAttribute="top" secondItem="ymB-Ap-7MW" secondAttribute="bottom" constant="17" id="igh-K3-bvS"/>
+                            <constraint firstItem="ymB-Ap-7MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="ytl-6P-T7g"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bmi_textField" destination="2c5-XG-MVk" id="nHS-Ga-y6P"/>
                         <outlet property="caculate_button" destination="hsi-fb-Aox" id="njt-5Q-Dbd"/>
                         <outlet property="height_textField" destination="Ebe-2r-zmx" id="7uT-7u-2bL"/>
                         <outlet property="weight_textField" destination="OnD-tD-CKQ" id="kuD-4y-wXp"/>

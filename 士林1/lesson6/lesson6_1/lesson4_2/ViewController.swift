@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet var height_textField: UITextField!
     @IBOutlet var weight_textField: UITextField!
     @IBOutlet var caculate_button:UIButton!
+    @IBOutlet var bmi_textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,8 @@ class ViewController: UIViewController {
         }
         
         let bmi = Double(weight) / pow(Double(height)/100.0, 2)
-        print(bmi)
+        bmi_textField.text = "BMI:\(String(format: "%.2f", bmi))"
+        
         
         
         
