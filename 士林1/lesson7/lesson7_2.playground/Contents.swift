@@ -7,7 +7,7 @@ class Vehicle{
     }
     
     func makeNoise(){
-        
+        print("有一些基本的東西,要設定")
     }
 }
 
@@ -20,4 +20,25 @@ bicycle.hasBasket = true
 bicycle.currentSpeed = 15.0
 print(bicycle.description)
 bicycle.makeNoise()
+
+class Tandem:Bicycle{
+    var currentNumberOfPassengers = 0
+}
+
+let tandem = Tandem()
+tandem.currentNumberOfPassengers = 2
+tandem.currentSpeed = 22.0
+print(tandem.description)
+tandem.makeNoise()
+
+class Train:Vehicle{
+    override func makeNoise(){
+        super.makeNoise()
+        print("Choo Choo")
+    }
+}
+
+let train = Train()
+train.currentSpeed = 88.0
+train.makeNoise()
 
