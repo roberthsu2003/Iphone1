@@ -51,5 +51,24 @@ matrix[1, 0] = 3.2
 print(matrix[0, 1])
 print(matrix[1, 0])
 
+enum Planet:Int{
+    case mercury = 1
+    case venus
+    case earth
+    case mars
+    case jupiter
+    
+    static subscript(n:Int) -> Planet?{
+        return Planet(rawValue: n)
+    }
+}
+
+if let mars = Planet[100]{
+    print(mars)
+}else{
+    print("超過了範圍")
+}
+
+
 
 
