@@ -32,7 +32,7 @@ print(tandem.description)
 tandem.makeNoise()
 
 class Train:Vehicle{
-    override func makeNoise(){
+    override func makeNoise(){ //override實體方法
         super.makeNoise()
         print("Choo Choo")
     }
@@ -41,4 +41,24 @@ class Train:Vehicle{
 let train = Train()
 train.currentSpeed = 88.0
 train.makeNoise()
+
+class Car:Vehicle{
+    var gear = 1
+    override var description: String {
+        return super.description + " in gear \(gear)"
+    }
+}
+
+class AutomaticCar:Car{
+    override var currentSpeed: Double{
+        didSet{
+            gear = Int(currentSpeed / 10.0) + 1
+        }
+    }
+}
+
+let automaticCar = AutomaticCar()
+automaticCar.currentSpeed = 120.0
+print(automaticCar.gear)
+
 
