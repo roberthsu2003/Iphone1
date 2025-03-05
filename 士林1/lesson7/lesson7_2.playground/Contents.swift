@@ -14,3 +14,10 @@ class Vehicle{
 class Bicycle:Vehicle{
     var hasBasket = false
 }
+
+let bicycle = Bicycle()
+bicycle.hasBasket = true
+bicycle.currentSpeed = 15.0
+print(bicycle.description)
+bicycle.makeNoise()
+
