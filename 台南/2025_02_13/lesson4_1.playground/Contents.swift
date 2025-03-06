@@ -48,3 +48,7 @@ if let definiteString = assumedString{
 }else{
     print("assumedString 是 nil")
 }
+
+let age = -3
+//debug
+assert(age >= 0, "Age一定不能是負數")
