@@ -21,3 +21,30 @@ if let convertedNumber1 = Int(possibleNumber){
 }else{
     print("無法轉換")
 }
+
+
+
+if let firstNumber=Int("4"), let secondNumber = Int("42"), firstNumber<secondNumber && secondNumber < 100{
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+
+
+if let firstNumber = Int("4"){
+    if let secondNumber = Int("42"){
+        if firstNumber<secondNumber && secondNumber<100{
+            print("\(firstNumber) < \(secondNumber) < 100")
+        }
+    }
+}
+
+let possibleString:String? = "An optional string."
+let forcedString:String = possibleString!
+
+let assumedString:String! = "An assumed string."
+let implicitString:String = assumedString
+
+if let definiteString = assumedString{
+    print(definiteString)
+}else{
+    print("assumedString 是 nil")
+}
