@@ -36,6 +36,38 @@ let freezingPointOfWaterInCelsius = Celsius(fromKelvin: 273.15)
 
 let bodyTemperatureInCelsius = Celsius(36.0)
 
+class SurveyQuestion{
+    let text:String
+    var response:String?
+    
+    init(text:String){
+        self.text = text
+    }
+    
+    func ask(){
+        print(text)
+    }
+}
+
+let cheeseQuestion = SurveyQuestion(text: "Do you like cheese?")
+cheeseQuestion.ask()
+
+cheeseQuestion.response = "Yes, please!"
+
+//Default initializers
+class ShoppingListItem{
+    var name:String?
+    var quantity = 1
+    var purchased = false
+}
+
+var item1 = ShoppingListItem()
+
+struct Size{
+    var width = 0.0, height = 0.0
+}
+
+Size(height: 10)
 
 
 
