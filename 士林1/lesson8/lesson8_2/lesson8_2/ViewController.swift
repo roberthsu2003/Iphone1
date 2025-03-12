@@ -9,10 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
+    var cities:[[String:Any]]!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("awakeFromNib")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("viewDidLoad")
     }
 
 
