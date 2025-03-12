@@ -33,6 +33,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lul-xS-RT2">
+                                <rect key="frame" x="40" y="487" width="286" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,9 +45,13 @@
                             <constraint firstItem="d5o-WR-XOa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5F5-Zp-jLq"/>
                             <constraint firstItem="d5o-WR-XOa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8kp-wF-eEC"/>
                             <constraint firstItem="d5o-WR-XOa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SmJ-Ch-bqt"/>
+                            <constraint firstItem="Lul-xS-RT2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="VcS-wn-ewa"/>
+                            <constraint firstItem="Lul-xS-RT2" firstAttribute="top" secondItem="d5o-WR-XOa" secondAttribute="bottom" constant="37" id="isd-KO-9x8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lul-xS-RT2" secondAttribute="trailing" constant="49" id="r41-EJ-mw2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myTextField" destination="Lul-xS-RT2" id="Ukz-j9-zjB"/>
                         <outlet property="tableView" destination="d5o-WR-XOa" id="chG-NL-MU9"/>
                     </connections>
                 </viewController>

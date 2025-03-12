@@ -7,10 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate {
    
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var myTextField:UITextField!
+    
     var cities:[[String:Any]]!
     
     override func awakeFromNib() {
@@ -32,6 +34,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        myTextField.delegate = self
     }
     //UITableViewDataSource
     func tableView(
@@ -47,6 +50,17 @@ class ViewController: UIViewController,UITableViewDataSource {
         return cell
     }
 
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        print("使用者開始輸入1")
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        print("使用者開始輸入2")
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        print("結束輸入")
+    }
 
 }
 
