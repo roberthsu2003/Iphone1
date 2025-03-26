@@ -24,3 +24,6 @@ https://youtube.com/live/Q8JOrv1aDQ0
 
 ## 2025_03_05
 https://youtube.com/live/jxYJr6Jtudc
+
+## 2025_03_12
+https://youtube.com/live/rneCVfb2Fs8
