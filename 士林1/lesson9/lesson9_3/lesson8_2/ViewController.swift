@@ -45,11 +45,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
         let city = cities[index]
-        if let cityName = city["City"] as? String{
-            cell.textLabel!.text = cityName
+        if #available(iOS 15.0, *) {
+            
         }else{
-            cell.textLabel!.text = "沒有城市名稱"
+            let cityName = city["City"] as? String ?? "沒有城市名稱"
+            let countryName = city["Country"] as? String ?? "沒有國家名稱"
+            let imageName = city["Image"] as? String ?? "default"
+            
+            cell.textLabel?.text = cityName
+            cell.detailTextLabel?.text = countryName
+            cell.imageView?.image = UIImage(named: imageName)
         }
+        
+        
         return cell
     }
 
