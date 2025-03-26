@@ -25,9 +25,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         }else{
             print("沒有這個檔")
         }
-        
-        print(self.cities)
-        
+              
         
     }
 
@@ -40,12 +38,18 @@ class ViewController: UIViewController,UITableViewDataSource,UITextFieldDelegate
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int{
-        return 300
+        return self.cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath)
-        cell.textLabel?.text = "Hello, World_\(indexPath.row)"
+        let city = cities[index]
+        if let cityName = city["City"] as? String{
+            cell.textLabel!.text = cityName
+        }else{
+            cell.textLabel!.text = "沒有城市名稱"
+        }
         return cell
     }
 
