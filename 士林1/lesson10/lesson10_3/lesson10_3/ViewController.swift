@@ -35,7 +35,7 @@ class ViewController: UITableViewController {
        // Configure the cell’s contents.
        let city = cities[index]
        
-       cell.textLabel!.text = city["City"] as? String
+        //cell.textLabel!.text = city["City"] as? String
            
        return cell
     }
