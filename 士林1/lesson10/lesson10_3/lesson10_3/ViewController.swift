@@ -29,18 +29,43 @@ class ViewController: UITableViewController {
 
     // Provide a cell object for each row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let index = indexPath.row
-       let cell = tableView.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath)
+        let index = indexPath.row
+
+        // Configure the cell’s contents.
+        let city = cities[index]
+        let cityName = city["City"] as? String ?? ""
+        
+        let countryName = city["Country"] as? String ?? ""
+        let continentName = city["Continent"] as? String ?? ""
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! CityCell
+        cell.cityLabel.text = cityName
+        cell.countryLabel.text = countryName
+        cell.continentLabel.text = continentName
+        cell.cityImageView.layer.cornerRadius = 30
+        
+        if let imageName = city["Image"] as? String{
+            cell.cityImageView.image = UIImage(named: imageName)
+        }else{
+            cell.cityImageView = nil
+        }
        
-       // Configure the cell’s contents.
-       let city = cities[index]
-       
-        //cell.textLabel!.text = city["City"] as? String
+        
+        
+        
+        
            
        return cell
     }
     //MARK: - UITableViewDelegate
-
+    
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ){
+        let selectedIndex = indexPath.row
+        print(selectedIndex)
+    }
+    
 
 }
 
