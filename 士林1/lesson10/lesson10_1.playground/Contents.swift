@@ -1,3 +1,5 @@
+//deinitialization
+
 class Bank{
     nonisolated(unsafe) static var coinsInBank: Int = 10_000
     static func distribute(coint numberOfCoinsRequested:Int) -> Int{
