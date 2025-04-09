@@ -71,7 +71,7 @@ class ViewController: UITableViewController {
     ){
         
         
-        
+        self.performSegue(withIdentifier: "GO_DETAIL", sender: nil)
         
         
         
