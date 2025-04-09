@@ -30,3 +30,6 @@ https://youtube.com/live/rneCVfb2Fs8
 
 ## 2025_03_26
 https://youtube.com/live/vW9UQJXKdjU
+
+## 2025_04_09
+https://youtube.com/live/3Uh3az3Pulg
