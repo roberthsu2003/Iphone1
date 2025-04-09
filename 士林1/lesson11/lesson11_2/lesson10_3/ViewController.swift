@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     var cities = [[String:Any]]()
+    var cityInMarked = [Bool]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class ViewController: UITableViewController {
             return
         }
         cities = NSArray(contentsOf: pathURL) as? [[String:Any]] ?? []
+        cityInMarked = Array(repeating: false, count: cities.count)
         
     }
     
@@ -47,6 +49,12 @@ class ViewController: UITableViewController {
             cell.cityImageView.image = UIImage(named: imageName)
         }else{
             cell.cityImageView = nil
+        }
+        
+        if cityInMarked[index]{
+            cell.accessoryType = .checkmark
+        }else{
+            cell.accessoryType = .none
         }
        
         
@@ -91,6 +99,7 @@ class ViewController: UITableViewController {
         
         let checkInMark = UIAlertAction(title: "標示", style: .default) {
             (action:UIAlertAction)->Void in
+            self.cityInMarked[indexPath.row] = true
             let cell = tableView.cellForRow(at: indexPath)!
             cell.accessoryType = .checkmark
         }
