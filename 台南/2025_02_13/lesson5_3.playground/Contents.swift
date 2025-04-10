@@ -29,3 +29,11 @@ func greet(person:String?=nil, location:String?=nil){
 }
 
 greet(person:"Bob",location: "台北")
+
+
+func greet(person2:String){
+    let greeting = "Hello, \(person2)!"
+    print(greeting)
+}
+
+greet(person2: "Alice")
