@@ -43,5 +43,20 @@ default:
           
 }
 
+//tuple
+let somePoint = (1, 1)
+switch somePoint {
+case (0, 0):
+    print("(0, 0)")
+case (_, 0):
+    print("y軸")
+case (0, _):
+    print("x軸")
+case(-2...2, -2...2):
+    print("正方形")
+default:
+    print("其他點")
+}
+
 
 
