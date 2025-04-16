@@ -33,3 +33,6 @@ https://youtube.com/live/vW9UQJXKdjU
 
 ## 2025_04_09
 https://youtube.com/live/3Uh3az3Pulg
+
+## 2025_04_16
+https://youtube.com/live/MdoUPnuBF6M
