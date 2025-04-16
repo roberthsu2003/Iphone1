@@ -8,35 +8,45 @@
 import UIKit
 
 class DetailViewController: UITableViewController {
+    @IBOutlet var cityImageView: UIImageView!
     
     var city = City()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(city)
+        cityImageView.image = UIImage(named: city.image)
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 4
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CITYCELL", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        switch indexPath.row {
+        case 0:
+            content.text = city.city
+        case 1:
+            content.text = city.country
+        case 2:
+            content.text = city.continent
+        case 3:
+            content.text = city.url
+        default:
+            break
+        }
+        
+       
+        cell.contentConfiguration = content
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
