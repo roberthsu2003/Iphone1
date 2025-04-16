@@ -20,7 +20,19 @@ class ViewController: UITableViewController {
         }
         cities = NSArray(contentsOf: pathURL) as? [[String:Any]] ?? []
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow else{
+            return
+        }
         
+        if segue.identifier == "GO_DETAIL"{
+            let destinationController = segue.destination as! DetailViewController
+            destinationController.title = cities[indexPath.row]["City"] as? String
+            let city = cities[indexPath.row]
+            destinationController.city = city
+        }
     }
 
 }
