@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UITableViewController {
     
-    var city = [String:Any]()
+    var city = City()
 
     override func viewDidLoad() {
         super.viewDidLoad()

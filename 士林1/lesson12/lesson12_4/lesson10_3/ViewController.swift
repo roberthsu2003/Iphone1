@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var cities = [[String:Any]]()
+    var cities = [City]()
     
 
     override func viewDidLoad() {
@@ -18,7 +18,19 @@ class ViewController: UITableViewController {
         guard let pathURL = bundle.url(forResource: "citylist", withExtension: "plist")else{
             return
         }
-        cities = NSArray(contentsOf: pathURL) as? [[String:Any]] ?? []
+        let cities_dict = NSArray(contentsOf: pathURL) as? [[String:Any]] ?? []
+        for city in cities_dict{
+            let cityName = city["City"] as? String ?? ""
+            let country = city["Country"] as? String ?? ""
+            let continent = city["Continent"] as? String ?? ""
+            let image = city["Image"] as? String ?? ""
+            let local = city["Local"] as? String ?? ""
+            let latitude = city["lat"] as? Double ?? 0
+            let longitude = city["long"] as? Double ?? 0
+            let url = city["url"] as? String ?? ""
+            let oneCity = City(city: cityName, continent: continent, country: country, image: image, local: local, latiude: latitude, longitude: longitude, url: url)
+            cities.append(oneCity)
+        }
         
     }
     
@@ -29,7 +41,7 @@ class ViewController: UITableViewController {
         
         if segue.identifier == "GO_DETAIL"{
             let destinationController = segue.destination as! DetailViewController
-            destinationController.title = cities[indexPath.row]["City"] as? String
+            destinationController.title = cities[indexPath.row].city
             let city = cities[indexPath.row]
             destinationController.city = city
         }
@@ -50,22 +62,18 @@ extension ViewController{
 
         // Configure the cell’s contents.
         let city = cities[index]
-        let cityName = city["City"] as? String ?? ""
+        let cityName = city.city
         
-        let countryName = city["Country"] as? String ?? ""
-        let continentName = city["Continent"] as? String ?? ""
+        let countryName = city.country
+        let continentName = city.continent
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellTypeIdentifier", for: indexPath) as! CityCell
         cell.cityLabel.text = cityName
         cell.countryLabel.text = countryName
         cell.continentLabel.text = continentName
         cell.cityImageView.layer.cornerRadius = 30
         
-        if let imageName = city["Image"] as? String{
-            cell.cityImageView.image = UIImage(named: imageName)
-        }else{
-            cell.cityImageView = nil
-        }
-        
+        let imageName = city.image
+        cell.cityImageView.image = UIImage(named: imageName)
        
         cell.accessoryType = .disclosureIndicator
             
