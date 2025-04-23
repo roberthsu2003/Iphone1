@@ -34,13 +34,13 @@
                     <navigationItem key="navigationItem" id="esH-kn-sLf">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="VoM-2s-Psh">
                             <connections>
-                                <action selector="clickNext:" destination="BYZ-38-t0r" id="tFW-HO-gId"/>
+                                <action selector="clickNext:" destination="BYZ-38-t0r" id="NjH-xs-2f2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="expressLable" destination="bfr-Y8-aId" id="jKh-Rv-Gjk"/>
+                        <outlet property="expressLabel" destination="bfr-Y8-aId" id="4Mf-kG-XD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -70,9 +70,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xys-lf-jiu"/>
-                    <connections>
-                        <outlet property="expressButton" destination="DWi-cm-TLd" id="Ozx-AH-h5E"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEw-2D-zog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

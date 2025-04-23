@@ -7,14 +7,16 @@
 
 import UIKit
 
-
+protocol ExpressionViewControllerDelegate: AnyObject {
+    func userSelected(shippingSelected:String)
+}
 
 class ExpressionViewController: UIViewController {
-    
-    
+    weak var delegate: ExpressionViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        delegate?.userSelected(shippingSelected: "ExpressionViewController傳出的")
     }
 
 }
