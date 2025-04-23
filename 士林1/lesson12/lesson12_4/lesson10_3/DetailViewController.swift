@@ -16,6 +16,12 @@ class DetailViewController: UITableViewController {
         super.viewDidLoad()
         cityImageView.image = UIImage(named: city.image)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 
     // MARK: - Table view data source
 
