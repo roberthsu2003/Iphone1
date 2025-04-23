@@ -23,7 +23,17 @@ class DetailViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GO_RATE_VIEWCONTROLLER"{
+            let rateViewController = segue.destination as! RateViewController
+            rateViewController.city = self.city
+        }
+    }
+    
+    @IBAction func userClickShareButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "GO_RATE_VIEWCONTROLLER", sender: nil)
     }
 
     // MARK: - Table view data source

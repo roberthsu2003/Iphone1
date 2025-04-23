@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -144,14 +145,50 @@
                             <outlet property="delegate" destination="FtN-4A-NRI" id="yBg-qe-gUx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NmH-8l-4LD"/>
+                    <navigationItem key="navigationItem" id="NmH-8l-4LD">
+                        <barButtonItem key="rightBarButtonItem" title="評分" id="umb-gJ-fC6">
+                            <connections>
+                                <action selector="userClickShareButton:" destination="FtN-4A-NRI" id="vOc-nr-J1Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityImageView" destination="yYD-Rb-6aN" id="hDP-Xp-vDj"/>
+                        <segue destination="RfM-xZ-ReO" kind="presentation" identifier="GO_RATE_VIEWCONTROLLER" modalTransitionStyle="flipHorizontal" id="3je-81-3um"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdO-uM-vjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745.8015267175572" y="9.8591549295774659"/>
+        </scene>
+        <!--Rate View Controller-->
+        <scene sceneID="Rvu-jP-d0J">
+            <objects>
+                <viewController id="RfM-xZ-ReO" customClass="RateViewController" customModule="lesson13_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QoA-Ct-DcX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHV-Xo-8zl">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lGU-d8-eBE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VHV-Xo-8zl" firstAttribute="trailing" secondItem="lGU-d8-eBE" secondAttribute="trailing" id="3b6-Rw-gh3"/>
+                            <constraint firstItem="VHV-Xo-8zl" firstAttribute="leading" secondItem="lGU-d8-eBE" secondAttribute="leading" id="N8v-6I-iaJ"/>
+                            <constraint firstItem="VHV-Xo-8zl" firstAttribute="top" secondItem="QoA-Ct-DcX" secondAttribute="top" id="hpN-py-udA"/>
+                            <constraint firstAttribute="bottom" secondItem="VHV-Xo-8zl" secondAttribute="bottom" id="txq-dL-guc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="VHV-Xo-8zl" id="kX2-OR-0C9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdd-57-sJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2585.4961832061067" y="9.8591549295774659"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jdi-TY-EHr">
