@@ -10,13 +10,13 @@
         <!--Root View Controller-->
         <scene sceneID="KTJ-5B-J4S">
             <objects>
-                <tableViewController id="mdf-Dy-ThX" customClass="ViewController" customModule="lesson12_4" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mdf-Dy-ThX" customClass="ViewController" customModule="lesson13_4" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="S1y-go-MhB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTypeIdentifier" rowHeight="80" id="z0R-ph-zFR" customClass="CityCell" customModule="lesson12_4" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTypeIdentifier" rowHeight="80" id="z0R-ph-zFR" customClass="CityCell" customModule="lesson13_4" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z0R-ph-zFR" id="H7I-qU-y1z">
@@ -90,8 +90,8 @@
         <!--Detail View Controller-->
         <scene sceneID="g99-LW-4so">
             <objects>
-                <tableViewController id="FtN-4A-NRI" customClass="DetailViewController" customModule="lesson12_4" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZFf-ty-UMt">
+                <tableViewController id="FtN-4A-NRI" customClass="DetailViewController" customModule="lesson13_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZFf-ty-UMt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,13 +100,43 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CITYCELL" id="5Tf-ui-bg8">
-                                <rect key="frame" x="0.0" y="292" width="393" height="44.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CITYCELL" rowHeight="80" id="5Tf-ui-bg8" customClass="DetailViewCell" customModule="lesson13_4" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="292" width="393" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Tf-ui-bg8" id="sbA-o3-V9U">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn8-J3-6cu">
+                                            <rect key="frame" x="37" y="30" width="50" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="NDc-mh-640"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FieldValue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7d-fe-ODv">
+                                            <rect key="frame" x="110" y="29" width="238" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cn8-J3-6cu" firstAttribute="leading" secondItem="sbA-o3-V9U" secondAttribute="leadingMargin" constant="17" id="AP9-BF-2Zh"/>
+                                        <constraint firstItem="S7d-fe-ODv" firstAttribute="top" secondItem="sbA-o3-V9U" secondAttribute="topMargin" constant="18" id="Id8-Ua-jhQ"/>
+                                        <constraint firstItem="S7d-fe-ODv" firstAttribute="leading" secondItem="cn8-J3-6cu" secondAttribute="trailing" constant="23" id="LZD-Ui-dmH"/>
+                                        <constraint firstItem="cn8-J3-6cu" firstAttribute="top" secondItem="sbA-o3-V9U" secondAttribute="topMargin" constant="19" id="Uvx-8M-XYn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="S7d-fe-ODv" secondAttribute="trailing" constant="25" id="ttP-yK-o6V"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cn8-J3-6cu" secondAttribute="bottom" constant="17" id="uHk-28-RrJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="S7d-fe-ODv" secondAttribute="bottom" constant="18" id="v7Y-hk-BTg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fieldLabel" destination="cn8-J3-6cu" id="hj3-xt-xVC"/>
+                                    <outlet property="valueLabel" destination="S7d-fe-ODv" id="rPh-eC-8NM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

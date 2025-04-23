@@ -15,6 +15,9 @@ class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cityImageView.image = UIImage(named: city.image)
+        
+        //設定cell為自動調整高度
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,28 +30,36 @@ class DetailViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CITYCELL", for: indexPath)
-        var content = cell.defaultContentConfiguration()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CITYCELL", for: indexPath) as! DetailViewCell
+        
         switch indexPath.row {
         case 0:
-            content.text = city.city
+            cell.fieldLabel.text = "城市"
+            cell.valueLabel.text = city.city
         case 1:
-            content.text = city.country
+            cell.fieldLabel.text = "國家"
+            cell.valueLabel.text = city.country
         case 2:
-            content.text = city.continent
+            cell.fieldLabel.text = "洲"
+            cell.valueLabel.text = city.continent
         case 3:
-            content.text = city.url
+            cell.fieldLabel.text = "網址"
+            cell.valueLabel.text = city.url
+        case 4:
+            cell.fieldLabel.text = "說明"
+            cell.valueLabel.text = city.local
         default:
-            break
+            cell.fieldLabel.text = ""
+            cell.valueLabel.text = ""
         }
         
        
-        cell.contentConfiguration = content
+       
 
         return cell
     }
