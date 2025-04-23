@@ -70,6 +70,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xys-lf-jiu"/>
+                    <connections>
+                        <outlet property="expressButton" destination="DWi-cm-TLd" id="KD7-CN-18m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEw-2D-zog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

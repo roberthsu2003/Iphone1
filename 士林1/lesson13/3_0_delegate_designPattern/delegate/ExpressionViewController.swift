@@ -12,11 +12,24 @@ protocol ExpressionViewControllerDelegate: AnyObject {
 }
 
 class ExpressionViewController: UIViewController {
+    @IBOutlet var expressButton: UIButton!
     weak var delegate: ExpressionViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        expressButton.showsMenuAsPrimaryAction = true
+        expressButton.setTitle("Shipping Speed", for: .normal)
+        expressButton.menu = UIMenu(children: [
+            UIAction(title: "Express Shipping", image: UIImage(systemName: "hare.fill"), handler: { [self] _ in
+                delegate?.userSelected(shippingSelected: "Express Shipping")
+                self.dismiss(animated: true)
+            }),
+            UIAction(title: "Standard Shipping", image: UIImage(systemName: "tortoise.fill"), handler: { [self] _ in
+                delegate?.userSelected(shippingSelected: "Standard Shipping")
+                self.dismiss(animated: true)
+            })
+        ])
         
-        delegate?.userSelected(shippingSelected: "ExpressionViewController傳出的")
+        
     }
 
 }
