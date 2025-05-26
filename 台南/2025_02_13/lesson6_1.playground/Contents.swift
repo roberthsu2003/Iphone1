@@ -66,3 +66,21 @@ func greet(person:String, from hometown:String) -> String{
 
 greet(person: "Robert", from: "Taipei")
 
+//省略引數名稱
+
+func someFunction(_ firstParameterName:Int, secondParameterName:Int){
+    
+}
+
+someFunction(10, secondParameterName: 20)
+
+//參數有預設值
+func someFunction(parameterWithoutDefault:Int, parameterWithDefault:Int=12){
+    
+}
+
+someFunction(parameterWithoutDefault: 10)
+someFunction(parameterWithoutDefault: 10, parameterWithDefault: 10)
+
+
+
