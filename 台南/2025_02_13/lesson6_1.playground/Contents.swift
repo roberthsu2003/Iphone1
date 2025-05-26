@@ -83,4 +83,8 @@ someFunction(parameterWithoutDefault: 10)
 someFunction(parameterWithoutDefault: 10, parameterWithDefault: 10)
 
 
+func add(a:Int, b:Int) -> Int{
+    return a + b
+}
 
+let funame:(Int, Int) -> Int = add
