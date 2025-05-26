@@ -26,7 +26,10 @@ func greet(name:String){
 
 greet(name: "john")
 
-func minMax(array:[Int]) -> (min:Int,max:Int){
+func minMax(array:[Int]) -> (min:Int,max:Int)?{
+    if array.isEmpty{
+        return nil
+    }
     var currentMin = array[0]
     var currentMax = array[0]
     for value in array[1...]{
@@ -39,6 +42,9 @@ func minMax(array:[Int]) -> (min:Int,max:Int){
     return (currentMin, currentMax)
 }
 
-let bounds = minMax(array:[8, -6, 2, 109, 3, 71])
-bounds.min
-bounds.max
+if let bounds = minMax(array:[8, -6, 2, 109, 3, 71]){
+    print(bounds.min)
+    print(bounds.max)
+}
+
+
