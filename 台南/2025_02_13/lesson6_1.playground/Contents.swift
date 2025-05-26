@@ -47,4 +47,22 @@ if let bounds = minMax(array:[8, -6, 2, 109, 3, 71]){
     print(bounds.max)
 }
 
+func someFunction(firstParameterName:Int,secondParameterName:Int){
+    
+}
+
+someFunction(firstParameterName: 5, secondParameterName: 8)
+
+func someFunction(argumentLabel parameterName:Int){
+    
+}
+
+someFunction(argumentLabel: 10)
+
+func greet(person:String, from hometown:String) -> String{
+    return ("Hello\(person)! Glad you could visit from \(hometown)")
+}
+
+
+greet(person: "Robert", from: "Taipei")
 
