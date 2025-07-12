@@ -7,3 +7,9 @@ func backward(_ s1:String,_ s2:String) -> Bool{
 }
 
 names.sorted(by:backward)
+
+//使用closure
+names.sorted(
+    by:{(s1:String,s2:String)->Bool in
+        return s1 > s2}
+    )
