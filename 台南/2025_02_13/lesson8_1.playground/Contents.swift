@@ -46,6 +46,14 @@ let alsoTenEighty = tenEighty
 alsoTenEighty.frameRate = 30.0
 tenEighty.frameRate
 
+//識別運算子(identical) 「===」
+//2個變數是否參考到同一個實體
+
+if tenEighty === alsoTenEighty {
+    print("tenEighth 和 alsoTenEighty 參考到相同的 VideoMode 實體")
+}
+
+
 
 
 
