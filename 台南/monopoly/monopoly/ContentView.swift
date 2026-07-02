@@ -14,7 +14,7 @@ struct ContentView: View {
     ]
     @State private var currentPlayerIndex: Int = 0
     @State private var lastRoll: Int = 0
-    @State private var logText: String = "歡迎來到大富翁！點擊下方擲骰子開始。"
+    @State private var logText: String = "歡迎點擊擲骰子開始。"
     @State private var diceOne: Int = 1
     @State private var diceTwo: Int = 1
     @State private var isRolling: Bool = false
@@ -25,474 +25,251 @@ struct ContentView: View {
         GeometryReader { proxy in
             let safeWidth = proxy.size.width
             let safeHeight = proxy.size.height
-            let panelHeight: CGFloat = max(160, safeHeight * 0.28)
+            let isCompactHeight = safeHeight < 500
+            let panelHeight: CGFloat = isCompactHeight ? 132 : max(220, safeHeight * 0.28)
             let boardWidth = safeWidth * 0.96
             let boardHeight = max(220, safeHeight - panelHeight - 12)
-            let tileWidth = boardWidth / CGFloat(BoardLayout.columns)
-            let tileHeight = boardHeight / CGFloat(BoardLayout.rows)
-            let centerWidth = tileWidth * CGFloat(BoardLayout.columns - 2)
-            let centerHeight = tileHeight * CGFloat(BoardLayout.rows - 2)
+            let tileSize = min(boardWidth, boardHeight) / CGFloat(BoardLayout.columns)
 
-            VStack(spacing: 0) {
-                TitleBar()
+            VStack(spacing: 8) {
+                boardView(tileSize: tileSize)
+                    .frame(width: tileSize * CGFloat(BoardLayout.columns),
+                           height: tileSize * CGFloat(BoardLayout.rows))
 
-                ZStack {
-                    BoardBackground()
-                    BoardGrid(tiles: tiles, players: players)
-                        .frame(width: boardWidth, height: boardHeight)
+                controlPanel(compact: isCompactHeight)
+                    .frame(height: panelHeight)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(.systemGroupedBackground))
+        }
+    }
 
-                    CenterStage(
-                        diceOne: diceOne,
-                        diceTwo: diceTwo,
-                        isRolling: isRolling,
-                        message: logText,
-                        players: players
-                    )
-                    .frame(width: centerWidth, height: centerHeight)
-                    .position(x: boardWidth * 0.5, y: boardHeight * 0.5)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    // MARK: - Board
 
-                ControlPanel(
-                    players: players,
-                    currentPlayer: players[currentPlayerIndex],
-                    lastRoll: lastRoll,
-                    canRoll: !players[currentPlayerIndex].isAI && !isRolling,
-                    onRoll: { rollDice() }
-                )
-                .frame(height: panelHeight)
+    private func boardView(tileSize: CGFloat) -> some View {
+        let positions = tilePositions(tileSize: tileSize)
+        return ZStack {
+            Color.white
+            ForEach(0..<tiles.count, id: \.self) { index in
+                tileView(tile: tiles[index], size: tileSize)
+                    .position(positions[index])
+            }
+            ForEach(Array(players.enumerated()), id: \.element.id) { pIndex, player in
+                tokenView(color: player.color, size: tileSize * 0.35)
+                    .position(tokenPosition(for: player, tileSize: tileSize, positions: positions))
             }
         }
     }
 
-    private func rollDice() {
-        if isRolling {
-            return
-        }
+    private func tileView(tile: Tile, size: CGFloat) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 4)
+                .stroke(Color.gray.opacity(0.4), lineWidth: 1)
+                .background(Color.white)
 
-        if players[currentPlayerIndex].skipTurns > 0 {
-            players[currentPlayerIndex].skipTurns -= 1
-            logText = "\(players[currentPlayerIndex].name) 本回合暫停一次。"
-            advanceTurnIfNeeded()
+            if let color = tile.color {
+                Rectangle()
+                    .fill(color.opacity(0.7))
+                    .frame(width: size, height: size * 0.28)
+                    .offset(y: -size * 0.36)
+            }
+
+            VStack(spacing: 2) {
+                Text(tile.name)
+                    .font(.system(size: max(7, size * 0.13), weight: .medium))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                if let price = tile.price {
+                    Text("$\(price)")
+                        .font(.system(size: max(6, size * 0.1)))
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding(2)
+        }
+        .frame(width: size, height: size)
+    }
+
+    private func tokenView(color: Color, size: CGFloat) -> some View {
+        Circle()
+            .fill(color)
+            .frame(width: size, height: size)
+            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+    }
+
+    // MARK: - Layout
+
+    private func tilePositions(tileSize: CGFloat) -> [CGPoint] {
+        let cols = BoardLayout.columns
+        let rows = BoardLayout.rows
+        let half = tileSize / 2
+        var pts: [CGPoint] = []
+
+        for row in 0..<rows {
+            for col in 0..<cols {
+                let isEdge = row == 0 || row == rows - 1 || col == 0 || col == cols - 1
+                if isEdge {
+                    pts.append(CGPoint(x: half + CGFloat(col) * tileSize,
+                                       y: half + CGFloat(row) * tileSize))
+                }
+            }
+        }
+        return pts
+    }
+
+    private func tokenPosition(for player: Player, tileSize: CGFloat, positions: [CGPoint]) -> CGPoint {
+        let idx = player.position % positions.count
+        let base = positions[idx]
+        let offset: CGFloat = player.isAI ? tileSize * 0.18 : -tileSize * 0.18
+        return CGPoint(x: base.x + offset, y: base.y + offset)
+    }
+
+    // MARK: - Controls
+
+    private func controlPanel(compact: Bool) -> some View {
+        Group {
+            if compact {
+                HStack(spacing: 12) {
+                    diceStack
+                    statusText
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                    playerSummary
+                    rollButton
+                }
+            } else {
+                VStack(spacing: 10) {
+                    diceStack
+                    statusText
+                    playerSummary
+                    rollButton
+                }
+            }
+        }
+        .padding()
+        .background(.ultraThinMaterial)
+        .cornerRadius(16)
+        .padding(.horizontal)
+    }
+
+    private var diceStack: some View {
+        HStack(spacing: 16) {
+            diceFace(value: diceOne, size: 48)
+            diceFace(value: diceTwo, size: 48)
+        }
+    }
+
+    private var statusText: some View {
+        Text(logText)
+            .font(.subheadline)
+            .fontWeight(.bold)
+            .foregroundColor(.primary)
+            .multilineTextAlignment(.center)
+            .lineLimit(3)
+            .fixedSize(horizontal: true, vertical: true)
+            .padding(.horizontal)
+            .padding(.horizontal)
+    }
+
+    private var playerSummary: some View {
+        HStack(spacing: 24) {
+            ForEach(Array(players.enumerated()), id: \.element.id) { index, player in
+                VStack(spacing: 4) {
+                    HStack(spacing: 6) {
+                        Circle().fill(player.color).frame(width: 12, height: 12)
+                        Text(player.name)
+                            .font(.caption.bold())
+                    }
+                    Text("$\(player.cash)")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
+                .padding(8)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(index == currentPlayerIndex ? Color.accentColor.opacity(0.15) : Color.clear)
+                )
+            }
+        }
+    }
+
+    private var rollButton: some View {
+        Button(action: rollDice) {
+            Text(isRolling ? "擲骰中..." : "擲骰子")
+                .font(.headline)
+                .foregroundColor(.white)
+                .frame(maxWidth: 200)
+                .padding(.vertical, 10)
+                .background(isRolling ? Color.gray : Color.accentColor)
+                .cornerRadius(10)
+        }
+        .disabled(isRolling)
+    }
+
+    private func diceFace(value: Int, size: CGFloat) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.white)
+                .frame(width: size, height: size)
+                .shadow(radius: 2)
+            Text("\(value)")
+                .font(.system(size: size * 0.5, weight: .bold, design: .rounded))
+        }
+    }
+
+    // MARK: - Game Logic
+
+    private func rollDice() {
+        guard !isRolling else { return }
+
+        var player = players[currentPlayerIndex]
+        if player.skipTurns > 0 {
+            player.skipTurns -= 1
+            players[currentPlayerIndex] = player
+            logText = "\(player.name) 跳過本回合。"
+            nextTurn()
             return
         }
 
         isRolling = true
-        Task {
-            let start = Date()
-            while Date().timeIntervalSince(start) < 0.8 {
-                diceOne = Int.random(in: 1...6)
-                diceTwo = Int.random(in: 1...6)
-                try? await Task.sleep(nanoseconds: 80_000_000)
+        logText = "\(player.name) 擲骰子中..."
+
+        var count = 0
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { t in
+            diceOne = Int.random(in: 1...6)
+            diceTwo = Int.random(in: 1...6)
+            count += 1
+            if count >= 10 {
+                t.invalidate()
+                let total = diceOne + diceTwo
+                lastRoll = total
+                player.position = (player.position + total) % BoardLayout.totalTiles
+                handleLanding(&player)
+                players[currentPlayerIndex] = player
+                logText = "\(player.name) 擲出了 \(total)（\(diceOne)+\(diceTwo)），目前在「\(tiles[player.position].name)」"
+                isRolling = false
+                nextTurn()
             }
+        }
+        _ = timer
+    }
 
-            let rollOne = Int.random(in: 1...6)
-            let rollTwo = Int.random(in: 1...6)
-            diceOne = rollOne
-            diceTwo = rollTwo
-            lastRoll = rollOne + rollTwo
-
-            await movePlayer(by: lastRoll)
-            isRolling = false
+    private func handleLanding(_ player: inout Player) {
+        let tile = tiles[player.position]
+        switch tile.type {
+        case .tax:
+            let tax = 200
+            player.cash = max(0, player.cash - tax)
+            logText += "\n繳稅 $\(tax)。"
+        case .corner where tile.name == "入獄":
+            player.skipTurns = 3
+            logText += "\n進監獄！跳過3回合。"
+        default:
+            break
         }
     }
 
-    private func movePlayer(by steps: Int) async {
-        guard players.indices.contains(currentPlayerIndex) else { return }
-        for _ in 0..<steps {
-            let nextPosition = (players[currentPlayerIndex].position + 1) % tiles.count
-            await MainActor.run {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    players[currentPlayerIndex].position = nextPosition
-                }
-            }
-            try? await Task.sleep(nanoseconds: 220_000_000)
-        }
-
-        let tile = tiles[players[currentPlayerIndex].position]
-        let delta = tile.points
-        let tileName = tile.name
-
-        players[currentPlayerIndex].cash += delta
-        if tile.effect == .jail {
-            players[currentPlayerIndex].skipTurns = 1
-        }
-
-        let deltaText = delta == 0 ? "點數不變" : "點數 \(delta > 0 ? "＋" : "－")\(abs(delta))"
-        let extra = tile.effect == .jail ? "，坐牢暫停一次" : ""
-        logText = "\(players[currentPlayerIndex].name) 擲出 \(steps) 點，停在 \(tileName)，\(deltaText)\(extra)。"
-
-        advanceTurnIfNeeded()
-    }
-
-    private func advanceTurnIfNeeded() {
+    private func nextTurn() {
         currentPlayerIndex = (currentPlayerIndex + 1) % players.count
-
-        if players[currentPlayerIndex].isAI {
-            Task {
-                try? await Task.sleep(nanoseconds: 800_000_000)
-                rollDice()
-            }
-        }
-    }
-}
-
-private struct BoardBackground: View {
-    var body: some View {
-        ZStack {
-            LinearGradient(
-                colors: [
-                    Color(red: 0.94, green: 0.90, blue: 0.78),
-                    Color(red: 0.85, green: 0.82, blue: 0.66)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            Rectangle()
-                .stroke(Color.black.opacity(0.6), lineWidth: 8)
-                .padding(18)
-        }
-    }
-}
-
-private struct BoardGrid: View {
-    let tiles: [Tile]
-    let players: [Player]
-
-    var body: some View {
-        GeometryReader { proxy in
-            let tileWidth = proxy.size.width / CGFloat(BoardLayout.columns)
-            let tileHeight = proxy.size.height / CGFloat(BoardLayout.rows)
-            let tokenSize = min(tileWidth, tileHeight) * 0.45
-
-            ZStack {
-                ForEach(tiles.indices, id: \.self) { index in
-                    let position = BoardLayout.position(for: index)
-                    TileView(tile: tiles[index])
-                        .frame(width: tileWidth, height: tileHeight)
-                        .position(
-                            x: tileWidth * (CGFloat(position.col) + 0.5),
-                            y: tileHeight * (CGFloat(position.row) + 0.5)
-                        )
-                }
-
-                ForEach(players.indices, id: \.self) { index in
-                    let position = BoardLayout.position(for: players[index].position)
-                    PlayerToken(color: players[index].color)
-                        .frame(width: tokenSize, height: tokenSize)
-                        .position(
-                            x: tileWidth * (CGFloat(position.col) + 0.5) + tokenOffset(for: index, tileWidth: tileWidth, tileHeight: tileHeight).x,
-                            y: tileHeight * (CGFloat(position.row) + 0.5) + tokenOffset(for: index, tileWidth: tileWidth, tileHeight: tileHeight).y
-                        )
-                }
-            }
-        }
-    }
-
-    private func tokenOffset(for index: Int, tileWidth: CGFloat, tileHeight: CGFloat) -> CGPoint {
-        let offset = min(tileWidth, tileHeight) * 0.18
-        if index == 0 {
-            return CGPoint(x: -offset, y: -offset)
-        }
-        return CGPoint(x: offset, y: offset)
-    }
-}
-
-private struct TileView: View {
-    let tile: Tile
-
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(tile.color)
-                .overlay(
-                    Rectangle().stroke(Color.black.opacity(0.6), lineWidth: 1)
-                )
-
-            VStack(spacing: 4) {
-                Image(systemName: tile.iconName)
-                    .font(.system(size: 16, weight: .bold))
-                Text(tile.label)
-                    .font(.system(size: 13, weight: .bold))
-                    .multilineTextAlignment(.center)
-                Text(tile.pointsText)
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundColor(tile.pointsTextColor)
-            }
-            .foregroundColor(.black)
-            .padding(6)
-        }
-    }
-}
-
-private struct PlayerToken: View {
-    let color: Color
-
-    var body: some View {
-        Circle()
-            .fill(color)
-            .overlay(Circle().stroke(Color.white, lineWidth: 2))
-            .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 1)
-    }
-}
-
-private struct TitleBar: View {
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 2) {
-                Text("MONOPOLY")
-                    .font(.system(size: 22, weight: .heavy))
-            }
-
-            Spacer()
-        }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 8)
-    }
-}
-
-private struct DiceOverlay: View {
-    let diceOne: Int
-    let diceTwo: Int
-    let isRolling: Bool
-
-    var body: some View {
-        HStack(spacing: 12) {
-            DiceFace(value: diceOne)
-            DiceFace(value: diceTwo)
-        }
-        .padding(10)
-        .background(Color.white.opacity(0.9))
-        .cornerRadius(14)
-        .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 4)
-        .opacity(isRolling ? 1 : 0)
-        .scaleEffect(isRolling ? 1.0 : 0.9)
-        .animation(.easeInOut(duration: 0.2), value: isRolling)
-    }
-}
-
-private struct CenterStage: View {
-    let diceOne: Int
-    let diceTwo: Int
-    let isRolling: Bool
-    let message: String
-    let players: [Player]
-
-    var body: some View {
-        VStack(spacing: 12) {
-            DiceOverlay(
-                diceOne: diceOne,
-                diceTwo: diceTwo,
-                isRolling: isRolling
-            )
-
-            MessageOverlay(text: message)
-
-            Spacer(minLength: 0)
-
-            PlayerStatusRow(players: players)
-        }
-        .padding(10)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.white.opacity(0.55))
-        .cornerRadius(16)
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.black.opacity(0.12), lineWidth: 1)
-        )
-    }
-}
-
-private struct MessageOverlay: View {
-    let text: String
-
-    var body: some View {
-        Text(text)
-            .font(.system(size: 16, weight: .semibold))
-            .foregroundColor(.black)
-            .multilineTextAlignment(.center)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
-            .background(Color.white.opacity(0.9))
-            .cornerRadius(12)
-            .shadow(color: .black.opacity(0.2), radius: 6, x: 0, y: 3)
-            .frame(maxWidth: .infinity)
-    }
-}
-
-private struct DiceFace: View {
-    let value: Int
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.black.opacity(0.6), lineWidth: 1)
-                )
-
-            Text("\(value)")
-                .font(.system(size: 22, weight: .bold))
-                .foregroundColor(.black)
-        }
-        .frame(width: 52, height: 52)
-    }
-}
-
-private struct ControlPanel: View {
-    let players: [Player]
-    let currentPlayer: Player
-    let lastRoll: Int
-    let canRoll: Bool
-    let onRoll: () -> Void
-
-    var body: some View {
-        VStack(spacing: 12) {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("目前回合")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(.secondary)
-                    Text(currentPlayer.name)
-                        .font(.system(size: 18, weight: .bold))
-                }
-
-                Spacer()
-
-                VStack(alignment: .trailing, spacing: 4) {
-                    Text("最近骰點")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundColor(.secondary)
-                    Text(lastRoll == 0 ? "-" : "\(lastRoll)")
-                        .font(.system(size: 18, weight: .bold))
-                }
-            }
-
-            Button(action: onRoll) {
-                Text("擲骰子")
-                    .font(.system(size: 16, weight: .bold))
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(!canRoll)
-        }
-        .padding(16)
-        .background(
-            LinearGradient(
-                colors: [Color.white, Color(red: 0.96, green: 0.93, blue: 0.86)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
-        .overlay(
-            Rectangle()
-                .stroke(Color.black.opacity(0.08), lineWidth: 1)
-        )
-    }
-}
-
-private struct PlayerStatusRow: View {
-    let players: [Player]
-
-    var body: some View {
-        HStack(spacing: 12) {
-            ForEach(players.indices, id: \.self) { index in
-                let player = players[index]
-                HStack(spacing: 8) {
-                    Circle()
-                        .fill(player.color)
-                        .frame(width: 12, height: 12)
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(player.name)
-                            .font(.system(size: 12, weight: .semibold))
-                        Text("現金 \(player.cash)")
-                            .font(.system(size: 12, weight: .bold))
-                    }
-                }
-                .padding(8)
-                .background(Color.black.opacity(0.05))
-                .cornerRadius(10)
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
-private struct Player {
-    let name: String
-    var position: Int
-    var cash: Int
-    var skipTurns: Int
-    let color: Color
-    let isAI: Bool
-}
-
-private struct Tile {
-    let name: String
-    let label: String
-    let iconName: String
-    let points: Int
-    let effect: TileEffect
-    let color: Color
-
-    var pointsText: String {
-        if effect == .jail {
-            return "坐牢"
-        }
-        if points == 0 {
-            return "±0"
-        }
-        return points > 0 ? "+\(points)" : "\(points)"
-    }
-
-    var pointsTextColor: Color {
-        if effect == .jail {
-            return .black
-        }
-        return points >= 0 ? Color(red: 0.12, green: 0.45, blue: 0.18) : Color(red: 0.62, green: 0.14, blue: 0.14)
-    }
-
-    static let classicTiles: [Tile] = [
-        Tile(name: "起點", label: "GO", iconName: "play.fill", points: 200, effect: .points, color: Color(red: 0.88, green: 0.70, blue: 0.42)),
-        Tile(name: "棕色地段", label: "棕地", iconName: "house.fill", points: -60, effect: .points, color: Color(red: 0.86, green: 0.76, blue: 0.63)),
-        Tile(name: "機會", label: "機會", iconName: "sparkles", points: 120, effect: .points, color: Color(red: 0.92, green: 0.82, blue: 0.55)),
-        Tile(name: "棕色地段", label: "棕地", iconName: "house.fill", points: -80, effect: .points, color: Color(red: 0.86, green: 0.76, blue: 0.63)),
-        Tile(name: "所得稅", label: "稅", iconName: "dollarsign.circle", points: -150, effect: .points, color: Color(red: 0.92, green: 0.85, blue: 0.75)),
-        Tile(name: "鐵路", label: "鐵路", iconName: "tram.fill", points: -100, effect: .points, color: Color(red: 0.75, green: 0.75, blue: 0.75)),
-        Tile(name: "監獄 / 來訪", label: "監獄", iconName: "lock.fill", points: 0, effect: .jail, color: Color(red: 0.80, green: 0.70, blue: 0.60)),
-        Tile(name: "淡藍地段", label: "淡藍", iconName: "house.fill", points: -90, effect: .points, color: Color(red: 0.70, green: 0.82, blue: 0.86)),
-        Tile(name: "公益金", label: "公益", iconName: "gift.fill", points: 100, effect: .points, color: Color(red: 0.90, green: 0.90, blue: 0.90)),
-        Tile(name: "淡藍地段", label: "淡藍", iconName: "house.fill", points: -110, effect: .points, color: Color(red: 0.70, green: 0.82, blue: 0.86)),
-        Tile(name: "免費停車", label: "停車", iconName: "parkingsign.circle", points: 50, effect: .points, color: Color(red: 0.88, green: 0.70, blue: 0.42)),
-        Tile(name: "粉紅地段", label: "粉紅", iconName: "house.fill", points: -120, effect: .points, color: Color(red: 0.88, green: 0.60, blue: 0.60)),
-        Tile(name: "電力公司", label: "電力", iconName: "bolt.fill", points: -140, effect: .points, color: Color(red: 0.85, green: 0.85, blue: 0.85)),
-        Tile(name: "入獄", label: "入獄", iconName: "exclamationmark.shield.fill", points: 0, effect: .jail, color: Color(red: 0.80, green: 0.70, blue: 0.60)),
-        Tile(name: "橘色地段", label: "橘地", iconName: "house.fill", points: -130, effect: .points, color: Color(red: 0.95, green: 0.77, blue: 0.56)),
-        Tile(name: "董事會大道", label: "董事會", iconName: "crown.fill", points: 180, effect: .points, color: Color(red: 0.70, green: 0.74, blue: 0.86))
-    ]
-}
-
-private enum TileEffect {
-    case points
-    case jail
-}
-
-private enum BoardLayout {
-    static let columns: Int = 4
-    static let rows: Int = 6
-
-    static func position(for index: Int) -> (row: Int, col: Int) {
-        if index <= 3 {
-            return (row: rows - 1, col: (columns - 1) - index)
-        } else if index <= 7 {
-            return (row: (rows - 2) - (index - 4), col: 0)
-        } else if index <= 11 {
-            return (row: 0, col: index - 8)
-        } else {
-            return (row: 1 + (index - 12), col: columns - 1)
-        }
     }
 }
 
