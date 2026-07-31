@@ -48,7 +48,7 @@ struct CityDataLoader {
     }
 }
 
-struct ContentView: View {
+struct MainView: View {
     private let cities = CityDataLoader.loadCities()
 
     var body: some View {
@@ -75,5 +75,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }
