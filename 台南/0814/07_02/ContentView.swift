@@ -38,7 +38,7 @@ struct CityDataLoader {
         guard let url = Bundle.main.url(forResource: "citylist", withExtension: "plist") else {
             return []
         }
-
+        //print(url)
         do {
             let data = try Data(contentsOf: url)
             return try PropertyListDecoder().decode([City].self, from: data)
@@ -50,7 +50,14 @@ struct CityDataLoader {
 
 struct MainView: View {
     private let cities = CityDataLoader.loadCities()
-
+    /*
+    init(){
+        cities.forEach{
+            city in
+            print(city.city)
+        }
+    }
+     */
     var body: some View {
         NavigationStack {
             List(cities) { city in
