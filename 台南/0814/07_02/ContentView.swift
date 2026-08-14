@@ -65,26 +65,84 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             List(cities) { city in
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(city.city)
-                        .font(.title3)
-                        .fontWeight(.semibold)
+                NavigationLink {
+                    CityDetailView(city: city)
+                } label: {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(city.city)
+                            .font(.title3)
+                            .fontWeight(.semibold)
 
-                    Text("\(city.country) · \(city.continent)")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-
-                    Text(city.local)
-                        .font(.body)
-                        .lineLimit(3)
+                        Text("\(city.country) · \(city.continent)")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.vertical, 6)
                 }
-                .padding(.vertical, 6)
             }
-            /// Sets the navigation bar title for the city introduction list.
-            .navigationTitle("城市介紹")
+            .navigationTitle("城市")
             .tint(.blue)
         }
         
+    }
+}
+
+struct CityDetailView: View {
+    let city: City
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Image(city.image)
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(city.city)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+
+                    Text("\(city.country) · \(city.continent)")
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                }
+
+                Divider()
+
+                VStack(alignment: .leading, spacing: 10) {
+                    DetailRow(title: "國家", value: city.country)
+                    DetailRow(title: "洲", value: city.continent)
+                    DetailRow(title: "緯度", value: "\(city.latitude)")
+                    DetailRow(title: "經度", value: "\(city.longitude)")
+                    DetailRow(title: "網址", value: city.url)
+                    DetailRow(title: "圖片", value: city.image)
+                }
+
+                Text(city.local)
+                    .font(.body)
+                    .lineSpacing(4)
+            }
+            .padding()
+        }
+        .navigationTitle(city.city)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+struct DetailRow: View {
+    let title: String
+    let value: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Text(value)
+                .font(.body)
+        }
     }
 }
 
