@@ -50,14 +50,18 @@ struct CityDataLoader {
 
 struct MainView: View {
     private let cities = CityDataLoader.loadCities()
-    /*
-    init(){
-        cities.forEach{
-            city in
-            print(city.city)
-        }
+
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
     }
-     */
+
     var body: some View {
         NavigationStack {
             List(cities) { city in
@@ -76,7 +80,9 @@ struct MainView: View {
                 }
                 .padding(.vertical, 6)
             }
-            .navigationTitle("城市列表")
+            /// Sets the navigation bar title for the city introduction list.
+            .navigationTitle("城市介紹")
+            .tint(.blue)
         }
         
     }
