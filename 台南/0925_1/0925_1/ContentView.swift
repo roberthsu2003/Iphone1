@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WordFlowRootView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        ContentUnavailableView(
+            "WordFlow",
+            systemImage: "text.book.closed",
+            description: Text("每日十分鐘，建立你的英文單字量。")
+        )
+        .accessibilityIdentifier("wordFlowRootView")
     }
 }
 
 #Preview {
-    ContentView()
+    WordFlowRootView()
 }

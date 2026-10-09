@@ -1,0 +1,8 @@
+# Xcode user-specific state
+**/xcuserdata/
+
+# Xcode build products
+**/DerivedData/
+
+# Finder metadata
+.DS_Store
